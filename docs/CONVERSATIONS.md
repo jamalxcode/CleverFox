@@ -15,7 +15,8 @@ Entry format:
 ## 2026-11-14: restart; public posts instead of reports
 **Where:** Claude Code session.
 **Asked:** summarize the spec. Remove anything involving people reporting directly; read reviews and reports from the internet itself. Populate the catalog as much as possible from Hugging Face and other AI directories (external links, models, datasets, documentation). Most announcements and feedback will come from monitoring X.
-**Outcome:** report form and community display removed, `cleverfox-reports` archived, deploy key neutralized, spec sections 9 and 10 rewritten around public feedback with X first (DECISIONS 42). Datasets move into Phase 1.
+**Outcome:** report form and community display removed, `cleverfox-reports` archived, deploy key neutralized, spec sections 9 and 10 rewritten around public feedback with X first (DECISIONS 42). Bulk importer from Hugging Face (models and datasets) and the Ollama library, with daily refresh through a `data` branch (DECISIONS 43). First import: 542 Hugging Face models (35 also on Ollama), 250 more Ollama-only families, 232 datasets, 207 models covering non-English languages. Datasets tab added.
+**Open:** X monitoring needs an API token; other directories next.
 
 ## 2026-11-14: page review and rule-based reports
 **Where:** Claude Code session.

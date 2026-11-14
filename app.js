@@ -1,4 +1,4 @@
-// CleverFox prototype: loads the catalog and renders the three directories with filters.
+// CleverFox: loads the catalog one listing type at a time and renders it with filters.
 const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const store = {
@@ -26,7 +26,15 @@ const flag = (c) => /^[A-Z]{2}$/.test(c || '') ? String.fromCodePoint(...[...c].
 const fmtDate = (ts) => { try { return new Date(ts).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return ts; } };
 const known = (c) => c && c.value !== 'unknown' && c.value !== null && c.value !== undefined;
 
-const state = { type: 'model', q: '', country: store.get('country') || '', f: { model: {}, app: {}, host: {} } };
+const TYPES = ['model', 'dataset', 'app', 'host'];
+const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
+const PAGE = 50;
+const state = { type: 'model', q: '', country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const loaded = {}; // type -> records
+const recordsOf = (t) => loaded[t] || [];
+const popularity = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50 + pullsNum(p.pulls), 0);
+const pullsNum = (s) => { const m = String(s || '').match(/^([\d.]+)([KMB]?)$/); return m ? +m[1] * ({ K: 1e3, M: 1e6, B: 1e9 }[m[2]] || 1) : 0; };
+const fmtNum = (n) => n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}K` : String(n);
 
 // ---- access logic ----
 function availableIn(access, country) {
@@ -58,14 +66,22 @@ function options(values, labeler = (v) => v) {
   return [...new Set(values.filter(Boolean))].map((v) => [v, labeler(v)]).sort((a, b) => a[1].localeCompare(b[1]));
 }
 function filterDefs(type) {
-  const recs = catalog.records.filter((r) => r.type === type);
+  const recs = recordsOf(type);
   const methods = options(recs.flatMap((r) => recordAccesses(r).flatMap((a) => methodsOf(a).map((m) => m.method))), (m) => METHOD_LABELS[m] || m);
   if (type === 'model') return [
     { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
     { key: 'region', label: 'Any publisher country', opts: options(recs.map((r) => known(r.publisher_region) ? r.publisher_region.value : null), countryName) },
     { key: 'avail', label: 'Any availability', opts: options(recs.map((r) => r.availability?.value).filter((v) => v !== 'unknown'), (v) => AVAIL_LABELS[v] || v) },
+    { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
     { key: 'local', toggle: 'Runs locally' },
     { key: 'open', toggle: 'Open license' },
+  ];
+  if (type === 'dataset') return [
+    { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
+    { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
+    { key: 'size', label: 'Any size', opts: options(recs.map((r) => r.size_category)) },
+    { key: 'open', toggle: 'Open license' },
+    { key: 'nogate', toggle: 'No sign-in gate' },
   ];
   if (type === 'app') return [
     { key: 'cat', label: 'Any category', opts: options(recs.flatMap((r) => r.categories || []), (c) => c[0].toUpperCase() + c.slice(1)) },
@@ -96,7 +112,7 @@ function renderFilters() {
 function matches(r) {
   const f = state.f[r.type];
   if (state.q) {
-    const hay = [r.name, r.publisher, r.description, r.family, ...(r.categories || []),
+    const hay = [r.name, r.publisher, r.description, r.family, ...(r.categories || []), ...(r.tasks || []),
       ...(Array.isArray(r.languages?.value) ? r.languages.value.map(langName) : []),
       known(r.publisher_region) ? countryName(r.publisher_region.value) : ''].join(' ').toLowerCase();
     if (!state.q.toLowerCase().split(/\s+/).every((w) => hay.includes(w))) return false;
@@ -108,6 +124,13 @@ function matches(r) {
     if (f.avail && r.availability?.value !== f.avail) return false;
     if (f.local && !r.local_ready) return false;
     if (f.open && !(known(r.license) && r.license.value !== 'custom')) return false;
+    if (f.task && !(r.tasks || []).includes(f.task)) return false;
+  } else if (r.type === 'dataset') {
+    if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;
+    if (f.task && !(r.tasks || []).includes(f.task)) return false;
+    if (f.size && r.size_category !== f.size) return false;
+    if (f.open && !(known(r.license) && r.license.value !== 'custom')) return false;
+    if (f.nogate && r.availability?.value === 'gated') return false;
   } else if (r.type === 'app') {
     if (f.cat && !(r.categories || []).includes(f.cat)) return false;
     if (f.method && !hasMethod(f.method)) return false;
@@ -132,6 +155,7 @@ function countryBadge(r) {
   const c = state.country;
   if (!c) return '';
   const name = countryName(c);
+  if (r.type === 'dataset') return '';
   if (r.type === 'model') {
     const s = modelCountryStatus(r, c);
     if (s === 'download') return '';
@@ -156,6 +180,16 @@ function cardBadges(r) {
     if (known(r.availability)) b.push(badge(AVAIL_LABELS[r.availability.value] || r.availability.value));
     if (known(r.parameters)) b.push(badge(r.parameters.value));
     if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) b.push(badge(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', ')));
+    const pop = popularity(r); if (pop) b.push(badge(`↓ ${fmtNum((r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0))}`));
+  } else if (r.type === 'dataset') {
+    if (known(r.availability)) b.push(badge(AVAIL_LABELS[r.availability.value] || r.availability.value));
+    if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
+    if (r.size_category) b.push(badge(r.size_category.replace('n<', '< ').replace('<n<', ' to ').replace('K', 'K rows').replace('M', 'M rows')));
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) b.push(badge(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', ')));
+    if (r.paper_urls?.length) b.push(badge('📄 Paper'));
   } else {
     const a = r.access;
     if (a && known(a.free) && FREE_LABELS[a.free.value]) b.push(badge(FREE_LABELS[a.free.value], a.free.value === 'paid_only' ? '' : 'b-ok'));
@@ -211,6 +245,19 @@ function detail(r) {
     h += fact('Languages', r.languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
     if (r.local_runtimes?.length) h += `<dt>Local runtimes</dt><dd>${esc(r.local_runtimes.join(', '))}</dd>`;
   }
+  if (r.type === 'dataset') {
+    h += fact('License', r.license, (v) => v === 'custom' ? 'Custom license (see source)' : esc(v));
+    h += fact('Availability', r.availability, (v) => esc(AVAIL_LABELS[v] || v));
+    h += fact('Languages', r.languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
+    if (r.tasks?.length) h += `<dt>Tasks</dt><dd>${esc(r.tasks.join(', ').replace(/-/g, ' '))}</dd>`;
+    if (r.modalities?.length) h += `<dt>Modalities</dt><dd>${esc(r.modalities.join(', '))}</dd>`;
+    if (r.formats?.length) h += `<dt>Formats</dt><dd>${esc(r.formats.join(', '))}</dd>`;
+    if (r.size_category) h += `<dt>Size</dt><dd>${esc(r.size_category)} rows</dd>`;
+  }
+  if (r.type === 'model' && r.relations?.length) {
+    const REL = { finetune_of: 'Fine-tune of', adapter_of: 'Adapter for', merge_of: 'Merge of', quantization_of: 'Quantization of', variant_of: 'Variant of', successor_of: 'Successor of' };
+    h += `<dt>Based on</dt><dd>${r.relations.map((x) => `${esc(REL[x.type] || x.type)} ${/^https?:/.test(x.target) ? `<a href="${esc(x.target)}" rel="noopener" target="_blank">${esc(x.target.replace('https://huggingface.co/', ''))}</a>` : esc(x.target.split('/').pop())}`).join('; ')}</dd>`;
+  }
   if (r.type === 'app') {
     h += `<dt>Categories</dt><dd>${esc((r.categories || []).join(', '))}</dd>`;
     h += fact('Interface languages', r.interface_languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
@@ -230,11 +277,14 @@ function detail(r) {
       h += '</li>';
     }
     h += '</ul>';
-  } else {
+  } else if (r.type !== 'dataset') {
     h += '<h3>Access and payment</h3>' + accessFacts(r.access);
   }
-  const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || []), ...(r.documentation_urls || [])].filter(Boolean))];
-  h += `<h3>Official links</h3><p class="links">${links.map((u) => { let t = u; try { t = new URL(u).hostname.replace(/^www\./, '') + new URL(u).pathname.replace(/\/$/, ''); } catch { /* keep */ } return `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(t)}</a>`; }).join(' ')}</p>`;
+  const linkList = (urls) => urls.map((u) => { let t = u; try { t = new URL(u).hostname.replace(/^www\./, '') + new URL(u).pathname.replace(/\/$/, ''); } catch { /* keep */ } return `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(t)}</a>`; }).join(' ');
+  const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
+  h += `<h3>Official links</h3><p class="links">${linkList(links)}</p>`;
+  if (r.documentation_urls?.length) h += `<h3>Code and documentation</h3><p class="links">${linkList(r.documentation_urls)}</p>`;
+  if (r.paper_urls?.length) h += `<h3>Papers</h3><p class="links">${linkList(r.paper_urls)}</p>`;
   h += `<p class="src">${r.verification_status === 'verified' ? 'Verified at an official source' : 'Not yet verified at an official page: treat facts with care'}. First seen ${esc(fmtDate(r.first_seen_at))}. ${r.evidence_urls?.length || 0} sources.</p>`;
   return h + '</div>';
 }
@@ -245,40 +295,55 @@ function card(r) {
     <p class="desc">${esc(r.description)}</p>
     <div class="badges">${cardBadges(r)}</div>
     <div class="more">Details and sources ▾</div>
-  </summary>${detail(r)}</details></li>`;
+  </summary><div class="detail-slot" data-id="${esc(r.id)}"></div></details></li>`;
 }
 
 function render() {
-  for (const t of ['model', 'app', 'host']) {
+  for (const t of TYPES) {
     const tab = $(`#tab-${t}`);
     tab.setAttribute('aria-selected', String(t === state.type));
-    tab.querySelector('.count').textContent = catalog.records.filter((r) => r.type === t).length;
+    tab.querySelector('.count').textContent = catalog.counts[t] ?? '';
   }
-  const recs = catalog.records.filter((r) => r.type === state.type).filter(matches);
+  if (!loaded[state.type]) { $('#list').innerHTML = ''; $('#summary').textContent = 'Loading…'; $('#more-btn').hidden = true; return; }
+  const all = recordsOf(state.type);
+  const recs = all.filter(matches);
   const weight = (r) => (r.warning === 'dont_touch' ? 2 : 0) + (r.verification_status === 'verified' ? 0 : 1);
-  recs.sort((a, b) => weight(a) - weight(b) || a.name.localeCompare(b.name));
-  $('#list').innerHTML = recs.map(card).join('');
+  recs.sort((a, b) => weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
+  $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
-  const total = catalog.records.filter((r) => r.type === state.type).length;
-  $('#summary').textContent = `${recs.length} of ${total} ${{ model: 'models', app: 'apps', host: 'hosting providers' }[state.type]}${state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+  $('#more-btn').hidden = recs.length <= state.limit;
+  $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
+  $('#summary').textContent = `${recs.length} of ${all.length} ${TYPE_WORDS[state.type]}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+}
+async function ensureLoaded(t) {
+  if (loaded[t]) return;
+  try { loaded[t] = await (await fetch(`data/${t}s.json`)).json(); } catch { loaded[t] = []; $('#summary').textContent = 'This list could not be loaded. Try reloading the page.'; }
 }
 
 // ---- events ----
-function setType(t) { state.type = t; renderFilters(); render(); }
+async function setType(t) { state.type = t; state.limit = PAGE; render(); await ensureLoaded(t); if (state.type === t) { renderFilters(); render(); } }
 $('.tabs').addEventListener('click', (e) => { const b = e.target.closest('button[data-type]'); if (b) setType(b.dataset.type); });
 $('.tabs').addEventListener('keydown', (e) => {
-  const order = ['model', 'app', 'host'];
-  const i = order.indexOf(state.type);
+  const i = TYPES.indexOf(state.type);
   if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-    const t = order[(i + (e.key === 'ArrowRight' ? 1 : 2)) % 3];
+    const t = TYPES[(i + (e.key === 'ArrowRight' ? 1 : TYPES.length - 1)) % TYPES.length];
     setType(t); $(`#tab-${t}`).focus();
   }
 });
-$('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); render(); });
+$('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); state.limit = PAGE; render(); });
+$('#more-btn').addEventListener('click', () => { state.limit += PAGE; render(); });
+// Details are built only when a card is opened (thousands of listings).
+$('#list').addEventListener('toggle', (e) => {
+  const slot = e.target.querySelector?.('.detail-slot');
+  if (!e.target.open || !slot || slot.childElementCount) return;
+  const rec = recordsOf(state.type).find((r) => r.id === slot.dataset.id);
+  if (rec) slot.innerHTML = detail(rec);
+}, true);
 $('#filters').addEventListener('change', (e) => {
   const k = e.target.dataset.key;
   if (!k) return;
   state.f[state.type][k] = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+  state.limit = PAGE;
   render();
 });
 $('#country').addEventListener('change', (e) => { state.country = e.target.value; store.set('country', state.country); renderFilters(); render(); });
@@ -298,15 +363,14 @@ applyTheme(store.get('theme') || 'auto');
 
 // ---- start ----
 try {
-  catalog = await (await fetch('data/catalog.json')).json();
+  catalog = await (await fetch('data/meta.json')).json();
 } catch {
   $('#summary').textContent = 'The catalog could not be loaded. Try reloading the page.';
   throw new Error('catalog load failed');
 }
 countryNames = new Map(catalog.countries);
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
-$('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${catalog.records.length} listings`;
-const hashType = location.hash.match(/^#(model|app|host)$/)?.[1];
-if (hashType) state.type = hashType;
-renderFilters();
-render();
+const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
+$('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
+const hashType = location.hash.match(/^#(model|dataset|app|host)$/)?.[1];
+await setType(hashType || state.type);

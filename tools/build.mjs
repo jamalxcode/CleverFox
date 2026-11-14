@@ -1,6 +1,6 @@
 // Validates the hand-entered seed records and writes the catalog the page loads.
 // Usage: node tools/build.mjs [--check]   (--check validates without writing)
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -10,7 +10,7 @@ const outFile = join(root, 'data', 'catalog.json');
 const checkOnly = process.argv.includes('--check');
 
 const VOCAB = {
-  type: ['model', 'app', 'host'],
+  type: ['model', 'app', 'host', 'dataset'],
   verification_status: ['candidate', 'verified', 'check_failed'],
   warning: ['none', 'reported', 'dont_touch'],
   source_type: ['official', 'third_party', 'independently_verified', 'web_reported'],
@@ -79,9 +79,15 @@ function noCardNeeded(a) {
   return 'unknown';
 }
 
-const files = readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort();
-const records = files.flatMap((f) => {
-  const data = JSON.parse(readFileSync(join(seedDir, f), 'utf8'));
+// Hand-researched seed records, then records imported from Hugging Face and other directories
+// (tools/import.mjs). The importer already skips anything the seed covers.
+const importDir = join(root, 'data', 'imported');
+const sourceFiles = [
+  ...readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(seedDir, f)),
+  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(importDir, f)) : []),
+];
+const records = sourceFiles.flatMap((f) => {
+  const data = JSON.parse(readFileSync(f, 'utf8'));
   if (!Array.isArray(data)) throw new Error(`${f} must hold a JSON array`);
   return data;
 });
@@ -126,6 +132,9 @@ for (const r of records) {
       if (['api', 'aggregator'].includes(d.source)) checkAccess(id, `distribution ${d.native_id}`, d.access);
     }
     if (typeof r.local_ready !== 'boolean') err(id, 'local_ready must be true or false');
+  } else if (r.type === 'dataset') {
+    for (const c of ['license', 'availability', 'languages']) checkClaim(id, c, r[c]);
+    if (!Array.isArray(r.tasks)) err(id, 'tasks must be a list');
   } else {
     checkAccess(id, 'record', r.access);
     const site = r.type === 'app' ? r.url : r.launch_url || r.official_urls?.[0];
@@ -174,9 +183,13 @@ const published = records.map((r) => {
 });
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
-console.log(`OK: ${published.length} records (${counts.model} models, ${counts.app} apps, ${counts.host} hosts)`);
+console.log(`OK: ${published.length} records (${counts.model} models, ${counts.dataset} datasets, ${counts.app} apps, ${counts.host} hosts)`);
 if (!checkOnly) {
-  const catalog = { schema_version: 1, generated_at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), license: 'CC-BY-4.0', countries, records: published };
-  writeFileSync(outFile, JSON.stringify(catalog));
-  console.log(`Wrote ${outFile.replace(root + '/', '')}`);
+  const generated_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+  // The page loads meta.json first, then only the listing type the visitor opens (page weight).
+  // catalog.json holds everything, for anyone who wants the whole data set.
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries }));
+  for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t)));
+  writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
+  console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
 }

@@ -1,25 +1,49 @@
-name: Deploy site
+name: Import and deploy
+# On push: build and deploy what's committed.
+# Daily (and on manual dispatch with import=true): refresh models and datasets from Hugging Face
+# and the Ollama library first. Imported files live on the `data` branch, overwritten as a single
+# commit (no history growth, as in Flattery). A failed or shrunken import keeps the previous files.
 on:
   push: { branches: [main] }
-  workflow_dispatch: {}
-permissions: { contents: read, pages: write, id-token: write }
+  schedule: [{ cron: '41 3 * * *' }]
+  workflow_dispatch:
+    inputs:
+      import: { description: 'Refresh imports from Hugging Face and Ollama first', type: boolean, default: true }
+permissions: { contents: write, pages: write, id-token: write }
 concurrency: { group: pages, cancel-in-progress: false }
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     environment: { name: github-pages, url: "${{ steps.deployment.outputs.page_url }}" }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - name: Validate seed records and build the catalog
+      - name: Restore the last imports from the data branch
+        run: |
+          mkdir -p data/imported
+          if git fetch --depth 1 origin data 2>/dev/null; then git archive FETCH_HEAD imported | tar -x -C data; ls -la data/imported; else echo "No data branch yet."; fi
+      - name: Import from Hugging Face and the Ollama library
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.import)
+        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}" }
+        run: node tools/import.mjs
+      - name: Validate and build the catalog
         run: npm test && npm run build
+      - name: Save imports to the data branch (one commit, overwritten)
+        if: github.event_name != 'push'
+        run: |
+          ls data/imported/*.json >/dev/null 2>&1 || { echo "No imports to save."; exit 0; }
+          rm -rf /tmp/data && mkdir -p /tmp/data/imported && cp data/imported/*.json /tmp/data/imported/
+          cd /tmp/data && git init -q -b data && git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Imported models and datasets ($(date -u +%F))"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data
       - name: Assemble the public site
         # Only public files: data/seed/ keeps internal research notes and is never published.
         run: |
           mkdir -p _site/data
           cp index.html style.css app.js CNAME .nojekyll _site/
-          cp data/catalog.json _site/data/
+          cp data/*.json _site/data/
           sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

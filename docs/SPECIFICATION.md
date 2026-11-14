@@ -62,6 +62,7 @@ Rule shape:
 - Web AI apps are included when they have a working official site and a clear AI function. Popular apps are always in.
 - Hosting providers are included when their official site lists AI-capable compute or model hosting and its regions.
 - Conversions and quantizations attach to their parent as distributions or variants. They never become standalone families.
+- **Bulk imports (tools/import.mjs, provisional numbers):** from Hugging Face, the most downloaded, most liked and trending models across 15 tasks (text, vision, speech, image, embedding and more), plus up to 10 models per gap language (40+ non-English languages) with at least 200 downloads. Datasets: the most downloaded and most liked, plus up to 6 per gap language. Quantized copies are skipped. From the Ollama library, every model family: matched to its Hugging Face record by name and size when possible, otherwise listed on its own. Model cards supply papers, GitHub and documentation links. Hand-researched seed records always win over imports.
 
 ## 5. Sources
 
@@ -149,7 +150,15 @@ Key claims: `data_centers`, `gpu_types`, `data_residency` and everything in `acc
 
 Phase 1.5 offerings add CPU, RAM, GPU count and memory, and storage per configuration.
 
-### 7.5 Identity tests
+### 7.5 Dataset records
+
+Extra fields: `tasks`, `modalities`, `formats`, `size_category` (as the source states it), `paper_urls`, `popularity`.
+
+Key claims: `license`, `availability` (`downloadable` or `gated`), `languages`.
+
+Datasets link out to their source page, papers, code and documentation. CleverFox never hosts dataset files.
+
+### 7.6 Identity tests
 
 No two public records share a distribution URL, source-native ID or official app or provider domain, unless there's an explicit relation between them.
 
@@ -195,6 +204,7 @@ CleverFox takes no reports from people directly. It reads what people already po
 ## 11. Freshness and storage
 
 - **Commit only on content change.** Per-record check times (`last_checked_at`) live in a small separate status file.
+- Imported records live on the `data` branch, overwritten as a single commit, so daily popularity changes don't grow the repo's history. Generated files (`data/*.json`) are built at deploy time and not committed.
 - Each source tracks a `last_successful_check`. A successful scan overall must not imply every source refreshed. Publish a source status page and freshness warnings.
 - **Records are never silently lost:** withdrawals, deletions, dead apps and broken links are marked, not dropped. Unavailable listings can leave normal results, but their record stays. Connector or AI failures keep last-known-good data.
 - Store only small metadata, original content and site assets. Never model weights, datasets, images or archives. Public feedback is kept as links to the posts.
@@ -290,6 +300,9 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 - Operating budget and migration thresholds.
 - Confirm the provisional success targets after launch.
 
-## 20. Next step
+## 20. Next steps
 
-Build a **seed prototype** before the pipeline: about 50 hand-entered records (≈20 models, 20 apps, 10 hosting providers), weighted toward non-US listings, rendered as a static page with the country picker and filters. It tests the schema, the access block and the five journeys. Hand-entered seed records follow the precedent of Flattery's hand-picked `established.json`. Every seed record must still carry real sources.
+The seed prototype and the first bulk import (Hugging Face models and datasets, Ollama library) are built and deployed. Next:
+1. **X monitoring** (section 9): search queries for announcements in many languages, then replies and quotes for feedback. Needs an X API bearer token as a repo secret and a read budget.
+2. Other directories that link out: more model hubs (ModelScope, Kaggle, GitHub releases), API model lists (provider docs, aggregators), app directories for the web AI app list.
+3. Publisher countries for imported models, from official sources.

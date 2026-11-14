@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CleverFox: AI models, apps and hosting you can actually use</title>
-<meta name="description" content="Find AI models, apps and hosting from every source, and see whether you can use them from your country: free options, paying without a card, local models and nearby data centers.">
+<title>CleverFox: AI models, datasets, apps and hosting you can actually use</title>
+<meta name="description" content="Find AI models, datasets, apps and hosting from every source, and see whether you can use them from your country: free options, paying without a card, local models and nearby data centers.">
 <link rel="stylesheet" href="style.css?v=__BUILD__">
 <script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
@@ -18,29 +18,31 @@
     </label>
   </div>
   <div class="wrap">
-    <p class="tagline">AI models, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
+    <p class="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
   </div>
 </header>
 
 <main class="wrap">
   <nav class="tabs" role="tablist" aria-label="Listing type">
     <button role="tab" id="tab-model" data-type="model" aria-selected="true">Models <span class="count"></span></button>
+    <button role="tab" id="tab-dataset" data-type="dataset" aria-selected="false">Datasets <span class="count"></span></button>
     <button role="tab" id="tab-app" data-type="app" aria-selected="false">Apps <span class="count"></span></button>
     <button role="tab" id="tab-host" data-type="host" aria-selected="false">Hosting <span class="count"></span></button>
   </nav>
 
   <div class="controls">
-    <input id="q" type="search" placeholder="Search name, publisher, language…" aria-label="Search">
+    <input id="q" type="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
     <div id="filters" class="filters"></div>
   </div>
 
   <p id="summary" class="summary" aria-live="polite"></p>
   <ul id="list" class="list"></ul>
   <p id="empty" class="empty" hidden>Nothing matches these filters.</p>
+  <p class="more-wrap"><button id="more-btn" class="more-btn" type="button" hidden>Show more</button></p>
 </main>
 
 <footer class="wrap foot">
-  <p><strong>Prototype</strong> with a small hand-researched seed catalog. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
+  <p><strong>Prototype.</strong> Hand-researched listings plus models and datasets imported from Hugging Face and the Ollama library. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
   <p>Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Theme: auto</button></p>
   <p id="generated" class="muted"></p>
 </footer>
