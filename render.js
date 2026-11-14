@@ -82,7 +82,7 @@ export function goodForLine(r) {
 export function cardBadges(r) {
   const b = [];
   const a = r.answers || {};
-  if (a.no_barriers) b.push(badge('🔓 No barriers', 'b-ok'));
+  if (a.no_barriers) b.push(badge('🕊️ No barriers', 'b-ok'));
   else if (a.barriers?.length && r.type !== 'host') b.push(badge(`🚧 ${a.barriers[0]}${a.barriers.length > 1 ? ` +${a.barriers.length - 1}` : ''}`, 'b-warn'));
   if (r.hardware) {
     const need = r.hardware.min_memory_gb;
@@ -177,7 +177,7 @@ export function glance(r) {
       r.type === 'model' && item('💻', a.runs_locally ? `${ok} local${r.local_runtimes?.length ? ` <span class="muted">${esc(r.local_runtimes.join(', '))}</span>` : ''}` : `${bad} no local version`),
       sizes.length && item('⬇️', `from ${gb(sizes[0])}`),
       item('🆓', isFree ? `${ok} ${esc(FREE_TEXT[a.free])}` : a.free === 'paid' ? `${bad} paid` : unknownTxt),
-      item(a.gate === 'none' ? '🔓' : '🔒', esc(GATE_TEXT[a.gate] || 'No sign-in')),
+      item(a.gate === 'none' ? '🚪' : '🔒', esc(GATE_TEXT[a.gate] || 'No sign-in')),
       item('📜', lic || unknownTxt),
     ]);
   }
@@ -202,7 +202,7 @@ export function glance(r) {
       langs.length && item('🗣️', langs.length > 4 ? `${langs.length} languages` : esc(langs.map(langName).join(', ')), langs.map(langName).join(', ')),
     ]);
   }
-  if (a.uncensored || a.barriers?.length) h += line([a.uncensored && item('🔓', '<strong>uncensored</strong>', 'Abliterated or uncensored variant: refusals removed by its publisher'), ...(a.barriers || []).map((x) => item('🚧', esc(x)))]);
+  if (a.uncensored || a.barriers?.length) h += line([a.uncensored && item('✂️', '<strong>uncensored</strong>', 'Abliterated or uncensored variant: refusals removed by its publisher'), ...(a.barriers || []).map((x) => item('🚧', esc(x)))]);
   return h + '</div>';
 }
 

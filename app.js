@@ -35,7 +35,7 @@ function filterDefs(type) {
     { key: 'local', toggle: '💻 Runs locally' },
     { key: 'fits', toggle: '✓ Fits my device', needsMem: true },
     { key: 'free', toggle: '🆓 Free' },
-    { key: 'nobar', toggle: '🔓 No barriers' },
+    { key: 'nobar', toggle: '🕊️ No barriers' },
     { key: 'uncensored', toggle: 'Uncensored / abliterated' },
     { key: 'bench', toggle: '📊 Has benchmarks' },
   ];
@@ -43,7 +43,7 @@ function filterDefs(type) {
     { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
     { key: 'size', label: 'Any size', opts: options(recs.map((r) => r.size_category)) },
-    { key: 'nobar', toggle: '🔓 No barriers' },
+    { key: 'nobar', toggle: '🕊️ No barriers' },
     { key: 'nogate', toggle: 'No sign-in gate' },
   ];
   if (type === 'app') return [
