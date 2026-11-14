@@ -115,18 +115,49 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** AI servers and hosting (providers, GPU/VM offerings, managed model hosting, inference endpoints), with local data centers first-class, are part of Phase 1. Environment templates and deployment compatibility move to phase 2 with datasets and guides. Pricing becomes phase 3.
 **Why:** the owner's call. Supersedes the phase placement in entry 25. Phase 1 now covers models, web AI apps, hosting, and access and payment information for all three.
 
+### 27. Catalog and access carry equal weight
+**Situation:** the second review argued that "AI access for people outside the US" is the unique idea and should be the headline.
+**Decision:** both ideas lead equally: a global catalog of models, apps and hosting, with access information (country, payment without a card, local, language, nearby data centers) built in.
+**Why:** the owner's choice. The competitor scan (spec section 16) shows the access angle is where CleverFox has no neutral competitor, so it drives the long-tail pages.
+
+### 28. Community reports, labeled and automated
+**Situation:** payment methods, country availability and free-tier limits are rarely published in machine-readable form, so official-only automation would leave most access fields `unknown`.
+**Decision:** people can submit access facts with evidence (screenshot or link, personal data removed). An automated check accepts or rejects them. Accepted reports show as `community_reported`, separate from official facts and never overriding them, and go stale after 30 days. No manual approval. This amends entry 11: listings are still automated, but the community now feeds access facts.
+**Why:** the owner's choice, and the only realistic way to fill the access data.
+
+### 29. Thin Phase 1, then 1.5
+**Decision:** Phase 1 keeps all three types but thin: models from Hugging Face, Ollama and official API docs; top apps; hosting at provider + region + GPU types. Phase 1.5 adds more sources and apps, individual hosting offerings and hardware fit.
+**Why:** the owner's choice, to make the launch achievable. Refines entry 26.
+
+### 30. Scam reports and warnings, no other trust signals
+**Decision:** anyone can report a scam with evidence. Listings show `reported`, or `dont_touch` (like Flattery's ☠️) above a threshold, and stay visible with the warning. Trust signals (domain age, company identity) and privacy facts (data jurisdiction, training use) are not added.
+**Why:** the owner picked only report/warning from the options offered.
+
+### 31. Access data stays global, not per country
+**Decision:** one access block per listing. Country-specific limits on a payment method go in a free-text note on that method (e.g. "India only").
+**Why:** the owner's choice, for simplicity. Trade-off: a "pay without a card in my country" filter can mislead when a method works only in some countries. The country picker filters on `countries_available` and highlights notes.
+
+### 32. English interface with a country picker first
+**Decision:** English interface. A country picker filters everything, search handles non-Latin scripts, and translation comes later.
+
+### 33. Catalog data under CC BY 4.0
+**Decision:** the catalog data is CC BY 4.0, published as downloadable JSON. The code stays MIT.
+
+### 34. Hardware fit in phase 1.5
+**Decision:** file sizes per format plus clearly labeled RAM/VRAM estimates arrive in phase 1.5. Supersedes entry 13's "out of scope for now".
+
+### 35. User journeys, competitors and provisional targets in the spec
+**Decision:** the spec now has five user journeys (section 2) that the site must answer, a competitor table (section 16), and provisional success targets (section 1) proposed by Claude, to adjust after launch.
+
+### 36. Authorized aggregators count as access routes
+**Situation:** the competitor scan found that few major AI providers accept crypto or local payment directly. People use API aggregators or crypto-funded virtual cards.
+**Decision:** authorized API aggregators are listed as model distributions with their own access block, labeled as aggregators. Account resellers and gray-market routes stay excluded (entry 24). Virtual cards aren't listed per service.
+**Why:** without this, "pay for this model with crypto" would almost always say no, which isn't true. Claude's proposal; confirm.
+
+### 37. Seed prototype next
+**Decision:** before the pipeline, build about 50 hand-entered records with real sources (≈20 models, 20 apps, 10 hosting providers), weighted toward non-US listings, rendered as a static page with the country picker and filters.
+**Why:** it tests the schema and the journeys cheaply. The owner chose this as the next step.
+
 ## Open decisions
 
-- UI framework/static generator and search library.
-- Inclusion thresholds per source, the tracked publisher list, and the gap rules for obscure, regional and low-resource-language models.
-- Regional hubs, labs and communities to watch.
-- Whether the site interface is translated (e.g. Arabic, right-to-left), or only the catalog is multilingual.
-- When to bring hardware fit back into scope.
-- Refresh window for payment and availability facts.
-- Seed list of local and regional data-center and GPU providers by country.
-- Whether to add "how to pay" guides per payment method (official routes only).
-- Scan cadence and refresh tiers.
-- AI models for extraction, and spending caps.
-- Each connector's permitted use.
-- Coverage target.
-- Operating budget and migration thresholds.
+See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

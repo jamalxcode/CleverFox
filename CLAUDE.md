@@ -4,22 +4,26 @@ This file guides Claude Code when working in this repository.
 
 ## Overview
 
-CleverFox (planned at https://cleverfox.sala.company) is a cross-source catalog of AI models: one place to find a model wherever it lives (Hugging Face, GitHub, Ollama, Kaggle, ModelScope and other hubs, plus API-only providers such as OpenAI, Anthropic and Google). It covers obscure as well as well-known models, with special focus on models people can run locally and on models from outside the US or built for other languages and regions. It also lists web-based AI apps and services, popular and obscure. For every app and paid API it shows how you can get access: free tiers, payment methods beyond international cards (crypto, mobile money, UPI, Pix, app-store billing and others), a "no card needed" flag and country availability, because many people outside the US have no card or bank account. AI servers and hosting are listed by data-center location, including local and regional providers. It is a metadata directory, not a hosting or execution platform. Every listing links out to its canonical sources.
+CleverFox (planned at https://cleverfox.sala.company) is a global catalog of AI models, web AI apps and AI hosting, with access information built in. The two carry equal weight:
+- **Catalog:** models from every source (Hugging Face, Ollama, GitHub, Kaggle, ModelScope, API-only providers), web AI apps, and hosting providers by data-center location. Obscure listings sit alongside well-known ones.
+- **Access from anywhere:** for people outside the US, whether a listing is available in their country, how to pay without an international card (crypto, mobile money, UPI, Pix, app-store billing and others), what's free, whether a model runs locally, language support, and local data centers.
 
-The product spec is `docs/SPECIFICATION.md`. Read it, and `docs/DECISIONS.md`, before making design or data decisions. They are the source of truth until code exists. The original proposal is archived in `docs/archive/` for history only; don't follow it where the current spec differs.
+It is a metadata directory: it links to official sources and never hosts model files, runs inference, provisions servers or takes payments.
+
+Read `docs/SPECIFICATION.md` (the spec, including user journeys and competitors) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
 
 ## Current state
 
-No code yet: just docs and an MIT license. Still open (spec section 17 and the end of DECISIONS.md): the stack and search library, inclusion thresholds and gap rules, regional sources to watch, interface translation, scan cadence, AI models and budgets. Don't present these as decided; propose and confirm.
+No code yet: docs and licenses only (MIT for code, CC BY 4.0 for catalog data). **Next step: a seed prototype** (spec section 20): about 50 hand-entered records with real sources, rendered as a static page with a country picker and filters. Open items are in spec section 19. Don't present them as decided.
 
 ## Intended architecture (from the spec)
 
-- Hosting: static files on GitHub Pages at `cleverfox.sala.company`, with the build kept portable.
-- Pipeline: a scheduled Node workflow in GitHub Actions, modeled on Flattery (`jamalxcode/flattery`): scan sources -> extract candidates -> normalize -> resolve identity across sources -> verify at the primary source -> persist small records (commit only on content change) -> generate detail pages, compact search index and feed -> deploy. No backend.
-- Listings are chosen by written automated inclusion rules (no human review) plus a corrections file. Gap rules let obscure, regional and low-resource-language models in, not popularity alone.
-- Structured API data first. AI classifies, fills gaps and summarizes; a labeled test set in CI guards extraction accuracy.
-- Social sources (X, Hacker News, Reddit, non-English communities) only create candidates.
-- Phases: (1) models, web AI apps, and AI servers and hosting with local data centers first-class, plus access/payment info for all three; (2) environment templates, deployment compatibility, datasets and AI-written guides; (3) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
+- Static files on GitHub Pages at `cleverfox.sala.company`. Vanilla HTML/CSS/JS like Flattery. First load under 200 KB, excluding the search index. English interface with a country picker.
+- A scheduled Node pipeline in GitHub Actions, modeled on Flattery (`jamalxcode/flattery`): scan -> extract -> normalize -> resolve identity -> verify at the primary source -> merge community reports and corrections -> persist (commit only on content change) -> pages, index, feeds -> deploy. No backend.
+- Records share a base schema (spec 7.1) and come in three types: `model`, `app`, `host`. Apps, paid API distributions and hosts have an `access` block (spec 8a). It is global per listing, with country limits in each method's note.
+- Automated inclusion rules, with gap rules for obscure, regional and no-card listings. A corrections file. Community reports (labeled `community_reported`, evidence-checked automatically, stale after 30 days). Scam reports drive `reported` and `dont_touch` warnings.
+- Structured API data first. AI classifies, fills gaps, checks report evidence and summarizes. A labeled test set in CI guards accuracy.
+- Phases: 1 thin (models from HF, Ollama and API docs; top apps; hosting providers), 1.5 (more sources, offerings, hardware fit), 2 (templates, datasets, guides), 3 (pricing).
 
 ## Rules that must hold
 
@@ -33,7 +37,7 @@ No code yet: just docs and an MIT license. Still open (spec section 17 and the e
 - Keep popularity, availability, compatibility, evidence and performance separate. No universal "best model" score. Open weights is not open source; parameter count is not a VRAM requirement; publisher benchmarks are not verified results; dataset access is not a reuse license.
 - Records are never silently lost: mark withdrawals, deletions and broken links instead of dropping them. Connector or AI failures keep last-known-good data and surface freshness warnings. A successful scan must not imply every source refreshed.
 - Secrets live only in workflow secrets; never in generated files, logs or client bundles. Respect each source's terms, rate limits (handle HTTP 429 with backoff) and attribution.
-- Access facts (free tier, payment methods, countries, signup) come from official sources with source and observation time, or are `unknown`. List only official payment routes: no resellers, account sellers or guides to getting around country restrictions or sanctions.
+- Access facts carry a source, source type (`official`, `third_party`, `independently_verified`, `community_reported`) and observation time, or are `unknown`. Community claims never override official ones. List official payment routes and labeled authorized API aggregators only: no account resellers, gray-market top-ups or guides to getting around country restrictions or sanctions.
 - Prices (later) are separate observations with source, timestamp, currency, billing unit, region and conditions. Never claim "cheapest" without equivalent configurations.
 - Stay a public informational directory. No accounts, checkout, subscriptions or provisioning without a hosting-policy review (GitHub Pages disallows commercial SaaS/e-commerce use).
 - Don't generate a page per filter combination; generate detail pages and compact indexes, and load full records only when needed.

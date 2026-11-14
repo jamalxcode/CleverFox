@@ -1,24 +1,24 @@
 # CleverFox
 
-A cross-source catalog of AI models: one place to find a model wherever it lives, whether that's Hugging Face, GitHub, Ollama, Kaggle, ModelScope or an API-only provider. It also lists web-based AI apps, popular and obscure. It covers obscure as well as well-known models, with special focus on models you can run locally and on models from outside the US or built for other languages and regions.
+A global catalog of AI models, AI apps and AI hosting, built for people everywhere, not just the US.
 
-For every app and paid API, CleverFox shows how you can actually get access: what's free, and whether you can pay with crypto, mobile money, UPI, Pix, app-store billing or other methods that don't need a Visa or Mastercard. Many people outside the US don't have one.
+- **Find it wherever it lives:** models from Hugging Face, Ollama, GitHub, Kaggle, ModelScope and API-only providers; web AI apps; and AI servers and hosting by data-center location. Obscure listings sit alongside well-known ones.
+- **See if you can actually use it:** whether it's available in your country, whether it's free, and whether you can pay without a Visa or Mastercard (crypto, mobile money, UPI, Pix, app-store billing and more). Also whether it runs locally on your own machine, which languages it supports, and whether there's a data center near you.
 
-It also lists AI servers and hosting by data-center location, including local and regional providers, so people can run AI close to home.
+CleverFox is a metadata directory. It links to official sources and never hosts model files. It will be a lightweight static site at https://cleverfox.sala.company, built by a scheduled pipeline on GitHub Actions. Facts carry their sources, and community reports are labeled as such.
 
-CleverFox is a metadata directory. It links to each model's official sources and never hosts model files. It will be a static site at https://cleverfox.sala.company, built by a scheduled pipeline on GitHub Actions.
-
-**Status:** design stage, no code yet.
+**Status:** design stage, no code yet. Next: a seed prototype.
 
 ## Docs
 
-- [Specification](docs/SPECIFICATION.md): what CleverFox is and how it will work.
-- [Decisions](docs/DECISIONS.md): what was decided and why, plus open questions.
+- [Specification](docs/SPECIFICATION.md): what CleverFox is, user journeys, competitors and how it will work.
+- [Decisions](docs/DECISIONS.md): what was decided and why.
 - [Conversation log](docs/CONVERSATIONS.md): notes from design sessions.
 
 ## Roadmap
 
-1. Models across all sources, web AI apps, and AI servers and hosting searchable by local data-center location, all with access and payment options, evidence, verification and freshness shown.
+1. Thin launch: models (Hugging Face, Ollama, API-only), top AI apps and hosting providers, with access and payment info, community reports, scam warnings and a country picker.
+1.5. More sources and apps, individual hosting offerings, and "will it run on my machine?".
 2. Environment templates, datasets and short guides.
 3. Timestamped pricing comparisons.
 
@@ -28,4 +28,4 @@ Issues and pull requests are welcome. For larger changes, open an issue first.
 
 ## License
 
-[MIT](LICENSE)
+Code: [MIT](LICENSE). Catalog data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

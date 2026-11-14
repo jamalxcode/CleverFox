@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: second review and answers
+**Where:** Claude Code session.
+**Asked:** critique what's been gathered so far and what could be better, then go through the questions one by one.
+**Outcome:** the catalog and access ideas carry equal weight. Community reports are allowed (labeled, automated checks). Phase 1 is thin, with a phase 1.5. Scam reports and warnings, but no other trust or privacy signals. Access data stays global. English interface with a country picker. Data under CC BY 4.0. Hardware fit in phase 1.5. Claude drafted five user journeys and provisional targets, and ran a competitor scan: app directories, model price sites, GPU price finders and vendor "pay with crypto" pages. Few big AI providers take crypto directly, so Claude proposed listing authorized API aggregators as routes (DECISIONS 36, to confirm). Spec rewritten; DECISIONS 27–37 added. Next step: a seed prototype of about 50 records.
+**Open:** spec section 19.
+
 ## 2026-11-14: hosting into Phase 1
 **Where:** Claude Code session.
 **Asked:** move hosting to Phase 1.
