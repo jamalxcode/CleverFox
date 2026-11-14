@@ -211,7 +211,7 @@ Every app record, and every paid API distribution of a model, has an `access` bl
 - Analytics via the shared GoatCounter snippet.
 - WCAG AA contrast and no sideways scrolling on phones, as in Flattery.
 
-## 11. Guides (phase 2)
+## 11. Guides (phase 3)
 
 AI writes short original guides from official documentation, under the same evidence rules: every material claim links its source, and nothing is invented. Upstream docs are linked, not mirrored.
 
