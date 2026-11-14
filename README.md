@@ -1,40 +1,28 @@
 # CleverFox
 
-A new project. This README is a starting point; update it as the project takes shape.
+A cross-source catalog of AI models: one place to find a model wherever it lives, whether that's Hugging Face, GitHub, Ollama, Kaggle, ModelScope or an API-only provider. It covers obscure as well as well-known models, with special focus on models you can run locally and on models from outside the US or built for other languages and regions.
 
-## About
+CleverFox is a metadata directory. It links to each model's official sources and never hosts model files. It will be a static site at https://cleverfox.sala.company, built by a scheduled pipeline on GitHub Actions.
 
-Describe what CleverFox does, who it is for, and the problem it solves.
+**Status:** design stage, no code yet.
 
-The proposed product specification is in [docs/SPECIFICATION.txt](docs/SPECIFICATION.txt). Design decisions are recorded in [docs/DECISIONS.md](docs/DECISIONS.md) and conversation notes in [docs/CONVERSATIONS.md](docs/CONVERSATIONS.md).
+## Docs
 
-## Getting started
+- [Specification](docs/SPECIFICATION.md): what CleverFox is and how it will work.
+- [Decisions](docs/DECISIONS.md): what was decided and why, plus open questions.
+- [Conversation log](docs/CONVERSATIONS.md): notes from design sessions.
 
-### Prerequisites
+## Roadmap
 
-List the tools and versions needed to build or run the project.
-
-### Installation
-
-```sh
-git clone https://github.com/jamalxcode/cleverfox.git
-cd cleverfox
-```
-
-Then add the steps to install dependencies.
-
-### Usage
-
-Explain how to run or use the project, with an example.
-
-## Project structure
-
-Outline the main folders and files once they exist.
+1. Models across all sources, with evidence, verification and freshness shown.
+2. Datasets and short guides.
+3. Compute offerings and environment templates.
+4. Timestamped pricing comparisons.
 
 ## Contributing
 
-Issues and pull requests are welcome. For larger changes, open an issue first to discuss what you would like to change.
+Issues and pull requests are welcome. For larger changes, open an issue first.
 
 ## License
 
-No license has been chosen yet. Until one is added, all rights are reserved.
+[MIT](LICENSE)

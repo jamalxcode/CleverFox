@@ -4,6 +4,8 @@ What we decided while designing and building CleverFox, and why. Each entry give
 
 The open questions are listed at the bottom. Move one into a numbered entry once it is decided.
 
+Entries 1–8 came from the original proposal and were confirmed by the owner on 2026-11-14. Entries 9 onward are the owner's answers to the first review that day.
+
 ## Product
 
 ### 1. A metadata directory, not a host
@@ -40,14 +42,66 @@ The open questions are listed at the bottom. Move one into a numbered entry once
 **Decision:** no accounts, checkout or subscriptions while on GitHub Pages.
 **Why:** GitHub Pages disallows use as free hosting for commercial SaaS or e-commerce. Review hosting before any monetization.
 
+### 9. A cross-source model catalog
+**Situation:** the review found no user or wedge: Hugging Face already does model search well.
+**Decision:** CleverFox is one place to find a model wherever it lives: Hugging Face, GitHub, other hubs (Ollama, Kaggle, ModelScope) and API-only providers (OpenAI, Anthropic, Google, …). Each model record lists all its distributions.
+**Why:** Hugging Face covers only its own hub and leaves out closed, API-only models. The owner chose this over "where to run it", a release tracker or a beginner guide.
+
+### 10. Obscure, local and non-US models are the focus
+**Decision:** include obscure models as well as well-known ones. Give special focus to models people can run locally, and to models from outside the US or built for other languages and regions. Language, publisher region, local formats and runtimes are first-class fields and filters. Inclusion rules give niche models a way in through gap rules, not popularity alone.
+**Why:** the owner's stated idea. Popularity thresholds alone would show only the famous, mostly US models every other site already covers.
+
+### 11. Automated inclusion rules, no human review
+**Decision:** written rules decide listings, and a corrections file fixes mistakes, as in Flattery.
+**Why:** the owner's choice. It makes the written inclusion rules part of the product.
+
+### 12. Phase 1 is models only
+**Situation:** the original plan put models and datasets in Phase 1.
+**Decision:** Phase 1 is models only, done well. Then datasets and guides; then compute and templates; then pricing.
+**Why:** a smaller first launch. This supersedes the original phase plan.
+
+### 13. Hardware fit is out of scope for now
+**Decision:** no "will it run on my GPU?" answers or VRAM estimates in the first version. Local formats, runtimes and listed download sizes are shown.
+**Why:** the owner's choice. Revisit early, because entry 10 makes local use a focus.
+
+### 14. Sources stated per field for key claims
+**Decision:** license, availability, parameters, benchmarks and release date each carry their own value, source URL, source type (official, third-party, independently verified) and observation time. Other fields use the record's evidence list.
+**Why:** the original schema had one evidence list per record, which contradicted "keep the source next to each claim".
+
+### 15. "Verified" means confirmed at the primary source
+**Decision:** `verified` means the canonical page or API was fetched and confirms the model exists and its availability. The other states are `candidate` and `check_failed`.
+**Why:** this can be checked automatically, which fits entry 11.
+
+### 16. Commit only on content change
+**Decision:** routine scans don't rewrite records. Check times live in a separate small status file.
+**Why:** avoids the git growth of rewriting the whole catalog each scan. The owner had no preference, so this is Claude's default.
+
+### 17. Structured data first, AI accuracy tested
+**Decision:** take fields from structured APIs wherever possible. AI classifies, fills gaps and summarizes. A hand-labeled test set of about 50 records runs in CI and blocks accuracy drops.
+**Why:** no human reviews listings, so accuracy must be measured. The owner had no preference, so this is Claude's default.
+
+### 18. AI-written guides under the evidence rules
+**Decision:** guides (phase 2) are AI-written from official docs. Every material claim links its source, and nothing is invented.
+**Why:** the owner's choice. The evidence rules keep it consistent with entry 5.
+
+### 19. Success means traffic, coverage, accuracy and personal use
+**Decision:** all four count. Traffic is measured with the shared GoatCounter.
+
+### 20. Name, domain and license
+**Decision:** CleverFox at `cleverfox.sala.company`, under the MIT license.
+
+### 21. Spec in Markdown
+**Decision:** the spec is `docs/SPECIFICATION.md`, revised with these answers. The original text is kept unchanged in `docs/archive/`.
+
 ## Open decisions
 
-From spec section 19, not yet decided:
-- Final product name, domain (CleverFox is the working repo name).
-- UI framework/static generator and search implementation.
-- Source/provider allowlist and connector permissions.
-- Scan cadence, refresh tiers, retention.
-- AI models, extraction schema enforcement, spending caps.
-- Initial catalog scope and inclusion thresholds.
-- Provider APIs, compatibility tests, price adapters.
+- UI framework/static generator and search library.
+- Inclusion thresholds per source, the tracked publisher list, and the gap rules for obscure, regional and low-resource-language models.
+- Regional hubs, labs and communities to watch.
+- Whether the site interface is translated (e.g. Arabic, right-to-left), or only the catalog is multilingual.
+- When to bring hardware fit back into scope.
+- Scan cadence and refresh tiers.
+- AI models for extraction, and spending caps.
+- Each connector's permitted use.
+- Coverage target.
 - Operating budget and migration thresholds.

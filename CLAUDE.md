@@ -4,28 +4,32 @@ This file guides Claude Code when working in this repository.
 
 ## Overview
 
-CleverFox is a planned discovery website for AI resources: models, datasets, VM/GPU compute offerings, environment templates and documentation, with third-party pricing comparisons later. It is a metadata directory, not a hosting or execution platform. Every listing links out to its canonical source for downloads, inference, access approval, provisioning, authentication and billing.
+CleverFox (planned at https://cleverfox.sala.company) is a cross-source catalog of AI models: one place to find a model wherever it lives (Hugging Face, GitHub, Ollama, Kaggle, ModelScope and other hubs, plus API-only providers such as OpenAI, Anthropic and Google). It covers obscure as well as well-known models, with special focus on models people can run locally and on models from outside the US or built for other languages and regions. It is a metadata directory, not a hosting or execution platform. Every listing links out to its canonical sources.
 
-The full product spec is `docs/SPECIFICATION.txt`. Read it before making design or data decisions; it is the source of truth until code exists.
+The product spec is `docs/SPECIFICATION.md`. Read it, and `docs/DECISIONS.md`, before making design or data decisions. They are the source of truth until code exists. The original proposal is archived in `docs/archive/` for history only; don't follow it where the current spec differs.
 
 ## Current state
 
-No code yet. The repo holds only `README.md`, this file and the spec. The framework, static generator, search implementation, product name/domain, source allowlist, scan cadence, AI models and budgets are all still open (spec section 19). Don't present any of these as decided; propose and confirm.
+No code yet: just docs and an MIT license. Still open (spec section 17 and the end of DECISIONS.md): the stack and search library, inclusion thresholds and gap rules, regional sources to watch, interface translation, scan cadence, AI models and budgets. Don't present these as decided; propose and confirm.
 
 ## Intended architecture (from the spec)
 
-- Hosting: static files on GitHub Pages, with the build kept portable so hosting can change.
-- Pipeline: a scheduled Node workflow in GitHub Actions, modeled on Flattery (`jamalxcode/flattery`): scan sources -> extract candidates -> normalize -> deduplicate and resolve relationships -> verify against primary evidence -> persist small metadata records -> generate static detail pages and compact search indexes -> deploy. No backend, and nothing runs in visitors' browsers except search over prebuilt indexes.
-- Source priority: Hugging Face APIs, official repos and releases, official publisher announcements and docs, provider pages, then X and Hacker News as supplementary discovery only. An announcement creates a candidate; it proves nothing about availability, license or performance.
-- Phases: (1) curated models and datasets, detail pages, recent-announcements feed, visible evidence and freshness; (2) compute, templates, guides, relationships and compatibility; (3) pricing.
+- Hosting: static files on GitHub Pages at `cleverfox.sala.company`, with the build kept portable.
+- Pipeline: a scheduled Node workflow in GitHub Actions, modeled on Flattery (`jamalxcode/flattery`): scan sources -> extract candidates -> normalize -> resolve identity across sources -> verify at the primary source -> persist small records (commit only on content change) -> generate detail pages, compact search index and feed -> deploy. No backend.
+- Listings are chosen by written automated inclusion rules (no human review) plus a corrections file. Gap rules let obscure, regional and low-resource-language models in, not popularity alone.
+- Structured API data first. AI classifies, fills gaps and summarizes; a labeled test set in CI guards extraction accuracy.
+- Social sources (X, Hacker News, Reddit, non-English communities) only create candidates.
+- Phases: (1) models only; (2) datasets and AI-written guides; (3) compute and templates; (4) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
 
 ## Rules that must hold
 
 - Never commit or publish model weights, datasets, VM images or other large resource files. Store only small metadata, original content and site assets.
 - Never invent metadata. Unknown values stay `null` or explicitly unknown; AI output is not certification. Material claims keep their evidence URLs.
-- Every listing has a stable ID (source-native where possible, e.g. `hf:model:org/name`), type, canonical URL, `first_seen_at`, `last_checked_at`, availability and verification status.
+- Every record has a stable internal ID (`cf:model:<publisher>/<slug>`, never reassigned), `schema_version`, one entry per distribution (source, native ID, URL), availability and `verification_status` (`candidate`, `verified` = confirmed at the primary source, or `check_failed`).
+- License, availability, parameters, benchmarks and release date carry their own source URL, source type (official / third_party / independently_verified) and observation time.
+- Language, publisher region, formats and local readiness come from evidence or are `unknown`.
 - Availability values are distinct: announced, downloadable, gated, API-only, discontinued/withdrawn, unknown. Announced is never shown as available.
-- Models are hierarchical (family -> release -> official variants -> community conversions/quantizations). Don't flatten versions into one record or treat each quantization as a new family.
+- One model record per model across all sources; no two public records share a distribution URL or native ID. Models are hierarchical with typed relations (`variant_of`, `finetune_of`, `quantization_of`, `merge_of`, `adapter_of`, `successor_of`). Don't flatten versions or treat a quantization as a new family.
 - Keep popularity, availability, compatibility, evidence and performance separate. No universal "best model" score. Open weights is not open source; parameter count is not a VRAM requirement; publisher benchmarks are not verified results; dataset access is not a reuse license.
 - Records are never silently lost: mark withdrawals, deletions and broken links instead of dropping them. Connector or AI failures keep last-known-good data and surface freshness warnings. A successful scan must not imply every source refreshed.
 - Secrets live only in workflow secrets; never in generated files, logs or client bundles. Respect each source's terms, rate limits (handle HTTP 429 with backoff) and attribution.
@@ -36,7 +40,8 @@ No code yet. The repo holds only `README.md`, this file and the spec. The framew
 ## Conventions
 
 - Design notes live in `docs/`:
-  - `docs/SPECIFICATION.txt`: the product spec. Update it when a decision changes the design.
+  - `docs/SPECIFICATION.md`: the product spec. Update it when a decision changes the design.
   - `docs/DECISIONS.md`: numbered decisions with situation, decision and why. Add an entry whenever something is decided or reversed (mark old ones superseded, don't rewrite them), and move items out of its open list as they're settled.
   - `docs/CONVERSATIONS.md`: a brief log of each design conversation or working session, newest first. Add an entry at the end of any session that discusses or changes the design. When the user pastes notes from another conversation, summarize them here and move lasting decisions into DECISIONS.md.
+- Keep the shared GoatCounter snippet (endpoint `https://salacompany.goatcounter.com/count`) on every page once the site exists.
 - Update this file with real commands (install, test, scan, build) once code exists.
