@@ -1,0 +1,182 @@
+{
+ "_about": "Hugging Face account -> organisation name to look up on Wikidata (tools/publishers.mjs). Only organisations go here, never individuals. Fix a wrong match by setting \"qid\" explicitly, or remove the entry.",
+ "publishers": {
+  "ai4bharat": {
+   "name": "AI4Bharat"
+  },
+  "Alibaba-NLP": {
+   "name": "Alibaba Group"
+  },
+  "allenai": {
+   "name": "Allen Institute for AI"
+  },
+  "BAAI": {
+   "name": "Beijing Academy of Artificial Intelligence"
+  },
+  "baidu": {
+   "name": "Baidu"
+  },
+  "black-forest-labs": {
+   "name": "Black Forest Labs"
+  },
+  "ByteDance-Seed": {
+   "name": "ByteDance"
+  },
+  "cais": {
+   "name": "Center for AI Safety"
+  },
+  "cardiffnlp": {
+   "name": "Cardiff University"
+  },
+  "CohereLabs": {
+   "name": "Cohere"
+  },
+  "coqui": {
+   "name": "Coqui (company)"
+  },
+  "deepseek-ai": {
+   "name": "DeepSeek"
+  },
+  "EleutherAI": {
+   "name": "EleutherAI"
+  },
+  "facebook": {
+   "name": "Meta Platforms"
+  },
+  "google": {
+   "name": "Google"
+  },
+  "google-t5": {
+   "name": "Google"
+  },
+  "Helsinki-NLP": {
+   "name": "University of Helsinki"
+  },
+  "HuggingFaceFW": {
+   "name": "Hugging Face"
+  },
+  "HuggingFaceH4": {
+   "name": "Hugging Face"
+  },
+  "HuggingFaceM4": {
+   "name": "Hugging Face"
+  },
+  "HuggingFaceTB": {
+   "name": "Hugging Face"
+  },
+  "ibm-granite": {
+   "name": "IBM"
+  },
+  "inclusionAI": {
+   "name": "Ant Group"
+  },
+  "jinaai": {
+   "name": "Jina AI"
+  },
+  "laion": {
+   "name": "LAION"
+  },
+  "lerobot": {
+   "name": "Hugging Face"
+  },
+  "Lightricks": {
+   "name": "Lightricks"
+  },
+  "LiquidAI": {
+   "name": "Liquid AI"
+  },
+  "meta-llama": {
+   "name": "Meta Platforms"
+  },
+  "microsoft": {
+   "name": "Microsoft"
+  },
+  "MiniMaxAI": {
+   "name": "MiniMax"
+  },
+  "mistralai": {
+   "name": "Mistral AI"
+  },
+  "mixedbread-ai": {
+   "name": "Mixedbread"
+  },
+  "moonshotai": {
+   "name": "Moonshot AI"
+  },
+  "nanonets": {
+   "name": "Nanonets"
+  },
+  "ncbi": {
+   "name": "National Center for Biotechnology Information"
+  },
+  "nomic-ai": {
+   "name": "Nomic AI"
+  },
+  "NousResearch": {
+   "name": "Nous Research"
+  },
+  "nvidia": {
+   "name": "Nvidia"
+  },
+  "nyu-mll": {
+   "name": "New York University"
+  },
+  "openai": {
+   "name": "OpenAI"
+  },
+  "openbmb": {
+   "name": "ModelBest"
+  },
+  "PaddlePaddle": {
+   "name": "Baidu"
+  },
+  "Qdrant": {
+   "name": "Qdrant"
+  },
+  "Qwen": {
+   "name": "Alibaba Cloud"
+  },
+  "ResembleAI": {
+   "name": "Resemble AI"
+  },
+  "Salesforce": {
+   "name": "Salesforce"
+  },
+  "ServiceNow-AI": {
+   "name": "ServiceNow"
+  },
+  "Snowflake": {
+   "name": "Snowflake Inc."
+  },
+  "stabilityai": {
+   "name": "Stability AI"
+  },
+  "stepfun-ai": {
+   "name": "StepFun"
+  },
+  "Systran": {
+   "name": "Systran"
+  },
+  "tencent": {
+   "name": "Tencent"
+  },
+  "thinkingmachines": {
+   "name": "Thinking Machines Lab"
+  },
+  "tiiuae": {
+   "name": "Technology Innovation Institute"
+  },
+  "Tongyi-MAI": {
+   "name": "Alibaba Group"
+  },
+  "Wan-AI": {
+   "name": "Alibaba Group"
+  },
+  "XiaomiMiMo": {
+   "name": "Xiaomi"
+  },
+  "zai-org": {
+   "name": "Zhipu AI"
+  }
+ }
+}

@@ -1,0 +1,19 @@
+name: Publishers
+# Looks up publisher countries on Wikidata and commits data/publishers.json when it changed.
+on: { workflow_dispatch: {} }
+permissions: { contents: write }
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node tools/publishers.mjs
+      - name: Commit
+        run: |
+          git add data/publishers.json
+          if git diff --cached --quiet; then echo "Unchanged."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update publisher countries from Wikidata"
+          git push
