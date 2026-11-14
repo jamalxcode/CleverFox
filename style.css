@@ -45,7 +45,8 @@ a { color: var(--accent-text); }
 .top { border-bottom: 1px solid var(--line); background: var(--surface); }
 .top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; flex-wrap: wrap; }
 .brand { font-weight: 800; font-size: 1.35rem; text-decoration: none; color: var(--text); }
-.country { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
+.country { display: flex; align-items: center; gap: 8px; font-size: .9rem; min-width: 0; flex: 0 1 auto; }
+.country select { min-width: 0; width: 15rem; }
 .country-label { color: var(--muted); }
 select, input[type="search"] {
   font: inherit; color: var(--text); background: var(--surface);
@@ -64,7 +65,7 @@ select, input[type="search"] {
 .controls { display: grid; gap: 10px; }
 .controls input[type="search"] { width: 100%; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.filters select { font-size: .9rem; min-height: 36px; padding: 6px 8px; }
+.filters select { font-size: .9rem; min-height: 36px; padding: 6px 8px; max-width: 16rem; min-width: 0; }
 .toggle {
   display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; cursor: pointer;
   border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; min-height: 36px;
@@ -81,7 +82,7 @@ select, input[type="search"] {
 .pub { color: var(--muted); font-size: .88rem; }
 .desc { margin: 4px 0 8px; }
 .badges { display: flex; flex-wrap: wrap; gap: 6px; }
-.badge { font-size: .78rem; font-weight: 600; border-radius: 999px; padding: 2px 9px; background: var(--chip); color: var(--text); white-space: nowrap; }
+.badge { font-size: .78rem; font-weight: 600; border-radius: 999px; padding: 2px 9px; background: var(--chip); color: var(--text); white-space: normal; }
 .b-ok { background: var(--ok-bg); color: var(--ok); }
 .b-no { background: var(--no-bg); color: var(--no); }
 .b-unk { background: var(--unk-bg); color: var(--unk); }
@@ -111,6 +112,8 @@ details[open] .more { display: none; }
   .facts { grid-template-columns: 1fr; }
   .facts dt { margin-top: 6px; }
   .country-label { display: none; }
+  .country { flex: 1 1 100%; }
+  .country select { width: 100%; }
 }
 
 /* report form */
@@ -118,7 +121,7 @@ details[open] .more { display: none; }
 h1 { font-size: 1.5rem; margin: 20px 0 12px; }
 fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px 12px; margin: 0 0 14px; background: var(--surface); }
 legend { font-weight: 700; padding: 0 4px; }
-.field { display: grid; gap: 4px; margin: 0 0 14px; font-weight: 600; }
+.field { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; margin: 0 0 14px; font-weight: 600; }
 .field select, .field input, .field textarea { font-weight: 400; width: 100%; }
 fieldset .field:last-child { margin-bottom: 4px; }
 .choice { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; }

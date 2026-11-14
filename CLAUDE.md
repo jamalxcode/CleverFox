@@ -24,6 +24,7 @@ Node 22, no dependencies.
 npm test            # node tools/build.mjs --check: validate data/seed/*.json against the schema rules
 npm run build       # validate and write data/catalog.json (what the page loads)
 npm run serve       # python3 -m http.server 8000, then open http://localhost:8000
+node tools/phone-check.cjs  # with the server running: no sideways scrolling on four phone sizes (needs Playwright)
 ```
 
 ## Files
