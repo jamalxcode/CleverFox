@@ -6,7 +6,7 @@ A new project. This README is a starting point; update it as the project takes s
 
 Describe what CleverFox does, who it is for, and the problem it solves.
 
-The proposed product specification is in [docs/SPECIFICATION.txt](docs/SPECIFICATION.txt).
+The proposed product specification is in [docs/SPECIFICATION.txt](docs/SPECIFICATION.txt). Design decisions are recorded in [docs/DECISIONS.md](docs/DECISIONS.md) and conversation notes in [docs/CONVERSATIONS.md](docs/CONVERSATIONS.md).
 
 ## Getting started
 

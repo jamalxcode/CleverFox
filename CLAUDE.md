@@ -35,5 +35,8 @@ No code yet. The repo holds only `README.md`, this file and the spec. The framew
 
 ## Conventions
 
-- Keep `docs/SPECIFICATION.txt` in sync when a decision changes the design; record decisions as they are made.
+- Design notes live in `docs/`:
+  - `docs/SPECIFICATION.txt`: the product spec. Update it when a decision changes the design.
+  - `docs/DECISIONS.md`: numbered decisions with situation, decision and why. Add an entry whenever something is decided or reversed (mark old ones superseded, don't rewrite them), and move items out of its open list as they're settled.
+  - `docs/CONVERSATIONS.md`: a brief log of each design conversation or working session, newest first. Add an entry at the end of any session that discusses or changes the design. When the user pastes notes from another conversation, summarize them here and move lasting decisions into DECISIONS.md.
 - Update this file with real commands (install, test, scan, build) once code exists.
