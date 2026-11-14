@@ -17,10 +17,10 @@ CleverFox is a metadata directory. It links to official sources and never hosts 
 
 ## Roadmap
 
-1. Thin launch: models (Hugging Face, Ollama, API-only), top AI apps and hosting providers, with access and payment info, community reports, scam warnings and a country picker.
-1.5. More sources and apps, individual hosting offerings, and "will it run on my machine?".
-2. Environment templates, datasets and short guides.
-3. Timestamped pricing comparisons.
+- **Phase 1**, thin launch: models (Hugging Face, Ollama, API-only), top AI apps and hosting providers, with access and payment info, community reports, scam warnings and a country picker.
+- **Phase 1.5:** more sources and apps, individual hosting offerings, and "will it run on my machine?".
+- **Phase 2:** environment templates, datasets and short guides.
+- **Phase 3:** timestamped pricing comparisons.
 
 ## Contributing
 
