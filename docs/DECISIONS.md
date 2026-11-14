@@ -167,6 +167,10 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** the site's `report/` page sends reports to an ntfy.sh channel. Screenshots are re-encoded in the browser, which strips location data, and the reporter can black out areas and must confirm they hid personal details. The private repo `jamalxcode/cleverfox-reports` collects the channel hourly, applies rule checks, redacts card numbers, emails and phone numbers in notes, and stores reports privately. It commits only when new reports arrive. The AI evidence check and publishing accepted reports come next.
 **Why:** the owner chose a private repo so screenshots never become public. Trade-off: anyone who knows the channel name, which is visible in the page, can read reports for a few hours. The form warns about this.
 
+### 40. Evidence check by Claude, publishing through a deploy key
+**Decision:** each hour the private reports repo runs a check after collecting. Claude (`claude-opus-5-5`, medium effort, with the server-side refusal fallback) compares each report's screenshot or evidence page with its claim and returns a structured verdict. A report is accepted only if the evidence supports it, is about the listing, and shows no personal details. At most 20 checks run per hour, and failures are retried for 3 runs. Accepted reports become `public/community.json`: the fact, a neutral summary and a public evidence link only. A deploy key that can write only to `cleverfox` pushes that file as `data/community.json` when it changes, which redeploys the site. The catalog build attaches reports as `community_reported` claims, marks them stale after 30 days, and sets `reported` / `dont_touch` from accepted warnings (1 / 3 within 90 days, provisional).
+**Why:** decision 28 requires automated evidence checks with no manual approval. The deploy key keeps the private repo from needing broader access, and it can be revoked on its own. The model choice follows the default for new Claude API code; a cheaper model can be measured later against real reports.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

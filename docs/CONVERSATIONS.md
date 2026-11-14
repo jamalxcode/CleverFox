@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: evidence check and publishing
+**Where:** Claude Code session.
+**Asked:** build the evidence check and publish accepted reports.
+**Outcome:** `tools/check.mjs` and `tools/publish.mjs` in the private reports repo, with offline tests (Claude stubbed). The hourly workflow now runs collect, check, publish, commit, then push to CleverFox. The CleverFox build merges `data/community.json`, and the page shows a "Community reports" section and a per-country badge (DECISIONS 40). A deploy key was created for publishing.
+**Open:** the owner must add two secrets to `cleverfox-reports` (`ANTHROPIC_API_KEY`, `CLEVERFOX_DEPLOY_KEY`). Not yet run against the real API.
+
 ## 2026-11-14: community report form
 **Where:** Claude Code session.
 **Asked:** build the community report form.
