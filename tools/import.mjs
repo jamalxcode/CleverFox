@@ -23,9 +23,9 @@ const HF_HEADERS = process.env.HF_TOKEN ? { Authorization: `Bearer ${process.env
 // ---- inclusion rules (provisional; spec section 4) ----
 const RULES = QUICK ? { topModels: 20, likedModels: 10, trendingModels: 10, perLanguageModels: 2, perUncensoredTerm: 3, topDatasets: 15, likedDatasets: 5, perLanguageDatasets: 1, readmes: 40 }
   : { topModels: 250, likedModels: 120, trendingModels: 120, perLanguageModels: 10, perUncensoredTerm: 30, topDatasets: 150, likedDatasets: 80, perLanguageDatasets: 6, readmes: 2000 };
-const MIN_DOWNLOADS_GAP = 200;
+const MIN_DOWNLOADS_GAP = 200; // gap rule: models/datasets for underrepresented languages need only this many downloads
 const UNCENSORED_TERMS = ['abliterated', 'uncensored', 'heretic'];
-const MIN_DOWNLOADS_UNCENSORED = 500; // gap rule: models/datasets for underrepresented languages need only this many downloads
+const MIN_DOWNLOADS_UNCENSORED = 500; // uncensored rule: minimum downloads
 const TASKS = ['text-generation', 'image-text-to-text', 'text-to-image', 'automatic-speech-recognition', 'text-to-speech', 'feature-extraction', 'sentence-similarity', 'translation', 'image-to-text', 'text-to-video', 'image-to-image', 'audio-text-to-text', 'any-to-any', 'summarization', 'text-classification'];
 // Gap languages: non-English languages with fewer models (spec focus: beyond the USA).
 const GAP_LANGUAGES = ['ar', 'fa', 'ur', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'sw', 'yo', 'ha', 'ig', 'am', 'zu', 'xh', 'so', 'id', 'ms', 'tl', 'vi', 'th', 'my', 'km', 'tr', 'kk', 'uz', 'he', 'ne', 'si', 'pt', 'es', 'fr', 'ru', 'uk', 'pl', 'ja', 'ko', 'zh'];

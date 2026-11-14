@@ -1,6 +1,6 @@
 # CleverFox: specification
 
-**Status:** revised 14 November 2026: no reports from people; access facts, feedback and warnings come from public posts (mainly X) and directories. Design requirements, not a description of existing code (there is none yet).
+**Status:** prototype live, revised 14 November 2026. The rules and numbers the code applies are in [BUSINESS-RULES.md](BUSINESS-RULES.md); dated data snapshots are in `data/snapshots/`.
 **Site:** https://jamalxcode.github.io/CleverFox/ (custom domain https://cleverfox.sala.company planned, waiting on DNS) · **Repo:** `jamalxcode/cleverfox`
 **History:** the original proposal is kept unchanged in [archive/SPECIFICATION-2026-11-14.txt](archive/SPECIFICATION-2026-11-14.txt). Why each choice was made is in [DECISIONS.md](DECISIONS.md).
 
@@ -324,7 +324,17 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 
 ## 20. Next steps
 
-The seed prototype and the first bulk import (Hugging Face models and datasets, Ollama library) are built and deployed. Next:
-1. **X monitoring** (section 9): search queries for announcements in many languages, then replies and quotes for feedback. Needs an X API bearer token as a repo secret and a read budget.
-2. Other directories that link out: more model hubs (ModelScope, Kaggle, GitHub releases), API model lists (provider docs, aggregators), app directories for the web AI app list.
-3. Publisher countries for imported models, from official sources.
+Built and live:
+- hand-researched seed listings (models, apps, hosting);
+- daily imports from Hugging Face (models and datasets) and the Ollama library, with linking to originals;
+- Wikidata publisher countries;
+- independent benchmarks from Epoch AI;
+- answers to what people ask: good for, local, platforms, hardware with recommended memory, free, payments, barriers, uncensored;
+- a shareable page per listing, with X reactions.
+
+Next:
+1. **X monitoring** (section 9): search for announcements in many languages, then read replies and quotes for feedback. Needs an X API bearer token as a repo secret and a read budget.
+2. **Artificial Analysis** benchmarks: add the free `AA_API_KEY` secret.
+3. **More directories that link out:** ModelScope, Kaggle, GitHub releases, API model lists (provider docs, aggregators), and app directories for the web AI app list.
+4. **More publisher countries:** extend `data/publisher-map.json`.
+5. **Custom domain** `cleverfox.sala.company`: needs a DNS record. Then put the `CNAME` file back and update `SITE` in `tools/build.mjs`.

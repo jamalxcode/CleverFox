@@ -12,6 +12,21 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: saving everything to the repo
+**Where:** Claude Code session.
+**Asked:** update and save all business rules, information, conversations, design decisions and the data collected so far to the repo.
+**Outcome:**
+- New `docs/BUSINESS-RULES.md`, written from the code: every threshold, formula and mapping.
+- README rewritten around the questions the site answers.
+- `CLAUDE.md` and spec section 20 updated to the current state.
+- Decision 53 recorded.
+- First data snapshot in `data/snapshots/2026-11-14/`: 1,135 listings, the imports and the benchmarks.
+- A misplaced code comment in the importer fixed.
+
+Other sessions that day, in brief:
+- The owner asked for the website link (https://jamalxcode.github.io/CleverFox/).
+- Benchmark sites were researched before Epoch AI was chosen (see "independent benchmarks").
+
 ## 2026-11-14: independent benchmarks
 **Where:** Claude Code session.
 **Asked:** are there benchmark sites we can use to know how good models are; then go ahead with the suggestion (Epoch AI, Artificial Analysis, MTEB, LMArena links).
