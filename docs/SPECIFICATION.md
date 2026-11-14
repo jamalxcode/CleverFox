@@ -8,11 +8,14 @@
 
 CleverFox is a **cross-source catalog of AI models**: one place to find a model wherever it lives. That covers open models on Hugging Face, models released only on GitHub, models on other hubs (Ollama library, Kaggle Models, ModelScope), and API-only models from providers such as OpenAI, Anthropic and Google, which Hugging Face doesn't list.
 
+It also lists **web-based AI apps and services**: chat assistants, image, video, audio and coding tools people use in a browser or app, popular ones and obscure ones alike (section 7a).
+
 Every listing links to its canonical sources for downloads, inference, access approval, authentication and billing. CleverFox is a metadata directory. It does not host weights or other large files, run inference, provision compute or handle credentials.
 
 **Breadth and focus:**
 - **Obscure and well-known models alike.** The catalog isn't limited to famous releases. Small, niche and little-known models are in scope when they pass the inclusion rules (section 3).
 - **Special focus on local models:** models people can download and run on their own machines. Local-ready formats and runtimes (GGUF/llama.cpp, Ollama, MLX, ONNX and similar) are first-class data and filters.
+- **Access without a US-style bank card.** Many people outside the US can't pay with Visa or Mastercard, or have no bank account. For every paid app and API, CleverFox shows how you can pay: crypto, local payment methods (mobile money, UPI, Pix, Alipay/WeChat Pay and similar), app-store billing, prepaid or gift cards, PayPal. It also shows what is free and which countries the service is available in (section 7b).
 - **Appeal beyond the USA:** models from publishers outside the US (e.g. China, Europe, the Middle East, India, Japan, Korea, Africa, Latin America), and models built for specific languages and regions (e.g. Arabic, Indic, Southeast Asian and African languages). Language and publisher region are first-class filters.
 
 **Wedge versus Hugging Face:** Hugging Face covers its own hub well. CleverFox shows one model across all the places it is distributed: its Hugging Face repo, its Ollama tag, its GitHub release and its official API. It also includes the closed, API-only models people compare open ones against.
@@ -29,7 +32,7 @@ Every listing links to its canonical sources for downloads, inference, access ap
 
 | Phase | Scope |
 |---|---|
-| 1 | **Models only, done well.** Cross-source records, static detail pages, search and filters, recent-releases feed, visible evidence, verification and freshness. |
+| 1 | **Models and web AI apps.** Cross-source model records, a directory of web-based AI apps and services, payment and access information (free tier, payment methods, country availability), static detail pages, search and filters, recent-releases feed, visible evidence, verification and freshness. |
 | 2 | Datasets. Short AI-written guides (section 11). |
 | 3 | Compute (VM/GPU offerings) and environment templates, in separate directories. Deployment compatibility only where documented. |
 | 4 | Timestamped third-party pricing. Hosting-policy review before any monetization. |
@@ -45,6 +48,7 @@ Rule shape (numbers TBD):
 - Community models are included above usage thresholds per source (e.g. Hugging Face downloads or likes, GitHub stars, Ollama pulls).
 - **Obscure models get a way in.** Popularity thresholds alone would exclude niche, regional and low-resource-language models, so lower thresholds (or none) apply to models that fill a gap: a language or region with few models, a new local-ready format of a notable model, or a publisher from an underrepresented region. Minimum quality bars still apply: a real model card or README, files that exist, and a stated license or a clear `unknown`.
 - API-only models are included when listed in a provider's official model documentation.
+- Web AI apps are included when they have a working official site and a clear AI function. Popular apps are always in. Obscure and regional apps get in through the same gap rules as models (e.g. an app serving a language or region with few options, or one that accepts payment without a card).
 - Conversions and quantizations attach to their parent, as distributions or variants, and never become standalone families.
 
 ## 4. Sources
@@ -55,6 +59,7 @@ Rule shape (numbers TBD):
 | Provider model docs / APIs (OpenAI, Anthropic, Google, …) | API-only models, context limits, availability | authoritative for API-only models |
 | GitHub repos and releases | GitHub-only models, licenses, releases | authoritative for GitHub-released models |
 | Other hubs: Ollama library, Kaggle Models, ModelScope | distributions, tags, usage | authoritative for their own listings |
+| Official app sites, pricing pages, help and FAQ pages, app-store listings | web AI apps, free tiers, payment methods, country availability | authoritative for each app's own access and payment facts |
 | Regional publishers and hubs (e.g. ModelScope for China, plus national AI labs and university releases) | non-US models, language-specific models | authoritative for their own listings; list to be built |
 | Official publisher announcements and docs | release facts | evidence |
 | X, Hacker News, Reddit (e.g. r/LocalLLaMA), non-English communities | early signals, local-model releases, regional releases | discovery only: creates candidates, proves nothing |
@@ -152,6 +157,30 @@ Example:
 }
 ```
 
+## 7a. Web AI app records
+
+A **web AI app** is a service people use directly through a website or app (e.g. a chat assistant, image generator or coding tool). The model records describe the models themselves.
+
+Fields: `id` (`cf:app:<publisher>/<slug>`), `type` (`app`), `name`, `description` (original, short), `publisher`, `publisher_region`, `url` (official site), `app_store_urls`, `categories` (chat, image, video, audio, coding, search, writing, …), `languages` (interface languages supported, from evidence), `models_used` (relations to model records, only when the publisher states them), `access` (section 7b), `verification_status`, freshness fields and `evidence_urls`.
+
+Apps and models link both ways: a model page lists the apps that officially use it, and an app page lists its stated models.
+
+## 7b. Access and payment
+
+Every app record, and every paid API distribution of a model, has an `access` block. This is about **whether and how you can get access**. It is not a price comparison (that is phase 4). Each field carries its own source and observation time, like the key claims in section 7.
+
+- `free`: `free` (fully free), `free_tier` (with stated limits), `trial`, `paid_only` or `unknown`. Stated limits are recorded as text with their source.
+- `payment_methods`: a list from a fixed vocabulary: `card_international` (Visa/Mastercard/Amex), `card_local`, `paypal`, `crypto` (with the coins or networks listed), `mobile_money` (e.g. M-Pesa), `upi`, `pix`, `alipay`, `wechat_pay`, `bank_transfer`, `app_store_billing` (Apple/Google, which often accepts local methods and carrier billing), `prepaid_or_gift_card`, `carrier_billing`, `other` (named).
+- `no_card_needed`: derived. True when a free option or at least one non-card payment method exists.
+- `countries_available` / `countries_unavailable`: from the service's official supported-countries list, or `unknown`.
+- `signup_requirements`: e.g. email only, phone number (and whether non-US numbers work, if stated), ID verification.
+- `local_currency_pricing`: whether prices are shown or charged in local currencies, if stated.
+
+**Rules:**
+- Only payment methods the service itself (or its official app-store listing) offers. Resellers, account sellers and unofficial top-up services are not listed: they carry scam and account-ban risk.
+- CleverFox reports official availability. It does not give instructions for getting around country restrictions, sanctions or terms of service (no VPN or workaround guides).
+- Payment and availability facts change often. Show the observation time, and mark facts older than the refresh window as stale.
+
 ## 8. Editorial rules
 
 - Open weights do not automatically mean open source.
@@ -172,7 +201,8 @@ Example:
 ## 10. Site
 
 - A static detail page per model shows its distributions, availability, license, relations, evidence and last change and check times. No pages for filter combinations.
-- A compact client-side search index is built at deploy time. Filters suit models: source, publisher, publisher region, language, task, modality, license, availability, official/community, local-ready, format/runtime.
+- A compact client-side search index is built at deploy time. Apps and models have separate filter sets. Filters suit models: source, publisher, publisher region, language, task, modality, license, availability, official/community, local-ready, format/runtime.
+- Access filters for apps and API models: free, free tier, no card needed, payment method (crypto, mobile money, UPI, Pix, …) and available in my country. Static browse pages for "free", "no card needed", and each payment method with enough listings.
 - Browse views for local models and for models by language and region, as static pages (one per language or region with enough models, not per filter combination).
 - Model descriptions and names can be in many languages. Names prefer plain letters matching the source, as in Flattery.
 - Recent-releases feed (page and RSS).
@@ -211,6 +241,7 @@ Custom domain `cleverfox.sala.company`, using the same setup as the other sala.c
 - No weights, datasets, images or large archives are committed or published.
 - Every public record has a stable `id`, `schema_version`, `type`, at least one distribution URL, `verification_status` and freshness data.
 - No two public records share a distribution URL or source-native ID.
+- Every web AI app record has a working official URL, categories and an `access` block whose fields come from official sources or are `unknown`. No reseller or workaround payment routes are listed.
 - Every record has `languages`, `publisher_region`, `formats` and `local_ready` filled from evidence or set to `unknown`.
 - Key claims (license, availability, parameters, benchmarks, release date) carry their own source, type and observation time.
 - Unknown values are `null` or `unknown`. The labeled test set passes at or above its baseline.
@@ -221,7 +252,7 @@ Custom domain `cleverfox.sala.company`, using the same setup as the other sala.c
 
 ## 16. Positioning
 
-One place to find any AI model, famous or obscure, open or API-only, from anywhere in the world, across every hub it's on. It gives special attention to models you can run locally and models for languages and regions outside the US, with sources, license and availability backed by evidence.
+One place to find any AI model or web AI app, famous or obscure, open or API-only, from anywhere in the world, across every hub it's on, and to see how you can actually get access to it: free, with crypto, with local payment methods, or without a bank card. It gives special attention to models you can run locally and models for languages and regions outside the US, with sources, license and availability backed by evidence.
 
 ## 17. Open decisions
 
@@ -235,4 +266,6 @@ One place to find any AI model, famous or obscure, open or API-only, from anywhe
 - List of regional hubs, labs and communities to watch.
 - Whether the site interface itself is translated (e.g. Arabic with right-to-left layout), or only the catalog is multilingual.
 - When to bring hardware fit back into scope.
+- Refresh window for payment and availability facts, and how to detect changes.
+- Whether to add a "how to pay" guide per payment method (official routes only).
 - Operating budget and migration thresholds.

@@ -93,6 +93,19 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 ### 21. Spec in Markdown
 **Decision:** the spec is `docs/SPECIFICATION.md`, revised with these answers. The original text is kept unchanged in `docs/archive/`.
 
+### 22. Web AI apps are in the directory
+**Decision:** web-based AI apps and services (chat, image, video, audio, coding, search and others) are listed alongside models, popular ones and obscure ones alike. Apps and models link to each other when the publisher states which models an app uses. Apps join Phase 1.
+**Why:** the owner asked for it. Most people meet AI through apps, not model files. This widens entry 12's "models only" Phase 1.
+
+### 23. Access and payment information is first-class
+**Situation:** many people outside the US have no Visa or Mastercard, or no bank account at all, so a listing that only shows a price doesn't tell them whether they can use the service.
+**Decision:** every app and paid API carries an `access` block with free or free-tier status, accepted payment methods (crypto, mobile money, UPI, Pix, Alipay/WeChat Pay, app-store billing, prepaid cards, PayPal, cards), a derived "no card needed" flag, country availability and signup requirements. Each fact has its source and observation time. These are filters and browse pages, and they are part of Phase 1, separate from phase 4 pricing.
+**Why:** the owner's point that card access is a real barrier outside the US. It fits entry 10's focus on people outside the US.
+
+### 24. Official payment routes only, no workarounds
+**Decision:** list only payment methods the service or its official app-store listing offers. No resellers, account sellers or unofficial top-ups. No guides to getting around country restrictions or sanctions.
+**Why:** resellers carry scam and ban risk, and workaround guides would put the site in legal trouble. Claude's default; confirm.
+
 ## Open decisions
 
 - UI framework/static generator and search library.
@@ -100,6 +113,8 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 - Regional hubs, labs and communities to watch.
 - Whether the site interface is translated (e.g. Arabic, right-to-left), or only the catalog is multilingual.
 - When to bring hardware fit back into scope.
+- Refresh window for payment and availability facts.
+- Whether to add "how to pay" guides per payment method (official routes only).
 - Scan cadence and refresh tiers.
 - AI models for extraction, and spending caps.
 - Each connector's permitted use.
