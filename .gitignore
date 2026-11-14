@@ -4,3 +4,6 @@ node_modules/
 !/data/publisher-map.json
 !/data/publishers.json
 /data/imported/
+/l/
+/sitemap.xml
+/robots.txt

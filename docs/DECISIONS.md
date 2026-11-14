@@ -218,6 +218,10 @@ There's a "What do you need?" row of capability choices, plus quick filters for 
 **Decision:** each model with a local download shows estimated memory per size: download size × 1.2 + 0.5 GB, or from the parameter count when there's no download size (about 0.6 GB per billion parameters at 4-bit, 2 GB at 16-bit). It also shows the kind of device that has that memory, and processor advice (CPU vs graphics card vs Apple Silicon, mixture-of-experts note). A "Your device" memory picker marks each model ✓ fits, ⚠ tight (over 80% of memory) or ✗ too big, and adds a "Fits my device" filter. The editorial rule still holds: these are estimates with the method shown, not publisher requirements, and parameter count is not presented as a VRAM requirement.
 **Why:** the owner asked for advice on memory and processor. The download size per size is real data from Ollama, which makes the estimate reasonably grounded.
 
+### 48. A shareable page for every listing, and a link to reactions on X
+**Decision:** the build writes a static page for every listing (`l/<type>/<publisher>/<name>/`), with the full details, link-preview tags and a canonical URL, plus `sitemap.xml` and `robots.txt`. Rendering moved into `render.js`, shared by the page and the build, so both look the same. Every listing gets a share row (its own page, copy link, the phone's share menu, X, WhatsApp) and a live X search link for reviews and reactions.
+**Why:** the owner wanted a link for each entry that can be shared, posted, sent and shown on its own, and an X search for reactions. Static pages preview properly in X, WhatsApp and Slack and can be found by search engines. They're detail pages, not filter-combination pages, so the spec rule holds. The X link is the first step toward X feedback (section 9) before the X API is set up.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

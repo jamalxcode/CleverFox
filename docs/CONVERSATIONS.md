@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: listing pages and X reactions
+**Where:** Claude Code session.
+**Asked:** a link for each entry that can be shared, posted, sent and shown on its own, and an X search link for its reviews and reactions (like `x.com/search?q=bge-m3&src=typed_query&f=live`).
+**Outcome:**
+- 1,138 static listing pages with link previews and a sitemap.
+- A share row on every listing, plus a "Reactions on X" live search link.
+- Rendering shared between the page and the build (DECISIONS 48).
+
 ## 2026-11-14: fox mascot and logo
 **Where:** Claude Code session.
 **Asked:** use the owner's fox-in-sunglasses artwork as the site mascot and logo, and archive the image in the repo.

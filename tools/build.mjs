@@ -1,6 +1,9 @@
 // Validates the hand-entered seed records and writes the catalog the page loads.
 // Usage: node tools/build.mjs [--check]   (--check validates without writing)
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, rmSync } from 'node:fs';
+
+// The live site's address. Change it when the custom domain (cleverfox.sala.company) is set.
+const SITE = process.env.SITE_URL || 'https://jamalxcode.github.io/CleverFox/';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -261,4 +264,89 @@ if (!checkOnly) {
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
+  writeListingPages(published, countries);
+}
+
+const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
+<script>
+  (function () {
+    if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
+    window.goatcounter = { endpoint: 'https://salacompany.goatcounter.com/count', path: function (p) { return location.host + p; } };
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://salacompany.goatcounter.com/count');
+    document.body.appendChild(s);
+  })();
+</script>`;
+
+// ---- a static page for every listing (shareable, previewable, findable) ----
+async function writeListingPages(records, countryList) {
+  const R = await import('../render.js');
+  R.setCountries(countryList);
+  R.view.site = SITE;
+  const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
+  const outRoot = join(root, 'l');
+  rmSync(outRoot, { recursive: true, force: true });
+  const urls = [SITE];
+  for (const r of records) {
+    const path = R.listingPath(r);
+    const depth = path.split('/').filter(Boolean).length;
+    const base = '../'.repeat(depth);
+    R.view.base = base;
+    const url = SITE + path;
+    urls.push(url);
+    const good = (r.answers?.good_for || []).map((c) => (R.CAPS[c] || c).replace(/^\S+\s/, ''));
+    const facts = [good.length && `Good for ${good.slice(0, 4).join(', ').toLowerCase()}`, r.local_ready && 'runs locally', r.answers?.free === 'free_download' && 'free download', ['free', 'free_tier'].includes(r.answers?.free) && 'free tier', r.answers?.no_barriers && 'no barriers', r.hardware && `from ~${r.hardware.min_memory_gb} GB memory`].filter(Boolean);
+    const desc = `${r.description} ${facts.length ? facts.join(' · ') + '.' : ''}`.trim();
+    const pub = r.publisher_name || r.publisher;
+    const region = R.known(r.publisher_region) ? ` ${R.flag(r.publisher_region.value)}` : '';
+    const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${R.esc(r.name)} · ${R.esc(pub)} · CleverFox</title>
+<meta name="description" content="${R.esc(desc)}">
+<link rel="canonical" href="${R.esc(url)}">
+<link rel="icon" type="image/png" sizes="32x32" href="${base}img/favicon-32.png?v=${build}">
+<link rel="apple-touch-icon" href="${base}img/apple-touch-icon.png?v=${build}">
+<meta name="theme-color" content="#c2410c">
+<meta property="og:title" content="${R.esc(r.name)} · CleverFox">
+<meta property="og:description" content="${R.esc(desc)}">
+<meta property="og:url" content="${R.esc(url)}">
+<meta property="og:image" content="${SITE}img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="${base}style.css?v=${build}">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row"><a class="brand" href="${base}"><img src="${base}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div>
+  <div class="wrap"><p class="tagline"><a href="${base}#${r.type}">← All ${R.esc({ model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' }[r.type])}</a></p></div>
+</header>
+<main class="wrap listing">
+  <article class="card card-page">
+    <div class="card-head"><h1>${R.esc(r.name)}</h1><span class="pub">${R.esc(pub)}${region}</span></div>
+    <p class="desc">${R.esc(r.description)}</p>
+    ${R.goodForLine(r)}
+    <div class="badges">${R.cardBadges(r)}</div>
+    ${R.detail(r)}
+  </article>
+</main>
+<footer class="wrap foot">
+  <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="${base}">CleverFox</a></p>
+</footer>
+<script type="module">import { wireShare } from '${base}render.js?v=${build}'; wireShare(document);</script>
+${GOATCOUNTER}
+</body>
+</html>
+`;
+    mkdirSync(join(outRoot, path.slice(2)), { recursive: true });
+    writeFileSync(join(outRoot, path.slice(2), 'index.html'), html);
+  }
+  writeFileSync(join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${R.esc(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
+  writeFileSync(join(root, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
+  console.log(`Wrote ${records.length} listing pages under l/, sitemap.xml and robots.txt`);
 }
