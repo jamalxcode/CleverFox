@@ -13,13 +13,6 @@ const METHOD_LABELS = {
   carrier_billing: 'Phone bill', other: 'Other',
 };
 const FREE_LABELS = { free: 'Free', free_tier: 'Free tier', trial: 'Free trial', paid_only: 'Paid only' };
-const FACT_LABELS = {
-  paid_with: (c) => `Paid with ${METHOD_LABELS[c.method] || c.method}`,
-  payment_refused: (c) => `${METHOD_LABELS[c.method] || c.method} was refused`,
-  available_in: () => 'Works', not_available_in: () => 'Blocked or not offered',
-  free_tier: () => 'Free plan', signup: () => 'Sign-up',
-};
-const REASON_LABELS = { scam: 'Reported as a scam', impersonation: 'Reported as impersonating another service', unsafe: 'Reported as unsafe', misleading: 'Reported as misleading' };
 const KIND_LABELS = { gpu_cloud: 'GPU cloud', vm: 'Virtual machines', bare_metal: 'Bare metal', managed_hosting: 'Managed hosting', inference_endpoint: 'Inference endpoints' };
 const AVAIL_LABELS = { downloadable: 'Downloadable', gated: 'Gated download', api_only: 'API only', announced: 'Announced only', withdrawn: 'Withdrawn' };
 const SOURCE_LABELS = { huggingface: 'Hugging Face', ollama: 'Ollama', api: 'Official API', aggregator: 'API aggregator', github: 'GitHub', kaggle: 'Kaggle', modelscope: 'ModelScope' };
@@ -174,18 +167,13 @@ function cardBadges(r) {
     const cs = [...new Set(r.data_centers.value.map((d) => d.country))];
     b.push(badge(cs.map(flag).join(' ') || 'Data centers'));
   }
-  const fresh = (r.community || []).filter((c) => !c.stale && c.kind === 'access');
-  if (fresh.length) {
-    const here = state.country && fresh.filter((c) => c.country === state.country).length;
-    b.push(badge(here ? `👥 ${here} report${here > 1 ? 's' : ''} from ${countryName(state.country)}` : `👥 ${fresh.length} community report${fresh.length > 1 ? 's' : ''}`));
-  }
   if (r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
   return b.join('');
 }
 
 function src(c) {
   if (!known(c) || !c.source_url) return '';
-  const type = { official: 'official', third_party: 'third-party', independently_verified: 'independently verified', community_reported: 'community report' }[c.source_type] || '';
+  const type = { official: 'official', third_party: 'third-party', independently_verified: 'independently verified', web_reported: 'public reports' }[c.source_type] || '';
   let host = '';
   try { host = new URL(c.source_url).hostname.replace(/^www\./, ''); } catch { /* bad URL */ }
   return ` <span class="src">(<a href="${esc(c.source_url)}" rel="noopener" target="_blank">${esc(host || 'source')}</a>, ${esc(type)}, checked ${esc(fmtDate(c.observed_at))})</span>`;
@@ -245,22 +233,8 @@ function detail(r) {
   } else {
     h += '<h3>Access and payment</h3>' + accessFacts(r.access);
   }
-  if (r.community?.length) {
-    const mine = state.country;
-    const list = [...r.community].sort((a, b) => (b.country === mine) - (a.country === mine) || b.date.localeCompare(a.date));
-    h += '<h3>Community reports</h3><p class="src">From people who used it. A report shows here only when an official page backs it or several people reported the same thing on different days. Not official facts.</p><ul class="dist">';
-    for (const c of list) {
-      const what = c.kind === 'warning' ? REASON_LABELS[c.reason] : `${FACT_LABELS[c.fact](c)} in ${flag(c.country)} ${countryName(c.country)}`;
-      const basis = c.basis === 'official_page' ? ' · backed by an official page' : c.basis === 'agreement' ? ` · confirmed by ${c.agreeing_reports || 'several'} reports on different days` : '';
-      const ev = (c.evidence_url ? ` · <a href="${esc(c.evidence_url)}" rel="noopener nofollow" target="_blank">evidence</a>` : '') + basis;
-      h += `<li><strong>${esc(what)}</strong> <span class="src">(${esc(fmtDate(c.date + 'T00:00:00Z'))}${c.stale ? ', older than 30 days' : ''}${ev})</span></li>`;
-    }
-    h += '</ul>';
-  }
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || []), ...(r.documentation_urls || [])].filter(Boolean))];
   h += `<h3>Official links</h3><p class="links">${links.map((u) => { let t = u; try { t = new URL(u).hostname.replace(/^www\./, '') + new URL(u).pathname.replace(/\/$/, ''); } catch { /* keep */ } return `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(t)}</a>`; }).join(' ')}</p>`;
-  const rid = encodeURIComponent(r.id);
-  h += `<p class="report-links"><a href="report/?id=${rid}">Report how access or payment works here</a> · <a href="report/?id=${rid}&amp;kind=warning">Report a scam or problem</a></p>`;
   h += `<p class="src">${r.verification_status === 'verified' ? 'Verified at an official source' : 'Not yet verified at an official page: treat facts with care'}. First seen ${esc(fmtDate(r.first_seen_at))}. ${r.evidence_urls?.length || 0} sources.</p>`;
   return h + '</div>';
 }

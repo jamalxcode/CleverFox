@@ -9,9 +9,9 @@ const BASE = process.argv[2] || 'http://localhost:8000';
   for (const dev of ['iPhone SE', 'iPhone 13', 'Pixel 5', 'Galaxy S8']) {
     const ctx = await b.newContext({ ...devices[dev] }); const m = await ctx.newPage();
     const vw = devices[dev].viewport.width;
-    for (const url of ['/', '/report/', '/report/?kind=warning']) {
-      await m.goto(BASE + url); await m.waitForSelector(url === '/' ? '.card' : '#form:not([hidden])');
-      for (const t of url === '/' ? ['model', 'app', 'host'] : [null]) {
+    for (const url of ['/']) {
+      await m.goto(BASE + url); await m.waitForSelector('.card');
+      for (const t of ['model', 'app', 'host']) {
         if (t) { await m.selectOption('#country', 'NG'); await m.click('#tab-' + t); const s = await m.$('.card summary'); if (s) await s.click(); }
         const r = await m.evaluate(() => ({ iw: innerWidth, sw: document.documentElement.scrollWidth }));
         const ok = r.iw === vw && r.sw === vw; if (!ok) bad++;

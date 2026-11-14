@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: restart; public posts instead of reports
+**Where:** Claude Code session.
+**Asked:** summarize the spec. Remove anything involving people reporting directly; read reviews and reports from the internet itself. Populate the catalog as much as possible from Hugging Face and other AI directories (external links, models, datasets, documentation). Most announcements and feedback will come from monitoring X.
+**Outcome:** report form and community display removed, `cleverfox-reports` archived, deploy key neutralized, spec sections 9 and 10 rewritten around public feedback with X first (DECISIONS 42). Datasets move into Phase 1.
+
 ## 2026-11-14: page review and rule-based reports
 **Where:** Claude Code session.
 **Asked:** hold the keys, show the page, and do reviews by looking at other signals, not AI.

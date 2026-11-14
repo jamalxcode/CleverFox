@@ -176,6 +176,11 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** the private reports repo accepts a report when its evidence link is on the listing's own official site and the page mentions the claim, or when enough reports make the same claim on different days with different evidence (2 for access facts, 3 for scam warnings). Unconfirmed reports expire after 60 days. Published text is a fixed sentence built from the fact, never the reporter's words. Screenshots count toward agreement but are never published. The Claude check was removed. The deploy key stays the way to publish, and it waits on the owner adding the secret.
 **Why:** no API cost and no AI judgement. Trade-off: reports are anonymous, so one determined person could fake agreement across days. The corrections file and showing contradicting reports side by side are the safeguards.
 
+### 42. No reports from people; read public posts instead, with X first (supersedes 28, 39, 40, 41)
+**Situation:** CleverFox had a report form, a private reports repo and rule-based review.
+**Decision:** remove everything that takes reports from people directly. The report form, the community display, and the private `cleverfox-reports` repo (archived) are gone. The deploy key was neutralized: the writable key was replaced with a read-only key nobody holds. Access experiences, feedback and scam warnings now come from what people already post publicly. X is the main source for new announcements and for feedback (replies and quotes), as in Flattery, followed by Reddit, forums, app-store reviews, news and security advisories. These become `web_reported` claims linked to the posts. Hugging Face and other AI directories feed the catalog in bulk: models, datasets, documentation and external links.
+**Why:** the owner's direction. It removes the moderation and privacy burden of handling people's screenshots, and it follows the approach already proven in Flattery.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

@@ -115,27 +115,3 @@ details[open] .more { display: none; }
   .country { flex: 1 1 100%; }
   .country select { width: 100%; }
 }
-
-/* report form */
-.narrow { max-width: 680px; }
-h1 { font-size: 1.5rem; margin: 20px 0 12px; }
-fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px 12px; margin: 0 0 14px; background: var(--surface); }
-legend { font-weight: 700; padding: 0 4px; }
-.field { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; margin: 0 0 14px; font-weight: 600; }
-.field select, .field input, .field textarea { font-weight: 400; width: 100%; }
-fieldset .field:last-child { margin-bottom: 4px; }
-.choice { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; }
-.choice input { margin-top: 4px; accent-color: var(--accent); }
-textarea, input[type="url"], input[type="date"], input[type="file"] {
-  font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px;
-}
-input[type="file"] { padding: 6px; }
-.hint { color: var(--muted); font-size: .9rem; }
-.error { color: var(--no); background: var(--no-bg); border-radius: 10px; padding: 8px 12px; font-weight: 600; }
-.notice { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 8px 12px; }
-.btn, .btn-secondary { font: inherit; font-weight: 700; border-radius: 999px; padding: 10px 20px; cursor: pointer; min-height: 44px; }
-.btn { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
-.btn:disabled { opacity: .6; cursor: wait; }
-.btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--line); font-weight: 600; padding: 6px 14px; min-height: 36px; }
-#canvas { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; touch-action: none; cursor: crosshair; }
-.report-links { font-size: .85rem; }

@@ -1,6 +1,6 @@
 # CleverFox: specification
 
-**Status:** revised 14 November 2026 after the second review. Design requirements, not a description of existing code (there is none yet).
+**Status:** revised 14 November 2026: no reports from people; access facts, feedback and warnings come from public posts (mainly X) and directories. Design requirements, not a description of existing code (there is none yet).
 **Site:** https://cleverfox.sala.company (planned) · **Repo:** `jamalxcode/cleverfox`
 **History:** the original proposal is kept unchanged in [archive/SPECIFICATION-2026-11-14.txt](archive/SPECIFICATION-2026-11-14.txt). Why each choice was made is in [DECISIONS.md](DECISIONS.md).
 
@@ -43,16 +43,16 @@ The spec is tested against these. Each must be answerable from the site.
 
 | Phase | Scope |
 |---|---|
-| 1 (thin launch) | **Models** from 2–3 sources (Hugging Face, Ollama, and API-only models from official provider docs). **Top web AI apps.** **AI hosting** at provider + region + GPU types (not every machine size). An access block for apps, paid APIs and hosting. Community reports. Scam reports and warnings. Country picker. Detail pages, search, filters, release feed, evidence, verification and freshness. |
+| 1 (thin launch) | **Models** from 2–3 sources (Hugging Face, Ollama, and API-only models from official provider docs). **Top web AI apps.** **AI hosting** at provider + region + GPU types (not every machine size). An access block for apps, paid APIs and hosting. **Datasets** and **documentation links** imported from Hugging Face. **X monitoring** for new announcements and feedback. Public reports and warnings read from the web. Country picker. Detail pages, search, filters, release feed, evidence, verification and freshness. |
 | 1.5 | More model sources (GitHub, Kaggle, ModelScope, regional hubs). More apps. Individual hosting offerings and managed endpoints. **Hardware fit:** file sizes per format plus clearly labeled RAM/VRAM estimates. |
-| 2 | Environment templates and documented deployment compatibility. Datasets. Short AI-written guides (section 13). |
+| 2 | Environment templates and documented deployment compatibility. Short AI-written guides (section 13). |
 | 3 | Timestamped pricing comparisons. Hosting-policy review before any monetization. |
 
 **Out of scope for now:** running inference or user code, provisioning, handling credentials or payments, accounts, private collections, subscriptions, checkout, and hosting any model or dataset files.
 
 ## 4. Curation
 
-Listings are chosen by **written, automated inclusion rules**. Nobody approves listings before they go live, as in Flattery. Two inputs feed in besides the scanner: a hand-edited corrections file (attach, separate, hide, fix a field), and community reports (section 9). The inclusion rules are part of the spec and must be written before code (numbers in section 19).
+Listings are chosen by **written, automated inclusion rules**. Nobody approves listings before they go live, as in Flattery. One input feeds in besides the scanner: a hand-edited corrections file (attach, separate, hide, fix a field). CleverFox takes no reports from people directly; feedback comes from public posts (section 9). The inclusion rules are part of the spec and must be written before code (numbers in section 19).
 
 Rule shape:
 - Official releases from a tracked publisher list are always included.
@@ -73,8 +73,9 @@ Rule shape:
 | GitHub, Kaggle Models, ModelScope, regional hubs and labs (phase 1.5) | more models, non-US and language-specific models | authoritative for their own listings |
 | Official app sites, pricing, help and FAQ pages, app-store listings | apps, free tiers, payment methods, country availability | authoritative for each app's own facts |
 | Hosting provider sites, region lists, provider APIs | providers, data centers, GPU types, payment methods | authoritative for each provider's own facts |
-| Community reports (section 9) | access and payment facts official sources don't publish | labeled `community_reported`, never official |
-| X, Hacker News, Reddit (e.g. r/LocalLLaMA), non-English communities | early signals | discovery only: creates candidates, proves nothing |
+| Public reports (section 9): replies and quotes on X, Reddit, forums, app-store reviews, news, security advisories | access and payment experiences, problems, scam warnings | labeled `web_reported`, linked to each post, never official |
+| **X (main discovery source)**, then Hacker News, Reddit (e.g. r/LocalLLaMA), non-English communities | new model, app and hosting announcements; reception and feedback | discovery creates candidates, proves nothing; feedback becomes `web_reported` claims |
+| Hugging Face and other AI directories (Ollama library, model/app directories that link out) | models, datasets, documentation and external links (papers, GitHub, official sites) | imported in bulk by the scanner; each link kept as a source |
 
 Respect each source's terms, access controls, rate limits (including HTTP 429 with backoff) and attribution. Check every connector's permitted use before building it. Write short original descriptions; don't copy model cards or app pages wholesale.
 
@@ -85,7 +86,7 @@ sources -> scheduled scan (incremental, per-source budgets)
   -> candidate extraction -> normalization
   -> identity resolution (dedupe across sources, attach distributions/variants)
   -> verification at primary source
-  -> merge community reports and corrections
+  -> read public feedback (X replies and quotes first) -> merge corrections
   -> persist small metadata records (commit only on content change)
   -> static pages + compact search index + feeds
   -> GitHub Pages deploy
@@ -93,7 +94,7 @@ sources -> scheduled scan (incremental, per-source budgets)
 
 - A Node workflow runs on a schedule in GitHub Actions, following Flattery's pattern. No backend. Nothing runs in visitors' browsers except search and filtering over prebuilt indexes.
 - Credentials live only in workflow secrets, never in generated files, logs or client bundles.
-- **Structured data first.** Take fields from structured APIs wherever possible. AI classifies candidates, extracts what structured data lacks, checks community-report evidence (section 9) and writes summaries.
+- **Structured data first.** Take fields from structured APIs wherever possible. AI classifies candidates, extracts what structured data lacks, classifies public feedback (section 9) and writes summaries.
 - **AI accuracy is tested.** A hand-labeled set of about 50 records runs in CI and blocks changes that lower extraction accuracy.
 
 ## 7. Records
@@ -110,7 +111,7 @@ Every record, whatever its type, has:
   - `candidate`: seen only in an announcement or secondary source.
   - `verified`: the canonical page or API was fetched and confirms the listing exists and its availability.
   - `check_failed`: the last confirmation attempt failed, and earlier data is kept.
-- `warning`: `none`, `reported` (open scam or safety reports), or `dont_touch` (section 10)
+- `warning`: `none`, `reported` (credible public reports of a scam or safety problem), or `dont_touch` (section 10)
 - `first_seen_at`, `last_content_change_at`. Check times live in a separate status file (section 11).
 - `relations`: typed links to other records.
 
@@ -118,7 +119,7 @@ Every record, whatever its type, has:
 ```json
 { "value": "apache-2.0", "source_url": "https://…", "source_type": "official", "observed_at": "2026-11-14T10:00:00Z" }
 ```
-`source_type` is `official`, `third_party`, `independently_verified` or `community_reported`. Which fields are key claims is listed per type.
+`source_type` is `official`, `third_party`, `independently_verified` or `web_reported` (from public posts and reviews, section 9). Which fields are key claims is listed per type.
 
 **Unknown values stay `null` or `unknown`. Never fill them with AI guesses.**
 
@@ -174,37 +175,36 @@ What the competitor scan showed: few major AI providers accept crypto or local m
 - **Crypto-funded virtual cards** are general payment tools, not access routes for a specific service. They are not listed per service. Whether to explain them in a general guide is an open decision.
 - CleverFox does not give instructions for getting around country restrictions, sanctions or terms of service (no VPN or workaround guides).
 
-## 9. Community reports
+## 9. Announcements and public feedback (X first)
 
-People can submit access and payment facts that official sources don't publish, e.g. "paid with M-Pesa in Kenya on 2026-11-10".
+CleverFox takes no reports from people directly. It reads what people already post publicly, the way Flattery reads reactions on X.
 
-- Reports come in through the site's report form (`report/`), which posts to an ntfy.sh channel: no sign-up and no GitHub account, as in Flattery's suggestion form. Screenshots are re-saved in the browser (stripping hidden data such as location), and reporters can black out areas before sending. The private repo `jamalxcode/cleverfox-reports` collects the channel every hour, since ntfy.sh keeps messages 12 hours and attachments about 3. It runs rule checks, removes card numbers, emails and phone numbers from notes, and stores reports and screenshots privately.
-- Each report needs: the listing, the fact (from the access vocabulary), the country, the date, and evidence (a screenshot or a public link). Personal data must be cropped out. Reports with visible card numbers, account IDs or personal details are rejected.
-- Reports are accepted by rules, with no AI and no API key: either the evidence link is on the listing's own official site (shared hosts like app stores don't count) and the page mentions the claim, or enough reports make the same claim on different days with different evidence (2 for access facts, 3 for warnings). Unconfirmed reports expire after 60 days. Accepted reports are published as fixed sentences built from the fact, with how they were confirmed and any public evidence link, to `data/community.json`. Reporters' words and screenshots are never published. The catalog build attaches them to listings. Accepted reports appear as `community_reported` claims with their date, shown separately from official facts and never overriding them.
-- Contradicting reports are all shown. A report goes stale after the access refresh window (30 days, provisional) unless confirmed again.
-- Nobody approves reports by hand, consistent with section 4. The corrections file can remove bad ones.
+- **Announcements:** X is the main discovery source. Scheduled searches find new model, app and hosting announcements (release posts, launch threads, regional and non-English posts). Hacker News, Reddit and AI directories add to it. An announcement creates a candidate; the listing still needs a primary source to be `verified`.
+- **Feedback:** for each listing, the scanner reads replies and quotes on X first, then Reddit, forums, app-store reviews and news. It looks for access and payment experiences ("paid with UPI, works", "blocked in Nigeria", "M-Pesa refused"), problems and scam warnings.
+- Each finding becomes a `web_reported` claim linked to the public post, with its date. They're shown separately from official facts and never override them. Posts are linked, not copied: CleverFox shows a short fixed sentence built from the fact, never quotes personal details, and respects each platform's terms.
+- **Accepted by agreement or authority:** a feedback claim shows once several independent accounts report the same thing within the freshness window (thresholds in section 19), or one authoritative source does (the service's official account, a news report, a security advisory). Contradicting claims are shown side by side. Claims go stale after 30 days unless repeated.
+- How posts are read (keyword rules, AI classification or both) and the budget for X reads are open decisions (section 19).
 
-## 10. Scam reports and warnings
+## 10. Warnings
 
-- Anyone can report an app, aggregator or provider as a scam, unsafe or misleading, through the same form, with evidence.
-- A listing with open reports shows `warning: reported` and a visible notice.
-- `dont_touch`, like Flattery's ☠️ rating, applies when there are multiple independent reports, or one report backed by strong evidence (e.g. a published security notice, or the official service disowning a site that impersonates it). The thresholds are rules, set in section 19.
+- `reported`: credible public reports that an app, aggregator or provider is a scam, unsafe or misleading, meaning several independent posts or one authoritative source.
+- `dont_touch`, like Flattery's ☠️ rating: strong evidence, such as a security advisory, the official service disowning an impersonating site, or many independent reports.
 - `dont_touch` listings stay visible with the warning, so people searching for them see it. They are never shown as recommendations.
-- Publishers can contest a warning through the same form. The corrections file records the outcome.
+- Publishers can dispute a warning publicly; the corrections file records the outcome.
 
 ## 11. Freshness and storage
 
 - **Commit only on content change.** Per-record check times (`last_checked_at`) live in a small separate status file.
 - Each source tracks a `last_successful_check`. A successful scan overall must not imply every source refreshed. Publish a source status page and freshness warnings.
 - **Records are never silently lost:** withdrawals, deletions, dead apps and broken links are marked, not dropped. Unavailable listings can leave normal results, but their record stays. Connector or AI failures keep last-known-good data.
-- Store only small metadata, original content and site assets. Never model weights, datasets, images or archives. Community evidence is kept as links, or as small images that have had personal data removed.
+- Store only small metadata, original content and site assets. Never model weights, datasets, images or archives. Public feedback is kept as links to the posts.
 - Scan cadence is set per source by update frequency and cost (section 19).
 
 ## 12. Site
 
 - **Interface in English, with a country picker first.** The visitor's chosen country (remembered in the browser) filters availability and highlights payment methods noted for it. Search handles non-Latin scripts. Names and descriptions can be in any language, with names in plain letters matching the source, as in Flattery. Interface translation comes later.
 - **Lightweight pages.** Many visitors pay for mobile data. Pages are vanilla static HTML/CSS/JS, like Flattery. Target under 200 KB on a first load, excluding the search index, which loads only when needed.
-- A static detail page per listing shows its distributions or routes, access, evidence (official and community, separately), warnings, relations, and last change and check times.
+- A static detail page per listing shows its distributions or routes, access, evidence (official and public reports, separately), warnings, relations, and last change and check times.
 - Each type has its own filters:
   - **Models:** source, publisher, publisher region, language, task, modality, license, availability, official/community, local-ready, format/runtime.
   - **Apps:** category, interface language, free, no card needed, payment method, available in my country.
@@ -258,7 +258,7 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 
 - No model weights, datasets, images or large archives are committed or published.
 - Every record has the base fields (section 7.1). The identity tests (section 7.5) pass.
-- Key claims carry a source, source type and observation time. Community-reported claims are visibly distinct from official ones.
+- Key claims carry a source, source type and observation time. Public (`web_reported`) claims are visibly distinct from official ones.
 - Model records have `languages`, `formats` and `local_ready` from evidence or `unknown`.
 - App records have a working official URL, categories and an `access` block.
 - Hosting records list data centers from the provider's own region list, plus an `access` block. Data-residency statements are labeled as provider claims.
@@ -280,10 +280,11 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 - Seed lists: regional hubs, labs and communities; top apps; local and regional hosting providers by country.
 - Which API aggregators count as authorized (section 8b), and the test for it.
 - Whether to explain crypto-funded virtual cards in a general guide.
-- Tune the provisional thresholds: community reports stale after 30 days; 3 accepted warnings within 90 days mark a listing `dont_touch`.
-- Scam-report thresholds for `reported` and `dont_touch`.
+- Thresholds for accepting public feedback (how many independent accounts, which sources count as authoritative) and for `reported` / `dont_touch`.
+- X search queries, read budget (X API plan) and cadence; which other platforms to read.
+- How public posts are classified: keyword rules, AI, or both.
 - Scan cadence and refresh tiers per source.
-- AI models for catalog extraction, and spending caps (community reports use rules, not AI).
+- AI models for catalog extraction and feedback classification, if any, and spending caps.
 - Each connector's permitted use.
 - When to translate the interface, and into which languages.
 - Operating budget and migration thresholds.
