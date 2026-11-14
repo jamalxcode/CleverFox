@@ -12,6 +12,17 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: independent benchmarks
+**Where:** Claude Code session.
+**Asked:** are there benchmark sites we can use to know how good models are; then go ahead with the suggestion (Epoch AI, Artificial Analysis, MTEB, LMArena links).
+**Outcome:**
+- Epoch AI data imported daily (index plus own runs, CC BY 4.0): 52 listings matched.
+- Artificial Analysis ready behind an optional `AA_API_KEY` secret (free key from an account).
+- LMArena and MTEB linked (DECISIONS 52).
+- Added epoch.ai and artificialanalysis.ai to the research environment.
+
+**Open:** add `AA_API_KEY` when ready; LMArena ranks pending its data license.
+
 ## 2026-11-14: freedom emoji and where it runs
 **Where:** Claude Code session.
 **Asked:** the "No barriers" padlock should show freedom, not something locked; and whether we can tell if a model runs on Windows, Linux, macOS or a cloud server, with an emoji for each.

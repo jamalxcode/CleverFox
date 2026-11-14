@@ -101,7 +101,7 @@ function matches(r) {
     if (f.fits && state.mem && !(r.hardware && r.hardware.min_memory_gb <= state.mem)) return false;
     if (f.free && !['free_download', 'free', 'free_tier'].includes(r.answers?.free)) return false;
     if (f.uncensored && !r.answers?.uncensored) return false;
-    if (f.bench && !r.answers?.benchmarks) return false;
+    if (f.bench && !r.answers?.benchmarks && !r.answers?.independent) return false;
     if (f.task && !(r.tasks || []).includes(f.task)) return false;
   } else if (r.type === 'dataset') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;

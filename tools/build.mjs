@@ -87,7 +87,7 @@ function noCardNeeded(a) {
 const importDir = join(root, 'data', 'imported');
 const sourceFiles = [
   ...readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(seedDir, f)),
-  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(importDir, f)) : []),
+  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => f.endsWith('.json') && f !== 'benchmarks.json').sort().map((f) => join(importDir, f)) : []),
 ];
 const records = sourceFiles.flatMap((f) => {
   const data = JSON.parse(readFileSync(f, 'utf8'));
@@ -226,6 +226,7 @@ function answers(r) {
     uncensored: !!r.uncensored,
     pay_without_card: access ? (Array.isArray(access.payment_methods?.value) ? access.payment_methods.value.some((m) => !['card_international', 'card_local'].includes(m.method)) : null) : null,
     benchmarks: bench,
+    independent: (r.independent_benchmarks || []).length,
   };
 }
 // ---- hardware estimates (spec section 12; rough, labeled as estimates) ----
@@ -289,6 +290,22 @@ function platformsOf(r) {
 const runtimeDocs = Object.fromEntries(Object.entries(RUNTIMES).map(([k, v]) => [k, { name: v.name, docs: v.docs }]));
 for (const r of published) { const pl = platformsOf(r); if (pl) r.platforms = pl; }
 
+// ---- independent benchmarks (tools/benchmarks.mjs: Epoch AI, Artificial Analysis) ----
+// Matched by name with punctuation removed, also trying the name without an instruct/it/chat suffix
+// and the Hugging Face repo name. No match -> nothing shown (never guessed).
+const benchFile = join(importDir, 'benchmarks.json');
+const BENCH = existsSync(benchFile) ? JSON.parse(readFileSync(benchFile, 'utf8')) : { models: {}, sources: {} };
+const bkey = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+let benchMatched = 0;
+for (const r of published) {
+  if (r.type !== 'model') continue;
+  const names = [r.name, ...(r.distributions || []).filter((d) => ['huggingface', 'api'].includes(d.source)).map((d) => String(d.native_id).split('/').pop())];
+  const keys = [...new Set(names.flatMap((n) => [bkey(n), bkey(String(n).replace(/[-_ ](instruct|it|chat|hf)$/i, ''))]))];
+  const hit = keys.map((k) => BENCH.models[k]).find(Boolean);
+  if (hit) { r.independent_benchmarks = hit.results; benchMatched++; }
+}
+if (BENCH.models && Object.keys(BENCH.models).length) console.log(`Independent benchmarks matched for ${benchMatched} models`);
+
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
@@ -297,7 +314,7 @@ if (!checkOnly) {
   const generated_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
   // The page loads meta.json first, then only the listing type the visitor opens (page weight).
   // catalog.json holds everything, for anyone who wants the whole data set.
-  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, runtimes: runtimeDocs }));
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
@@ -374,7 +391,7 @@ async function writeListingPages(records, countryList) {
   </article>
 </main>
 <footer class="wrap foot">
-  <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="${base}">CleverFox</a></p>
+  <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${r.independent_benchmarks?.length ? ` · Benchmarks: ${[...new Set(r.independent_benchmarks.map((x) => x.source))].map((s) => s === 'Epoch AI' ? '<a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0)' : '<a href="https://artificialanalysis.ai/">Artificial Analysis</a>').join(', ')}` : ''} · <a href="${base}">CleverFox</a></p>
 </footer>
 <script type="module">import { wireShare } from '${base}render.js?v=${build}'; wireShare(document);</script>
 ${GOATCOUNTER}

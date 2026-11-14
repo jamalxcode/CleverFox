@@ -242,6 +242,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** "No barriers" uses 🕊️, "No sign-in needed" uses 🚪, and uncensored uses ✂️. Only gated downloads keep a padlock (🔒).
 **Why:** the owner pointed out that a padlock suggests something locked, not freedom.
 
+### 52. Independent benchmarks from Epoch AI and Artificial Analysis
+**Decision:** `tools/benchmarks.mjs` downloads the Epoch AI Benchmarking Hub daily (CC BY 4.0, credited on every page that shows it). It uses only Epoch's own data: the Epoch Capabilities Index and Epoch's runs of GPQA Diamond, SWE-bench Verified, MATH Level 5, AIME, FrontierMath and SimpleQA. Results Epoch collected from other leaderboards keep their licenses, so they're skipped. The Artificial Analysis Intelligence, Coding and Math indices are added when an `AA_API_KEY` secret is set (free API, attribution required). Results are matched by name, stored with the imports (last good data kept), shown as separate linked chips labeled "independent", and counted by the "Has benchmarks" filter. LMArena and MTEB are linked, not scored: LMArena's dataset license is unclear, and MTEB only publishes raw results.
+**Why:** the owner approved this set. It answers "how smart is it?" from independent sources without a universal score. First run: 427 models in Epoch's data, 52 matched to listings.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

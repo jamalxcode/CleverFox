@@ -91,7 +91,10 @@ export function cardBadges(r) {
   }
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
-  if (a.benchmarks) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
+  const eci = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci'); const aai = (r.independent_benchmarks || []).find((x) => x.id === 'aa_intelligence');
+  if (eci) b.push(`<span class="badge b-ok" title="Epoch Capabilities Index (Epoch AI)">🧠 ECI ${esc(eci.display)}</span>`);
+  if (aai) b.push(`<span class="badge b-ok" title="Artificial Analysis Intelligence Index">🧠 AA ${esc(aai.display)}</span>`);
+  if (a.benchmarks && !eci && !aai) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
   if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
   else if (r.warning === 'reported') b.push(badge('⚠️ Reported', 'b-warn'));
   b.push(countryBadge(r));
@@ -205,7 +208,15 @@ export function glance(r) {
   }
   if (r.type === 'model') {
     const bm = r.benchmarks || [];
-    h += line([bm.length ? item('📊', bm.slice(0, 4).map((x) => `<span class="chip">${esc(x.benchmark)} <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(1) : x.value)}</strong></span>`).join(' ') + ' <span class="muted">self-reported</span>', 'Publisher\'s own results, not independently checked') : item('🧠', '<span class="unknown">no benchmarks published</span>')]);
+    const ind = r.independent_benchmarks || [];
+    const indChip = (x) => `<a class="chip" href="${esc(x.url)}" rel="noopener" target="_blank" title="${esc(`${x.source}${x.detail ? ' · ' + x.detail : ''} · checked ${fmtDate(x.observed_at)}`)}">${esc(x.label.replace('Epoch Capabilities Index', 'Epoch index').replace('AA Intelligence Index', 'AA index'))} <strong>${esc(x.display)}</strong></a>`;
+    const more = [a.good_for?.includes('chat') && '<a href="https://lmarena.ai/leaderboard" rel="noopener" target="_blank">🏟️ LMArena ↗</a>', a.good_for?.includes('search') && '<a href="https://huggingface.co/spaces/mteb/leaderboard" rel="noopener" target="_blank">📊 MTEB ↗</a>'].filter(Boolean).join(' · ');
+    h += line([
+      ind.length ? item('🧠', ind.map(indChip).join(' ') + ` <span class="muted">independent</span>`, 'Independent results: hover a score for its source') : null,
+      bm.length ? item('📊', bm.slice(0, 4).map((x) => `<span class="chip">${esc(x.benchmark)} <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(1) : x.value)}</strong></span>`).join(' ') + ' <span class="muted">self-reported</span>', 'Publisher\'s own results, not independently checked') : null,
+      !ind.length && !bm.length ? item('🧠', '<span class="unknown">no benchmark results yet</span>') : null,
+      more ? `<span class="it">${more}</span>` : null,
+    ]);
     const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
     const ctx = r.ollama?.context || r.distributions?.find((d) => d.context)?.context;
     h += line([

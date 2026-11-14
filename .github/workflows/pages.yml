@@ -26,8 +26,8 @@ jobs:
           if git fetch --depth 1 origin data 2>/dev/null; then git archive FETCH_HEAD imported | tar -x -C data; ls -la data/imported; else echo "No data branch yet."; fi
       - name: Import from Hugging Face and the Ollama library
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.import)
-        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}" }
-        run: node tools/import.mjs
+        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
+        run: node tools/import.mjs && node tools/benchmarks.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
       - name: Save imports to the data branch (one commit, overwritten)
