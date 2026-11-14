@@ -29,10 +29,14 @@ const known = (c) => c && c.value !== 'unknown' && c.value !== null && c.value !
 const TYPES = ['model', 'dataset', 'app', 'host'];
 const CAPS = { chat: '💬 Chat', writing: '✍️ Writing', coding: '💻 Coding', reasoning: '🧠 Reasoning', math: '➗ Math', analytics: '📊 Analytics', images: '🎨 Images', vision: '👁️ Vision', speech: '🎙️ Speech', video: '🎬 Video', translation: '🌐 Translation', search: '🔎 Search', tools: '🛠️ Tools & agents' };
 const FREE_TEXT = { free_download: 'Free download', free: 'Free', free_tier: 'Free tier', trial: 'Free trial', paid: 'Paid', unknown: 'Price unknown' };
+// Rough guide from memory needed to the kind of device that has it.
+const DEVICES = [[4, 'a phone or Raspberry Pi (4 GB)'], [8, 'a basic laptop with 8 GB'], [16, 'a 16 GB laptop or Mac, or a 12–16 GB graphics card'], [24, 'a 24 GB graphics card (e.g. RTX 3090/4090) or a 32 GB Mac'], [48, 'a 48 GB graphics card or a 64 GB Mac or PC'], [96, 'a 128 GB Mac or several graphics cards'], [Infinity, 'a server with several data-center GPUs']];
+const deviceFor = (gb) => DEVICES.find(([m]) => gb <= m)[1];
+const MEMORY_CHOICES = [4, 8, 16, 24, 32, 48, 64, 128];
 const GATE_TEXT = { none: 'No sign-in needed', login_and_terms: 'Log in and accept terms', approval: 'Needs approval' };
 const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
 const PAGE = 50;
-const state = { type: 'model', q: '', cap: '', country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const state = { type: 'model', q: '', cap: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
 const loaded = {}; // type -> records
 const recordsOf = (t) => loaded[t] || [];
 const popularity = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50 + pullsNum(p.pulls), 0);
@@ -77,6 +81,7 @@ function filterDefs(type) {
     { key: 'avail', label: 'Any availability', opts: options(recs.map((r) => r.availability?.value).filter((v) => v !== 'unknown'), (v) => AVAIL_LABELS[v] || v) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
     { key: 'local', toggle: '💻 Runs locally' },
+    { key: 'fits', toggle: '✓ Fits my device', needsMem: true },
     { key: 'free', toggle: '🆓 Free' },
     { key: 'nobar', toggle: '🔓 No barriers' },
     { key: 'uncensored', toggle: 'Uncensored / abliterated' },
@@ -116,8 +121,8 @@ function renderFilters() {
   const f = state.f[state.type];
   $('#filters').innerHTML = filterDefs(state.type).map((d) => {
     if (d.toggle) {
-      const dis = d.needsCountry && !state.country;
-      return `<label class="toggle"${dis ? ' title="Choose your country first"' : ''}><input type="checkbox" data-key="${d.key}"${f[d.key] ? ' checked' : ''}${dis ? ' disabled' : ''}> ${esc(d.toggle)}</label>`;
+      const dis = (d.needsCountry && !state.country) || (d.needsMem && !state.mem);
+      return `<label class="toggle"${dis ? ` title="${d.needsMem ? 'Choose your device memory first' : 'Choose your country first'}"` : ''}><input type="checkbox" data-key="${d.key}"${f[d.key] ? ' checked' : ''}${dis ? ' disabled' : ''}> ${esc(d.toggle)}</label>`;
     }
     return `<select data-key="${d.key}" aria-label="${esc(d.label)}"><option value="">${esc(d.label)}</option>${d.opts.map(([v, l]) => `<option value="${esc(v)}"${f[d.key] === v ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`;
   }).join('');
@@ -139,6 +144,7 @@ function matches(r) {
     if (f.region && r.publisher_region?.value !== f.region) return false;
     if (f.avail && r.availability?.value !== f.avail) return false;
     if (f.local && !r.local_ready) return false;
+    if (f.fits && state.mem && !(r.hardware && r.hardware.min_memory_gb <= state.mem)) return false;
     if (f.free && !['free_download', 'free', 'free_tier'].includes(r.answers?.free)) return false;
     if (f.uncensored && !r.answers?.uncensored) return false;
     if (f.bench && !r.answers?.benchmarks) return false;
@@ -196,6 +202,11 @@ function cardBadges(r) {
   const a = r.answers || {};
   if (a.no_barriers) b.push(badge('🔓 No barriers', 'b-ok'));
   else if (a.barriers?.length && r.type !== 'host') b.push(badge(`🚧 ${a.barriers[0]}${a.barriers.length > 1 ? ` +${a.barriers.length - 1}` : ''}`, 'b-warn'));
+  if (r.hardware) {
+    const need = r.hardware.min_memory_gb;
+    if (state.mem) b.push(need <= state.mem * 0.8 ? badge(`✓ Fits your ${state.mem} GB`, 'b-ok') : need <= state.mem ? badge(`⚠ Tight on ${state.mem} GB`, 'b-warn') : badge(`✗ Needs ~${need} GB`, 'b-no'));
+    else b.push(badge(`🖥️ From ~${need} GB memory`));
+  }
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
   if (a.benchmarks) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
   if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
@@ -273,6 +284,12 @@ function glance(r) {
   if (r.type === 'model') {
     const bm = r.benchmarks || [];
     h += `<dt>How smart is it?</dt><dd>${bm.length ? `Publisher's own results (not independently checked):<ul class="dist">${bm.map((x) => `<li>${esc(x.benchmark)}${x.metric ? ` (${esc(x.metric)})` : ''}: <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(2) : x.value)}</strong>${x.conditions ? ` <span class="muted">${esc(x.conditions)}</span>` : ''}</li>`).join('')}</ul>` : '<span class="unknown">No benchmark results published with this listing yet</span>'}</dd>`;
+  }
+  if (r.hardware) {
+    const fit = (gb) => !state.mem ? '' : gb <= state.mem * 0.8 ? ' <span class="yes">✓ fits</span>' : gb <= state.mem ? ' <span class="muted">⚠ tight</span>' : ' <span class="no">✗ too big</span>';
+    h += `<dt>What hardware do I need?</dt><dd><table class="hw"><thead><tr><th>Size</th><th>Download</th><th>Memory</th><th>Runs on</th></tr></thead><tbody>${r.hardware.options.map((o) => `<tr><td>${esc(o.label)}</td><td>${o.download_gb ? esc(o.download_gb + ' GB') : '–'}</td><td>~${esc(o.memory_gb)} GB${fit(o.memory_gb)}</td><td>${esc(deviceFor(o.memory_gb))}</td></tr>`).join('')}</tbody></table>
+      <p class="src">Rough estimate from ${esc(r.hardware.options[0].basis)}, not the publisher's requirement. Longer conversations need more memory.</p>
+      <p><strong>Processor:</strong> any modern 64-bit CPU can run it, but slowly, and slower the bigger the model. A graphics card (NVIDIA, or AMD on Linux) is much faster when the whole model fits in its memory. Apple Silicon Macs (M1 and later) share memory between CPU and GPU, so the Mac's total memory counts.${r.hardware.moe ? ' This is a mixture-of-experts model: it needs memory for its full size, but runs faster than its size suggests.' : ''}</p></dd>`;
   }
   if (r.highlights?.length) h += `<dt>Highlights</dt><dd><ul class="dist">${r.highlights.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></dd>`;
   if (r.type !== 'host') {
@@ -401,6 +418,7 @@ $('#filters').addEventListener('change', (e) => {
   state.limit = PAGE;
   render();
 });
+$('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); });
 $('#country').addEventListener('change', (e) => { state.country = e.target.value; store.set('country', state.country); renderFilters(); render(); });
 
 const themes = ['auto', 'light', 'dark'];
@@ -424,6 +442,7 @@ try {
   throw new Error('catalog load failed');
 }
 countryNames = new Map(catalog.countries);
+$('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option value="${g}"${g === state.mem ? ' selected' : ''}>${g === 128 ? '128 GB or more' : g + ' GB'}</option>`).join(''));
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;

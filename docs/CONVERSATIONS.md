@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: hardware advice
+**Where:** Claude Code session.
+**Asked:** something to advise on what hardware (memory and processor) a model needs.
+**Outcome:** estimated memory per local size, device class and processor advice in "At a glance". A "Your device" memory picker with fit badges and a "Fits my device" filter. 598 of 877 models have estimates (DECISIONS 47).
+
 ## 2026-11-14: uncensored import rule
 **Where:** Claude Code session.
 **Asked:** add the rule to import abliterated and uncensored models.

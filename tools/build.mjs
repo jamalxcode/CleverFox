@@ -225,7 +225,31 @@ function answers(r) {
     benchmarks: bench,
   };
 }
-for (const r of published) r.answers = answers(r);
+// ---- hardware estimates (spec section 12; rough, labeled as estimates) ----
+// Memory to run a model locally ~ download size x 1.2 + 0.5 GB (weights plus working memory for an
+// ordinary conversation length). Without a download size, from the parameter count: about 0.6 GB per
+// billion parameters at 4-bit, 2 GB per billion at 16-bit. Never shown as a publisher's requirement.
+const HW = { overhead: 1.2, extraGb: 0.5, q4PerB: 0.6, f16PerB: 2.0 };
+const roundUp = (gb) => Math.max(1, Math.ceil(gb * 2) / 2);
+function paramsInB(v) {
+  if (!v || v === 'unknown') return [];
+  return String(v).split(/,\s*/).map((x) => { const m = x.trim().match(/^([\d.]+)\s*([bm])\b/i); return m ? +m[1] * (m[2].toLowerCase() === 'm' ? 0.001 : 1) : null; }).filter((x) => x && x > 0);
+}
+function hardware(r) {
+  if (r.type !== 'model') return null;
+  const local = (r.distributions || []).filter((d) => d.file_size_bytes);
+  let options = local.map((d) => ({ label: d.native_id?.split(':')[1] || d.native_id, download_gb: +(d.file_size_bytes / 1e9).toFixed(1), memory_gb: roundUp(d.file_size_bytes / 1e9 * HW.overhead + HW.extraGb), basis: 'download size', source_url: d.url }));
+  if (!options.length && (r.distributions || []).some((d) => ['downloadable', 'gated'].includes(d.availability))) {
+    options = paramsInB(r.parameters?.value).flatMap((b) => [
+      { label: `${b >= 1 ? +b.toFixed(1) + 'B' : Math.round(b * 1000) + 'M'} at 4-bit`, download_gb: null, memory_gb: roundUp(b * HW.q4PerB + HW.extraGb), basis: 'parameter count (4-bit quantized copy)', source_url: r.parameters?.source_url || null },
+      { label: `${b >= 1 ? +b.toFixed(1) + 'B' : Math.round(b * 1000) + 'M'} at 16-bit`, download_gb: null, memory_gb: roundUp(b * HW.f16PerB + 1), basis: 'parameter count (full precision)', source_url: r.parameters?.source_url || null },
+    ]);
+  }
+  if (!options.length) return null;
+  options.sort((a, b) => a.memory_gb - b.memory_gb);
+  return { min_memory_gb: options[0].memory_gb, options: options.slice(0, 8), moe: /\bA\d+(\.\d+)?B\b/.test(r.name) || (r.tags_seen || []).includes('moe') };
+}
+for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
 console.log(`OK: ${published.length} records (${counts.model} models, ${counts.dataset} datasets, ${counts.app} apps, ${counts.host} hosts)`);

@@ -127,3 +127,12 @@ details[open] .more { display: none; }
 .glance dd { margin-bottom: 4px; }
 .yes { color: var(--ok); font-weight: 700; }
 .no { color: var(--no); font-weight: 700; }
+
+.pickers { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
+#mem { width: 9rem; min-width: 0; }
+table.hw { border-collapse: collapse; width: 100%; font-size: .88rem; margin: 2px 0 6px; }
+table.hw th, table.hw td { text-align: left; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.hw th { color: var(--muted); font-weight: 600; }
+@media (max-width: 560px) { .pickers { flex: 1 1 100%; } .pickers .country { flex: 1 1 40%; } #mem { width: 100%; } }
+table.hw th { white-space: nowrap; }
+table.hw td:nth-child(-n+3) { white-space: nowrap; }
