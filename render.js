@@ -124,119 +124,119 @@ export function cardBadges(r) {
   return b.join('');
 }
 
+// Source as a small ⓘ link: hover or long-press shows where the fact came from and when.
 export function src(c) {
   if (!known(c) || !c.source_url) return '';
   const type = { official: 'official', third_party: 'third-party', independently_verified: 'independently verified', web_reported: 'public reports' }[c.source_type] || '';
   let host = '';
   try { host = new URL(c.source_url).hostname.replace(/^www\./, ''); } catch { /* bad URL */ }
-  return ` <span class="src">(<a href="${esc(c.source_url)}" rel="noopener" target="_blank">${esc(host || 'source')}</a>, ${esc(type)}, checked ${esc(fmtDate(c.observed_at))})</span>`;
+  return `<a class="src-i" href="${esc(c.source_url)}" rel="noopener" target="_blank" title="Source: ${esc(host)} · ${esc(type)} · checked ${esc(fmtDate(c.observed_at))}" aria-label="Source: ${esc(host)}">ⓘ</a>`;
 }
 export const unknownTxt = '<span class="unknown">unknown</span>';
-export function fact(label, c, fmt = (v) => esc(v)) {
-  if (c === undefined) return '';
-  return `<dt>${esc(label)}</dt><dd>${known(c) ? fmt(c.value) + src(c) : unknownTxt}</dd>`;
-}
 export const countryList = (v) => v.map((c) => `${flag(c)} ${esc(countryName(c))}`).join(', ');
+const gb = (bytes) => bytes >= 1e9 ? `${(bytes / 1e9).toFixed(1)} GB` : `${Math.round(bytes / 1e6)} MB`;
+const ok = '<span class="yes">✓</span>'; const bad = '<span class="no">✗</span>';
+const item = (emoji, html, title = '') => `<span class="it"${title ? ` title="${esc(title)}"` : ''}>${emoji} ${html}</span>`;
+const line = (items) => { const xs = items.filter(Boolean); return xs.length ? `<p class="ln">${xs.join('<span class="sep"> · </span>')}</p>` : ''; };
+const claimVal = (c, fmt = (v) => esc(v)) => known(c) ? `${fmt(c.value)}${src(c)}` : null;
+const DEVICE_SHORT = [[4, '📱 phone / Pi'], [8, '💻 8 GB laptop'], [16, '💻 16 GB laptop / Mac'], [24, '🎮 24 GB GPU / 32 GB Mac'], [48, '🖥️ 48 GB GPU / 64 GB Mac'], [96, '🖥️ 128 GB Mac / multi-GPU'], [Infinity, '🏢 server GPUs']];
+const deviceShort = (g) => DEVICE_SHORT.find(([m]) => g <= m)[1];
+const fitMark = (g) => !view.mem ? '' : g <= view.mem * 0.8 ? ` ${ok}` : g <= view.mem ? ' ⚠' : ` ${bad}`;
+const licText = (v) => v === 'custom' ? 'custom license' : esc(v);
+
+// Access and payment in two or three lines (apps, hosts, paid APIs).
 export function accessFacts(a) {
-  if (!a) return `<dl class="facts"><dt>Access</dt><dd>${unknownTxt}</dd></dl>`;
-  const pm = (v) => `<ul class="dist">${v.map((m) => `<li>${esc(METHOD_LABELS[m.method] || m.method)}${m.note ? ` <span class="muted">(${esc(m.note)})</span>` : ''}</li>`).join('')}</ul>`;
-  const avail = (v) => v === 'all_except_listed' ? 'Most countries, except those listed below' : countryList(v);
-  let out = '<dl class="facts">';
-  out += fact('Free?', a.free, (v) => esc(FREE_LABELS[v] || v) + (a.free_limits ? `: ${esc(a.free_limits)}` : ''));
-  const pm0 = methodsOf(a);
-  out += `<dt>Pay without a card</dt><dd>${pm0.length ? (payNoCard(a) ? 'Yes, see methods below' : 'No, paid plans need a card') : unknownTxt}</dd>`;
-  out += fact('Payment methods', a.payment_methods, pm);
-  out += fact('Available in', a.countries_available, avail);
-  out += fact('Not available in', a.countries_unavailable, countryList);
-  out += fact('Sign-up', a.signup_requirements);
-  out += fact('Local currency prices', a.local_currency_pricing, (v) => v ? 'Yes' : 'No');
-  return out + '</dl>';
+  if (!a) return line([item('💳', unknownTxt)]);
+  const pm = methodsOf(a);
+  const freeTxt = known(a.free) ? `${esc(FREE_LABELS[a.free.value] || a.free.value)}${src(a.free)}` : null;
+  const av = a.countries_available?.value; const un = a.countries_unavailable?.value;
+  const where = view.country && (av || un) ? (availableIn(a, view.country) === 'yes' ? `${ok} ${flag(view.country)} ${esc(countryName(view.country))}` : availableIn(a, view.country) === 'no' ? `${bad} ${flag(view.country)} ${esc(countryName(view.country))}` : null) : null;
+  return line([
+    freeTxt && item('🆓', freeTxt, a.free_limits || ''),
+    pm.length && item('💳', `${payNoCard(a) ? `${ok} no card needed` : `${bad} card only`}${src(a.payment_methods)}`),
+    pm.length && item('', pm.map((m) => `<span class="chip" title="${esc(m.note || '')}">${esc(METHOD_LABELS[m.method] || m.method)}${m.note ? '*' : ''}</span>`).join(' ')),
+  ]) + line([
+    where && item('📍', where),
+    av === 'all_except_listed' && item('🌍', `most countries${Array.isArray(un) && un.length ? `, not ${un.map(flag).join('')}` : ''}${src(a.countries_available)}`),
+    Array.isArray(av) && item('🌍', `${av.length > 6 ? `${av.length} countries` : countryList(av)}${src(a.countries_available)}`),
+    known(a.signup_requirements) && item('📝', `${esc(String(a.signup_requirements.value).slice(0, 80))}${src(a.signup_requirements)}`),
+    known(a.local_currency_pricing) && item('💱', `${a.local_currency_pricing.value ? `${ok} local prices` : 'USD/EUR prices'}${src(a.local_currency_pricing)}`),
+  ]);
 }
+
+// "At a glance": emoji-led lines, several related facts per line.
 export function glance(r) {
   const a = r.answers || {};
-  const yes = (t) => `<span class="yes">✓</span> ${esc(t)}`; const no = (t) => `<span class="no">✗</span> ${esc(t)}`;
-  let h = '<h3>At a glance</h3><dl class="facts glance">';
-  if (a.good_for?.length) h += `<dt>Good for</dt><dd>${a.good_for.map((c) => esc(CAPS[c] || c)).join(' · ')}</dd>`;
-  if (r.type === 'model') {
+  let h = '<div class="glance">';
+  if (a.good_for?.length) h += line([`<span class="it">🎯 <strong>${a.good_for.map((c) => esc((CAPS[c] || c).replace(/^\S+\s/, ''))).join(' · ')}</strong></span>`]);
+  const isFree = ['free_download', 'free', 'free_tier', 'trial'].includes(a.free);
+  const lic = r.license && known(r.license) ? `${licText(r.license.value)}${a.license_kind === 'open' ? ` ${ok} commercial` : a.license_kind === 'non_commercial' ? ` ${bad} commercial` : ''}${src(r.license)}` : null;
+  if (r.type === 'model' || r.type === 'dataset') {
     const sizes = (r.distributions || []).map((d) => d.file_size_bytes).filter(Boolean).sort((x, y) => x - y);
-    h += `<dt>Runs locally?</dt><dd>${a.runs_locally ? yes(`Yes${r.local_runtimes?.length ? ` (${r.local_runtimes.join(', ')})` : ''}${sizes.length ? `, downloads from ${sizes[0] >= 1e9 ? (sizes[0] / 1e9).toFixed(1) + ' GB' : Math.round(sizes[0] / 1e6) + ' MB'}` : ''}`) : no('No local version listed')}</dd>`;
-  }
-  if (r.type !== 'host') h += `<dt>Free?</dt><dd>${['free_download', 'free', 'free_tier', 'trial'].includes(a.free) ? yes(FREE_TEXT[a.free]) : a.free === 'paid' ? no('Paid') : '<span class="unknown">unknown</span>'}</dd>`;
-  if (a.pay_without_card !== null && a.pay_without_card !== undefined) h += `<dt>Pay without a card?</dt><dd>${a.pay_without_card ? yes('Yes (see payment methods below)') : no('Paid plans need a card')}</dd>`;
-  if (r.type === 'model') {
-    const bm = r.benchmarks || [];
-    h += `<dt>How smart is it?</dt><dd>${bm.length ? `Publisher's own results (not independently checked):<ul class="dist">${bm.map((x) => `<li>${esc(x.benchmark)}${x.metric ? ` (${esc(x.metric)})` : ''}: <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(2) : x.value)}</strong>${x.conditions ? ` <span class="muted">${esc(x.conditions)}</span>` : ''}</li>`).join('')}</ul>` : '<span class="unknown">No benchmark results published with this listing yet</span>'}</dd>`;
+    h += line([
+      r.type === 'model' && item('💻', a.runs_locally ? `${ok} local${r.local_runtimes?.length ? ` <span class="muted">${esc(r.local_runtimes.join(', '))}</span>` : ''}` : `${bad} no local version`),
+      sizes.length && item('⬇️', `from ${gb(sizes[0])}`),
+      item('🆓', isFree ? `${ok} ${esc(FREE_TEXT[a.free])}` : a.free === 'paid' ? `${bad} paid` : unknownTxt),
+      item(a.gate === 'none' ? '🔓' : '🔒', esc(GATE_TEXT[a.gate] || 'No sign-in')),
+      item('📜', lic || unknownTxt),
+    ]);
   }
   if (r.hardware) {
-    const fit = (gb) => !view.mem ? '' : gb <= view.mem * 0.8 ? ' <span class="yes">✓ fits</span>' : gb <= view.mem ? ' <span class="muted">⚠ tight</span>' : ' <span class="no">✗ too big</span>';
-    h += `<dt>What hardware do I need?</dt><dd><table class="hw"><thead><tr><th>Size</th><th>Download</th><th>Memory</th><th>Runs on</th></tr></thead><tbody>${r.hardware.options.map((o) => `<tr><td>${esc(o.label)}</td><td>${o.download_gb ? esc(o.download_gb + ' GB') : '–'}</td><td>~${esc(o.memory_gb)} GB${fit(o.memory_gb)}</td><td>${esc(deviceFor(o.memory_gb))}</td></tr>`).join('')}</tbody></table>
-      <p class="src">Rough estimate from ${esc(r.hardware.options[0].basis)}, not the publisher's requirement. Longer conversations need more memory.</p>
-      <p><strong>Processor:</strong> any modern 64-bit CPU can run it, but slowly, and slower the bigger the model. A graphics card (NVIDIA, or AMD on Linux) is much faster when the whole model fits in its memory. Apple Silicon Macs (M1 and later) share memory between CPU and GPU, so the Mac's total memory counts.${r.hardware.moe ? ' This is a mixture-of-experts model: it needs memory for its full size, but runs faster than its size suggests.' : ''}</p></dd>`;
+    const o = r.hardware.options;
+    h += line([item('🖥️', `<strong>~${o[0].memory_gb} GB</strong>${fitMark(o[0].memory_gb)} → ${esc(deviceShort(o[0].memory_gb))}`, `Rough estimate from ${o[0].basis}, not the publisher's requirement`), o.length > 1 && item('📐', o.map((x) => `<span class="chip" title="${x.download_gb ? `${x.download_gb} GB download` : esc(x.basis)}">${esc(x.label)} ~${x.memory_gb} GB${fitMark(x.memory_gb)}</span>`).join(' '))]);
+    h += line([item('⚙️', 'CPU works, slowly'), item('🎮', 'GPU fast if it fits'), item('🍎', 'Mac: shared memory counts'), r.hardware.moe && item('⚡', 'MoE: faster than its size'), '<span class="muted">estimates</span>']);
   }
-  h += `<dt>What do people say?</dt><dd><a href="${esc(xSearchUrl(r))}" target="_blank" rel="noopener">Reviews and reactions on X ↗</a> <span class="muted">(live search)</span></dd>`;
-  if (r.highlights?.length) h += `<dt>Highlights</dt><dd><ul class="dist">${r.highlights.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></dd>`;
-  if (r.type !== 'host') {
-    h += `<dt>Uncensored?</dt><dd>${a.uncensored ? 'Yes: an abliterated or uncensored variant, with refusals removed by its publisher' : 'Not marked as uncensored'}</dd>`;
-    h += `<dt>Gatekeeping</dt><dd>${a.barriers?.length ? `<ul class="dist">${a.barriers.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : yes(r.type === 'app' ? 'No known barriers' : `${GATE_TEXT[a.gate] || 'No sign-in needed'}, open license`)}</dd>`;
+  if (r.type === 'model') {
+    const bm = r.benchmarks || [];
+    h += line([bm.length ? item('📊', bm.slice(0, 4).map((x) => `<span class="chip">${esc(x.benchmark)} <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(1) : x.value)}</strong></span>`).join(' ') + ' <span class="muted">self-reported</span>', 'Publisher\'s own results, not independently checked') : item('🧠', '<span class="unknown">no benchmarks published</span>')]);
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    const ctx = r.ollama?.context || r.distributions?.find((d) => d.context)?.context;
+    h += line([
+      ctx && item('📏', `${esc(ctx)} context`),
+      a.good_for?.includes('reasoning') && item('🧠', 'thinking'),
+      a.good_for?.includes('tools') && item('🛠️', 'tools'),
+      a.good_for?.includes('vision') && item('👁️', 'vision'),
+      r.hardware?.moe && item('⚡', 'MoE'),
+      langs.length && item('🗣️', langs.length > 4 ? `${langs.length} languages` : esc(langs.map(langName).join(', ')), langs.map(langName).join(', ')),
+    ]);
   }
-  return h + '</dl>';
+  if (a.uncensored || a.barriers?.length) h += line([a.uncensored && item('🔓', '<strong>uncensored</strong>', 'Abliterated or uncensored variant: refusals removed by its publisher'), ...(a.barriers || []).map((x) => item('🚧', esc(x)))]);
+  return h + '</div>';
 }
+
 export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
   h += glance(r);
-  h += '<h3>Facts</h3><dl class="facts">';
-  h += fact('Publisher country', r.publisher_region, (v) => `${flag(v)} ${esc(countryName(v))}`);
+  // Facts: one or two lines; unknown fields gathered at the end.
+  const unknown = [];
+  const f = (emoji, label, c, fmt) => { if (c === undefined) return null; const v = claimVal(c, fmt); if (!v) { unknown.push(label); return null; } return item(emoji, v, label); };
+  const facts = [f('🌍', 'publisher country', r.publisher_region, (v) => `${flag(v)} ${esc(countryName(v))}`)];
   if (r.type === 'model') {
-    h += fact('Released', r.released_at);
-    if (r.first_published && known(r.first_published)) h += fact('First on Hugging Face', r.first_published);
-    h += fact('Parameters', r.parameters);
-    h += fact('License', r.license, (v) => v === 'custom' ? 'Custom license (see source)' : esc(v));
-    h += fact('Availability', r.availability, (v) => esc(AVAIL_LABELS[v] || v));
-    h += fact('Languages', r.languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
-    if (r.local_runtimes?.length) h += `<dt>Local runtimes</dt><dd>${esc(r.local_runtimes.join(', '))}</dd>`;
+    facts.push(f('📅', 'release date', r.released_at), r.first_published && known(r.first_published) ? item('🤗', `${claimVal(r.first_published)}`, 'First published on Hugging Face') : null, f('⚙️', 'parameters', r.parameters));
+    if (!known(r.languages)) unknown.push('languages');
   }
-  if (r.type === 'dataset') {
-    h += fact('License', r.license, (v) => v === 'custom' ? 'Custom license (see source)' : esc(v));
-    h += fact('Availability', r.availability, (v) => esc(AVAIL_LABELS[v] || v));
-    h += fact('Languages', r.languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
-    if (r.tasks?.length) h += `<dt>Tasks</dt><dd>${esc(r.tasks.join(', ').replace(/-/g, ' '))}</dd>`;
-    if (r.modalities?.length) h += `<dt>Modalities</dt><dd>${esc(r.modalities.join(', '))}</dd>`;
-    if (r.formats?.length) h += `<dt>Formats</dt><dd>${esc(r.formats.join(', '))}</dd>`;
-    if (r.size_category) h += `<dt>Size</dt><dd>${esc(r.size_category)} rows</dd>`;
-  }
+  if (r.type === 'dataset') facts.push(r.size_category && item('📦', `${esc(r.size_category)} rows`), r.formats?.length && item('🗂️', esc(r.formats.join(', '))), f('🗣️', 'languages', r.languages, (v) => Array.isArray(v) ? esc(v.length > 4 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)));
+  if (r.type === 'app') facts.push(r.categories?.length && item('🏷️', esc(r.categories.join(', '))), f('🗣️', 'interface languages', r.interface_languages, (v) => Array.isArray(v) ? esc(v.length > 4 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)));
+  if (r.type === 'host') facts.push(r.kinds?.length && item('🏷️', esc(r.kinds.map((k) => KIND_LABELS[k] || k).join(', '))), f('📍', 'data centers', r.data_centers, (v) => v.map((d) => `<span title="${esc(d.city_or_region || '')}">${flag(d.country)}</span>`).join(' ')), f('🎮', 'GPUs', r.gpu_types, (v) => Array.isArray(v) ? esc(v.join(', ')) : esc(v)), f('🔐', 'data residency', r.data_residency, (v) => esc(String(v).slice(0, 90))));
   if (r.type === 'model' && r.relations?.length) {
-    const REL = { uncensored_variant_of: 'Uncensored variant of', finetune_of: 'Fine-tune of', adapter_of: 'Adapter for', merge_of: 'Merge of', quantization_of: 'Quantization of', variant_of: 'Variant of', successor_of: 'Successor of' };
-    h += `<dt>Based on</dt><dd>${r.relations.map((x) => { const t = String(x.target || x.target_id || x.id || ''); return `${esc(REL[x.type] || x.type || 'Related to')} ${/^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(t.replace('https://huggingface.co/', ''))}</a>` : esc(t.split('/').pop() || 'unknown')}`; }).join('; ')}</dd>`;
+    const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
+    facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); return `${esc(REL[x.type] || x.type || 'related to')} ${/^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(t.replace('https://huggingface.co/', ''))}</a>` : esc(t.split('/').pop() || '?')}`; }).join('; ')));
   }
-  if (r.type === 'app') {
-    h += `<dt>Categories</dt><dd>${esc((r.categories || []).join(', '))}</dd>`;
-    h += fact('Interface languages', r.interface_languages, (v) => Array.isArray(v) ? esc(v.map(langName).join(', ')) : esc(v));
-  }
-  if (r.type === 'host') {
-    h += `<dt>Kinds</dt><dd>${esc((r.kinds || []).map((k) => KIND_LABELS[k] || k).join(', '))}</dd>`;
-    h += fact('Data centers', r.data_centers, (v) => v.map((d) => `${flag(d.country)} ${esc(countryName(d.country))}${d.city_or_region ? ` (${esc(d.city_or_region)})` : ''}`).join('; '));
-    h += fact('GPUs', r.gpu_types, (v) => Array.isArray(v) ? esc(v.join(', ')) : esc(v));
-    h += fact('Data residency (provider claim)', r.data_residency);
-  }
-  h += '</dl>';
+  h += line(facts);
+  if (unknown.length) h += `<p class="ln muted">❓ Unknown: ${esc(unknown.join(', '))}</p>`;
+  // Where to get it, payment, links: compact lines.
   if (r.type === 'model') {
-    h += '<h3>Where to get it</h3><ul class="dist">';
-    for (const d of r.distributions || []) {
-      h += `<li><a href="${esc(d.url)}" rel="noopener" target="_blank">${esc(SOURCE_LABELS[d.source] || d.source)}: ${esc(d.native_id || d.url)}</a> <span class="muted">${esc(AVAIL_LABELS[d.availability] || '')}${d.formats?.length ? ' · ' + esc(d.formats.join(', ')) : ''}</span>`;
-      if (d.access) h += accessFacts(d.access);
-      h += '</li>';
-    }
-    h += '</ul>';
+    h += line([item('⬇️', (r.distributions || []).map((d) => `<a href="${esc(d.url)}" rel="noopener" target="_blank" title="${esc((AVAIL_LABELS[d.availability] || '') + (d.formats?.length ? ' · ' + d.formats.join(', ') : '') + (d.file_size_bytes ? ' · ' + gb(d.file_size_bytes) : ''))}">${esc(SOURCE_LABELS[d.source] || d.source)}${d.source === 'ollama' ? ' ' + esc(String(d.native_id).split(':')[1] || '') : ''}</a>`).join(' · '))]);
+    for (const d of (r.distributions || []).filter((x) => x.access)) h += `<p class="ln muted">${esc(SOURCE_LABELS[d.source] || d.source)} access:</p>` + accessFacts(d.access);
   } else if (r.type !== 'dataset') {
-    h += '<h3>Access and payment</h3>' + accessFacts(r.access);
+    h += accessFacts(r.access);
   }
-  const linkList = (urls) => urls.map((u) => { let t = u; try { t = new URL(u).hostname.replace(/^www\./, '') + new URL(u).pathname.replace(/\/$/, ''); } catch { /* keep */ } return `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(t)}</a>`; }).join(' ');
+  const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
+  const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(short(u).slice(0, 48))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
-  h += `<h3>Official links</h3><p class="links">${linkList(links)}</p>`;
-  if (r.documentation_urls?.length) h += `<h3>Code and documentation</h3><p class="links">${linkList(r.documentation_urls)}</p>`;
-  if (r.paper_urls?.length) h += `<h3>Papers</h3><p class="links">${linkList(r.paper_urls)}</p>`;
-  h += `<p class="src">${r.verification_status === 'verified' ? 'Verified at an official source' : 'Not yet verified at an official page: treat facts with care'}. First seen ${esc(fmtDate(r.first_seen_at))}. ${r.evidence_urls?.length || 0} sources.</p>`;
+  h += line([item('🔗', linkList(links, 3)), r.documentation_urls?.length && item('🛠️', linkList(r.documentation_urls, 3)), r.paper_urls?.length && item('📄', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · '))]);
+  h += `<p class="ln src">${r.verification_status === 'verified' ? '✅ Verified at an official source' : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
 }
 export function card(r) {
