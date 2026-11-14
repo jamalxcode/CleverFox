@@ -7,7 +7,7 @@ A global catalog of AI models, AI apps and AI hosting, built for people everywhe
 
 CleverFox is a metadata directory. It links to official sources and never hosts model files. It will be a lightweight static site at https://cleverfox.sala.company, built by a scheduled pipeline on GitHub Actions. Facts carry their sources, and community reports are labeled as such.
 
-**Status:** design stage, no code yet. Next: a seed prototype.
+**Status:** seed prototype: 50 hand-researched listings on a static page. Run `npm run build && npm run serve`, then open http://localhost:8000.
 
 ## Docs
 

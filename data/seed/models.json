@@ -1,0 +1,2500 @@
+[
+  {
+    "schema_version": 1,
+    "id": "cf:model:qwen/qwen3-8-27b",
+    "type": "model",
+    "name": "Qwen3.8-27B",
+    "description": "Dense 27B vision-language model from Alibaba's Qwen team, supporting image and video input with a 262K native context.",
+    "publisher": "Qwen (Alibaba)",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/Qwen/Qwen3.8-27B"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/Qwen/Qwen3.8-27B"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "https://huggingface.co/api/models/Qwen/Qwen3.8-27B",
+      "https://ollama.com/library/qwen3.8/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card states 27B for the language model; HF safetensors metadata totals 27.78B (includes vision encoder). Supported-language list not given as codes in card. Release date not stated on card; HF repo created 2026-08-05. Publisher region left unknown: no fetched or cited page states Alibaba/Qwen HQ (qwen.ai/alibabacloud.com not reachable). Ollama library (maintained by Ollama, not Qwen) has qwen3.8:27b (18GB) and MLX tags (27b-mlx 18GB).",
+    "family": "Qwen3.8",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "Qwen/Qwen3.8-27B",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "qwen3.8:27b",
+        "url": "https://ollama.com/library/qwen3.8/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "qwen3.8:27b-mlx",
+        "url": "https://ollama.com/library/qwen3.8/tags",
+        "availability": "downloadable",
+        "formats": [
+          "mlx"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "mlx",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "ollama",
+      "mlx"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "27B",
+      "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:deepseek/deepseek-v4-1-flash",
+    "type": "model",
+    "name": "DeepSeek-V4.1-Flash",
+    "description": "Multimodal mixture-of-experts model from DeepSeek with 552B backbone parameters, image and text input and up to one-million-token context.",
+    "publisher": "DeepSeek",
+    "publisher_region": {
+      "value": "CN",
+      "source_url": "https://www.techspot.com/community/topics/alibaba-and-bytedance-are-moving-ai-training-offshore-to-bypass-china-chip-bans.295600/",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "https://huggingface.co/api/models/deepseek-ai/DeepSeek-V4.1-Flash",
+      "https://ollama.com/library/deepseek-v4.1-flash/tags",
+      "https://www.techspot.com/community/topics/alibaba-and-bytedance-are-moving-ai-training-offshore-to-bypass-china-chip-bans.295600/"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card: 552B backbone params, 8B/16B activated, plus 196B Engram memory; HF metadata totals 763B. Ollama library entry deepseek-v4.1-flash only has :cloud tags (hosted inference, not local), so not listed as a distribution. No official GGUF. Release date not on card; repo created 2026-09-10; a newer snapshot DeepSeek-V4.1-Flash-1017 exists (2026-10-17). Publisher region comes from a third-party page found via web search (not fetched directly).",
+    "family": "DeepSeek-V4",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "mit",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "552B (backbone)",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:z-ai/glm-5-3-flash",
+    "type": "model",
+    "name": "GLM-5.3-Flash",
+    "description": "Natively multimodal mixture-of-experts model from Z.ai with 320B total and 18B active parameters, combining sparse and linear attention.",
+    "publisher": "Z.ai (Zhipu AI)",
+    "publisher_region": {
+      "value": "CN",
+      "source_url": "https://eu.36kr.com/en/p/3639222304247174",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/zai-org/GLM-5.3-Flash"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "https://docs.z.ai/guides/llm/glm-5.3-flash"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "https://huggingface.co/api/models/zai-org/GLM-5.3-Flash",
+      "https://ollama.com/library/glm-5.3-flash/tags",
+      "https://eu.36kr.com/en/p/3639222304247174"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Ollama library glm-5.3-flash only has a :cloud tag (hosted), so not listed as local. Card links a Z.ai API (docs.z.ai, not fetched). Release date not stated; repo created 2026-08-25. Publisher region comes from a third-party page found via web search (not fetched directly).",
+    "family": "GLM-5",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "zai-org/GLM-5.3-Flash",
+        "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "zh"
+      ],
+      "source_url": "https://huggingface.co/api/models/zai-org/GLM-5.3-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "mit",
+      "source_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "320B total, 18B active",
+      "source_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:moonshot-ai/kimi-k3",
+    "type": "model",
+    "name": "Kimi K3",
+    "description": "Open-weight native multimodal agentic model from Moonshot AI, 2.8T total and 104B activated parameters with a one-million-token context.",
+    "publisher": "Moonshot AI",
+    "publisher_region": {
+      "value": "CN",
+      "source_url": "https://wirescreen.ai/briefings/china-ai",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/moonshotai/Kimi-K3"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/moonshotai/Kimi-K3"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/moonshotai/Kimi-K3",
+      "https://huggingface.co/api/models/moonshotai/Kimi-K3",
+      "https://huggingface.co/moonshotai/Kimi-K3/raw/main/LICENSE",
+      "https://ollama.com/library/kimi-k3/tags",
+      "https://wirescreen.ai/briefings/china-ai"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Kimi K3 License: MIT-style with extra conditions for large Model-as-a-Service businesses (separate agreement above a revenue threshold). Weights are MXFP4 (quantization-aware). Ollama kimi-k3 is :cloud only. Suggested Kimi K2 is superseded; Kimi-K3.1-Pro (2026-11-02) also exists. Release date not stated; repo created 2026-06-13. Publisher region comes from a third-party page found via web search (not fetched directly).",
+    "family": "Kimi K3",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "moonshotai/Kimi-K3",
+        "url": "https://huggingface.co/moonshotai/Kimi-K3",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "custom",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "2.8T total, 104B active",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:mistral-ai/mistral-small-4-119b-2603",
+    "type": "model",
+    "name": "Mistral Small 4 (119B, 2603)",
+    "description": "Mixture-of-experts model from Mistral AI with 119B parameters, 6.5B active per token, 256K context and optional per-request reasoning.",
+    "publisher": "Mistral AI",
+    "publisher_region": {
+      "value": "FR",
+      "source_url": "https://inc42.com/buzz/sarvam-ropes-in-mistral-ai-founding-team-member-devendra-chaplot-as-advisor/",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "https://huggingface.co/api/models/mistralai/Mistral-Small-4-119B-2603",
+      "https://inc42.com/buzz/sarvam-ropes-in-mistral-ai-founding-team-member-devendra-chaplot-as-advisor/"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card: multimodal input (text and image), text output; 128 experts, 4 active. No official GGUF; card points to third-party Unsloth GGUFs for llama.cpp. No Ollama library entry for Small 4 (only mistral-small3.x and community uploads). mistral.ai blocked. Release date not stated; '2603' suffix suggests March 2026 but not confirmed. Region source: news article calling it 'France-based'.",
+    "family": "Mistral Small",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "mistralai/Mistral-Small-4-119B-2603",
+        "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation",
+      "image-text-to-text"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "fr",
+        "de",
+        "es",
+        "pt",
+        "it",
+        "ja",
+        "ko",
+        "ru",
+        "zh",
+        "ar",
+        "fa",
+        "id",
+        "ms",
+        "ne",
+        "pl",
+        "ro",
+        "sr",
+        "sv",
+        "tr",
+        "uk",
+        "vi",
+        "hi",
+        "bn"
+      ],
+      "source_url": "https://huggingface.co/api/models/mistralai/Mistral-Small-4-119B-2603",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "119B total, 6.5B active",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:tii/falcon-h1-7b-instruct",
+    "type": "model",
+    "name": "Falcon-H1-7B-Instruct",
+    "description": "Instruction-tuned 7B hybrid-head language model from the Technology Innovation Institute, with official GGUF files for llama.cpp.",
+    "publisher": "Technology Innovation Institute (TII)",
+    "publisher_region": {
+      "value": "AE",
+      "source_url": "https://www.cbinsights.com/company/technology-innovation-institute",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct",
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct-GGUF"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct",
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct-GGUF",
+      "https://falcon-lm.github.io/blog/falcon-h1/"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct",
+      "https://huggingface.co/api/models/tiiuae/Falcon-H1-7B-Instruct",
+      "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct-GGUF",
+      "https://huggingface.co/api/models/tiiuae/Falcon-H1-7B-Instruct-GGUF",
+      "https://www.cbinsights.com/company/technology-innovation-institute"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Chose Falcon-H1 7B: TII's newest 2026 uploads are tiny/1.58-bit/vision models; H1 is the latest general instruct line found. License is the Falcon LLM License (custom; terms page on falconllm.tii.ae not fetched, host blocked). Params from HF safetensors metadata. Ollama only has older falcon/falcon2/falcon3. Released per repo creation 2025-05-01, not stated on card.",
+    "family": "Falcon-H1",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "tiiuae/Falcon-H1-7B-Instruct",
+        "url": "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "tiiuae/Falcon-H1-7B-Instruct-GGUF",
+        "url": "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct-GGUF",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "ar",
+        "cs",
+        "de",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "ja",
+        "ko",
+        "nl",
+        "pl",
+        "pt",
+        "ro",
+        "ru",
+        "sv",
+        "ur",
+        "zh"
+      ],
+      "source_url": "https://huggingface.co/api/models/tiiuae/Falcon-H1-7B-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "llama.cpp"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "custom",
+      "source_url": "https://falconllm.tii.ae/falcon-terms-and-conditions.html",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "7.59B",
+      "source_url": "https://huggingface.co/api/models/tiiuae/Falcon-H1-7B-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:inception42/jais-3-7b",
+    "type": "model",
+    "name": "Jais-3-7B",
+    "description": "Arabic-English 7B-class reasoning model with a 512K context window, released with official GGUF and MLX builds.",
+    "publisher": "Inception42 / Institute of Foundation Models (IFM)",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/inception42/Jais-3-7B",
+      "https://huggingface.co/IFM/Jais-3-7B-GGUF",
+      "https://huggingface.co/IFM/Jais-3-7B-MLX-4bit"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/inception42/Jais-3-7B",
+      "https://huggingface.co/IFM/Jais-3-7B-GGUF",
+      "https://ifm.ai/blog/jais3/",
+      "https://ifm.ai/jais/tech-report"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/inception42/Jais-3-7B",
+      "https://huggingface.co/api/models/inception42/Jais-3-7B",
+      "https://huggingface.co/IFM/Jais-3-7B-GGUF",
+      "https://huggingface.co/api/models/IFM/Jais-3-7B-GGUF",
+      "https://huggingface.co/api/organizations/IFM/overview",
+      "https://huggingface.co/api/organizations/inception42/overview"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Weights under HF org inception42 (verified org 'Inception42'); GGUF/MLX under IFM ('Institute of Foundation Models'); citation credits 'Team IFM'. Card says GGUF works with llama.cpp and Ollama, but no Ollama library entry (only community 'home-rag/jais-3'). MLX repo not individually fetched (listed in official card). HF safetensors metadata totals 9.0B; card calls it 7B-class. Publisher region unknown: ifm.ai/inceptionai.ai not reachable; web search did not give a clear HQ for IFM. Release date not stated; repo created 2026-09-29.",
+    "family": "Jais-3",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "inception42/Jais-3-7B",
+        "url": "https://huggingface.co/inception42/Jais-3-7B",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "IFM/Jais-3-7B-GGUF",
+        "url": "https://huggingface.co/IFM/Jais-3-7B-GGUF",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "IFM/Jais-3-7B-MLX-4bit",
+        "url": "https://huggingface.co/IFM/Jais-3-7B-MLX-4bit",
+        "availability": "downloadable",
+        "formats": [
+          "mlx"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "ar",
+        "en"
+      ],
+      "source_url": "https://huggingface.co/inception42/Jais-3-7B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "mlx",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "llama.cpp",
+      "ollama",
+      "mlx"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/inception42/Jais-3-7B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/inception42/Jais-3-7B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "7B",
+      "source_url": "https://huggingface.co/inception42/Jais-3-7B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:sdaia/allam-7b-instruct-preview",
+    "type": "model",
+    "name": "ALLaM-7B-Instruct (preview)",
+    "description": "Arabic-English 7B instruction-tuned model trained from scratch by SDAIA's National Center for AI, with a 4K context.",
+    "publisher": "Saudi Data and AI Authority (SDAIA)",
+    "publisher_region": {
+      "value": "SA",
+      "source_url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "https://huggingface.co/api/models/humain-ai/ALLaM-7B-Instruct-preview"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card: developed by NCAI at SDAIA (Saudi Data & AI Authority); repo hosted under HF org 'HUMAIN'. Card license line says 'see LICENSE file'; HF metadata says apache-2.0. No official GGUF (third-party bartowski GGUF exists), no Ollama library entry. Release date not stated; repo created 2025-02-13 (still marked preview).",
+    "family": "ALLaM",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "humain-ai/ALLaM-7B-Instruct-preview",
+        "url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "ar",
+        "en"
+      ],
+      "source_url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "7B",
+      "source_url": "https://huggingface.co/humain-ai/ALLaM-7B-Instruct-preview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:ai-singapore/nemotron-sea-lion-v4-8-30b-a3b",
+    "type": "model",
+    "name": "Nemotron-SEA-LION-v4.8-30B-A3B",
+    "description": "Instruction-tuned hybrid Mamba-Transformer MoE model from AI Singapore for English and seven Southeast Asian languages.",
+    "publisher": "AI Singapore",
+    "publisher_region": {
+      "value": "SG",
+      "source_url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF",
+      "https://leaderboard.sea-lion.ai/eval-details"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "https://huggingface.co/api/models/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF",
+      "https://huggingface.co/api/models/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF",
+      "https://ollama.com/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card: developed by AI Products Pillar, AI Singapore; funded by National Research Foundation Singapore. 'fil' is ISO 639-2 (Filipino) as listed by the card metadata. Params '30B-A3B' from model name; HF metadata totals 32.9B. Ollama entry is under the 'aisingapore' namespace (description names AI Singapore), not Ollama's library; ownership of that namespace not independently verified. Release date not stated; repo created 2026-09-08.",
+    "family": "SEA-LION v4.8",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+        "url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF",
+        "url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B-GGUF",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B:q4_k_m",
+        "url": "https://ollama.com/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "vi",
+        "id",
+        "th",
+        "fil",
+        "ta",
+        "ms",
+        "my"
+      ],
+      "source_url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "llama.cpp",
+      "ollama"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "mit",
+      "source_url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "30B total, 3B active",
+      "source_url": "https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:sarvam-ai/sarvam-30b",
+    "type": "model",
+    "name": "Sarvam-30B",
+    "description": "Mixture-of-experts model from Sarvam AI with 2.4B active parameters, focused on English and 22 Indian languages.",
+    "publisher": "Sarvam AI",
+    "publisher_region": {
+      "value": "IN",
+      "source_url": "https://www.cbinsights.com/company/sarvam-ai",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/sarvamai/sarvam-30b",
+      "https://huggingface.co/sarvamai/sarvam-30b-gguf"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/sarvamai/sarvam-30b",
+      "https://huggingface.co/sarvamai/sarvam-30b-gguf",
+      "https://www.sarvam.ai/blogs/sarvam-30b-105b"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/sarvamai/sarvam-30b",
+      "https://huggingface.co/api/models/sarvamai/sarvam-30b",
+      "https://huggingface.co/sarvamai/sarvam-30b-gguf",
+      "https://huggingface.co/api/models/sarvamai/sarvam-30b-gguf",
+      "https://www.cbinsights.com/company/sarvam-ai"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Language list from HF card metadata; some codes (kok, mai, doi, mni, sat) are ISO 639-2/3, not 639-1. '30B' from model name; HF metadata totals 32.2B. No Ollama library entry (community uploads only). Release date not stated; repo created 2026-03-03.",
+    "family": "Sarvam",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "sarvamai/sarvam-30b",
+        "url": "https://huggingface.co/sarvamai/sarvam-30b",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "sarvamai/sarvam-30b-gguf",
+        "url": "https://huggingface.co/sarvamai/sarvam-30b-gguf",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "hi",
+        "bn",
+        "ta",
+        "te",
+        "mr",
+        "gu",
+        "kn",
+        "ml",
+        "pa",
+        "or",
+        "as",
+        "ur",
+        "sa",
+        "ne",
+        "sd",
+        "kok",
+        "mai",
+        "doi",
+        "mni",
+        "sat",
+        "ks",
+        "bo"
+      ],
+      "source_url": "https://huggingface.co/api/models/sarvamai/sarvam-30b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "llama.cpp"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/sarvamai/sarvam-30b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/sarvamai/sarvam-30b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "30B total, 2.4B active",
+      "source_url": "https://huggingface.co/sarvamai/sarvam-30b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:tokyotech-llm/qwen3-swallow-8b-rl-v0-2",
+    "type": "model",
+    "name": "Qwen3-Swallow-8B-RL v0.2",
+    "description": "Japanese-English 8B model built by continual pre-training of Qwen3, with improved Japanese and translation ability.",
+    "publisher": "tokyotech-llm (Swallow team)",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "https://huggingface.co/api/models/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [
+      {
+        "type": "finetune_of",
+        "target_native_id": "tokyotech-llm/Qwen3-Swallow-8B-SFT-v0.2",
+        "source_url": "https://huggingface.co/api/models/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2"
+      }
+    ],
+    "research_notes": "Derived from Qwen3 (Alibaba) via the SFT checkpoint tokyotech-llm/Qwen3-Swallow-8B-SFT-v0.2. Release date is the card's family release-history entry (Feb 20, 2026). Card does not name the institution; region unknown. Official AWQ-INT4 variant exists; no official GGUF or Ollama library entry.",
+    "family": "Qwen3-Swallow v0.2",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+        "url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "ja",
+        "en"
+      ],
+      "source_url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "8B",
+      "source_url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "2026-02-20",
+      "source_url": "https://huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:lg-ai-research/exaone-4-5-33b",
+    "type": "model",
+    "name": "EXAONE 4.5 33B",
+    "description": "Open-weight vision-language model from LG AI Research, strong in Korean and document understanding, with 262K context.",
+    "publisher": "LG AI Research",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "https://huggingface.co/api/models/LGAI-EXAONE/EXAONE-4.5-33B",
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+      "https://huggingface.co/api/models/LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+      "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B/raw/main/LICENSE"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "License: EXAONE AI Model License Agreement 1.2 - NC (non-commercial). Licensor is LG Management Development Institute Co., Ltd., governed by Republic of Korea law, but no fetched page states HQ, so region left unknown. 31.7B LM + 1.29B vision encoder. Newer K-EXAONE-2.0 (750B) exists but is far from local-ready. No Ollama library entry for 4.5. Release date not stated; repo created 2026-04-04.",
+    "family": "EXAONE 4.5",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "LGAI-EXAONE/EXAONE-4.5-33B",
+        "url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+        "url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "ko",
+        "es",
+        "de",
+        "ja",
+        "vi"
+      ],
+      "source_url": "https://huggingface.co/api/models/LGAI-EXAONE/EXAONE-4.5-33B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "llama.cpp"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "custom",
+      "source_url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B/raw/main/LICENSE",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "33B",
+      "source_url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:lelapa-ai/inkubalm-0-4b",
+    "type": "model",
+    "name": "InkubaLM-0.4B",
+    "description": "Small 0.4B language model from Lelapa AI for Swahili, Yoruba, Hausa, isiZulu and isiXhosa, plus English and French.",
+    "publisher": "Lelapa AI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/lelapa/InkubaLM-0.4B"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/lelapa/InkubaLM-0.4B"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/lelapa/InkubaLM-0.4B",
+      "https://huggingface.co/api/models/lelapa/InkubaLM-0.4B"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "HF repo is gated (auto-approval: accept terms). Card text lists French too, while card metadata omits 'fr'; I included fr from the card text. Weights are PyTorch .bin; no official GGUF (third-party QuantFactory GGUF exists) and no Ollama entry. Region unknown (lelapa.ai not reachable). Release date not stated; repo created 2024-05-11.",
+    "family": "InkubaLM",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "lelapa/InkubaLM-0.4B",
+        "url": "https://huggingface.co/lelapa/InkubaLM-0.4B",
+        "availability": "gated",
+        "formats": [
+          "bin"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "sw",
+        "zu",
+        "xh",
+        "ha",
+        "yo",
+        "fr"
+      ],
+      "source_url": "https://huggingface.co/lelapa/InkubaLM-0.4B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "bin"
+    ],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "cc-by-nc-4.0",
+      "source_url": "https://huggingface.co/lelapa/InkubaLM-0.4B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "gated",
+      "source_url": "https://huggingface.co/lelapa/InkubaLM-0.4B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "0.422B",
+      "source_url": "https://huggingface.co/lelapa/InkubaLM-0.4B",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:cohere-labs/tiny-aya-global",
+    "type": "model",
+    "name": "Tiny Aya Global",
+    "description": "Small 3.35B multilingual research model from Cohere Labs covering 70+ languages, including many lower-resourced ones, with an 8K context.",
+    "publisher": "Cohere Labs (Cohere)",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "https://huggingface.co/api/models/CohereLabs/tiny-aya-global",
+      "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF",
+      "https://huggingface.co/api/models/CohereLabs/tiny-aya-global-GGUF"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Main repo is gated (auto-approval); the official GGUF repo is not gated. GGUF card does not name a runtime, so local_runtimes left empty. Ollama library has older aya/aya-expanse, not Tiny Aya. License CC-BY-NC plus Cohere Labs Acceptable Use Policy. Region unknown (cohere.com not reachable). Release date not stated; repo created 2026-02-13.",
+    "family": "Tiny Aya",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "CohereLabs/tiny-aya-global",
+        "url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+        "availability": "gated",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "huggingface",
+        "native_id": "CohereLabs/tiny-aya-global-GGUF",
+        "url": "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF",
+        "availability": "downloadable",
+        "formats": [
+          "gguf"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "en",
+        "nl",
+        "fr",
+        "it",
+        "pt",
+        "ro",
+        "es",
+        "cs",
+        "pl",
+        "uk",
+        "ru",
+        "el",
+        "de",
+        "da",
+        "sv",
+        "no",
+        "ca",
+        "gl",
+        "cy",
+        "ga",
+        "eu",
+        "hr",
+        "lv",
+        "lt",
+        "sk",
+        "sl",
+        "et",
+        "fi",
+        "hu",
+        "sr",
+        "bg",
+        "ar",
+        "fa",
+        "ur",
+        "tr",
+        "mt",
+        "he",
+        "hi",
+        "mr",
+        "bn",
+        "gu",
+        "pa",
+        "ta",
+        "te",
+        "ne",
+        "tl",
+        "ms",
+        "id",
+        "vi",
+        "jv",
+        "km",
+        "th",
+        "lo",
+        "zh",
+        "my",
+        "ja",
+        "ko",
+        "am",
+        "ha",
+        "ig",
+        "mg",
+        "sn",
+        "sw",
+        "wo",
+        "xh",
+        "yo",
+        "zu"
+      ],
+      "source_url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "gguf",
+      "safetensors"
+    ],
+    "local_runtimes": [],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "cc-by-nc-4.0",
+      "source_url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "gated",
+      "source_url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "3.35B",
+      "source_url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:meta/llama-4-scout-17b-16e-instruct",
+    "type": "model",
+    "name": "Llama 4 Scout 17B-16E Instruct",
+    "description": "Natively multimodal mixture-of-experts model from Meta with 17B active and 109B total parameters and up to 10M-token context.",
+    "publisher": "Meta",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "https://huggingface.co/api/models/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "https://ollama.com/library/llama4/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Llama 4 Community License (custom). HF repo gated with manual approval. Still the newest Llama release on HF as of today. Ollama llama4:scout is 67GB. Region unknown (no fetched source).",
+    "family": "Llama 4",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "availability": "gated",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "llama4:scout",
+        "url": "https://ollama.com/library/llama4/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "image-text-to-text",
+      "text-generation"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": [
+        "ar",
+        "en",
+        "fr",
+        "de",
+        "hi",
+        "id",
+        "it",
+        "pt",
+        "es",
+        "tl",
+        "th",
+        "vi"
+      ],
+      "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "ollama"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "custom",
+      "source_url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "gated",
+      "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "109B total, 17B active",
+      "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "2025-04-05",
+      "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:google/gemma-4-12b-it",
+    "type": "model",
+    "name": "Gemma 4 12B IT",
+    "description": "Instruction-tuned 12B open model from Google DeepMind taking text, image and audio input, with a 256K context.",
+    "publisher": "Google DeepMind",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/google/gemma-4-12B-it"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/google/gemma-4-12B-it",
+      "https://ai.google.dev/gemma/docs/gemma_4_license"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/google/gemma-4-12B-it",
+      "https://huggingface.co/api/models/google/gemma-4-12B-it",
+      "https://ollama.com/library/gemma4/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card says 35+ languages supported, 140+ pretrained, without an ISO list, so languages unknown. License page on ai.google.dev not fetched (redirects to blocked host); license value from HF card. Ollama gemma4:12b is 7.7-8.0GB. Release date not stated; repo created 2026-05-23.",
+    "family": "Gemma 4",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "google/gemma-4-12B-it",
+        "url": "https://huggingface.co/google/gemma-4-12B-it",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "gemma4:12b",
+        "url": "https://ollama.com/library/gemma4/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "any-to-any",
+      "image-text-to-text",
+      "automatic-speech-recognition"
+    ],
+    "modalities": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "ollama"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://ai.google.dev/gemma/docs/gemma_4_license",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/google/gemma-4-12B-it",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "11.95B",
+      "source_url": "https://huggingface.co/google/gemma-4-12B-it",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:microsoft/phi-4-mini-instruct",
+    "type": "model",
+    "name": "Phi-4-mini-instruct",
+    "description": "Lightweight 3.8B dense model from Microsoft with 128K context and function calling, trained on synthetic and filtered web data.",
+    "publisher": "Microsoft",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/microsoft/Phi-4-mini-instruct"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/microsoft/Phi-4-mini-instruct"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "https://huggingface.co/api/models/microsoft/Phi-4-mini-instruct",
+      "https://ollama.com/library/phi4-mini/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "No newer general Phi instruct model found on HF (Phi-4-reasoning-vision-15B from 2026-01 is a reasoning/vision variant). Ollama phi4-mini:3.8b is 2.5GB. Release date not stated; repo created 2025-02-19. Region unknown (no fetched source).",
+    "family": "Phi-4",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "microsoft/Phi-4-mini-instruct",
+        "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "phi4-mini:3.8b",
+        "url": "https://ollama.com/library/phi4-mini/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": [
+        "ar",
+        "zh",
+        "cs",
+        "da",
+        "nl",
+        "en",
+        "fi",
+        "fr",
+        "de",
+        "he",
+        "hu",
+        "it",
+        "ja",
+        "ko",
+        "no",
+        "pl",
+        "pt",
+        "ru",
+        "es",
+        "sv",
+        "th",
+        "tr",
+        "uk"
+      ],
+      "source_url": "https://huggingface.co/api/models/microsoft/Phi-4-mini-instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "ollama"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "mit",
+      "source_url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "3.8B",
+      "source_url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:openai/gpt-oss-20b",
+    "type": "model",
+    "name": "gpt-oss-20b",
+    "description": "OpenAI's smaller open-weight reasoning model, 21B parameters with 3.6B active, aimed at local and lower-latency use.",
+    "publisher": "OpenAI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://huggingface.co/openai/gpt-oss-20b"
+    ],
+    "documentation_urls": [
+      "https://huggingface.co/openai/gpt-oss-20b",
+      "https://cookbook.openai.com/articles/gpt-oss/run-locally-ollama"
+    ],
+    "evidence_urls": [
+      "https://huggingface.co/openai/gpt-oss-20b",
+      "https://huggingface.co/api/models/openai/gpt-oss-20b",
+      "https://ollama.com/library/gpt-oss/tags"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Card names Ollama (ollama pull gpt-oss:20b). Ollama gpt-oss:20b is 14GB. No newer gpt-oss found on HF. Release date not stated on card; repo created 2025-08-04. Region unknown (no fetched source).",
+    "family": "gpt-oss",
+    "distributions": [
+      {
+        "source": "huggingface",
+        "native_id": "openai/gpt-oss-20b",
+        "url": "https://huggingface.co/openai/gpt-oss-20b",
+        "availability": "downloadable",
+        "formats": [
+          "safetensors"
+        ],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      {
+        "source": "ollama",
+        "native_id": "gpt-oss:20b",
+        "url": "https://ollama.com/library/gpt-oss/tags",
+        "availability": "downloadable",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [
+      "safetensors"
+    ],
+    "local_runtimes": [
+      "ollama"
+    ],
+    "local_ready": true,
+    "official": true,
+    "license": {
+      "value": "apache-2.0",
+      "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "downloadable",
+      "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "21B total, 3.6B active",
+      "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:anthropic/claude-sonnet-5-5",
+    "type": "model",
+    "name": "Claude Sonnet 5.5",
+    "description": "Anthropic's mid-tier Claude model balancing speed and capability, with text and image input, 1M-token context and 128K output.",
+    "publisher": "Anthropic",
+    "publisher_region": {
+      "value": "US",
+      "source_url": "https://www.anthropic.com/legal/privacy",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://platform.claude.com/docs/en/models/overview"
+    ],
+    "documentation_urls": [
+      "https://platform.claude.com/docs/en/models/overview",
+      "https://platform.claude.com/docs/en/release-notes/overview",
+      "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
+    ],
+    "evidence_urls": [
+      "https://platform.claude.com/docs/en/models/overview",
+      "https://platform.claude.com/docs/en/release-notes/overview",
+      "https://www.anthropic.com/news",
+      "https://www.anthropic.com/legal/supported-regions",
+      "https://support.claude.com/en/articles/9402418-why-was-my-card-declined",
+      "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage",
+      "https://www.anthropic.com/legal/privacy"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Price on models overview: $2/MTok input, $10/MTok output (USD). Also offered via Amazon Bedrock, Google Cloud, Microsoft Foundry. Supported regions page lists ~170 countries as an explicit allow-list (not phrased as exceptions), so countries left unknown per brief; see https://www.anthropic.com/legal/supported-regions (effective Nov 12, 2026). API billing is prepaid credits; free tier/trial not stated on fetched pages, so unknown. Region from privacy policy registered address (San Francisco).",
+    "family": "Claude 5.5",
+    "distributions": [
+      {
+        "source": "api",
+        "native_id": "claude-sonnet-5-5",
+        "url": "https://platform.claude.com/docs/en/models/overview",
+        "availability": "api_only",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": {
+          "free": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "free_limits": null,
+          "payment_methods": {
+            "value": [
+              {
+                "method": "card_international",
+                "note": "credit or debit card; billing address must be in a supported billing location; PayPal/Venmo not accepted"
+              },
+              {
+                "method": "bank_transfer",
+                "note": "ACH, only for API accounts on monthly invoicing and self-serve Enterprise"
+              }
+            ],
+            "source_url": "https://support.claude.com/en/articles/9402418-why-was-my-card-declined",
+            "source_type": "official",
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_available": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_unavailable": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "signup_requirements": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "local_currency_pricing": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          }
+        },
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation",
+      "image-text-to-text"
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "api_only",
+      "source_url": "https://platform.claude.com/docs/en/models/overview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "2026-09-28",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:openai/gpt-6-1-sol",
+    "type": "model",
+    "name": "GPT-6.1 Sol",
+    "description": "OpenAI API model in the GPT-6.1 series, offered as a hosted model only.",
+    "publisher": "OpenAI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://openai.com/index/introducing-gpt-6-1-sol/"
+    ],
+    "documentation_urls": [
+      "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "https://help.openai.com/en/articles/9624314-model-release-notes"
+    ],
+    "evidence_urls": [
+      "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "https://developers.openai.com/api/docs/models",
+      "https://developers.openai.com/api/docs/changelog",
+      "https://help.openai.com/en/articles/8264644-how-can-i-set-up-prepaid-billing"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "CANDIDATE: no OpenAI page could be fetched (openai.com and help.openai.com return 403 to the bot; platform.openai.com redirects to developers.openai.com, which is blocked). Model ID, date and billing facts come only from web-search summaries of official pages: ID gpt-6.1-sol, announced Sept 29, 2026 (release notes). Search also named gpt-6-astra as flagship and gpt-6.1-terra (Oct 26/28 2026, dates conflict) as newer; I picked Sol because its official announcement URL appeared in results. Billing: prepaid credits, USD only, min $5; cards must come from a supported country; prepaid cards rejected. Modalities beyond text not confirmed. Supported-countries page unreachable.",
+    "family": "GPT-6.1",
+    "distributions": [
+      {
+        "source": "api",
+        "native_id": "gpt-6.1-sol",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "availability": "api_only",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": {
+          "free": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "free_limits": null,
+          "payment_methods": {
+            "value": [
+              {
+                "method": "card_international",
+                "note": "standard credit or debit card issued by a bank in a supported country; prepaid cards not accepted"
+              }
+            ],
+            "source_url": "https://help.openai.com/en/articles/8264644-how-can-i-set-up-prepaid-billing",
+            "source_type": "official",
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_available": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_unavailable": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "signup_requirements": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "local_currency_pricing": {
+            "value": false,
+            "source_url": "https://help.openai.com/en/articles/8264644-how-can-i-set-up-prepaid-billing",
+            "source_type": "official",
+            "observed_at": "2026-11-14T00:00:00Z"
+          }
+        },
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "api_only",
+      "source_url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "2026-09-29",
+      "source_url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:model:google/gemini-4-argon",
+    "type": "model",
+    "name": "Gemini 4 Argon",
+    "description": "Google's flagship Gemini API model for complex reasoning, coding and multi-step agents, with a one-million-token context.",
+    "publisher": "Google",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon"
+    ],
+    "documentation_urls": [
+      "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+      "https://ai.google.dev/gemini-api/docs/changelog",
+      "https://ai.google.dev/gemini-api/docs/billing"
+    ],
+    "evidence_urls": [
+      "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+      "https://ai.google.dev/gemini-api/docs/changelog",
+      "https://ai.google.dev/gemini-api/docs/billing",
+      "https://ai.google.dev/gemini-api/docs/pricing",
+      "https://ai.google.dev/gemini-api/terms"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "CANDIDATE: ai.google.dev redirects to aistudio.google.com, which is blocked, so nothing was fetched. Facts from web-search summaries of official pages: model ID gemini-4-argon, 1,048,576-token context, 65,536 default max output, GA Oct 13, 2026 (changelog); introductory pricing until Nov 30, 2026. Billing page (via search): free tier for new accounts; paid tier needs a Cloud Billing account and at least $5 prepaid; Postpay and Prepay plans; payment-method types not stated. Terms restrict serving EEA/CH/UK users to paid services. Available-regions page unreachable. Whether the free tier covers this specific model is not confirmed. Modalities beyond text not confirmed.",
+    "family": "Gemini 4",
+    "distributions": [
+      {
+        "source": "api",
+        "native_id": "gemini-4-argon",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+        "availability": "api_only",
+        "formats": [],
+        "file_size_bytes": null,
+        "access": {
+          "free": {
+            "value": "free_tier",
+            "source_url": "https://ai.google.dev/gemini-api/docs/billing",
+            "source_type": "official",
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "free_limits": "Free tier gives access to certain models up to their rate limits (exact limits not confirmed)",
+          "payment_methods": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_available": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "countries_unavailable": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "signup_requirements": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          },
+          "local_currency_pricing": {
+            "value": "unknown",
+            "source_url": null,
+            "source_type": null,
+            "observed_at": "2026-11-14T00:00:00Z"
+          }
+        },
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    ],
+    "tasks": [
+      "text-generation"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "formats": [],
+    "local_runtimes": [],
+    "local_ready": false,
+    "official": true,
+    "license": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "availability": {
+      "value": "api_only",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "parameters": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "released_at": {
+      "value": "2026-10-13",
+      "source_url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "announced_at": null,
+    "benchmarks": [],
+    "popularity": []
+  }
+]

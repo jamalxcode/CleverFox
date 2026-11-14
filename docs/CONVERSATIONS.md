@@ -12,6 +12,19 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: seed prototype
+**Where:** Claude Code session.
+**Asked:** build the seed prototype. Use lessons from Flattery, but don't include Flattery: it isn't part of this project.
+**Outcome:** a static page (country picker; Models, Apps and Hosting tabs; per-type filters; detail panels citing every fact) and `tools/build.mjs` (validation plus catalog build), with 50 records. Verified: 19 of 21 models, 3 of 18 apps, 6 of 11 hosts. The rest are candidates. A personal environment with 20 official hosts was created for the research. Claude spot-checked three verified facts against the live pages (Qwen license and size, InkubaLM license, Hetzner GPUs), and all matched.
+**Lessons:**
+- Access facts are the hardest data, as the second review predicted. Many official help pages block automated fetching (OpenAI returns 403, and many regional app sites aren't reachable), so most app access fields stay `unknown`. That supports community reports.
+- No consumer app publishes a clean supported-countries list except the big US ones (Anthropic, Google), and those list included countries, not exclusions.
+- "No card needed" from a free tier is misleading on its own, so the page shows "pay without a card" separately from "free".
+- Payment methods often depend on the contracting entity or country (Alibaba Cloud, ChatGPT's Pix and UPI). The global access block with notes holds up but is strained (decision 31).
+- Seed lists found no credible Latin American GPU host and no African consumer chat app yet.
+- Release dates and publisher countries are rarely on model cards.
+**Open:** add more official hosts (regional app sites, app stores) to fill access data; decide on the community-report form next.
+
 ## 2026-11-14: second review and answers
 **Where:** Claude Code session.
 **Asked:** critique what's been gathered so far and what could be better, then go through the questions one by one.

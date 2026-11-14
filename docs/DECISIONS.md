@@ -158,6 +158,10 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** before the pipeline, build about 50 hand-entered records with real sources (≈20 models, 20 apps, 10 hosting providers), weighted toward non-US listings, rendered as a static page with the country picker and filters.
 **Why:** it tests the schema and the journeys cheaply. The owner chose this as the next step.
 
+### 38. Seed prototype built; Flattery is reference only
+**Decision:** the seed prototype exists: 50 records (21 models, 18 apps, 11 hosting providers) in `data/seed/`, a validator and builder (`tools/build.mjs`), and a vanilla static page with a country picker and per-type filters. Records were researched by Claude agents from official pages. Facts that couldn't be fetched are `unknown`, and records not confirmed at an official page are `candidate` and shown as "not yet verified". A personal cloud environment ("CleverFox research") allows 20 official source hosts for this research. Flattery is a reference for patterns only and is never included in CleverFox's environments, commits or scope.
+**Why:** the owner chose the prototype as the next step and asked that Flattery stay out of the project. What the prototype taught is in CONVERSATIONS.md (2026-11-14, seed prototype).
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.
