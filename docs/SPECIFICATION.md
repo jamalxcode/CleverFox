@@ -1,7 +1,7 @@
 # CleverFox: specification
 
 **Status:** revised 14 November 2026: no reports from people; access facts, feedback and warnings come from public posts (mainly X) and directories. Design requirements, not a description of existing code (there is none yet).
-**Site:** https://cleverfox.sala.company (planned) · **Repo:** `jamalxcode/cleverfox`
+**Site:** https://jamalxcode.github.io/CleverFox/ (custom domain https://cleverfox.sala.company planned, waiting on DNS) · **Repo:** `jamalxcode/cleverfox`
 **History:** the original proposal is kept unchanged in [archive/SPECIFICATION-2026-11-14.txt](archive/SPECIFICATION-2026-11-14.txt). Why each choice was made is in [DECISIONS.md](DECISIONS.md).
 
 ## 1. Product

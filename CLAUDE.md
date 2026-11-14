@@ -4,7 +4,7 @@ This file guides Claude Code when working in this repository.
 
 ## Overview
 
-CleverFox (planned at https://cleverfox.sala.company) is a global catalog of AI models, web AI apps and AI hosting, with access information built in. The two carry equal weight:
+CleverFox (live at https://jamalxcode.github.io/CleverFox/; the custom domain cleverfox.sala.company is planned, waiting on DNS) is a global catalog of AI models, web AI apps and AI hosting, with access information built in. The two carry equal weight:
 - **Catalog:** models from every source (Hugging Face, Ollama, GitHub, Kaggle, ModelScope, API-only providers), web AI apps, and hosting providers by data-center location. Obscure listings sit alongside well-known ones.
 - **Access from anywhere:** for people outside the US, whether a listing is available in their country, how to pay without an international card (crypto, mobile money, UPI, Pix, app-store billing and others), what's free, whether a model runs locally, language support, and local data centers.
 
@@ -44,7 +44,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 
 ## Intended architecture (from the spec)
 
-- Static files on GitHub Pages at `cleverfox.sala.company`. Vanilla HTML/CSS/JS like Flattery. First load under 200 KB, excluding the search index. English interface with a country picker.
+- Static files on GitHub Pages (custom domain `cleverfox.sala.company` later; add a `CNAME` file back when it's set). Vanilla HTML/CSS/JS like Flattery. First load under 200 KB, excluding the search index. English interface with a country picker.
 - A scheduled Node pipeline in GitHub Actions, modeled on Flattery (`jamalxcode/flattery`): scan -> extract -> normalize -> resolve identity -> verify at the primary source -> merge community reports and corrections -> persist (commit only on content change) -> pages, index, feeds -> deploy. No backend.
 - Records share a base schema (spec 7.1) and come in three types: `model`, `app`, `host`. Apps, paid API distributions and hosts have an `access` block (spec 8a). It is global per listing, with country limits in each method's note.
 - Automated inclusion rules, with gap rules for obscure, regional and no-card listings. A corrections file. No reports from people: X is the main source for announcements and feedback (replies and quotes), plus Reddit, forums, app-store reviews and news. Public feedback becomes `web_reported` claims linked to the posts; credible public scam reports drive `reported` and `dont_touch` warnings.
