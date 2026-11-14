@@ -139,7 +139,7 @@
     "first_seen_at": "2026-11-14T00:00:00Z",
     "last_content_change_at": "2026-11-14T00:00:00Z",
     "relations": [],
-    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. A direct re-check was attempted later the same day: help.openai.com and openai.com returned HTTP 403 (bot block), so nothing could be confirmed. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
     "url": "https://chatgpt.com",
     "app_store_urls": [],
     "categories": [
@@ -228,7 +228,7 @@
     "id": "cf:app:google/gemini",
     "type": "app",
     "name": "Gemini",
-    "description": "Google's AI assistant app for chat, writing, image creation and research, on the web and Android/iOS.",
+    "description": "Google's AI assistant app for chat, writing, image and video creation and research, on the web, Android and iOS.",
     "publisher": "Google",
     "publisher_region": {
       "value": "unknown",
@@ -242,66 +242,154 @@
     ],
     "documentation_urls": [
       "https://support.google.com/gemini/answer/13575153?hl=en",
-      "https://support.google.com/gemini/answer/14579026",
-      "https://support.google.com/gemini/answer/16275805"
+      "https://support.google.com/gemini/answer/14579026?hl=en",
+      "https://support.google.com/gemini/answer/16275805?hl=en"
     ],
     "evidence_urls": [
       "https://support.google.com/gemini/answer/13575153?hl=en",
-      "https://support.google.com/gemini/answer/14579026",
-      "https://support.google.com/gemini/answer/16275805",
-      "https://support.google.com/googleone/answer/16476811",
+      "https://support.google.com/gemini/answer/14579026?hl=en",
+      "https://support.google.com/gemini/answer/16275805?hl=en",
+      "https://support.google.com/googleone/answer/16476811?hl=en",
+      "https://support.google.com/googleone/answer/9003634?hl=en",
       "https://support.google.com/googleplay/answer/2651410?hl=en"
     ],
-    "verification_status": "candidate",
+    "verification_status": "verified",
     "warning": "none",
     "first_seen_at": "2026-11-14T00:00:00Z",
     "last_content_change_at": "2026-11-14T00:00:00Z",
     "relations": [],
-    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Gemini web app page says it is available in over 230 countries and territories and 70+ languages, and the mobile app in 150+ countries, but the lists themselves were not retrievable, so countries are unknown. Paid tiers (Google AI Plus/Pro/Ultra) are bought through Google One; the help page says you 'choose a payment method' but does not list methods in the snippets seen. Google Play's accepted-methods page varies by country (cards, carrier billing, gift cards, UPI in India) but those are Play-wide, not confirmed for Gemini subscriptions, so payment_methods left unknown. The 18+ age requirement in EEA/CH/UK applies to Google AI plans. The age statement appears on Gemini help pages; exact source page among those cited not certain. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "research_notes": "Re-checked 2026-11-14 by fetching official Google pages directly. The web app page lists over 230 supported countries and territories and 70+ languages. countries_unavailable is derived: ISO countries absent from that list (Bouvet Island also absent, omitted as uninhabited); 'Mainland China' is listed as 'Workspace only', so CN is unavailable to consumers. HK, MO, MM, VE and YE are listed as supported. The mobile app has a separate, shorter list (150+ countries); users elsewhere may reach Gemini via Google Assistant on Android. Paid plan tiers (AI Plus, Pro, Ultra) each have their own country lists on GL/GO. Free limits corrected: earlier draft said limits reset daily; the official page says they refresh every 5 hours up to a weekly limit. Payment: Google One help says membership card is changed via Google One settings or Google Play > My subscriptions, so billing goes through Google Play payments. The Play payment-methods page loaded with US content only (cards, Google Pay balance, Play balance and gift cards, Cash App Pay, PayPal, Venmo) and a fallback card list for unlisted countries; country-specific methods (e.g. UPI, carrier billing) could not be read for other countries, so only cards are listed. Whether iOS in-app purchase is offered was not checked. interface_languages are the web app's supported languages ('fil' = Filipino, no ISO 639-1 code). publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
     "url": "https://gemini.google.com",
     "app_store_urls": [],
     "categories": [
       "chat",
       "writing",
       "image",
+      "video",
       "search"
     ],
     "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
+      "value": [
+        "af",
+        "sq",
+        "am",
+        "ar",
+        "hy",
+        "as",
+        "az",
+        "eu",
+        "be",
+        "bn",
+        "bs",
+        "bg",
+        "ca",
+        "zh",
+        "hr",
+        "cs",
+        "da",
+        "nl",
+        "en",
+        "et",
+        "fa",
+        "fil",
+        "fi",
+        "fr",
+        "gl",
+        "ka",
+        "de",
+        "el",
+        "gu",
+        "he",
+        "hi",
+        "hu",
+        "is",
+        "id",
+        "it",
+        "ja",
+        "kn",
+        "kk",
+        "km",
+        "ko",
+        "lo",
+        "lv",
+        "lt",
+        "mk",
+        "ms",
+        "ml",
+        "mr",
+        "mn",
+        "ne",
+        "no",
+        "or",
+        "pl",
+        "pt",
+        "pa",
+        "ro",
+        "ru",
+        "sr",
+        "sk",
+        "sl",
+        "es",
+        "sw",
+        "sv",
+        "ta",
+        "te",
+        "th",
+        "tr",
+        "uk",
+        "ur",
+        "uz",
+        "vi",
+        "zu"
+      ],
+      "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+      "source_type": "official",
       "observed_at": "2026-11-14T00:00:00Z"
     },
     "models_used": [],
     "access": {
       "free": {
         "value": "free_tier",
-        "source_url": "https://support.google.com/gemini/answer/16275805",
+        "source_url": "https://support.google.com/gemini/answer/16275805?hl=en",
         "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
-      "free_limits": "Basic access without a Google AI plan uses standard limits that reset daily; 32k-token context window; limits may change without notice.",
+      "free_limits": "Without a Google AI plan: 'standard' compute-based limits that refresh every 5 hours up to a weekly cap; 32k-token context window; some features (e.g. Deep Research) may be unavailable at peak demand.",
       "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Google AI plans are Google One memberships paid through Google Play payments; Google Play's default list is American Express, Discover, Mastercard, Visa. Other methods vary by country."
+          }
+        ],
+        "source_url": "https://support.google.com/googleplay/answer/2651410?hl=en",
+        "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
       "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
+        "value": "all_except_listed",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
       "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
+        "value": [
+          "AF",
+          "BY",
+          "CN",
+          "CU",
+          "IR",
+          "KP",
+          "RU",
+          "SY"
+        ],
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
       "signup_requirements": {
-        "value": "Personal Google Account; age 13+ (or local minimum) in most countries; Family Link-managed accounts excluded from the mobile app",
-        "source_url": "https://support.google.com/gemini/answer/14579026",
+        "value": "Personal Google Account (work/school accounts need Gemini Apps access); age 13+ or the local minimum; under-13s need parental approval on mobile. Google AI paid plans require 18+ in the EEA, Switzerland and the UK.",
+        "source_url": "https://support.google.com/gemini/answer/14579026?hl=en",
         "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
@@ -399,15 +487,15 @@
   },
   {
     "schema_version": 1,
-    "id": "cf:app:mistral-ai/le-chat",
+    "id": "cf:app:mistral-ai/vibe",
     "type": "app",
-    "name": "Le Chat",
-    "description": "Mistral AI's chat assistant for conversation, writing, search and document work, with free and paid plans.",
+    "name": "Vibe (formerly Le Chat)",
+    "description": "Mistral AI's assistant, renamed from Le Chat, with chat, multi-step work and coding modes on web, mobile and command line.",
     "publisher": "Mistral AI",
     "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
+      "value": "FR",
+      "source_url": "https://mistral.ai/legal",
+      "source_type": "official",
       "observed_at": "2026-11-14T00:00:00Z"
     },
     "official_urls": [
@@ -415,23 +503,31 @@
       "https://mistral.ai/pricing"
     ],
     "documentation_urls": [
-      "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription"
+      "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe",
+      "https://docs.mistral.ai/vibe/overview",
+      "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
+      "https://help.mistral.ai/en/articles/392903-how-can-i-subscribe-to-pro-on-mobile"
     ],
     "evidence_urls": [
+      "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe",
+      "https://mistral.ai/pricing",
       "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
-      "https://www.mistral.ai/pricing"
+      "https://help.mistral.ai/en/articles/392903-how-can-i-subscribe-to-pro-on-mobile",
+      "https://mistral.ai/legal"
     ],
-    "verification_status": "candidate",
+    "verification_status": "verified",
     "warning": "none",
     "first_seen_at": "2026-11-14T00:00:00Z",
     "last_content_change_at": "2026-11-14T00:00:00Z",
     "relations": [],
-    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Help article says users upgrade from the Free plan to Le Chat Pro or Team (monthly or annual, annual 20% off) and that 'multiple payment methods are available, including credit cards and Google Pay'; full list not visible, so payment_methods may be incomplete. Article says to manage the subscription where originally subscribed, which suggests in-app purchase exists, but app_store_billing not listed as it was not stated explicitly. Pro price ($14.99/mo) only from third-party sites; not used. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "research_notes": "Re-checked 2026-11-14 by fetching official Mistral pages directly. Official help article 'Le Chat is now Vibe': same URL (chat.mistral.ai) and login, with Vibe Work, Vibe Code and Vibe Chat modes; record renamed and id changed from cf:app:mistral-ai/le-chat (never published). Pricing page: Free; Pro $14.99/mo excluding tax (students $5.99/mo for up to 12 months); Team $24.99/user/mo; annual billing 20% off (help article). Pricing page offers USD or EUR display, with a country selector covering EU countries and the UK, so local-currency pricing beyond EUR is unknown. CORRECTION: the earlier draft listed credit cards and Google Pay from a search snippet; the fetched upgrade/cancel article does not say that (it only says 'add or confirm your billing information, then complete payment'), so web payment methods are unknown and those entries were removed. Web checkout almost certainly takes cards, but no fetched page names the methods. No supported-countries page found in the help center. chat.mistral.ai itself was not reachable from this session. publisher_region from the legal notice: registered office in Paris, France.",
     "url": "https://chat.mistral.ai",
     "app_store_urls": [],
     "categories": [
       "chat",
-      "writing"
+      "writing",
+      "coding",
+      "image"
     ],
     "interface_languages": {
       "value": "unknown",
@@ -443,20 +539,20 @@
     "access": {
       "free": {
         "value": "free_tier",
-        "source_url": "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
+        "source_url": "https://mistral.ai/pricing",
         "source_type": "official",
         "observed_at": "2026-11-14T00:00:00Z"
       },
-      "free_limits": null,
+      "free_limits": "Free plan: limited messages and web searches, limited coding sessions, basic image generation and editing, access on web and mobile.",
       "payment_methods": {
         "value": [
           {
-            "method": "card_international",
-            "note": "Credit cards"
+            "method": "app_store_billing",
+            "note": "Pro only, bought in the iOS or Android app via App Store or Google Play"
           },
           {
-            "method": "other",
-            "note": "Google Pay"
+            "method": "carrier_billing",
+            "note": "Subscriptions via mobile carriers Free Mobile, Orange and NJU"
           }
         ],
         "source_url": "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
