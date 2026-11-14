@@ -1,6 +1,6 @@
 // CleverFox shared rendering: used by the main page (app.js) and the build (tools/build.mjs),
 // which writes a static page for every listing. Pure string functions, no DOM.
-export const view = { country: '', mem: 0, site: '', base: '' }; // visitor's choices; site = absolute site URL; base = relative path to the site root
+export const view = { country: '', mem: 0, site: '', base: '', runtimes: {} }; // visitor's choices; site = absolute site URL; base = relative path to the site root
 let countryNames = new Map();
 export const setCountries = (list) => { countryNames = new Map(list); };
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -89,6 +89,7 @@ export function cardBadges(r) {
     if (view.mem) b.push(need <= view.mem * 0.8 ? badge(`✓ Fits your ${view.mem} GB`, 'b-ok') : need <= view.mem ? badge(`⚠ Tight on ${view.mem} GB`, 'b-warn') : badge(`✗ Needs ~${need} GB`, 'b-no'));
     else b.push(badge(`🖥️ ${r.hardware.recommended_gb || need} GB+ recommended`));
   }
+  if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
   if (a.benchmarks) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
   if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
@@ -125,6 +126,19 @@ export function cardBadges(r) {
 }
 
 // Source as a small ⓘ link: hover or long-press shows where the fact came from and when.
+// Where it runs: 🪟 Windows · 🍎 macOS · 🐧 Linux · 📱 Phone · ☁️ Cloud, each from its runtimes.
+export const PLATFORMS = { windows: ['🪟', 'Windows'], macos: ['🍎', 'macOS'], linux: ['🐧', 'Linux'], phone: ['📱', 'Phone'], cloud: ['☁️', 'Cloud'] };
+const viaName = (v) => view.runtimes?.[v]?.name || v;
+export function platformIcons(r) {
+  if (!r.platforms) return '';
+  return Object.keys(PLATFORMS).filter((p) => r.platforms[p]).map((p) => PLATFORMS[p][0]).join('');
+}
+export function platformLine(r) {
+  if (!r.platforms) return '';
+  const parts = Object.keys(PLATFORMS).filter((p) => r.platforms[p]).map((p) => `<span class="it" title="${esc(`${PLATFORMS[p][1]} via ${r.platforms[p].map(viaName).join(', ')}`)}">${PLATFORMS[p][0]} ${PLATFORMS[p][1]}</span>`);
+  const via = [...new Set(Object.values(r.platforms).flat())].filter((v) => view.runtimes?.[v]);
+  return `<p class="ln">🏃 <strong>Runs on:</strong> ${parts.join('<span class="sep"> · </span>')}${via.length ? ` <span class="muted">via ${via.map((v) => `<a href="${esc(view.runtimes[v].docs)}" rel="noopener" target="_blank">${esc(view.runtimes[v].name)}</a>`).join(', ')}</span>` : ''}</p>`;
+}
 export function src(c) {
   if (!known(c) || !c.source_url) return '';
   const type = { official: 'official', third_party: 'third-party', independently_verified: 'independently verified', web_reported: 'public reports' }[c.source_type] || '';
@@ -181,6 +195,7 @@ export function glance(r) {
       item('📜', lic || unknownTxt),
     ]);
   }
+  h += platformLine(r);
   if (r.hardware) {
     const o = r.hardware.options;
     const rec = o[0].recommended_gb || o[0].memory_gb;

@@ -226,6 +226,22 @@ There's a "What do you need?" row of capability choices, plus quick filters for 
 **Decision:** next to the estimated memory need, each local size shows a recommended memory: the smallest standard size (4, 8, 16, 24, 32, 48, 64, 96, 128 GB and up) at or above the need × 1.25. Cards show "X GB+ recommended", and each size chip reads "7b → 16 GB".
 **Why:** the owner asked for it. Buyers think in standard memory sizes, and the 25% headroom matches the "tight" threshold already used for fit marks.
 
+### 50. Where it runs: Windows, macOS, Linux, phone, cloud
+**Decision:** platforms are derived from a model's runtimes and formats, using each runtime's documented platform support:
+- Ollama, llama.cpp (GGUF) and Transformers: Windows, macOS, Linux.
+- ONNX Runtime: those plus phones.
+- MLX: Apple Silicon Macs.
+- Core ML: Apple devices.
+- TensorFlow Lite: phones.
+
+Downloadable models can also run on a rented cloud server; API models and web apps run in the provider's cloud. Shown as 🪟🍎🐧📱☁️ on cards, as a "Runs on" line with the runtime and its docs, and as a filter. Memory needs stay separate (hardware line).
+
+**Why:** the owner asked whether a model runs on Windows, Linux, macOS or a cloud server, with an emoji for each. The runtime support is documented by each project, so this avoids guessing.
+
+### 51. A dove for "No barriers"
+**Decision:** "No barriers" uses 🕊️, "No sign-in needed" uses 🚪, and uncensored uses ✂️. Only gated downloads keep a padlock (🔒).
+**Why:** the owner pointed out that a padlock suggests something locked, not freedom.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

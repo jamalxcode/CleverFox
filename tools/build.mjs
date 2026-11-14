@@ -257,6 +257,38 @@ function hardware(r) {
   options.sort((a, b) => a.memory_gb - b.memory_gb);
   return { min_memory_gb: options[0].memory_gb, recommended_gb: options[0].recommended_gb, options: options.slice(0, 8), moe: /\bA\d+(\.\d+)?B\b/.test(r.name) || (r.tags_seen || []).includes('moe') };
 }
+// ---- where it runs: from each runtime's documented platform support ----
+// Platforms: windows, macos, linux, phone, cloud (a rented server, or the provider's own cloud for APIs and web apps).
+const RUNTIMES = {
+  ollama: { name: 'Ollama', platforms: ['windows', 'macos', 'linux'], docs: 'https://ollama.com/download' },
+  'llama.cpp': { name: 'llama.cpp', platforms: ['windows', 'macos', 'linux'], docs: 'https://github.com/ggml-org/llama.cpp' },
+  'onnx-runtime': { name: 'ONNX Runtime', platforms: ['windows', 'macos', 'linux', 'phone'], docs: 'https://onnxruntime.ai/' },
+  mlx: { name: 'MLX', platforms: ['macos'], docs: 'https://github.com/ml-explore/mlx' },
+  coreml: { name: 'Core ML', platforms: ['macos', 'phone'], docs: 'https://developer.apple.com/machine-learning/core-ml/' },
+  tflite: { name: 'TensorFlow Lite', platforms: ['phone'], docs: 'https://ai.google.dev/edge/litert' },
+  transformers: { name: 'Transformers (Python)', platforms: ['windows', 'macos', 'linux'], docs: 'https://huggingface.co/docs/transformers/installation' },
+};
+function platformsOf(r) {
+  const via = new Set(r.local_runtimes || []);
+  const formats = new Set([...(r.formats || []), ...(r.distributions || []).flatMap((d) => d.formats || [])]);
+  if (formats.has('gguf')) via.add('llama.cpp');
+  if (formats.has('mlx')) via.add('mlx');
+  if (formats.has('onnx')) via.add('onnx-runtime');
+  if (formats.has('tflite')) via.add('tflite');
+  if (/coreml/i.test(r.name)) via.add('coreml');
+  if (formats.has('safetensors') || formats.has('pytorch')) via.add('transformers');
+  const downloadable = (r.distributions || []).some((d) => ['downloadable', 'gated'].includes(d.availability));
+  const out = { windows: [], macos: [], linux: [], phone: [], cloud: [] };
+  for (const v of via) for (const p of RUNTIMES[v]?.platforms || []) out[p].push(v);
+  if (r.type === 'model' && downloadable) out.cloud.push('rented server');
+  if ((r.distributions || []).some((d) => ['api', 'aggregator'].includes(d.source))) out.cloud.push('API');
+  if (r.type === 'app') { out.cloud.push('web'); if (r.app_store_urls?.length) out.phone.push('app store'); }
+  const list = Object.fromEntries(Object.entries(out).filter(([, v]) => v.length));
+  return Object.keys(list).length ? list : null;
+}
+const runtimeDocs = Object.fromEntries(Object.entries(RUNTIMES).map(([k, v]) => [k, { name: v.name, docs: v.docs }]));
+for (const r of published) { const pl = platformsOf(r); if (pl) r.platforms = pl; }
+
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
@@ -265,7 +297,7 @@ if (!checkOnly) {
   const generated_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
   // The page loads meta.json first, then only the listing type the visitor opens (page weight).
   // catalog.json holds everything, for anyone who wants the whole data set.
-  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries }));
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, runtimes: runtimeDocs }));
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
@@ -289,6 +321,7 @@ const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths 
 async function writeListingPages(records, countryList) {
   const R = await import('../render.js');
   R.setCountries(countryList);
+  R.view.runtimes = runtimeDocs;
   R.view.site = SITE;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const outRoot = join(root, 'l');

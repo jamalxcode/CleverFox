@@ -32,6 +32,7 @@ function filterDefs(type) {
     { key: 'region', label: 'Any publisher country', opts: options(recs.map((r) => known(r.publisher_region) ? r.publisher_region.value : null), countryName) },
     { key: 'avail', label: 'Any availability', opts: options(recs.map((r) => r.availability?.value).filter((v) => v !== 'unknown'), (v) => AVAIL_LABELS[v] || v) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
+    { key: 'os', label: 'Runs on any system', opts: [['windows', '🪟 Windows'], ['macos', '🍎 macOS'], ['linux', '🐧 Linux'], ['phone', '📱 Phone'], ['cloud', '☁️ Cloud server']] },
     { key: 'local', toggle: '💻 Runs locally' },
     { key: 'fits', toggle: '✓ Fits my device', needsMem: true },
     { key: 'free', toggle: '🆓 Free' },
@@ -96,6 +97,7 @@ function matches(r) {
     if (f.region && r.publisher_region?.value !== f.region) return false;
     if (f.avail && r.availability?.value !== f.avail) return false;
     if (f.local && !r.local_ready) return false;
+    if (f.os && !r.platforms?.[f.os]) return false;
     if (f.fits && state.mem && !(r.hardware && r.hardware.min_memory_gb <= state.mem)) return false;
     if (f.free && !['free_download', 'free', 'free_tier'].includes(r.answers?.free)) return false;
     if (f.uncensored && !r.answers?.uncensored) return false;
@@ -200,6 +202,7 @@ try {
   throw new Error('catalog load failed');
 }
 setCountries(catalog.countries);
+view.runtimes = catalog.runtimes || {};
 view.site = new URL('.', location.href).href;
 wireShare($('#list'));
 $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option value="${g}"${g === state.mem ? ' selected' : ''}>${g === 128 ? '128 GB or more' : g + ' GB'}</option>`).join(''));

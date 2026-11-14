@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: freedom emoji and where it runs
+**Where:** Claude Code session.
+**Asked:** the "No barriers" padlock should show freedom, not something locked; and whether we can tell if a model runs on Windows, Linux, macOS or a cloud server, with an emoji for each.
+**Outcome:**
+- 🕊️ No barriers, 🚪 no sign-in, ✂️ uncensored (DECISIONS 51).
+- Platforms derived from runtimes, shown as 🪟🍎🐧📱☁️ with a "Runs on" line and filter (DECISIONS 50).
+- Results: 834 models run on Windows and Linux, 835 on macOS, 62 on phones, and all 877 in the cloud.
+
 ## 2026-11-14: recommended memory
 **Where:** Claude Code session.
 **Asked:** add a recommended memory size.
