@@ -445,7 +445,7 @@ function keepOrWrite(file, records, label) {
 // Publisher names and countries from data/publishers.json (Wikidata, reviewed).
 const PUBLISHERS = existsSync(join(root, 'data', 'publishers.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publishers.json'), 'utf8')).publishers || {} : {};
 function applyPublisher(r) {
-  const account = r.official_urls?.[0]?.match(/huggingface\.co\/(?:datasets\/)?([^/]+)\//)?.[1] || (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.split('/')[0];
+  const account = r.official_urls?.[0]?.match(/huggingface\.co\/(?:datasets\/)?([^/]+)\//)?.[1] || (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.split('/')[0] || r.publisher;
   const p = account && PUBLISHERS[account];
   if (!p) return;
   r.publisher_name = p.name;
