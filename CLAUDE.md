@@ -4,7 +4,7 @@ This file guides Claude Code when working in this repository.
 
 ## Overview
 
-CleverFox (planned at https://cleverfox.sala.company) is a cross-source catalog of AI models: one place to find a model wherever it lives (Hugging Face, GitHub, Ollama, Kaggle, ModelScope and other hubs, plus API-only providers such as OpenAI, Anthropic and Google). It covers obscure as well as well-known models, with special focus on models people can run locally and on models from outside the US or built for other languages and regions. It also lists web-based AI apps and services, popular and obscure. For every app and paid API it shows how you can get access: free tiers, payment methods beyond international cards (crypto, mobile money, UPI, Pix, app-store billing and others), a "no card needed" flag and country availability, because many people outside the US have no card or bank account. It is a metadata directory, not a hosting or execution platform. Every listing links out to its canonical sources.
+CleverFox (planned at https://cleverfox.sala.company) is a cross-source catalog of AI models: one place to find a model wherever it lives (Hugging Face, GitHub, Ollama, Kaggle, ModelScope and other hubs, plus API-only providers such as OpenAI, Anthropic and Google). It covers obscure as well as well-known models, with special focus on models people can run locally and on models from outside the US or built for other languages and regions. It also lists web-based AI apps and services, popular and obscure. For every app and paid API it shows how you can get access: free tiers, payment methods beyond international cards (crypto, mobile money, UPI, Pix, app-store billing and others), a "no card needed" flag and country availability, because many people outside the US have no card or bank account. AI servers and hosting are listed by data-center location, including local and regional providers. It is a metadata directory, not a hosting or execution platform. Every listing links out to its canonical sources.
 
 The product spec is `docs/SPECIFICATION.md`. Read it, and `docs/DECISIONS.md`, before making design or data decisions. They are the source of truth until code exists. The original proposal is archived in `docs/archive/` for history only; don't follow it where the current spec differs.
 
@@ -19,7 +19,7 @@ No code yet: just docs and an MIT license. Still open (spec section 17 and the e
 - Listings are chosen by written automated inclusion rules (no human review) plus a corrections file. Gap rules let obscure, regional and low-resource-language models in, not popularity alone.
 - Structured API data first. AI classifies, fills gaps and summarizes; a labeled test set in CI guards extraction accuracy.
 - Social sources (X, Hacker News, Reddit, non-English communities) only create candidates.
-- Phases: (1) models, web AI apps and access/payment info; (2) datasets and AI-written guides; (3) compute and templates; (4) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
+- Phases: (1) models, web AI apps and access/payment info; (2) AI servers and hosting, with local data centers first-class; (3) datasets and AI-written guides; (4) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
 
 ## Rules that must hold
 

@@ -16,7 +16,8 @@ Entry format:
 **Where:** Claude Code session.
 **Asked:** include web-based AI apps in the directory, popular ones too. Many people outside the US can't pay with Visa or other cards or aren't banked, so payment by crypto, local methods, or free options matters.
 **Outcome:** added a web AI app record type (spec 7a) and an access-and-payment block for apps and paid APIs (spec 7b): free tier, payment methods, a "no card needed" flag, country availability and signup requirements, each with its source. Added filters and browse pages for them. Apps and access info join Phase 1. Claude added a rule to list only official payment routes, with no resellers or workaround guides (DECISIONS 24, to confirm).
-**Open:** refresh window for payment facts; whether to add how-to-pay guides.
+**Outcome (follow-up):** the owner added that AI servers and hosting through local data centers are also important. Hosting moved to Phase 2, with data-center country and city, stated data-residency claims and the same access/payment block. Local and regional providers are in scope (spec section 12, DECISIONS 25). Datasets moved to phase 3.
+**Open:** refresh window for payment facts; whether to add how-to-pay guides; seed list of local data-center providers; whether hosting belongs in Phase 1.
 
 ## 2026-11-14: spec review and answers
 **Where:** Claude Code session.

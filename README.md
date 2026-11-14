@@ -4,6 +4,8 @@ A cross-source catalog of AI models: one place to find a model wherever it lives
 
 For every app and paid API, CleverFox shows how you can actually get access: what's free, and whether you can pay with crypto, mobile money, UPI, Pix, app-store billing or other methods that don't need a Visa or Mastercard. Many people outside the US don't have one.
 
+It also lists AI servers and hosting by data-center location, including local and regional providers, so people can run AI close to home.
+
 CleverFox is a metadata directory. It links to each model's official sources and never hosts model files. It will be a static site at https://cleverfox.sala.company, built by a scheduled pipeline on GitHub Actions.
 
 **Status:** design stage, no code yet.
@@ -17,8 +19,8 @@ CleverFox is a metadata directory. It links to each model's official sources and
 ## Roadmap
 
 1. Models across all sources and web AI apps, with access and payment options, evidence, verification and freshness shown.
-2. Datasets and short guides.
-3. Compute offerings and environment templates.
+2. AI servers and hosting, searchable by local data-center location.
+3. Datasets and short guides.
 4. Timestamped pricing comparisons.
 
 ## Contributing

@@ -16,6 +16,7 @@ Every listing links to its canonical sources for downloads, inference, access ap
 - **Obscure and well-known models alike.** The catalog isn't limited to famous releases. Small, niche and little-known models are in scope when they pass the inclusion rules (section 3).
 - **Special focus on local models:** models people can download and run on their own machines. Local-ready formats and runtimes (GGUF/llama.cpp, Ollama, MLX, ONNX and similar) are first-class data and filters.
 - **Access without a US-style bank card.** Many people outside the US can't pay with Visa or Mastercard, or have no bank account. For every paid app and API, CleverFox shows how you can pay: crypto, local payment methods (mobile money, UPI, Pix, Alipay/WeChat Pay and similar), app-store billing, prepaid or gift cards, PayPal. It also shows what is free and which countries the service is available in (section 7b).
+- **Local data centers.** People and businesses outside the US often need AI servers and hosting close to home, for lower latency, data-residency and sovereignty rules, local-currency billing and local payment. CleverFox lists AI hosting by data-center location, including regional and local providers, not only the big US clouds (section 12).
 - **Appeal beyond the USA:** models from publishers outside the US (e.g. China, Europe, the Middle East, India, Japan, Korea, Africa, Latin America), and models built for specific languages and regions (e.g. Arabic, Indic, Southeast Asian and African languages). Language and publisher region are first-class filters.
 
 **Wedge versus Hugging Face:** Hugging Face covers its own hub well. CleverFox shows one model across all the places it is distributed: its Hugging Face repo, its Ollama tag, its GitHub release and its official API. It also includes the closed, API-only models people compare open ones against.
@@ -33,8 +34,8 @@ Every listing links to its canonical sources for downloads, inference, access ap
 | Phase | Scope |
 |---|---|
 | 1 | **Models and web AI apps.** Cross-source model records, a directory of web-based AI apps and services, payment and access information (free tier, payment methods, country availability), static detail pages, search and filters, recent-releases feed, visible evidence, verification and freshness. |
-| 2 | Datasets. Short AI-written guides (section 11). |
-| 3 | Compute (VM/GPU offerings) and environment templates, in separate directories. Deployment compatibility only where documented. |
+| 2 | **AI servers and hosting**, with local and regional data centers first-class: GPU/VM offerings, managed model hosting and inference endpoints, environment templates (section 12). Deployment compatibility only where documented. |
+| 3 | Datasets. Short AI-written guides (section 11). |
 | 4 | Timestamped third-party pricing. Hosting-policy review before any monetization. |
 
 **Out of scope for now:** hardware fit ("will it run on my GPU?"), including VRAM estimates. Phase 1 still shows which local formats and runtimes each model has, with download sizes where the source lists them. Revisit hardware fit early, given the local-model focus. Also hosting binaries, running inference or user code, provisioning, credentials, accounts, private collections, subscriptions and checkout.
@@ -214,13 +215,24 @@ Every app record, and every paid API distribution of a model, has an `access` bl
 
 AI writes short original guides from official documentation, under the same evidence rules: every material claim links its source, and nothing is invented. Upstream docs are linked, not mirrored.
 
-## 12. Compute and templates (phase 3)
+## 12. AI servers and hosting (phase 2)
 
-- **Compute offering:** a provider VM or GPU instance.
+- **Hosting provider:** a company offering AI compute or model hosting. Global clouds, GPU clouds and **local and regional data-center operators** are all in scope, with the same gap rules as models: a provider serving a country or region with few options gets in.
+- **Compute offering:** a provider VM, GPU instance or bare-metal server.
+- **Managed hosting / inference endpoint:** a service that hosts models for you (dedicated or serverless endpoints, per-region).
 - **Environment template:** a prepared software stack or launch configuration.
 - **Deployment compatibility:** documented evidence that a specific model runs under a stated configuration.
 
-Link to official pages only. No one-click deploy claims unless verified. No provisioning, credential proxying or payment. Prefer provider APIs over scraping pages.
+Provider and offering fields, from official sources with source and observation time, or `unknown`:
+- `provider_region` (where the company is based) and `data_centers`: a list of `{country, city_or_region, provider_region_code}` locations where each offering is actually available.
+- Hardware: CPU, RAM, GPU type and count, GPU memory, storage.
+- `data_residency`: stated guarantees about where data is stored and processed, and certifications or local compliance claims, with their source. These are reported claims, not verified compliance.
+- `access`: the same access and payment block as apps (section 7b): free tier or credits, payment methods (crypto, local cards, bank transfer, mobile money and others), local-currency billing, signup and KYC requirements, countries served.
+- Official configuration or launch URL.
+
+Filters: data center country and region, provider region, GPU type, managed vs raw compute, payment method, no card needed. Static browse pages for "AI hosting in <country>" where enough offerings exist.
+
+Link to official pages only. No one-click deploy claims unless verified. No provisioning, credential proxying or payment. Prefer provider APIs over scraping pages. A data center is listed for an offering only when the provider's own region list says that offering is available there.
 
 ## 13. Pricing (phase 4)
 
@@ -252,7 +264,7 @@ Custom domain `cleverfox.sala.company`, using the same setup as the other sala.c
 
 ## 16. Positioning
 
-One place to find any AI model or web AI app, famous or obscure, open or API-only, from anywhere in the world, across every hub it's on, and to see how you can actually get access to it: free, with crypto, with local payment methods, or without a bank card. It gives special attention to models you can run locally and models for languages and regions outside the US, with sources, license and availability backed by evidence.
+One place to find any AI model, web AI app or AI hosting option, famous or obscure, open or API-only, from anywhere in the world, across every hub it's on, including servers in local data centers, and to see how you can actually get access to it: free, with crypto, with local payment methods, or without a bank card. It gives special attention to models you can run locally and models for languages and regions outside the US, with sources, license and availability backed by evidence.
 
 ## 17. Open decisions
 
@@ -267,5 +279,7 @@ One place to find any AI model or web AI app, famous or obscure, open or API-onl
 - Whether the site interface itself is translated (e.g. Arabic with right-to-left layout), or only the catalog is multilingual.
 - When to bring hardware fit back into scope.
 - Refresh window for payment and availability facts, and how to detect changes.
+- Seed list of local and regional data-center and GPU providers by country, and their inclusion rules.
+- Whether hosting should move into Phase 1.
 - Whether to add a "how to pay" guide per payment method (official routes only).
 - Operating budget and migration thresholds.
