@@ -87,7 +87,7 @@ export function cardBadges(r) {
   if (r.hardware) {
     const need = r.hardware.min_memory_gb;
     if (view.mem) b.push(need <= view.mem * 0.8 ? badge(`✓ Fits your ${view.mem} GB`, 'b-ok') : need <= view.mem ? badge(`⚠ Tight on ${view.mem} GB`, 'b-warn') : badge(`✗ Needs ~${need} GB`, 'b-no'));
-    else b.push(badge(`🖥️ From ~${need} GB memory`));
+    else b.push(badge(`🖥️ ${r.hardware.recommended_gb || need} GB+ recommended`));
   }
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
   if (a.benchmarks) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
@@ -183,7 +183,9 @@ export function glance(r) {
   }
   if (r.hardware) {
     const o = r.hardware.options;
-    h += line([item('🖥️', `<strong>~${o[0].memory_gb} GB</strong>${fitMark(o[0].memory_gb)} → ${esc(deviceShort(o[0].memory_gb))}`, `Rough estimate from ${o[0].basis}, not the publisher's requirement`), o.length > 1 && item('📐', o.map((x) => `<span class="chip" title="${x.download_gb ? `${x.download_gb} GB download` : esc(x.basis)}">${esc(x.label)} ~${x.memory_gb} GB${fitMark(x.memory_gb)}</span>`).join(' '))]);
+    const rec = o[0].recommended_gb || o[0].memory_gb;
+    h += line([item('🖥️', `needs ~${o[0].memory_gb} GB${fitMark(o[0].memory_gb)}`, `Rough estimate from ${o[0].basis}, not the publisher's requirement`), item('👍', `<strong>${rec} GB recommended</strong> → ${esc(deviceShort(rec))}`, 'Smallest standard memory size with about 25% headroom for the system and longer conversations')]);
+    if (o.length > 1) h += line([item('📐', o.map((x) => `<span class="chip" title="${x.download_gb ? `${x.download_gb} GB download · ` : ''}needs ~${x.memory_gb} GB">${esc(x.label)} → ${x.recommended_gb || x.memory_gb} GB${fitMark(x.memory_gb)}</span>`).join(' '))]);
     h += line([item('⚙️', 'CPU works, slowly'), item('🎮', 'GPU fast if it fits'), item('🍎', 'Mac: shared memory counts'), r.hardware.moe && item('⚡', 'MoE: faster than its size'), '<span class="muted">estimates</span>']);
   }
   if (r.type === 'model') {

@@ -234,6 +234,10 @@ function answers(r) {
 // billion parameters at 4-bit, 2 GB per billion at 16-bit. Never shown as a publisher's requirement.
 const HW = { overhead: 1.2, extraGb: 0.5, q4PerB: 0.6, f16PerB: 2.0 };
 const roundUp = (gb) => Math.max(1, Math.ceil(gb * 2) / 2);
+// Recommended: the smallest standard memory size with ~25% headroom over the need (room for the
+// operating system and longer conversations).
+const MEMORY_SIZES = [4, 8, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024];
+const recommend = (need) => MEMORY_SIZES.find((m) => m >= need * 1.25) || Math.ceil(need * 1.25 / 256) * 256;
 function paramsInB(v) {
   if (!v || v === 'unknown') return [];
   return String(v).split(/,\s*/).map((x) => { const m = x.trim().match(/^([\d.]+)\s*([bm])\b/i); return m ? +m[1] * (m[2].toLowerCase() === 'm' ? 0.001 : 1) : null; }).filter((x) => x && x > 0);
@@ -249,8 +253,9 @@ function hardware(r) {
     ]);
   }
   if (!options.length) return null;
+  for (const o of options) o.recommended_gb = recommend(o.memory_gb);
   options.sort((a, b) => a.memory_gb - b.memory_gb);
-  return { min_memory_gb: options[0].memory_gb, options: options.slice(0, 8), moe: /\bA\d+(\.\d+)?B\b/.test(r.name) || (r.tags_seen || []).includes('moe') };
+  return { min_memory_gb: options[0].memory_gb, recommended_gb: options[0].recommended_gb, options: options.slice(0, 8), moe: /\bA\d+(\.\d+)?B\b/.test(r.name) || (r.tags_seen || []).includes('moe') };
 }
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
@@ -297,7 +302,7 @@ async function writeListingPages(records, countryList) {
     const url = SITE + path;
     urls.push(url);
     const good = (r.answers?.good_for || []).map((c) => (R.CAPS[c] || c).replace(/^\S+\s/, ''));
-    const facts = [good.length && `Good for ${good.slice(0, 4).join(', ').toLowerCase()}`, r.local_ready && 'runs locally', r.answers?.free === 'free_download' && 'free download', ['free', 'free_tier'].includes(r.answers?.free) && 'free tier', r.answers?.no_barriers && 'no barriers', r.hardware && `from ~${r.hardware.min_memory_gb} GB memory`].filter(Boolean);
+    const facts = [good.length && `Good for ${good.slice(0, 4).join(', ').toLowerCase()}`, r.local_ready && 'runs locally', r.answers?.free === 'free_download' && 'free download', ['free', 'free_tier'].includes(r.answers?.free) && 'free tier', r.answers?.no_barriers && 'no barriers', r.hardware && `${r.hardware.recommended_gb} GB memory recommended`].filter(Boolean);
     const desc = `${r.description} ${facts.length ? facts.join(' · ') + '.' : ''}`.trim();
     const pub = r.publisher_name || r.publisher;
     const region = R.known(r.publisher_region) ? ` ${R.flag(r.publisher_region.value)}` : '';

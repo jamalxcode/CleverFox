@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: recommended memory
+**Where:** Claude Code session.
+**Asked:** add a recommended memory size.
+**Outcome:** recommended memory per size (the smallest standard size with ~25% headroom), shown on cards, in the hardware line and in the size chips (DECISIONS 49).
+
 ## 2026-11-14: compact details
 **Where:** Claude Code session.
 **Asked:** the details take too much space; compress them with emojis, shorter text and several related fields per line, readable in one quick look.

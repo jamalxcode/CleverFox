@@ -222,6 +222,10 @@ There's a "What do you need?" row of capability choices, plus quick filters for 
 **Decision:** the build writes a static page for every listing (`l/<type>/<publisher>/<name>/`), with the full details, link-preview tags and a canonical URL, plus `sitemap.xml` and `robots.txt`. Rendering moved into `render.js`, shared by the page and the build, so both look the same. Every listing gets a share row (its own page, copy link, the phone's share menu, X, WhatsApp) and a live X search link for reviews and reactions.
 **Why:** the owner wanted a link for each entry that can be shared, posted, sent and shown on its own, and an X search for reactions. Static pages preview properly in X, WhatsApp and Slack and can be found by search engines. They're detail pages, not filter-combination pages, so the spec rule holds. The X link is the first step toward X feedback (section 9) before the X API is set up.
 
+### 49. Recommended memory size
+**Decision:** next to the estimated memory need, each local size shows a recommended memory: the smallest standard size (4, 8, 16, 24, 32, 48, 64, 96, 128 GB and up) at or above the need × 1.25. Cards show "X GB+ recommended", and each size chip reads "7b → 16 GB".
+**Why:** the owner asked for it. Buyers think in standard memory sizes, and the 25% headroom matches the "tight" threshold already used for fit marks.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.
