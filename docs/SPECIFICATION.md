@@ -180,7 +180,7 @@ People can submit access and payment facts that official sources don't publish, 
 
 - Reports come in through the site's report form (`report/`), which posts to an ntfy.sh channel: no sign-up and no GitHub account, as in Flattery's suggestion form. Screenshots are re-saved in the browser (stripping hidden data such as location), and reporters can black out areas before sending. The private repo `jamalxcode/cleverfox-reports` collects the channel every hour, since ntfy.sh keeps messages 12 hours and attachments about 3. It runs rule checks, removes card numbers, emails and phone numbers from notes, and stores reports and screenshots privately.
 - Each report needs: the listing, the fact (from the access vocabulary), the country, the date, and evidence (a screenshot or a public link). Personal data must be cropped out. Reports with visible card numbers, account IDs or personal details are rejected.
-- An automated check (rules in the collector, then Claude on the screenshot or the evidence page's text) confirms the evidence supports the claim, is about that listing, and shows no personal details. Evidence is treated as untrusted data. A screenshot that still shows personal details is deleted before it's committed. Accepted reports are published without notes or screenshots, as a neutral one-sentence summary plus the evidence link when it's public, to `data/community.json`. The catalog build attaches them to listings. Accepted reports appear as `community_reported` claims with their date, shown separately from official facts and never overriding them.
+- Reports are accepted by rules, with no AI and no API key: either the evidence link is on the listing's own official site (shared hosts like app stores don't count) and the page mentions the claim, or enough reports make the same claim on different days with different evidence (2 for access facts, 3 for warnings). Unconfirmed reports expire after 60 days. Accepted reports are published as fixed sentences built from the fact, with how they were confirmed and any public evidence link, to `data/community.json`. Reporters' words and screenshots are never published. The catalog build attaches them to listings. Accepted reports appear as `community_reported` claims with their date, shown separately from official facts and never overriding them.
 - Contradicting reports are all shown. A report goes stale after the access refresh window (30 days, provisional) unless confirmed again.
 - Nobody approves reports by hand, consistent with section 4. The corrections file can remove bad ones.
 
@@ -283,7 +283,7 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 - Tune the provisional thresholds: community reports stale after 30 days; 3 accepted warnings within 90 days mark a listing `dont_touch`.
 - Scam-report thresholds for `reported` and `dont_touch`.
 - Scan cadence and refresh tiers per source.
-- AI models for extraction and evidence checks, and spending caps.
+- AI models for catalog extraction, and spending caps (community reports use rules, not AI).
 - Each connector's permitted use.
 - When to translate the interface, and into which languages.
 - Operating budget and migration thresholds.

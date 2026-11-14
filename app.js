@@ -16,7 +16,7 @@ const FREE_LABELS = { free: 'Free', free_tier: 'Free tier', trial: 'Free trial',
 const FACT_LABELS = {
   paid_with: (c) => `Paid with ${METHOD_LABELS[c.method] || c.method}`,
   payment_refused: (c) => `${METHOD_LABELS[c.method] || c.method} was refused`,
-  available_in: () => 'Works here', not_available_in: () => 'Blocked or not offered',
+  available_in: () => 'Works', not_available_in: () => 'Blocked or not offered',
   free_tier: () => 'Free plan', signup: () => 'Sign-up',
 };
 const REASON_LABELS = { scam: 'Reported as a scam', impersonation: 'Reported as impersonating another service', unsafe: 'Reported as unsafe', misleading: 'Reported as misleading' };
@@ -248,11 +248,12 @@ function detail(r) {
   if (r.community?.length) {
     const mine = state.country;
     const list = [...r.community].sort((a, b) => (b.country === mine) - (a.country === mine) || b.date.localeCompare(a.date));
-    h += '<h3>Community reports</h3><p class="src">From people who used it, checked automatically against their evidence. Not official facts.</p><ul class="dist">';
+    h += '<h3>Community reports</h3><p class="src">From people who used it. A report shows here only when an official page backs it or several people reported the same thing on different days. Not official facts.</p><ul class="dist">';
     for (const c of list) {
       const what = c.kind === 'warning' ? REASON_LABELS[c.reason] : `${FACT_LABELS[c.fact](c)} in ${flag(c.country)} ${countryName(c.country)}`;
-      const ev = c.evidence_url ? ` · <a href="${esc(c.evidence_url)}" rel="noopener nofollow" target="_blank">evidence</a>` : ' · screenshot checked, kept private';
-      h += `<li><strong>${esc(what)}</strong>${c.summary ? `: ${esc(c.summary)}` : ''} <span class="src">(${esc(fmtDate(c.date + 'T00:00:00Z'))}${c.stale ? ', older than 30 days' : ''}${ev})</span></li>`;
+      const basis = c.basis === 'official_page' ? ' · backed by an official page' : c.basis === 'agreement' ? ` · confirmed by ${c.agreeing_reports || 'several'} reports on different days` : '';
+      const ev = (c.evidence_url ? ` · <a href="${esc(c.evidence_url)}" rel="noopener nofollow" target="_blank">evidence</a>` : '') + basis;
+      h += `<li><strong>${esc(what)}</strong> <span class="src">(${esc(fmtDate(c.date + 'T00:00:00Z'))}${c.stale ? ', older than 30 days' : ''}${ev})</span></li>`;
     }
     h += '</ul>';
   }

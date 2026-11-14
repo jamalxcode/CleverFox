@@ -171,6 +171,11 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** each hour the private reports repo runs a check after collecting. Claude (`claude-opus-5-5`, medium effort, with the server-side refusal fallback) compares each report's screenshot or evidence page with its claim and returns a structured verdict. A report is accepted only if the evidence supports it, is about the listing, and shows no personal details. At most 20 checks run per hour, and failures are retried for 3 runs. Accepted reports become `public/community.json`: the fact, a neutral summary and a public evidence link only. A deploy key that can write only to `cleverfox` pushes that file as `data/community.json` when it changes, which redeploys the site. The catalog build attaches reports as `community_reported` claims, marks them stale after 30 days, and sets `reported` / `dont_touch` from accepted warnings (1 / 3 within 90 days, provisional).
 **Why:** decision 28 requires automated evidence checks with no manual approval. The deploy key keeps the private repo from needing broader access, and it can be revoked on its own. The model choice follows the default for new Claude API code; a cheaper model can be measured later against real reports.
 
+### 41. Reports accepted by rules, not AI (supersedes 40)
+**Situation:** the owner held off on the API key and asked that reviews rely on other signals instead of an AI check.
+**Decision:** the private reports repo accepts a report when its evidence link is on the listing's own official site and the page mentions the claim, or when enough reports make the same claim on different days with different evidence (2 for access facts, 3 for scam warnings). Unconfirmed reports expire after 60 days. Published text is a fixed sentence built from the fact, never the reporter's words. Screenshots count toward agreement but are never published. The Claude check was removed. The deploy key stays the way to publish, and it waits on the owner adding the secret.
+**Why:** no API cost and no AI judgement. Trade-off: reports are anonymous, so one determined person could fake agreement across days. The corrections file and showing contradicting reports side by side are the safeguards.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

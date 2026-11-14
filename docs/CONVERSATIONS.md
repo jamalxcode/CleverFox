@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: page review and rule-based reports
+**Where:** Claude Code session.
+**Asked:** hold the keys, show the page, and do reviews by looking at other signals, not AI.
+**Outcome:** screenshots of the live page. They revealed sideways scrolling on real phones (the country picker, GPU filter and long badges), which is fixed, and `tools/phone-check.cjs` was added. The Claude evidence check was replaced by rule-based review: official page or agreement across days (DECISIONS 41). The page now shows how each community report was confirmed.
+**Open:** add the `CLEVERFOX_DEPLOY_KEY` secret when ready to publish; the thresholds are provisional.
+
 ## 2026-11-14: evidence check and publishing
 **Where:** Claude Code session.
 **Asked:** build the evidence check and publish accepted reports.

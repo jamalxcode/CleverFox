@@ -173,7 +173,8 @@ const published = records.map((r) => {
   return rec;
 });
 
-// Community reports: accepted reports from the private reports repo, already evidence-checked.
+// Community reports: accepted reports from the private reports repo (confirmed by rules there:
+// an official page that mentions the claim, or agreeing reports on different days).
 // They are attached to their listing as community_reported claims and never change official facts.
 // Bad entries are skipped with a warning so one malformed report can't block a deploy.
 const COMMUNITY_STALE_DAYS = 30; // spec section 9
@@ -195,6 +196,8 @@ for (const c of community) {
   (rec.community ||= []).push({
     report_id: c.report_id, kind: c.kind, fact: c.fact, method: c.method, country: c.country, reason: c.reason,
     date: c.date, summary: typeof c.summary === 'string' ? c.summary.slice(0, 300) : null,
+    basis: ['official_page', 'agreement'].includes(c.basis) ? c.basis : null,
+    agreeing_reports: Number.isInteger(c.agreeing_reports) ? c.agreeing_reports : null,
     evidence_url: /^https?:\/\//.test(c.evidence_url || '') ? c.evidence_url : null,
     source_type: 'community_reported', stale: ageDays(c.date) > COMMUNITY_STALE_DAYS,
   });
