@@ -33,10 +33,9 @@ Every listing links to its canonical sources for downloads, inference, access ap
 
 | Phase | Scope |
 |---|---|
-| 1 | **Models and web AI apps.** Cross-source model records, a directory of web-based AI apps and services, payment and access information (free tier, payment methods, country availability), static detail pages, search and filters, recent-releases feed, visible evidence, verification and freshness. |
-| 2 | **AI servers and hosting**, with local and regional data centers first-class: GPU/VM offerings, managed model hosting and inference endpoints, environment templates (section 12). Deployment compatibility only where documented. |
-| 3 | Datasets. Short AI-written guides (section 11). |
-| 4 | Timestamped third-party pricing. Hosting-policy review before any monetization. |
+| 1 | **Models, web AI apps and AI hosting.** Cross-source model records. A directory of web-based AI apps and services. AI servers and hosting with local and regional data centers first-class: providers, GPU/VM offerings, managed model hosting and inference endpoints (section 12). Payment and access information for apps, APIs and hosting (free tier, payment methods, country availability). Static detail pages, search and filters, recent-releases feed, visible evidence, verification and freshness. |
+| 2 | Environment templates and documented deployment compatibility. Datasets. Short AI-written guides (section 11). |
+| 3 | Timestamped third-party pricing. Hosting-policy review before any monetization. |
 
 **Out of scope for now:** hardware fit ("will it run on my GPU?"), including VRAM estimates. Phase 1 still shows which local formats and runtimes each model has, with download sizes where the source lists them. Revisit hardware fit early, given the local-model focus. Also hosting binaries, running inference or user code, provisioning, credentials, accounts, private collections, subscriptions and checkout.
 
@@ -168,7 +167,7 @@ Apps and models link both ways: a model page lists the apps that officially use 
 
 ## 7b. Access and payment
 
-Every app record, and every paid API distribution of a model, has an `access` block. This is about **whether and how you can get access**. It is not a price comparison (that is phase 4). Each field carries its own source and observation time, like the key claims in section 7.
+Every app record, every paid API distribution of a model, and every hosting offering has an `access` block. This is about **whether and how you can get access**. It is not a price comparison (that is phase 3). Each field carries its own source and observation time, like the key claims in section 7.
 
 - `free`: `free` (fully free), `free_tier` (with stated limits), `trial`, `paid_only` or `unknown`. Stated limits are recorded as text with their source.
 - `payment_methods`: a list from a fixed vocabulary: `card_international` (Visa/Mastercard/Amex), `card_local`, `paypal`, `crypto` (with the coins or networks listed), `mobile_money` (e.g. M-Pesa), `upi`, `pix`, `alipay`, `wechat_pay`, `bank_transfer`, `app_store_billing` (Apple/Google, which often accepts local methods and carrier billing), `prepaid_or_gift_card`, `carrier_billing`, `other` (named).
@@ -211,11 +210,11 @@ Every app record, and every paid API distribution of a model, has an `access` bl
 - Analytics via the shared GoatCounter snippet.
 - WCAG AA contrast and no sideways scrolling on phones, as in Flattery.
 
-## 11. Guides (phase 3)
+## 11. Guides (phase 2)
 
 AI writes short original guides from official documentation, under the same evidence rules: every material claim links its source, and nothing is invented. Upstream docs are linked, not mirrored.
 
-## 12. AI servers and hosting (phase 2)
+## 12. AI servers and hosting (phase 1; templates phase 2)
 
 - **Hosting provider:** a company offering AI compute or model hosting. Global clouds, GPU clouds and **local and regional data-center operators** are all in scope, with the same gap rules as models: a provider serving a country or region with few options gets in.
 - **Compute offering:** a provider VM, GPU instance or bare-metal server.
@@ -234,7 +233,7 @@ Filters: data center country and region, provider region, GPU type, managed vs r
 
 Link to official pages only. No one-click deploy claims unless verified. No provisioning, credential proxying or payment. Prefer provider APIs over scraping pages. A data center is listed for an offering only when the provider's own region list says that offering is available there.
 
-## 13. Pricing (phase 4)
+## 13. Pricing (phase 3)
 
 Prices are observations stored apart from identity: `resource_id`, `provider`, `billing_unit`, `currency`, `amount`, `region`, `purchase_type`, `conditions`, `source_url`, `observed_at`.
 - Inference units: input/output/cached tokens, requests, images, audio duration.
@@ -254,6 +253,7 @@ Custom domain `cleverfox.sala.company`, using the same setup as the other sala.c
 - Every public record has a stable `id`, `schema_version`, `type`, at least one distribution URL, `verification_status` and freshness data.
 - No two public records share a distribution URL or source-native ID.
 - Every web AI app record has a working official URL, categories and an `access` block whose fields come from official sources or are `unknown`. No reseller or workaround payment routes are listed.
+- Every hosting offering lists its data centers (country, and city or region) from the provider's own region list, plus an `access` block. Data-residency statements are labeled as provider claims.
 - Every record has `languages`, `publisher_region`, `formats` and `local_ready` filled from evidence or set to `unknown`.
 - Key claims (license, availability, parameters, benchmarks, release date) carry their own source, type and observation time.
 - Unknown values are `null` or `unknown`. The labeled test set passes at or above its baseline.
@@ -280,6 +280,5 @@ One place to find any AI model, web AI app or AI hosting option, famous or obscu
 - When to bring hardware fit back into scope.
 - Refresh window for payment and availability facts, and how to detect changes.
 - Seed list of local and regional data-center and GPU providers by country, and their inclusion rules.
-- Whether hosting should move into Phase 1.
 - Whether to add a "how to pay" guide per payment method (official routes only).
 - Operating budget and migration thresholds.

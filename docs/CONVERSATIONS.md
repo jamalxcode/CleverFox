@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: hosting into Phase 1
+**Where:** Claude Code session.
+**Asked:** move hosting to Phase 1.
+**Outcome:** done (DECISIONS 26). Phase 1 is models, web AI apps and AI hosting with local data centers, plus access and payment info. Phase 2 is templates, compatibility, datasets and guides. Phase 3 is pricing.
+
 ## 2026-11-14: web AI apps and payment access
 **Where:** Claude Code session.
 **Asked:** include web-based AI apps in the directory, popular ones too. Many people outside the US can't pay with Visa or other cards or aren't banked, so payment by crypto, local methods, or free options matters.

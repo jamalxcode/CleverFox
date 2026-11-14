@@ -18,10 +18,9 @@ CleverFox is a metadata directory. It links to each model's official sources and
 
 ## Roadmap
 
-1. Models across all sources and web AI apps, with access and payment options, evidence, verification and freshness shown.
-2. AI servers and hosting, searchable by local data-center location.
-3. Datasets and short guides.
-4. Timestamped pricing comparisons.
+1. Models across all sources, web AI apps, and AI servers and hosting searchable by local data-center location, all with access and payment options, evidence, verification and freshness shown.
+2. Environment templates, datasets and short guides.
+3. Timestamped pricing comparisons.
 
 ## Contributing
 

@@ -19,7 +19,7 @@ No code yet: just docs and an MIT license. Still open (spec section 17 and the e
 - Listings are chosen by written automated inclusion rules (no human review) plus a corrections file. Gap rules let obscure, regional and low-resource-language models in, not popularity alone.
 - Structured API data first. AI classifies, fills gaps and summarizes; a labeled test set in CI guards extraction accuracy.
 - Social sources (X, Hacker News, Reddit, non-English communities) only create candidates.
-- Phases: (1) models, web AI apps and access/payment info; (2) AI servers and hosting, with local data centers first-class; (3) datasets and AI-written guides; (4) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
+- Phases: (1) models, web AI apps, and AI servers and hosting with local data centers first-class, plus access/payment info for all three; (2) environment templates, deployment compatibility, datasets and AI-written guides; (3) pricing. Hardware fit ("will it run on my GPU?") is out of scope for now.
 
 ## Rules that must hold
 

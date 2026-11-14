@@ -111,6 +111,10 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** AI servers and hosting (GPU/VM offerings, managed model hosting, inference endpoints, templates) become Phase 2, with data-center location as a first-class field and filter. Local and regional data-center operators are in scope alongside the global clouds. Each offering carries the same access and payment block as apps, plus stated data-residency claims. Datasets and guides move to phase 3.
 **Why:** the owner's point that hosting through local data centers matters to people outside the US, for latency, data residency, local billing and payment. Moving it ahead of datasets is Claude's reading of "also important"; it could move into Phase 1 instead.
 
+### 26. AI hosting moves into Phase 1
+**Decision:** AI servers and hosting (providers, GPU/VM offerings, managed model hosting, inference endpoints), with local data centers first-class, are part of Phase 1. Environment templates and deployment compatibility move to phase 2 with datasets and guides. Pricing becomes phase 3.
+**Why:** the owner's call. Supersedes the phase placement in entry 25. Phase 1 now covers models, web AI apps, hosting, and access and payment information for all three.
+
 ## Open decisions
 
 - UI framework/static generator and search library.
@@ -120,7 +124,6 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 - When to bring hardware fit back into scope.
 - Refresh window for payment and availability facts.
 - Seed list of local and regional data-center and GPU providers by country.
-- Whether hosting should move into Phase 1.
 - Whether to add "how to pay" guides per payment method (official routes only).
 - Scan cadence and refresh tiers.
 - AI models for extraction, and spending caps.
