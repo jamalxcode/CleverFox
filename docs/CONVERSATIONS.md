@@ -12,6 +12,16 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: compact details
+**Where:** Claude Code session.
+**Asked:** the details take too much space; compress them with emojis, shorter text and several related fields per line, readable in one quick look.
+**Outcome:**
+- Details rewritten as emoji-led lines (🎯 good for · 💻 local · ⬇️ download · 🆓 free · 🔓 gate · 📜 license; 🖥️ memory → device, with size chips; ⚙️ processor tips; 📊/🧠 smarts; 📏 context, thinking, tools; 🌍 facts).
+- Sources moved into small ⓘ links.
+- Unknown fields gathered into one "❓ Unknown:" line.
+- Same treatment for apps, hosting and datasets.
+- A model's details went from about two screens to one card.
+
 ## 2026-11-14: listing pages and X reactions
 **Where:** Claude Code session.
 **Asked:** a link for each entry that can be shared, posted, sent and shown on its own, and an X search link for its reviews and reactions (like `x.com/search?q=bge-m3&src=typed_query&f=live`).
