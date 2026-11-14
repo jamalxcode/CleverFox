@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleverFox: AI models, apps and hosting you can actually use</title>
+<meta name="description" content="Find AI models, apps and hosting from every source, and see whether you can use them from your country: free options, paying without a card, local models and nearby data centers.">
+<link rel="stylesheet" href="style.css?v=__BUILD__">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./">🦊 CleverFox</a>
+    <label class="country">
+      <span class="country-label">Your country</span>
+      <select id="country" aria-label="Your country"><option value="">Choose…</option></select>
+    </label>
+  </div>
+  <div class="wrap">
+    <p class="tagline">AI models, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="tabs" role="tablist" aria-label="Listing type">
+    <button role="tab" id="tab-model" data-type="model" aria-selected="true">Models <span class="count"></span></button>
+    <button role="tab" id="tab-app" data-type="app" aria-selected="false">Apps <span class="count"></span></button>
+    <button role="tab" id="tab-host" data-type="host" aria-selected="false">Hosting <span class="count"></span></button>
+  </nav>
+
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search name, publisher, language…" aria-label="Search">
+    <div id="filters" class="filters"></div>
+  </div>
+
+  <p id="summary" class="summary" aria-live="polite"></p>
+  <ul id="list" class="list"></ul>
+  <p id="empty" class="empty" hidden>Nothing matches these filters.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><strong>Prototype</strong> with a small hand-researched seed catalog. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
+  <p>Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Theme: auto</button></p>
+  <p id="generated" class="muted"></p>
+</footer>
+
+<script type="module" src="app.js?v=__BUILD__"></script>
+<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
+<script>
+  (function () {
+    if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
+    window.goatcounter = { endpoint: 'https://salacompany.goatcounter.com/count', path: function (p) { return location.host + p; } };
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://salacompany.goatcounter.com/count');
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,769 @@
+[
+  {
+    "schema_version": 1,
+    "id": "cf:app:anthropic/claude",
+    "type": "app",
+    "name": "Claude",
+    "description": "General-purpose AI assistant for chat, writing, coding, file creation and web search, available on web, desktop and mobile.",
+    "publisher": "Anthropic",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://claude.ai",
+      "https://claude.com"
+    ],
+    "documentation_urls": [
+      "https://claude.com/pricing"
+    ],
+    "evidence_urls": [
+      "https://www.anthropic.com/legal/supported-regions",
+      "https://claude.com/pricing",
+      "https://support.claude.com/en/articles/9264804-how-can-i-cancel-my-claude-pro-subscription-on-the-claude-app-for-ios"
+    ],
+    "verification_status": "verified",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Fetched official Supported Regions Policy (effective 2026-11-12) and claude.com/pricing directly. The policy lists 185 supported countries; 'any country or region not listed is unsupported' and territories of listed countries are supported. countries_unavailable is derived: sovereign states/SARs absent from the list (computed against ISO 3166). Also unsupported per the page: Crimea, Donetsk, Kherson, Luhansk and Zaporizhzhia regions of Ukraine; and entities headquartered in or majority-controlled from unsupported regions. Not on the list and ambiguous: Cook Islands (CK), Niue (NU), Western Sahara (EH), Kosovo (no ISO code). Plans seen: Free $0, Pro $20/mo ($17/mo annual), Max $100, Ultra $200; prices shown in USD from this session's location, so local-currency pricing unknown. support.claude.com could not be fetched (blocked); iOS billing statement comes from a search snippet of the cited article. Phone-verification requirement and interface languages could not be confirmed. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://claude.ai",
+    "app_store_urls": [],
+    "categories": [
+      "chat",
+      "writing",
+      "coding"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://claude.com/pricing",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": "Free plan: limited usage every 5 hours and every week; chat on web, desktop and mobile; web search, file creation, code execution; up to 5 projects; no Opus models.",
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Pricing page lists 'Credit card' for Pro, Max and Ultra; ACH and invoicing not offered on individual plans"
+          },
+          {
+            "method": "app_store_billing",
+            "note": "Subscriptions started in the iOS app are billed and managed through the iOS device (per support article); Android billing not confirmed"
+          }
+        ],
+        "source_url": "https://claude.com/pricing",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "all_except_listed",
+        "source_url": "https://www.anthropic.com/legal/supported-regions",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": [
+          "AF",
+          "BY",
+          "CN",
+          "CU",
+          "HK",
+          "IR",
+          "KP",
+          "MM",
+          "MO",
+          "RU",
+          "SY",
+          "VE",
+          "YE"
+        ],
+        "source_url": "https://www.anthropic.com/legal/supported-regions",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:openai/chatgpt",
+    "type": "app",
+    "name": "ChatGPT",
+    "description": "AI chat assistant for conversation, writing, image generation, file analysis and voice, with free and paid plans.",
+    "publisher": "OpenAI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://chatgpt.com"
+    ],
+    "documentation_urls": [
+      "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free",
+      "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt",
+      "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries"
+    ],
+    "evidence_urls": [
+      "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+      "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt",
+      "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free",
+      "https://help.openai.com/articles/10193193"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://chatgpt.com",
+    "app_store_urls": [],
+    "categories": [
+      "chat",
+      "writing",
+      "image"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": "Everyday text chat unlimited subject to abuse safeguards; file uploads, image generation, voice, data analysis and other tools have separate limits; ads may appear in some countries.",
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Credit and debit cards accepted in all supported countries"
+          },
+          {
+            "method": "pix",
+            "note": "Brazil; Go, Plus and Pro plans"
+          },
+          {
+            "method": "upi",
+            "note": "India; Go and Plus plans only, not Pro or Business"
+          },
+          {
+            "method": "other",
+            "note": "Kakao Pay and Naver Pay (South Korea)"
+          },
+          {
+            "method": "card_local",
+            "note": "Local Korean cards (South Korea)"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "Bank debit via Link, UK and EEA where supported"
+          },
+          {
+            "method": "app_store_billing",
+            "note": "Subscriptions bought in the iOS/Android apps are managed by Apple App Store or Google Play"
+          }
+        ],
+        "source_url": "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": true,
+        "source_url": "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:google/gemini",
+    "type": "app",
+    "name": "Gemini",
+    "description": "Google's AI assistant app for chat, writing, image creation and research, on the web and Android/iOS.",
+    "publisher": "Google",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://gemini.google.com",
+      "https://gemini.google"
+    ],
+    "documentation_urls": [
+      "https://support.google.com/gemini/answer/13575153?hl=en",
+      "https://support.google.com/gemini/answer/14579026",
+      "https://support.google.com/gemini/answer/16275805"
+    ],
+    "evidence_urls": [
+      "https://support.google.com/gemini/answer/13575153?hl=en",
+      "https://support.google.com/gemini/answer/14579026",
+      "https://support.google.com/gemini/answer/16275805",
+      "https://support.google.com/googleone/answer/16476811",
+      "https://support.google.com/googleplay/answer/2651410?hl=en"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Gemini web app page says it is available in over 230 countries and territories and 70+ languages, and the mobile app in 150+ countries, but the lists themselves were not retrievable, so countries are unknown. Paid tiers (Google AI Plus/Pro/Ultra) are bought through Google One; the help page says you 'choose a payment method' but does not list methods in the snippets seen. Google Play's accepted-methods page varies by country (cards, carrier billing, gift cards, UPI in India) but those are Play-wide, not confirmed for Gemini subscriptions, so payment_methods left unknown. The 18+ age requirement in EEA/CH/UK applies to Google AI plans. The age statement appears on Gemini help pages; exact source page among those cited not certain. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://gemini.google.com",
+    "app_store_urls": [],
+    "categories": [
+      "chat",
+      "writing",
+      "image",
+      "search"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://support.google.com/gemini/answer/16275805",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": "Basic access without a Google AI plan uses standard limits that reset daily; 32k-token context window; limits may change without notice.",
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "Personal Google Account; age 13+ (or local minimum) in most countries; Family Link-managed accounts excluded from the mobile app",
+        "source_url": "https://support.google.com/gemini/answer/14579026",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:microsoft/copilot",
+    "type": "app",
+    "name": "Microsoft Copilot",
+    "description": "Microsoft's consumer AI assistant for chat, search and voice, available on web, Windows and mobile.",
+    "publisher": "Microsoft",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://copilot.microsoft.com"
+    ],
+    "documentation_urls": [
+      "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce"
+    ],
+    "evidence_urls": [
+      "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce",
+      "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Microsoft support page says the Copilot app is available in over 170 markets, excluding China (Hong Kong is not excluded) and 'embargoed markets'; the embargoed markets are not named, so countries_unavailable lists only CN and is incomplete. Microsoft's consumer page says Copilot has a free baseline experience and Microsoft 365 Premium unlocks more AI features; specific free limits and payment methods were not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://copilot.microsoft.com",
+    "app_store_urls": [],
+    "categories": [
+      "chat",
+      "search"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "all_except_listed",
+        "source_url": "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": [
+          "CN"
+        ],
+        "source_url": "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:mistral-ai/le-chat",
+    "type": "app",
+    "name": "Le Chat",
+    "description": "Mistral AI's chat assistant for conversation, writing, search and document work, with free and paid plans.",
+    "publisher": "Mistral AI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://chat.mistral.ai",
+      "https://mistral.ai/pricing"
+    ],
+    "documentation_urls": [
+      "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription"
+    ],
+    "evidence_urls": [
+      "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
+      "https://www.mistral.ai/pricing"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Help article says users upgrade from the Free plan to Le Chat Pro or Team (monthly or annual, annual 20% off) and that 'multiple payment methods are available, including credit cards and Google Pay'; full list not visible, so payment_methods may be incomplete. Article says to manage the subscription where originally subscribed, which suggests in-app purchase exists, but app_store_billing not listed as it was not stated explicitly. Pro price ($14.99/mo) only from third-party sites; not used. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://chat.mistral.ai",
+    "app_store_urls": [],
+    "categories": [
+      "chat",
+      "writing"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Credit cards"
+          },
+          {
+            "method": "other",
+            "note": "Google Pay"
+          }
+        ],
+        "source_url": "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:perplexity/perplexity",
+    "type": "app",
+    "name": "Perplexity",
+    "description": "AI answer engine that searches the web and replies with cited sources, with free and Pro plans.",
+    "publisher": "Perplexity AI",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.perplexity.ai"
+    ],
+    "documentation_urls": [
+      "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
+      "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
+    ],
+    "evidence_urls": [
+      "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
+      "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Payment methods from a search snippet of Perplexity's own help article on Stripe billing (cards, Cash App, Google and Apple Pay, ACH, PayPal). A free plan clearly exists per third-party sources (limited Pro searches per day, figures conflict: 3 vs 5) but the official plan article's text was not visible, so free left unknown. No official country list found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://www.perplexity.ai",
+    "app_store_urls": [],
+    "categories": [
+      "search",
+      "chat"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Via Stripe checkout on the web"
+          },
+          {
+            "method": "paypal",
+            "note": null
+          },
+          {
+            "method": "other",
+            "note": "Apple Pay, Google Pay, Cash App"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "ACH (US)"
+          }
+        ],
+        "source_url": "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:elevenlabs/elevenlabs",
+    "type": "app",
+    "name": "ElevenLabs",
+    "description": "AI voice platform for text-to-speech, voice cloning, dubbing and sound generation, with a web app and API.",
+    "publisher": "ElevenLabs",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://elevenlabs.io"
+    ],
+    "documentation_urls": [
+      "https://elevenlabs.io/docs/overview/administration/billing",
+      "https://elevenlabs.io/docs/help-center/account/payment-billing"
+    ],
+    "evidence_urls": [
+      "https://elevenlabs.io/pricing/api",
+      "https://elevenlabs.io/docs/overview/administration/billing",
+      "https://elevenlabs.io/docs/help-center/account/payment-billing"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Free tier figure from a search snippet of the official API pricing page (Polish-locale URL seen: elevenlabs.io/pl/pricing/api); non-commercial-with-attribution rule from billing docs. Billing docs also say pay-as-you-go credit purchases are capped at $100/month on Free, Starter and Creator plans unless 2FA is enabled. The help-center 'What kind of payment is accepted?' answer was not visible, so payment methods unknown. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://elevenlabs.io",
+    "app_store_urls": [],
+    "categories": [
+      "audio"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "free_tier",
+        "source_url": "https://elevenlabs.io/pricing/api",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": "10,000 credits per month at $0; free-plan output usable non-commercially with attribution.",
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:app:suno/suno",
+    "type": "app",
+    "name": "Suno",
+    "description": "AI music generator that creates songs with vocals and instrumentals from text prompts or lyrics.",
+    "publisher": "Suno",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://suno.com"
+    ],
+    "documentation_urls": [
+      "https://help.suno.com/en/articles/2421185"
+    ],
+    "evidence_urls": [
+      "https://help.suno.com/en/articles/2421185"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Official help article 'What types of payments are accepted?' only partly visible in search: it lists accepted currencies (USD, EUR, GBP, JPY, INR and others) and 'other available methods: Korean Card, UPI, KakaoPay, NaverPay'. Card networks via Stripe, PayPal-only-through-app-stores, and stablecoin/Apple Pay/Google Pay claims come from third-party blogs and are NOT included; card_international and app_store_billing are therefore not listed though likely. Free plan (reportedly 50 credits/day, non-commercial) from third-party sites only, so free left unknown. Publisher HQ not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+    "url": "https://suno.com",
+    "app_store_urls": [],
+    "categories": [
+      "audio",
+      "music"
+    ],
+    "interface_languages": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "models_used": [],
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_local",
+            "note": "Korean cards (South Korea)"
+          },
+          {
+            "method": "upi",
+            "note": "India (implied by the local-method list)"
+          },
+          {
+            "method": "other",
+            "note": "KakaoPay and NaverPay (South Korea)"
+          }
+        ],
+        "source_url": "https://help.suno.com/en/articles/2421185",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": true,
+        "source_url": "https://help.suno.com/en/articles/2421185",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "cleverfox",
+  "private": true,
+  "type": "module",
+  "description": "Global catalog of AI models, apps and hosting, with access information built in.",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node tools/build.mjs --check",
+    "serve": "python3 -m http.server 8000"
+  }
+}

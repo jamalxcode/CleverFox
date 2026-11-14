@@ -1,0 +1,1346 @@
+[
+  {
+    "schema_version": 1,
+    "id": "cf:host:hetzner",
+    "type": "host",
+    "name": "Hetzner",
+    "description": "German hosting company renting dedicated GPU servers with NVIDIA RTX-class cards from its German data centers.",
+    "publisher": "Hetzner Online",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.hetzner.com/gpu",
+      "https://www.hetzner.com/dedicated-rootserver/matrix-gpu"
+    ],
+    "documentation_urls": [
+      "https://docs.hetzner.com/robot/dedicated-server/server-lines/gpu-server/",
+      "https://docs.hetzner.com/general/billing-and-account-management/billing-at-hetzner/payment-overview"
+    ],
+    "evidence_urls": [
+      "https://www.hetzner.com/gpu",
+      "https://www.hetzner.com/dedicated-rootserver/matrix-gpu",
+      "https://www.hetzner.com/dedicated-rootserver/gex131",
+      "https://www.hetzner.com/dedicated-rootserver/gex430/",
+      "https://www.hetzner.com/pressroom/new-gex131/",
+      "https://docs.hetzner.com/robot/dedicated-server/server-lines/gpu-server/",
+      "https://docs.hetzner.com/de/robot/dedicated-server/server-lines/gpu-server/",
+      "https://docs.hetzner.com/general/billing-and-account-management/billing-at-hetzner/payment-overview",
+      "https://docs.hetzner.com/de/general/billing-and-account-management/billing-at-hetzner/payment-overview/",
+      "https://docs.hetzner.com/general/security-and-identify/fraud-prevention-faq/"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. HQ country not confirmed by any source found (left unknown). Hetzner's GEX430 page (4x RTX PRO 6000) lists Helsinki HEL1 as its location per a search snippet; not added to data_centers because only one snippet showed it. English GPU page only says 'located in Europe'; the German page names NBG1/FSN1. Free trial and supported-country list not found. Forum posts mention a prepayment alternative to ID verification; not official, not used.",
+    "kinds": [
+      "bare_metal"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "DE",
+          "city_or_region": "Falkenstein",
+          "provider_region_code": "FSN1"
+        },
+        {
+          "country": "DE",
+          "city_or_region": "Nuremberg",
+          "provider_region_code": "NBG1"
+        }
+      ],
+      "source_url": "https://www.hetzner.com/gpu",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA RTX 4000 SFF Ada Generation",
+        "NVIDIA RTX PRO 6000 Blackwell Max-Q"
+      ],
+      "source_url": "https://docs.hetzner.com/robot/dedicated-server/server-lines/gpu-server/",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "GPU servers are located in Europe; Hetzner says data stays GDPR-compliant in its ISO 27001-certified data centers.",
+      "source_url": "https://www.hetzner.com/pressroom/new-gex131/",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://www.hetzner.com/dedicated-rootserver/matrix-gpu",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, American Express, UnionPay (UnionPay not charged automatically)"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "Manual transfer with customer ID as reference; SEPA direct debit for EUR accounts only"
+          },
+          {
+            "method": "paypal",
+            "note": "Manual payment from the account"
+          }
+        ],
+        "source_url": "https://docs.hetzner.com/general/billing-and-account-management/billing-at-hetzner/payment-overview",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "Account registration; Hetzner may require verification with a copy of a valid government-issued ID",
+        "source_url": "https://docs.hetzner.com/general/security-and-identify/fraud-prevention-faq/",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:ovhcloud",
+    "type": "host",
+    "name": "OVHcloud",
+    "description": "French cloud provider offering NVIDIA GPU instances in its Public Cloud alongside other compute services.",
+    "publisher": "OVHcloud",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.ovhcloud.com/en/lp/best-gpu-ai/"
+    ],
+    "documentation_urls": [
+      "https://docs.ovhcloud.com/en/guides/account-and-service-management/managing-billing-payments-and-services/manage-payment-methods",
+      "https://docs.ovhcloud.com/en/guides/account-and-service-management/managing-billing-payments-and-services/faq-billing"
+    ],
+    "evidence_urls": [
+      "https://corporate.ovhcloud.com/en/newsroom/news/adds-cutting-edge-gpus/",
+      "https://corporate.ovhcloud.com/en/newsroom/news/ai-offer/",
+      "https://www.ovhcloud.com/en/lp/best-gpu-ai/",
+      "https://www.ovhcloud.com/en-gb/terms-and-conditions/payment/",
+      "https://docs.ovhcloud.com/en/guides/account-and-service-management/managing-billing-payments-and-services/manage-payment-methods",
+      "https://docs.ovhcloud.com/en/guides/account-and-service-management/managing-billing-payments-and-services/faq-billing"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. GPU regions could not be confirmed: third-party sources conflict (Gravelines only vs. Gravelines + Beauharnois + Frankfurt + London + Warsaw); OVHcloud's availability-by-region page was not seen. GPU types come from OVHcloud's 2023 newsroom announcements (A100, H100 PCIe, L4, L40S); a current product page reportedly lists V100S, L4, L40S, and a third party mentions H200; current lineup unverified. HQ, free trial, data-residency statement and countries not found. Payment methods vary by country subsidiary; the cited page is the UK terms page.",
+    "kinds": [
+      "gpu_cloud",
+      "vm"
+    ],
+    "data_centers": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H100",
+        "NVIDIA A100",
+        "NVIDIA L40S",
+        "NVIDIA L4"
+      ],
+      "source_url": "https://corporate.ovhcloud.com/en/newsroom/news/adds-cutting-edge-gpus/",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://www.ovhcloud.com/en/lp/best-gpu-ai/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, American Express"
+          },
+          {
+            "method": "paypal",
+            "note": null
+          },
+          {
+            "method": "bank_transfer",
+            "note": "Takes at least three days; SEPA direct debit also offered in some regions (account holder must match)"
+          }
+        ],
+        "source_url": "https://www.ovhcloud.com/en-gb/terms-and-conditions/payment/",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:scaleway",
+    "type": "host",
+    "name": "Scaleway",
+    "description": "French cloud provider renting NVIDIA GPU instances in Paris and Warsaw availability zones.",
+    "publisher": "Scaleway",
+    "publisher_region": {
+      "value": "FR",
+      "source_url": "https://www.cbinsights.com/company/scaleway",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.scaleway.com/en/gpu-instances/",
+      "https://www.scaleway.com/en/pricing/gpu"
+    ],
+    "documentation_urls": [
+      "https://www.scaleway.com/en/docs/gpu/reference-content/choosing-gpu-instance-type",
+      "https://www.scaleway.com/en/docs/billing/faq/",
+      "https://www.scaleway.com/en/docs/billing/quickstart/"
+    ],
+    "evidence_urls": [
+      "https://www.scaleway.com/en/choose-the-right-gpu/",
+      "https://scaleway.com/en/docs/account/reference-content/products-availability",
+      "https://www.scaleway.com/en/gpu-instances/",
+      "https://www.scaleway.com/en/docs/billing/faq/",
+      "https://www.scaleway.com/en/docs/billing/quickstart/",
+      "https://www.scaleway.com/en/docs/billing/how-to/add-payment-method",
+      "https://www.cbinsights.com/company/scaleway"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Per-type zone mapping from the product-availability table was ambiguous in snippets (headers missing); H100/L40S seen in PAR2 and WAW2, L4 in PAR1/PAR2/WAW2. Amsterdam zones exist but showed no GPU rows. Other GPU types (e.g. older P100, B300) not checked. Free tier/trial, data-residency statement and country list not found.",
+    "kinds": [
+      "gpu_cloud",
+      "vm"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "FR",
+          "city_or_region": "Paris",
+          "provider_region_code": "fr-par-2"
+        },
+        {
+          "country": "FR",
+          "city_or_region": "Paris (L4 only)",
+          "provider_region_code": "fr-par-1"
+        },
+        {
+          "country": "PL",
+          "city_or_region": "Warsaw",
+          "provider_region_code": "pl-waw-2"
+        }
+      ],
+      "source_url": "https://www.scaleway.com/en/choose-the-right-gpu/",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H100",
+        "NVIDIA L40S",
+        "NVIDIA L4"
+      ],
+      "source_url": "https://scaleway.com/en/docs/account/reference-content/products-availability",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://www.scaleway.com/en/gpu-instances/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, American Express, UnionPay; virtual and prepaid cards not accepted; a card is required even when using SEPA"
+          },
+          {
+            "method": "card_local",
+            "note": "CB (France)"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "SEPA direct debit only; postal and bank address must be in the SEPA zone; KYC required"
+          }
+        ],
+        "source_url": "https://www.scaleway.com/en/docs/billing/faq/",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "Account with a credit card on file; KYC verification required for SEPA direct debit",
+        "source_url": "https://www.scaleway.com/en/docs/billing/quickstart/",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "FR",
+      "source_url": "https://www.cbinsights.com/company/scaleway",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:nebius",
+    "type": "host",
+    "name": "Nebius AI Cloud",
+    "description": "Netherlands-based AI cloud renting NVIDIA GPU virtual machines and clusters in Europe, Israel and the US.",
+    "publisher": "Nebius Group",
+    "publisher_region": {
+      "value": "NL",
+      "source_url": "https://finance.yahoo.com/news/amsterdam-based-ai-firm-nebius-120558201.html",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://nebius.com/ai-cloud"
+    ],
+    "documentation_urls": [
+      "https://docs.nebius.com/overview/regions",
+      "https://docs.nebius.com/compute/virtual-machines/types",
+      "https://docs.nebius.com/signup-billing/payments/payers"
+    ],
+    "evidence_urls": [
+      "https://docs.nebius.com/overview/regions",
+      "https://docs.nebius.com/compute/virtual-machines/types",
+      "https://nebius.ai/docs/compute/concepts/gpus",
+      "https://nebius.com/ai-cloud",
+      "https://docs.nebius.com/signup-billing/payments/payers",
+      "https://docs.nebius.com/signup-billing/payments/card",
+      "https://docs.nebius.com/signup-billing/payments/bank-transfers",
+      "https://finance.yahoo.com/news/amsterdam-based-ai-firm-nebius-120558201.html"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Only public regions listed; private regions eu-north2 (Iceland) and uk-south1 (UK) are restricted to existing deployments. Region page does not state per-region GPU models. GPU list: B300 and L40S from the VM types page, H100 from the older GPU concepts page; H200, B200 and GB200 NVL72 are on marketing pages but not confirmed in docs snippets. No AI Cloud trial credits found (a $1 trial exists on the separate Token Factory product). Data-residency statement and country list not found.",
+    "kinds": [
+      "gpu_cloud",
+      "vm"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "FI",
+          "city_or_region": "Finland",
+          "provider_region_code": "eu-north1"
+        },
+        {
+          "country": "FR",
+          "city_or_region": "France (Paris)",
+          "provider_region_code": "eu-west1"
+        },
+        {
+          "country": "IL",
+          "city_or_region": "Israel",
+          "provider_region_code": "me-west1"
+        },
+        {
+          "country": "US",
+          "city_or_region": "Kansas City, Missouri",
+          "provider_region_code": "us-central1"
+        }
+      ],
+      "source_url": "https://docs.nebius.com/overview/regions",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA B300",
+        "NVIDIA H100",
+        "NVIDIA L40S"
+      ],
+      "source_url": "https://docs.nebius.com/compute/virtual-machines/types",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://nebius.com/ai-cloud",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Via Stripe; $25 first payment; not available in Israel"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "Companies only, arranged with sales"
+          }
+        ],
+        "source_url": "https://docs.nebius.com/signup-billing/payments/payers",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": false,
+        "source_url": "https://docs.nebius.com/signup-billing/payments/payers",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "NL",
+      "source_url": "https://finance.yahoo.com/news/amsterdam-based-ai-firm-nebius-120558201.html",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:e2e-networks",
+    "type": "host",
+    "name": "E2E Networks",
+    "description": "Indian cloud provider renting NVIDIA GPU instances from data centers in Delhi NCR and Chennai, priced in rupees.",
+    "publisher": "E2E Networks",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://e2enetworks.com/ai-cloud-gpu"
+    ],
+    "documentation_urls": [
+      "https://docs.e2enetworks.com/docs/tir/Billing_and_Usage/payNow/",
+      "https://docs.e2enetworks.com/docs/myaccount/billing/payment_method/"
+    ],
+    "evidence_urls": [
+      "https://e2enetworks.com/ai-cloud-gpu",
+      "https://www.e2enetworks.com/gpus/nvidia-h100.md",
+      "https://e2enetworks.com/blog/b200-live-blog",
+      "https://docs.e2enetworks.com/docs/tir/Billing_and_Usage/payNow/",
+      "https://docs.e2enetworks.com/docs/myaccount/billing/payment_method/",
+      "https://docs.e2enetworks.com/docs/myaccount/billing/prepaid-billing/"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Some sources mention Mumbai/Bengaluru; a third party says Mumbai was discontinued for some services; only the two regions on E2E's H100 page are listed. UPI and net banking are confirmed for INR accounts via Razorpay; the docs imply international users get only Stripe cards, not stated outright. HQ, free trial, data-residency statement and country list not found. Prices exclude GST.",
+    "kinds": [
+      "gpu_cloud",
+      "vm"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "IN",
+          "city_or_region": "Delhi NCR",
+          "provider_region_code": null
+        },
+        {
+          "country": "IN",
+          "city_or_region": "Chennai",
+          "provider_region_code": null
+        }
+      ],
+      "source_url": "https://www.e2enetworks.com/gpus/nvidia-h100.md",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H200",
+        "NVIDIA H100",
+        "NVIDIA A100",
+        "NVIDIA L40S",
+        "NVIDIA L4"
+      ],
+      "source_url": "https://e2enetworks.com/ai-cloud-gpu",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://e2enetworks.com/ai-cloud-gpu",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_local",
+            "note": "Credit/debit cards via Razorpay (INR accounts)"
+          },
+          {
+            "method": "upi",
+            "note": "INR accounts"
+          },
+          {
+            "method": "other",
+            "note": "Net banking and wallets via Razorpay (INR accounts)"
+          },
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, American Express via Stripe for international users"
+          }
+        ],
+        "source_url": "https://docs.e2enetworks.com/docs/tir/Billing_and_Usage/payNow/",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": true,
+        "source_url": "https://www.e2enetworks.com/gpus/nvidia-h100.md",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:yotta",
+    "type": "host",
+    "name": "Yotta Shakti Cloud",
+    "description": "Indian GPU cloud from Yotta offering NVIDIA H100 and B200 clusters with rupee pricing.",
+    "publisher": "Yotta Data Services",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://shakticloud.ai/"
+    ],
+    "documentation_urls": [],
+    "evidence_urls": [
+      "https://shakticloud.ai/?p=2249",
+      "https://shakticloud.ai/shakti-bare-metal",
+      "https://www.nvidia.com/de-de/case-studies/yotta-built-india-sovereign-ai-infrastructure-shakti-cloud/",
+      "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Navi Mumbai (NM1) location comes from third-party sources only; no official location page seen. Third parties say capacity is sold via enterprise agreements; NVIDIA's case study mentions a self-service portal, so self-serve access is unclear. Payment methods, trial, signup rules, residency statement and HQ not found. Weakest record; consider dropping if not re-verified.",
+    "kinds": [
+      "gpu_cloud",
+      "bare_metal"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "IN",
+          "city_or_region": "Navi Mumbai",
+          "provider_region_code": "NM1"
+        }
+      ],
+      "source_url": "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H100",
+        "NVIDIA HGX B200"
+      ],
+      "source_url": "https://shakticloud.ai/?p=2249",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://shakticloud.ai/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": true,
+        "source_url": "https://shakticloud.ai/?p=2249",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:core42",
+    "type": "host",
+    "name": "Core42 AI Cloud",
+    "description": "UAE AI cloud offering on-demand NVIDIA and AMD GPU instances with in-country data residency.",
+    "publisher": "Core42",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://aicloud.core42.ai/",
+      "https://www.core42.ai/ai-cloud"
+    ],
+    "documentation_urls": [],
+    "evidence_urls": [
+      "https://aicloud.core42.ai/",
+      "https://www.core42.ai/ai-cloud",
+      "https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Data center city and region codes not published in what I found; only 'UAE-based data centers' (e& joint offering). B200 price is 'on request'; on-demand hourly rates, payment methods, signup rules and country availability not found. Pay-as-you-go self-service launched October 2025 per news coverage.",
+    "kinds": [
+      "gpu_cloud"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "AE",
+          "city_or_region": "UAE (city not stated)",
+          "provider_region_code": null
+        }
+      ],
+      "source_url": "https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H200",
+        "NVIDIA B200",
+        "AMD Instinct MI300X",
+        "AMD Instinct MI355X"
+      ],
+      "source_url": "https://aicloud.core42.ai/",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "Offers in-country data residency with private endpoints and encryption; joint e& offering runs in UAE-based data centers.",
+      "source_url": "https://www.core42.ai/ai-cloud",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://aicloud.core42.ai/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:alibaba-cloud",
+    "type": "host",
+    "name": "Alibaba Cloud",
+    "description": "Chinese cloud provider whose international site rents GPU-accelerated ECS instances in selected regions.",
+    "publisher": "Alibaba Cloud",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.alibabacloud.com/"
+    ],
+    "documentation_urls": [
+      "https://help.aliyun.com/en/egs/gpu-accelerated-compute-optimized-instance-families",
+      "https://intl.aliyun.com/help/en/alibaba-cloud-payment-guide/latest/introduction-to-alibaba-cloud-payment"
+    ],
+    "evidence_urls": [
+      "https://help.aliyun.com/en/egs/gpu-accelerated-compute-optimized-instance-families",
+      "https://intl.aliyun.com/help/en/alibaba-cloud-payment-guide/latest/introduction-to-alibaba-cloud-payment",
+      "https://www.alibabacloud.com/help/faq-detail/42443.htm",
+      "https://intl.aliyun.com/help/en/legal/latest/payment-and-tax-terms-payment-and-tax-terms",
+      "https://www.alibabacloud.com/help/en/user-center/bank-card-payment-1",
+      "https://intl.aliyun.com/help/en/account/user-guide/account-management-faqs"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. GPU regions not confirmed: official docs say availability varies by region and some families (gn8is, gn8v) need sales contact; a third party (Spare Cores) shows gn7i in several mainland China regions and Seoul. GPU models per family not confirmed from official snippets, so gpu_types unknown. Payment methods depend on contracting entity and registration country. Free trial and residency statement not checked.",
+    "kinds": [
+      "gpu_cloud",
+      "vm"
+    ],
+    "data_centers": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://www.alibabacloud.com/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, JCB, American Express; UnionPay-only, prepaid, virtual and gift cards not accepted"
+          },
+          {
+            "method": "paypal",
+            "note": "PayPal accounts registered in mainland China not accepted"
+          },
+          {
+            "method": "bank_transfer",
+            "note": "Only for accounts with a credit limit, repaid monthly"
+          }
+        ],
+        "source_url": "https://intl.aliyun.com/help/en/alibaba-cloud-payment-guide/latest/introduction-to-alibaba-cloud-payment",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "International account; available payment methods depend on registration country and contracting entity",
+        "source_url": "https://intl.aliyun.com/help/en/account/user-guide/account-management-faqs",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": false,
+        "source_url": "https://intl.aliyun.com/help/en/legal/latest/payment-and-tax-terms-payment-and-tax-terms",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:cloudafrica",
+    "type": "host",
+    "name": "CloudAfrica",
+    "description": "South African cloud provider offering NVIDIA H200 GPU compute from South African data centres, billed in rand.",
+    "publisher": "CloudAfrica",
+    "publisher_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://cloudafrica.net/gpu"
+    ],
+    "documentation_urls": [],
+    "evidence_urls": [
+      "https://cloudafrica.net/gpu",
+      "https://liners.com/news/cloudafrica-h200-gpu-instances-waitlist"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Pricing is quote-only via an account manager; billing is monthly in advance. An earlier third-party report described the H200 offer as a waitlist, so live availability is uncertain. City not stated. Payment methods, trial, signup rules and HQ not found. Included because it was the only African provider found with a self-described GPU product page; Cassava (NVIDIA Cloud Partner) and Safari Cloud had no usable official pages in search.",
+    "kinds": [
+      "gpu_cloud"
+    ],
+    "data_centers": {
+      "value": [
+        {
+          "country": "ZA",
+          "city_or_region": "South Africa (city not stated)",
+          "provider_region_code": null
+        }
+      ],
+      "source_url": "https://cloudafrica.net/gpu",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H200"
+      ],
+      "source_url": "https://cloudafrica.net/gpu",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "Compute runs in South African data centres.",
+      "source_url": "https://cloudafrica.net/gpu",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://cloudafrica.net/gpu",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": true,
+        "source_url": "https://cloudafrica.net/gpu",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:runpod",
+    "type": "host",
+    "name": "RunPod",
+    "description": "GPU cloud renting per-second NVIDIA GPU pods and serverless endpoints across many regions worldwide.",
+    "publisher": "RunPod",
+    "publisher_region": {
+      "value": "US",
+      "source_url": "https://www.cbinsights.com/company/runpod",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://www.runpod.io/",
+      "https://www.runpod.io/pricing"
+    ],
+    "documentation_urls": [
+      "https://docs.runpod.io/accounts-billing/billing",
+      "https://docs.runpod.io/api-reference-v2/catalog/list-data-centers"
+    ],
+    "evidence_urls": [
+      "https://www.runpod.io/pricing",
+      "https://runpod.io/secure-cloud",
+      "https://docs.runpod.io/accounts-billing/billing",
+      "https://www.runpod.io/blog/manage-runpod-account-funding",
+      "https://www.runpod.io/terms",
+      "https://docs.runpod.io/api-reference-v2/catalog/list-data-centers",
+      "https://www.runpod.io/blog/runpod-apac-launch-fukushima",
+      "https://www.cbinsights.com/company/runpod"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Full data-center list is only available from the authenticated API/CLI; official blog confirms AP-JP-1 (Fukushima, Japan) and docs show codes like US-GA-1, but a complete list was not seen, so data_centers is unknown. Crypto coins/networks and processors not named in snippets. Terms bar users in embargoed countries and Prohibited Parties (and the Government of Venezuela); the country list comes only from a third-party summary, so countries_unavailable left unknown. March 2026 terms reportedly removed referral-bonus language; current free-credit offer unconfirmed. HQ city varies by source (US agreed).",
+    "kinds": [
+      "gpu_cloud",
+      "inference_endpoint"
+    ],
+    "data_centers": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA B300",
+        "NVIDIA B200",
+        "NVIDIA H200",
+        "NVIDIA H100",
+        "NVIDIA A100",
+        "NVIDIA RTX 4090"
+      ],
+      "source_url": "https://www.runpod.io/pricing",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://www.runpod.io/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Visa, Mastercard, American Express and other Stripe-supported cards; prepaid cards need $100 minimum per deposit"
+          },
+          {
+            "method": "crypto",
+            "note": "Through integrated processors; KYC required before first crypto payment; coins not confirmed"
+          }
+        ],
+        "source_url": "https://docs.runpod.io/accounts-billing/billing",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "Account with prepaid credit; KYC verification required before the first crypto payment; users in US-embargoed countries are barred",
+        "source_url": "https://docs.runpod.io/accounts-billing/billing",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "US",
+      "source_url": "https://www.cbinsights.com/company/runpod",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "cf:host:vast-ai",
+    "type": "host",
+    "name": "Vast.ai",
+    "description": "Marketplace renting GPUs from independent hosts and data centers worldwide, prepaid by card or cryptocurrency.",
+    "publisher": "Vast.ai",
+    "publisher_region": {
+      "value": "US",
+      "source_url": "https://www.cbinsights.com/company/vastai",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "official_urls": [
+      "https://vast.ai/"
+    ],
+    "documentation_urls": [
+      "https://docs.vast.ai/guides/reference/billing",
+      "https://docs.vast.ai/guides/reference/faq/billing"
+    ],
+    "evidence_urls": [
+      "https://vast.ai/llms.txt",
+      "https://docs.vast.ai/guides/reference/billing",
+      "https://docs.vast.ai/guides/reference/faq/billing",
+      "https://docs.vast.ai/documentation/get-started/quickstart",
+      "https://docs.vast.ai/host/cli/metrics-gpu-locations.md",
+      "https://www.cbinsights.com/company/vastai"
+    ],
+    "verification_status": "candidate",
+    "warning": "none",
+    "first_seen_at": "2026-11-14T00:00:00Z",
+    "last_content_change_at": "2026-11-14T00:00:00Z",
+    "relations": [],
+    "research_notes": "WebFetch could not reach this provider's domains from the research session (DNS blocked by session network policy). All claims come from web-search result snippets of the cited pages, not from direct page fetches; hence verification_status 'candidate'. Re-verify by fetching each source_url before publishing. Locations depend on independent hosts; official docs offer a gpu-locations API/CLI but no published country list, so data_centers unknown. GPU list is a sample from vast.ai/llms.txt; many more types are offered by hosts. Older docs mention Coinbase; current docs name BitPay and Crypto.com; coins not listed. Crypto credits are not refundable; card credits can be refunded. Free credits, signup rules and restricted countries not found.",
+    "kinds": [
+      "gpu_cloud"
+    ],
+    "data_centers": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "gpu_types": {
+      "value": [
+        "NVIDIA H200",
+        "NVIDIA H100 SXM",
+        "NVIDIA H100 PCIe",
+        "NVIDIA RTX 4090",
+        "NVIDIA RTX 4090D"
+      ],
+      "source_url": "https://vast.ai/llms.txt",
+      "source_type": "official",
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "data_residency": {
+      "value": "unknown",
+      "source_url": null,
+      "source_type": null,
+      "observed_at": "2026-11-14T00:00:00Z"
+    },
+    "launch_url": "https://vast.ai/",
+    "access": {
+      "free": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "free_limits": null,
+      "payment_methods": {
+        "value": [
+          {
+            "method": "card_international",
+            "note": "Major cards via Stripe; only cards work for autobilling"
+          },
+          {
+            "method": "crypto",
+            "note": "Via BitPay or Crypto.com; coins not listed; crypto credits not refundable"
+          }
+        ],
+        "source_url": "https://docs.vast.ai/guides/reference/billing",
+        "source_type": "official",
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_available": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "countries_unavailable": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "signup_requirements": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      },
+      "local_currency_pricing": {
+        "value": "unknown",
+        "source_url": null,
+        "source_type": null,
+        "observed_at": "2026-11-14T00:00:00Z"
+      }
+    },
+    "provider_region": {
+      "value": "US",
+      "source_url": "https://www.cbinsights.com/company/vastai",
+      "source_type": "third_party",
+      "observed_at": "2026-11-14T00:00:00Z"
+    }
+  }
+]
