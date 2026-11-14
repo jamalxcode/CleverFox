@@ -62,6 +62,8 @@ Rule shape:
 - Web AI apps are included when they have a working official site and a clear AI function. Popular apps are always in.
 - Hosting providers are included when their official site lists AI-capable compute or model hosting and its regions.
 - Conversions and quantizations attach to their parent as distributions or variants. They never become standalone families.
+- **Linking Ollama to originals:** an Ollama family is matched to its original Hugging Face repo by name (word by word, so other versions don't match), or credited to the publisher with at least 2 own repos named after it. Otherwise it's listed as "Listed by Ollama". Each Ollama model page supplies the license and each size's download size, context window and input types.
+- **Publisher countries** come from Wikidata through a reviewed mapping of Hugging Face accounts to organisations (`data/publisher-map.json` → `data/publishers.json`, "Publishers" workflow). Individuals are never mapped.
 - **Bulk imports (tools/import.mjs, provisional numbers):** from Hugging Face, the most downloaded, most liked and trending models across 15 tasks (text, vision, speech, image, embedding and more), plus up to 10 models per gap language (40+ non-English languages) with at least 200 downloads. Datasets: the most downloaded and most liked, plus up to 6 per gap language. Quantized copies are skipped. From the Ollama library, every model family: matched to its Hugging Face record by name and size when possible, otherwise listed on its own. Model cards supply papers, GitHub and documentation links. Hand-researched seed records always win over imports.
 
 ## 5. Sources
@@ -128,7 +130,9 @@ Every record, whatever its type, has:
 
 Extra fields: `family`, `distributions` (one per place it's available: `{source, native_id, url, availability, formats, file_size_bytes, access, observed_at}`; paid API distributions carry an `access` block), `tasks`, `modalities`, `languages`, `formats`, `local_runtimes`, `local_ready` (true when a distribution is a downloadable local format), `official` (bool), `popularity` (per source, each with `observed_at`).
 
-Key claims: `license`, `availability`, `parameters`, `benchmarks` (each entry with its evaluation conditions), `released_at`, `announced_at`.
+Key claims: `license`, `availability`, `parameters`, `benchmarks` (each entry with its evaluation conditions, and `self_reported` when it comes from the publisher's card), `released_at`, `first_published` (first upload on Hugging Face, not a release date), `announced_at`.
+
+Derived fields: `capabilities`, `uncensored`, `gate` (`none`, `login_and_terms`, `approval`), `highlights`, and at build time `answers` (good for, runs locally, free, gate, license kind, barriers, no barriers, pay without card, benchmark count).
 
 - **License:** an SPDX identifier, `custom` (with a link to the terms), or `unknown`. Gated-access terms are recorded separately.
 - **Availability:** `announced`, `downloadable`, `gated`, `api_only`, `withdrawn` or `unknown`. Announced is never shown as available.
@@ -211,6 +215,18 @@ CleverFox takes no reports from people directly. It reads what people already po
 - Scan cadence is set per source by update frequency and cost (section 19).
 
 ## 12. Site
+
+**Built around what people ask.** Every listing answers these questions first, on the card and in an "At a glance" section, each from stated data:
+- **What is it good for?** Capabilities: chat, writing, coding, reasoning, math, analytics, images, vision, speech, video, translation, search, tools and agents. They come from the source's own task, tags and capability labels (e.g. Ollama's "tools, thinking, vision"), never guessed from prose. A "What do you need?" row filters by them.
+- **Can it run locally?** Local formats and runtimes, with the smallest download size.
+- **Is it free?** Free download, free tier, trial or paid.
+- **What payments are accepted?** Including whether you can pay without a card.
+- **How smart is it?** Benchmark results published with the model, labeled as the publisher's own and not independently checked. There's no universal score (section 8). Independent leaderboards are an open decision.
+- **Highlights:** short facts built from stated fields (context window, reasoning mode, tool use, vision, mixture-of-experts, number of languages, permissive license, smallest download).
+- **Uncensored / abliterated?** Shown when the publisher names or tags a variant as such, as a neutral fact and a filter.
+- **Gatekeeping:** login and terms, approval, license limits, API-only access, card-only payment, phone or ID checks, country blocks.
+- **Freedom, no barriers:** a "No barriers" badge and filter when a model or dataset is free to download, has no gate, and has an open license; for apps, a free option with no known barriers. This is an access summary, not a quality score.
+
 
 - **Interface in English, with a country picker first.** The visitor's chosen country (remembered in the browser) filters availability and highlights payment methods noted for it. Search handles non-Latin scripts. Names and descriptions can be in any language, with names in plain letters matching the source, as in Flattery. Interface translation comes later.
 - **Lightweight pages.** Many visitors pay for mobile data. Pages are vanilla static HTML/CSS/JS, like Flattery. Target under 200 KB on a first load, excluding the search index, which loads only when needed.
@@ -295,6 +311,8 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 - How public posts are classified: keyword rules, AI, or both.
 - Scan cadence and refresh tiers per source.
 - AI models for catalog extraction and feedback classification, if any, and spending caps.
+- Independent "how smart" sources (public leaderboards such as arena-style rankings), and how to show them without a universal score.
+- Extending the publisher mapping beyond the first 59 organisations.
 - Each connector's permitted use.
 - When to translate the interface, and into which languages.
 - Operating budget and migration thresholds.

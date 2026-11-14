@@ -118,3 +118,12 @@ details[open] .more { display: none; }
 
 .more-wrap { text-align: center; margin: 16px 0; }
 .more-btn { font: inherit; font-weight: 600; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 999px; padding: 10px 20px; cursor: pointer; min-height: 44px; }
+
+.caps { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.caps-label { font-weight: 700; margin-right: 4px; }
+.cap { font: inherit; font-size: .9rem; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 12px; cursor: pointer; min-height: 36px; }
+.cap[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.goodfor { margin: 0 0 8px; font-size: .9rem; }
+.glance dd { margin-bottom: 4px; }
+.yes { color: var(--ok); font-weight: 700; }
+.no { color: var(--no); font-weight: 700; }

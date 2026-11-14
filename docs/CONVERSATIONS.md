@@ -12,6 +12,28 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: filling unknowns; shaping the site around user questions
+**Where:** Claude Code session.
+**Asked:** how to complete the unknown fields (go ahead with all four options), and shape the site around what users look for:
+- capabilities (coding, writing, graphics, analytics)
+- runs locally
+- free
+- payments
+- how smart
+- fun facts
+- abliterated
+- gatekeeping
+- freedom and no barriers
+
+**Outcome:**
+- Ollama families linked to their Hugging Face originals.
+- Ollama pages read for license and per-size downloads.
+- Wikidata publisher countries through a reviewed mapping and a GitHub workflow. Wikidata rate-limited this session, so the lookup runs on GitHub.
+- "First published" dates.
+- Answers computed at build time and shown first on cards and in "At a glance", with capability choices and quick filters (DECISIONS 44, 45).
+
+**Open:** independent leaderboards for "how smart".
+
 ## 2026-11-14: restart; public posts instead of reports
 **Where:** Claude Code session.
 **Asked:** summarize the spec. Remove anything involving people reporting directly; read reviews and reports from the internet itself. Populate the catalog as much as possible from Hugging Face and other AI directories (external links, models, datasets, documentation). Most announcements and feedback will come from monitoring X.

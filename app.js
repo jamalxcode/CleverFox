@@ -27,9 +27,12 @@ const fmtDate = (ts) => { try { return new Date(ts).toLocaleDateString('en-GB', 
 const known = (c) => c && c.value !== 'unknown' && c.value !== null && c.value !== undefined;
 
 const TYPES = ['model', 'dataset', 'app', 'host'];
+const CAPS = { chat: '💬 Chat', writing: '✍️ Writing', coding: '💻 Coding', reasoning: '🧠 Reasoning', math: '➗ Math', analytics: '📊 Analytics', images: '🎨 Images', vision: '👁️ Vision', speech: '🎙️ Speech', video: '🎬 Video', translation: '🌐 Translation', search: '🔎 Search', tools: '🛠️ Tools & agents' };
+const FREE_TEXT = { free_download: 'Free download', free: 'Free', free_tier: 'Free tier', trial: 'Free trial', paid: 'Paid', unknown: 'Price unknown' };
+const GATE_TEXT = { none: 'No sign-in needed', login_and_terms: 'Log in and accept terms', approval: 'Needs approval' };
 const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
 const PAGE = 50;
-const state = { type: 'model', q: '', country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const state = { type: 'model', q: '', cap: '', country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
 const loaded = {}; // type -> records
 const recordsOf = (t) => loaded[t] || [];
 const popularity = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50 + pullsNum(p.pulls), 0);
@@ -73,21 +76,24 @@ function filterDefs(type) {
     { key: 'region', label: 'Any publisher country', opts: options(recs.map((r) => known(r.publisher_region) ? r.publisher_region.value : null), countryName) },
     { key: 'avail', label: 'Any availability', opts: options(recs.map((r) => r.availability?.value).filter((v) => v !== 'unknown'), (v) => AVAIL_LABELS[v] || v) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
-    { key: 'local', toggle: 'Runs locally' },
-    { key: 'open', toggle: 'Open license' },
+    { key: 'local', toggle: '💻 Runs locally' },
+    { key: 'free', toggle: '🆓 Free' },
+    { key: 'nobar', toggle: '🔓 No barriers' },
+    { key: 'uncensored', toggle: 'Uncensored / abliterated' },
+    { key: 'bench', toggle: '📊 Has benchmarks' },
   ];
   if (type === 'dataset') return [
     { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
     { key: 'size', label: 'Any size', opts: options(recs.map((r) => r.size_category)) },
-    { key: 'open', toggle: 'Open license' },
+    { key: 'nobar', toggle: '🔓 No barriers' },
     { key: 'nogate', toggle: 'No sign-in gate' },
   ];
   if (type === 'app') return [
     { key: 'cat', label: 'Any category', opts: options(recs.flatMap((r) => r.categories || []), (c) => c[0].toUpperCase() + c.slice(1)) },
     { key: 'method', label: 'Any payment method', opts: methods },
-    { key: 'free', toggle: 'Free or free tier' },
-    { key: 'nocard', toggle: 'Usable without a card' },
+    { key: 'free', toggle: '🆓 Free or free tier' },
+    { key: 'nocard', toggle: '💳 Usable without a card' },
     { key: 'here', toggle: 'Available in my country', needsCountry: true },
   ];
   return [
@@ -98,7 +104,15 @@ function filterDefs(type) {
     { key: 'nocard', toggle: 'Pay without a card' },
   ];
 }
+function renderCaps() {
+  const box = $('#caps');
+  if (state.type === 'host') { box.hidden = true; return; }
+  const have = new Set(recordsOf(state.type).flatMap((r) => r.answers?.good_for || []));
+  box.hidden = false;
+  box.innerHTML = '<span class="caps-label">What do you need?</span>' + Object.entries(CAPS).filter(([k]) => have.has(k)).map(([k, l]) => `<button type="button" class="cap" data-cap="${k}" aria-pressed="${state.cap === k}">${esc(l)}</button>`).join('');
+}
 function renderFilters() {
+  renderCaps();
   const f = state.f[state.type];
   $('#filters').innerHTML = filterDefs(state.type).map((d) => {
     if (d.toggle) {
@@ -117,19 +131,22 @@ function matches(r) {
       known(r.publisher_region) ? countryName(r.publisher_region.value) : ''].join(' ').toLowerCase();
     if (!state.q.toLowerCase().split(/\s+/).every((w) => hay.includes(w))) return false;
   }
+  if (state.cap && state.type !== 'host' && !(r.answers?.good_for || []).includes(state.cap)) return false;
+  if (f.nobar && !r.answers?.no_barriers) return false;
   const hasMethod = (m) => recordAccesses(r).some((a) => methodsOf(a).some((x) => x.method === m));
   if (r.type === 'model') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;
     if (f.region && r.publisher_region?.value !== f.region) return false;
     if (f.avail && r.availability?.value !== f.avail) return false;
     if (f.local && !r.local_ready) return false;
-    if (f.open && !(known(r.license) && r.license.value !== 'custom')) return false;
+    if (f.free && !['free_download', 'free', 'free_tier'].includes(r.answers?.free)) return false;
+    if (f.uncensored && !r.answers?.uncensored) return false;
+    if (f.bench && !r.answers?.benchmarks) return false;
     if (f.task && !(r.tasks || []).includes(f.task)) return false;
   } else if (r.type === 'dataset') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;
     if (f.task && !(r.tasks || []).includes(f.task)) return false;
     if (f.size && r.size_category !== f.size) return false;
-    if (f.open && !(known(r.license) && r.license.value !== 'custom')) return false;
     if (f.nogate && r.availability?.value === 'gated') return false;
   } else if (r.type === 'app') {
     if (f.cat && !(r.categories || []).includes(f.cat)) return false;
@@ -170,8 +187,17 @@ function countryBadge(r) {
   const s = availableIn(r.access, c);
   return s === 'yes' ? badge(`Available in ${name}`, 'b-ok') : s === 'no' ? badge(`Not available in ${name}`, 'b-no') : badge(`${name}: unknown`, 'b-unk');
 }
+function goodForLine(r) {
+  const g = r.answers?.good_for || [];
+  return g.length ? `<p class="goodfor"><span class="muted">Good for:</span> ${g.map((c) => esc(CAPS[c] || c)).join(' · ')}</p>` : '';
+}
 function cardBadges(r) {
   const b = [];
+  const a = r.answers || {};
+  if (a.no_barriers) b.push(badge('🔓 No barriers', 'b-ok'));
+  else if (a.barriers?.length && r.type !== 'host') b.push(badge(`🚧 ${a.barriers[0]}${a.barriers.length > 1 ? ` +${a.barriers.length - 1}` : ''}`, 'b-warn'));
+  if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
+  if (a.benchmarks) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
   if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
   else if (r.warning === 'reported') b.push(badge('⚠️ Reported', 'b-warn'));
   b.push(countryBadge(r));
@@ -233,12 +259,36 @@ function accessFacts(a) {
   out += fact('Local currency prices', a.local_currency_pricing, (v) => v ? 'Yes' : 'No');
   return out + '</dl>';
 }
+function glance(r) {
+  const a = r.answers || {};
+  const yes = (t) => `<span class="yes">✓</span> ${esc(t)}`; const no = (t) => `<span class="no">✗</span> ${esc(t)}`;
+  let h = '<h3>At a glance</h3><dl class="facts glance">';
+  if (a.good_for?.length) h += `<dt>Good for</dt><dd>${a.good_for.map((c) => esc(CAPS[c] || c)).join(' · ')}</dd>`;
+  if (r.type === 'model') {
+    const sizes = (r.distributions || []).map((d) => d.file_size_bytes).filter(Boolean).sort((x, y) => x - y);
+    h += `<dt>Runs locally?</dt><dd>${a.runs_locally ? yes(`Yes${r.local_runtimes?.length ? ` (${r.local_runtimes.join(', ')})` : ''}${sizes.length ? `, downloads from ${sizes[0] >= 1e9 ? (sizes[0] / 1e9).toFixed(1) + ' GB' : Math.round(sizes[0] / 1e6) + ' MB'}` : ''}`) : no('No local version listed')}</dd>`;
+  }
+  if (r.type !== 'host') h += `<dt>Free?</dt><dd>${['free_download', 'free', 'free_tier', 'trial'].includes(a.free) ? yes(FREE_TEXT[a.free]) : a.free === 'paid' ? no('Paid') : '<span class="unknown">unknown</span>'}</dd>`;
+  if (a.pay_without_card !== null && a.pay_without_card !== undefined) h += `<dt>Pay without a card?</dt><dd>${a.pay_without_card ? yes('Yes (see payment methods below)') : no('Paid plans need a card')}</dd>`;
+  if (r.type === 'model') {
+    const bm = r.benchmarks || [];
+    h += `<dt>How smart is it?</dt><dd>${bm.length ? `Publisher's own results (not independently checked):<ul class="dist">${bm.map((x) => `<li>${esc(x.benchmark)}${x.metric ? ` (${esc(x.metric)})` : ''}: <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(2) : x.value)}</strong>${x.conditions ? ` <span class="muted">${esc(x.conditions)}</span>` : ''}</li>`).join('')}</ul>` : '<span class="unknown">No benchmark results published with this listing yet</span>'}</dd>`;
+  }
+  if (r.highlights?.length) h += `<dt>Highlights</dt><dd><ul class="dist">${r.highlights.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></dd>`;
+  if (r.type !== 'host') {
+    h += `<dt>Uncensored?</dt><dd>${a.uncensored ? 'Yes: an abliterated or uncensored variant, with refusals removed by its publisher' : 'Not marked as uncensored'}</dd>`;
+    h += `<dt>Gatekeeping</dt><dd>${a.barriers?.length ? `<ul class="dist">${a.barriers.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : yes(r.type === 'app' ? 'No known barriers' : `${GATE_TEXT[a.gate] || 'No sign-in needed'}, open license`)}</dd>`;
+  }
+  return h + '</dl>';
+}
 function detail(r) {
   let h = '<div class="detail">';
+  h += glance(r);
   h += '<h3>Facts</h3><dl class="facts">';
   h += fact('Publisher country', r.publisher_region, (v) => `${flag(v)} ${esc(countryName(v))}`);
   if (r.type === 'model') {
     h += fact('Released', r.released_at);
+    if (r.first_published && known(r.first_published)) h += fact('First on Hugging Face', r.first_published);
     h += fact('Parameters', r.parameters);
     h += fact('License', r.license, (v) => v === 'custom' ? 'Custom license (see source)' : esc(v));
     h += fact('Availability', r.availability, (v) => esc(AVAIL_LABELS[v] || v));
@@ -291,8 +341,9 @@ function detail(r) {
 function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
   return `<li class="card" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
-    <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher)}${region}</span></div>
+    <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
     <p class="desc">${esc(r.description)}</p>
+    ${goodForLine(r)}
     <div class="badges">${cardBadges(r)}</div>
     <div class="more">Details and sources ▾</div>
   </summary><div class="detail-slot" data-id="${esc(r.id)}"></div></details></li>`;
@@ -332,6 +383,10 @@ $('.tabs').addEventListener('keydown', (e) => {
 });
 $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); state.limit = PAGE; render(); });
 $('#more-btn').addEventListener('click', () => { state.limit += PAGE; render(); });
+$('#caps').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-cap]'); if (!b) return;
+  state.cap = state.cap === b.dataset.cap ? '' : b.dataset.cap; state.limit = PAGE; renderCaps(); render();
+});
 // Details are built only when a card is opened (thousands of listings).
 $('#list').addEventListener('toggle', (e) => {
   const slot = e.target.querySelector?.('.detail-slot');

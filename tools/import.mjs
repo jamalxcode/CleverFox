@@ -153,12 +153,17 @@ function modelRecord(m, readme) {
     availability: claim(m.gated ? 'gated' : 'downloadable', page),
     parameters: claim(fmtParams(m.safetensors?.total), m.safetensors?.total ? api : null),
     released_at: claim('unknown'),
+    first_published: claim(m.createdAt ? m.createdAt.slice(0, 10) : 'unknown', api),
     announced_at: null,
-    benchmarks: [],
+    benchmarks: benchmarksOf(card, page),
+    gate: gateOf(m.gated),
+    uncensored: isUncensored(m.id, m.tags),
+    tags_seen: (m.tags || []).filter((t) => USEFUL_TAGS.has(t)),
     popularity: [{ source: 'huggingface', downloads_30d: m.downloads ?? null, likes: m.likes ?? null, observed_at: TODAY }],
     import_source: 'huggingface',
   };
 }
+const USEFUL_TAGS = new Set(['conversational', 'moe', 'code', 'math', 'reasoning', 'function-calling', 'tool-use', 'agent']);
 
 // ---- Hugging Face datasets ----
 const DATASET_EXPAND = ['cardData', 'tags', 'downloads', 'likes', 'author', 'gated', 'createdAt', 'lastModified'].map((e) => `expand[]=${e}`).join('&');
@@ -210,6 +215,8 @@ function datasetRecord(d, readme) {
     languages: claim(langs.length ? langs : 'unknown', page),
     license: licenseOf(card, d.tags, page),
     availability: claim(d.gated ? 'gated' : 'downloadable', page),
+    first_published: claim(d.createdAt ? d.createdAt.slice(0, 10) : 'unknown', api),
+    gate: gateOf(d.gated),
     popularity: [{ source: 'huggingface', downloads_30d: d.downloads ?? null, likes: d.likes ?? null, observed_at: TODAY }],
     import_source: 'huggingface',
   };
@@ -226,39 +233,171 @@ async function fetchOllama() {
     const pulls = block.match(/<span[^>]*>([\d.]+[KMB]?)<\/span>\s*<span[^>]*>&nbsp;Pulls/)?.[1] || null;
     out.push({ name, capabilities: chips.filter((c) => c[0] === 'indigo').map((c) => c[1]), sizes: chips.filter((c) => c[0] !== 'indigo').map((c) => c[1].toLowerCase()), pulls });
   }
+  return QUICK ? out.slice(0, 25) : out;
+}
+const toText = (h) => (h || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
+// Licenses named in an Ollama model page's License section.
+const LICENSE_PATTERNS = [[/\bMIT License\b/i, 'mit'], [/\bApache(?: License)?,? (?:Version )?2\.0\b/i, 'apache-2.0'], [/\bGPL-?3/i, 'gpl-3.0'], [/CC[- ]BY[- ]NC[- ]4\.0/i, 'cc-by-nc-4.0'], [/CC[- ]BY[- ]4\.0/i, 'cc-by-4.0'],
+  [/Llama \d(?:\.\d)? Community License/i, 'custom'], [/Gemma Terms of Use/i, 'custom'], [/Qwen (?:Research )?License/i, 'custom'], [/Tongyi Qianwen License/i, 'custom']];
+export function ollamaLicense(pageHtml) {
+  const t = toText(pageHtml);
+  const i = t.search(/\bLicen[sc]e\b/);
+  if (i < 0) return null;
+  const section = t.slice(i, i + 600);
+  const found = [...new Set(LICENSE_PATTERNS.filter(([re]) => re.test(section)).map(([, v]) => v))];
+  return found.length ? found.join(' / ') : null;
+}
+// Per-size details from the tags page: download size, context window, input types.
+export function ollamaTags(name, tagsHtml) {
+  const t = toText(tagsHtml);
+  const out = {};
+  const re = new RegExp(`${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:([\\w.-]+)\\s+(?:latest\\s+)?[0-9a-f]{12}\\s*•\\s*([\\d.]+)\\s*(GB|MB|KB)\\s*•\\s*([\\d.]+[KM]?)\\s*context window\\s*•\\s*([A-Za-z, ]+?)\\s*input`, 'g');
+  for (const m of t.matchAll(re)) {
+    if (out[m[1]]) continue;
+    const bytes = Math.round(parseFloat(m[2]) * { GB: 1e9, MB: 1e6, KB: 1e3 }[m[3]]);
+    out[m[1]] = { bytes, context: m[4], inputs: m[5].split(/,\s*/).map((x) => x.trim().toLowerCase()) };
+  }
   return out;
 }
+const QUANTIZERS = /^(bartowski|unsloth|thebloke|lmstudio-community|mlx-community|quantfactory|maziyarpanahi|second-state|ggml-org|mradermacher|nousresearch-gguf|tensorblock|bullerwins|devquasar|gaianet|qwen-gguf)$/i;
+// "Llama-3.1-8B-Instruct" -> ["llama", "3.1", "8b", "instruct"]; "gemma3" -> ["gemma", "3"]
+export const nameTokens = (s) => s.toLowerCase().replace(/_/g, '-').split('-').flatMap((p) => p.match(/[a-z]+|\d+(?:\.\d+)*[a-z]*/g) || []);
 const squash = (s) => s.toLowerCase().replace(/[-_.\s]/g, '').replace(/(instruct|chat|it|hf)$/g, '');
-function attachOllama(models, families) {
+// The original Hugging Face repo of an Ollama family: same name, not a quantizer's copy.
+async function findUpstream(fam) {
+  const list = (await get(`${HF}/api/models?search=${encodeURIComponent(fam.name)}&sort=downloads&direction=-1&limit=40&${MODEL_EXPAND}`, { headers: HF_HEADERS }).catch(() => null)) || [];
+  const originals = list.filter((m) => !QUANTIZERS.test(m.author || '') && !isQuantization(m));
+  const exact = originals.find((m) => squash(m.id.split('/')[1]) === squash(fam.name));
+  if (exact) return { exact };
+  // No repo named after the whole family: credit the publisher whose own repos start with the
+  // family name (e.g. gemma3 -> google/gemma-3-4b-it, google/gemma-3-12b-it), if it has at least 2.
+  const fam_t = nameTokens(fam.name);
+  const starts = originals.filter((m) => {
+    const t = nameTokens(m.id.split('/')[1]);
+    if (t.length <= fam_t.length || !fam_t.every((x, i) => t[i] === x)) return false;
+    return /^(\d+(\.\d+)?[bm]|v|it|instruct|chat|base|mini|small|medium|large|tiny|nano|vision|hf|preview)$/.test(t[fam_t.length]); // next word is a size or variant, not another version or product
+  });
+  const byAuthor = {};
+  for (const m of starts) (byAuthor[m.author] ||= []).push(m);
+  const best = Object.entries(byAuthor).filter(([, ms]) => ms.length >= 2).sort((a, b) => b[1].reduce((n, m) => n + (m.downloads || 0), 0) - a[1].reduce((n, m) => n + (m.downloads || 0), 0))[0];
+  return best ? { author: best[0], repos: best[1].slice(0, 4) } : null;
+}
+async function enrichOllama(models, families) {
   const byKey = new Map(models.map((r) => [squash(r.name), r]));
-  const standalone = [];
+  const byHf = new Map(models.map((r) => [r.distributions[0]?.native_id, r]));
+  const extra = []; const standalone = [];
+  await pool(families, 4, async (fam) => {
+    const [page, tagsHtml] = await Promise.all([
+      get(`https://ollama.com/library/${fam.name}`, { json: false, tries: 2 }).catch(() => ''),
+      get(`https://ollama.com/library/${fam.name}/tags`, { json: false, tries: 2 }).catch(() => ''),
+    ]);
+    fam.license = ollamaLicense(page);
+    fam.tags = ollamaTags(fam.name, tagsHtml);
+  });
+  const ollamaDist = (fam, tag) => ({ source: 'ollama', native_id: `${fam.name}:${tag}`, url: `https://ollama.com/library/${fam.name}:${tag}`, availability: 'downloadable', formats: ['gguf'], file_size_bytes: fam.tags?.[tag]?.bytes ?? null, context: fam.tags?.[tag]?.context ?? null, access: null, observed_at: TODAY });
+  const addTo = (rec, fam, tags) => {
+    for (const tag of tags) if (!rec.distributions.some((d) => d.native_id === `${fam.name}:${tag}`)) rec.distributions.push(ollamaDist(fam, tag));
+    rec.local_ready = true;
+    if (!rec.local_runtimes.includes('ollama')) rec.local_runtimes.push('ollama');
+    if (!rec.formats.includes('gguf')) rec.formats = [...rec.formats, 'gguf'].sort();
+    rec.ollama = { family: fam.name, capabilities: fam.capabilities, context: Object.values(fam.tags || {})[0]?.context || null };
+  };
   for (const fam of families) {
-    let matched = 0;
-    for (const size of fam.sizes) {
-      const rec = byKey.get(squash(`${fam.name}${size}`));
-      if (!rec || rec.distributions.some((d) => d.source === 'ollama')) continue;
-      rec.distributions.push({ source: 'ollama', native_id: `${fam.name}:${size}`, url: `https://ollama.com/library/${fam.name}:${size}`, availability: 'downloadable', formats: ['gguf'], file_size_bytes: null, access: null, observed_at: TODAY });
-      rec.local_ready = true;
-      if (!rec.local_runtimes.includes('ollama')) rec.local_runtimes.push('ollama');
-      if (!rec.formats.includes('gguf')) rec.formats = [...rec.formats, 'gguf'].sort();
-      matched++;
+    // 1. name + size match against imported Hugging Face models
+    const sized = fam.sizes.filter((size) => byKey.has(squash(`${fam.name}${size}`)));
+    for (const size of sized) addTo(byKey.get(squash(`${fam.name}${size}`)), fam, [size]);
+    if (sized.length) continue;
+    // 2. the family's original repo on Hugging Face
+    const up = await findUpstream(fam);
+    if (up?.exact) {
+      let rec = byHf.get(up.exact.id);
+      if (!rec) { rec = modelRecord(up.exact, null); extra.push(rec); byHf.set(up.exact.id, rec); }
+      addTo(rec, fam, fam.sizes.length ? fam.sizes : ['latest']);
+      continue;
     }
-    if (matched) continue;
+    // 3. listed on its own
     const page = `https://ollama.com/library/${fam.name}`;
+    const inputs = new Set(Object.values(fam.tags || {}).flatMap((t) => t.inputs));
     const tasks = fam.capabilities.includes('embedding') ? ['feature-extraction'] : ['text-generation'];
-    standalone.push({
+    const rec = {
       schema_version: 1, id: `cf:model:ollama-library/${slug(fam.name)}`, type: 'model', name: fam.name,
       description: `Local model in the Ollama library${fam.sizes.length ? ` in ${fam.sizes.length === 1 ? 'size' : 'sizes'} ${fam.sizes.join(', ')}` : ''}${fam.capabilities.length ? `, with ${fam.capabilities.join(', ')}` : ''}.`,
-      publisher: 'Unknown (listed on Ollama)', publisher_region: claim('unknown'),
-      official_urls: [page], documentation_urls: [], paper_urls: [], evidence_urls: ['https://ollama.com/library?sort=popular'],
+      publisher: up?.author || 'Listed by Ollama', publisher_region: claim('unknown'),
+      official_urls: [page, ...(up?.repos || []).map((m) => `${HF}/${m.id}`)], documentation_urls: [], paper_urls: [], evidence_urls: [page, `${page}/tags`, ...(up ? [`${HF}/${up.author}`] : [])],
       verification_status: 'verified', warning: 'none', first_seen_at: TODAY, last_content_change_at: TODAY, relations: [], family: fam.name,
-      distributions: [{ source: 'ollama', native_id: fam.name, url: page, availability: 'downloadable', formats: ['gguf'], file_size_bytes: null, access: null, observed_at: TODAY }],
-      tasks, modalities: fam.capabilities.includes('vision') ? ['text', 'image'] : ['text'], languages: claim('unknown'), formats: ['gguf'], local_runtimes: ['ollama'], local_ready: true, official: false,
-      license: claim('unknown'), availability: claim('downloadable', page), parameters: claim(fam.sizes.length ? fam.sizes.join(', ') : 'unknown', fam.sizes.length ? page : null),
+      distributions: [], tasks, modalities: inputs.has('image') || fam.capabilities.includes('vision') ? ['text', 'image'] : ['text'],
+      languages: claim('unknown'), formats: ['gguf'], local_runtimes: [], local_ready: true, official: false,
+      license: fam.license ? claim(fam.license, page) : up?.repos?.[0] ? licenseOf(up.repos[0].cardData, up.repos[0].tags, `${HF}/${up.repos[0].id}`) : claim('unknown'),
+      first_published: up?.repos?.length ? claim(up.repos.map((m) => m.createdAt).filter(Boolean).sort()[0]?.slice(0, 10) || 'unknown', `${HF}/api/models/${up.repos[0].id}`) : claim('unknown'),
+      availability: claim('downloadable', page), parameters: claim(fam.sizes.length ? fam.sizes.join(', ') : 'unknown', fam.sizes.length ? page : null),
       released_at: claim('unknown'), announced_at: null, benchmarks: [], popularity: [{ source: 'ollama', pulls: fam.pulls, observed_at: TODAY }], import_source: 'ollama',
-    });
+    };
+    addTo(rec, fam, fam.sizes.length ? fam.sizes : ['latest']);
+    standalone.push(rec);
   }
-  return standalone;
+  return { extra, standalone };
+}
+
+// ---- answers to what people look for (spec section 12) ----
+// "Good for": derived from the source's own task, tags and capability labels, never guessed from prose.
+export function capabilitiesOf(r, tags = []) {
+  const caps = new Set();
+  const name = `${r.name} ${r.family || ''}`.toLowerCase();
+  const t = new Set([...(r.tasks || []), ...tags.map((x) => x.toLowerCase())]);
+  const has = (...xs) => xs.some((x) => t.has(x));
+  if (has('text-generation', 'conversational')) caps.add('chat').add('writing');
+  if (/\b(code|coder|coding|codestral|starcoder|devstral|codegemma|sql)\b/.test(name.replace(/[-_]/g, ' ')) || has('code')) caps.add('coding');
+  if (/\b(math|mathstral)\b/.test(name.replace(/[-_]/g, ' ')) || has('math')) caps.add('math');
+  if (/\b(r1|reason|reasoning|think|thinking|qwq)\b/.test(name.replace(/[-_]/g, ' ')) || has('reasoning') || r.ollama?.capabilities?.includes('thinking')) caps.add('reasoning');
+  if (has('text-to-image', 'image-to-image')) caps.add('images');
+  if (has('image-text-to-text', 'image-to-text', 'visual-question-answering') || r.ollama?.capabilities?.includes('vision') || (r.modalities || []).includes('image') && has('text-generation')) caps.add('vision');
+  if (has('automatic-speech-recognition', 'text-to-speech', 'audio-text-to-text', 'text-to-audio')) caps.add('speech');
+  if (has('text-to-video', 'image-to-video')) caps.add('video');
+  if (has('translation')) caps.add('translation');
+  if (has('feature-extraction', 'sentence-similarity') || r.ollama?.capabilities?.includes('embedding')) caps.add('search');
+  if (has('table-question-answering', 'tabular-classification', 'tabular-regression', 'time-series-forecasting') || /\b(sql|table|tabular|chart|data)\b/.test(name.replace(/[-_]/g, ' '))) caps.add('analytics');
+  if (r.ollama?.capabilities?.includes('tools') || has('function-calling', 'tool-use', 'agent')) caps.add('tools');
+  if (has('summarization')) caps.add('writing');
+  if (has('any-to-any')) caps.add('vision').add('speech');
+  return [...caps].sort();
+}
+// Abliterated / uncensored variants: named or tagged as such by their publisher.
+export const isUncensored = (name, tags = []) => /abliterat|uncensored|heretic|unfiltered|unaligned|decensored/i.test(`${name} ${tags.join(' ')}`);
+// Gatekeeping on a download: Hugging Face "gated" is false, "auto" (log in and accept terms) or "manual" (approval).
+export const gateOf = (gated) => gated === 'manual' ? 'approval' : gated ? 'login_and_terms' : 'none';
+// Self-reported benchmark results from a model card's model-index.
+export function benchmarksOf(card, page) {
+  const out = [];
+  const index = Array.isArray(card?.['model-index']) ? card['model-index'] : [];
+  for (const entry of index) {
+    for (const res of entry.results || []) {
+      for (const met of res.metrics || []) {
+        if (typeof met.value !== 'number' && typeof met.value !== 'string') continue;
+        out.push({ benchmark: res.dataset?.name || res.dataset?.type || 'unknown', metric: met.name || met.type || '', value: met.value, conditions: [res.task?.type, res.dataset?.config, res.dataset?.split].filter(Boolean).join(', ') || null, source_url: page, source_type: 'official', self_reported: true, observed_at: TODAY });
+        if (out.length >= 6) return out;
+      }
+    }
+  }
+  return out;
+}
+const PERMISSIVE = new Set(['mit', 'apache-2.0', 'bsd-3-clause', 'bsd-2-clause', 'cc-by-4.0', 'cc0-1.0', 'openrail', 'unlicense']);
+// Highlights: short facts, each built from a stated field, with no free text from the card.
+export function highlightsOf(r) {
+  const h = [];
+  const ctx = r.ollama?.context || r.distributions?.find((d) => d.context)?.context;
+  if (ctx) h.push(`Context window of ${ctx} tokens (Ollama)`);
+  if ((r.tags_seen || []).includes('moe') || /\bA\d+(\.\d+)?B\b/.test(r.name)) h.push('Mixture-of-experts: only part of the model runs for each token, so it is faster than its size suggests');
+  if (r.capabilities?.includes('reasoning')) h.push('Reasoning or "thinking" model: works through problems step by step before answering');
+  if (r.capabilities?.includes('tools')) h.push('Can call tools and functions (for agents and apps)');
+  if (r.capabilities?.includes('vision')) h.push('Understands images as well as text');
+  const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+  if (langs.length >= 5) h.push(`Covers ${langs.length} languages`);
+  else if (langs.length && !(langs.length === 1 && langs[0] === 'en')) h.push(`Languages: ${langs.join(', ')}`);
+  if (PERMISSIVE.has(r.license?.value)) h.push(`Permissive license (${r.license.value}): free for commercial use`);
+  const smallest = (r.distributions || []).map((d) => d.file_size_bytes).filter(Boolean).sort((a, b) => a - b)[0];
+  if (smallest) h.push(`Smallest local download: ${smallest >= 1e9 ? (smallest / 1e9).toFixed(1) + ' GB' : Math.round(smallest / 1e6) + ' MB'}`);
+  if (r.uncensored) h.push('Uncensored / abliterated variant: refusals removed by its publisher');
+  return h;
 }
 
 // ---- seed overlap: hand-researched seed records win ----
@@ -295,6 +434,16 @@ function keepOrWrite(file, records, label) {
   return records.length;
 }
 
+// Publisher names and countries from data/publishers.json (Wikidata, reviewed).
+const PUBLISHERS = existsSync(join(root, 'data', 'publishers.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publishers.json'), 'utf8')).publishers || {} : {};
+function applyPublisher(r) {
+  const account = r.official_urls?.[0]?.match(/huggingface\.co\/(?:datasets\/)?([^/]+)\//)?.[1] || (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.split('/')[0];
+  const p = account && PUBLISHERS[account];
+  if (!p) return;
+  r.publisher_name = p.name;
+  r.publisher_region = claim(p.country, p.source, 'third_party');
+}
+
 async function main() {
   mkdirSync(outDir, { recursive: true });
   const seed = seedKeys();
@@ -320,8 +469,10 @@ async function main() {
     // Resolve relations to catalog ids where the base model is in the catalog.
     const idByHf = new Map(models.map((r) => [r.distributions[0].native_id, r.id]));
     for (const r of models) r.relations = r.relations.map((x) => ({ type: x.type, target: idByHf.get(x.target_hf) || `${HF}/${x.target_hf}` }));
-    const standalone = ollama.length ? attachOllama(models, ollama) : [];
-    const all = [...models, ...standalone].filter((r) => !inSeed(r));
+    const { extra, standalone } = ollama.length ? await enrichOllama(models, ollama) : { extra: [], standalone: [] };
+    console.log(`Ollama: ${extra.length} families linked to their Hugging Face original, ${standalone.length} listed on their own`);
+    const all = [...models, ...extra, ...standalone].filter((r) => !inSeed(r));
+    for (const r of all) { r.capabilities = capabilitiesOf(r, r.tags_seen); r.highlights = highlightsOf(r); applyPublisher(r); }
     // de-duplicate ids
     const seen = new Set();
     const unique = all.filter((r) => (seen.has(r.id) ? false : seen.add(r.id)));
@@ -330,6 +481,7 @@ async function main() {
   if (datasets) {
     const seen = new Set();
     const unique = datasets.filter((r) => !inSeed(r) && (seen.has(r.id) ? false : seen.add(r.id)));
+    for (const r of unique) { r.capabilities = capabilitiesOf(r, []); applyPublisher(r); }
     console.log(`datasets written: ${keepOrWrite('datasets.json', unique, 'datasets')}`);
   }
 }

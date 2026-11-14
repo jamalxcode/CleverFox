@@ -182,6 +182,51 @@ const published = records.map((r) => {
   return rec;
 });
 
+// ---- answers to what people look for (spec section 12) ----
+// Each answer is derived from stated fields; nothing here is a quality score.
+const APP_CAPS = { chat: ['chat', 'writing'], writing: ['writing'], coding: ['coding'], image: ['images'], video: ['video'], audio: ['speech'], music: ['speech'], search: ['search'], research: ['search', 'reasoning'], productivity: ['writing'], translation: ['translation'], analytics: ['analytics'], agents: ['tools'] };
+const TASK_CAPS = { 'text-generation': ['chat', 'writing'], 'image-text-to-text': ['vision', 'chat'], 'text-to-image': ['images'], 'automatic-speech-recognition': ['speech'], 'text-to-speech': ['speech'], 'feature-extraction': ['search'], 'sentence-similarity': ['search'], translation: ['translation'], 'text-to-video': ['video'], summarization: ['writing'] };
+const PERMISSIVE = new Set(['mit', 'apache-2.0', 'bsd-3-clause', 'bsd-2-clause', 'cc-by-4.0', 'cc0-1.0', 'unlicense', 'openrail', 'cc-by-sa-4.0', 'odc-by', 'gpl-3.0', 'lgpl-3.0', 'agpl-3.0', 'mpl-2.0']);
+const licenseKind = (v) => !v || v === 'unknown' ? 'unknown' : String(v).split(' / ').every((x) => PERMISSIVE.has(x)) ? 'open' : /nc|non-commercial|research/i.test(v) ? 'non_commercial' : 'restricted';
+function answers(r) {
+  let goodFor = r.capabilities;
+  if (!goodFor) {
+    const set = new Set();
+    for (const t of r.tasks || []) for (const c of TASK_CAPS[t] || []) set.add(c);
+    for (const c of r.categories || []) for (const x of APP_CAPS[c] || [c]) set.add(x);
+    if (r.type === 'model' && /coder|code/i.test(r.name)) set.add('coding');
+    goodFor = [...set].sort();
+  }
+  const access = r.access || (r.distributions || []).map((d) => d.access).find(Boolean) || null;
+  const downloadable = (r.distributions || []).some((d) => ['downloadable', 'gated'].includes(d.availability)) || ['downloadable', 'gated'].includes(r.availability?.value);
+  const free = downloadable ? 'free_download' : access && ['free', 'free_tier', 'trial'].includes(access.free?.value) ? access.free.value : access?.free?.value === 'paid_only' ? 'paid' : 'unknown';
+  const gate = r.gate || (r.availability?.value === 'gated' ? 'login_and_terms' : 'none');
+  const lic = licenseKind(r.license?.value);
+  const barriers = [];
+  if (gate === 'login_and_terms') barriers.push('Log in and accept terms to download');
+  if (gate === 'approval') barriers.push('Download needs approval from the publisher');
+  if (lic === 'non_commercial') barriers.push('License forbids commercial use');
+  if (lic === 'restricted') barriers.push('Custom license with conditions');
+  if (r.type === 'model' && !downloadable) barriers.push('Only through a paid or account-based API');
+  if (access?.free?.value === 'paid_only') barriers.push('Paid only');
+  if (access && access.no_card_needed === false) barriers.push('Paying needs a card');
+  const signup = access?.signup_requirements?.value;
+  if (signup && signup !== 'unknown' && /phone|id |identity|kyc|verification/i.test(signup)) barriers.push('Sign-up needs phone or ID verification');
+  const unav = access?.countries_unavailable?.value;
+  if (Array.isArray(unav) && unav.length) barriers.push(`Not available in ${unav.length} countries`);
+  const noBarriers = r.type === 'model' || r.type === 'dataset' ? downloadable && gate === 'none' && lic === 'open' : r.type === 'app' ? ['free', 'free_tier'].includes(access?.free?.value) && !barriers.length : false;
+  const bench = (r.benchmarks || []).length;
+  return {
+    good_for: goodFor,
+    runs_locally: r.type === 'model' ? !!r.local_ready : null,
+    free, gate, license_kind: lic, barriers, no_barriers: !!noBarriers,
+    uncensored: !!r.uncensored,
+    pay_without_card: access ? (Array.isArray(access.payment_methods?.value) ? access.payment_methods.value.some((m) => !['card_international', 'card_local'].includes(m.method)) : null) : null,
+    benchmarks: bench,
+  };
+}
+for (const r of published) r.answers = answers(r);
+
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
 console.log(`OK: ${published.length} records (${counts.model} models, ${counts.dataset} datasets, ${counts.app} apps, ${counts.host} hosts)`);
 if (!checkOnly) {

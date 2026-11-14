@@ -185,6 +185,31 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** `tools/import.mjs` imports models and datasets from Hugging Face's API: popular, liked and trending items, plus gap rules for 40+ non-English languages. It also imports every Ollama library family, matched to Hugging Face models by name and size. Licenses, languages, sizes, formats, base-model relations, papers, and GitHub and documentation links come from the sources' own metadata and cards. Anything not stated stays unknown; descriptions are short templates, not copied text. It runs daily in the deploy workflow. Imports live on a `data` branch overwritten as one commit, and a failed or shrunken import keeps the previous files. The page loads each listing type only when its tab is opened, shows 50 at a time, and builds details on demand.
 **Why:** the owner asked to populate the catalog as much as possible from Hugging Face and other directories, especially their external links, models, datasets and documentation. The data-branch pattern comes from Flattery, and it avoids repo growth from daily download-count changes.
 
+### 44. Filling unknowns from the sources themselves
+**Decision:**
+- Ollama families are linked to their original Hugging Face repo, giving publisher, license, languages, papers and links. The match is by name, word by word. Failing that, a family is credited to the publisher with at least 2 own repos named after it. When unsure, it stays "Listed by Ollama".
+- Ollama model pages give license and per-size download size, context window and inputs.
+- Publisher countries come from Wikidata through a reviewed mapping of Hugging Face accounts to organisations.
+- "First published" is the first upload on Hugging Face, labeled as such and never as a release date.
+
+**Why:** the owner asked for all four options. Each uses the source's own data, and an honest "unknown" stays when no source states the fact.
+
+### 45. The site answers what people ask
+**Decision:** cards and an "At a glance" section answer each question from stated data:
+- good for (capabilities)
+- runs locally
+- free
+- pay without a card
+- how smart (publisher's self-reported benchmarks, labeled)
+- highlights
+- uncensored / abliterated
+- gatekeeping
+- no barriers
+
+There's a "What do you need?" row of capability choices, plus quick filters for runs locally, free, no barriers, uncensored and has benchmarks.
+
+**Why:** the owner listed what users look for. "No barriers" summarizes access, not quality, so the no-best-model-score rule holds. Independent leaderboards for "how smart" stay an open decision.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.
