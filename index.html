@@ -5,13 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CleverFox: AI models, datasets, apps and hosting you can actually use</title>
 <meta name="description" content="Find AI models, datasets, apps and hosting from every source, and see whether you can use them from your country: free options, paying without a card, local models and nearby data centers.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=__BUILD__">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=__BUILD__">
+<meta name="theme-color" content="#c2410c">
+<meta property="og:title" content="CleverFox: AI you can actually use">
+<meta property="og:description" content="AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free, runs locally, no card needed.">
+<meta property="og:image" content="https://jamalxcode.github.io/CleverFox/img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css?v=__BUILD__">
 <script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
 <header class="top">
   <div class="wrap top-row">
-    <a class="brand" href="./">🦊 CleverFox</a>
+    <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
     <div class="pickers">
     <label class="country">
       <span class="country-label">Your device</span>
@@ -23,8 +31,9 @@
     </label>
     </div>
   </div>
-  <div class="wrap">
+  <div class="wrap intro">
     <p class="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
+    <img class="mascot" src="img/fox.webp?v=__BUILD__" alt="CleverFox mascot: a smiling fox in sunglasses" width="104" height="120">
   </div>
 </header>
 
@@ -44,7 +53,7 @@
 
   <p id="summary" class="summary" aria-live="polite"></p>
   <ul id="list" class="list"></ul>
-  <p id="empty" class="empty" hidden>Nothing matches these filters.</p>
+  <div id="empty" class="empty" hidden><img src="img/fox.webp?v=__BUILD__" alt="" width="96" height="110" loading="lazy"><p>Nothing matches these filters. Try removing one.</p></div>
   <p class="more-wrap"><button id="more-btn" class="more-btn" type="button" hidden>Show more</button></p>
 </main>
 

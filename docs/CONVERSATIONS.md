@@ -12,6 +12,16 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: fox mascot and logo
+**Where:** Claude Code session.
+**Asked:** use the owner's fox-in-sunglasses artwork as the site mascot and logo, and archive the image in the repo.
+**Outcome:**
+- Background removed while keeping the white fur.
+- Head used as the logo and favicon.
+- Full fox shown beside the intro (hidden on phones) and in the empty state.
+- Link-preview image added.
+- Original and cut-out kept in `img/source/`, not deployed.
+
 ## 2026-11-14: hardware advice
 **Where:** Claude Code session.
 **Asked:** something to advise on what hardware (memory and processor) a model needs.

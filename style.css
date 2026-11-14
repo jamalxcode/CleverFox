@@ -136,3 +136,10 @@ table.hw th { color: var(--muted); font-weight: 600; }
 @media (max-width: 560px) { .pickers { flex: 1 1 100%; } .pickers .country { flex: 1 1 40%; } #mem { width: 100%; } }
 table.hw th { white-space: nowrap; }
 table.hw td:nth-child(-n+3) { white-space: nowrap; }
+
+.brand { display: inline-flex; align-items: center; gap: 8px; }
+.brand img { width: 40px; height: 40px; }
+.intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.mascot { width: 96px; height: auto; margin: 4px 0 0; flex: 0 0 auto; align-self: flex-end; }
+.empty img { width: 96px; height: auto; display: block; margin: 0 auto 8px; }
+@media (max-width: 560px) { .mascot { display: none; } }

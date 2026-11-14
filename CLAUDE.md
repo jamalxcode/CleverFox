@@ -30,6 +30,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 
 ## Files
 
+- `img/`: the fox mascot (`fox.webp`), logo (`fox-logo.webp`), favicons and link-preview image (`og.jpg`; its URL in `index.html` is absolute, so update it when the custom domain is set). `img/source/` keeps the original artwork and the transparent cut-out; it isn't deployed.
 - `index.html`, `style.css`, `app.js`: the page. Vanilla, no build step. Keep `?v=__BUILD__` on asset links (to be replaced by CI, as in Flattery).
 - `data/seed/*.json`: hand-entered records, the source of truth for now. Each record keeps `research_notes` (caveats, unconfirmed facts), which the build strips from the published catalog.
 - `data/imported/*.json`: written by `tools/import.mjs`; not committed to main. CI stores them on the `data` branch (one commit, overwritten) and restores them before each build.
