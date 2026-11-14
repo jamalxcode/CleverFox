@@ -210,6 +210,10 @@ There's a "What do you need?" row of capability choices, plus quick filters for 
 
 **Why:** the owner listed what users look for. "No barriers" summarizes access, not quality, so the no-best-model-score rule holds. Independent leaderboards for "how smart" stay an open decision.
 
+### 46. Import abliterated and uncensored models
+**Decision:** the importer also takes the most downloaded abliterated, uncensored and "heretic" models on Hugging Face (up to 30 per term, at least 500 downloads). It keeps their GGUF packages even though they're tagged as copies of the original, and links each to its original as "Uncensored variant of". They carry the uncensored flag and filter as a neutral fact.
+**Why:** the owner asked for it. Uncensored variants are what many local-model users look for, and the earlier import found only 3.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

@@ -63,6 +63,7 @@ Rule shape:
 - Hosting providers are included when their official site lists AI-capable compute or model hosting and its regions.
 - Conversions and quantizations attach to their parent as distributions or variants. They never become standalone families.
 - **Linking Ollama to originals:** an Ollama family is matched to its original Hugging Face repo by name (word by word, so other versions don't match), or credited to the publisher with at least 2 own repos named after it. Otherwise it's listed as "Listed by Ollama". Each Ollama model page supplies the license and each size's download size, context window and input types.
+- **Uncensored rule:** the most downloaded abliterated, uncensored and "heretic" variants on Hugging Face (up to 30 per term, at least 500 downloads), including ready-to-run GGUF packages, since an uncensored package is a different model from a plain copy. Each links to its original as "Uncensored variant of".
 - **Publisher countries** come from Wikidata through a reviewed mapping of Hugging Face accounts to organisations (`data/publisher-map.json` → `data/publishers.json`, "Publishers" workflow). Individuals are never mapped.
 - **Bulk imports (tools/import.mjs, provisional numbers):** from Hugging Face, the most downloaded, most liked and trending models across 15 tasks (text, vision, speech, image, embedding and more), plus up to 10 models per gap language (40+ non-English languages) with at least 200 downloads. Datasets: the most downloaded and most liked, plus up to 6 per gap language. Quantized copies are skipped. From the Ollama library, every model family: matched to its Hugging Face record by name and size when possible, otherwise listed on its own. Model cards supply papers, GitHub and documentation links. Hand-researched seed records always win over imports.
 
@@ -136,7 +137,7 @@ Derived fields: `capabilities`, `uncensored`, `gate` (`none`, `login_and_terms`,
 
 - **License:** an SPDX identifier, `custom` (with a link to the terms), or `unknown`. Gated-access terms are recorded separately.
 - **Availability:** `announced`, `downloadable`, `gated`, `api_only`, `withdrawn` or `unknown`. Announced is never shown as available.
-- **Hierarchy and relations:** family → release (a record) → official variants (records) → community conversions and quantizations (distributions or variant records) → later releases. Relation types: `variant_of`, `finetune_of`, `quantization_of`, `merge_of`, `adapter_of`, `successor_of`. Use Hugging Face's `base_model` where present. Never flatten versions, and never treat a quantization as a new family.
+- **Hierarchy and relations:** family → release (a record) → official variants (records) → community conversions and quantizations (distributions or variant records) → later releases. Relation types: `variant_of`, `uncensored_variant_of`, `finetune_of`, `quantization_of`, `merge_of`, `adapter_of`, `successor_of`. Use Hugging Face's `base_model` where present. Never flatten versions, and never treat a quantization as a new family.
 
 ### 7.3 App records
 

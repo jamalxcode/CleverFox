@@ -305,7 +305,7 @@ function detail(r) {
     if (r.size_category) h += `<dt>Size</dt><dd>${esc(r.size_category)} rows</dd>`;
   }
   if (r.type === 'model' && r.relations?.length) {
-    const REL = { finetune_of: 'Fine-tune of', adapter_of: 'Adapter for', merge_of: 'Merge of', quantization_of: 'Quantization of', variant_of: 'Variant of', successor_of: 'Successor of' };
+    const REL = { uncensored_variant_of: 'Uncensored variant of', finetune_of: 'Fine-tune of', adapter_of: 'Adapter for', merge_of: 'Merge of', quantization_of: 'Quantization of', variant_of: 'Variant of', successor_of: 'Successor of' };
     h += `<dt>Based on</dt><dd>${r.relations.map((x) => `${esc(REL[x.type] || x.type)} ${/^https?:/.test(x.target) ? `<a href="${esc(x.target)}" rel="noopener" target="_blank">${esc(x.target.replace('https://huggingface.co/', ''))}</a>` : esc(x.target.split('/').pop())}`).join('; ')}</dd>`;
   }
   if (r.type === 'app') {

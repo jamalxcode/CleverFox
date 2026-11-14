@@ -21,9 +21,11 @@ const HF = 'https://huggingface.co';
 const HF_HEADERS = process.env.HF_TOKEN ? { Authorization: `Bearer ${process.env.HF_TOKEN}` } : {};
 
 // ---- inclusion rules (provisional; spec section 4) ----
-const RULES = QUICK ? { topModels: 20, likedModels: 10, trendingModels: 10, perLanguageModels: 2, topDatasets: 15, likedDatasets: 5, perLanguageDatasets: 1, readmes: 40 }
-  : { topModels: 250, likedModels: 120, trendingModels: 120, perLanguageModels: 10, topDatasets: 150, likedDatasets: 80, perLanguageDatasets: 6, readmes: 2000 };
-const MIN_DOWNLOADS_GAP = 200; // gap rule: models/datasets for underrepresented languages need only this many downloads
+const RULES = QUICK ? { topModels: 20, likedModels: 10, trendingModels: 10, perLanguageModels: 2, perUncensoredTerm: 3, topDatasets: 15, likedDatasets: 5, perLanguageDatasets: 1, readmes: 40 }
+  : { topModels: 250, likedModels: 120, trendingModels: 120, perLanguageModels: 10, perUncensoredTerm: 30, topDatasets: 150, likedDatasets: 80, perLanguageDatasets: 6, readmes: 2000 };
+const MIN_DOWNLOADS_GAP = 200;
+const UNCENSORED_TERMS = ['abliterated', 'uncensored', 'heretic'];
+const MIN_DOWNLOADS_UNCENSORED = 500; // gap rule: models/datasets for underrepresented languages need only this many downloads
 const TASKS = ['text-generation', 'image-text-to-text', 'text-to-image', 'automatic-speech-recognition', 'text-to-speech', 'feature-extraction', 'sentence-similarity', 'translation', 'image-to-text', 'text-to-video', 'image-to-image', 'audio-text-to-text', 'any-to-any', 'summarization', 'text-classification'];
 // Gap languages: non-English languages with fewer models (spec focus: beyond the USA).
 const GAP_LANGUAGES = ['ar', 'fa', 'ur', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'sw', 'yo', 'ha', 'ig', 'am', 'zu', 'xh', 'so', 'id', 'ms', 'tl', 'vi', 'th', 'my', 'km', 'tr', 'kk', 'uz', 'he', 'ne', 'si', 'pt', 'es', 'fr', 'ru', 'uk', 'pl', 'ja', 'ko', 'zh'];
@@ -98,6 +100,12 @@ async function fetchModels() {
     ...(await listModels('sort=likes&direction=-1', per(RULES.likedModels))),
     ...(await listModels('sort=trendingScore&direction=-1', per(RULES.trendingModels))),
   ];
+  // Uncensored rule: the most downloaded abliterated / uncensored variants (spec section 4).
+  for (const term of UNCENSORED_TERMS) {
+    const url = `${HF}/api/models?search=${term}&sort=downloads&direction=-1&limit=${RULES.perUncensoredTerm * 3}&${MODEL_EXPAND}`;
+    const list = ((await get(url, { headers: HF_HEADERS })) || []).filter((m) => (m.downloads || 0) >= MIN_DOWNLOADS_UNCENSORED && TASKS.includes(m.pipeline_tag) && isUncensored(m.id, m.tags));
+    raw.push(...list.slice(0, RULES.perUncensoredTerm));
+  }
   for (const lang of GAP_LANGUAGES) {
     const url = `${HF}/api/models?sort=downloads&direction=-1&language=${lang}&limit=${RULES.perLanguageModels * 3}&${MODEL_EXPAND}`;
     const list = ((await get(url, { headers: HF_HEADERS })) || []).filter((m) => (m.downloads || 0) >= MIN_DOWNLOADS_GAP && TASKS.includes(m.pipeline_tag));
@@ -120,7 +128,7 @@ function modelRecord(m, readme) {
   const papers = [...new Set([...tagValues(m.tags, 'arxiv:').map((a) => `https://arxiv.org/abs/${a}`), ...links.papers])];
   const rels = [];
   for (const [rel, type] of [['finetune', 'finetune_of'], ['adapter', 'adapter_of'], ['merge', 'merge_of'], ['quantized', 'quantization_of']]) {
-    for (const base of tagValues(m.tags, `base_model:${rel}:`)) rels.push({ type, target_hf: base });
+    for (const base of tagValues(m.tags, `base_model:${rel}:`)) rels.push({ type: isUncensored(m.id, m.tags) && !/abliterat|uncensored|heretic/i.test(base) ? 'uncensored_variant_of' : type, target_hf: base });
   }
   const runtimes = [formats.includes('gguf') && 'llama.cpp', formats.includes('mlx') && 'mlx', formats.includes('onnx') && 'onnx-runtime'].filter(Boolean);
   return {
@@ -452,8 +460,9 @@ async function main() {
   let models = null; let datasets = null; let ollama = [];
   try {
     const raw = await fetchModels();
-    const kept = raw.filter((m) => !isQuantization(m));
-    console.log(`Hugging Face models: ${raw.length} fetched, ${kept.length} after skipping quantized copies`);
+    // Plain quantized copies are skipped; an abliterated / uncensored package is a different model, so it stays.
+    const kept = raw.filter((m) => !isQuantization(m) || isUncensored(m.id, m.tags));
+    console.log(`Hugging Face models: ${raw.length} fetched, ${kept.length} after skipping quantized copies (${kept.filter((m) => isUncensored(m.id, m.tags)).length} uncensored)`);
     const readmes = await pool(kept.slice(0, RULES.readmes), 6, (m) => get(`${HF}/${m.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null));
     models = kept.map((m, i) => modelRecord(m, readmes[i]));
   } catch (e) { console.warn(`Hugging Face models failed: ${e.message}`); }

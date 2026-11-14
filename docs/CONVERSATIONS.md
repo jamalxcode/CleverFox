@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: uncensored import rule
+**Where:** Claude Code session.
+**Asked:** add the rule to import abliterated and uncensored models.
+**Outcome:** the importer searches Hugging Face for "abliterated", "uncensored" and "heretic" (up to 30 each, at least 500 downloads), keeps their GGUF packages, and links each to its original as "Uncensored variant of" (DECISIONS 46).
+
 ## 2026-11-14: filling unknowns; shaping the site around user questions
 **Where:** Claude Code session.
 **Asked:** how to complete the unknown fields (go ahead with all four options), and shape the site around what users look for:
