@@ -1,0 +1,345 @@
+AI RESOURCE DISCOVERY CATALOG — SPECIFICATION
+Prepared: 14 November 2026
+Status: Proposed architecture and product requirements; not an implementation audit.
+
+1. PRODUCT OBJECTIVE
+Build a Hugging Face–style discovery website for AI models, datasets, virtual machines/GPU compute, environment templates, and documentation. Add third-party pricing comparisons later.
+
+The website is a metadata directory, not a hosting or execution platform. Link users to canonical sources for downloads, inference, access approval, VM provisioning, authentication, and billing. Do not host model weights, datasets, VM images, or other large resource files.
+
+Initial hosting: GitHub Pages. Reuse the discovery, verification, incremental metadata, and static publishing patterns documented by Flattery (https://flattery.sala.company; repository jamalxcode/flattery).
+
+2. FEASIBILITY AND BOUNDARIES
+Technical feasibility: high confidence for a curated, static discovery catalog.
+Primary challenges: accurate classification, resource identity, version relationships, evidence quality, and freshness—not website hosting.
+
+Supported scope:
+- Model and dataset directories.
+- Compute/provider and environment-template directories.
+- Original short guides and upstream documentation links.
+- Announcement discovery and release tracking.
+- Search, filters, detail pages, and comparison views generated from metadata.
+- Later: timestamped third-party pricing observations.
+
+Outside the initial static-only scope:
+- Hosting resource binaries or large datasets.
+- Running inference or executing user code.
+- Provisioning VMs or handling provider credentials.
+- Native accounts, private collections, paid subscriptions, or checkout.
+These features would require external services or a backend and a hosting-policy review.
+
+3. INFORMATION ARCHITECTURE
+Main sections:
+- Models
+- Datasets
+- Compute: VM/GPU offerings
+- Templates: ready-to-run environments
+- Documentation
+- Announcements / Recent releases
+- Pricing (later)
+
+Each listing has a stable internal ID, canonical source URL, resource type, publisher, concise description, source evidence, availability status, and freshness information.
+Generate individual static detail pages. Do not generate every possible filter combination as a separate page.
+
+4. DISCOVERY SOURCES AND PRIORITY
+Use primary sources as the authoritative metadata foundation:
+1. Hugging Face APIs for models, datasets, and optionally Spaces.
+2. Official repositories and releases.
+3. Official publisher announcements and documentation.
+4. Provider pages for VM specifications and pricing.
+5. X and Hacker News as supplementary discovery sources.
+
+An announcement creates a candidate. It does not prove availability, licensing, performance, or compatibility.
+Respect source terms, access controls, rate limits, and attribution requirements. Evaluate any connector's permitted use before implementation.
+
+5. PIPELINE
+Official APIs + repositories + provider pages + social announcements
+  -> scheduled scanner
+  -> candidate extraction
+  -> normalization
+  -> deduplication and relationship resolution
+  -> verification against primary evidence
+  -> persistent small metadata records
+  -> static pages and compact search indexes
+  -> GitHub Pages deployment
+  -> outbound canonical source links
+
+Recommended implementation: keep Flattery's Node-based workflow pattern rather than add a backend initially.
+Run collection, API calls, AI extraction, and generation inside scheduled workflows—not in visitors' browsers.
+Keep credentials in workflow secrets. Publish only intended public metadata. Never include secrets in generated files, logs, or client-side bundles.
+
+6. FLATTERY PATTERNS TO REUSE
+Based on its repository README, not a code audit:
+- Incremental discovery using prior scan state.
+- AI candidate triage.
+- Repository/source verification.
+- Deduplication.
+- Persistent metadata and corrections.
+- Static page generation.
+- Compact client-facing metadata.
+- Last-known-good-data preservation.
+- Freshness monitoring and scan status.
+
+Adapt rather than copy its project/version grouping and social reception ratings.
+A model version may represent a materially different resource. Social popularity is not model quality.
+
+7. RESOURCE IDENTITY AND MODEL RELATIONSHIPS
+Represent models using a hierarchy:
+Model family
+  -> official release/checkpoint
+     -> official size/base/instruct variants
+     -> community conversions and quantizations
+  -> later releases
+
+Track upstream and derivative relationships explicitly. Do not flatten all versions into one undifferentiated record. Do not treat every quantization as an unrelated model family.
+Use source-native IDs where available and stable internal IDs across updates. Maintain aliases and canonical URLs to support deduplication.
+
+8. METADATA REQUIREMENTS
+Common fields:
+- id
+- type
+- name
+- description
+- publisher
+- source_url
+- official_repository_url, when available
+- documentation_urls
+- license: verified value or null
+- availability
+- announced_at: source-supported timestamp or null
+- first_seen_at
+- last_checked_at
+- evidence_urls
+- related_resource_ids
+- verification_status
+
+Model-specific fields, when supported by evidence:
+- family and release identifiers
+- tasks and modalities
+- languages
+- parameter count
+- formats and frameworks
+- quantization
+- official/community status
+- parent/base model
+- hardware requirements and their source
+- reported benchmarks and evaluation conditions
+- inference provider links
+
+Dataset-specific fields, when supported:
+- tasks and modalities
+- languages
+- formats
+- size or record count, with units
+- access restrictions
+- license and stated usage conditions
+- documentation/source links
+
+Compute-offering fields, when supported:
+- provider
+- offering identifier
+- CPU, RAM, GPU type/count, GPU memory
+- storage characteristics
+- regions
+- availability/access conditions
+- official configuration or launch URL
+
+Template fields:
+- publisher
+- software stack and versions
+- source/configuration URL
+- intended hardware/environment
+- documented model compatibility
+- external launch URL, when verified
+
+Unknown values remain null or explicitly unknown. Do not fill missing facts with AI guesses.
+
+Example minimal model record:
+{
+  "id": "hf:model:organization/model-name",
+  "type": "model",
+  "name": "Model Name",
+  "source_url": "https://huggingface.co/organization/model-name",
+  "publisher": "Organization",
+  "tasks": ["text-generation"],
+  "license": null,
+  "availability": "downloadable",
+  "announced_at": null,
+  "first_seen_at": "2026-11-14T10:00:00Z",
+  "last_checked_at": "2026-11-14T10:00:00Z",
+  "evidence_urls": [],
+  "variants": []
+}
+
+9. AVAILABILITY AND EVIDENCE
+Distinguish:
+- Announced
+- Downloadable
+- Gated
+- API-only
+- Discontinued or withdrawn
+- Unknown
+
+Keep source attribution close to material claims. Distinguish official claims, third-party reports, and independently verified results.
+An overall successful scan must not imply that every source refreshed successfully.
+
+10. AI EXTRACTION AND EDITORIAL RULES
+Use AI to classify candidates, extract supported fields, and write concise summaries.
+Do not use AI output as independent certification.
+Require evidence for consequential claims.
+
+Rules:
+- Open weights does not automatically mean open source.
+- Parameter count alone does not establish minimum VRAM.
+- Publisher benchmark claims are not independently verified performance.
+- Dataset access does not imply unrestricted reuse.
+- Popularity does not establish reliability, safety, legality, or quality.
+- Hardware and deployment compatibility must be supported by documented conditions.
+
+Do not launch with a universal best-model score. Keep popularity, availability, compatibility, evidence, and performance separate.
+Popularity indicators may include downloads, likes, stars, and discussion, each with its source and observation time.
+
+11. COMPUTE AND TEMPLATE BOUNDARIES
+Compute offering: a provider VM or GPU instance.
+Environment template: a prepared software stack or launch configuration.
+Deployment compatibility: evidence that a specific model runs under a stated configuration.
+
+Initially link to official provider/template pages. Do not promise one-click model deployment unless that exact configuration is verified.
+Do not proxy provider credentials, perform provisioning, or collect payment in the initial product.
+
+12. SEARCH, UI, AND DOCUMENTATION
+Generate compact client-side search indexes during the build.
+Provide resource-type-specific filters rather than one overloaded filter set.
+Use summaries/indexes for browsing and load detailed metadata only when needed.
+Detail pages should show canonical links, evidence, availability, related resources, and last-check information.
+Prefer stable model/repository pages over temporary download URLs so users follow the source's access requirements and choose appropriate files.
+Publish original concise guides and link to upstream documentation rather than mirror entire documentation sites.
+
+13. FRESHNESS, RESILIENCE, AND MONITORING
+Use incremental collection, pagination, retry/backoff, and per-source budgets.
+Track source-level last_successful_check and listing-level last_checked_at.
+Handle rate limits, including HTTP 429 responses, without deleting valid existing data.
+Keep last-known-good metadata when a connector or AI service fails.
+
+Replace a strict catalog-never-shrinks rule with records-are-never-silently-lost:
+- Mark withdrawals, deletions, broken links, and discontinued resources.
+- Preserve provenance/history as appropriate.
+- Exclude unavailable resources from normal results when justified.
+
+Publish source/scan status and freshness warnings.
+Select polling cadences according to source capabilities, update frequency, and cost; the exact schedule remains to be decided.
+
+14. STORAGE AND BUILD STRATEGY
+Store only small metadata, original site content, and necessary site assets.
+Do not store weights, dataset files, VM images, or downloaded resource archives.
+Keep client-facing indexes compact and separate from full detailed records.
+Avoid unbounded repository history growth and unnecessary repeated writes.
+Retain a portable static build so hosting can change without rebuilding the ingestion architecture.
+
+15. GITHUB PAGES CONSTRAINTS
+GitHub documents:
+- Published site limit: 1 GB.
+- Soft bandwidth limit: 100 GB/month.
+- Deployment timeout: 10 minutes.
+These limits should be rechecked before implementation or significant expansion.
+
+GitHub Pages is not intended or allowed as free hosting for an online business, e-commerce site, or a site primarily facilitating commercial transactions or providing commercial SaaS.
+Start as a public informational directory. Reassess policy and hosting before paid access, checkout, subscriptions, or a primarily commercial business model.
+Listing third-party prices is not automatically equivalent to selling subscriptions, but it is not a blanket policy exemption.
+
+16. PRICING: LATER PHASE
+Store price observations separately from resource identity. Do not use a single generic price field.
+
+Inference pricing may use:
+- Input/output tokens
+- Cached tokens
+- Requests
+- Images
+- Audio duration
+
+Compute pricing may use:
+- Instance-hour versus GPU-hour
+- GPU count
+- Region
+- Spot versus on-demand
+- Minimum billing period
+- Storage and egress charges
+
+Dataset access may be free, paid, gated, or custom agreement.
+
+Price observation fields:
+- resource_id
+- provider
+- billing_unit
+- currency
+- amount
+- region
+- purchase_type
+- conditions
+- source_url
+- observed_at
+
+Display last-checked timestamps beside prices. Do not claim cheapest without equivalent configurations and conditions. Refresh stale observations or clearly label them as stale.
+
+17. LAUNCH PLAN
+Phase 1:
+- Curated catalog of hundreds of resources, not an exhaustive mirror.
+- Models and datasets.
+- Canonical source links and useful filters.
+- Static detail pages.
+- Recent-announcements feed.
+- Source evidence, verification status, and visible freshness.
+
+Phase 2:
+- VM/GPU provider offerings and environment templates in separate directories.
+- Documentation links and short original setup guides.
+- Explicit, source-backed resource relationships and deployment compatibility.
+
+Phase 3:
+- Timestamped third-party pricing comparisons.
+- Equivalent-configuration comparison rules.
+- Hosting-policy review if monetization is introduced.
+
+18. PROPOSED ACCEPTANCE CRITERIA
+- No model weights, datasets, VM images, or large resource archives are committed or published.
+- Every public listing has a stable ID, type, canonical URL, and freshness metadata.
+- Unknown metadata is not invented.
+- Material claims retain supporting source links.
+- Announcements and verified availability are visibly distinct.
+- Version/variant relationships do not create misleading duplicates.
+- Connector failures preserve last-known-good data and surface freshness warnings.
+- Search and filters work without exposing credentials or requiring a live ingestion API.
+- The generated site can deploy as static files to GitHub Pages.
+- Every price observation includes its source, timestamp, currency, unit, and relevant conditions.
+
+19. OPEN IMPLEMENTATION DECISIONS
+Not yet selected or verified:
+- Final product name, repository, and domain.
+- Exact UI framework/static generator and search implementation.
+- Source/provider allowlist and connector access permissions.
+- Scan cadence, refresh tiers, and retention policy.
+- AI models, extraction schema enforcement, and spending caps.
+- Exact initial catalog scope and inclusion thresholds.
+- Specific provider APIs, compatibility tests, and price extraction adapters.
+- Operational budget and migration thresholds.
+
+20. RECOMMENDED POSITIONING
+An AI resource discovery layer that connects a model to its official source, available formats, relevant datasets, setup documentation, and supported places to run it.
+This is more focused than cloning Hugging Face and preserves the no-large-files requirement.
+
+21. SOURCES AND VERIFICATION SCOPE
+The prior feasibility assessment inspected Flattery's README through the connected GitHub service. The live Flattery page could not be retrieved. The implementation code and individual VM-provider integrations were not audited.
+
+Sources consulted:
+- Flattery repository README: https://github.com/jamalxcode/flattery
+- GitHub Pages limits: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+- GitHub Actions limits: https://docs.github.com/en/actions/reference/limits
+- Hugging Face Hub search: https://huggingface.co/docs/huggingface_hub/en/guides/search
+- Hugging Face inference-provider Hub API: https://huggingface.co/docs/inference-providers/hub-api
+- Hugging Face rate limits: https://huggingface.co/docs/hub/rate-limits
+
+Searches conducted for the prior assessment:
+- GitHub Pages limits commercial use GitHub Actions scheduled workflows limits
+- Hugging Face Hub API list models datasets pagination rate limits inference providers
+
+This document consolidates the preceding feasibility assessment into proposed specifications. No new live verification was performed while producing this text file. Proposed fields and acceptance criteria are design requirements, not claims that an implementation already exists.
