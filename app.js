@@ -235,6 +235,8 @@ function detail(r) {
   }
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || []), ...(r.documentation_urls || [])].filter(Boolean))];
   h += `<h3>Official links</h3><p class="links">${links.map((u) => { let t = u; try { t = new URL(u).hostname.replace(/^www\./, '') + new URL(u).pathname.replace(/\/$/, ''); } catch { /* keep */ } return `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(t)}</a>`; }).join(' ')}</p>`;
+  const rid = encodeURIComponent(r.id);
+  h += `<p class="report-links"><a href="report/?id=${rid}">Report how access or payment works here</a> · <a href="report/?id=${rid}&amp;kind=warning">Report a scam or problem</a></p>`;
   h += `<p class="src">${r.verification_status === 'verified' ? 'Verified at an official source' : 'Not yet verified at an official page: treat facts with care'}. First seen ${esc(fmtDate(r.first_seen_at))}. ${r.evidence_urls?.length || 0} sources.</p>`;
   return h + '</div>';
 }

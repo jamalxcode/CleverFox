@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-14: community report form
+**Where:** Claude Code session.
+**Asked:** build the community report form.
+**Outcome:** a `report/` page linked from every listing and the footer. It covers access facts (paid with, refused, available, blocked, free plan, sign-up) and scam warnings. Evidence is a link or a screenshot, with an in-browser black-out tool and re-encoding that strips metadata. Reports go to ntfy.sh, following Flattery's no-sign-up lesson. The owner chose a new private repo, `cleverfox-reports`, whose hourly workflow collects, rule-checks, redacts and stores them (DECISIONS 39). Both sides were tested offline: a browser test of the form with ntfy intercepted, and a collector test against a fake ntfy server.
+**Open:** the AI evidence check and publishing accepted reports to the catalog. The domain is temporarily removed; the site serves at jamalxcode.github.io/CleverFox until DNS is set.
+
 ## 2026-11-14: seed prototype
 **Where:** Claude Code session.
 **Asked:** build the seed prototype. Use lessons from Flattery, but don't include Flattery: it isn't part of this project.

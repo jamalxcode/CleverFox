@@ -162,6 +162,11 @@ Entries 1–8 came from the original proposal and were confirmed by the owner on
 **Decision:** the seed prototype exists: 50 records (21 models, 18 apps, 11 hosting providers) in `data/seed/`, a validator and builder (`tools/build.mjs`), and a vanilla static page with a country picker and per-type filters. Records were researched by Claude agents from official pages. Facts that couldn't be fetched are `unknown`, and records not confirmed at an official page are `candidate` and shown as "not yet verified". A personal cloud environment ("CleverFox research") allows 20 official source hosts for this research. Flattery is a reference for patterns only and is never included in CleverFox's environments, commits or scope.
 **Why:** the owner chose the prototype as the next step and asked that Flattery stay out of the project. What the prototype taught is in CONVERSATIONS.md (2026-11-14, seed prototype).
 
+### 39. Report form through ntfy.sh, stored in a private repo
+**Situation:** community reports (decision 28) need a form. Flattery's lesson: a GitHub issue form needs an account and exposes the owner's profile, and the owner wanted no Google and no sign-up. CleverFox reports also carry screenshots, which may hold personal details, and ntfy.sh keeps messages only 12 hours and attachments about 3.
+**Decision:** the site's `report/` page sends reports to an ntfy.sh channel. Screenshots are re-encoded in the browser, which strips location data, and the reporter can black out areas and must confirm they hid personal details. The private repo `jamalxcode/cleverfox-reports` collects the channel hourly, applies rule checks, redacts card numbers, emails and phone numbers in notes, and stores reports privately. It commits only when new reports arrive. The AI evidence check and publishing accepted reports come next.
+**Why:** the owner chose a private repo so screenshots never become public. Trade-off: anyone who knows the channel name, which is visible in the page, can read reports for a few hours. The form warns about this.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

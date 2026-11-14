@@ -178,7 +178,7 @@ What the competitor scan showed: few major AI providers accept crypto or local m
 
 People can submit access and payment facts that official sources don't publish, e.g. "paid with M-Pesa in Kenya on 2026-11-10".
 
-- Reports come in through a form, like Flattery's suggestion form: a static page posting to a notification channel or a GitHub issue form.
+- Reports come in through the site's report form (`report/`), which posts to an ntfy.sh channel: no sign-up and no GitHub account, as in Flattery's suggestion form. Screenshots are re-saved in the browser (stripping hidden data such as location), and reporters can black out areas before sending. The private repo `jamalxcode/cleverfox-reports` collects the channel every hour, since ntfy.sh keeps messages 12 hours and attachments about 3. It runs rule checks, removes card numbers, emails and phone numbers from notes, and stores reports and screenshots privately.
 - Each report needs: the listing, the fact (from the access vocabulary), the country, the date, and evidence (a screenshot or a public link). Personal data must be cropped out. Reports with visible card numbers, account IDs or personal details are rejected.
 - An automated check (AI plus rules) confirms the evidence matches the claim. Accepted reports appear as `community_reported` claims with their date, shown separately from official facts and never overriding them.
 - Contradicting reports are all shown. A report goes stale after the access refresh window (30 days, provisional) unless confirmed again.
@@ -280,7 +280,7 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 - Seed lists: regional hubs, labs and communities; top apps; local and regional hosting providers by country.
 - Which API aggregators count as authorized (section 8b), and the test for it.
 - Whether to explain crypto-funded virtual cards in a general guide.
-- Community-report form backend (notification channel vs GitHub issue form) and evidence-check rules.
+- The AI evidence check, and how accepted reports flow from the private reports repo into the catalog.
 - Scam-report thresholds for `reported` and `dont_touch`.
 - Scan cadence and refresh tiers per source.
 - AI models for extraction and evidence checks, and spending caps.

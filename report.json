@@ -1,0 +1,4 @@
+{
+  "_about": "The report page (report/) sends each report as a message to this ntfy.sh channel: free, no sign-up, no GitHub account. ntfy.sh keeps messages 12 hours and attachments about 3 hours, so the private jamalxcode/cleverfox-reports repo collects them every hour. The channel name is public (it's in the page), so anyone who knows it can read reports for those few hours; the form tells reporters to remove personal details. Empty ntfy_topic hides the form.",
+  "ntfy_topic": "cleverfox-reports-be56372f82b9"
+}
