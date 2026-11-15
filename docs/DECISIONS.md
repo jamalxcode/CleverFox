@@ -286,6 +286,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** after a second critique, the owner chose to do every improvement: use-it-online links from models to API providers, top picks with a guided start (shareable), how-to-start commands and download buttons, an App Store country check with official-app and look-alike marks, offline phone apps, local prices, new this week with RSS, compare, and interface languages. Picks are built only from stated facts, with the reasons shown. Country availability from the App Store counts as official (Apple's own storefront data) and is used only for apps whose official store link is confirmed.
 **Why:** the site answered "what exists and can I use it" but not "what should I use and how do I start", which is where people outside the US get stuck. Most of the data for picks already exists; the App Store check fills the biggest hole (app country availability) without hand research.
 
+### 63. Hand-kept data files are committed, and ignored files are checked
+**Decision:** `data/corrections.json` and `data/app-stores.json` are explicit exceptions in `.gitignore` (which ignores generated `data/*.json`). New hand-kept files in `data/` need the same exception.
+**Why:** both had been silently ignored, so the live build ran without the corrections file and the App Store check without its candidate ids. Found by comparing the first live App Store run (12 apps) with the 38 expected.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

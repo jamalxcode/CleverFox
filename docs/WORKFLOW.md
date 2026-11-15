@@ -40,7 +40,7 @@ data/corrections.json (hand fixes, in main) ────┘
 
 - **Seed records** (`data/seed/`): researched apps, hosts, API providers and some models. These are the source of truth for access facts. Each record has `research_notes`, which are stripped before publishing.
 - **Imported records**: regenerated daily and never edited by hand. To fix one, use `data/corrections.json`.
-- **Generated files** (`data/*.json`, `l/`, `sitemap.xml`): built at deploy time and not committed.
+- **Generated files** (`data/*.json`, `l/`, `new/`, `feed.xml`, `sitemap.xml`): built at deploy time and not committed. `.gitignore` ignores `data/*.json`, so a hand-kept file there (like `corrections.json` or `app-stores.json`) needs an exception line, or it never reaches the repo.
 
 ## 3. How changes are made
 

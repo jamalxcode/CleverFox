@@ -339,14 +339,20 @@ Built and live (15 November 2026):
 - slim list files (about 70 KB compressed for models) with full records on demand;
 - a shareable page per listing.
 
-In progress, the "more useful" plan (decision 62), in this order:
-1. **Use it online:** for each model, the API providers that serve it (Hugging Face Inference Providers mapping, OpenRouter's model list), with price per million tokens, free variants, and links to the provider's payment facts.
-2. **Top picks and a guided start:** "I want to [task] on [device] from [country]" gives the best 3 models, apps and online options with reasons. The choice is kept in the link so it can be shared.
-3. **How to start:** the exact command for the size that fits the visitor's memory, beginner apps for running models, and download buttons for apps.
-4. **App Store country check:** official availability per country from Apple's lookup API for apps with a confirmed official store link; an "official app" mark and a count of look-alike apps from other sellers.
-5. **Runs offline on your phone:** researched on-device apps and a filter.
-6. **Local prices, new this week (page and RSS), compare up to 3 listings.**
-7. **Interface languages:** the main interface in Arabic, Hindi, Portuguese, Indonesian and Swahili first.
+Built on 15 November 2026, the "more useful" plan (decision 62):
+- **Find what to use:** "I want to [task] on [computer / phone / web]" gives 3 picks per column (run it yourself, offline on your phone, apps, use it online) with the reasons shown, and a share link.
+- **How to start:** the `ollama run` command for the size that fits the visitor's memory, beginner apps, and download and store buttons for apps.
+- **Use it online:** the API providers serving each model, with prices, from Hugging Face's provider mapping and OpenRouter's model list.
+- **App Store check:** official apps confirmed by seller, App Store availability per country (rotating), look-alike app counts, official-app mark.
+- **Offline on your phone:** 10 on-device apps, with a badge and a filter.
+- **Local prices** badge and a `prices` field ready for researched amounts; **new this week** page and RSS feed; **compare** up to 3 listings.
+- **Interface languages:** the main interface in Arabic, Hindi, Portuguese, Indonesian and Swahili (drafts, to be reviewed by native speakers).
+
+Still open from the plan:
+- price amounts need research;
+- Google Play availability has no public API;
+- the listing details aren't translated yet;
+- "works on slow connections" has no data source yet.
 
 Later:
 - Artificial Analysis benchmarks (free `AA_API_KEY` secret);

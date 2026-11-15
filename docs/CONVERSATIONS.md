@@ -20,7 +20,24 @@ Entry format:
 - The aim is written down as "from directory to advisor" (spec section 1) and the plan is in spec section 20 and decision 62.
 - New `docs/WORKFLOW.md`: the daily pipeline step by step, the data flow, how changes and research are made and reviewed, and the settings.
 - Work started: research on offline phone apps and on official app-store links, and the "use it online" importer (the Hugging Face provider mapping works from this session; OpenRouter's model list is blocked here but should work from GitHub's servers).
-**Open:** the App Store check covers only apps with a confirmed official store link. Prices are shown where researched, and reading them automatically from pricing pages is later. Interface translations need review by native speakers.
+- Built the same day, published straight to `main` piece by piece:
+  - use it online, with 188 models matched on the first run and OpenRouter answering from GitHub's servers;
+  - how to start;
+  - 10 offline phone apps;
+  - the App Store check: on its first run 9 official apps were confirmed and 3 rejected because the seller didn't match, 50 countries were checked, and look-alikes were counted;
+  - find what to use (top picks with reasons and a share link);
+  - a local prices badge and a prices field, new this week with RSS, and compare;
+  - interface languages.
+- Fixed along the way:
+  - `.gitignore` had kept `data/corrections.json` and `data/app-stores.json` out of the repo, so the live build had run without the corrections file;
+  - the App Store check now stops early when rate-limited (6-minute budget), and the job timeout is 45 minutes;
+  - a compare-button loop that froze the page during testing, caught before it was published.
+
+**Open:**
+- the App Store check covers only apps with a confirmed official store link;
+- price amounts need research;
+- interface translations need review by native speakers;
+- Google Play availability has no public API.
 
 ## 2026-11-15: critique and the three fixes
 **Where:** Claude Code session.
