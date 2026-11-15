@@ -220,6 +220,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 - **📱 Offline on your phone** (phone): on-device apps. Score: free +3, free tier +2, good for the task +2, verified +1, open source +0.5.
 - **📲 Apps**: apps good for the task and not unavailable in the visitor's country (on phone: with a store link or on-device). Score: available there +3, made there +2, free +2.5, free tier +2, pay without a card +1.5, App Store rating ÷ 2.5, on-device on phone +1.5, praised on X +1, verified +0.5, log of App Store ratings × 0.3.
 - **☁️ Use it online**: models good for the task with API providers. Score: benchmark as above, log of popularity × 0.6, free online +2, a provider that takes payment without a card +1.5, providers (up to 6) × 0.3.
+- Model picks without an independent benchmark say "📊 no independent score yet", so popularity isn't read as quality.
 - **Text tasks** (writing, translation, reasoning, math, analytics, search, coding) also accept general chat models that have an independent benchmark score.
 - **Sharing:** the choice is kept in the link (`#start=<task>,<device>,<memory>,<country>`); opening it shows the same picks.
 

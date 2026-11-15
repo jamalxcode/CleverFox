@@ -17,7 +17,7 @@ function top(list, n = 3) {
   for (const x of list.sort((a, b) => b.score - a.score)) { const k = x.key; if (seen.has(k)) continue; seen.add(k); out.push(x); if (out.length === n) break; }
   return out;
 }
-const benchReason = (e) => e && (e.id === 'epoch_eci' ? `🧠 ECI ${e.n} (Epoch AI)` : `🧠 AA index ${e.n}`);
+const benchReason = (e) => e ? (e.id === 'epoch_eci' ? `🧠 ECI ${e.n} (Epoch AI)` : `🧠 AA index ${e.n}`) : '📊 no independent score yet';
 const benchScore = (e) => e ? Math.max(0, (e.n - 100) / 8) : 0;
 
 export function pickModelsLocal(models, { task, mem, ulang }) {
