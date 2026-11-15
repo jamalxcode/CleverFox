@@ -197,6 +197,11 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10i. Your language
+
+- **App languages from the App Store:** a confirmed App Store listing's languages fill an app's `interface_languages` when it's unknown (source: Apple's lookup, official).
+- **"Your language" picker** (kept in the browser as `ulang`): the languages handled by at least 3 models or apps (two-letter codes), plus Swahili, Yoruba, Hausa, Amharic, Zulu, Igbo, Somali and Kinyarwanda always. Matching cards show "🗣️ <language>"; picks add +3 and the reason "🗣️ <language>" (models: languages handled; apps: interface languages).
+
 ## 10h. Interface languages (`i18n.js`)
 
 - The main page interface (header, pickers, tagline, tabs, search, "Find what to use" and its columns) comes in English, Arabic (right to left), Hindi, Portuguese, Indonesian and Swahili. The language follows the browser's language unless the visitor picks one (kept in the browser as `lang`).

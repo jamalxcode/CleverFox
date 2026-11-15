@@ -16,9 +16,9 @@ const TYPES = ['model', 'dataset', 'app', 'host'];
 const MEMORY_CHOICES = [4, 8, 16, 24, 32, 48, 64, 128];
 const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
 const PAGE = 50;
-const state = { type: 'model', q: '', cap: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const state = { type: 'model', q: '', cap: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', ulang: store.get('ulang') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
 const loaded = {}; // type -> records
-const syncView = () => { view.country = state.country; view.mem = state.mem; };
+const syncView = () => { view.country = state.country; view.mem = state.mem; view.ulang = state.ulang; };
 syncView();
 const recordsOf = (t) => loaded[t] || [];
 
@@ -201,6 +201,7 @@ $('#filters').addEventListener('change', (e) => {
   render();
 });
 $('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncView(); store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); });
+$('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); if ($('#picks').childElementCount) showPicks(false); });
 $('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); });
 
 const themes = ['auto', 'light', 'dark'];
@@ -229,6 +230,7 @@ view.site = new URL('.', location.href).href;
 wireShare($('#list'));
 $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option value="${g}"${g === state.mem ? ' selected' : ''}>${g === 128 ? '128 GB or more' : g + ' GB'}</option>`).join(''));
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
+$('#ulang').insertAdjacentHTML('beforeend', (catalog.languages || []).map((l) => [l, langName(l)]).sort((a, b) => a[1].localeCompare(b[1])).map(([l, n]) => `<option value="${l}"${l === state.ulang ? ' selected' : ''}>${esc(n)}</option>`).join(''));
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
 // ---- compare up to 3 listings (same type) ----
@@ -292,7 +294,7 @@ applyLang($('#lang').value); renderTasks();
 $('#lang').addEventListener('change', (e) => { store.set('lang', e.target.value); applyLang(e.target.value); renderTasks(); if ($('#picks').childElementCount) showPicks(false); });
 
 async function showPicks(share = true) {
-  const s = { task: $('#s-task').value, device: $('#s-device').value, mem: state.mem, country: state.country };
+  const s = { task: $('#s-task').value, device: $('#s-device').value, mem: state.mem, country: state.country, ulang: state.ulang };
   $('#picks').innerHTML = `<p class="muted">${esc(t('finding'))}</p>`;
   await Promise.all([ensureLoaded('model'), ensureLoaded('app')]);
   const models = loaded.model || []; const apps = loaded.app || [];

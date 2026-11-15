@@ -423,7 +423,8 @@ for (const r of published) {
     const cs = Object.entries(e.countries || {});
     if (cs.length && r.access) r.access.app_store_countries = { value: cs.filter(([, v]) => v).map(([c]) => c).sort(), checked: cs.length,
       source_url: `https://itunes.apple.com/lookup?id=${e.apple.id}`, source_type: 'official', observed_at: e.countries_checked_at };
-    if (e.lookalikes?.v === 2) r.lookalikes = e.lookalikes; // older counts didn't require an AI-sounding name
+    if (e.lookalikes?.v === 2) r.lookalikes = e.lookalikes;
+    if (e.apple.languages?.length && (!Array.isArray(r.interface_languages?.value))) r.interface_languages = { value: e.apple.languages, source_url: `https://itunes.apple.com/lookup?id=${e.apple.id}`, source_type: 'official', observed_at: e.apple.checked_at, note: 'App Store listing languages' }; // older counts didn't require an AI-sounding name
   }
   const gp = STORE_IDS[r.id]?.google_play;
   if (gp && ![...urls].some((u) => /play\.google\.com/.test(u))) urls.add(gp);
@@ -460,7 +461,10 @@ if (!checkOnly) {
   const generated_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
   // The page loads meta.json first, then only the listing type the visitor opens (page weight).
   // catalog.json holds everything, for anyone who wants the whole data set.
-  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
+  const langCount = {};
+  for (const r of published.filter((x) => x.type === 'model' || x.type === 'app')) for (const l of [...(Array.isArray(r.languages?.value) ? r.languages.value : []), ...(Array.isArray(r.interface_languages?.value) ? r.interface_languages.value : [])]) if (/^[a-z]{2}$/.test(l)) langCount[l] = (langCount[l] || 0) + 1;
+  const languages = Object.entries(langCount).filter(([l, n]) => n >= 3 || ['sw', 'yo', 'ha', 'am', 'zu', 'ig', 'so', 'rw'].includes(l)).map(([l]) => l).sort();
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
   // fetches the listing's full record from its page folder (l/.../record.json).
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));

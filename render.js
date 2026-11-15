@@ -1,6 +1,6 @@
 // CleverFox shared rendering: used by the main page (app.js) and the build (tools/build.mjs),
 // which writes a static page for every listing. Pure string functions, no DOM.
-export const view = { country: '', mem: 0, site: '', base: '', runtimes: {} }; // visitor's choices; site = absolute site URL; base = relative path to the site root
+export const view = { country: '', mem: 0, ulang: '', site: '', base: '', runtimes: {} }; // visitor's choices; site = absolute site URL; base = relative path to the site root
 let countryNames = new Map();
 export const setCountries = (list) => { countryNames = new Map(list); };
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -95,6 +95,7 @@ export function cardBadges(r) {
   if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
   if (r.lookalikes?.count) b.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
   if ((r.type === 'app' || r.type === 'host') && r.access?.local_currency_pricing?.value === true) b.push(badge('💱 Local prices', 'b-ok'));
+  if (view.ulang && speaks(r, view.ulang)) b.push(badge(`🗣️ ${langName(view.ulang)}`, 'b-ok'));
   if (r.on_device) b.push(`<span class="badge b-ok" title="Runs AI models on the phone itself: works offline once a model is downloaded">📱 Offline on your phone</span>`);
   if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
@@ -468,4 +469,11 @@ export function startBlock(r) {
     h += `use a beginner app: ${BEGINNER_APPS.map(([n, u, t]) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(t)}">${n}</a>`).join(', ')}${hf ? `, and search for <code>${esc(hf.native_id)}</code>` : ''}.</p>`;
   }
   return h + '</div>';
+}
+
+// Does this listing work in the visitor's language? Models: languages it handles; apps: interface languages.
+export function speaks(r, lang) {
+  if (!lang) return null;
+  const v = r.type === 'app' ? r.interface_languages?.value : r.languages?.value;
+  return Array.isArray(v) ? v.includes(lang) : null;
 }
