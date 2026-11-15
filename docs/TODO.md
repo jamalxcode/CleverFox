@@ -20,6 +20,42 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 - [ ] **Translations:** ask native speakers to review the Arabic, Hindi, Portuguese, Indonesian and Swahili interface text in `i18n.js`.
 - [ ] **Network for research sessions (optional):** allow `support.apple.com`, `itunes.apple.com`, `apps.apple.com` and `play.google.com` in the environment's network settings, so sessions can read official store pages directly.
 
+## Scheduled fetching (cron): finish, check and document
+
+**How it's done.** cron-job.org calls GitHub's API at 03:41, 11:41 and 19:41 UTC, which starts `.github/workflows/pages.yml`; GitHub's own schedule (05:07, 13:07, 21:07) is a late backup. `tools/mode.mjs` picks the run type:
+- **full refresh:** the first run 20 or more hours after the last one;
+- **quick scan:** the other runs.
+
+Each run reads its sources, builds, checks the pages, saves the data to the `data` branch and deploys. A separate manual workflow, "Fetch pages for verification", reads official pages for the verification reviews. Details are in WORKFLOW.md section 1.
+
+**Sources, by run type:**
+
+| Source | What it gives | Quick scan | Full refresh | Tool |
+|---|---|---|---|---|
+| X (API v2 recent search) | announcements (Hugging Face and Ollama links, app and hosting launch posts), posts about listings | ✓ | ✓ | `tools/x.mjs` |
+| Hugging Face new releases | models and datasets created in the last 14 days with early interest | ✓ | ✓ | `tools/discover.mjs` |
+| llm-releases.com | Hugging Face links and release announcements (robots.txt respected) | ✓ | ✓ | `tools/discover.mjs` |
+| GitHub search | brand-new AI projects (4 searches, last 14 days) | ✓ | ✓ | `tools/discover.mjs` |
+| GitHub releases | latest releases of the watchlist and projects linked from listings | ✓ | ✓ | `tools/discover.mjs` |
+| Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
+| Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
+| Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |
+| Epoch AI (Artificial Analysis with a key) | independent benchmarks | | ✓ | `tools/benchmarks.mjs` |
+| Apple's iTunes lookup and search | official apps, App Store countries, look-alikes | | ✓ | `tools/appstore.mjs` |
+| Official access pages | page changes, gone pages, payment and free words | | ✓ | `tools/recheck.mjs` |
+| Official pages, store listings (manual workflow) | text for verification reviews | | | `tools/fetch-pages.mjs` |
+
+**To do:**
+- [ ] **Owner:** set up the cron-job.org job (TODO above) and check that the first three runs in a day show "full", "x", "x".
+- [ ] Check the first run on GitHub of each new source:
+  - llm-releases.com layout and robots.txt;
+  - GitHub releases with the workflow token;
+  - Hugging Face new releases.
+- [ ] Make "Fetch pages for verification" finish reliably. It hit the 50-minute limit twice; now it has hard stops at 45 seconds per page and 38 minutes overall. Then review the remaining 40 listings.
+- [ ] Freshness: add discovery (Hugging Face new, llm-releases, GitHub) to the footer's "Last refreshed" line.
+- [ ] Decide whether quick scans should run more often than 3 times a day (each run rebuilds the site; X reads stay within the same daily share).
+- [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
+
 ## Data to research
 
 - [ ] **App and hosting launches spotted on X** ("New this week" → "Spotted on X"): research each at its official site and add it to `data/seed/` with sources.
