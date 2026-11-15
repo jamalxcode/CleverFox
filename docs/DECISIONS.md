@@ -290,6 +290,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** `data/corrections.json` and `data/app-stores.json` are explicit exceptions in `.gitignore` (which ignores generated `data/*.json`). New hand-kept files in `data/` need the same exception.
 **Why:** both had been silently ignored, so the live build ran without the corrections file and the App Store check without its candidate ids. Found by comparing the first live App Store run (12 apps) with the 38 expected.
 
+### 64. Pay through the app store: Google Play by country, App Store later
+**Decision:** a sourced table of the payment methods Google Play accepts per country (72 countries, read from Google Play Help) lets every app sold through Google Play show how people in each country can pay, phrased "if you subscribe in the Android app". The App Store table waits until Apple's support page can be read directly; search summaries contradicted each other (for example on carrier billing in Kenya).
+**Why:** only 1 listing had mobile money as a payment method; most people outside the US who lack a card can still pay through their phone's app store. One official table covers dozens of apps without researching each one. It also corrected an assumption: Google Play in Kenya names Airtel Money, not M-Pesa.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

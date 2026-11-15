@@ -1,6 +1,6 @@
 // CleverFox shared rendering: used by the main page (app.js) and the build (tools/build.mjs),
 // which writes a static page for every listing. Pure string functions, no DOM.
-export const view = { country: '', mem: 0, ulang: '', site: '', base: '', runtimes: {} }; // visitor's choices; site = absolute site URL; base = relative path to the site root
+export const view = { country: '', mem: 0, ulang: '', site: '', base: '', runtimes: {}, storePayments: null }; // visitor's choices; site = absolute site URL; base = relative path to the site root
 let countryNames = new Map();
 export const setCountries = (list) => { countryNames = new Map(list); };
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -95,6 +95,7 @@ export function cardBadges(r) {
   if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
   if (r.lookalikes?.count) b.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
   if ((r.type === 'app' || r.type === 'host') && r.access?.local_currency_pricing?.value === true) b.push(badge('💱 Local prices', 'b-ok'));
+  { const pn = playNoCard(r, view.country); if (pn.length && !payNoCard(r.access)) b.push(badge(`🪙 Via Google Play: ${[...new Set(pn.map(shortPay))].slice(0, 3).join(' · ')}`, 'b-ok')); }
   if (view.ulang && speaks(r, view.ulang)) b.push(badge(`🗣️ ${langName(view.ulang)}`, 'b-ok'));
   if (r.on_device) b.push(`<span class="badge b-ok" title="Runs AI models on the phone itself: works offline once a model is downloaded">📱 Offline on your phone</span>`);
   if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
@@ -282,6 +283,7 @@ export function detail(r) {
     for (const d of (r.distributions || []).filter((x) => x.access)) h += `<p class="ln muted">${esc(SOURCE_LABELS[d.source] || d.source)} access:</p>` + accessFacts(d.access);
   } else if (r.type !== 'dataset') {
     h += accessFacts(r.access);
+    h += playLine(r);
     h += priceLine(r.access);
   }
   h += accessCheckLine(r);
@@ -310,7 +312,7 @@ export function suits(r) {
     const av = acc.map((a) => availableIn(a, view.country));
     const dcHere = r.type === 'host' && Array.isArray(r.data_centers?.value) && r.data_centers.value.some((d) => d.country === view.country);
     const c = av.includes('no') && !av.includes('yes') ? 2 : (av.includes('yes') || dcHere) ? 0 : 1;
-    const pay = acc.some((a) => payNoCard(a) || ['free', 'free_tier'].includes(a.free?.value)) ? 0 : 1;
+    const pay = acc.some((a) => payNoCard(a) || ['free', 'free_tier'].includes(a.free?.value)) || playNoCard(r, view.country).length ? 0 : 1;
     const countryScore = c === 2 ? 2 : c === 0 && pay === 0 ? 0 : 1; // available there and payable without a card (or free)
     s = Math.max(view.mem && r.type === 'model' ? s : 0, countryScore);
   }
@@ -479,3 +481,34 @@ export function speaks(r, lang) {
   const v = r.type === 'app' ? r.interface_languages?.value : r.languages?.value;
   return Array.isArray(v) ? v.includes(lang) : null;
 }
+
+// ---- paying through Google Play (data/store-payments.json, from Google Play Help) ----
+// An app sold through Google Play: it has a Google Play link and paid plans (store billing, a free tier, a trial or paid only).
+export function soldOnPlay(r) {
+  if (r.type !== 'app' || !(r.app_store_urls || []).some((u) => /play\.google\.com/.test(u))) return false;
+  return methodsOf(r.access).some((m) => m.method === 'app_store_billing') || ['free_tier', 'trial', 'paid_only'].includes(r.access?.free?.value);
+}
+// Non-card ways Google Play accepts in that country, for an app sold there: [{method, note}].
+export function playNoCard(r, country) {
+  const t = view.storePayments?.google_play;
+  if (!country || !t || !soldOnPlay(r)) return [];
+  return (t.countries[country] || []).filter(([m]) => !CARDS.includes(m)).map(([method, note]) => ({ method, note }));
+}
+export function playLine(r) {
+  const t = view.storePayments?.google_play;
+  if (!t || !soldOnPlay(r)) return '';
+  const c = view.country;
+  if (!c) {
+    const ex = [['IN', 'upi'], ['BR', 'pix'], ['ID', 'other'], ['KE', 'mobile_money'], ['PH', 'other'], ['EG', 'carrier_billing']].map(([cc, m]) => { const hit = (t.countries[cc] || []).find(([x]) => x === m); return hit ? `${hit[1] || METHOD_LABELS[m]} in ${countryName(cc)}` : null; }).filter(Boolean);
+    const n = Object.values(t.countries).filter((l) => l.some(([m]) => !CARDS.includes(m))).length;
+    return `<p class="ln">🛒 Sold in the Android app through Google Play, which accepts other ways to pay than cards in ${n} countries${ex.length ? `, for example ${esc(ex.slice(0, 4).join(', '))}` : ''}. Choose your country on the main page to see yours. <a class="src-i" href="${esc(t.source_url)}" rel="noopener" target="_blank" title="Google Play Help">ⓘ</a></p>`;
+  }
+  const list = t.countries[c];
+  const url = t.country_url.replace('{CC}', c);
+  const srcLink = `<a class="src-i" href="${esc(url)}" rel="noopener" target="_blank" title="Google Play Help, checked ${esc(fmtDate(t.observed_at))}">ⓘ</a>`;
+  if (!list) return `<p class="ln muted">🛒 If you subscribe in the Android app, Google Play in ${esc(countryName(c))} takes cards only.${srcLink}</p>`;
+  const non = list.filter(([m]) => !CARDS.includes(m));
+  return `<p class="ln">🛒 If you subscribe in the Android app, <strong>Google Play in ${esc(countryName(c))}</strong> accepts: ${non.length ? non.map(([m, n]) => `<strong>${esc(n || METHOD_LABELS[m] || m)}</strong>`).join(' · ') + ' · cards' : 'cards only'}${srcLink}</p>`;
+}
+// A short name for a payment method: its label, or for "other" the first brand named in the note.
+export const shortPay = (x) => x.method === 'other' ? String(x.note || 'other').replace(/^e-wallets?:\s*/i, '').split(/[,;(]/)[0].trim() : (METHOD_LABELS[x.method] || x.method);

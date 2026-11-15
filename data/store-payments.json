@@ -1,0 +1,1635 @@
+{
+ "_about": "Payment methods Google Play accepts, per country, from Google Play Help (fetched 2026-11-15). Used to show how to pay for apps sold through Google Play. The App Store table is not included yet: Apple's page could not be read directly.",
+ "google_play": {
+  "source_url": "https://support.google.com/googleplay/answer/2651410?hl=en",
+  "country_url": "https://support.google.com/googleplay/answer/2651410?hl=en&co=GENIE.CountryCode%3D{CC}",
+  "observed_at": "2026-11-15T00:00:00Z",
+  "source_type": "official",
+  "countries": {
+   "AE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "du"
+    ],
+    [
+     "carrier_billing",
+     "Etisalat"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ]
+   ],
+   "AT": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Drei"
+    ],
+    [
+     "carrier_billing",
+     "A1"
+    ],
+    [
+     "carrier_billing",
+     "Magenta Telekom"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "AU": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "BE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "BASE Company"
+    ],
+    [
+     "carrier_billing",
+     "Orange Belgium"
+    ],
+    [
+     "carrier_billing",
+     "Proximus"
+    ],
+    [
+     "carrier_billing",
+     "Telenet"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "BG": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Yettel"
+    ],
+    [
+     "carrier_billing",
+     "A1"
+    ],
+    [
+     "carrier_billing",
+     "Vivacom"
+    ]
+   ],
+   "BH": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Batelco"
+    ],
+    [
+     "carrier_billing",
+     "stc BH"
+    ],
+    [
+     "carrier_billing",
+     "Zain"
+    ]
+   ],
+   "BR": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa (credit)"
+    ],
+    [
+     "card_local",
+     "ELO credit cards; debit cards only when added via Google Wallet"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "pix",
+     "PIX (one-time and auto-renew subscriptions)"
+    ],
+    [
+     "other",
+     "e-wallet: PicPay"
+    ],
+    [
+     "other",
+     "e-wallet: Mercado Pago"
+    ]
+   ],
+   "CA": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Telus"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "CH": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Sunrise"
+    ],
+    [
+     "carrier_billing",
+     "Swisscom"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Paysafecard PIN (no account needed)"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "CL": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Entel"
+    ],
+    [
+     "carrier_billing",
+     "Claro"
+    ],
+    [
+     "carrier_billing",
+     "Movistar"
+    ],
+    [
+     "carrier_billing",
+     "WOM"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "CO": [
+    [
+     "card_international",
+     "Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Claro"
+    ],
+    [
+     "bank_transfer",
+     "PSE (one-time purchases only; banks and wallets incl. Nequi, Daviplata, Nu, Lulo Bank, Movii, RappiPay)"
+    ],
+    [
+     "other",
+     "Efecty cash voucher (one-time purchases only)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ]
+   ],
+   "CY": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "CZ": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "O2"
+    ],
+    [
+     "carrier_billing",
+     "T-Mobile"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "DE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Deutsche Telekom"
+    ],
+    [
+     "carrier_billing",
+     "o2"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "Klarna"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "DK": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "3"
+    ],
+    [
+     "carrier_billing",
+     "Telenor"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "EE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Elisa"
+    ],
+    [
+     "carrier_billing",
+     "Tele2"
+    ],
+    [
+     "carrier_billing",
+     "Telia"
+    ]
+   ],
+   "EG": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "carrier_billing",
+     "e&"
+    ]
+   ],
+   "ES": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Orange"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "FI": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "DNA"
+    ],
+    [
+     "carrier_billing",
+     "Telia"
+    ],
+    [
+     "carrier_billing",
+     "Elisa Finland"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "FR": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Bouygues"
+    ],
+    [
+     "carrier_billing",
+     "Free"
+    ],
+    [
+     "carrier_billing",
+     "Orange"
+    ],
+    [
+     "carrier_billing",
+     "SFR"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "GB": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Three"
+    ],
+    [
+     "carrier_billing",
+     "EE"
+    ],
+    [
+     "carrier_billing",
+     "O2"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "GE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Cellfie"
+    ]
+   ],
+   "GH": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "mobile_money",
+     "Vodafone Cash (carrier wallet)"
+    ],
+    [
+     "mobile_money",
+     "MTN Mobile Money (carrier wallet)"
+    ]
+   ],
+   "GR": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Cosmote"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "HK": [
+    [
+     "card_international",
+     "American Express, JCB, Mastercard, UnionPay, Visa"
+    ],
+    [
+     "carrier_billing",
+     "3HK/SUPREME"
+    ],
+    [
+     "carrier_billing",
+     "CSL / 1O1O"
+    ],
+    [
+     "carrier_billing",
+     "Smartone"
+    ],
+    [
+     "carrier_billing",
+     "China Mobile Hong Kong"
+    ],
+    [
+     "carrier_billing",
+     "Telin"
+    ],
+    [
+     "other",
+     "e-wallet: Octopus O! ePay"
+    ],
+    [
+     "alipay",
+     "AliPayHK"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "HR": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "A1"
+    ],
+    [
+     "carrier_billing",
+     "Telemach"
+    ],
+    [
+     "carrier_billing",
+     "Hrvatski Telekom"
+    ]
+   ],
+   "HU": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Yettel"
+    ],
+    [
+     "carrier_billing",
+     "Magyar Telecom"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "ID": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Indosat"
+    ],
+    [
+     "carrier_billing",
+     "Smartfren"
+    ],
+    [
+     "carrier_billing",
+     "Telkomsel"
+    ],
+    [
+     "carrier_billing",
+     "XL/AXIS"
+    ],
+    [
+     "carrier_billing",
+     "Tri"
+    ],
+    [
+     "other",
+     "e-wallet: Dana, Doku, GoPay, OVO, ShopeePay"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at Alfamart, Alfamidi, Dan+Dan, Indomaret, Lawson (not for subscriptions)"
+    ],
+    [
+     "bank_transfer",
+     "virtual account bank transfer: BCA, BRI, BSI, Mandiri, Permata (not for subscriptions)"
+    ],
+    [
+     "other",
+     "QRIS QR payment from bank or e-wallet app (not for subscriptions)"
+    ]
+   ],
+   "IE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Three"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "IL": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "IN": [
+    [
+     "card_international",
+     "Mastercard, Visa"
+    ],
+    [
+     "card_local",
+     "RuPay (one-time purchases only)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play recharge codes"
+    ],
+    [
+     "upi",
+     "UPI, all providers; UPI Autopay for subscriptions"
+    ]
+   ],
+   "IQ": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Zain"
+    ],
+    [
+     "carrier_billing",
+     "Asiacell"
+    ],
+    [
+     "carrier_billing",
+     "Korek"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ]
+   ],
+   "IT": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "TIM"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "carrier_billing",
+     "WINDTRE"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "JP": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa, JCB"
+    ],
+    [
+     "other",
+     "e-wallet: Edy"
+    ],
+    [
+     "other",
+     "e-wallet: Merpay"
+    ],
+    [
+     "carrier_billing",
+     "Docomo"
+    ],
+    [
+     "carrier_billing",
+     "au"
+    ],
+    [
+     "carrier_billing",
+     "SoftBank"
+    ],
+    [
+     "carrier_billing",
+     "Rakuten"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "other",
+     "cash at Daily Yamazaki, FamilyMart, SeicoMart, Lawson (not for subscriptions)"
+    ],
+    [
+     "other",
+     "e-wallet: PayPay"
+    ]
+   ],
+   "KE": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "mobile_money",
+     "Airtel Money (carrier wallet)"
+    ]
+   ],
+   "KH": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Smart"
+    ]
+   ],
+   "KR": [
+    [
+     "card_international",
+     "American Express, Diners Club, Mastercard, Visa"
+    ],
+    [
+     "card_local",
+     "Korean issuers: KB, KEB/Hana, KDB, BC card, Woori, Suhyup, JB Bank, Citi, MG, Shinhan, Kwangju Bank, Samsung, Hyundai, Shinhyup, Lotte, NH Bank"
+    ],
+    [
+     "carrier_billing",
+     "KT"
+    ],
+    [
+     "carrier_billing",
+     "LGU+"
+    ],
+    [
+     "carrier_billing",
+     "SKT"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "e-wallet: PAYCO"
+    ],
+    [
+     "other",
+     "e-wallet: KakaoPay"
+    ],
+    [
+     "other",
+     "e-wallet: Toss"
+    ],
+    [
+     "bank_transfer",
+     "bank account via KCP"
+    ],
+    [
+     "other",
+     "e-wallet: Naver Pay"
+    ]
+   ],
+   "KW": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Ooredoo"
+    ],
+    [
+     "carrier_billing",
+     "STC"
+    ],
+    [
+     "carrier_billing",
+     "Zain"
+    ]
+   ],
+   "KZ": [
+    [
+     "card_international",
+     "American Express, Discover, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Kcell"
+    ],
+    [
+     "carrier_billing",
+     "Tele2"
+    ]
+   ],
+   "LK": [
+    [
+     "card_international",
+     "American Express, Discover, Mastercard, Visa"
+    ]
+   ],
+   "LT": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Bite"
+    ],
+    [
+     "carrier_billing",
+     "Tele2"
+    ],
+    [
+     "carrier_billing",
+     "Telia"
+    ]
+   ],
+   "LU": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Orange"
+    ]
+   ],
+   "LV": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Bite"
+    ],
+    [
+     "carrier_billing",
+     "LMT"
+    ],
+    [
+     "carrier_billing",
+     "Tele2"
+    ]
+   ],
+   "MA": [
+    [
+     "card_international",
+     "American Express, Discover, JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Maroc Telecom"
+    ]
+   ],
+   "MO": [
+    [
+     "card_international",
+     "American Express, Mastercard, UnionPay, Visa"
+    ]
+   ],
+   "MX": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "AT&T Mexico"
+    ],
+    [
+     "carrier_billing",
+     "Telcel (postpaid only)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "other",
+     "e-wallet: Mercado Pago"
+    ],
+    [
+     "other",
+     "cash at OXXO, 7-Eleven (not for auto-renewing subscriptions)"
+    ]
+   ],
+   "MY": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "CelcomDigi"
+    ],
+    [
+     "carrier_billing",
+     "Maxis"
+    ],
+    [
+     "carrier_billing",
+     "TuneTalk"
+    ],
+    [
+     "carrier_billing",
+     "U Mobile"
+    ],
+    [
+     "carrier_billing",
+     "Unifi Mobile"
+    ],
+    [
+     "other",
+     "e-wallet: Boost, Touch 'n Go, ShopeePay"
+    ],
+    [
+     "bank_transfer",
+     "FPX online banking (not for subscriptions)"
+    ],
+    [
+     "other",
+     "cash at 7-Eleven for in-app purchases (not for subscriptions); gift cards and prepaid balance ended 2026-02-01"
+    ]
+   ],
+   "NG": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "card_local",
+     "Verve"
+    ]
+   ],
+   "NL": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "KPN"
+    ],
+    [
+     "carrier_billing",
+     "Odido"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "bank_transfer",
+     "iDEAL (not for subscriptions; can top up Play balance)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "NO": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Telenor"
+    ],
+    [
+     "carrier_billing",
+     "Telia"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "NZ": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "OM": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Omantel"
+    ],
+    [
+     "carrier_billing",
+     "Ooredoo"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ]
+   ],
+   "PE": [
+    [
+     "card_international",
+     "Mastercard, Visa, Visa Electron"
+    ],
+    [
+     "carrier_billing",
+     "Claro (postpaid only)"
+    ],
+    [
+     "carrier_billing",
+     "Entel"
+    ]
+   ],
+   "PH": [
+    [
+     "card_international",
+     "American Express, Discover, JCB, Mastercard, UnionPay, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Dito"
+    ],
+    [
+     "carrier_billing",
+     "Smart Communications"
+    ],
+    [
+     "carrier_billing",
+     "Sun"
+    ],
+    [
+     "other",
+     "e-wallet: GCash"
+    ],
+    [
+     "other",
+     "e-wallet: PayMaya"
+    ],
+    [
+     "other",
+     "e-wallet: ShopeePay"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "other",
+     "cash at 7-Eleven, ECPay (not for subscriptions)"
+    ]
+   ],
+   "PK": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ]
+   ],
+   "PL": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Orange"
+    ],
+    [
+     "carrier_billing",
+     "Play"
+    ],
+    [
+     "carrier_billing",
+     "Polkomtel / Plus"
+    ],
+    [
+     "carrier_billing",
+     "T-Mobile"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Paysafecard PIN (no account needed)"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "bank_transfer",
+     "BLIK"
+    ]
+   ],
+   "PT": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "carrier_billing",
+     "MEO"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "QA": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Ooredoo"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ]
+   ],
+   "RO": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Orange Romania"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "SA": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Mobily"
+    ],
+    [
+     "carrier_billing",
+     "STC"
+    ],
+    [
+     "carrier_billing",
+     "Zain"
+    ],
+    [
+     "carrier_billing",
+     "Virgin"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ]
+   ],
+   "SE": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "3"
+    ],
+    [
+     "carrier_billing",
+     "Tele2"
+    ],
+    [
+     "carrier_billing",
+     "Telenor SE"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "SG": [
+    [
+     "card_international",
+     "American Express, Mastercard, UnionPay, Visa"
+    ],
+    [
+     "other",
+     "e-wallet: GrabPay"
+    ],
+    [
+     "carrier_billing",
+     "M1"
+    ],
+    [
+     "carrier_billing",
+     "SingTel"
+    ],
+    [
+     "carrier_billing",
+     "StarHub"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "SI": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "A1"
+    ],
+    [
+     "carrier_billing",
+     "Telekom"
+    ],
+    [
+     "carrier_billing",
+     "Telemach"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "SK": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Orange"
+    ],
+    [
+     "carrier_billing",
+     "O2"
+    ],
+    [
+     "carrier_billing",
+     "Slovak Telekom"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "my paysafecard (account)"
+    ]
+   ],
+   "TH": [
+    [
+     "card_international",
+     "American Express, JCB, Mastercard, UnionPay, Visa"
+    ],
+    [
+     "carrier_billing",
+     "AIS"
+    ],
+    [
+     "carrier_billing",
+     "DTAC"
+    ],
+    [
+     "carrier_billing",
+     "TrueMoveH"
+    ],
+    [
+     "other",
+     "PromptPay QR payment from bank or e-wallet app"
+    ],
+    [
+     "other",
+     "e-wallet: LINE Pay, ShopeePay, TrueMoney Wallet"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ]
+   ],
+   "TR": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "card_local",
+     "Troy"
+    ],
+    [
+     "carrier_billing",
+     "Turk Telekom"
+    ],
+    [
+     "carrier_billing",
+     "Turkcell"
+    ],
+    [
+     "carrier_billing",
+     "Vodafone"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ]
+   ],
+   "TW": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "carrier_billing",
+     "Far EasTone"
+    ],
+    [
+     "carrier_billing",
+     "Taiwan Mobile"
+    ],
+    [
+     "carrier_billing",
+     "T Star"
+    ],
+    [
+     "carrier_billing",
+     "Chunghwa Telecom"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "other",
+     "cash at 7-Eleven, Hi-Life, FamilyMart (needs linked E.SUN account; not for subscriptions)"
+    ],
+    [
+     "bank_transfer",
+     "virtual account via ATM or mobile banking (needs linked E.SUN account)"
+    ]
+   ],
+   "TZ": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ]
+   ],
+   "UA": [
+    [
+     "card_international",
+     "American Express, Mastercard, UnionPay, Visa"
+    ]
+   ],
+   "US": [
+    [
+     "card_international",
+     "American Express, Discover, JCB, Mastercard, Visa"
+    ],
+    [
+     "other",
+     "Google Pay balance"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "Cash App Pay"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "other",
+     "Venmo"
+    ]
+   ],
+   "VN": [
+    [
+     "card_international",
+     "JCB, Mastercard, Visa"
+    ],
+    [
+     "card_local",
+     "Napas"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "carrier_billing",
+     "MobiFone"
+    ],
+    [
+     "carrier_billing",
+     "Vinaphone"
+    ],
+    [
+     "other",
+     "e-wallet: MoMo, ShopeePay, ZaloPay, VTC Pay"
+    ]
+   ],
+   "ZA": [
+    [
+     "card_international",
+     "American Express, Mastercard, Visa"
+    ],
+    [
+     "paypal",
+     "PayPal"
+    ],
+    [
+     "carrier_billing",
+     "MTN"
+    ],
+    [
+     "carrier_billing",
+     "Telkom"
+    ],
+    [
+     "carrier_billing",
+     "Vodacom"
+    ],
+    [
+     "prepaid_or_gift_card",
+     "Google Play gift cards"
+    ],
+    [
+     "other",
+     "cash at convenience stores to add Play balance"
+    ]
+   ]
+  }
+ }
+}

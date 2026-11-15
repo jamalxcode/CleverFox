@@ -197,6 +197,13 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10k. Paying through Google Play
+
+- `data/store-payments.json`: the payment methods Google Play accepts in each of 72 countries, from Google Play Help (official, read 2026-11-15, one source link per country). Countries not listed take cards only. E-wallets are `other` with the brand in the note; only operator wallets (Airtel Money, MTN MoMo, Vodafone Cash) are `mobile_money`. Methods Google says are ending are left out.
+- **Sold through Google Play:** an app with a Google Play link and paid plans (store billing, a free tier, a trial or paid only).
+- With a country chosen, such an app shows "🛒 If you subscribe in the Android app, Google Play in <country> accepts: …" and, when the app has no non-card method of its own, the badge "🪙 Via Google Play: <methods>". It counts as payable without a card in highlighting and picks (+1.5). Without a country, a summary with examples links to Google's page.
+- The App Store table isn't included: Apple's page couldn't be read directly, and search summaries aren't good enough (decision 64).
+
 ## 10j. Gaps, discontinued listings, glossary
 
 - **What people can't find:** a search with no results (after 2 seconds of no typing) and an empty picks column are counted as GoatCounter events (`search-empty/<tab>/<words>`, `picks-empty/<column>/<task>/<device>/<country>/<language>`). Only the search words and choices, nothing about the person. These show which data to research next.

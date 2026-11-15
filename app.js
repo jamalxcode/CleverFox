@@ -233,6 +233,7 @@ try {
 }
 setCountries(catalog.countries);
 view.runtimes = catalog.runtimes || {};
+view.storePayments = catalog.store_payments || null;
 view.site = new URL('.', location.href).href;
 wireShare($('#list'));
 $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option value="${g}"${g === state.mem ? ' selected' : ''}>${g === 128 ? '128 GB or more' : g + ' GB'}</option>`).join(''));

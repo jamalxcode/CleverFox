@@ -480,7 +480,8 @@ if (!checkOnly) {
   const langCount = {};
   for (const r of published.filter((x) => x.type === 'model' || x.type === 'app')) for (const l of [...(Array.isArray(r.languages?.value) ? r.languages.value : []), ...(Array.isArray(r.interface_languages?.value) ? r.interface_languages.value : [])]) if (/^[a-z]{2}$/.test(l)) langCount[l] = (langCount[l] || 0) + 1;
   const languages = Object.entries(langCount).filter(([l, n]) => n >= 3 || ['sw', 'yo', 'ha', 'am', 'zu', 'ig', 'so', 'rw'].includes(l)).map(([l]) => l).sort();
-  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
+  const storePayments = existsSync(join(root, 'data', 'store-payments.json')) ? JSON.parse(readFileSync(join(root, 'data', 'store-payments.json'), 'utf8')) : null;
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, store_payments: storePayments ? { google_play: storePayments.google_play } : null, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
   // fetches the listing's full record from its page folder (l/.../record.json).
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
@@ -508,6 +509,7 @@ async function writeListingPages(records, countryList) {
   R.setCountries(countryList);
   R.view.runtimes = runtimeDocs;
   R.view.site = SITE;
+  R.view.storePayments = existsSync(join(root, 'data', 'store-payments.json')) ? JSON.parse(readFileSync(join(root, 'data', 'store-payments.json'), 'utf8')) : null;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const outRoot = join(root, 'l');
   rmSync(outRoot, { recursive: true, force: true });
