@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: X scanning switched on; short-name search
+**Where:** Claude Code session.
+**Asked:** step-by-step setup of the X token (a separate "CleverFox" app in the X developer portal, the `X_BEARER_TOKEN` secret, `X_MONTHLY_READS` = 2000); check it works; then fix the searches that found nothing.
+**Outcome:**
+- First live run: 123 posts read, 30 announcement posts, 18 listings checked; 8 found nothing because the search used full model names.
+- The owner's X credits are shared with another project and had no spending cap or auto-recharge; advised setting a billing cycle cap.
+- Short-name search added and empty listings retried first (decision 57).
+
 ## 2026-11-15: X monitoring and "What people say on X"
 **Where:** Claude Code session.
 **Asked:**

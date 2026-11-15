@@ -123,6 +123,27 @@ const postUrl = (p) => `https://x.com/${p.author}/status/${p.id}`;
 // Search words for a listing: its name in quotes (and its Hugging Face URL for models and datasets).
 // Very short or generic names need the URL, or are skipped, to avoid unrelated posts.
 const GENERIC = new Set(['chat', 'phi', 'aya', 'base', 'mini', 'llama', 'gemma', 'qwen', 'mistral', 'claude', 'gemini', 'copilot', 'kimi', 'vibe', 'alice']);
+// The name people actually write on X: the full name up to its size or variant suffix
+// ("Llama 4 Scout 17B-16E Instruct" -> "Llama 4 Scout"). Null for derivatives (quantizations,
+// fine-tunes, abliterated re-uploads), whose short name would be the base model's.
+const DERIVED = /abliterat|uncensor|heretic|gguf|awq|gptq|exl2|mlx|nvfp4|merge|lora|distill|finetune|-ft\b/i;
+const STOP = /^(\d+(\.\d+)?[bmkt]|a\d+(\.\d+)?b|\d+e|\d{4}|instruct|it|chat|base|preview|hf|fp8|fp16|bf16|int[48]|onnx|openvino|rl|sft|dpo|q\d\w*|iq\d\w*)$/i;
+export function shortName(r) {
+  if (r.type !== 'model' && r.type !== 'dataset') return null;
+  const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+  if (DERIVED.test(name) || (r.relations || []).some((x) => x.type !== 'variant_of')) return null;
+  const tokens = name.split(/[-_\s]+/).filter(Boolean);
+  const keep = [];
+  for (const t of tokens) { if (STOP.test(t)) break; keep.push(t); }
+  // Everything cut must be a size, variant or version tag; otherwise it's a different model (a fine-tune).
+  if (!tokens.slice(keep.length).every((t) => STOP.test(t) || /^v\d+(\.\d+)*$/i.test(t))) return null;
+  const short = keep.join(' ');
+  if (!short || short.toLowerCase() === name.replace(/[-_]+/g, ' ').toLowerCase()) return null;
+  if (!/[a-z]/i.test(short) || GENERIC.has(short.toLowerCase())) return null;
+  if (keep.length === 1 && !(/\d/.test(short) && short.length >= 5)) return null; // a bare brand ("Sarvam") is too broad
+  return short;
+}
+
 export function queryFor(r) {
   const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim();
   const hf = (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id || (r.type === 'dataset' ? r.official_urls?.[0]?.split('/datasets/')[1] : null);
@@ -130,6 +151,8 @@ export function queryFor(r) {
   const generic = name.length < 5 || GENERIC.has(name.toLowerCase());
   if (!generic) parts.push(`"${name}"`);
   else if (r.type === 'app' || r.type === 'host') parts.push(`"${name}" ${r.type === 'app' ? '(AI OR app)' : '(GPU OR cloud)'}`);
+  const sn = shortName(r);
+  if (sn) parts.push(`"${sn}"`);
   if (hf) parts.push(`url:"huggingface.co/${r.type === 'dataset' ? 'datasets/' : ''}${hf}"`);
   if (!parts.length) return null;
   return `(${parts.join(' OR ')}) -is:retweet`;
@@ -187,12 +210,21 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   listings = listings || listingsByPopularity();
   const buzz = Object.fromEntries(Object.entries(prev.buzz || {}).filter(([, b]) => (now - new Date(b.observed_at)) / 86400000 <= RULES.buzzKeepDays));
   let checked = 0;
+  // Listings that found nothing with an older query go first, with the current one.
+  for (const r of listings) {
+    const b = buzz[r.id]; const q = queryFor(r);
+    if (!b || b.posts || !q || b.q === q) continue;
+    const posts = await x.search(q, RULES.postsPerListing);
+    if (!posts) break;
+    buzz[r.id] = { ...summarizeBuzz(posts, now), q };
+    checked++;
+  }
   for (let i = 0; i < listings.length; i++) {
     const r = listings[(state.cursor + i) % listings.length];
     const q = queryFor(r); if (!q) continue;
     const posts = await x.search(q, RULES.postsPerListing);
     if (!posts) { state.cursor = (state.cursor + i) % listings.length; break; }
-    buzz[r.id] = summarizeBuzz(posts, now);
+    buzz[r.id] = { ...summarizeBuzz(posts, now), q };
     checked++;
     if (i === listings.length - 1) state.cursor = 0;
   }

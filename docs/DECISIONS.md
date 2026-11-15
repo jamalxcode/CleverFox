@@ -262,6 +262,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** each listing page has a side panel (stacked under the details on phones) with positive/critical/general counts, a tone bar, likes, and the most-liked posts overall and per tone, shown as X's own embedded posts (the X script loads only on pages that have posts). The main list shows a one-line summary with a link to the panel. The panel says tone is a rough guide.
 **Why:** the owner asked for a side view of top posts to show whether opinion is positive, negative or neutral. Embeds show the real posts without copying them.
 
+### 57. Search X by the short name people actually write
+**Decision:** the per-listing X search adds the model's short name (cut at size and variant tags, versions kept) to the full name and Hugging Face address. Derivatives, fine-tunes and bare brand names get no short name. Listings that found nothing before are retried first with the new query.
+**Why:** the first live run (18 listings, 123 reads) found nothing for 8 well-known models, such as "Llama 4 Scout 17B-16E Instruct", because people write "Llama 4 Scout". The owner approved the fix. Keeping versions and refusing derivatives stops posts about one model being credited to another.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

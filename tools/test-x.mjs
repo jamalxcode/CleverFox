@@ -1,6 +1,6 @@
 // Offline tests for X monitoring: no network, X is stubbed. Usage: node tools/test-x.mjs
 import assert from 'node:assert/strict';
-import { isPraise, isCritical, tone, linksIn, queryFor, summarizeBuzz, run, RULES } from './x.mjs';
+import { isPraise, isCritical, tone, linksIn, queryFor, shortName, summarizeBuzz, run, RULES } from './x.mjs';
 for (const t of ['so disappointing', 'it hallucinates a lot', 'overhyped tbh', 'doesn\'t work on my mac', '太失望了', 'ruim demais']) assert.equal(tone(t), 'critical', t);
 assert.equal(tone('not bad at all'), 'general'); assert.equal(tone('amazing but buggy'), 'general'); assert.equal(tone('released v2 today'), 'general');
 
@@ -15,6 +15,28 @@ assert.deepEqual(linksIn(['https://huggingface.co/Qwen/Qwen3-14B', 'https://hugg
 // queries
 assert.equal(queryFor({ type: 'model', name: 'DeepSeek-R1', distributions: [{ source: 'huggingface', native_id: 'deepseek-ai/DeepSeek-R1' }] }), '("DeepSeek-R1" OR url:"huggingface.co/deepseek-ai/DeepSeek-R1") -is:retweet');
 assert.equal(queryFor({ type: 'model', name: 'phi', distributions: [] }), null);
+// Short names: what people write on X
+const sn = (name, extra = {}) => shortName({ type: 'model', name, relations: [], ...extra });
+assert.equal(sn('Llama 4 Scout 17B-16E Instruct'), 'Llama 4 Scout');
+assert.equal(sn('Falcon-H1-7B-Instruct'), 'Falcon H1');
+assert.equal(sn('Mistral Small 4 (119B, 2603)'), null); // already short once the brackets go
+assert.equal(sn('EXAONE 4.5 33B'), 'EXAONE 4.5');
+assert.equal(sn('Gemma 4 12B IT'), 'Gemma 4');
+assert.equal(sn('gpt-oss-20b'), 'gpt oss');
+assert.equal(sn('Nemotron-SEA-LION-v4.8-30B-A3B'), 'Nemotron SEA LION v4.8');
+assert.equal(sn('DeepSeek-V4.1-Flash'), null); // versions stay: already short
+assert.equal(sn('Qwen3.8-27B'), 'Qwen3.8');
+assert.equal(sn('Qwen3-Swallow-8B-RL v0.2'), 'Qwen3 Swallow');
+assert.equal(sn('InkubaLM-0.4B'), null);
+assert.equal(sn('Qwen3.8-27B-Longbook27-v2'), null); // a fine-tune, not Qwen3.8 itself
+assert.equal(sn('Sarvam-30B'), null); // bare brand
+assert.equal(sn('Jais-3-7B'), 'Jais 3');
+assert.equal(sn('Kimi K3'), null);
+assert.equal(sn('Phi-4'), null);
+assert.equal(sn('Qwen3.8-27B-Heretic-Abliterated-Uncensored-GGUF'), null); // derivative
+assert.equal(sn('Some-Model-7B', { relations: [{ type: 'finetune_of', target: 'x' }] }), null);
+assert.equal(queryFor({ type: 'model', name: 'Llama 4 Scout 17B-16E Instruct', relations: [], distributions: [{ source: 'huggingface', native_id: 'meta-llama/Llama-4-Scout-17B-16E-Instruct' }] }),
+  '("Llama 4 Scout 17B-16E Instruct" OR "Llama 4 Scout" OR url:"huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct") -is:retweet');
 assert.equal(queryFor({ type: 'app', name: 'Claude', access: {} }), '("Claude" (AI OR app)) -is:retweet');
 
 // validation rule
