@@ -274,6 +274,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** the build applies `data/corrections.json` (hide, merge, keep, each with a reason), hides imported datasets without a real dataset card (two of license, task, size, paper, language, own summary; 100+ likes pass), and groups format re-uploads and declared quantizations under the listed original as "other versions". Fine-tunes, adapters and uncensored versions stay separate. Grouped and hidden listings are recorded in `catalog.json`, and their old pages redirect or explain. First run: 18 grouped, 59 hidden.
 **Why:** test and spam repos with bot downloads (`wegrthj/e94fjt-qi9l-raw` and the like) and FP8/GGUF copies made the catalog look careless. The spec already says a quantization isn't a new model. Uncensored versions stay because the owner asked for them to be included.
 
+### 60. Re-check access source pages daily; warn, never auto-edit
+**Decision:** a daily step fingerprints the visible text of each access fact's source page. A change after the facts were observed puts a "pricing page changed" warning on the listing; a page that's gone (404/410 twice) is flagged; facts older than 180 days are marked old. Nothing is rewritten automatically.
+**Why:** payment and country facts were hand-researched and nothing re-checked them, so they would go stale silently. Detecting change is cheap and reliable; reading the new facts correctly isn't, and the rule is never to invent metadata. Bot walls are ignored so big help centers don't produce false alarms.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

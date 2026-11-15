@@ -176,3 +176,5 @@ table.hw td:nth-child(-n+3) { white-space: nowrap; }
 .tonebar { display: flex; height: 8px; border-radius: 4px; background: var(--unk-bg); overflow: hidden; margin: 2px 0 6px; }
 .tonebar .t-pos { background: var(--ok); } .tonebar .t-crit { background: var(--no); }
 @media (max-width: 900px) { .listing-grid { grid-template-columns: minmax(0, 1fr); } .xside { position: static; max-height: none; } }
+.warn-ln { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 4px 8px; }
+.warn-ln a { color: inherit; }

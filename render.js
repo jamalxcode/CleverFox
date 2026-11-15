@@ -126,6 +126,8 @@ export function cardBadges(r) {
     b.push(badge(cs.map(flag).join(' ') || 'Data centers'));
   }
   const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) b.push(badge(`🔁 +${nv} version${nv > 1 ? 's' : ''}`));
+  if (r.access_check?.changed?.length) b.push(`<span class="badge b-warn" title="A pricing, payment or availability page changed after these facts were checked">⚠️ Pricing page changed</span>`);
+  else if (r.access_check?.stale) b.push(badge('⏳ Access facts are old', 'b-warn'));
   if (r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
   return b.join('');
 }
@@ -264,6 +266,7 @@ export function detail(r) {
   } else if (r.type !== 'dataset') {
     h += accessFacts(r.access);
   }
+  h += accessCheckLine(r);
   const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
   const mid = (t, n = 52) => t.length <= n ? t : `${t.slice(0, Math.ceil(n * 0.45))}…${t.slice(-Math.floor(n * 0.5))}`;
   const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(u)}">${esc(mid(short(u)))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
@@ -366,4 +369,18 @@ export function xPanel(r) {
     <p class="ln muted">❤️ ${fmtK(b.total_likes ?? b.likes)} likes · checked ${esc(fmtDate(b.observed_at))}${b.praised ? ' · 📣 praised by several accounts' : ''}</p>
     ${group('⭐ Most liked', uniq(b.top?.all))}${group('👍 Positive', uniq(b.top?.positive))}${group('👎 Critical', uniq(b.top?.critical))}${group('💬 General', uniq(b.top?.general))}
     <p class="muted src">Tone is sorted by simple word rules, so treat it as a rough guide. ${live}</p></aside>`;
+}
+
+// How fresh the access facts are, and whether their source pages changed or broke since (tools/recheck.mjs).
+export function accessCheckLine(r) {
+  const c = r.access_check;
+  if (!c) return '';
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+  const parts = [];
+  if (c.facts_checked_at) parts.push(item('🗓️', `access facts checked ${esc(fmtDate(c.facts_checked_at))}${c.stale ? ' <strong>(over 6 months ago: check the official page)</strong>' : ''}`));
+  if (c.checked_at) parts.push(item('🔄', `source pages re-checked ${esc(fmtDate(c.checked_at))}`));
+  let h = line(parts);
+  if (c.changed?.length) h += `<p class="ln warn-ln">⚠️ ${c.changed.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')} changed on ${esc(fmtDate(c.changed[0].changed_at))}, after these facts were checked: prices, payments or countries may be out of date.</p>`;
+  if (c.broken?.length) h += `<p class="ln warn-ln">🔗 Source link${c.broken.length > 1 ? 's' : ''} not loading: ${c.broken.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')}</p>`;
+  return h;
 }

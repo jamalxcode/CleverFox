@@ -370,6 +370,23 @@ let xMatched = 0;
 for (const r of published) { const b = XDATA.buzz?.[r.id]; if (b) { r.x_buzz = b; xMatched++; } }
 if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
 
+// ---- re-check of access source pages (tools/recheck.mjs) and the age of access facts ----
+const { accessCheck } = await import('./recheck.mjs');
+const RECHECK = existsSync(join(importDir, 'recheck.json')) ? JSON.parse(readFileSync(join(importDir, 'recheck.json'), 'utf8')) : null;
+const ACCESS_STALE_DAYS = 180;
+let recheckChanged = 0;
+for (const r of published) {
+  const accs = r.access ? [r.access] : (r.distributions || []).map((d) => d.access).filter(Boolean);
+  if (!accs.length) continue;
+  const dates = accs.flatMap((a) => Object.values(a)).filter((c) => c && typeof c === 'object' && c.source_url && c.observed_at).map((c) => c.observed_at).sort();
+  const chk = accessCheck(r, RECHECK) || {};
+  if (dates.length) chk.facts_checked_at = dates[0];
+  if (dates.length && (Date.now() - new Date(dates[0])) / 86400000 > ACCESS_STALE_DAYS) chk.stale = true;
+  if (chk.changed?.length) recheckChanged++;
+  if (Object.keys(chk).length) r.access_check = chk;
+}
+if (RECHECK) console.log(`Access re-check: ${recheckChanged} listings have source pages that changed after their facts were checked`);
+
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
