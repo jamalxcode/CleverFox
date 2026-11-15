@@ -14,7 +14,7 @@ Read `docs/SPECIFICATION.md` (the spec, including user journeys and competitors)
 
 ## Current state
 
-A **seed prototype** (hand-researched apps, hosting and some models) plus a daily **bulk importer** (Hugging Face models and datasets, Ollama library), **independent benchmarks** (Epoch AI) and **Wikidata publisher countries** feed a static site: four tabs (models, datasets, apps, hosting), country and device pickers, filters, answers to what people ask (good for, local, platforms, hardware, free, payments, benchmarks, barriers, uncensored), and a shareable page per listing. About 1,100 listings; a dated snapshot is in `data/snapshots/`. X monitoring is not built yet (spec section 20). Open items are in spec section 19. Don't present them as decided.
+A **seed prototype** (hand-researched apps, hosting and some models) plus a daily **bulk importer** (Hugging Face models and datasets, Ollama library), **independent benchmarks** (Epoch AI) and **Wikidata publisher countries** feed a static site: four tabs (models, datasets, apps, hosting), country and device pickers, filters, answers to what people ask (good for, local, platforms, hardware, free, payments, benchmarks, barriers, uncensored), and a shareable page per listing. About 1,100 listings; a dated snapshot is in `data/snapshots/`. X monitoring is built and waits for the `X_BEARER_TOKEN` secret (spec section 9). Open items are in spec section 19. Don't present them as decided.
 
 ## Commands
 
@@ -22,7 +22,7 @@ Node 22, no dependencies.
 
 ```sh
 NODE_USE_ENV_PROXY=1 node tools/import.mjs [--quick]  # import from Hugging Face + Ollama into data/imported/ (the env var only matters behind a proxy)
-npm test            # node tools/build.mjs --check: validate seed + imported records against the schema rules
+npm test            # X monitoring tests, then node tools/build.mjs --check: validate seed + imported records against the schema rules
 node tools/benchmarks.mjs  # independent benchmarks into data/imported/benchmarks.json (Epoch AI; Artificial Analysis if AA_API_KEY is set)
 npm run build       # validate and write data/meta.json, data/{models,datasets,apps,hosts}.json, data/catalog.json, listing pages under l/ and sitemap.xml
 npm run serve       # python3 -m http.server 8000, then open http://localhost:8000
@@ -39,6 +39,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `data/snapshots/<date>/`: frozen copies of the data collected (catalog, imports, benchmarks), for the record; not used by the build. Add a new dated folder when asked to save the data.
 - `data/publisher-map.json` (hand-made: Hugging Face account -> organisation; organisations only) and `data/publishers.json` (generated from Wikidata by `tools/publishers.mjs` via the manual "Publishers" workflow; review changes before relying on them).
 - `tools/benchmarks.mjs`: independent benchmarks (Epoch AI's own data, CC BY 4.0; Artificial Analysis if `AA_API_KEY` is set) into `data/imported/benchmarks.json`, matched to listings by name in the build. Credit the source wherever scores show.
+- `tools/x.mjs`: X monitoring (needs the `X_BEARER_TOKEN` secret; skipped without it). Announcements and per-listing posts within the `X_MONTHLY_READS` budget, tone by word rules, into `data/imported/x.json` (links and counts only, never post text) and `x-state.json` (budget and cursor). Tested offline by `tools/test-x.mjs` (part of `npm test`). The build attaches `x_buzz` to listings; listing pages show the "What people say on X" panel.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
 - `.github/workflows/pages.yml`: on push, restores imports and deploys. Daily, it also re-imports first and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.
 - `tools/build.mjs`: the validator and catalog builder. It enforces vocabularies, claim provenance, ISO country codes, identity tests and access blocks, and derives `no_card_needed`.

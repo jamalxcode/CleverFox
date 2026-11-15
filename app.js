@@ -39,6 +39,7 @@ function filterDefs(type) {
     { key: 'nobar', toggle: '🕊️ No barriers' },
     { key: 'uncensored', toggle: 'Uncensored / abliterated' },
     { key: 'bench', toggle: '📊 Has benchmarks' },
+    { key: 'xp', toggle: '📣 Praised on X' },
   ];
   if (type === 'dataset') return [
     { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
@@ -46,6 +47,7 @@ function filterDefs(type) {
     { key: 'size', label: 'Any size', opts: options(recs.map((r) => r.size_category)) },
     { key: 'nobar', toggle: '🕊️ No barriers' },
     { key: 'nogate', toggle: 'No sign-in gate' },
+    { key: 'xp', toggle: '📣 Praised on X' },
   ];
   if (type === 'app') return [
     { key: 'cat', label: 'Any category', opts: options(recs.flatMap((r) => r.categories || []), (c) => c[0].toUpperCase() + c.slice(1)) },
@@ -53,6 +55,7 @@ function filterDefs(type) {
     { key: 'free', toggle: '🆓 Free or free tier' },
     { key: 'nocard', toggle: '💳 Usable without a card' },
     { key: 'here', toggle: 'Available in my country', needsCountry: true },
+    { key: 'xp', toggle: '📣 Praised on X' },
   ];
   return [
     { key: 'dc', label: 'Data center anywhere', opts: [['__mine', 'In my country'], ...options(recs.flatMap((r) => Array.isArray(r.data_centers?.value) ? r.data_centers.value.map((d) => d.country) : []), countryName)] },
@@ -91,6 +94,7 @@ function matches(r) {
   }
   if (state.cap && state.type !== 'host' && !(r.answers?.good_for || []).includes(state.cap)) return false;
   if (f.nobar && !r.answers?.no_barriers) return false;
+  if (f.xp && !r.answers?.x_praised) return false;
   const hasMethod = (m) => recordAccesses(r).some((a) => methodsOf(a).some((x) => x.method === m));
   if (r.type === 'model') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;

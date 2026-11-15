@@ -197,7 +197,7 @@ CleverFox takes no reports from people directly. It reads what people already po
 - **Feedback:** for each listing, the scanner reads replies and quotes on X first, then Reddit, forums, app-store reviews and news. It looks for access and payment experiences ("paid with UPI, works", "blocked in Nigeria", "M-Pesa refused"), problems and scam warnings.
 - Each finding becomes a `web_reported` claim linked to the public post, with its date. They're shown separately from official facts and never override them. Posts are linked, not copied: CleverFox shows a short fixed sentence built from the fact, never quotes personal details, and respects each platform's terms.
 - **Accepted by agreement or authority:** a feedback claim shows once several independent accounts report the same thing within the freshness window (thresholds in section 19), or one authoritative source does (the service's official account, a news report, a security advisory). Contradicting claims are shown side by side. Claims go stale after 30 days unless repeated.
-- How posts are read (keyword rules, AI classification or both) and the budget for X reads are open decisions (section 19).
+- **Built (decisions 55 and 56):** posts are read with multilingual keyword rules within a monthly read budget; announcements linking to Hugging Face or Ollama can bring in new models; listings get positive/critical/general counts, a "Praised on X" badge, and a side panel of the most-liked posts on their page. Access and payment feedback claims and scam warnings from posts are not built yet.
 
 ## 10. Warnings
 
@@ -333,7 +333,7 @@ Built and live:
 - a shareable page per listing, with X reactions.
 
 Next:
-1. **X monitoring** (section 9): search for announcements in many languages, then read replies and quotes for feedback. Needs an X API bearer token as a repo secret and a read budget.
+1. **Switch on X monitoring** (built, section 9): add the `X_BEARER_TOKEN` secret (an X API plan with recent search) and optionally the `X_MONTHLY_READS` variable. Then: access and payment feedback claims and scam warnings from posts.
 2. **Artificial Analysis** benchmarks: add the free `AA_API_KEY` secret.
 3. **More directories that link out:** ModelScope, Kaggle, GitHub releases, API model lists (provider docs, aggregators), and app directories for the web AI app list.
 4. **More publisher countries:** extend `data/publisher-map.json`.

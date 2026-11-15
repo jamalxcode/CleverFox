@@ -165,3 +165,14 @@ table.hw td:nth-child(-n+3) { white-space: nowrap; }
 .pick-hint { margin: 8px 0 0; font-size: .88rem; color: var(--muted); max-width: 70ch; }
 .card.best { border-color: var(--ok); box-shadow: 0 0 0 1px var(--ok) inset; }
 .card.best .card-head h2::after { content: " ⭐"; font-size: .85em; }
+
+/* listing page: details + "What people say on X" side panel */
+.listing-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+.xside { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.xside h2 { font-size: 1.05rem; margin: 0 0 8px; }
+.xside h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 14px 0 4px; }
+.xside .twitter-tweet { margin: 6px 0 !important; }
+.xside blockquote.twitter-tweet { border-left: 3px solid var(--line); padding: 4px 8px; font-size: .88rem; }
+.tonebar { display: flex; height: 8px; border-radius: 4px; background: var(--unk-bg); overflow: hidden; margin: 2px 0 6px; }
+.tonebar .t-pos { background: var(--ok); } .tonebar .t-crit { background: var(--no); }
+@media (max-width: 900px) { .listing-grid { grid-template-columns: minmax(0, 1fr); } .xside { position: static; max-height: none; } }

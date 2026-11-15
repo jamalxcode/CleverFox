@@ -12,6 +12,20 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: X monitoring and "What people say on X"
+**Where:** Claude Code session.
+**Asked:**
+- X scanning should look for new model announcements, praise and validation through likes and reposts, and good words in general about models, datasets, apps and hosting.
+- When a listing is shown, a side view with the top-liked posts that mention it, to give an idea of whether people on X are positive, negative or neutral about it.
+
+**Outcome:**
+- `tools/x.mjs` (tested offline by `tools/test-x.mjs`): an announcement search for posts linking to Hugging Face or the Ollama library, and a rotating, budgeted search per listing. Posts are sorted by simple multilingual word rules into positive, critical and general. Only links, authors and like counts are stored, never post text.
+- "Praised on X" (validation): at least 3 positive posts from 3 accounts with 100+ likes between them. Badge and filter on every tab.
+- New Hugging Face models announced on X (25+ likes) are imported even below the download floor, still subject to the usual checks, and marked "🆕 spotted on X".
+- Listing pages gained a side panel: counts, a tone bar and the top posts per tone, shown with X's own embeds. Until the `X_BEARER_TOKEN` secret is added it says nothing is collected yet and links to the live X search.
+- Long links now shorten in the middle, so similar names (…-Instruct, …-Instruct-FP8) stay distinguishable.
+- Decisions 55 and 56.
+
 ## 2026-11-15: personalised highlighting; X monitoring started
 **Where:** Claude Code session.
 **Asked:**
@@ -21,7 +35,7 @@ Entry format:
 **Outcome:**
 - A hint under the pickers.
 - Suitable listings sorted first with ⭐ and a green outline (DECISIONS 54).
-- X monitoring: see its own entry.
+- X monitoring: see the entry above.
 
 ## 2026-11-14: saving everything to the repo
 **Where:** Claude Code session.

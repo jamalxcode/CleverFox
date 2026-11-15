@@ -184,6 +184,16 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10a. X monitoring (`tools/x.mjs`)
+
+- Runs daily before the import, only if `X_BEARER_TOKEN` is set. Budget: `X_MONTHLY_READS` (default 10,000) per calendar month; each day spends at most remaining ÷ days left.
+- **Announcements:** one search, `(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply`, size between 10 and 100 posts, at most a third of the day's budget. Up to 300 kept.
+- **New models from X:** a Hugging Face model linked by an announcement with 25+ likes is imported even below the download floor, if it has a supported task and isn't a quantizer re-upload. Marked `discovered_via` (🆕 spotted on X).
+- **Per listing:** up to 10 posts per listing, listings in a rotating order (seed first, then by popularity), resuming where the last run stopped. Query: the quoted name (plus the Hugging Face address); generic names need extra context or are skipped. No retweets.
+- **Tone:** positive if it has a praise word or emoji and no negation; critical if it has a criticism word or emoji; otherwise general. Multilingual lists in `tools/x.mjs`.
+- **Praised on X:** 3+ positive posts, from 3+ accounts, with 100+ likes between them.
+- **Kept:** post URL, author handle, likes, reposts, date, language and tone; never the text. Top 3 per group (most liked, positive, critical, general). Buzz older than 30 days is dropped. On failure the last data is kept.
+
 ## 11. The site
 
 - **Built around the questions people ask:**

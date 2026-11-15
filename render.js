@@ -90,6 +90,7 @@ export function cardBadges(r) {
     else b.push(badge(`🖥️ ${r.hardware.recommended_gb || need} GB+ recommended`));
   }
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
+  if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
   const eci = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci'); const aai = (r.independent_benchmarks || []).find((x) => x.id === 'aa_intelligence');
   if (eci) b.push(`<span class="badge b-ok" title="Epoch Capabilities Index (Epoch AI)">🧠 ECI ${esc(eci.display)}</span>`);
@@ -228,6 +229,7 @@ export function glance(r) {
       langs.length && item('🗣️', langs.length > 4 ? `${langs.length} languages` : esc(langs.map(langName).join(', ')), langs.map(langName).join(', ')),
     ]);
   }
+  h += xLine(r);
   if (a.uncensored || a.barriers?.length) h += line([a.uncensored && item('✂️', '<strong>uncensored</strong>', 'Abliterated or uncensored variant: refusals removed by its publisher'), ...(a.barriers || []).map((x) => item('🚧', esc(x)))]);
   return h + '</div>';
 }
@@ -251,6 +253,7 @@ export function detail(r) {
     const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
     facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); return `${esc(REL[x.type] || x.type || 'related to')} ${/^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(t.replace('https://huggingface.co/', ''))}</a>` : esc(t.split('/').pop() || '?')}`; }).join('; ')));
   }
+  if (r.discovered_via?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(r.discovered_via.created_at))} <a href="${esc(r.discovered_via.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${r.discovered_via.author}`));
   h += line(facts);
   if (unknown.length) h += `<p class="ln muted">❓ Unknown: ${esc(unknown.join(', '))}</p>`;
   // Where to get it, payment, links: compact lines.
@@ -261,7 +264,8 @@ export function detail(r) {
     h += accessFacts(r.access);
   }
   const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
-  const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(short(u).slice(0, 48))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
+  const mid = (t, n = 52) => t.length <= n ? t : `${t.slice(0, Math.ceil(n * 0.45))}…${t.slice(-Math.floor(n * 0.5))}`;
+  const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(u)}">${esc(mid(short(u)))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
   h += line([item('🔗', linkList(links, 3)), r.documentation_urls?.length && item('🛠️', linkList(r.documentation_urls, 3)), r.paper_urls?.length && item('📄', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · '))]);
   h += `<p class="ln src">${r.verification_status === 'verified' ? '✅ Verified at an official source' : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
@@ -335,4 +339,29 @@ export function wireShare(root) {
       try { await navigator.share({ title: box.dataset.title, text: box.dataset.text, url: box.dataset.url }); } catch { /* cancelled */ }
     }
   });
+}
+
+// ---- what people say on X ----
+const fmtK = (n) => n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}K` : String(n || 0);
+export function xLine(r) {
+  const b = r.x_buzz;
+  if (!b) return '';
+  return line([item('📣', `<strong>On X:</strong> 👍 ${b.positive ?? b.praise_posts ?? 0} · 👎 ${b.critical ?? 0} · 💬 ${b.general ?? 0} <span class="muted">of ${b.posts} recent posts · ❤️ ${fmtK(b.total_likes ?? b.likes)} · checked ${esc(fmtDate(b.observed_at))}</span>`), `<span class="it"><a href="${esc(view.base + listingPath(r))}#x">see the posts →</a></span>`]);
+}
+// Side panel for a listing's own page: top posts by tone, shown with X's own embeds (links only stored).
+export function xPanel(r) {
+  const b = r.x_buzz;
+  const live = `<a href="${esc(xSearchUrl(r))}" rel="noopener" target="_blank">👀 Latest posts on X ↗</a>`;
+  if (!b || !b.posts) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">No posts collected yet. X scanning collects the most-liked posts about each listing once it's switched on.</p><p>${live}</p></aside>`;
+  const embed = (p) => `<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="${esc(p.url)}">Post by @${esc(p.author)} · ❤️ ${fmtK(p.likes)} · ${esc(fmtDate(p.created_at))}</a></blockquote>`;
+  const group = (title, list) => list?.length ? `<h3>${title}</h3>${list.map(embed).join('')}` : '';
+  const total = Math.max(1, b.posts);
+  const bar = `<div class="tonebar" title="${b.positive} positive, ${b.critical} critical, ${b.general} general"><span class="t-pos" style="width:${(100 * (b.positive || 0) / total).toFixed(0)}%"></span><span class="t-crit" style="width:${(100 * (b.critical || 0) / total).toFixed(0)}%"></span></div>`;
+  const shown = new Set();
+  const uniq = (list) => (list || []).filter((p) => !shown.has(p.url) && shown.add(p.url));
+  return `<aside class="xside" id="x"><h2>What people say on X</h2>
+    <p class="ln">👍 <strong>${b.positive || 0}</strong> positive · 👎 <strong>${b.critical || 0}</strong> critical · 💬 <strong>${b.general || 0}</strong> general <span class="muted">of ${b.posts} recent posts</span></p>${bar}
+    <p class="ln muted">❤️ ${fmtK(b.total_likes ?? b.likes)} likes · checked ${esc(fmtDate(b.observed_at))}${b.praised ? ' · 📣 praised by several accounts' : ''}</p>
+    ${group('⭐ Most liked', uniq(b.top?.all))}${group('👍 Positive', uniq(b.top?.positive))}${group('👎 Critical', uniq(b.top?.critical))}${group('💬 General', uniq(b.top?.general))}
+    <p class="muted src">Tone is sorted by simple word rules, so treat it as a rough guide. ${live}</p></aside>`;
 }

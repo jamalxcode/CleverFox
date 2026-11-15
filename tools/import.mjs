@@ -442,6 +442,18 @@ function keepOrWrite(file, records, label) {
   return records.length;
 }
 
+// Announcement posts from tools/x.mjs: Hugging Face id -> the most-liked post linking it, if it has
+// at least the minimum engagement (data/imported/x.json).
+function xAnnouncements(kind) {
+  const p = join(outDir, 'x.json'); const out = new Map();
+  if (!existsSync(p)) return out;
+  for (const a of JSON.parse(readFileSync(p, 'utf8')).announcements || []) {
+    if ((a.likes || 0) < 25) continue;
+    for (const id of a.links?.[kind] || []) if (!out.has(id) || out.get(id).likes < a.likes) out.set(id, { source: 'x', url: a.url, author: a.author, likes: a.likes, created_at: a.created_at });
+  }
+  return out;
+}
+
 // Publisher names and countries from data/publishers.json (Wikidata, reviewed).
 const PUBLISHERS = existsSync(join(root, 'data', 'publishers.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publishers.json'), 'utf8')).publishers || {} : {};
 function applyPublisher(r) {
@@ -461,10 +473,19 @@ async function main() {
   try {
     const raw = await fetchModels();
     // Plain quantized copies are skipped; an abliterated / uncensored package is a different model, so it stays.
+    // Models announced on X (tools/x.mjs) with real engagement: confirmed on Hugging Face first.
+    const xAnn = xAnnouncements('models');
+    const have = new Set(raw.map((m) => m.id));
+    for (const [id, post] of xAnn) {
+      if (have.has(id)) { raw.find((m) => m.id === id).discovered_via = post; continue; }
+      const m = await get(`${HF}/api/models/${id}?${MODEL_EXPAND}`, { headers: HF_HEADERS, tries: 2 }).catch(() => null);
+      if (m?.id && TASKS.includes(m.pipeline_tag) && !QUANTIZERS.test(m.author || '')) { m.discovered_via = post; raw.push(m); have.add(m.id); }
+    }
+    if (xAnn.size) console.log(`X announcements: ${xAnn.size} linked models checked`);
     const kept = raw.filter((m) => !isQuantization(m) || isUncensored(m.id, m.tags));
     console.log(`Hugging Face models: ${raw.length} fetched, ${kept.length} after skipping quantized copies (${kept.filter((m) => isUncensored(m.id, m.tags)).length} uncensored)`);
     const readmes = await pool(kept.slice(0, RULES.readmes), 6, (m) => get(`${HF}/${m.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null));
-    models = kept.map((m, i) => modelRecord(m, readmes[i]));
+    models = kept.map((m, i) => { const r = modelRecord(m, readmes[i]); if (m.discovered_via) r.discovered_via = m.discovered_via; return r; });
   } catch (e) { console.warn(`Hugging Face models failed: ${e.message}`); }
   try { ollama = await fetchOllama(); console.log(`Ollama library: ${ollama.length} model families`); } catch (e) { console.warn(`Ollama failed: ${e.message}`); }
   try {

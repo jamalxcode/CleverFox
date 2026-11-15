@@ -254,6 +254,14 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** a hint under the pickers explains that choosing your device memory and country makes CleverFox put first, and highlight with ⭐, the models that fit your machine and the apps and services available in your country that accept a payment you can make (or are free). Unknowns aren't highlighted; misfits go last.
 **Why:** the owner asked to explain the pickers this way. Doing it, not only saying it, makes the pickers worth using.
 
+### 55. X monitoring by keyword rules, within a monthly read budget
+**Decision:** X is read with the official API (recent search, bearer token in the `X_BEARER_TOKEN` secret). Each daily run spends its share of a monthly budget (`X_MONTHLY_READS`, default 10,000): up to a third on an announcement search for posts linking to Hugging Face or the Ollama library, the rest on a rotating batch of listings, most popular first. Tone (positive, critical, general) comes from multilingual word and emoji lists with a negation guard, not AI. A listing counts as "praised on X" with at least 3 positive posts from 3 different accounts and 100+ likes between them. Announcements with 25+ likes let a new Hugging Face model in below the download floor, through the usual checks. Only post links, authors and counts are stored; buzz older than 30 days is dropped. Without a token the step is skipped and nothing changes.
+**Why:** the owner wants announcements, praise and validation through likes and reposts from X. Word rules are cheap, testable and need no AI, which matches the decision to review by other parameters. Likes from several accounts, not one viral post, are what validation means. Storing no text respects X's terms.
+
+### 56. "What people say on X" side panel on listing pages
+**Decision:** each listing page has a side panel (stacked under the details on phones) with positive/critical/general counts, a tone bar, likes, and the most-liked posts overall and per tone, shown as X's own embedded posts (the X script loads only on pages that have posts). The main list shows a one-line summary with a link to the panel. The panel says tone is a rough guide.
+**Why:** the owner asked for a side view of top posts to show whether opinion is positive, negative or neutral. Embeds show the real posts without copying them.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

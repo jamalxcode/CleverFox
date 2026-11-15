@@ -87,7 +87,7 @@ function noCardNeeded(a) {
 const importDir = join(root, 'data', 'imported');
 const sourceFiles = [
   ...readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(seedDir, f)),
-  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => f.endsWith('.json') && f !== 'benchmarks.json').sort().map((f) => join(importDir, f)) : []),
+  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => ['models.json', 'datasets.json'].includes(f)).sort().map((f) => join(importDir, f)) : []),
 ];
 const records = sourceFiles.flatMap((f) => {
   const data = JSON.parse(readFileSync(f, 'utf8'));
@@ -227,6 +227,7 @@ function answers(r) {
     pay_without_card: access ? (Array.isArray(access.payment_methods?.value) ? access.payment_methods.value.some((m) => !['card_international', 'card_local'].includes(m.method)) : null) : null,
     benchmarks: bench,
     independent: (r.independent_benchmarks || []).length,
+    x_praised: !!r.x_buzz?.praised,
   };
 }
 // ---- hardware estimates (spec section 12; rough, labeled as estimates) ----
@@ -306,6 +307,13 @@ for (const r of published) {
 }
 if (BENCH.models && Object.keys(BENCH.models).length) console.log(`Independent benchmarks matched for ${benchMatched} models`);
 
+// ---- what people say on X (tools/x.mjs): praise, criticism and top posts, by listing id ----
+const xFile = join(importDir, 'x.json');
+const XDATA = existsSync(xFile) ? JSON.parse(readFileSync(xFile, 'utf8')) : { buzz: {} };
+let xMatched = 0;
+for (const r of published) { const b = XDATA.buzz?.[r.id]; if (b) { r.x_buzz = b; xMatched++; } }
+if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
+
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
 const counts = Object.fromEntries(VOCAB.type.map((t) => [t, published.filter((r) => r.type === t).length]));
@@ -382,6 +390,7 @@ async function writeListingPages(records, countryList) {
   <div class="wrap"><p class="tagline"><a href="${base}#${r.type}">← All ${R.esc({ model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' }[r.type])}</a></p></div>
 </header>
 <main class="wrap listing">
+  <div class="listing-grid">
   <article class="card card-page">
     <div class="card-head"><h1>${R.esc(r.name)}</h1><span class="pub">${R.esc(pub)}${region}</span></div>
     <p class="desc">${R.esc(r.description)}</p>
@@ -389,11 +398,14 @@ async function writeListingPages(records, countryList) {
     <div class="badges">${R.cardBadges(r)}</div>
     ${R.detail(r)}
   </article>
+  ${R.xPanel(r)}
+  </div>
 </main>
 <footer class="wrap foot">
   <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${r.independent_benchmarks?.length ? ` · Benchmarks: ${[...new Set(r.independent_benchmarks.map((x) => x.source))].map((s) => s === 'Epoch AI' ? '<a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0)' : '<a href="https://artificialanalysis.ai/">Artificial Analysis</a>').join(', ')}` : ''} · <a href="${base}">CleverFox</a></p>
 </footer>
 <script type="module">import { wireShare } from '${base}render.js?v=${build}'; wireShare(document);</script>
+${r.x_buzz?.posts ? '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' : ''}
 ${GOATCOUNTER}
 </body>
 </html>
