@@ -52,7 +52,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
   - GitHub releases with the workflow token;
   - Hugging Face new releases.
 - [x] Make "Fetch pages for verification" finish reliably: hard stops at 45 seconds per page and 38 minutes overall. The 16 November run finished, with 395 pages for the remaining 40.
-- [ ] Review the remaining 40 listings against those pages (under way).
+- [x] Review the remaining 40 listings against those pages: 26 more verified, so 82 of 96 are now verified.
 - [ ] Freshness: add discovery (Hugging Face new, llm-releases, GitHub) to the footer's "Last refreshed" line.
 - [ ] Decide whether quick scans should run more often than 3 times a day (each run rebuilds the site; X reads stay within the same daily share).
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
@@ -69,12 +69,24 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
   - not found: Microsoft Copilot, uLesson, Hailuo AI, Qwen Chat, Kanana. Kanana was reported shut down in October 2026; confirm it and mark it withdrawn;
   - Qwen Chat's publisher ("Nth Power…") looks odd.
 - [ ] **Facts not found on their source pages:** the automatic page check lists 15 (7 partly found, 8 not found). Re-check them by hand.
-- [ ] **Unverified listings:** 40 of 96 apps and hosts are still unverified after the 16 November review (decision 67). Reasons:
-  - **pages that only render with JavaScript, or block bots:** ChatGPT, Dicta, Botnoi, BHASHINI, Gemini API, Sahabat-AI, Yuanbao, Kling's plans, Qwen, Sarvam Indus, Vultr (403), HUMAIN (403), Karnak Chat, BelMasry;
-  - **free status or payment not stated** on the official pages;
-  - **card payment named without brands,** applied strictly by one group: Liner, Jarvislabs, Latitude.sh, Cerebras.
+- [ ] **Unverified listings:** 14 of 96 after the two reviews of 16 November (decisions 67 and 69). What blocks each:
+  - **Sites refuse automated visitors** (they stay unverified; don't get around it):
+    - ChatGPT: help pages return 403, so Pix, UPI, Korean payments and local prices can't be confirmed;
+    - HUMAIN Chat: 403;
+    - Vultr: 403 on marketing pages, so its regions and some GPUs are unconfirmed;
+    - K2 Think: MBZUAI's pages return 403;
+    - Akamai: its locations page returns 403, so its US region is unconfirmed;
+    - Tencent Yuanbao: a "change your browser" page.
+  - **No readable page at all:** Karnak Chat, BelMasry.
+  - **Facts not on the readable pages:**
+    - Z.ai Chat: free status;
+    - Kimi: free plan, and "chat";
+    - Botnoi Voice: PromptPay and cards, since the FAQ answer isn't in the page text;
+    - DeepSeek API: payment methods, for the same reason;
+    - Hyperbolic: crypto, whose blog post returned HTTP 500.
+  - **May be discontinued:** Kanana, now apparently part of KakaoTalk; decide whether to mark it withdrawn.
 
-  Under way (16 November): a re-fetch with honest headless rendering and store listings (decision 69), then a review of all 40 under decision 67's card rule. Sites that refuse bots stay unverified.
+  Options: confirm these facts from another official page, mark facts unknown when official pages are clearly silent, or leave them unverified.
 - [ ] **Listings that may have changed** (found in the review):
   - Kanana seems folded into KakaoTalk;
   - Locally AI is now "by LM Studio" (Element Labs), so the publisher needs updating;

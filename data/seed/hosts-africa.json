@@ -25,7 +25,7 @@
    "https://servercore.com/services/cloud-hosting/",
    "https://servercore.com/solutions/ai-and-ml/"
   ],
-  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Kenya pages say billing is in KES with payment by M-Pesa or bank transfer (healthcare and services pages); cloud GPU page says you pay in local currency or bonus credits from an account balance, charged hourly. GPU list: cloud GPU page names RTX A5000, A100, RTX PRO 6000 and an H200 row with KES prices (about KES 136.40/h A5000 to 1,355.83/h H200); the Kenya dedicated GPU page names H100, RTX 6000 Ada, A100, RTX 4090. The cloud GPU page says the VM location depends on the configuration chosen, and a Servercore post says H200 servers are only planned (Central Asia), so which GPUs are in Nairobi specifically is not confirmed. Servercore also runs data centres in Kazakhstan and Uzbekistan (not listed here because GPU availability there was not checked). Company registration/HQ not found, so publisher and provider region left unknown. No free tier found. Card payments mentioned only in a blog post, so not listed. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 12 quoted confirmations; not found on the pages: access.free (no free tier or trial stated; pages only mention free traffic and free migration). Payment by M-Pesa or bank transfer in KES, Nairobi Tier III site and all GPU models confirmed. Only the free status is unstated. Servercore also has zones in Almaty and Tashkent; not added because GPU availability there is not stated.",
+  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Kenya pages say billing is in KES with payment by M-Pesa or bank transfer (healthcare and services pages); cloud GPU page says you pay in local currency or bonus credits from an account balance, charged hourly. GPU list: cloud GPU page names RTX A5000, A100, RTX PRO 6000 and an H200 row with KES prices (about KES 136.40/h A5000 to 1,355.83/h H200); the Kenya dedicated GPU page names H100, RTX 6000 Ada, A100, RTX 4090. The cloud GPU page says the VM location depends on the configuration chosen, and a Servercore post says H200 servers are only planned (Central Asia), so which GPUs are in Nairobi specifically is not confirmed. Servercore also runs data centres in Kazakhstan and Uzbekistan (not listed here because GPU availability there was not checked). Company registration/HQ not found, so publisher and provider region left unknown. No free tier found. Card payments mentioned only in a blog post, so not listed. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 12 quoted confirmations; not found on the pages: access.free (no free tier or trial stated; pages only mention free traffic and free migration). Payment by M-Pesa or bank transfer in KES, Nairobi Tier III site and all GPU models confirmed. Only the free status is unstated. Servercore also has zones in Almaty and Tashkent; not added because GPU availability there is not stated. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 15 quoted confirmations, corrected or added: data_residency. All stated facts confirmed again (free status was already set to unknown). The Kenya Data Protection Act wording came from a blog post that wasn't fetched, so data_residency was reworded to the healthcare page's statement.",
   "provider_region": {
    "value": "unknown",
    "source_url": null,
@@ -64,8 +64,8 @@
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
-   "value": "Kenyan data hosted in the Nairobi data centre; Servercore markets this for Kenya Data Protection Act compliance. Which GPU models run in Nairobi is not stated.",
-   "source_url": "https://servercore.com/blog/articles/kenya-data-protection-act-data-residency/",
+   "value": "Kenyan data hosted in the Nairobi Tier III data centre (\"Your data stays in Kenya\"). Which GPU models run in Nairobi is not stated.",
+   "source_url": "https://servercore.com/solutions/healthcare/",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
@@ -118,11 +118,12 @@
     "observed_at": "2026-11-15T00:00:00Z"
    }
   },
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
-  "relations": []
+  "relations": [],
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,

@@ -102,10 +102,10 @@
   "description": "Ethiopian voice and chat assistant that speaks and writes Amharic and Afan Oromo, with translation, document summaries and image generation; free app.",
   "publisher": "Addis AI Technologies PLC",
   "publisher_region": {
-   "value": "ET",
-   "source_url": "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap",
-   "source_type": "third_party",
-   "observed_at": "2026-11-15T00:00:00Z"
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-16T00:00:00Z"
   },
   "official_urls": [
    "https://addisassistant.com/"
@@ -121,12 +121,12 @@
    "https://addisassistant.com/pricing",
    "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App features and languages (Amharic, Afan Oromo) from App Store and Google Play snippets; App Store developer shows as Omer Saeday with copyright Addis AI Technologies PLC. Free limit from the publisher blog snippet (old). Premium is bought in the app per the blog, but no source names the payment route (store billing vs Telebirr etc.), so payment_methods left unknown. The separate developer API (addisassistant.com/pricing: pay-as-you-go, free signup credit, no card required) is not covered by this record. Publisher region ET from Shega (Ethiopian tech news) describing an Ethiopian founding team; PLC is an Ethiopian company form. Watch for look-alike apps (e.g. \"Amharic AI\" by another developer). Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 9 quoted confirmations, corrected or added: access.free, access.free_limits, description, interface_languages; not found on the pages: publisher_region (ET). Store pages show a free app with no in-app purchases, so free_tier/in-app premium is corrected to free (the blog source is 404). The publisher_region source (Shega) is about a different app (Ras), and the official site gives addresses in both Switzerland and Ethiopia, so the region stays unconfirmed.",
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App features and languages (Amharic, Afan Oromo) from App Store and Google Play snippets; App Store developer shows as Omer Saeday with copyright Addis AI Technologies PLC. Free limit from the publisher blog snippet (old). Premium is bought in the app per the blog, but no source names the payment route (store billing vs Telebirr etc.), so payment_methods left unknown. The separate developer API (addisassistant.com/pricing: pay-as-you-go, free signup credit, no card required) is not covered by this record. Publisher region ET from Shega (Ethiopian tech news) describing an Ethiopian founding team; PLC is an Ethiopian company form. Watch for look-alike apps (e.g. \"Amharic AI\" by another developer). Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 9 quoted confirmations, corrected or added: access.free, access.free_limits, description, interface_languages; not found on the pages: publisher_region (ET). Store pages show a free app with no in-app purchases, so free_tier/in-app premium is corrected to free (the blog source is 404). The publisher_region source (Shega) is about a different app (Ras), and the official site gives addresses in both Switzerland and Ethiopia, so the region stays unconfirmed. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 12 quoted confirmations, corrected or added: publisher_region. Publisher region ET now rests on the official terms (Ethiopian governing law, arbitration seat Addis Ababa) instead of the Shega article; the contact address is in Orpund, Switzerland and the Google Play developer address says Ethiopia, so a reviewer may prefer unknown if dual bases matter. All other facts confirmed from the store listings and pricing page. Review 2026-11-16: publisher region set to unknown: terms governed by Ethiopian law, contact address in Switzerland.",
   "url": "https://addisassistant.com/",
   "app_store_urls": [
    "https://apps.apple.com/us/app/addis-ai/id6748835704",
@@ -184,7 +184,8 @@
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -372,13 +373,13 @@
   "id": "cf:app:ulesson/ulesson",
   "type": "app",
   "name": "uLesson",
-  "description": "Nigerian learning app for secondary-school students with video lessons, tests and AI homework help, priced in naira and payable by bank transfer.",
+  "description": "Learning app from Nigeria for primary and secondary-school students with video lessons, quizzes, mock exams and AI homework help, priced in naira and payable by card or bank transfer.",
   "publisher": "uLesson Education Limited",
   "publisher_region": {
-   "value": "NG",
-   "source_url": "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
-   "source_type": "official",
-   "observed_at": "2026-11-15T00:00:00Z"
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-16T00:00:00Z"
   },
   "official_urls": [
    "https://ulesson.com/"
@@ -393,12 +394,12 @@
    "https://ulesson.com/terms",
    "https://play.google.com/store/apps/details?id=com.ulesson"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). AI angle: Play listing describes instant personalised homework help; terms say the \"Ask by uLesson\" chat uses GPT. Category set to chat because there is no education category in the vocabulary. Prices from the ulesson.com/subscription snippet; payment methods from the FAQ snippet, which is several years old and may be outdated. Older pages also mention Flutterwave (card or USSD) and scratch cards: not confirmed as current, so not listed. Publisher region NG inferred from the FAQ (Nigerian bank accounts and +234 support line), not from a stated registered address. Free status unknown (no free plan or trial confirmed). Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods; not found on the pages: publisher_region. FAQ (dated 2024 footer) shows a limited free tier and different naira prices from the record (quarterly NGN 20,000, annual NGN 50,000); it also lists Ghana mobile money, scratch cards and Flutterwave USSD. Publisher region NG is not stated: the Google Play developer address is ULESSON EDUCATION TECHNOLOGY LIMITED in London, UK; ulesson.com pages other than the FAQ are JavaScript shells.",
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). AI angle: Play listing describes instant personalised homework help; terms say the \"Ask by uLesson\" chat uses GPT. Category set to chat because there is no education category in the vocabulary. Prices from the ulesson.com/subscription snippet; payment methods from the FAQ snippet, which is several years old and may be outdated. Older pages also mention Flutterwave (card or USSD) and scratch cards: not confirmed as current, so not listed. Publisher region NG inferred from the FAQ (Nigerian bank accounts and +234 support line), not from a stated registered address. Free status unknown (no free plan or trial confirmed). Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods; not found on the pages: publisher_region. FAQ (dated 2024 footer) shows a limited free tier and different naira prices from the record (quarterly NGN 20,000, annual NGN 50,000); it also lists Ghana mobile money, scratch cards and Flutterwave USSD. Publisher region NG is not stated: the Google Play developer address is ULESSON EDUCATION TECHNOLOGY LIMITED in London, UK; ulesson.com pages other than the FAQ are JavaScript shells. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 30 quoted confirmations, corrected or added: description, access.payment_methods. Description widened to primary school (Play listing). Debit/credit card for all users added as card_international (decision 67) beside the naira card, plus Google Play in-app purchases. Publisher region NG rests on the terms (Nigerian law) and Nigerian bank accounts; the Play developer address is in London. Review 2026-11-16: publisher region set to unknown: terms governed by Nigerian law, Google Play developer address in London.",
   "url": "https://ulesson.com/",
   "app_store_urls": [
    "https://play.google.com/store/apps/details?id=com.ulesson"
@@ -424,12 +425,16 @@
    "payment_methods": {
     "value": [
      {
-      "method": "bank_transfer",
-      "note": "Users resident in Nigeria and Ghana; subscription activates once the transfer clears"
+      "method": "card_international",
+      "note": "Debit or credit card on the website or the Google Play app (all users); card brands not named"
      },
      {
       "method": "card_local",
-      "note": "Debit or credit card on the website or the Google Play app (all users); naira card; card brands not named"
+      "note": "Naira card"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "Users resident in Nigeria and Ghana; subscription activates once the transfer clears"
      },
      {
       "method": "mobile_money",
@@ -442,6 +447,10 @@
      {
       "method": "other",
       "note": "USSD through Flutterwave"
+     },
+     {
+      "method": "app_store_billing",
+      "note": "In-app purchases in the Google Play app"
      }
     ],
     "source_url": "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
@@ -472,19 +481,20 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:app:dicta/dicta",
   "type": "app",
   "name": "Dicta",
-  "description": "Free Hebrew AI tools from the non-profit Dicta: automatic nikud (vowel marking) with Nakdan, text analysis, and Rav Dicta, an AI chat on rabbinic literature.",
+  "description": "Hebrew AI tools from the non-profit Dicta: automatic nikud (vowel marking) with Nakdan, Hebrew-English translation, text analysis, and Iluy (formerly Rav Dicta) for Torah questions with sources.",
   "publisher": "Dicta",
   "publisher_region": {
-   "value": "IL",
-   "source_url": "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf",
-   "source_type": "official",
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "official_urls": [
@@ -503,17 +513,18 @@
    "https://rav.dicta.org.il/",
    "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status and non-profit description from the dicta.org.il English homepage snippet; Nakdan versions (fast, professional, simple) and Rav Dicta from their own pages. Interface languages: site has Hebrew pages and an English version (?lang=en). No Hebrew-English translation product was found. Publisher region IL: inferred from the DictaLM 3.0 report describing \"Hebrew sovereign LLMs\" and the .org.il domain, not from a stated address. Whether an account is needed was not found. Verification review 2026-11-16: compared with the official pages fetched that day (0 pages); 0 quoted confirmations; not found on the pages: description, publisher_region, categories, interface_languages, access.free, access.free_limits. All Dicta pages came back as JavaScript shells with only a title; the technical report is a PDF that wasn't read.",
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status and non-profit description from the dicta.org.il English homepage snippet; Nakdan versions (fast, professional, simple) and Rav Dicta from their own pages. Interface languages: site has Hebrew pages and an English version (?lang=en). No Hebrew-English translation product was found. Publisher region IL: inferred from the DictaLM 3.0 report describing \"Hebrew sovereign LLMs\" and the .org.il domain, not from a stated address. Whether an account is needed was not found. Verification review 2026-11-16: compared with the official pages fetched that day (0 pages); 0 quoted confirmations; not found on the pages: description, publisher_region, categories, interface_languages, access.free, access.free_limits. All Dicta pages came back as JavaScript shells with only a title; the technical report is a PDF that wasn't read. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 13 quoted confirmations, corrected or added: description, categories, publisher_region, access.free, access.free_limits. Pages now render: tools, Nakdan, Iluy and the Hebrew/English switch are confirmed; Rav Dicta has been upgraded to Iluy and a translator was added. No page states that the tools are free or gives an address (the /pricing and /plans URLs show the plain home page, the report is an unread PDF), so free status and publisher region were set to unknown.",
   "url": "https://dicta.org.il/",
   "app_store_urls": [],
   "categories": [
    "writing",
-   "chat"
+   "chat",
+   "translation"
   ],
   "interface_languages": {
    "value": [
@@ -527,12 +538,12 @@
   "models_used": [],
   "access": {
    "free": {
-    "value": "free",
-    "source_url": "https://dicta.org.il/?lang=en",
-    "source_type": "official",
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Site says Dicta provides its products at no charge; Nakdan pages describe the tools as free. No limits stated.",
+   "free_limits": null,
    "payment_methods": {
     "value": "unknown",
     "source_url": null,
@@ -563,14 +574,15 @@
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:app:mbzuai/k2-think",
   "type": "app",
   "name": "K2 Think",
-  "description": "Free reasoning chat app from Abu Dhabi university MBZUAI, running its open K2 Think models, on the web and iPhone (App Store now names it K2 Horizon).",
+  "description": "Free reasoning chat app from MBZUAI (Mohamed bin Zayed University of Artificial Intelligence), on the web and iPhone; the App Store now names it K2 Horizon.",
   "publisher": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
   "publisher_region": {
    "value": "AE",
@@ -595,14 +607,13 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App details from the App Store listing snippet (developer MBZUAI). The same App Store ID now appears as \"K2 Horizon\"; an unrelated older \"K2 Think\" app (id6695742843, 18+, by another developer) exists, so check the developer. Web chat at k2think.ai per MBZUAI news snippet. Publisher region AE: MBZUAI is the Abu Dhabi AI university (launch release with G42). Not a local-language app as such; included as a MENA-built free assistant. Arabic support of the app not confirmed. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 6 quoted confirmations, corrected or added: access.signup_requirements, interface_languages; not found on the pages: publisher_region (AE), description (web version, open K2 Think models), categories (research). k2think.ai and both MBZUAI pages returned 403. The App Store listing mentions sign-in with your own account or Google only (not Apple), so sign-up requirements are corrected.",
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App details from the App Store listing snippet (developer MBZUAI). The same App Store ID now appears as \"K2 Horizon\"; an unrelated older \"K2 Think\" app (id6695742843, 18+, by another developer) exists, so check the developer. Web chat at k2think.ai per MBZUAI news snippet. Publisher region AE: MBZUAI is the Abu Dhabi AI university (launch release with G42). Not a local-language app as such; included as a MENA-built free assistant. Arabic support of the app not confirmed. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 6 quoted confirmations, corrected or added: access.signup_requirements, interface_languages; not found on the pages: publisher_region (AE), description (web version, open K2 Think models), categories (research). k2think.ai and both MBZUAI pages returned 403. The App Store listing mentions sign-in with your own account or Google only (not Apple), so sign-up requirements are corrected. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 12 quoted confirmations, corrected or added: description, categories; not found on the pages: publisher_region (AE): the MBZUAI pages and k2think.ai home returned 403; the App Store listing and k2think.ai terms name MBZUAI but not its location. Description trimmed to what the pages state (dropped \"Abu Dhabi\" and \"open K2 Think models\"); categories reduced to chat (no research claim on the pages). The web app also offers \"Continue as Guest\", so the sign-in requirement applies to the iPhone app.",
   "url": "https://www.k2think.ai/",
   "app_store_urls": [
    "https://apps.apple.com/us/app/k2-think/id6744862356"
   ],
   "categories": [
-   "chat",
-   "research"
+   "chat"
   ],
   "interface_languages": {
    "value": [
@@ -863,12 +874,12 @@
    "https://api.ivira.ai/partai/avanegar",
    "https://cafebazaar.ir/app/ai.ivira.app"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). All from ivira.ai snippets (Persian). The web guide says buying a subscription or topping up the wallet sends you to a bank gateway (dargah-e banki), which in Iran takes local Shetab bank cards; listed as card_local. Whether Cafe Bazaar in-app billing is offered in the Android app was not confirmed. Local-currency pricing from the Avanegar speech-to-text page (prices in toman); subscription amounts were blank in the snippet. Publisher region IR inferred from toman pricing, the Iranian bank gateway and the \"no VPN needed\" pitch to Iranian users, not from a stated address; company legal name not found. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 12 quoted confirmations, corrected or added: publisher_region, access.local_currency_pricing, access.signup_requirements, access.free_limits; not found on the pages: access.payment_methods. Free tier, Persian interface, toman pricing and wallet confirmed; publisher_region IR re-sourced to the homepage (developed by Iranian engineers, servers in Iran) because the Avanegar page is a JavaScript shell. Payment is only described as a 'bank gateway' (درگاه بانکی) for wallet top-ups; cards are never named, so card_local stays unconfirmed (a gift code can also top up the wallet).",
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). All from ivira.ai snippets (Persian). The web guide says buying a subscription or topping up the wallet sends you to a bank gateway (dargah-e banki), which in Iran takes local Shetab bank cards; listed as card_local. Whether Cafe Bazaar in-app billing is offered in the Android app was not confirmed. Local-currency pricing from the Avanegar speech-to-text page (prices in toman); subscription amounts were blank in the snippet. Publisher region IR inferred from toman pricing, the Iranian bank gateway and the \"no VPN needed\" pitch to Iranian users, not from a stated address; company legal name not found. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 12 quoted confirmations, corrected or added: publisher_region, access.local_currency_pricing, access.signup_requirements, access.free_limits; not found on the pages: access.payment_methods. Free tier, Persian interface, toman pricing and wallet confirmed; publisher_region IR re-sourced to the homepage (developed by Iranian engineers, servers in Iran) because the Avanegar page is a JavaScript shell. Payment is only described as a 'bank gateway' (درگاه بانکی) for wallet top-ups; cards are never named, so card_local stays unconfirmed (a gift code can also top up the wallet). Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 22 quoted confirmations, corrected or added: access.payment_methods. card_local replaced: the pages only say \"bank gateway\" (درگاه بانکی) without naming cards, so it is now \"other\" with that wording; Cafe Bazaar in-app payment added from the store listing. All other facts confirmed on ivira.ai, the subscription page and the Cafe Bazaar listing.",
   "url": "https://ivira.ai/",
   "app_store_urls": [
    "https://cafebazaar.ir/app/ai.ivira.app"
@@ -898,8 +909,12 @@
    "payment_methods": {
     "value": [
      {
-      "method": "card_local",
-      "note": "Iranian bank card through an online bank payment gateway, for subscriptions and wallet top-ups"
+      "method": "other",
+      "note": "Online bank payment gateway (درگاه بانکی) for subscriptions and wallet top-ups on the web; accepted cards not named"
+     },
+     {
+      "method": "app_store_billing",
+      "note": "In-app payment in the Cafe Bazaar Android app"
      }
     ],
     "source_url": "https://ivira.ai/blog/vira-web-service-guide/",
@@ -930,7 +945,8 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,

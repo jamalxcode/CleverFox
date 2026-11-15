@@ -987,12 +987,12 @@
    "https://shakticloud.ai/shakti-bare-metal",
    "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Navi Mumbai (NM1) location comes from a third-party source. Third parties say capacity is sold via enterprise agreements, while NVIDIA's case study mentions a self-service portal, so self-serve access is unclear. Payment methods, trial, signup rules, residency statement and HQ not found. Weakest record; consider dropping if not re-verified. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: publisher_region, provider_region, gpu_types, access.local_currency_pricing, access.prices; not found on the pages: access.free (unknown), data_centers provider_region_code NM1. The earlier source (?p=2249) is now 404. The official bare-metal page lists rupee prices (on their own lines: '₹ 428.00', '₹ 238.00', '₹ 473' per GPU-hour, monthly term). They're now the official source for local pricing, and L40S was added. Region set to India from the official site; the company also lists a Greater Noida data center.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Navi Mumbai (NM1) location comes from a third-party source. Third parties say capacity is sold via enterprise agreements, while NVIDIA's case study mentions a self-service portal, so self-serve access is unclear. Payment methods, trial, signup rules, residency statement and HQ not found. Weakest record; consider dropping if not re-verified. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: publisher_region, provider_region, gpu_types, access.local_currency_pricing, access.prices; not found on the pages: access.free (unknown), data_centers provider_region_code NM1. The earlier source (?p=2249) is now 404. The official bare-metal page lists rupee prices (on their own lines: '₹ 428.00', '₹ 238.00', '₹ 473' per GPU-hour, monthly term). They're now the official source for local pricing, and L40S was added. Region set to India from the official site; the company also lists a Greater Noida data center. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 13 quoted confirmations, corrected or added: data_centers, data_residency. Data centers re-sourced to the official site (Navi Mumbai and Greater Noida; the NM1 code was third-party only, now null) and data residency added. Prices, GPUs and India region confirmed on the bare-metal page.",
   "provider_region": {
    "value": "IN",
    "source_url": "https://shakticloud.ai/",
@@ -1008,12 +1008,17 @@
     {
      "country": "IN",
      "city_or_region": "Navi Mumbai",
-     "provider_region_code": "NM1"
+     "provider_region_code": null
+    },
+    {
+     "country": "IN",
+     "city_or_region": "Greater Noida",
+     "provider_region_code": null
     }
    ],
-   "source_url": "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/",
-   "source_type": "third_party",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "source_url": "https://shakticloud.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "gpu_types": {
    "value": [
@@ -1026,10 +1031,10 @@
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "Yotta says Shakti Cloud is built and hosted entirely in India for data residency and compliance with local regulations.",
+   "source_url": "https://shakticloud.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "launch_url": "https://shakticloud.ai/",
   "access": {
@@ -1102,7 +1107,8 @@
      "observed_at": "2026-11-15T00:00:00Z"
     }
    ]
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -1127,12 +1133,12 @@
    "https://www.core42.ai/ai-cloud",
    "https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Data center city and region codes not found; only 'UAE-based data centers' (joint e& offering). B200 price is 'on request'; on-demand hourly rates, payment methods, signup rules and country availability not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 8 quoted confirmations, corrected or added: gpu_types, access.prices; not found on the pages: access.free (not stated). GPU list confirmed and extended (H100, GB300 added); \"from\" hourly USD prices added; UAE data residency confirmed. No free tier, payment methods, sign-up rules or HQ stated.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Data center city and region codes not found; only 'UAE-based data centers' (joint e& offering). B200 price is 'on request'; on-demand hourly rates, payment methods, signup rules and country availability not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 8 quoted confirmations, corrected or added: gpu_types, access.prices; not found on the pages: access.free (not stated). GPU list confirmed and extended (H100, GB300 added); \"from\" hourly USD prices added; UAE data residency confirmed. No free tier, payment methods, sign-up rules or HQ stated. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 12 quoted confirmations. Every stated fact is confirmed (free status, region and payment were already unknown).",
   "provider_region": {
    "value": "unknown",
    "source_url": null,
@@ -1250,7 +1256,8 @@
      "observed_at": "2026-11-15T00:00:00Z"
     }
    ]
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,

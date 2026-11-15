@@ -12,18 +12,29 @@ Entry format:
 **Open:** ...
 ```
 
-## 2026-11-16: verifying the remaining 40 (in progress)
+## 2026-11-16: verifying the remaining 40
 **Where:** Claude Code session.
-**Asked:** verify the remaining 40 unverified apps and hosts; then update the repo with the design decisions and the chat.
-**Outcome so far (decision 69):**
-- **The fetch now also reads** store listings and common pricing, plans, FAQ and terms pages, and renders JavaScript-only pages in a headless browser.
-- **A first version was refused.** It disguised itself as Chrome, and the session's safety check rejected it as getting around access controls. The tool now always identifies itself, and sites that refuse automated visitors stay unverified.
-- **Two rendering runs hit the 50-minute limit** and saved nothing: some pages hang without ever finishing. Now each page has a hard stop at 45 seconds, and the run saves and exits at 38 minutes.
-- **The third run succeeded:** 395 pages for the 40 listings, 256 readable, 83 of them rendered. Only Karnak Chat and BelMasry have no readable page.
-- **Review under way:** three reviewers cover the other 38. Rules: generic "credit card" counts; facts the readable pages clearly don't state may be set to unknown; already-unknown facts don't block verification. Quotes will be checked by `tools/apply-verification.mjs`.
-- **New TODO section** at the owner's request: scheduled fetching (cron), with how it's done, every source by run type, and what's left.
+**Asked:**
+- verify the remaining 40 unverified apps and hosts;
+- update the repo with the design decisions and the chat (twice);
+- add a TODO on scheduled (cron) fetching: how it's done and its sources.
 
-**Open:** listings whose sites block bots (for example ChatGPT, Vultr, HUMAIN) will stay unverified unless their facts can be confirmed on their store listings.
+**Outcome:**
+- **The page fetch** now reads store listings and pricing, plans, FAQ and terms pages, and renders JavaScript pages in a headless browser that always identifies itself (decision 69).
+- **A first version was refused.** It disguised itself as Chrome, and the session's safety check rejected it; sites that refuse bots stay unverified.
+- **Two runs hit the 50-minute limit** because some pages never finish loading. Hard stops fixed it: 45 seconds per page, and save and exit at 38 minutes.
+- **The third run fetched 395 pages** (256 readable, 83 rendered).
+- **The review:** three reviewers covered 38 listings under decision 67's rules. 26 more verified, 73 corrections, 0 quotes rejected. **82 of 96 apps and hosts are now verified.**
+- **Corrections included:**
+  - Kling's terms name only Stripe, so its payment methods became unknown; its plans now show $0 Basic and the paid tiers' prices.
+  - The Gemini API gains Google's 230-country availability list.
+  - Perplexity, Liner and Cerebras dropped payment methods their current pages don't state.
+  - Rav Dicta is now Iluy.
+  - Jais Chat's publisher is now MBZUAI.
+  - Addis AI's and uLesson's countries became unknown, because their governing law and address disagree.
+- **New TODO section:** scheduled fetching (cron), with how it works, every source by run type, and what's left.
+
+**Open:** 14 still unverified, listed in TODO.md with what blocks each.
 
 ## 2026-11-16: tracking new releases on llm-releases.com, Hugging Face and GitHub
 **Where:** Claude Code session.

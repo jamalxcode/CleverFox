@@ -213,7 +213,7 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. A direct re-check was attempted later the same day: help.openai.com and openai.com returned HTTP 403 (bot block), so nothing could be confirmed. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations; not found on the pages: access.payment_methods (all 7 methods), access.free_limits, access.local_currency_pricing, description (voice, file analysis), categories (writing). All four help.openai.com pages returned 403; only the chatgpt.com shell was readable, which shows a free sign-up and paid plans but nothing on payment methods or local pricing.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. A direct re-check was attempted later the same day: help.openai.com and openai.com returned HTTP 403 (bot block), so nothing could be confirmed. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations; not found on the pages: access.payment_methods (all 7 methods), access.free_limits, access.local_currency_pricing, description (voice, file analysis), categories (writing). All four help.openai.com pages returned 403; only the chatgpt.com shell was readable, which shows a free sign-up and paid plans but nothing on payment methods or local pricing. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 15 quoted confirmations, corrected or added: access.free_limits, access.signup_requirements; not found on the pages: access.payment_methods pix, upi, other (Kakao Pay/Naver Pay), card_local, bank_transfer, app_store_billing (help.openai.com payment article returned 403), access.local_currency_pricing, categories: writing, description: writing. The pricing page FAQ names only \"any major credit card\"; the help.openai.com articles that are the source for the other six methods and local-currency billing all returned 403, so those stay unconfirmed rather than removed. free_limits rewritten from the pricing page (ads are stated for Go, not Free); sign-up options added.",
   "url": "https://chatgpt.com",
   "app_store_urls": [],
   "categories": [
@@ -235,7 +235,7 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    },
-   "free_limits": "Everyday text chat unlimited subject to abuse safeguards; file uploads, image generation, voice, data analysis and other tools have separate limits; ads may appear in some countries.",
+   "free_limits": "Unlimited text chats subject to abuse guardrails; limited messages with uploads, image creation, voice chats, deep research, memory and context, and Codex access. The pricing page mentions ads for the Go plan, not for Free.",
    "payment_methods": {
     "value": [
      {
@@ -284,10 +284,10 @@
     "observed_at": "2026-11-14T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": "Log in or sign up with email, a phone number, Google, Microsoft or Apple; logging in is needed to save chats, create images and upload files",
+    "source_url": "https://chatgpt.com",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
     "value": true,
@@ -694,7 +694,7 @@
   "id": "cf:app:perplexity/perplexity",
   "type": "app",
   "name": "Perplexity",
-  "description": "AI answer engine that searches the web and replies with cited sources, with free and Pro plans.",
+  "description": "AI answer engine that searches the web and gives answers from trusted sources, with a free Standard plan and paid Pro and Max plans.",
   "publisher": "Perplexity AI",
   "publisher_region": {
    "value": "unknown",
@@ -713,12 +713,12 @@
    "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
    "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Payment methods from a search snippet of Perplexity's own help article on Stripe billing (cards, Cash App, Google and Apple Pay, ACH, PayPal). A free plan clearly exists per third-party sources (limited Pro searches per day, figures conflict: 3 vs 5) but the official plan article's text was not visible, so free left unknown. No official country list found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations, corrected or added: access.free, access.free_limits; not found on the pages: access.payment_methods (Stripe billing article returned 404; the plan article only says a credit or debit card is needed for trials, no brands, PayPal, Cash App or ACH), description: searches the web and replies with cited sources (home page is a JavaScript shell), categories: chat. Free Standard tier confirmed from the official plan article and corrected from unknown; the cited Stripe billing article is gone (404), so the payment methods stay unconfirmed. The plan article also mentions App Store and Google Play subscriptions.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Payment methods from a search snippet of Perplexity's own help article on Stripe billing (cards, Cash App, Google and Apple Pay, ACH, PayPal). A free plan clearly exists per third-party sources (limited Pro searches per day, figures conflict: 3 vs 5) but the official plan article's text was not visible, so free left unknown. No official country list found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations, corrected or added: access.free, access.free_limits; not found on the pages: access.payment_methods (Stripe billing article returned 404; the plan article only says a credit or debit card is needed for trials, no brands, PayPal, Cash App or ACH), description: searches the web and replies with cited sources (home page is a JavaScript shell), categories: chat. Free Standard tier confirmed from the official plan article and corrected from unknown; the cited Stripe billing article is gone (404), so the payment methods stay unconfirmed. The plan article also mentions App Store and Google Play subscriptions. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 10 quoted confirmations, corrected or added: description, access.payment_methods. The cited Stripe billing article is gone (404), so PayPal, Apple/Google Pay, Cash App and ACH could not be confirmed and were dropped; the plan article states credit or debit cards and App Store / Google Play subscriptions. Description reworded to what the home page and plan article say (no 'cited sources').",
   "url": "https://www.perplexity.ai",
   "app_store_urls": [],
   "categories": [
@@ -744,24 +744,16 @@
     "value": [
      {
       "method": "card_international",
-      "note": "Via Stripe checkout on the web"
+      "note": "credit or debit card (brands not named)"
      },
      {
-      "method": "paypal",
-      "note": null
-     },
-     {
-      "method": "other",
-      "note": "Apple Pay, Google Pay, Cash App"
-     },
-     {
-      "method": "bank_transfer",
-      "note": "ACH (US)"
+      "method": "app_store_billing",
+      "note": "subscriptions through the Apple App Store and Google Play"
      }
     ],
-    "source_url": "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
+    "source_url": "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -787,7 +779,8 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,

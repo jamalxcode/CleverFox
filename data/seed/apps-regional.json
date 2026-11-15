@@ -117,12 +117,12 @@
    "https://qwen.ai/download",
    "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms say availability is not guaranteed in any jurisdiction and features vary by region; no country list found. Plus/Pro prices not found. Terms name Nth Power Global Tech Singapore Pte. Ltd. as operator; privacy policy names Alibaba Cloud (Singapore) as processor/host, so the publisher region is SG, not CN. This is the international product; the mainland China Qianwen app is separate and not covered. 'Stripe' implies card payments but the terms excerpt did not list card brands: listed as other (Stripe) rather than guessing card types. Download page lists App Store and Google Play but the store URLs were not exposed. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 2 quoted confirmations; not found on the pages: url (chat.qwen.ai served only an app-download shell), publisher_region, categories, access.free, access.free_limits, access.payment_methods, access.signup_requirements. qwen.ai pages (qwenchat, download, terms, privacy) came back empty (4 characters) and chat.qwen.ai only showed an app-download prompt, so the operator, free tier, Stripe/app-store payments and age rule could not be checked; only the Plus/Pro subscriptions are confirmed (Qwen Code docs). The 'other (Stripe)' payment entry should be dropped in any case, since a processor isn't a payment method. 2026-11-16: removed the Stripe entry (a card processor, not a payment method).",
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms say availability is not guaranteed in any jurisdiction and features vary by region; no country list found. Plus/Pro prices not found. Terms name Nth Power Global Tech Singapore Pte. Ltd. as operator; privacy policy names Alibaba Cloud (Singapore) as processor/host, so the publisher region is SG, not CN. This is the international product; the mainland China Qianwen app is separate and not covered. 'Stripe' implies card payments but the terms excerpt did not list card brands: listed as other (Stripe) rather than guessing card types. Download page lists App Store and Google Play but the store URLs were not exposed. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 2 quoted confirmations; not found on the pages: url (chat.qwen.ai served only an app-download shell), publisher_region, categories, access.free, access.free_limits, access.payment_methods, access.signup_requirements. qwen.ai pages (qwenchat, download, terms, privacy) came back empty (4 characters) and chat.qwen.ai only showed an app-download prompt, so the operator, free tier, Stripe/app-store payments and age rule could not be checked; only the Plus/Pro subscriptions are confirmed (Qwen Code docs). The 'other (Stripe)' payment entry should be dropped in any case, since a processor isn't a payment method. 2026-11-16: removed the Stripe entry (a card processor, not a payment method). Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 15 quoted confirmations, corrected or added: access.payment_methods. qwen.ai pages now render: operator (Nth Power Global Tech Singapore Pte. Ltd.), free use, 18+ rule and in-app payments confirmed; the terms also mention accepting credit and debit cards for web payments (through Stripe), so card was added. Terms say availability isn't guaranteed in any jurisdiction.",
   "url": "https://chat.qwen.ai/",
   "app_store_urls": [],
   "categories": [
@@ -150,11 +150,15 @@
      {
       "method": "app_store_billing",
       "note": "In-app payments through Apple and Google"
+     },
+     {
+      "method": "card_international",
+      "note": "credit and debit cards for web payments (brands not named)"
      }
     ],
     "source_url": "https://qwen.ai/termsservice",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -180,14 +184,15 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:app:moonshot-ai/kimi",
   "type": "app",
   "name": "Kimi",
-  "description": "Chat and agent assistant from Moonshot AI with a free plan and paid memberships, sold in yuan in China and dollars elsewhere.",
+  "description": "AI assistant and agent from Moonshot AI (Beijing) with Deep Research, documents, slides, website building and coding (Kimi Code); paid memberships, priced in yuan on the China help pages.",
   "publisher": "Beijing Moonshot Technology Co., Ltd. (Moonshot AI)",
   "publisher_region": {
    "value": "CN",
@@ -217,13 +222,13 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Prices: China help page lists CNY plans (e.g., Go 49 CNY/month to Ultra 1,399 CNY/month), a Spanish (es-419) help page lists USD plans (Moderato $19 to Vivace $199/month); plan names differ between pages. local_currency_pricing=true means CNY pricing for China, not per-country currencies. Card payments via 'authorized third-party payment processors' are mentioned but no card brands, so card_international not listed. Google Play listing confirmed only via the privacy text. The login-methods source is the Kimi Claw privacy notice; web login options not confirmed. Privacy policy says data is stored in mainland China. No country list found. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 6 quoted confirmations; not found on the pages: access.free, access.free_limits, description (dollar pricing outside China), categories. Payment methods, publisher and sign-up confirmed, but the free 'Adagio' plan and dollar prices weren't found: the pricing source URL now redirects to a resources index and the help pages only show China (yuan) plans.",
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Prices: China help page lists CNY plans (e.g., Go 49 CNY/month to Ultra 1,399 CNY/month), a Spanish (es-419) help page lists USD plans (Moderato $19 to Vivace $199/month); plan names differ between pages. local_currency_pricing=true means CNY pricing for China, not per-country currencies. Card payments via 'authorized third-party payment processors' are mentioned but no card brands, so card_international not listed. Google Play listing confirmed only via the privacy text. The login-methods source is the Kimi Claw privacy notice; web login options not confirmed. Privacy policy says data is stored in mainland China. No country list found. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 6 quoted confirmations; not found on the pages: access.free, access.free_limits, description (dollar pricing outside China), categories. Payment methods, publisher and sign-up confirmed, but the free 'Adagio' plan and dollar prices weren't found: the pricing source URL now redirects to a resources index and the help pages only show China (yuan) plans. Verification review 2026-11-16: compared with the official pages fetched that day (7 pages); 19 quoted confirmations, corrected or added: description, categories, access.free_limits, access.payment_methods; not found on the pages: access.free (free_tier): no free plan or free allowance on the fetched pages (only that an expired membership reverts to an ordinary account), categories: chat (kimi.com home is a JavaScript shell; help pages describe agents, documents, research and code but never say chat). Dollar pricing and the free \"Adagio\" plan are not on any fetched page (the es-419 pricing page shows the same yuan plans), so the description and free limits were rewritten; \"search\" replaced by \"research\" (Deep Research). Added card payment from the \"bank cards\" line per decision 67.",
   "url": "https://www.kimi.com/",
   "app_store_urls": [],
   "categories": [
    "chat",
    "coding",
-   "search",
+   "research",
    "writing"
   ],
   "interface_languages": {
@@ -240,29 +245,33 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    },
-   "free_limits": "Free 'Adagio' plan at $0; paid plans share one credit pool deducted by token usage. Exact free allowance not found.",
+   "free_limits": "Free allowance not stated on the fetched pages. Memberships (Go ¥49 to Ultra ¥1,399 a month in China) share one credit pool deducted by actual token use; when a membership ends the account reverts to an ordinary account.",
    "payment_methods": {
     "value": [
      {
       "method": "alipay",
-      "note": "Named for membership auto-renewal"
+      "note": "Alipay auto-debit for memberships"
      },
      {
       "method": "wechat_pay",
-      "note": "Named for membership auto-renewal"
+      "note": "WeChat password-free payment for memberships"
+     },
+     {
+      "method": "card_international",
+      "note": "Bank cards mentioned in the payment help; brands not named"
      },
      {
       "method": "app_store_billing",
-      "note": "Apple and Google Play subscriptions follow the store's terms"
+      "note": "Apple App Store and Google Play subscriptions follow the store's terms"
      },
      {
       "method": "bank_transfer",
       "note": "Corporate bank transfer for Kimi Business only"
      }
     ],
-    "source_url": "https://www.kimi.com/user/agreement/en/paidServiceAgreement",
+    "source_url": "https://www.kimi.com/en/help/membership/membership-payment-issues",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-16T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -609,18 +618,17 @@
    "https://www.sarvam.ai/terms-of-service",
    "https://docs.sarvam.ai/api/getting-started/pricing"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Sarvam's app page says Indus is available for Android and iOS (store URLs not exposed). The Sarvam 30B/105B blog says Sarvam 105B powers Indus. No pricing, free status, sign-in method or country list found for the consumer app; API pricing (INR plans, Rs 100 free credits) is a different product and was not used. Sarvam's platform covers 22 Indian languages, but interface languages of Indus are not stated, so unknown. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 6 quoted confirmations; not found on the pages: url (indus.sarvam.ai returned 403), description (web version), categories (audio). indus.sarvam.ai answered 403 to the fetcher, so the web app and any voice feature couldn't be checked; the Indian publisher, the Play Store/App Store apps and chat with web search are confirmed. No free status or payment facts are stated in the record, and the fetched pages give none for the consumer app.",
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Sarvam's app page says Indus is available for Android and iOS (store URLs not exposed). The Sarvam 30B/105B blog says Sarvam 105B powers Indus. No pricing, free status, sign-in method or country list found for the consumer app; API pricing (INR plans, Rs 100 free credits) is a different product and was not used. Sarvam's platform covers 22 Indian languages, but interface languages of Indus are not stated, so unknown. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 6 quoted confirmations; not found on the pages: url (indus.sarvam.ai returned 403), description (web version), categories (audio). indus.sarvam.ai answered 403 to the fetcher, so the web app and any voice feature couldn't be checked; the Indian publisher, the Play Store/App Store apps and chat with web search are confirmed. No free status or payment facts are stated in the record, and the fetched pages give none for the consumer app. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 9 quoted confirmations, corrected or added: categories. \"audio\" removed from categories: no voice feature is stated for Indus on the readable pages (indus.sarvam.ai itself returned 403). The web address is confirmed by the terms, which list indus.sarvam.ai among Sarvam's sites. Access facts are all unknown, as before.",
   "url": "https://indus.sarvam.ai/",
   "app_store_urls": [],
   "categories": [
    "chat",
-   "search",
-   "audio"
+   "search"
   ],
   "interface_languages": {
    "value": "unknown",
@@ -667,7 +675,8 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -698,7 +707,7 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Launch announcement (Aug 2025): web, iOS and Android, launching first in Saudi Arabia, with Middle East and global rollout 'to follow'; no current country list, so countries_available=[SA] is the launch statement only. No consumer pricing or free statement found. Store URLs not exposed (badges were on an odd mirror domain ishgfesfe.humain.ai, not used). Region: humain.com says PIF-owned company launched to make Saudi Arabia an AI hub; HUMAIN Node privacy notice gives a Riyadh registered address. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 1 quoted confirmations; not found on the pages: description, categories, access.countries_available, access.signup_requirements. chat.humain.com and humain.com pages returned 403 or a loading shell; only the HUMAIN Node privacy notice was readable (confirms Riyadh).",
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Launch announcement (Aug 2025): web, iOS and Android, launching first in Saudi Arabia, with Middle East and global rollout 'to follow'; no current country list, so countries_available=[SA] is the launch statement only. No consumer pricing or free statement found. Store URLs not exposed (badges were on an odd mirror domain ishgfesfe.humain.ai, not used). Region: humain.com says PIF-owned company launched to make Saudi Arabia an AI hub; HUMAIN Node privacy notice gives a Riyadh registered address. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 1 quoted confirmations; not found on the pages: description, categories, access.countries_available, access.signup_requirements. chat.humain.com and humain.com pages returned 403 or a loading shell; only the HUMAIN Node privacy notice was readable (confirms Riyadh). Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 2 quoted confirmations; not found on the pages: description: Arabic-first, dialect speech input, Arabic-English switching, categories (chat, search), access.countries_available (SA), access.signup_requirements (email sign-in). chat.humain.com and humain.com still answer 403 or a loading shell; the launch page gave only its title (HUMAIN Chat powered by ALLaM 34B) and the HUMAIN Node privacy notice confirms Riyadh.",
   "url": "https://chat.humain.com/",
   "app_store_urls": [],
   "categories": [
@@ -763,9 +772,9 @@
   "publisher": "Sahabat-AI (GoTo and Indosat Ooredoo Hutchison)",
   "publisher_region": {
    "value": "ID",
-   "source_url": "https://sahabat-ai.com/documents/Sahabat-AI-Responsible-Use-Guide-v7.pdf",
+   "source_url": "https://intelligencesuite-ai.ioh.co.id/en/products/",
    "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "observed_at": "2026-11-16T00:00:00Z"
   },
   "official_urls": [
    "https://sahabat-ai.com/"
@@ -779,98 +788,13 @@
    "https://sahabat-ai.com/documents/Sahabat-AI-Responsible-Use-Guide-v7.pdf",
    "https://intelligencesuite-ai.ioh.co.id/en/products/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. GoTo press release (Jun 2025): chat service on sahabat-ai.com and under 'Popular Services' in the GoPay app, on a 70B model, five local languages. Indosat Q1 2026 release: Sahabat-AI app on App Store and Play Store (URLs not exposed). Model weights are free, but nothing official says whether the chat app is free or paid. Publisher region from the Responsible Use Guide ('co-developed by Indonesian homegrown tech and telecommunication companies'). Languages listed are model/chat languages, not interface languages. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations; not found on the pages: categories (writing, coding, image). sahabat-ai.com is an empty shell and the responsible-use guide is a PDF that wasn't read; the GoTo press release confirms the chat service, languages and Indonesian publishers, but not writing, coding or image features. Free status is unknown on all pages.",
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. GoTo press release (Jun 2025): chat service on sahabat-ai.com and under 'Popular Services' in the GoPay app, on a 70B model, five local languages. Indosat Q1 2026 release: Sahabat-AI app on App Store and Play Store (URLs not exposed). Model weights are free, but nothing official says whether the chat app is free or paid. Publisher region from the Responsible Use Guide ('co-developed by Indonesian homegrown tech and telecommunication companies'). Languages listed are model/chat languages, not interface languages. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations; not found on the pages: categories (writing, coding, image). sahabat-ai.com is an empty shell and the responsible-use guide is a PDF that wasn't read; the GoTo press release confirms the chat service, languages and Indonesian publishers, but not writing, coding or image features. Free status is unknown on all pages. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 9 quoted confirmations, corrected or added: categories, publisher_region. Writing, coding and image categories are not stated anywhere, so categories are reduced to chat; publisher region re-sourced from the unread PDF to Indosat's own page (Jakarta address). Free status, payment and sign-up stay unknown (the \"free\" on sahabat-ai.com is about the model download).",
   "url": "https://sahabat-ai.com/",
-  "app_store_urls": [],
-  "categories": [
-   "chat",
-   "writing",
-   "coding",
-   "image"
-  ],
-  "interface_languages": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
-  },
-  "models_used": [],
-  "access": {
-   "free": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   },
-   "free_limits": null,
-   "payment_methods": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   },
-   "countries_available": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   },
-   "countries_unavailable": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   },
-   "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   },
-   "local_currency_pricing": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
-   }
-  }
- },
- {
-  "schema_version": 1,
-  "id": "cf:app:inception/jais-chat",
-  "type": "app",
-  "name": "Jais Chat",
-  "description": "Bilingual Arabic-English chat assistant running the open-weight Jais Arabic models (made by G42's Inception with MBZUAI in Abu Dhabi); the app was launched in 2024 by Core42, a G42 company.",
-  "publisher": "Inception (G42)",
-  "publisher_region": {
-   "value": "AE",
-   "source_url": "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception",
-   "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
-  },
-  "official_urls": [
-   "https://www.jaischat.ai/jaischat/en"
-  ],
-  "documentation_urls": [],
-  "evidence_urls": [
-   "https://www.jaischat.ai/jaischat/en",
-   "https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/",
-   "https://www.g42.ai/resources/news/core42-launches-jais-chat",
-   "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception",
-   "https://www.g42.ai/companies"
-  ],
-  "verification_status": "candidate",
-  "warning": "none",
-  "first_seen_at": "2026-11-14T00:00:00Z",
-  "last_content_change_at": "2026-11-14T00:00:00Z",
-  "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Jais 2 announcement (MBZUAI, with Inception) says Jais Chat is available at jaischat.ai; jaischat.ai now presents 'Jais 3'. Original 2024 Core42 launch was an iOS app (may be outdated). No pricing, free status, sign-up or country information found: access block entirely unknown. G42 page says Inception was converged into Core42, while Inception's site still calls it a G42 company: publisher naming unsettled. Thinnest record; drop it if a minimum of sourced access facts is required. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 6 quoted confirmations, corrected or added: description; not found on the pages: url (jaischat.ai now loads a shell titled 'Jais 3 - MBZUAI'; /jaischat/en returned 403), access.free (unknown in record, not stated). G42's own announcement credits Core42 (a G42 company), not Inception, with launching JAIS Chat (iOS, May 2024). jaischat.ai is now titled 'Jais 3 - MBZUAI', so the publisher may have changed; worth re-checking. Free status and payment are unknown.",
-  "url": "https://www.jaischat.ai/",
   "app_store_urls": [],
   "categories": [
    "chat"
@@ -920,6 +844,94 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:inception/jais-chat",
+  "type": "app",
+  "name": "Jais Chat",
+  "description": "Bilingual Arabic-English chat assistant on the open Jais models (G42's Inception with MBZUAI, Abu Dhabi); launched on iOS by Core42 in 2024, now Jais 3 from MBZUAI.",
+  "publisher": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+  "publisher_region": {
+   "value": "AE",
+   "source_url": "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception",
+   "source_type": "official",
+   "observed_at": "2026-11-14T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.jaischat.ai/jaischat/en"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://www.jaischat.ai/jaischat/en",
+   "https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/",
+   "https://www.g42.ai/resources/news/core42-launches-jais-chat",
+   "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception",
+   "https://www.g42.ai/companies"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-14T00:00:00Z",
+  "last_content_change_at": "2026-11-14T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except github.com, so no page could be fetched with WebFetch; all facts come from WebSearch results restricted to the publisher's own domains, cited to the result URL. Marked candidate for that reason; re-verify by fetching. Jais 2 announcement (MBZUAI, with Inception) says Jais Chat is available at jaischat.ai; jaischat.ai now presents 'Jais 3'. Original 2024 Core42 launch was an iOS app (may be outdated). No pricing, free status, sign-up or country information found: access block entirely unknown. G42 page says Inception was converged into Core42, while Inception's site still calls it a G42 company: publisher naming unsettled. Thinnest record; drop it if a minimum of sourced access facts is required. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 6 quoted confirmations, corrected or added: description; not found on the pages: url (jaischat.ai now loads a shell titled 'Jais 3 - MBZUAI'; /jaischat/en returned 403), access.free (unknown in record, not stated). G42's own announcement credits Core42 (a G42 company), not Inception, with launching JAIS Chat (iOS, May 2024). jaischat.ai is now titled 'Jais 3 - MBZUAI', so the publisher may have changed; worth re-checking. Free status and payment are unknown. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 12 quoted confirmations, corrected or added: description, interface_languages. jaischat.ai now serves \"Jais 3\" with MBZUAI copyright and an Arabic/English language picker, so the description says so and interface languages were added. The publisher field still says Inception (G42); MBZUAI now runs the site, worth reviewing. Access facts are all unknown. Review 2026-11-16: publisher changed to MBZUAI: jaischat.ai is titled \"Jais 3 - MBZUAI\" (fetched 2026-11-16); the id stays the same.",
+  "url": "https://www.jaischat.ai/",
+  "app_store_urls": [],
+  "categories": [
+   "chat"
+  ],
+  "interface_languages": {
+   "value": [
+    "ar",
+    "en"
+   ],
+   "source_url": "https://www.jaischat.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-14T00:00:00Z"
+   }
+  },
+  "verified_by": "official pages read, 2026-11-16",
+  "publisher_name": "MBZUAI"
  }
 ]
