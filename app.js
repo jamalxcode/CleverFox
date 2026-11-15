@@ -1,6 +1,6 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
 import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart } from './picks.js?v=__BUILD__';
-import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath } from './render.js?v=__BUILD__';
+import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -230,6 +230,58 @@ $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option val
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
+// ---- compare up to 3 listings (same type) ----
+const cmp = [];
+const recById = (id) => TYPES.flatMap((t) => loaded[t] || []).find((r) => r.id === id);
+function renderCompareBar() {
+  $('#compare-bar').hidden = !cmp.length;
+  $('#compare-names').textContent = cmp.map((id) => recById(id)?.name || id).join(' · ');
+  // Change only what differs: the list observer below would otherwise loop forever.
+  document.querySelectorAll('[data-compare]').forEach((b) => {
+    if (b.hidden) b.hidden = false;
+    const t = cmp.includes(b.dataset.compare) ? '✓ In compare' : '⚖️ Compare';
+    if (b.textContent !== t) b.textContent = t;
+  });
+}
+function compareTable(recs) {
+  const yes = (v) => v === true ? '✓' : v === false ? '✗' : '—';
+  const rows = [
+    ['Publisher', (r) => esc(r.publisher_name || r.publisher || '')],
+    ['Good for', (r) => esc((r.answers?.good_for || []).map((c) => CAPS[c] || c).join(', '))],
+    ['Free', (r) => esc(FREE_TEXT[r.answers?.free] || FREE_LABELS[r.access?.free?.value] || 'unknown')],
+    ['Runs locally', (r) => r.type === 'model' ? yes(!!r.local_ready) : '—'],
+    ['Memory needed', (r) => r.hardware ? `~${r.hardware.min_memory_gb} GB (${r.hardware.recommended_gb} GB recommended)` : '—'],
+    ['Use it online', (r) => r.answers?.online ? (r.online_from === 0 ? 'free' : Number.isFinite(r.online_from) ? `from $${r.online_from} / M tokens` : 'yes') : '—'],
+    ['Independent benchmark', (r) => esc((r.independent_benchmarks || []).map((b) => `${b.id === 'epoch_eci' ? 'ECI' : 'AA'} ${b.display}`).join(', ') || '—')],
+    ['License', (r) => esc(r.license?.value || '—')],
+    [state.country ? `Available in ${countryName(state.country)}` : 'Available in your country', (r) => state.country ? esc(r.type === 'model' && (r.distributions || []).some((d) => d.availability === 'downloadable') ? 'download' : availableIn(r.access, state.country)) : 'choose your country'],
+    ['Pay without a card', (r) => yes(r.answers?.pay_without_card ?? (r.answers?.online_no_card || null))],
+    ['Offline on a phone', (r) => r.type === 'app' ? yes(!!r.on_device) : '—'],
+    ['Praised on X', (r) => yes(!!r.answers?.x_praised)],
+  ];
+  return `<div class="cmp-scroll"><table class="cmp"><thead><tr><th></th>${recs.map((r) => `<th><a href="${esc(listingPath(r))}">${esc(r.name)}</a></th>`).join('')}</tr></thead><tbody>${rows.map(([h, f]) => `<tr><th>${esc(h)}</th>${recs.map((r) => `<td>${f(r)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+async function showCompare(ids, push = true) {
+  const types = [...new Set(ids.map((id) => id.split(':')[1]))];
+  await Promise.all(types.filter((t) => TYPES.includes(t)).map(ensureLoaded));
+  const recs = ids.map(recById).filter(Boolean);
+  if (!recs.length) return;
+  $('#compare').hidden = false;
+  $('#compare-table').innerHTML = compareTable(recs) + `<p class="share"><button class="share-btn" type="button" id="cmp-share">🔗 Share this comparison</button></p>`;
+  if (push) history.replaceState(null, '', `#compare=${recs.map((r) => r.id).join('|')}`);
+  $('#cmp-share').addEventListener('click', async () => { try { await navigator.clipboard.writeText(location.href); $('#cmp-share').textContent = '✓ Link copied'; } catch { prompt('Copy this link:', location.href); } });
+  $('#compare').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+$('#list').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-compare]'); if (!b) return;
+  const id = b.dataset.compare; const i = cmp.indexOf(id);
+  if (i >= 0) cmp.splice(i, 1); else { if (cmp.length && cmp[0].split(':')[1] !== id.split(':')[1]) cmp.length = 0; cmp.push(id); if (cmp.length > 3) cmp.shift(); }
+  renderCompareBar();
+});
+$('#compare-go').addEventListener('click', () => showCompare(cmp));
+$('#compare-clear').addEventListener('click', () => { cmp.length = 0; renderCompareBar(); $('#compare').hidden = true; });
+new MutationObserver((ms) => { if (ms.some((m) => [...m.addedNodes].some((n) => n.nodeType === 1 && (n.matches?.('[data-compare]') || n.querySelector?.('[data-compare]'))))) renderCompareBar(); }).observe($('#list'), { childList: true, subtree: true });
+
 // ---- find what to use: top picks ----
 $('#s-task').innerHTML = TASKS.map((t) => `<option value="${t}">${esc(CAPS[t].replace(/^\S+\s/, '').toLowerCase())}</option>`).join('');
 async function showPicks(share = true) {
@@ -253,6 +305,8 @@ async function showPicks(share = true) {
   try { window.goatcounter?.count?.({ path: `picks/${s.task}/${s.device}`, event: true }); } catch {}
 }
 $('#s-go').addEventListener('click', () => showPicks());
+const cmpHash = location.hash.match(/^#compare=(.+)$/)?.[1];
+if (cmpHash) { cmp.push(...decodeURIComponent(cmpHash).split('|').slice(0, 3)); showCompare(cmp, false).then(renderCompareBar); }
 const started = decodeStart(location.hash);
 if (started) {
   $('#s-task').value = started.task; $('#s-device').value = started.device;

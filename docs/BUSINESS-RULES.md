@@ -195,6 +195,12 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10g. Prices, new this week, compare
+
+- **Local prices:** apps and hosts whose official pages price in local currency show "💱 Local prices" (and it counts +0.5 in app picks). Price amounts go in `access.prices` as separate observations: plan, amount, 3-letter currency, period (month, year, once, hour, million_tokens, credit_pack), optional country, and source URL, source type and time each. The validator rejects incomplete ones. None are filled in yet; they need research. "Cheapest" is never claimed.
+- **New this week** (`new/`, written by the build): listings first seen in the last 7 days, by type, up to 100 per type. The catalog's first day (the initial import) doesn't count as new. **RSS** (`feed.xml`): the 50 most recent new listings.
+- **Compare:** up to 3 listings of the same type, from "⚖️ Compare" on an opened card: publisher, good for, free, runs locally, memory, use online, independent benchmark, license, availability in the visitor's country, pay without a card, offline on a phone, praised on X. The choice is kept in the link (`#compare=<id>|<id>`).
+
 ## 10f. Find what to use (top picks, `picks.js`)
 
 "I want to <task> on <my computer | my phone | the web>", with memory and country from the pickers. Up to 3 picks per column, at most one per model family; every pick shows its reasons. Uncensored models and listings with a warning are never picked.

@@ -115,6 +115,11 @@ for (const r of records) {
   }
   if (!r.official_urls?.length) err(id, 'needs at least one official URL');
   if ('on_device' in r && typeof r.on_device !== 'boolean') err(id, 'on_device must be true or false');
+  // Prices: separate observations (spec section 15): plan, amount, ISO currency, period, source, time.
+  for (const p of r.access?.prices || []) {
+    if (!p.plan || typeof p.amount !== 'number' || !/^[A-Z]{3}$/.test(p.currency || '') || !['month', 'year', 'once', 'hour', 'million_tokens', 'credit_pack'].includes(p.period)) err(id, `price ${JSON.stringify(p).slice(0, 60)} needs plan, amount, a 3-letter currency and a known period`);
+    if (!p.source_url || !VOCAB.source_type.includes(p.source_type) || !ISO_TS.test(p.observed_at || '')) err(id, 'each price needs source_url, source_type and observed_at');
+  }
   if (!VOCAB.verification_status.includes(r.verification_status)) err(id, 'bad verification_status');
   if (!VOCAB.warning.includes(r.warning)) err(id, 'bad warning');
   for (const f of ['first_seen_at', 'last_content_change_at']) if (!ISO_TS.test(r[f] || '')) err(id, `${f} must be an ISO UTC timestamp`);
@@ -457,7 +462,7 @@ if (!checkOnly) {
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published, grouped: CURATED.folded, hidden: CURATED.hidden }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
-  writeListingPages(published, countries).then(() => writeMovedPages());
+  writeListingPages(published, countries).then(() => writeMovedPages()).then(() => writeNewPages(published));
 }
 
 const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
@@ -596,4 +601,42 @@ function writeMovedPages() {
     const dir = join(root, path(h.id)); mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, 'index.html'), page(esc(h.name), `<p>${esc(h.name)} is no longer listed on CleverFox: ${esc(h.reason)}.</p><p><a href="${SITE}">Back to CleverFox</a></p>`));
   }
+}
+
+// ---- new this week: a page and an RSS feed ----
+// Listings first seen in the last 7 days. The catalog's first day (the initial import) doesn't count as new.
+async function writeNewPages(records) {
+  const R = await import('../render.js');
+  const esc = R.esc;
+  const days = records.map((r) => (r.first_seen_at || '').slice(0, 10)).filter(Boolean).sort();
+  const start = days[0];
+  const cutoff = new Date(Date.now() - 7 * 86400000).toISOString();
+  const fresh = records.filter((r) => r.first_seen_at && r.first_seen_at.slice(0, 10) !== start)
+    .sort((a, b) => b.first_seen_at.localeCompare(a.first_seen_at) || R.popularity(b) - R.popularity(a));
+  const week = fresh.filter((r) => r.first_seen_at >= cutoff);
+  const WORD = { model: 'Models', dataset: 'Datasets', app: 'Apps', host: 'Hosting and APIs' };
+  const groups = Object.keys(WORD).map((t) => [t, week.filter((r) => r.type === t)]).filter(([, l]) => l.length);
+  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${r.discovered_via?.source === 'x' ? ' · 🆕 spotted on X' : ''}</span><br>${esc(r.description)}</li>`;
+  const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New this week · CleverFox</title><meta name="description" content="AI models, datasets, apps and hosting added to CleverFox in the last 7 days.">
+<link rel="canonical" href="${SITE}new/"><link rel="alternate" type="application/rss+xml" title="CleverFox: new listings" href="${SITE}feed.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=${build}"><link rel="stylesheet" href="../style.css?v=${build}">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head><body>
+<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="../">← All listings</a> · <a href="../feed.xml">RSS feed</a></p></div></header>
+<main class="wrap listing"><h1>🆕 New this week</h1>
+<p class="muted">${week.length} listings added in the last 7 days.</p>
+${groups.map(([t, l]) => `<h2>${WORD[t]} (${l.length})</h2><ul class="new-list">${l.slice(0, 100).map(li).join('')}</ul>${l.length > 100 ? `<p class="muted">+${l.length - 100} more</p>` : ''}`).join('') || '<p>Nothing new in the last 7 days.</p>'}
+</main>
+${GOATCOUNTER}
+</body></html>
+`;
+  mkdirSync(join(root, 'new'), { recursive: true });
+  writeFileSync(join(root, 'new', 'index.html'), html);
+  const xml = (t) => String(t ?? '').replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]);
+  const items = fresh.slice(0, 50).map((r) => `<item><title>${xml(`${r.name} (${r.type})`)}</title><link>${SITE}${R.listingPath(r)}</link><guid isPermaLink="true">${SITE}${R.listingPath(r)}</guid><pubDate>${new Date(r.first_seen_at).toUTCString()}</pubDate><description>${xml(r.description)}</description></item>`);
+  writeFileSync(join(root, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>CleverFox: new listings</title><link>${SITE}</link><description>New AI models, datasets, apps and hosting on CleverFox.</description><language>en</language>\n${items.join('\n')}\n</channel></rss>\n`);
+  console.log(`New this week: ${week.length} listings; feed has ${items.length}`);
 }

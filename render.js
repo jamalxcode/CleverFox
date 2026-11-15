@@ -94,6 +94,7 @@ export function cardBadges(r) {
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
   if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
   if (r.lookalikes?.count) b.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
+  if ((r.type === 'app' || r.type === 'host') && r.access?.local_currency_pricing?.value === true) b.push(badge('💱 Local prices', 'b-ok'));
   if (r.on_device) b.push(`<span class="badge b-ok" title="Runs AI models on the phone itself: works offline once a model is downloaded">📱 Offline on your phone</span>`);
   if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
@@ -171,6 +172,13 @@ const fitMark = (g) => !view.mem ? '' : g <= view.mem * 0.8 ? ` ${ok}` : g <= vi
 const licText = (v) => v === 'custom' ? 'custom license' : esc(v);
 
 // Access and payment in two or three lines (apps, hosts, paid APIs).
+const PERIOD = { month: '/ month', year: '/ year', once: 'once', hour: '/ hour', million_tokens: 'per million tokens', credit_pack: 'credit pack' };
+export function priceLine(a) {
+  const ps = a?.prices || [];
+  if (!ps.length) return '';
+  const money = (p) => { try { return new Intl.NumberFormat('en', { style: 'currency', currency: p.currency, maximumFractionDigits: 2 }).format(p.amount); } catch { return `${p.amount} ${p.currency}`; } };
+  return `<p class="ln">💰 ${ps.slice(0, 4).map((p) => `<span class="it">${esc(p.plan)}: <strong>${esc(money(p))}</strong> ${esc(PERIOD[p.period] || '')}${p.country ? ` <span class="muted">(${esc(countryName(p.country))})</span>` : ''}${src(p)}</span>`).join('<span class="sep"> · </span>')}</p>`;
+}
 export function accessFacts(a) {
   if (!a) return line([item('💳', unknownTxt)]);
   const pm = methodsOf(a);
@@ -272,6 +280,7 @@ export function detail(r) {
     for (const d of (r.distributions || []).filter((x) => x.access)) h += `<p class="ln muted">${esc(SOURCE_LABELS[d.source] || d.source)} access:</p>` + accessFacts(d.access);
   } else if (r.type !== 'dataset') {
     h += accessFacts(r.access);
+    h += priceLine(r.access);
   }
   h += accessCheckLine(r);
   const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
@@ -336,6 +345,7 @@ export function shareRow(r) {
     <a class="share-btn" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">𝕏 Post</a>
     <a class="share-btn" href="https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}" target="_blank" rel="noopener">💬 WhatsApp</a>
     <a class="share-btn" href="${esc(xSearchUrl(r))}" target="_blank" rel="noopener">👀 Reactions on X</a>
+    <button type="button" class="share-btn compare-btn" data-compare="${esc(r.id)}" hidden>⚖️ Compare</button>
   </div>`;
 }
 // Browser only: makes the share buttons work (copy, the phone's share menu).

@@ -47,7 +47,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html style.css app.js render.js picks.js .nojekyll sitemap.xml robots.txt _site/
-          cp -r l _site/
+          cp -r l new _site/ && cp feed.xml _site/
           cp -r img _site/ && rm -rf _site/img/source
           cp data/*.json _site/data/
           sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html _site/app.js _site/picks.js

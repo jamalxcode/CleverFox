@@ -47,8 +47,8 @@ export function pickApps(apps, { task, device, country }) {
     const local = country && r.publisher_region?.value === country;
     const free = r.answers?.free;
     const reasons = [here === 'yes' && `✓ available in ${countryName(country)}`, local && `🏠 made in ${countryName(country)}`, free === 'free' ? '🆓 free' : free === 'free_tier' ? '🆓 free tier' : null,
-      r.answers?.pay_without_card && '🪙 pay without a card', r.official_store?.rating && `⭐ ${r.official_store.rating} on the App Store`, r.on_device && '📱 works offline on your phone', r.answers?.x_praised && '📣 praised on X'].filter(Boolean);
-    const score = (here === 'yes' ? 3 : 0) + (local ? 2 : 0) + (free === 'free' ? 2.5 : free === 'free_tier' ? 2 : 0) + (r.answers?.pay_without_card ? 1.5 : 0) + (r.official_store?.rating ? r.official_store.rating / 2.5 : 0)
+      r.answers?.pay_without_card && '🪙 pay without a card', r.access?.local_currency_pricing?.value === true && '💱 local prices', r.official_store?.rating && `⭐ ${r.official_store.rating} on the App Store`, r.on_device && '📱 works offline on your phone', r.answers?.x_praised && '📣 praised on X'].filter(Boolean);
+    const score = (here === 'yes' ? 3 : 0) + (local ? 2 : 0) + (free === 'free' ? 2.5 : free === 'free_tier' ? 2 : 0) + (r.answers?.pay_without_card ? 1.5 : 0) + (r.access?.local_currency_pricing?.value === true ? 0.5 : 0) + (r.official_store?.rating ? r.official_store.rating / 2.5 : 0)
       + (device === 'phone' && r.on_device ? 1.5 : 0) + (r.answers?.x_praised ? 1 : 0) + (r.verification_status === 'verified' ? 0.5 : 0) + Math.log10(1 + (r.official_store?.ratings || 0)) * 0.3;
     return { r, score, reasons, key: r.id };
   }));

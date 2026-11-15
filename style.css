@@ -204,3 +204,13 @@ code.cmd, .start code { font: .88rem ui-monospace, SFMono-Regular, Menlo, Consol
 .why { margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px; }
 .why .chip { white-space: normal; }
 .pick-share { margin-top: 4px; }
+
+/* compare */
+.compare-bar { position: sticky; bottom: 10px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--accent); border-radius: 999px; padding: 6px 8px 6px 16px; margin: 10px 0; box-shadow: 0 4px 16px rgba(0,0,0,.12); font-size: .9rem; }
+.compare { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 14px 0; }
+.compare h2 { font-size: 1.1rem; margin: 0 0 8px; }
+.cmp-scroll { overflow-x: auto; max-width: 100%; }
+table.cmp { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 480px; }
+table.cmp th, table.cmp td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+table.cmp tbody th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.new-list { padding-left: 18px; } .new-list li { margin-bottom: 10px; }
