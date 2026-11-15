@@ -423,7 +423,7 @@ for (const r of published) {
     const cs = Object.entries(e.countries || {});
     if (cs.length && r.access) r.access.app_store_countries = { value: cs.filter(([, v]) => v).map(([c]) => c).sort(), checked: cs.length,
       source_url: `https://itunes.apple.com/lookup?id=${e.apple.id}`, source_type: 'official', observed_at: e.countries_checked_at };
-    if (e.lookalikes) r.lookalikes = e.lookalikes;
+    if (e.lookalikes?.v === 2) r.lookalikes = e.lookalikes; // older counts didn't require an AI-sounding name
   }
   const gp = STORE_IDS[r.id]?.google_play;
   if (gp && ![...urls].some((u) => /play\.google\.com/.test(u))) urls.add(gp);

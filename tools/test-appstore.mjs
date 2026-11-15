@@ -26,7 +26,7 @@ const fetchImpl = async (url) => {
   }
   return { ok: true, status: 200, json: async () => ({ results: [
     { trackId: 1, trackName: 'ChatGPT', sellerName: 'OpenAI OpenAI, L.L.C.' }, { trackId: 9, trackName: 'Chat AI - ChatGPT assistant', sellerName: 'Chat Smith' },
-    { trackId: 10, trackName: 'Notes', sellerName: 'X' }] }) };
+    { trackId: 10, trackName: 'Notes', sellerName: 'X' }, { trackId: 11, trackName: 'ChatGPT Horoscope Daily', sellerName: 'Stars' }] }) };
 };
 const out = await run({ apps, fetchImpl, sleep: async () => {}, log: () => {}, now: 'T1', prev: { cursor: { country: 0, brand: 0 } } });
 assert.equal(out.apps['cf:app:openai/chatgpt'].apple.confirmed, true);

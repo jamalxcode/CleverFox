@@ -23,6 +23,7 @@ export function sellerMatches(seller, expected) {
   const s = tokens(seller);
   return expected.filter(Boolean).some((e) => [...tokens(e)].some((t) => s.has(t)));
 }
+export const AI_WORDS = /\b(ai|a\.i\.|chat|chatbot|gpt|bot|assistant|llm|copilot|agent)\b/i;
 export const brandOf = (name) => String(name).replace(/\s*\(.*?\)\s*/g, ' ').trim().split(/\s+/)[0].replace(/[^\p{L}\p{N}.-]/gu, '');
 
 function candidates() {
@@ -99,8 +100,9 @@ export async function run({ apps = candidates(), prev = {}, fetchImpl = fetch, n
     const data = await get(`https://itunes.apple.com/search?term=${encodeURIComponent(brand)}&entity=software&country=us&limit=${RULES.lookalikeLimit}`); await sleep(RULES.delayMs);
     if (!data) continue;
     const official = out.apps[a.id].apple.seller;
-    const like = (data.results || []).filter((x) => +x.trackId !== a.apple_id && String(x.trackName || '').toLowerCase().includes(brand.toLowerCase()) && !sellerMatches(x.sellerName, [official, ...a.expected]));
-    out.apps[a.id].lookalikes = { count: like.length, examples: like.slice(0, 3).map((x) => ({ name: x.trackName, seller: x.sellerName })), brand, checked_at: now };
+    // A look-alike uses the brand AND presents itself as an AI app (so a horoscope app called "Gemini" doesn't count).
+    const like = (data.results || []).filter((x) => +x.trackId !== a.apple_id && String(x.trackName || '').toLowerCase().includes(brand.toLowerCase()) && AI_WORDS.test(String(x.trackName || '')) && !sellerMatches(x.sellerName, [official, ...a.expected]));
+    out.apps[a.id].lookalikes = { v: 2, count: like.length, examples: like.slice(0, 3).map((x) => ({ name: x.trackName, seller: x.sellerName })), brand, checked_at: now };
   }
   if (stopped()) log(`App Store: stopped early (${limited >= RULES.maxLimited ? 'rate-limited' : 'time budget'}); kept what was checked`);
   if (ok.length) out.cursor.brand = (out.cursor.brand + RULES.brandsPerRun) % ok.length;
