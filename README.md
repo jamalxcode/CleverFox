@@ -16,7 +16,15 @@ For every listing, CleverFox answers the questions people actually ask:
 
 CleverFox is a metadata directory. It links to official sources and never hosts model files. Every fact carries its source and the date it was checked; "unknown" means no source states it.
 
-**Status:** prototype with about 1,100 listings: hand-researched apps and hosting, plus models and datasets imported daily from Hugging Face and the Ollama library. Next: monitoring X for announcements and feedback.
+Also:
+- 🦊 **Find what to use:** tell it the task, your device, country and language, and it gives three picks with the reasons.
+- 🚀 **How to start:** the exact command for your memory, and app download buttons.
+- ☁️ **Use it online:** providers with prices.
+- 🛒 **Google Play payment methods** in your country.
+- ⚖️ **Compare**, 📚 guides and a 📖 glossary.
+- 🆕 **New this week**, with RSS.
+
+**Status:** live with about 1,190 listings. Researched apps, hosting and API providers, plus models and datasets imported daily from Hugging Face and the Ollama library. X is scanned 3 times a day for new models, datasets, apps and hosting. What's left to do is in [docs/TODO.md](docs/TODO.md).
 
 ## Docs
 
@@ -25,6 +33,7 @@ CleverFox is a metadata directory. It links to official sources and never hosts 
 - [Workflow](docs/WORKFLOW.md): the daily pipeline, the data flow and how changes are made.
 - [Decisions](docs/DECISIONS.md): what was decided and why.
 - [Conversation log](docs/CONVERSATIONS.md): notes from each design session.
+- [Outstanding tasks](docs/TODO.md): what's left to do.
 - [Data snapshots](data/snapshots/): dated copies of the data collected.
 
 ## Run it locally

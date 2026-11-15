@@ -10,11 +10,29 @@ CleverFox (live at https://jamalxcode.github.io/CleverFox/; the custom domain cl
 
 It is a metadata directory: it links to official sources and never hosts model files, runs inference, provisions servers or takes payments.
 
-Read `docs/SPECIFICATION.md` (the spec, including user journeys, competitors and what we're aiming for), `docs/WORKFLOW.md` (the daily pipeline, data flow and how changes and research are made), `docs/BUSINESS-RULES.md` (every rule and number the code applies) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
+Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, including user journeys, competitors and what we're aiming for), `docs/WORKFLOW.md` (the daily pipeline, data flow and how changes and research are made), `docs/BUSINESS-RULES.md` (every rule and number the code applies) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
 
 ## Current state
 
-A **seed prototype** (researched apps, hosting and API providers, about 45 apps and 38 hosts, plus some models) plus a daily **bulk importer** (Hugging Face models and datasets, Ollama library), **independent benchmarks** (Epoch AI) and **Wikidata publisher countries** feed a static site: four tabs (models, datasets, apps, hosting), country and device pickers, filters, answers to what people ask (good for, local, platforms, hardware, free, payments, benchmarks, barriers, uncensored), and a shareable page per listing. About 1,100 listings; a dated snapshot is in `data/snapshots/`. X monitoring runs daily (spec section 9); access source pages are re-checked daily; the build curates the catalog (corrections file, dataset quality bar, re-uploads grouped). Open items are in spec section 19. Don't present them as decided.
+The site is live with about 1,190 listings: 857 models, 243 datasets, 55 apps and 38 hosts (including 14 API providers). It combines:
+- researched seed records;
+- daily imports from Hugging Face and the Ollama library;
+- independent benchmarks (Epoch AI);
+- Wikidata publisher countries;
+- API providers per model (Hugging Face Inference Providers, OpenRouter);
+- an App Store check;
+- a daily re-check and automatic fact check of access pages;
+- Google Play payment methods per country.
+
+X is scanned 3 times a day: cron-job.org starts the workflow, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
+- picks ("Find what to use");
+- how to start, and use it online;
+- compare;
+- guides and a glossary;
+- New this week and RSS;
+- an interface in 6 languages.
+
+What's left to do is in `docs/TODO.md`; open design questions are in spec section 19. Don't present them as decided.
 
 ## Commands
 
@@ -22,7 +40,7 @@ Node 22, no dependencies.
 
 ```sh
 NODE_USE_ENV_PROXY=1 node tools/import.mjs [--quick]  # import from Hugging Face + Ollama into data/imported/ (the env var only matters behind a proxy)
-npm test            # X monitoring tests, then node tools/build.mjs --check: validate seed + imported records against the schema rules
+npm test            # offline tests (X, re-check, providers, App Store, X post, run mode), then node tools/build.mjs --check: validate seed + imported records
 node tools/benchmarks.mjs  # independent benchmarks into data/imported/benchmarks.json (Epoch AI; Artificial Analysis if AA_API_KEY is set)
 npm run build       # validate and write data/meta.json, data/{models,datasets,apps,hosts}.json, data/catalog.json, listing pages under l/ and sitemap.xml
 npm run serve       # python3 -m http.server 8000, then open http://localhost:8000
@@ -52,7 +70,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/mode.mjs`: decides each workflow run's mode (full refresh if the last was 20+ hours ago, else a quick X scan; `none` on push). Tested by `tools/test-mode.mjs`. cron-job.org starts the workflow at 03:41, 11:41 and 19:41 UTC.
 - `tools/import.mjs --x-only`: quick mode that only adds models and datasets announced on X.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
-- `.github/workflows/pages.yml`: on push, restores imports and deploys. Daily, it also re-imports first and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.
+- `.github/workflows/pages.yml`: on push, restores imports and deploys. Three times a day (cron-job.org, GitHub's schedule as backup) it scans X, imports (full refresh once a day, quick X-only fill-in otherwise) and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.
 - `tools/build.mjs`: the validator and catalog builder. It enforces vocabularies, claim provenance, ISO country codes, identity tests and access blocks, and derives `no_card_needed`.
 
 ## Flattery

@@ -309,57 +309,58 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 
 ## 19. Open decisions
 
-- UI framework/static generator and search library. Vanilla is preferred for page weight.
-- Inclusion thresholds per source, the tracked publisher list, and the exact gap rules.
-- Seed lists: regional hubs, labs and communities; top apps; local and regional hosting providers by country.
+Settled since the first draft, with details in DECISIONS.md:
+- vanilla HTML, CSS and JavaScript, with no framework or search library;
+- X cadence: 3 scans a day, started by cron-job.org (decision 65);
+- the X read budget (`X_MONTHLY_READS`, one share per day; decisions 55 and 65);
+- posts classified by keyword rules, not AI (decision 55);
+- interface languages: English, Arabic, Hindi, Portuguese, Indonesian, Swahili (decision 62);
+- refresh tiers: full daily, quick X scans in between, access pages re-checked daily (decisions 60 and 65).
+
+Still open:
+- Inclusion thresholds per source, the tracked publisher list, and the exact gap rules (provisional numbers are in BUSINESS-RULES section 4).
 - Which API aggregators count as authorized (section 8b), and the test for it.
 - Whether to explain crypto-funded virtual cards in a general guide.
 - Thresholds for accepting public feedback (how many independent accounts, which sources count as authoritative) and for `reported` / `dont_touch`.
-- X search queries, read budget (X API plan) and cadence; which other platforms to read.
-- How public posts are classified: keyword rules, AI, or both.
-- Scan cadence and refresh tiers per source.
-- AI models for catalog extraction and feedback classification, if any, and spending caps.
+- Which platforms to read besides X (Reddit, forums, app-store reviews, news).
+- AI for catalog extraction or feedback classification, if ever, and spending caps (none used now).
 - LMArena ranks: show them once the leaderboard dataset's license is confirmed (link only for now).
 - Extending the publisher mapping beyond the first 59 organisations.
 - Each connector's permitted use.
-- When to translate the interface, and into which languages.
 - Operating budget and migration thresholds.
 - Confirm the provisional success targets after launch.
 
 ## 20. Next steps
 
-Built and live (15 November 2026):
-- researched seed listings: 45 apps (27 regional), 38 hosts (14 API providers, 13 regional GPU hosts) and some models;
-- daily imports from Hugging Face (models and datasets) and the Ollama library, curated at build time: a corrections file, a dataset quality bar, re-uploads grouped under their original;
-- Wikidata publisher countries; independent benchmarks from Epoch AI;
-- answers to what people ask: good for, local, platforms, hardware with recommended memory, free, payments, barriers, uncensored;
-- personal highlighting by device memory and country;
-- X monitoring: announcements, tone and "praised on X", a "What people say on X" panel;
-- a daily re-check of access source pages, with warnings when they change or disappear;
-- slim list files (about 70 KB compressed for models) with full records on demand;
-- a shareable page per listing.
+Built and live (15 November 2026), about 1,190 listings (857 models, 243 datasets, 55 apps, 38 hosts):
+- **Catalog:**
+  - researched apps (27 regional, 10 offline phone apps), 14 API providers and 24 GPU hosts;
+  - daily Hugging Face and Ollama imports;
+  - curation: a corrections file, a dataset quality bar, re-uploads grouped.
+- **Answers:**
+  - good for, runs locally, platforms, hardware;
+  - free, pay without a card (including Google Play's methods per country), barriers, uncensored;
+  - independent benchmarks (Epoch AI).
+- **Advice:**
+  - "Find what to use" picks with reasons;
+  - how to start (Ollama commands, app buttons);
+  - use it online (API providers with prices);
+  - compare;
+  - 10 guides and a glossary.
+- **For your situation:** device, country and language pickers, highlighting, and an interface in 6 languages.
+- **Trust:**
+  - App Store check (official apps, countries, look-alikes);
+  - daily re-check and automatic fact check of access pages;
+  - "possibly discontinued" marks;
+  - verified versus not yet verified on every listing.
+- **X:** 3 scans a day for announcements and launches, tone and "praised on X", a "What people say on X" panel, and a weekly post (off).
+- **Site:**
+  - slim list files;
+  - a page per listing;
+  - New this week and RSS;
+  - GoatCounter, including searches that find nothing.
 
-Built on 15 November 2026, the "more useful" plan (decision 62):
-- **Find what to use:** "I want to [task] on [computer / phone / web]" gives 3 picks per column (run it yourself, offline on your phone, apps, use it online) with the reasons shown, and a share link.
-- **How to start:** the `ollama run` command for the size that fits the visitor's memory, beginner apps, and download and store buttons for apps.
-- **Use it online:** the API providers serving each model, with prices, from Hugging Face's provider mapping and OpenRouter's model list.
-- **App Store check:** official apps confirmed by seller, App Store availability per country (rotating), look-alike app counts, official-app mark.
-- **Offline on your phone:** 10 on-device apps, with a badge and a filter.
-- **Local prices** badge and a `prices` field ready for researched amounts; **new this week** page and RSS feed; **compare** up to 3 listings.
-- **Interface languages:** the main interface in Arabic, Hindi, Portuguese, Indonesian and Swahili (drafts, to be reviewed by native speakers).
-
-Still open from the plan:
-- price amounts need research;
-- Google Play availability has no public API;
-- the listing details aren't translated yet;
-- "works on slow connections" has no data source yet.
-
-Later:
-- Artificial Analysis benchmarks (free `AA_API_KEY` secret);
-- more directories that link out (ModelScope, Kaggle, GitHub releases);
-- more publisher countries;
-- automated checks before deploy (phone and accessibility);
-- a freshness and status page;
-- click-to-load X embeds;
-- prices read from pricing pages;
-- custom domain `cleverfox.sala.company` (needs a DNS record, then the `CNAME` file and `SITE` in `tools/build.mjs`).
+**What's left to do** is in [TODO.md](TODO.md):
+- owner actions: the cron-job.org timer, API keys, DNS, X billing;
+- data to research;
+- development.

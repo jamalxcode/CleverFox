@@ -300,4 +300,4 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 
 ## Open decisions
 
-See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.
+See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

@@ -12,6 +12,18 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: cron-job.org steps; docs brought up to date
+**Where:** Claude Code session.
+**Asked:**
+- simple numbered steps for setting up cron-job.org: a GitHub token, one job at minute 41 and hours 3, 11 and 19 UTC, POST to GitHub's workflow dispatch API with the headers, a test run expecting 204;
+- update the repo with all design conversations, decisions, updates, information, development, and outstanding tasks.
+
+**Outcome:**
+- New `docs/TODO.md` with everything outstanding: owner actions, data to research, development.
+- Spec section 19 now separates settled from open questions; section 20 lists what's live.
+- CLAUDE.md "Current state" and the README are refreshed.
+- Data snapshot `data/snapshots/2026-11-15/`.
+
 ## 2026-11-15: three X scans a day with cron-job.org
 **Where:** Claude Code session.
 **Asked:** scan X 3 times a day for new model, dataset, app and hosting announcements and fill in the rest of the information; time and start it with cron-job.org as for Flattery.
