@@ -1,6 +1,6 @@
 // Offline tests for tools/recheck.mjs (no network).
 import assert from 'node:assert/strict';
-import { watchUrls, fingerprint, update, run, accessCheck } from './recheck.mjs';
+import { watchUrls, fingerprint, update, run, accessCheck, termsIn } from './recheck.mjs';
 
 const claim = (u, at = '2026-11-14T00:00:00Z') => ({ value: 'x', source_url: u, source_type: 'official', observed_at: at });
 const app = { id: 'cf:app:a/b', type: 'app', access: { free: claim('https://a.example/pricing'), payment_methods: claim('https://a.example/pricing'), countries_available: claim('https://a.example/countries'), signup_requirements: { value: 'unknown', source_url: null } } };
@@ -39,4 +39,18 @@ assert.equal(accessCheck(fresh, data).changed.length, 0);
 const walled = await run({ records: [app], fetchImpl: async () => ({ ok: false, status: 403 }), now: 'T1', log: () => {} });
 const walled2 = await run({ records: [app], prev: walled, fetchImpl: async () => ({ ok: false, status: 403 }), now: 'T2', log: () => {} });
 assert.equal(accessCheck(app, walled2).broken.length, 0);
+// Fact checks: words on the page confirm payment methods and free status.
+assert.deepEqual(termsIn('pay with m-pesa or paypal. free plan'), ['paypal', 'mobile_money', 'free']);
+assert.deepEqual(termsIn('支付宝和微信支付'), ['alipay', 'wechat_pay']);
+assert.ok(!termsIn('sunupia mapix').includes('upi') && !termsIn('sunupia mapix').includes('pix'), 'whole words only for short terms');
+const pm = (methods, u) => ({ value: methods.map((m) => ({ method: m })), source_url: u, source_type: 'official', observed_at: '2026-11-14T00:00:00Z' });
+const appF = { type: 'app', access: { free: { value: 'free_tier', source_url: 'https://f.example/p', observed_at: '2026-11-14T00:00:00Z' }, payment_methods: pm(['mobile_money', 'paypal', 'other'], 'https://f.example/p') } };
+const pages2 = { 'https://f.example/p': '<p>Plans: free tier. Pay with M-Pesa. </p>'.repeat(40) };
+const f2 = async (u) => ({ ok: true, status: 200, text: async () => pages2[u] });
+const d2 = await run({ records: [appF], fetchImpl: f2, now: '2026-11-15T00:00:00Z', log: () => {} });
+const facts = accessCheck(appF, d2).facts;
+const pmFact = facts.find((f) => f.field === 'payment_methods');
+assert.deepEqual(pmFact.want, ['mobile_money', 'paypal'], '"other" is not checkable');
+assert.equal(pmFact.status, 'partly'); assert.deepEqual(pmFact.missing, ['paypal']);
+assert.equal(facts.find((f) => f.field === 'free').status, 'confirmed');
 console.log('All re-check tests passed.');

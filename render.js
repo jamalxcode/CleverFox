@@ -289,7 +289,7 @@ export function detail(r) {
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
   h += line([item('🔗', linkList(links, 3)), r.documentation_urls?.length && item('🛠️', linkList(r.documentation_urls, 3)), r.paper_urls?.length && item('📄', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · '))]);
   if (r.variants?.length) h += line([item('🔁', `<strong>Other versions:</strong> ${r.variants.slice(0, 6).map((v) => `<a href="${esc(v.url)}" rel="noopener" target="_blank" title="${esc(v.kind)}${v.downloads_30d ? ' · ↓ ' + fmtNum(v.downloads_30d) + ' a month' : ''}">${esc(v.name)}</a>${v.publisher !== r.publisher ? ` <span class="muted">by ${esc(v.publisher)}</span>` : ''}`).join(' · ')}${r.variants.length > 6 ? ` <span class="muted">+${r.variants.length - 6}</span>` : ''}`)]);
-  h += `<p class="ln src">${r.verification_status === 'verified' ? '✅ Verified at an official source' : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
+  h += `<p class="ln src">${r.verification_status === 'verified' ? (r.verified_by ? `✅ Verified (${esc(r.verified_by)})` : '✅ Verified at an official source') : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
 }
 // How well a listing suits the visitor's choices (device memory, country): 0 best, 1 unknown, 2 doesn't.
@@ -403,6 +403,11 @@ export function accessCheckLine(r) {
   if (c.checked_at) parts.push(item('🔄', `source pages re-checked ${esc(fmtDate(c.checked_at))}`));
   let h = line(parts);
   if (c.changed?.length) h += `<p class="ln warn-ln">⚠️ ${c.changed.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')} changed on ${esc(fmtDate(c.changed[0].changed_at))}, after these facts were checked: prices, payments or countries may be out of date.</p>`;
+  const LBL = { free: 'free', ...Object.fromEntries(Object.entries(METHOD_LABELS)) };
+  const conf = (c.facts || []).filter((f) => f.status === 'confirmed');
+  const miss = (c.facts || []).filter((f) => f.status !== 'confirmed');
+  if (conf.length) h += `<p class="ln muted">✅ Found on the source page${conf.length > 1 ? 's' : ''}: ${esc([...new Set(conf.flatMap((f) => f.found.map((x) => LBL[x] || x)))].join(', '))} <span class="muted">(checked automatically ${esc(fmtDate(conf[0].checked_at))})</span></p>`;
+  if (miss.length) h += `<p class="ln muted">🔎 Not found on the source page, so not confirmed: ${esc([...new Set(miss.flatMap((f) => f.missing.map((x) => LBL[x] || x)))].join(', '))}. It may be on another page or behind a sign-in.</p>`;
   if (c.broken?.length) h += `<p class="ln warn-ln">🔗 Source link${c.broken.length > 1 ? 's' : ''} not loading: ${c.broken.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')}</p>`;
   return h;
 }

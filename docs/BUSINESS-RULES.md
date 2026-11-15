@@ -162,6 +162,8 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 - **Access re-check** (`tools/recheck.mjs`, daily after the import): for every app, host and API distribution, the source pages of its access facts (free, payments, countries, sign-up, local pricing), up to 6 per listing, are fetched and their visible text fingerprinted (scripts, tags, long tokens and clock times removed; pages under 400 characters, usually bot walls, are ignored). Results in `data/imported/recheck.json`.
   - **Changed:** a page whose fingerprint changed after the facts citing it were observed gives "⚠️ Pricing page changed" on the card and a note naming the page. Facts are never changed automatically.
   - **Broken:** a source page answering 404 or 410 on 2 checks in a row shows "Source link not loading". Bot walls (401, 403, 429) and network errors never count.
+  - **Fact check:** each readable source page is searched for the words of each stated payment method and for "free" (lists in `TERMS` in `tools/recheck.mjs`, many languages; short words match whole words only; "other" can't be checked). Each fact is confirmed, partly confirmed or not found; the listing shows what was found and what wasn't.
+  - **Automatic verification:** a `candidate` listing becomes `verified` ("automatic page check, <date>") when every checked fact was found, at least one of them is a payment method, and no source page changed since. Nothing is downgraded or rewritten automatically.
   - **Old facts:** access facts first observed over 180 days ago show "⏳ Access facts are old".
 
 - **Daily import** (GitHub Actions, 03:41 UTC) imports, gathers benchmarks, builds and deploys. A push to `main` builds and deploys without importing.

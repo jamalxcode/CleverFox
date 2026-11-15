@@ -435,7 +435,7 @@ if (APPSTORE) console.log(`App Store: ${storeConfirmed} apps with a confirmed of
 const { accessCheck } = await import('./recheck.mjs');
 const RECHECK = existsSync(join(importDir, 'recheck.json')) ? JSON.parse(readFileSync(join(importDir, 'recheck.json'), 'utf8')) : null;
 const ACCESS_STALE_DAYS = 180;
-let recheckChanged = 0;
+let recheckChanged = 0; let autoVerified = 0;
 for (const r of published) {
   const accs = r.access ? [r.access] : (r.distributions || []).map((d) => d.access).filter(Boolean);
   if (!accs.length) continue;
@@ -444,9 +444,13 @@ for (const r of published) {
   if (dates.length) chk.facts_checked_at = dates[0];
   if (dates.length && (Date.now() - new Date(dates[0])) / 86400000 > ACCESS_STALE_DAYS) chk.stale = true;
   if (chk.changed?.length) recheckChanged++;
+  // Automatic verification: a candidate whose checked facts were all found on their source pages (and none changed since).
+  if (r.verification_status === 'candidate' && chk.facts?.length && chk.facts.every((f) => f.status === 'confirmed') && chk.facts.some((f) => f.field === 'payment_methods') && !chk.changed?.length) {
+    r.verification_status = 'verified'; r.verified_by = `automatic page check, ${chk.facts[0].checked_at.slice(0, 10)}`; autoVerified++;
+  }
   if (Object.keys(chk).length) r.access_check = chk;
 }
-if (RECHECK) console.log(`Access re-check: ${recheckChanged} listings have source pages that changed after their facts were checked`);
+if (RECHECK) console.log(`Access re-check: ${recheckChanged} listings have source pages that changed after their facts were checked; ${autoVerified} verified automatically`);
 
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
