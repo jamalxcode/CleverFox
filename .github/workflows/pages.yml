@@ -35,7 +35,11 @@ jobs:
         if: steps.mode.outputs.mode != 'none'
         env: { X_BEARER_TOKEN: "${{ secrets.X_BEARER_TOKEN }}", X_MONTHLY_READS: "${{ vars.X_MONTHLY_READS }}" }
         run: node tools/x.mjs
-      - name: Quick scan - fill in models and datasets announced on X
+      - name: Discover - Hugging Face new releases, llm-releases.com, GitHub new projects and releases
+        if: steps.mode.outputs.mode != 'none'
+        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", GH_TOKEN: "${{ github.token }}" }
+        run: node tools/discover.mjs
+      - name: Quick scan - fill in models and datasets announced on X or newly released
         if: steps.mode.outputs.mode == 'x'
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}" }
         run: node tools/import.mjs --x-only && node tools/providers.mjs

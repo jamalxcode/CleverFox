@@ -6,6 +6,7 @@ node_modules/
 !/data/corrections.json
 !/data/app-stores.json
 !/data/store-payments.json
+!/data/github-watch.json
 /data/imported/
 /l/
 /sitemap.xml

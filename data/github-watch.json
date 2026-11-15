@@ -1,0 +1,4 @@
+{
+ "_about": "GitHub projects whose releases CleverFox tracks (shown under \"Releases\" on New this week). GitHub projects linked from seed listings are added automatically. Add a line to watch another project.",
+ "repos": ["ollama/ollama", "ggml-org/llama.cpp", "ml-explore/mlx", "ml-explore/mlx-lm", "vllm-project/vllm", "janhq/jan", "open-webui/open-webui", "huggingface/transformers", "mlc-ai/mlc-llm", "lmstudio-ai/lms", "sgl-project/sglang", "comfyanonymous/ComfyUI"]
+}

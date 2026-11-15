@@ -277,7 +277,10 @@ export function detail(r) {
     const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
     facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); return `${esc(REL[x.type] || x.type || 'related to')} ${/^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(t.replace('https://huggingface.co/', ''))}</a>` : esc(t.split('/').pop() || '?')}`; }).join('; ')));
   }
-  if (r.discovered_via?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(r.discovered_via.created_at))} <a href="${esc(r.discovered_via.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${r.discovered_via.author}`));
+  const dv = r.discovered_via;
+  if (dv?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${dv.author}`));
+  else if (dv?.source === 'huggingface-new') facts.push(item('🆕', `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}`));
+  else if (dv?.source === 'llm-releases') facts.push(item('🆕', `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>`));
   h += line(facts);
   if (unknown.length) h += `<p class="ln muted">❓ Unknown: ${esc(unknown.join(', '))}</p>`;
   // Where to get it, payment, links: compact lines.

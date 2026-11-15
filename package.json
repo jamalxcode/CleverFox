@@ -10,7 +10,7 @@
   "scripts": {
     "import": "node tools/import.mjs",
     "build": "node tools/build.mjs",
-    "test": "node tools/test-x.mjs && node tools/test-recheck.mjs && node tools/test-providers.mjs && node tools/test-appstore.mjs && node tools/test-xpost.mjs && node tools/test-mode.mjs && node tools/test-slim.mjs && node tools/build.mjs --check",
+    "test": "node tools/test-x.mjs && node tools/test-recheck.mjs && node tools/test-providers.mjs && node tools/test-appstore.mjs && node tools/test-xpost.mjs && node tools/test-mode.mjs && node tools/test-slim.mjs && node tools/test-discover.mjs && node tools/build.mjs --check",
     "serve": "python3 -m http.server 8000"
   }
 }

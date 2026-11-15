@@ -12,6 +12,22 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: tracking new releases on llm-releases.com, Hugging Face and GitHub
+**Where:** Claude Code session.
+**Asked:**
+- track new releases on llm-releases.com, and on Hugging Face;
+- GitHub notes on discovering new projects (repository search) separately from tracking releases (watching), with sample queries and a design: poll, de-duplicate by id, and keep NEW PROJECT apart from RELEASE.
+
+**Outcome (decision 68):** `tools/discover.mjs` runs with every scan:
+- Hugging Face new releases with early interest are filled in like X announcements;
+- llm-releases.com is read from GitHub's servers, since it's unreachable from this session, with robots.txt respected;
+- GitHub's 4 searches over a rolling 14 days, de-duplicated by repository id;
+- watchlist releases.
+
+New this week shows "📦 Releases" and "🧪 New projects on GitHub" separately. The first local run added 16 new models and 26 new datasets.
+
+**Open:** llm-releases.com's page layout is unknown until the first run on GitHub; GitHub releases work only with the workflow's token. CleverFox has no Telegram, so the NEW PROJECT and RELEASE split is shown on the site instead.
+
 ## 2026-11-16: verifying the unverified apps and hosts
 **Where:** Claude Code session.
 **Asked:** verify the 76 unverified apps and hosts.

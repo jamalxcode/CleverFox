@@ -6,6 +6,8 @@ How the data flows, what runs when, and how changes are made. Rules and numbers 
 
 `.github/workflows/pages.yml` ("Import and deploy") runs **three times a day**. cron-job.org starts it at 03:41, 11:41 and 19:41 UTC through GitHub's API, as Flattery does: `POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches`, body `{"ref":"main"}`, with a fine-grained token limited to this repo (*Actions: read and write*). GitHub's own schedule (05:07, 13:07, 21:07) is a late backup.
 
+Every scan (quick and full) also runs `tools/discover.mjs`: Hugging Face new releases, llm-releases.com, GitHub new projects and watchlist releases (with the workflow's own GitHub token).
+
 `tools/mode.mjs` decides each run's mode:
 - **full:** the first run 20 or more hours after the last full refresh. It does every step below.
 - **x:** the other runs, a quick scan. It does the X scan, then `import.mjs --x-only` (fill in models and datasets announced on X from Hugging Face) and `providers.mjs`, then build, save and deploy.

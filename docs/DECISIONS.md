@@ -319,6 +319,16 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** a manual workflow ("Fetch pages for verification") downloads the readable text of each unverified listing's official pages to the `pages-cache` branch, because this session's network reaches only a few of those sites. A review session compares every stated fact with that text. Each confirmation or correction quotes the page exactly, and `tools/apply-verification.mjs` applies a listing only if every quote is found on its pages. A listing is verified when every stated fact is confirmed or corrected. Generic "credit card" counts as card payment; a processor like Stripe isn't a payment method. Decision 66's "a person" now means this review, which reads the pages; a keyword match still never verifies.
 **Why:** the owner asked to verify the 76 unverified apps and hosts. Quotes checked by a program keep the review honest: nothing can be "confirmed" from memory. First run (16 November): 79 listings, 472 pages fetched, 39 verified, 154 corrections, 0 quotes rejected. Verified apps and hosts went from 17 to 56 of 96.
 
+### 68. Discovery beyond X: Hugging Face new releases, llm-releases.com, GitHub
+**Decision:** every scan also:
+- looks at Hugging Face's newest and trending models and datasets created in the last 14 days, keeping those with early interest;
+- reads llm-releases.com (respecting robots.txt), whatever its layout, for links to Hugging Face models and datasets, plus announcements;
+- runs 4 GitHub repository searches for brand-new AI projects;
+- checks the latest releases of a watchlist (`data/github-watch.json` plus GitHub projects linked from listings).
+
+Models and datasets found go through the usual import and checks. New GitHub projects and releases are shown separately on New this week and never become listings automatically.
+**Why:** the owner asked to track new releases on llm-releases.com, Hugging Face and GitHub, keeping "new project" and "release" apart, as their GitHub notes advise: watching a repository doesn't discover new ones, and a new repository isn't a release. The first local run found 67 new Hugging Face models, 28 datasets and 93 new GitHub projects, and added 16 models and 26 datasets. Scans run 3 times a day rather than every 30 minutes, because each run rebuilds the site.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

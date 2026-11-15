@@ -455,12 +455,22 @@ function keepOrWrite(file, records, label) {
 
 // Announcement posts from tools/x.mjs: Hugging Face id -> the most-liked post linking it, if it has
 // at least the minimum engagement (data/imported/x.json).
+// Models and datasets announced or newly released: X posts with real engagement, Hugging Face new releases with
+// early interest, and links on llm-releases.com (tools/x.mjs, tools/discover.mjs). They're fetched from Hugging Face
+// even outside the top lists, and still pass the usual checks.
 function xAnnouncements(kind) {
-  const p = join(outDir, 'x.json'); const out = new Map();
-  if (!existsSync(p)) return out;
-  for (const a of JSON.parse(readFileSync(p, 'utf8')).announcements || []) {
+  const out = new Map();
+  const p = join(outDir, 'x.json');
+  if (existsSync(p)) for (const a of JSON.parse(readFileSync(p, 'utf8')).announcements || []) {
     if ((a.likes || 0) < 25) continue;
     for (const id of a.links?.[kind] || []) if (!out.has(id) || out.get(id).likes < a.likes) out.set(id, { source: 'x', url: a.url, author: a.author, likes: a.likes, created_at: a.created_at });
+  }
+  const d = join(outDir, 'discover.json');
+  if (existsSync(d)) {
+    const disc = JSON.parse(readFileSync(d, 'utf8'));
+    for (const m of disc.huggingface?.[kind] || []) if (!out.has(m.id)) out.set(m.id, { source: 'huggingface-new', url: `${HF}/${kind === 'datasets' ? 'datasets/' : ''}${m.id}`, likes: m.likes, created_at: m.created_at, why: m.why });
+    const lr = disc.llm_releases; const ids = kind === 'models' ? lr?.hf_models : lr?.hf_datasets;
+    for (const id of ids || []) if (!out.has(id)) out.set(id, { source: 'llm-releases', url: lr.source_url, created_at: lr.checked_at });
   }
   return out;
 }

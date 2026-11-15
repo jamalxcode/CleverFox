@@ -50,6 +50,8 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 
 ## Development
 
+- [ ] **Check the first llm-releases.com read** on GitHub: does its layout give Hugging Face links and announcements? Adjust `releasesFromHtml` if not, and confirm robots.txt allows it.
+
 - [ ] **Tone test set:** label about 200 real posts by hand, measure the praise and criticism rules, and only then consider putting praise back into the ordering.
 - [ ] **Translation review first:** native speakers review the interface translations before more text or languages are added.
 

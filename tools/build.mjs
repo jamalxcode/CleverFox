@@ -639,6 +639,7 @@ async function writeNewPages(records) {
 <main class="wrap listing"><h1>🆕 New this week</h1>
 <p class="muted">${week.length} listings added in the last 7 days.</p>
 ${groups.map(([t, l]) => `<h2>${WORD[t]} (${l.length})</h2><ul class="new-list">${l.slice(0, 100).map(li).join('')}</ul>${l.length > 100 ? `<p class="muted">+${l.length - 100} more</p>` : ''}`).join('') || '<p>Nothing new in the last 7 days.</p>'}
+${ghSections(R)}
 ${spotted.length ? `<h2>📣 Spotted on X: app and hosting launches (${spotted.length})</h2><p class="muted">Launch posts with real engagement, not yet researched. They're listed once their access facts (free plan, payment, countries) are checked at the official site.</p><ul class="new-list">${spotted.map((a) => `<li><strong>${esc(a.links.sites[0])}</strong> <span class="muted">· @${esc(a.author)} · ❤️ ${a.likes} · ${esc(R.fmtDate(a.created_at))}</span> · <a href="${esc(a.url)}" rel="noopener">the post ↗</a></li>`).join('')}</ul>` : ''}
 </main>
 ${GOATCOUNTER}
@@ -723,4 +724,18 @@ ${GOATCOUNTER}
   const sm = join(root, 'sitemap.xml');
   if (existsSync(sm)) writeFileSync(sm, readFileSync(sm, 'utf8').replace('</urlset>', urls.map((u) => `<url><loc>${esc(u)}</loc></url>`).join('\n') + '\n</urlset>'));
   console.log(`Guides: ${guides.map((g) => `${g.slug} (${g.items.length})`).join(', ')}`);
+}
+
+// "New this week": GitHub new projects and watchlist releases (tools/discover.mjs), kept apart on purpose.
+function ghSections(R) {
+  const d = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
+  const esc = R.esc; const week = Date.now() - 7 * 86400000;
+  const rel = (d.github?.releases || []).filter((r) => new Date(r.published_at) >= week);
+  const repos = (d.github?.new_repos || []).filter((r) => new Date(r.first_seen) >= week).slice(0, 30);
+  const ann = (d.llm_releases?.announcements || []).slice(0, 20);
+  let h = '';
+  if (rel.length) h += `<h2>📦 Releases (${rel.length})</h2><p class="muted">New versions of tools and projects CleverFox watches on GitHub.</p><ul class="new-list">${rel.map((r) => `<li><strong>${esc(r.repo)}</strong> ${esc(r.tag)} <span class="muted">· ${esc(R.fmtDate(r.published_at))}</span> · <a href="${esc(r.url)}" rel="noopener">release notes ↗</a></li>`).join('')}</ul>`;
+  if (repos.length) h += `<h2>🧪 New projects on GitHub (${repos.length})</h2><p class="muted">Brand-new repositories matching AI searches (LLM, datasets, inference, agents), not reviewed: a new project isn't a usable release. Stars show interest, not quality.</p><ul class="new-list">${repos.map((r) => `<li><a href="${esc(r.url)}" rel="noopener"><strong>${esc(r.full_name)}</strong></a> <span class="muted">· ★ ${r.stars} · ${esc(r.query)} · created ${esc(R.fmtDate(r.created_at))}</span>${r.description ? `<br>${esc(r.description)}` : ''}</li>`).join('')}</ul>`;
+  if (ann.length) h += `<h2>📰 On llm-releases.com</h2><p class="muted">Release announcements linked from <a href="${esc(d.llm_releases.source_url)}" rel="noopener">llm-releases.com</a>, checked ${esc(R.fmtDate(d.llm_releases.checked_at))}. Models and datasets it links on Hugging Face are added to the catalog.</p><ul class="new-list">${ann.map((a) => `<li><a href="${esc(a.url)}" rel="noopener">${esc(a.text)}</a></li>`).join('')}</ul>`;
+  return h;
 }

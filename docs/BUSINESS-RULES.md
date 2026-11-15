@@ -261,6 +261,14 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 - **Local models:** the `ollama run <tag>` command for each Ollama size (up to 4, MLX copies skipped), each with its memory need and a copy button. With the visitor's memory chosen, the biggest size needing at most 80% of it is marked "best fit"; otherwise the smallest is. A Hugging Face model with GGUF files and no Ollama entry gets `ollama run hf.co/<id>`. Point-and-click alternatives: LM Studio and Jan, searching for the Hugging Face id.
 - **Apps:** buttons to open it on the web and its official store pages (App Store, Google Play, Microsoft Store) where known.
 
+## 10m. Discovery beyond X (`tools/discover.mjs`, every scan)
+
+- **Hugging Face new releases:** models created in the last 14 days that are in the top 300 trending, or among the 1,000 newest with 10+ likes (supported tasks only); datasets created in the last 14 days among the top 200 trending with 10+ likes. They're filled in from Hugging Face like X announcements, marked "🆕 new on Hugging Face".
+- **llm-releases.com:** robots.txt is checked first, and the site is skipped if it disallows crawling. Whatever the page layout, links to Hugging Face models and datasets are filled in (marked "listed on llm-releases.com"), and up to 20 outside links are shown as announcements on New this week.
+- **GitHub new projects:** 4 repository searches (LLM topic with 10+ stars, "dataset" with 5+, "inference" with 10+, AI-agents topic with 10+), created in the last 14 days and not archived. Remembered by repository id for 30 days, so each appears once. Shown as "🧪 New projects on GitHub", not reviewed: a new repository isn't a usable release, and stars are interest, not quality.
+- **GitHub releases:** the latest release of each project in `data/github-watch.json` (local-AI tools such as Ollama, llama.cpp, vLLM, MLX, Jan) and every GitHub project linked from a seed listing. Releases from the last 7 days are shown as "📦 Releases"; kept for 30 days.
+- Each source keeps its last data when it fails.
+
 ## 10b. Use it online (`tools/providers.mjs`)
 
 - Daily, after benchmarks. Sources: Hugging Face's Inference Providers mapping (`/api/models?inference_provider=all`, live providers only) and OpenRouter's public model list (models with a Hugging Face id). Kept in `data/imported/providers.json`; a failed or shrunken source (below 80%) keeps the last data.
