@@ -10,11 +10,15 @@ concurrency: { group: fetch-pages, cancel-in-progress: true }
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
+      - name: Install a headless browser (only for pages that need JavaScript to show their text)
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.49.1
+          npx playwright install --with-deps chromium
       - name: Fetch the pages
         run: node tools/fetch-pages.mjs ${{ inputs.all && '--all' || '' }}
       - name: Save to the pages-cache branch (one commit, overwritten)

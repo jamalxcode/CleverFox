@@ -12,14 +12,38 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const OUT = join(root, arg('--out', 'pages-cache'));
 const ALL = process.argv.includes('--all');
-export const RULES = { perListing: 12, maxChars: 60000, timeoutMs: 25000, concurrency: 4 };
+export const RULES = { perListing: 18, maxChars: 60000, timeoutMs: 25000, concurrency: 4, renderBelowChars: 800 };
+// Common official pages that often hold pricing and payment facts.
+const EXTRA_PATHS = ['/pricing', '/plans', '/faq', '/terms'];
 
 export function urlsOf(r) {
   const out = [r.url, ...(r.official_urls || []), ...(r.documentation_urls || [])];
   const visit = (o) => { if (!o || typeof o !== 'object') return; if (Array.isArray(o)) return o.forEach(visit); if (typeof o.source_url === 'string') out.push(o.source_url); for (const v of Object.values(o)) if (v && typeof v === 'object') visit(v); };
   visit(r.access); visit(r.data_centers); visit(r.gpu_types); visit(r.publisher_region); visit(r.provider_region); visit(r.interface_languages);
+  // The publisher's own store listings, and its pricing, plans, FAQ and terms pages if they exist.
+  out.push(...(r.app_store_urls || []));
   out.push(...(r.evidence_urls || []));
+  try { const o = new URL(r.url || r.official_urls?.[0]).origin; out.push(...EXTRA_PATHS.map((p) => o + p)); } catch {}
   return [...new Set(out.filter((u) => typeof u === 'string' && /^https?:\/\//.test(u)))].slice(0, RULES.perListing);
+}
+
+// Pages that load (HTTP 200) but show almost no text because they're built by JavaScript are opened again in
+// a headless browser, when Playwright is installed (the fetch workflow installs it). It identifies itself as
+// CleverFox's checker, like the plain fetch; pages that refuse automated visitors (401, 403, 429) are left alone.
+let browser = null;
+async function render(url) {
+  try {
+    if (!browser) { const { chromium } = await import('playwright'); browser = await chromium.launch(); }
+    const page = await browser.newPage({ userAgent: 'CleverFox-verify/1.0 (+https://jamalxcode.github.io/CleverFox/)' });
+    try {
+      const res = await page.goto(url, { waitUntil: 'networkidle', timeout: 40000 }).catch(() => null);
+      if (!res || res.status() !== 200) return { status: res?.status() || 0, error: 'not rendered (no 200 answer)' };
+      await page.waitForTimeout(1500);
+      const title = await page.title().catch(() => '');
+      const text = (await page.evaluate(() => document.body?.innerText || '').catch(() => '')).split('\n').map((l) => l.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n');
+      return { status: 200, final_url: page.url(), title, chars: text.length, text: text.slice(0, RULES.maxChars), rendered: true };
+    } finally { await page.close(); }
+  } catch (e) { return { status: 0, error: `render failed: ${String(e.message || e).slice(0, 80)}` }; }
 }
 
 // Readable text: no scripts or styles; headings, list items and table cells on their own lines.
@@ -55,13 +79,16 @@ async function main() {
   await Promise.all(Array.from({ length: RULES.concurrency }, async () => {
     while (next < jobs.length) {
       const j = jobs[next++];
-      const res = await fetchPage(j.url);
+      let res = await fetchPage(j.url);
+      // Only pages that answered 200 with almost no text (built by JavaScript) are rendered; refusals stay refusals.
+      if (res.status === 200 && (res.chars || 0) < RULES.renderBelowChars) { const rr = await render(j.url); if (rr.text && rr.chars > (res.chars || 0)) res = rr; }
       const name = `${j.id.replace(/^cf:/, '').replace(/[^a-z0-9.-]+/gi, '_')}__${j.n}.txt`;
       if (res.text) { ok++; writeFileSync(join(OUT, 'pages', name), `URL: ${j.url}\nFINAL: ${res.final_url}\nSTATUS: ${res.status}\nTITLE: ${res.title}\nFETCHED: ${new Date().toISOString()}\n\n${res.text}\n`); }
-      (index[j.id] ||= { file: j.file, pages: [] }).pages.push({ url: j.url, file: res.text ? `pages/${name}` : null, status: res.status, chars: res.chars || 0, error: res.error || res.note || null, final_url: res.final_url || null });
+      (index[j.id] ||= { file: j.file, pages: [] }).pages.push({ url: j.url, file: res.text ? `pages/${name}` : null, status: res.status, chars: res.chars || 0, rendered: !!res.rendered, error: res.error || res.note || null, final_url: res.final_url || null });
     }
   }));
   writeFileSync(join(OUT, 'index.json'), JSON.stringify({ fetched_at: new Date().toISOString(), listings: list.length, pages: jobs.length, readable: ok, index }, null, 1) + '\n');
+  if (browser) await browser.close();
   console.log(`Fetched ${jobs.length} pages for ${list.length} listings; ${ok} readable.`);
 }
 
