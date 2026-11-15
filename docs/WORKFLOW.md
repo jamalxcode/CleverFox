@@ -4,7 +4,14 @@ How the data flows, what runs when, and how changes are made. Rules and numbers 
 
 ## 1. The daily pipeline
 
-`.github/workflows/pages.yml` ("Import and deploy") runs every day at 03:41 UTC, and on manual dispatch with **import** ticked. In order:
+`.github/workflows/pages.yml` ("Import and deploy") runs **three times a day**. cron-job.org starts it at 03:41, 11:41 and 19:41 UTC through GitHub's API, as Flattery does: `POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches`, body `{"ref":"main"}`, with a fine-grained token limited to this repo (*Actions: read and write*). GitHub's own schedule (05:07, 13:07, 21:07) is a late backup.
+
+`tools/mode.mjs` decides each run's mode:
+- **full:** the first run 20 or more hours after the last full refresh. It does every step below.
+- **x:** the other runs, a quick scan. It does the X scan, then `import.mjs --x-only` (fill in models and datasets announced on X from Hugging Face) and `providers.mjs`, then build, save and deploy.
+- A manual run can force `full` or `x`.
+
+In order:
 
 1. **Restore** the last imports from the `data` branch into `data/imported/`.
 2. **X scan** (`tools/x.mjs`, needs the `X_BEARER_TOKEN` secret; the read budget is the `X_MONTHLY_READS` variable). It finds announcement posts linking to Hugging Face or Ollama, and reads posts about a rotating batch of listings (tone, likes, "praised"). Output: `x.json`, `x-state.json`.

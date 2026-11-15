@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { decide } from './mode.mjs';
+const now = new Date('2026-11-16T12:00:00Z');
+assert.equal(decide('push', 'auto', {}, now), 'none');
+assert.equal(decide('schedule', 'auto', {}, now), 'full', 'no full refresh yet');
+assert.equal(decide('workflow_dispatch', 'auto', { last_full: '2026-11-16T03:41:00Z' }, now), 'x', '8 hours after a full refresh: quick scan');
+assert.equal(decide('workflow_dispatch', 'auto', { last_full: '2026-11-15T15:00:00Z' }, now), 'full', '21 hours later: full refresh');
+assert.equal(decide('workflow_dispatch', 'full', { last_full: '2026-11-16T11:00:00Z' }, now), 'full', 'forced');
+assert.equal(decide('schedule', 'x', {}, now), 'x');
+console.log('All run-mode tests passed.');

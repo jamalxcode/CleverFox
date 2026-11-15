@@ -10,7 +10,8 @@ for (const t of ['not great at coding', 'this is not amazing', 'released today',
 
 // links
 assert.deepEqual(linksIn(['https://huggingface.co/Qwen/Qwen3-14B', 'https://huggingface.co/datasets/HuggingFaceFW/fineweb', 'https://huggingface.co/spaces/x/y', 'https://huggingface.co/docs/x', 'https://ollama.com/library/qwen3:14b', 'https://example.com']),
-  { models: ['Qwen/Qwen3-14B'], datasets: ['HuggingFaceFW/fineweb'], ollama: ['qwen3'] });
+  { models: ['Qwen/Qwen3-14B'], datasets: ['HuggingFaceFW/fineweb'], ollama: ['qwen3'], sites: ['example.com'] });
+assert.deepEqual(linksIn(['https://x.com/a/status/1', 'https://www.youtube.com/watch?v=1', 'https://www.newapp.ai/launch']).sites, ['newapp.ai'], 'social sites are not launches');
 
 // queries
 assert.equal(queryFor({ type: 'model', name: 'DeepSeek-R1', distributions: [{ source: 'huggingface', native_id: 'deepseek-ai/DeepSeek-R1' }] }), '("DeepSeek-R1" OR url:"huggingface.co/deepseek-ai/DeepSeek-R1") -is:retweet');
@@ -68,16 +69,42 @@ assert.ok(checked >= 1 && checked < 5, `budget limits listings checked (got ${ch
 assert.equal(out.data.buzz['cf:model:x/model-1'].praised, true);
 assert.ok(out.state.reads <= 45 && out.state.cursor === checked, 'cursor resumes where budget ran out');
 
-// Same day again: today's share is spent, so no reads at all; the saved results are kept for everyone.
+// Same day, an hour later: no announcement scan (under 5 hours), no listing re-read, never past the day's share.
 RULES.monthlyReads = 45 * 16; calls = 0;
-const again = await run({ token: 't', fetchImpl, now: new Date('2026-11-15T18:00:00Z'), listings, prev: out.data, state: out.state, log: () => {} });
-assert.equal(calls, 0, 'no second day of reads on the same day');
-assert.deepEqual(Object.keys(again.data.buzz).sort(), Object.keys(out.data.buzz).sort());
+const again = await run({ token: 't', fetchImpl, now: new Date('2026-11-15T13:00:00Z'), listings, prev: out.data, state: out.state, log: () => {} });
+assert.equal(again.state.scans, 1, 'no second announcement scan within 5 hours');
+for (const id of Object.keys(out.data.buzz)) assert.equal(again.data.buzz[id].observed_at, out.data.buzz[id].observed_at, `${id} is not re-read the same day`);
+assert.ok(again.state.day_reads <= again.state.day_share, 'within the day\'s share');
 // Next day: new share; listings read in the last 24 hours are skipped, so the rotation moves on.
 calls = 0;
 const next = await run({ token: 't', fetchImpl, now: new Date('2026-11-16T06:00:00Z'), listings, prev: out.data, state: again.state, log: () => {} });
 RULES.monthlyReads = saved;
 assert.ok(calls > 0, 'reads again the next day');
 for (const id of Object.keys(out.data.buzz)) assert.equal(next.data.buzz[id].observed_at, out.data.buzz[id].observed_at, `${id} read under 24 h ago is not re-read`);
+
+// Three announcement scans a day, at least 5 hours apart; each run keeps reads for the scans still to come.
+{
+  RULES.monthlyReads = 90 * 16; let q = [];
+  const f2 = async (url) => { q.push(new URL(url).searchParams.get('query')); return fetchImpl(url); };
+  let st = null; let data = null;
+  const at = (h) => new Date(`2026-11-20T${String(h).padStart(2, '0')}:00:00Z`);
+  const r1 = await run({ token: 't', fetchImpl: f2, now: at(3), listings, prev: data, state: st, log: () => {} }); st = r1.state; data = r1.data;
+  assert.equal(st.scans, 1); assert.ok(q.some((x) => x.includes('huggingface.co')) && q.some((x) => x.includes('"AI app"')), 'hub and launch searches both ran');
+  assert.ok(st.day_reads <= Math.max(40, Math.floor(st.day_share / 3)), `first scan used at most its part of the day (${st.day_reads} of ${st.day_share})`);
+  q = [];
+  const r2 = await run({ token: 't', fetchImpl: f2, now: at(5), listings, prev: data, state: st, log: () => {} }); st = r2.state; data = r2.data;
+  assert.equal(st.scans, 1, 'too soon (2 h later): no second announcement scan');
+  assert.ok(!q.some((x) => x.includes('huggingface.co')));
+  const r3 = await run({ token: 't', fetchImpl: f2, now: at(11), listings, prev: data, state: st, log: () => {} }); st = r3.state; data = r3.data;
+  const r4 = await run({ token: 't', fetchImpl: f2, now: at(19), listings, prev: data, state: st, log: () => {} }); st = r4.state;
+  assert.equal(st.scans, 3, 'three scans a day');
+  assert.ok(st.day_reads <= st.day_share, 'never more than the day\'s share');
+  q = [];
+  await run({ token: 't', fetchImpl: f2, now: at(23), listings, prev: r4.data, state: st, log: () => {} });
+  assert.ok(!q.some((x) => x.includes('huggingface.co')), 'no fourth scan');
+  const launch = r1.data.announcements.find((a) => a.kind === 'launch');
+  assert.equal(launch, undefined, 'launch posts without their own site or with few likes are not kept');
+  RULES.monthlyReads = saved;
+}
 
 console.log('All X monitoring tests passed.');

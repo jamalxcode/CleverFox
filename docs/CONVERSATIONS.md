@@ -12,6 +12,19 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: three X scans a day with cron-job.org
+**Where:** Claude Code session.
+**Asked:** scan X 3 times a day for new model, dataset, app and hosting announcements and fill in the rest of the information; time and start it with cron-job.org as for Flattery.
+**Outcome (decision 65):**
+- `tools/mode.mjs`: the first run in 20 hours is a full refresh, the others quick scans.
+- X scanning: up to 3 announcement scans a day within the same daily read share, plus a launch-post search for apps and hosting.
+- `import.mjs --x-only` fills in announced models and datasets from Hugging Face; announced datasets are now picked up in the full refresh too.
+- App and hosting launches go on "New this week" as "Spotted on X" until researched.
+- Workflow input `mode` (auto, full, x) replaces `import`; GitHub's schedule moved to 05:07, 13:07, 21:07 UTC as the backup.
+**Open:**
+- the owner sets up cron-job.org: a GitHub fine-grained token and three jobs;
+- researching spotted launches is a manual step (research session).
+
 ## 2026-11-15: third critique, "do it all", and X caching
 **Where:** Claude Code session.
 **Asked:**

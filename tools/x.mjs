@@ -18,6 +18,8 @@ const NOW = () => new Date();
 export const RULES = {
   monthlyReads: +(process.env.X_MONTHLY_READS || 10000),
   announcementPosts: 100,     // posts read per run for announcements
+  scansPerDay: 3,             // announcement scans a day (cron-job.org starts the runs)
+  scanGapHours: 5,            // minimum gap between two announcement scans
   postsPerListing: 10,        // X's minimum page size
   praisedMinPosts: 3,         // "📣 Praised on X": at least this many praise posts...
   praisedMinAuthors: 3,       // ...from this many different accounts...
@@ -73,8 +75,12 @@ export function isPraise(text) {
 
 // Links in a post: Hugging Face models and datasets, Ollama library families.
 const HF_RESERVED = new Set(['datasets', 'spaces', 'docs', 'blog', 'papers', 'models', 'collections', 'organizations', 'settings', 'join', 'login', 'pricing', 'learn', 'tasks', 'api', 'chat']);
+// Hosts that are never an app or hosting launch themselves.
+const SOCIAL = /(^|\.)(x\.com|twitter\.com|t\.co|youtube\.com|youtu\.be|github\.com|linkedin\.com|reddit\.com|facebook\.com|instagram\.com|tiktok\.com|medium\.com|substack\.com|discord\.(gg|com)|t\.me|bit\.ly|arxiv\.org|apple\.com|google\.com|huggingface\.co|hf\.co|ollama\.com)$/;
+// Launch posts for AI apps and hosting, in several languages.
+export const LAUNCH_QUERY = '(introducing OR launching OR launched OR "now available" OR "now live" OR lanzamos OR lançamos OR "kami meluncurkan" OR "نطلق") ("AI app" OR "AI assistant" OR "AI chatbot" OR "GPU cloud" OR "inference API" OR "GPU servers" OR "AI model API") -is:retweet -is:reply has:links';
 export function linksIn(urls) {
-  const models = new Set(); const datasets = new Set(); const ollama = new Set();
+  const models = new Set(); const datasets = new Set(); const ollama = new Set(); const sites = new Set();
   for (const u of urls || []) {
     let x; try { x = new URL(u); } catch { continue; }
     const p = x.pathname.split('/').filter(Boolean);
@@ -82,8 +88,9 @@ export function linksIn(urls) {
       if (p[0] === 'datasets' && p.length >= 3) datasets.add(`${p[1]}/${p[2]}`);
       else if (p.length >= 2 && !HF_RESERVED.has(p[0])) models.add(`${p[0]}/${p[1]}`);
     } else if (/^(www\.)?ollama\.com$/.test(x.hostname) && p[0] === 'library' && p[1]) ollama.add(p[1].split(':')[0]);
+    else if (!SOCIAL.test(x.hostname)) sites.add(x.hostname.replace(/^www\./, ''));
   }
-  return { models: [...models], datasets: [...datasets], ollama: [...ollama] };
+  return { models: [...models], datasets: [...datasets], ollama: [...ollama], sites: [...sites] };
 }
 
 export class XClient {
@@ -197,21 +204,38 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   const day = now.toISOString().slice(0, 10);
   if (state.day !== day) { state.day = day; state.day_reads = 0; state.day_share = Math.floor(Math.max(0, RULES.monthlyReads - state.reads) / Math.ceil(daysLeft)); }
   const today = Math.max(0, (state.day_share ?? 0) - (state.day_reads || 0));
-  const x = new XClient(token, { budget: today, fetchImpl, log });
+  let x = new XClient(token, { budget: today, fetchImpl, log });
   if (!today) { log('X: today\'s read share is already spent; keeping the saved results'); return { data: prev || { announcements: [], buzz: {} }, state }; }
   prev = prev || { announcements: [], buzz: {} };
 
-  // 1. Announcements
-  // At most a third of today's budget, so praise checks always get reads too.
-  const annMax = Math.min(RULES.announcementPosts, Math.max(10, Math.floor(today / 3)));
-  // The announcement search runs at most once a day.
-  const ann = state.ann_day === day ? [] : ((await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', annMax)) || []);
-  if (ann.length || state.ann_day !== day) state.ann_day = day;
-  const announcements = ann.map((p) => ({ url: postUrl(p), author: p.author, created_at: p.created_at, likes: p.likes, reposts: p.reposts, lang: p.lang, links: linksIn(p.urls) }))
-    .filter((a) => a.links.models.length || a.links.datasets.length || a.links.ollama.length);
+  // 1. Announcements: up to 3 scans a day, at least 5 hours apart. Each scan gets an equal part of what's
+  // left of today's share (split over the scans still to come), at most a third of it for announcements.
+  if (state.scan_day !== day) { state.scan_day = day; state.scans = 0; }
+  const lastScan = state.last_scan ? (now - new Date(state.last_scan)) / 3600000 : Infinity;
+  const scanNow = state.scans < RULES.scansPerDay && lastScan >= RULES.scanGapHours;
+  const scansLeft = Math.max(1, RULES.scansPerDay - state.scans);
+  // At least 40 reads a run (two announcement searches of 10+ and some listings), never more than what's left today.
+  const runBudget = scanNow ? Math.min(today, Math.max(Math.floor(today / scansLeft), 40)) : 0;
+  // Not a scan slot (too soon after the last scan, or 3 done today): read nothing, keep the saved results.
+  if (!scanNow) { log(`X: no scan now (${state.scans} of ${RULES.scansPerDay} today, last ${Number.isFinite(lastScan) ? lastScan.toFixed(1) + ' h ago' : 'never'}); keeping the saved results`); return { data: prev, state }; }
+  const annMax = Math.min(RULES.announcementPosts, Math.max(10, Math.floor(runBudget / 3)));
+  let ann = []; let launches = [];
+  if (scanNow) {
+    ann = (await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', Math.ceil(annMax * 0.6))) || [];
+    launches = (await x.search(LAUNCH_QUERY, Math.max(10, Math.floor(annMax * 0.4)))) || [];
+    state.scans++; state.last_scan = now.toISOString();
+  }
+  const shape = (p, kind) => ({ kind, url: postUrl(p), author: p.author, created_at: p.created_at, likes: p.likes, reposts: p.reposts, lang: p.lang, links: linksIn(p.urls), found_at: now.toISOString() });
+  const announcements = [
+    ...ann.map((p) => shape(p, 'hub')).filter((a) => a.links.models.length || a.links.datasets.length || a.links.ollama.length),
+    // App and hosting launches: kept when they link to a site of their own and got real engagement.
+    ...launches.map((p) => shape(p, 'launch')).filter((a) => a.links.sites.length && (a.likes || 0) >= RULES.announceMinLikes),
+  ];
   const seen = new Set(announcements.map((a) => a.url));
   const keptAnn = [...announcements, ...(prev.announcements || []).filter((a) => !seen.has(a.url) && (now - new Date(a.created_at)) / 86400000 <= RULES.buzzKeepDays)];
 
+  // This run's reads stop at its part of today's share, so later scans today still have reads.
+  x.budget = Math.min(x.budget, runBudget);
   // 2. Praise and validation for a rotating batch of listings
   listings = listings || listingsByPopularity();
   const buzz = Object.fromEntries(Object.entries(prev.buzz || {}).filter(([, b]) => (now - new Date(b.observed_at)) / 86400000 <= RULES.buzzKeepDays));

@@ -49,6 +49,8 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/appstore.mjs`: App Store check (confirms official ids by seller, countries per storefront, look-alike counts) into `data/imported/appstore.json`; candidates in `data/app-stores.json`. Tested by `tools/test-appstore.mjs`.
 - `tools/xpost.mjs`: weekly X post of what's new (Mondays, off unless `X_POST_ENABLED` is `true` and the posting keys are set). Tested by `tools/test-xpost.mjs`.
 - `glossary/index.html`: plain-language glossary (static). `guides/`, `new/` and `feed.xml` are written by the build.
+- `tools/mode.mjs`: decides each workflow run's mode (full refresh if the last was 20+ hours ago, else a quick X scan; `none` on push). Tested by `tools/test-mode.mjs`. cron-job.org starts the workflow at 03:41, 11:41 and 19:41 UTC.
+- `tools/import.mjs --x-only`: quick mode that only adds models and datasets announced on X.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
 - `.github/workflows/pages.yml`: on push, restores imports and deploys. Daily, it also re-imports first and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.
 - `tools/build.mjs`: the validator and catalog builder. It enforces vocabularies, claim provenance, ISO country codes, identity tests and access blocks, and derives `no_card_needed`.

@@ -642,6 +642,10 @@ async function writeNewPages(records) {
   const week = fresh.filter((r) => r.first_seen_at >= cutoff);
   const WORD = { model: 'Models', dataset: 'Datasets', app: 'Apps', host: 'Hosting and APIs' };
   const groups = Object.keys(WORD).map((t) => [t, week.filter((r) => r.type === t)]).filter(([, l]) => l.length);
+  // App and hosting launches spotted on X: listed until researched (their access facts can't be read from a post).
+  const listedSites = new Set(records.flatMap((r) => [r.url, ...(r.official_urls || [])]).filter(Boolean).map((u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return null; } }));
+  const spotted = (XDATA.announcements || []).filter((a) => a.kind === 'launch' && a.created_at >= cutoff && !a.links.sites.some((h) => listedSites.has(h)))
+    .sort((a, b) => b.likes - a.likes).slice(0, 40);
   const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${r.discovered_via?.source === 'x' ? ' · 🆕 spotted on X' : ''}</span><br>${esc(r.description)}</li>`;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const html = `<!doctype html>
@@ -655,6 +659,7 @@ async function writeNewPages(records) {
 <main class="wrap listing"><h1>🆕 New this week</h1>
 <p class="muted">${week.length} listings added in the last 7 days.</p>
 ${groups.map(([t, l]) => `<h2>${WORD[t]} (${l.length})</h2><ul class="new-list">${l.slice(0, 100).map(li).join('')}</ul>${l.length > 100 ? `<p class="muted">+${l.length - 100} more</p>` : ''}`).join('') || '<p>Nothing new in the last 7 days.</p>'}
+${spotted.length ? `<h2>📣 Spotted on X: app and hosting launches (${spotted.length})</h2><p class="muted">Launch posts with real engagement, not yet researched. They're listed once their access facts (free plan, payment, countries) are checked at the official site.</p><ul class="new-list">${spotted.map((a) => `<li><strong>${esc(a.links.sites[0])}</strong> <span class="muted">· @${esc(a.author)} · ❤️ ${a.likes} · ${esc(R.fmtDate(a.created_at))}</span> · <a href="${esc(a.url)}" rel="noopener">the post ↗</a></li>`).join('')}</ul>` : ''}
 </main>
 ${GOATCOUNTER}
 </body></html>
@@ -664,7 +669,7 @@ ${GOATCOUNTER}
   const xml = (t) => String(t ?? '').replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]);
   const items = fresh.slice(0, 50).map((r) => `<item><title>${xml(`${r.name} (${r.type})`)}</title><link>${SITE}${R.listingPath(r)}</link><guid isPermaLink="true">${SITE}${R.listingPath(r)}</guid><pubDate>${new Date(r.first_seen_at).toUTCString()}</pubDate><description>${xml(r.description)}</description></item>`);
   writeFileSync(join(root, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>CleverFox: new listings</title><link>${SITE}</link><description>New AI models, datasets, apps and hosting on CleverFox.</description><language>en</language>\n${items.join('\n')}\n</channel></rss>\n`);
-  console.log(`New this week: ${week.length} listings; feed has ${items.length}`);
+  console.log(`New this week: ${week.length} listings; feed has ${items.length}; ${spotted.length} app or hosting launches spotted on X`);
 }
 
 // ---- guide pages: a small, hand-picked set of questions people search for (spec phase 2 guides) ----

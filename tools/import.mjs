@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'data', 'imported');
 const QUICK = process.argv.includes('--quick');
+const X_ONLY = process.argv.includes('--x-only'); // add only models and datasets newly announced on X
 const NOW = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 const TODAY = NOW.slice(0, 10) + 'T00:00:00Z'; // observed_at at day precision: unchanged facts don't churn the files
 const HF = 'https://huggingface.co';
@@ -490,9 +491,16 @@ async function main() {
   try { ollama = await fetchOllama(); console.log(`Ollama library: ${ollama.length} model families`); } catch (e) { console.warn(`Ollama failed: ${e.message}`); }
   try {
     const raw = await fetchDatasets();
+    // Datasets announced on X with real engagement: fetched from Hugging Face even outside the top lists.
+    const haveD = new Set(raw.map((d) => d.id));
+    for (const [id, post] of xAnnouncements('datasets')) {
+      if (haveD.has(id)) { raw.find((d) => d.id === id).discovered_via = post; continue; }
+      const d = await get(`${HF}/api/datasets/${id}?${DATASET_EXPAND}`, { headers: HF_HEADERS, tries: 2 }).catch(() => null);
+      if (d?.id) { d.discovered_via = post; raw.push(d); haveD.add(d.id); }
+    }
     console.log(`Hugging Face datasets: ${raw.length} fetched`);
     const readmes = await pool(raw.slice(0, RULES.readmes), 6, (d) => get(`${HF}/datasets/${d.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null));
-    datasets = raw.map((d, i) => datasetRecord(d, readmes[i]));
+    datasets = raw.map((d, i) => { const r = datasetRecord(d, readmes[i]); if (d.discovered_via) r.discovered_via = d.discovered_via; return r; });
   } catch (e) { console.warn(`Hugging Face datasets failed: ${e.message}`); }
 
   if (models) {
@@ -514,12 +522,47 @@ async function main() {
     const real = (r) => (r.popularity || []).reduce((n, p) => n + (p.likes || 0), 0) >= 100 || [r.license && r.license.value !== 'unknown', (r.tasks || []).length > 0, !!r.size_category,
       (r.paper_urls || []).length > 0, Array.isArray(r.languages?.value) && r.languages.value.length > 0, !/^Dataset published by [^.]+ on Hugging Face\.$/.test(r.description || '')].filter(Boolean).length >= 2;
     const keepIds = new Set((existsSync(join(outDir, '..', 'corrections.json')) ? JSON.parse(readFileSync(join(outDir, '..', 'corrections.json'), 'utf8')).keep || [] : []).map((k) => k.id));
-    const unique = datasets.filter((r) => !inSeed(r) && (real(r) || keepIds.has(r.id)) && (seen.has(r.id) ? false : seen.add(r.id)));
+    const unique = datasets.filter((r) => !inSeed(r) && (real(r) || keepIds.has(r.id) || r.discovered_via) && (seen.has(r.id) ? false : seen.add(r.id)));
     for (const r of unique) { r.capabilities = capabilitiesOf(r, []); applyPublisher(r); }
     console.log(`datasets written: ${keepOrWrite('datasets.json', unique, 'datasets')}`);
   }
 }
 
+// Quick mode, for the scans between daily refreshes: only what X announced since, filled in from Hugging Face.
+// Existing files are kept as they are; new records are added (so nothing shrinks).
+async function xOnly() {
+  const seed = seedKeys();
+  const read = (f) => existsSync(join(outDir, f)) ? JSON.parse(readFileSync(join(outDir, f), 'utf8')) : [];
+  const models = read('models.json'); const datasets = read('datasets.json');
+  const known = new Set([...models, ...datasets].flatMap((r) => (r.distributions || []).map((d) => `${d.source}:${String(d.native_id).toLowerCase()}`)).concat(datasets.map((r) => r.id)));
+  const newM = []; const newD = [];
+  for (const [id, post] of xAnnouncements('models')) {
+    if (known.has(`huggingface:${id.toLowerCase()}`) || seed.has(`huggingface:${id.toLowerCase()}`)) continue;
+    const m = await get(`${HF}/api/models/${id}?${MODEL_EXPAND}`, { headers: HF_HEADERS, tries: 2 }).catch(() => null);
+    if (!m?.id || !TASKS.includes(m.pipeline_tag) || QUANTIZERS.test(m.author || '') || (isQuantization(m) && !isUncensored(m.id, m.tags))) continue;
+    const readme = await get(`${HF}/${m.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null);
+    const r = modelRecord(m, readme); r.discovered_via = post;
+    const idByHf = new Map(models.map((x) => [x.distributions?.[0]?.native_id, x.id]));
+    r.relations = r.relations.map((x) => ({ type: x.type, target: idByHf.get(x.target_hf) || `${HF}/${x.target_hf}` }));
+    r.capabilities = capabilitiesOf(r, r.tags_seen); r.highlights = highlightsOf(r); applyPublisher(r);
+    newM.push(r);
+  }
+  for (const [id, post] of xAnnouncements('datasets')) {
+    const r0 = datasets.find((x) => x.distributions?.some((d) => String(d.native_id).toLowerCase() === id.toLowerCase()));
+    if (r0) continue;
+    const d = await get(`${HF}/api/datasets/${id}?${DATASET_EXPAND}`, { headers: HF_HEADERS, tries: 2 }).catch(() => null);
+    if (!d?.id) continue;
+    const readme = await get(`${HF}/datasets/${d.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null);
+    const r = datasetRecord(d, readme); r.discovered_via = post; r.capabilities = capabilitiesOf(r, []); applyPublisher(r);
+    if (!datasets.some((x) => x.id === r.id)) newD.push(r);
+  }
+  const ids = new Set([...models, ...datasets].map((r) => r.id));
+  const addM = newM.filter((r) => !ids.has(r.id)); const addD = newD.filter((r) => !ids.has(r.id));
+  if (addM.length) writeFileSync(join(outDir, 'models.json'), JSON.stringify([...models, ...addM], null, 1) + '\n');
+  if (addD.length) writeFileSync(join(outDir, 'datasets.json'), JSON.stringify([...datasets, ...addD], null, 1) + '\n');
+  console.log(`X-only import: ${addM.length} new models (${addM.map((r) => r.name).join(', ') || 'none'}), ${addD.length} new datasets (${addD.map((r) => r.name).join(', ') || 'none'})`);
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().catch((e) => { console.error(e.message); process.exit(1); });
+  (X_ONLY ? xOnly() : main()).catch((e) => { console.error(e.message); process.exit(1); });
 }

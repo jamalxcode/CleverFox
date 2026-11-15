@@ -1,14 +1,18 @@
 name: Import and deploy
 # On push: build and deploy what's committed.
-# Daily (and on manual dispatch with import=true): refresh models and datasets from Hugging Face
-# and the Ollama library first. Imported files live on the `data` branch, overwritten as a single
-# commit (no history growth, as in Flattery). A failed or shrunken import keeps the previous files.
+# Three times a day (cron-job.org, with GitHub's schedule as backup): scan X for announcements, fill in new
+# models and datasets from Hugging Face, build and deploy. The first run in 20 hours is a full refresh
+# (Hugging Face, Ollama, benchmarks, providers, App Store, re-check); tools/mode.mjs decides. Imported files
+# live on the `data` branch, overwritten as a single commit. A failed or shrunken import keeps the previous files.
 on:
   push: { branches: [main] }
-  schedule: [{ cron: '41 3 * * *' }]
+  # Timer: cron-job.org starts this 3 times a day (03:41, 11:41, 19:41 UTC) through GitHub's API, as Flattery does:
+  # POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches, body {"ref":"main"}.
+  # GitHub's schedule below is a late backup; a run that comes too soon after another reads nothing from X.
+  schedule: [{ cron: '7 5,13,21 * * *' }]
   workflow_dispatch:
     inputs:
-      import: { description: 'Refresh imports from Hugging Face and Ollama first', type: boolean, default: true }
+      mode: { description: 'auto (full refresh if the last was 20+ hours ago, else a quick X scan), full or x', type: choice, options: [auto, full, x], default: auto }
 permissions: { contents: write, pages: write, id-token: write }
 concurrency: { group: pages, cancel-in-progress: false }
 jobs:
@@ -24,22 +28,29 @@ jobs:
         run: |
           mkdir -p data/imported
           if git fetch --depth 1 origin data 2>/dev/null; then git archive FETCH_HEAD imported | tar -x -C data; ls -la data/imported; else echo "No data branch yet."; fi
+      - name: Decide what this run does (full refresh, quick X scan, or just deploy)
+        id: mode
+        run: node tools/mode.mjs "${{ github.event_name }}" "${{ inputs.mode || 'auto' }}"
       - name: Scan X for announcements and what people say (skipped without X_BEARER_TOKEN)
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.import)
+        if: steps.mode.outputs.mode != 'none'
         env: { X_BEARER_TOKEN: "${{ secrets.X_BEARER_TOKEN }}", X_MONTHLY_READS: "${{ vars.X_MONTHLY_READS }}" }
         run: node tools/x.mjs
-      - name: Import from Hugging Face and the Ollama library
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.import)
+      - name: Quick scan - fill in models and datasets announced on X
+        if: steps.mode.outputs.mode == 'x'
+        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}" }
+        run: node tools/import.mjs --x-only && node tools/providers.mjs
+      - name: Full refresh - import from Hugging Face and the Ollama library, benchmarks, providers, App Store, re-check
+        if: steps.mode.outputs.mode == 'full'
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
         run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
       - name: Weekly post on X (off unless the X_POST_ENABLED variable is true)
-        if: github.event_name == 'schedule'
+        if: steps.mode.outputs.mode == 'full'
         env: { X_POST_ENABLED: "${{ vars.X_POST_ENABLED }}", X_API_KEY: "${{ secrets.X_API_KEY }}", X_API_SECRET: "${{ secrets.X_API_SECRET }}", X_ACCESS_TOKEN: "${{ secrets.X_ACCESS_TOKEN }}", X_ACCESS_SECRET: "${{ secrets.X_ACCESS_SECRET }}" }
         run: node tools/xpost.mjs
       - name: Save imports to the data branch (one commit, overwritten)
-        if: github.event_name != 'push'
+        if: steps.mode.outputs.mode != 'none'
         run: |
           ls data/imported/*.json >/dev/null 2>&1 || { echo "No imports to save."; exit 0; }
           rm -rf /tmp/data && mkdir -p /tmp/data/imported && cp data/imported/*.json /tmp/data/imported/

@@ -294,6 +294,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** a sourced table of the payment methods Google Play accepts per country (72 countries, read from Google Play Help) lets every app sold through Google Play show how people in each country can pay, phrased "if you subscribe in the Android app". The App Store table waits until Apple's support page can be read directly; search summaries contradicted each other (for example on carrier billing in Kenya).
 **Why:** only 1 listing had mobile money as a payment method; most people outside the US who lack a card can still pay through their phone's app store. One official table covers dozens of apps without researching each one. It also corrected an assumption: Google Play in Kenya names Airtel Money, not M-Pesa.
 
+### 65. Three scans a day, started by cron-job.org; launches are queued for research
+**Decision:** cron-job.org starts the workflow 3 times a day through GitHub's API, with GitHub's schedule as a late backup. The first run in 20 hours is a full refresh; the others are quick scans that read X announcements and fill in new models and datasets from Hugging Face. Each UTC day still has one X read share, split across up to 3 scans at least 5 hours apart; a run outside a scan slot reads nothing. A second search finds AI app and hosting launch posts; those are listed as "Spotted on X" until researched, because payment and country facts can't be read from a post (and no AI is used to guess them).
+**Why:** the owner asked for X scans 3 times a day for new models, datasets, apps and hosting, with the rest of the information filled in, timed by cron-job.org as for Flattery, whose lesson is that GitHub's schedules run late or not at all. The daily read share keeps X costs the same however many runs start.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.
