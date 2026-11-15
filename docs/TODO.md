@@ -37,7 +37,7 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
   - **free status or payment not stated** on the official pages;
   - **card payment named without brands,** applied strictly by one group: Liner, Jarvislabs, Latitude.sh, Cerebras.
 
-  Next steps: a headless-browser fetch for the JavaScript pages, or read them in a session that can reach them; re-run the review for the card-brand cases under decision 67's rule.
+  Under way (16 November): a re-fetch with honest headless rendering and store listings (decision 69), then a review of all 40 under decision 67's card rule. Sites that refuse bots stay unverified.
 - [ ] **Listings that may have changed** (found in the review):
   - Kanana seems folded into KakaoTalk;
   - Locally AI is now "by LM Studio" (Element Labs), so the publisher needs updating;

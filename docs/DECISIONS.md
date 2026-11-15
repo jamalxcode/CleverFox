@@ -329,6 +329,15 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 Models and datasets found go through the usual import and checks. New GitHub projects and releases are shown separately on New this week and never become listings automatically.
 **Why:** the owner asked to track new releases on llm-releases.com, Hugging Face and GitHub, keeping "new project" and "release" apart, as their GitHub notes advise: watching a repository doesn't discover new ones, and a new repository isn't a release. The first local run found 67 new Hugging Face models, 28 datasets and 93 new GitHub projects, and added 16 models and 26 datasets. Scans run 3 times a day rather than every 30 minutes, because each run rebuilds the site.
 
+### 69. Fetching official pages: render JavaScript pages honestly, never get around refusals
+**Decision:** the verification fetch (`tools/fetch-pages.mjs`):
+- adds each listing's App Store and Google Play pages, and its `/pricing`, `/plans`, `/faq` and `/terms` pages;
+- opens a page in a headless browser only when it answered 200 but showed almost no text (built by JavaScript);
+- always identifies itself as CleverFox's checker; pages that refuse automated visitors (401, 403, 429) stay refused;
+- stops starting new pages after 35 minutes and saves what it has, so a slow run never loses everything. Rendering waits for the page to load plus 2.5 seconds, at most 20 seconds.
+
+**Why:** 40 listings stayed unverified after the first review, mostly because their pages need JavaScript or block bots. A first version pretended to be a normal Chrome browser, and the session's safety check refused it as getting around access controls. That was right: CleverFox respects sites that block automated visitors, and those listings stay unverified rather than being read by other means. The first run with rendering hit the 50-minute limit and saved nothing, hence the time budget.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

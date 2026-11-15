@@ -12,6 +12,16 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: verifying the remaining 40 (in progress)
+**Where:** Claude Code session.
+**Asked:** verify the remaining 40 unverified apps and hosts; then update the repo with the design decisions and the chat.
+**Outcome so far (decision 69):**
+- **The fetch now also reads** store listings and common pricing, plans, FAQ and terms pages, and renders JavaScript-only pages in a headless browser.
+- **A first version was refused.** It disguised itself as Chrome, and the session's safety check rejected it as getting around access controls. The tool now always identifies itself, and sites that refuse automated visitors stay unverified.
+- **The first rendering run hit the 50-minute limit** and saved nothing. Rendering is now faster and has a 35-minute budget. The re-run is going on GitHub; the review of the 40 follows, with the same quote check (decision 67).
+
+**Open:** listings whose sites block bots (for example ChatGPT, Vultr, HUMAIN) will stay unverified unless their facts can be confirmed on their store listings.
+
 ## 2026-11-16: tracking new releases on llm-releases.com, Hugging Face and GitHub
 **Where:** Claude Code session.
 **Asked:**
