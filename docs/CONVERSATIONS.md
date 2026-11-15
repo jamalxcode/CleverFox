@@ -12,6 +12,16 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: second critique, "make it more useful"
+**Where:** Claude Code session.
+**Asked:** critique how CleverFox can be more useful; then "do it all"; and update the repo with design decisions, the conversation, what we're aiming for, business rules and the workflow process.
+**Outcome:**
+- Critique: CleverFox is a good directory but weak at advice. People need to know what to pick, how to start, where to use a model online without a GPU, which apps work in their country, which apps are fake, prices in their money, phone-first options, and their own language.
+- The aim is written down as "from directory to advisor" (spec section 1) and the plan is in spec section 20 and decision 62.
+- New `docs/WORKFLOW.md`: the daily pipeline step by step, the data flow, how changes and research are made and reviewed, and the settings.
+- Work started: research on offline phone apps and on official app-store links, and the "use it online" importer (the Hugging Face provider mapping works from this session; OpenRouter's model list is blocked here but should work from GitHub's servers).
+**Open:** the App Store check covers only apps with a confirmed official store link. Prices are shown where researched, and reading them automatically from pricing pages is later. Interface translations need review by native speakers.
+
 ## 2026-11-15: critique and the three fixes
 **Where:** Claude Code session.
 **Asked:** critique CleverFox; then do the top three fixes: make the site light, clean up the catalog, grow the access side.

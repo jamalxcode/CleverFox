@@ -22,6 +22,7 @@ CleverFox is a metadata directory. It links to official sources and never hosts 
 
 - [Specification](docs/SPECIFICATION.md): what CleverFox is, user journeys, competitors and how it works.
 - [Business rules](docs/BUSINESS-RULES.md): every rule and number the code applies.
+- [Workflow](docs/WORKFLOW.md): the daily pipeline, the data flow and how changes are made.
 - [Decisions](docs/DECISIONS.md): what was decided and why.
 - [Conversation log](docs/CONVERSATIONS.md): notes from each design session.
 - [Data snapshots](data/snapshots/): dated copies of the data collected.

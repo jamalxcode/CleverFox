@@ -282,6 +282,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** added 27 regional apps (Africa, Middle East, South and Southeast Asia, East Asia, Latin America), 14 API providers and aggregators (as hosts of kind `inference_endpoint`) and 13 regional GPU hosts, researched from publishers' own pages with a source per fact. Most are `candidate`, because this session's network blocked the official sites, and the facts come from search results on the publishers' domains. In review, card checkouts (Stripe, cloud marketplaces, card-funded wallets) and China-only methods on global listings were removed, and a generic wrapper app was dropped. Country lists stay unknown where no official page states them, so those apps aren't highlighted for a country yet.
 **Why:** the access side, which is what sets CleverFox apart, had 18 apps and 11 hosts against 874 models. The daily re-check (decision 60) now watches these listings' source pages.
 
+### 62. Make CleverFox an advisor: the "more useful" plan
+**Decision:** after a second critique, the owner chose to do every improvement: use-it-online links from models to API providers, top picks with a guided start (shareable), how-to-start commands and download buttons, an App Store country check with official-app and look-alike marks, offline phone apps, local prices, new this week with RSS, compare, and interface languages. Picks are built only from stated facts, with the reasons shown. Country availability from the App Store counts as official (Apple's own storefront data) and is used only for apps whose official store link is confirmed.
+**Why:** the site answered "what exists and can I use it" but not "what should I use and how do I start", which is where people outside the US get stuck. Most of the data for picks already exists; the App Store check fills the biggest hole (app country availability) without hand research.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

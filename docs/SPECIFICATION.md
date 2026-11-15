@@ -1,6 +1,6 @@
 # CleverFox: specification
 
-**Status:** prototype live, revised 14 November 2026. The rules and numbers the code applies are in [BUSINESS-RULES.md](BUSINESS-RULES.md); dated data snapshots are in `data/snapshots/`.
+**Status:** prototype live, revised 15 November 2026. The rules and numbers the code applies are in [BUSINESS-RULES.md](BUSINESS-RULES.md); how the pipeline runs and how changes are made is in [WORKFLOW.md](WORKFLOW.md); dated data snapshots are in `data/snapshots/`.
 **Site:** https://jamalxcode.github.io/CleverFox/ (custom domain https://cleverfox.sala.company planned, waiting on DNS) · **Repo:** `jamalxcode/cleverfox`
 **History:** the original proposal is kept unchanged in [archive/SPECIFICATION-2026-11-14.txt](archive/SPECIFICATION-2026-11-14.txt). Why each choice was made is in [DECISIONS.md](DECISIONS.md).
 
@@ -10,6 +10,10 @@ CleverFox is **a global catalog of AI models, apps and hosting, with access info
 
 1. **One catalog from every source.** It covers AI models wherever they live: Hugging Face, GitHub, Ollama, Kaggle, ModelScope and other hubs, plus API-only models from providers such as OpenAI, Anthropic and Google. It also covers web-based AI apps, and AI servers and hosting. Obscure listings sit alongside well-known ones.
 2. **Access from anywhere.** For each listing, people outside the US can see whether they can use it from their country and how they can pay. That means free options, crypto, mobile money, UPI, Pix, app-store billing and other methods that don't need a Visa or Mastercard. They can also see whether it runs locally on their own machine, whether it works in their language, and whether there is a server in a data center near them.
+
+### What we're aiming for
+
+**From directory to advisor.** Knowing what exists isn't enough: people outside the US get stuck at *what to pick and how to start*. CleverFox should answer "I want to do X, on this device, from this country" with a few good picks, why they're picked, how to start in one step, and how to pay without a card. Everything stays sourced: picks are built from stated facts (fit, independent benchmarks, popularity, praise, free status, country and payment), never from an invented quality score.
 
 CleverFox is a metadata directory. It links to official sources for downloads, inference, access, signup and billing. It does not host model files, run inference, provision servers, handle credentials or take payments.
 
@@ -324,17 +328,32 @@ Code: MIT. Catalog data: CC BY 4.0, with credit to CleverFox, and published as d
 
 ## 20. Next steps
 
-Built and live:
-- hand-researched seed listings (models, apps, hosting);
-- daily imports from Hugging Face (models and datasets) and the Ollama library, with linking to originals;
-- Wikidata publisher countries;
-- independent benchmarks from Epoch AI;
+Built and live (15 November 2026):
+- researched seed listings: 45 apps (27 regional), 38 hosts (14 API providers, 13 regional GPU hosts) and some models;
+- daily imports from Hugging Face (models and datasets) and the Ollama library, curated at build time: a corrections file, a dataset quality bar, re-uploads grouped under their original;
+- Wikidata publisher countries; independent benchmarks from Epoch AI;
 - answers to what people ask: good for, local, platforms, hardware with recommended memory, free, payments, barriers, uncensored;
-- a shareable page per listing, with X reactions.
+- personal highlighting by device memory and country;
+- X monitoring: announcements, tone and "praised on X", a "What people say on X" panel;
+- a daily re-check of access source pages, with warnings when they change or disappear;
+- slim list files (about 70 KB compressed for models) with full records on demand;
+- a shareable page per listing.
 
-Next:
-1. **Switch on X monitoring** (built, section 9): add the `X_BEARER_TOKEN` secret (an X API plan with recent search) and optionally the `X_MONTHLY_READS` variable. Then: access and payment feedback claims and scam warnings from posts.
-2. **Artificial Analysis** benchmarks: add the free `AA_API_KEY` secret.
-3. **More directories that link out:** ModelScope, Kaggle, GitHub releases, API model lists (provider docs, aggregators), and app directories for the web AI app list.
-4. **More publisher countries:** extend `data/publisher-map.json`.
-5. **Custom domain** `cleverfox.sala.company`: needs a DNS record. Then put the `CNAME` file back and update `SITE` in `tools/build.mjs`.
+In progress, the "more useful" plan (decision 62), in this order:
+1. **Use it online:** for each model, the API providers that serve it (Hugging Face Inference Providers mapping, OpenRouter's model list), with price per million tokens, free variants, and links to the provider's payment facts.
+2. **Top picks and a guided start:** "I want to [task] on [device] from [country]" gives the best 3 models, apps and online options with reasons. The choice is kept in the link so it can be shared.
+3. **How to start:** the exact command for the size that fits the visitor's memory, beginner apps for running models, and download buttons for apps.
+4. **App Store country check:** official availability per country from Apple's lookup API for apps with a confirmed official store link; an "official app" mark and a count of look-alike apps from other sellers.
+5. **Runs offline on your phone:** researched on-device apps and a filter.
+6. **Local prices, new this week (page and RSS), compare up to 3 listings.**
+7. **Interface languages:** the main interface in Arabic, Hindi, Portuguese, Indonesian and Swahili first.
+
+Later:
+- Artificial Analysis benchmarks (free `AA_API_KEY` secret);
+- more directories that link out (ModelScope, Kaggle, GitHub releases);
+- more publisher countries;
+- automated checks before deploy (phone and accessibility);
+- a freshness and status page;
+- click-to-load X embeds;
+- prices read from pricing pages;
+- custom domain `cleverfox.sala.company` (needs a DNS record, then the `CNAME` file and `SITE` in `tools/build.mjs`).

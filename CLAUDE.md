@@ -10,7 +10,7 @@ CleverFox (live at https://jamalxcode.github.io/CleverFox/; the custom domain cl
 
 It is a metadata directory: it links to official sources and never hosts model files, runs inference, provisions servers or takes payments.
 
-Read `docs/SPECIFICATION.md` (the spec, including user journeys and competitors), `docs/BUSINESS-RULES.md` (every rule and number the code applies) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
+Read `docs/SPECIFICATION.md` (the spec, including user journeys, competitors and what we're aiming for), `docs/WORKFLOW.md` (the daily pipeline, data flow and how changes and research are made), `docs/BUSINESS-RULES.md` (every rule and number the code applies) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
 
 ## Current state
 
