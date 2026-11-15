@@ -12,7 +12,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const OUT = join(root, arg('--out', 'pages-cache'));
 const ALL = process.argv.includes('--all');
-export const RULES = { perListing: 18, maxChars: 60000, timeoutMs: 25000, concurrency: 6, renderBelowChars: 800, budgetMs: 35 * 60000 };
+export const RULES = { perListing: 18, maxChars: 60000, timeoutMs: 25000, concurrency: 6, renderBelowChars: 800, budgetMs: 33 * 60000, hardStopMs: 38 * 60000 };
+// A single page may never hold up the run: after `ms` it counts as a timeout.
+const hardStop = (p, ms) => Promise.race([p, new Promise((resolve) => setTimeout(() => resolve({ status: 0, error: 'timeout (hard stop)' }), ms).unref())]);
 // Common official pages that often hold pricing and payment facts.
 const EXTRA_PATHS = ['/pricing', '/plans', '/faq', '/terms'];
 
@@ -76,22 +78,25 @@ async function main() {
   rmSync(OUT, { recursive: true, force: true }); mkdirSync(join(OUT, 'pages'), { recursive: true });
   const jobs = list.flatMap((r) => urlsOf(r).map((u, i) => ({ id: r.id, file: r._file, url: u, n: i })));
   const index = {}; let next = 0; let ok = 0; const started = Date.now(); let skipped = 0;
+  const save = (note = '') => writeFileSync(join(OUT, 'index.json'), JSON.stringify({ fetched_at: new Date().toISOString(), listings: list.length, pages: jobs.length, readable: ok, note, index }, null, 1) + '\n');
+  // Hard stop: whatever is still hanging, save what was fetched and exit before the job's time limit.
+  setTimeout(() => { save('stopped at the hard time limit; some pages were not fetched'); console.log(`Hard time limit: saved ${ok} readable pages.`); process.exit(0); }, RULES.hardStopMs).unref();
   await Promise.all(Array.from({ length: RULES.concurrency }, async () => {
     while (next < jobs.length) {
       // Time budget: stop starting pages and save what was fetched (the rest is listed as skipped).
       if (Date.now() - started > RULES.budgetMs) { const j = jobs[next++]; skipped++; (index[j.id] ||= { file: j.file, pages: [] }).pages.push({ url: j.url, file: null, status: 0, chars: 0, error: 'skipped: time budget' }); continue; }
       const j = jobs[next++];
-      let res = await fetchPage(j.url);
+      let res = await hardStop(fetchPage(j.url), 45000);
       // Only pages that answered 200 with almost no text (built by JavaScript) are rendered; refusals stay refusals.
-      if (res.status === 200 && (res.chars || 0) < RULES.renderBelowChars) { const rr = await render(j.url); if (rr.text && rr.chars > (res.chars || 0)) res = rr; }
+      if (res.status === 200 && (res.chars || 0) < RULES.renderBelowChars) { const rr = await hardStop(render(j.url), 45000); if (rr.text && rr.chars > (res.chars || 0)) res = rr; }
       const name = `${j.id.replace(/^cf:/, '').replace(/[^a-z0-9.-]+/gi, '_')}__${j.n}.txt`;
       if (res.text) { ok++; writeFileSync(join(OUT, 'pages', name), `URL: ${j.url}\nFINAL: ${res.final_url}\nSTATUS: ${res.status}\nTITLE: ${res.title}\nFETCHED: ${new Date().toISOString()}\n\n${res.text}\n`); }
       (index[j.id] ||= { file: j.file, pages: [] }).pages.push({ url: j.url, file: res.text ? `pages/${name}` : null, status: res.status, chars: res.chars || 0, rendered: !!res.rendered, error: res.error || res.note || null, final_url: res.final_url || null });
     }
   }));
-  writeFileSync(join(OUT, 'index.json'), JSON.stringify({ fetched_at: new Date().toISOString(), listings: list.length, pages: jobs.length, readable: ok, index }, null, 1) + '\n');
-  if (browser) await browser.close();
+  save();
+  if (browser) await hardStop(browser.close(), 10000);
   console.log(`Fetched ${jobs.length - skipped} of ${jobs.length} pages for ${list.length} listings; ${ok} readable${skipped ? `; ${skipped} skipped for time` : ''}.`);
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) main();
+if (process.argv[1] === fileURLToPath(import.meta.url)) main().then(() => process.exit(0));
