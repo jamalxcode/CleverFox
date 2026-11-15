@@ -23,7 +23,7 @@ export const RULES = {
   praisedMinAuthors: 3,       // ...from this many different accounts...
   praisedMinLikes: 100,       // ...with at least this many likes between them
   announceMinLikes: 25,       // an announcement is imported only with this much engagement
-  buzzKeepDays: 30,           // buzz older than this is dropped as stale
+  buzzKeepDays: 30, refreshHours: 24,           // buzz older than this is dropped as stale
 };
 
 // Good words in several languages. Matched case-insensitively; a negation just before cancels it.
@@ -193,14 +193,20 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   const month = now.toISOString().slice(0, 7);
   state = state && state.month === month ? state : { month, reads: 0, cursor: state?.cursor || 0 };
   const daysLeft = Math.max(1, (new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)) - now) / 86400000);
-  const today = Math.floor(Math.max(0, RULES.monthlyReads - state.reads) / Math.ceil(daysLeft));
+  // One day's share per calendar day: running again the same day only spends what's left of today's share.
+  const day = now.toISOString().slice(0, 10);
+  if (state.day !== day) { state.day = day; state.day_reads = 0; state.day_share = Math.floor(Math.max(0, RULES.monthlyReads - state.reads) / Math.ceil(daysLeft)); }
+  const today = Math.max(0, (state.day_share ?? 0) - (state.day_reads || 0));
   const x = new XClient(token, { budget: today, fetchImpl, log });
+  if (!today) { log('X: today\'s read share is already spent; keeping the saved results'); return { data: prev || { announcements: [], buzz: {} }, state }; }
   prev = prev || { announcements: [], buzz: {} };
 
   // 1. Announcements
   // At most a third of today's budget, so praise checks always get reads too.
   const annMax = Math.min(RULES.announcementPosts, Math.max(10, Math.floor(today / 3)));
-  const ann = (await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', annMax)) || [];
+  // The announcement search runs at most once a day.
+  const ann = state.ann_day === day ? [] : ((await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', annMax)) || []);
+  if (ann.length || state.ann_day !== day) state.ann_day = day;
   const announcements = ann.map((p) => ({ url: postUrl(p), author: p.author, created_at: p.created_at, likes: p.likes, reposts: p.reposts, lang: p.lang, links: linksIn(p.urls) }))
     .filter((a) => a.links.models.length || a.links.datasets.length || a.links.ollama.length);
   const seen = new Set(announcements.map((a) => a.url));
@@ -210,10 +216,12 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   listings = listings || listingsByPopularity();
   const buzz = Object.fromEntries(Object.entries(prev.buzz || {}).filter(([, b]) => (now - new Date(b.observed_at)) / 86400000 <= RULES.buzzKeepDays));
   let checked = 0;
+  // A listing read in the last 24 hours is kept as is: no second read the same day.
+  const fresh = (b) => b?.observed_at && (now - new Date(b.observed_at)) / 3600000 < RULES.refreshHours;
   // Listings that found nothing with an older query go first, with the current one.
   for (const r of listings) {
     const b = buzz[r.id]; const q = queryFor(r);
-    if (!b || b.posts || !q || b.q === q) continue;
+    if (!b || b.posts || !q || b.q === q || fresh(b)) continue;
     const posts = await x.search(q, RULES.postsPerListing);
     if (!posts) break;
     buzz[r.id] = { ...summarizeBuzz(posts, now), q };
@@ -221,14 +229,14 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   }
   for (let i = 0; i < listings.length; i++) {
     const r = listings[(state.cursor + i) % listings.length];
-    const q = queryFor(r); if (!q) continue;
+    const q = queryFor(r); if (!q || fresh(buzz[r.id])) continue;
     const posts = await x.search(q, RULES.postsPerListing);
     if (!posts) { state.cursor = (state.cursor + i) % listings.length; break; }
     buzz[r.id] = { ...summarizeBuzz(posts, now), q };
     checked++;
     if (i === listings.length - 1) state.cursor = 0;
   }
-  state.reads += x.reads;
+  state.reads += x.reads; state.day_reads = (state.day_reads || 0) + x.reads;
   log(`X: ${x.reads} posts read today (budget ${today}, ${state.reads}/${RULES.monthlyReads} this month); ${announcements.length} announcement posts; praise checked for ${checked} listings`);
   return { data: { announcements: keptAnn.slice(0, 300), buzz }, state };
 }

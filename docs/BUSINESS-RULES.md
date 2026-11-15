@@ -258,6 +258,8 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 10a. X monitoring (`tools/x.mjs`)
 
+- **Read once, shared by everyone:** visitors never cause X reads. The daily run reads X, saves the results on the `data` branch, and every visitor sees that saved copy. Embedded posts load from X's own servers at no cost to us.
+- **No double spending:** each calendar day has one share of the monthly budget (remaining ÷ days left, fixed at the day's first run); another run the same day spends only what's left of it. The announcement search runs at most once a day, and a listing read in the last 24 hours isn't read again.
 - Runs daily before the import, only if `X_BEARER_TOKEN` is set. Budget: `X_MONTHLY_READS` (default 10,000) per calendar month; each day spends at most remaining ÷ days left.
 - **Announcements:** one search, `(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply`, size between 10 and 100 posts, at most a third of the day's budget. Up to 300 kept.
 - **New models from X:** a Hugging Face model linked by an announcement with 25+ likes is imported even below the download floor, if it has a supported task and isn't a quantizer re-upload. Marked `discovered_via` (🆕 spotted on X).

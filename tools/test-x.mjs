@@ -68,4 +68,16 @@ assert.ok(checked >= 1 && checked < 5, `budget limits listings checked (got ${ch
 assert.equal(out.data.buzz['cf:model:x/model-1'].praised, true);
 assert.ok(out.state.reads <= 45 && out.state.cursor === checked, 'cursor resumes where budget ran out');
 
+// Same day again: today's share is spent, so no reads at all; the saved results are kept for everyone.
+RULES.monthlyReads = 45 * 16; calls = 0;
+const again = await run({ token: 't', fetchImpl, now: new Date('2026-11-15T18:00:00Z'), listings, prev: out.data, state: out.state, log: () => {} });
+assert.equal(calls, 0, 'no second day of reads on the same day');
+assert.deepEqual(Object.keys(again.data.buzz).sort(), Object.keys(out.data.buzz).sort());
+// Next day: new share; listings read in the last 24 hours are skipped, so the rotation moves on.
+calls = 0;
+const next = await run({ token: 't', fetchImpl, now: new Date('2026-11-16T06:00:00Z'), listings, prev: out.data, state: again.state, log: () => {} });
+RULES.monthlyReads = saved;
+assert.ok(calls > 0, 'reads again the next day');
+for (const id of Object.keys(out.data.buzz)) assert.equal(next.data.buzz[id].observed_at, out.data.buzz[id].observed_at, `${id} read under 24 h ago is not re-read`);
+
 console.log('All X monitoring tests passed.');
