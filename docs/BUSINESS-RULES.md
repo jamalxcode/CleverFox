@@ -195,6 +195,11 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10h. Interface languages (`i18n.js`)
+
+- The main page interface (header, pickers, tagline, tabs, search, "Find what to use" and its columns) comes in English, Arabic (right to left), Hindi, Portuguese, Indonesian and Swahili. The language follows the browser's language unless the visitor picks one (kept in the browser as `lang`).
+- Listing details, reasons and filters stay in English for now, and non-English pages say so. The translations are drafts for review by native speakers.
+
 ## 10g. Prices, new this week, compare
 
 - **Local prices:** apps and hosts whose official pages price in local currency show "💱 Local prices" (and it counts +0.5 in app picks). Price amounts go in `access.prices` as separate observations: plan, amount, 3-letter currency, period (month, year, once, hour, million_tokens, credit_pack), optional country, and source URL, source type and time each. The validator rejects incomplete ones. None are filled in yet; they need research. "Cheapest" is never claimed.

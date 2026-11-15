@@ -23,49 +23,54 @@
     <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
     <div class="pickers">
     <label class="country">
-      <span class="country-label">Your device</span>
-      <select id="mem" aria-label="Your device memory (RAM, or graphics card memory)"><option value="0">Memory…</option></select>
+      <span class="country-label" data-i18n="device">Your device</span>
+      <select id="mem" aria-label="Your device memory (RAM, or graphics card memory)"><option value="0" data-i18n="memory">Memory…</option></select>
     </label>
     <label class="country">
-      <span class="country-label">Your country</span>
-      <select id="country" aria-label="Your country"><option value="">Choose…</option></select>
+      <span class="country-label" data-i18n="country">Your country</span>
+      <select id="country" aria-label="Your country"><option value="" data-i18n="choose">Choose…</option></select>
+    </label>
+    <label class="country lang-pick">
+      <span class="country-label" aria-hidden="true">🌐</span>
+      <select id="lang" aria-label="Language"></select>
     </label>
     </div>
   </div>
-  <div class="wrap"><p class="pick-hint">💡 Tell us your device's memory and your country: CleverFox then puts first, and highlights, the models that fit your machine and the apps and services that work in your country and accept a way you can pay.</p></div>
+  <div class="wrap"><p class="pick-hint" data-i18n="hint">💡 Tell us your device's memory and your country: CleverFox then puts first, and highlights, the models that fit your machine and the apps and services that work in your country and accept a way you can pay.</p></div>
   <div class="wrap intro">
-    <p class="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
+    <p class="tagline" data-i18n="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
     <img class="mascot" src="img/fox.webp?v=__BUILD__" alt="CleverFox mascot: a smiling fox in sunglasses" width="104" height="120">
   </div>
 </header>
 
 <main class="wrap">
   <section class="start-here" aria-labelledby="start-h">
-    <h2 id="start-h">🦊 Find what to use</h2>
+    <h2 id="start-h" data-i18n="find">🦊 Find what to use</h2>
+    <p id="lang-draft" class="muted start-note" hidden></p>
     <p class="start-q">
-      <label>I want to <select id="s-task" aria-label="What you want to do"></select></label>
-      <label>on <select id="s-device" aria-label="Where you'll use it"><option value="computer">my computer</option><option value="phone">my phone</option><option value="online">the web (no download)</option></select></label>
-      <button id="s-go" class="go-btn" type="button">Show my picks</button>
+      <label><span data-i18n="iwant">I want to</span> <select id="s-task" aria-label="What you want to do"></select></label>
+      <label><span data-i18n="on">on</span> <select id="s-device" aria-label="Where you'll use it"><option value="computer" data-i18n="computer">my computer</option><option value="phone" data-i18n="phone">my phone</option><option value="online" data-i18n="web">the web (no download)</option></select></label>
+      <button id="s-go" class="go-btn" type="button" data-i18n="go">Show my picks</button>
     </p>
-    <p class="muted start-note">Uses your device memory and country from the pickers above. Picks come from stated facts: memory fit, independent benchmarks, popularity, praise on X, free options, country and ways to pay.</p>
+    <p class="muted start-note" data-i18n="note">Uses your device memory and country from the pickers above. Picks come from stated facts: memory fit, independent benchmarks, popularity, praise on X, free options, country and ways to pay.</p>
     <div id="picks" aria-live="polite"></div>
   </section>
   <nav class="tabs" role="tablist" aria-label="Listing type">
-    <button role="tab" id="tab-model" data-type="model" aria-selected="true">Models <span class="count"></span></button>
-    <button role="tab" id="tab-dataset" data-type="dataset" aria-selected="false">Datasets <span class="count"></span></button>
-    <button role="tab" id="tab-app" data-type="app" aria-selected="false">Apps <span class="count"></span></button>
-    <button role="tab" id="tab-host" data-type="host" aria-selected="false">Hosting <span class="count"></span></button>
+    <button role="tab" id="tab-model" data-type="model" aria-selected="true" data-i18n="models">Models <span class="count"></span></button>
+    <button role="tab" id="tab-dataset" data-type="dataset" aria-selected="false" data-i18n="datasets">Datasets <span class="count"></span></button>
+    <button role="tab" id="tab-app" data-type="app" aria-selected="false" data-i18n="apps">Apps <span class="count"></span></button>
+    <button role="tab" id="tab-host" data-type="host" aria-selected="false" data-i18n="hosting">Hosting <span class="count"></span></button>
   </nav>
 
   <div class="controls">
     <div id="caps" class="caps" hidden></div>
-    <input id="q" type="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
+    <input id="q" type="search" data-i18n-ph="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
     <div id="filters" class="filters"></div>
   </div>
 
   <p id="summary" class="summary" aria-live="polite"></p>
   <ul id="list" class="list"></ul>
-  <div id="empty" class="empty" hidden><img src="img/fox.webp?v=__BUILD__" alt="" width="96" height="110" loading="lazy"><p>Nothing matches these filters. Try removing one.</p></div>
+  <div id="empty" class="empty" hidden><img src="img/fox.webp?v=__BUILD__" alt="" width="96" height="110" loading="lazy"><p data-i18n="empty">Nothing matches these filters. Try removing one.</p></div>
   <div id="compare-bar" class="compare-bar" hidden><span id="compare-names"></span> <button id="compare-go" class="go-btn" type="button">⚖️ Compare</button> <button id="compare-clear" class="linkish" type="button">clear</button></div>
   <section id="compare" class="compare" hidden aria-labelledby="compare-h"><h2 id="compare-h">⚖️ Compare</h2><div id="compare-table"></div></section>
   <p class="more-wrap"><button id="more-btn" class="more-btn" type="button" hidden>Show more</button></p>
@@ -73,7 +78,7 @@
 
 <footer class="wrap foot">
   <p><strong>Prototype.</strong> Hand-researched listings plus models and datasets imported from Hugging Face and the Ollama library. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
-  <p><a href="new/">🆕 New this week</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Theme: auto</button></p>
+  <p><a href="new/" data-i18n="newweek">🆕 New this week</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Theme: auto</button></p>
   <p id="generated" class="muted"></p>
 </footer>
 

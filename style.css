@@ -214,3 +214,10 @@ table.cmp { border-collapse: collapse; width: 100%; font-size: .9rem; min-width:
 table.cmp th, table.cmp td { text-align: left; vertical-align: top; padding: 5px 8px; border-bottom: 1px solid var(--line); }
 table.cmp tbody th { color: var(--muted); font-weight: 600; white-space: nowrap; }
 .new-list { padding-left: 18px; } .new-list li { margin-bottom: 10px; }
+
+/* languages */
+.lang-pick select { width: auto; max-width: 11rem; }
+[dir="rtl"] .start-q, [dir="rtl"] .pickers { direction: rtl; }
+[dir="rtl"] .pick-list { padding-left: 0; padding-right: 20px; }
+@media (max-width: 560px) { .lang-pick { flex: 1 1 100%; } .lang-pick select { width: 100%; max-width: none; } }
+.compare-bar[hidden], .compare[hidden] { display: none; }

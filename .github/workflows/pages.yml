@@ -46,7 +46,7 @@ jobs:
         # Only public files: data/seed/ keeps internal research notes and is never published.
         run: |
           mkdir -p _site/data
-          cp index.html style.css app.js render.js picks.js .nojekyll sitemap.xml robots.txt _site/
+          cp index.html style.css app.js render.js picks.js i18n.js .nojekyll sitemap.xml robots.txt _site/
           cp -r l new _site/ && cp feed.xml _site/
           cp -r img _site/ && rm -rf _site/img/source
           cp data/*.json _site/data/

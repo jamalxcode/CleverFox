@@ -1,4 +1,5 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
+import { LANGS, t, pickLang, applyLang } from './i18n.js?v=__BUILD__';
 import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart } from './picks.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
@@ -283,20 +284,26 @@ $('#compare-clear').addEventListener('click', () => { cmp.length = 0; renderComp
 new MutationObserver((ms) => { if (ms.some((m) => [...m.addedNodes].some((n) => n.nodeType === 1 && (n.matches?.('[data-compare]') || n.querySelector?.('[data-compare]'))))) renderCompareBar(); }).observe($('#list'), { childList: true, subtree: true });
 
 // ---- find what to use: top picks ----
-$('#s-task').innerHTML = TASKS.map((t) => `<option value="${t}">${esc(CAPS[t].replace(/^\S+\s/, '').toLowerCase())}</option>`).join('');
+// ---- interface language ----
+function renderTasks() { const v = $('#s-task').value; $('#s-task').innerHTML = TASKS.map((k) => `<option value="${k}">${esc(t('t_' + k))}</option>`).join(''); if (v) $('#s-task').value = v; }
+$('#lang').innerHTML = Object.entries(LANGS).map(([k, n]) => `<option value="${k}">${esc(n)}</option>`).join('');
+$('#lang').value = pickLang(store.get('lang'));
+applyLang($('#lang').value); renderTasks();
+$('#lang').addEventListener('change', (e) => { store.set('lang', e.target.value); applyLang(e.target.value); renderTasks(); if ($('#picks').childElementCount) showPicks(false); });
+
 async function showPicks(share = true) {
   const s = { task: $('#s-task').value, device: $('#s-device').value, mem: state.mem, country: state.country };
-  $('#picks').innerHTML = '<p class="muted">Finding picks…</p>';
+  $('#picks').innerHTML = `<p class="muted">${esc(t('finding'))}</p>`;
   await Promise.all([ensureLoaded('model'), ensureLoaded('app')]);
   const models = loaded.model || []; const apps = loaded.app || [];
   const cols = [];
-  if (s.device === 'computer') cols.push(['💻 Run it yourself', pickModelsLocal(models, s), s.mem ? `Free, private, works offline. Sized for your ${s.mem} GB.` : 'Choose your device memory above for picks that fit; showing ones that fit 8 GB.']);
-  if (s.device === 'phone') cols.push(['📱 Offline on your phone', pickOffline(apps, s), 'Runs on the phone itself once a model is downloaded.']);
-  cols.push(['📲 Apps', pickApps(apps, s), s.country ? `Not shown if unavailable in ${countryName(s.country)}.` : 'Choose your country above to see what works there.']);
-  cols.push(['☁️ Use it online', pickModelsOnline(models, s), 'No GPU needed: pay per use through an API provider.']);
+  if (s.device === 'computer') cols.push([t('runself'), pickModelsLocal(models, s), `${t('runNote')} ${s.mem ? `≤ ${s.mem} GB` : '(8 GB)'}`]);
+  if (s.device === 'phone') cols.push([t('offline'), pickOffline(apps, s), t('offNote')]);
+  cols.push([t('appsCol'), pickApps(apps, s), t('appsNote')]);
+  cols.push([t('online'), pickModelsOnline(models, s), t('onlineNote')]);
   const item = (p) => `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`;
-  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : '<p class="muted">Nothing matches yet. Try another task or device.</p>'}</div>`).join('')}</div>
-    <p class="share pick-share"><button class="share-btn" type="button" id="s-share">🔗 Share these picks</button></p>`;
+  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p>`}</div>`).join('')}</div>
+    <p class="share pick-share"><button class="share-btn" type="button" id="s-share">${esc(t('share'))}</button></p>`;
   if (share) history.replaceState(null, '', encodeStart(s));
   $('#s-share').addEventListener('click', async () => {
     const url = location.href;
