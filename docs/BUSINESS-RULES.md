@@ -195,6 +195,15 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10e. App Store check (`tools/appstore.mjs`)
+
+- **Candidates:** researched store ids in `data/app-stores.json` and apps.apple.com links in seed records.
+- **Confirmation:** an Apple id is used only after Apple's lookup API shows a seller sharing a meaningful word with the researched seller or the publisher (generic words like "AI", "Technology", "Inc" don't count). Rejected and missing ids are never shown. A confirmed link replaces unconfirmed Apple links.
+- **Countries:** confirmed apps are looked up in 50 App Store countries a day (rotating; about 175 storefronts, so a full pass takes about 4 days). Being in a country's App Store counts as official availability there ("yes"); being absent doesn't count as unavailable, because the web version may work.
+- **Look-alikes:** 10 brands a day, App Store search in the US store: apps whose name contains the brand (first word of the app name, 4+ letters) and whose seller doesn't match are counted. Card badge "⚠️ N look-alike apps", and a note naming the official seller. They aren't called scams.
+- **Official mark:** "✅ Official app by <seller>" with the App Store rating.
+- **Google Play** packages from research are shown as buttons, but aren't confirmed by an API (Google has no public one).
+
 ## 10d. Offline on your phone
 
 - Apps with `on_device: true` run AI models on the phone itself and work offline once a model is downloaded. Badge "📱 Offline on your phone"; filter on the Apps tab. First set (10): PocketPal AI, Google AI Edge Gallery, Off Grid, MNN Chat, SmolChat, RTranslator, Layla, Private LLM, Enclave, Locally AI. Open-source ones were verified from their official READMEs; the others are candidates.

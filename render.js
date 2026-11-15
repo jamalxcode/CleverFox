@@ -37,6 +37,8 @@ export function availableIn(access, country) {
   if (Array.isArray(un) && un.includes(country)) return 'no';
   if (Array.isArray(av)) return av.includes(country) ? 'yes' : 'no';
   if (av === 'all_except_listed' && Array.isArray(un)) return 'yes';
+  // Apple's own storefront data: in that country's App Store means available there. Absent doesn't mean unavailable (the web may work).
+  if (Array.isArray(access.app_store_countries?.value) && access.app_store_countries.value.includes(country)) return 'yes';
   return 'unknown';
 }
 export const methodsOf = (access) => Array.isArray(access?.payment_methods?.value) ? access.payment_methods.value : [];
@@ -91,6 +93,7 @@ export function cardBadges(r) {
   }
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
   if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
+  if (r.lookalikes?.count) b.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
   if (r.on_device) b.push(`<span class="badge b-ok" title="Runs AI models on the phone itself: works offline once a model is downloaded">📱 Offline on your phone</span>`);
   if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
@@ -417,7 +420,12 @@ export function startBlock(r) {
     const btns = [];
     if (r.url) btns.push(`<a class="share-btn" href="${esc(r.url)}" rel="noopener" target="_blank">🌐 Open on the web</a>`);
     for (const u of r.app_store_urls || []) btns.push(`<a class="share-btn" href="${esc(u)}" rel="noopener" target="_blank">${storeLabel(u)}</a>`);
-    return btns.length ? `<div class="start"><p class="ln">🚀 <strong>Start:</strong></p><div class="share">${btns.join('')}</div></div>` : '';
+    const off = r.official_store;
+    const note = off ? `<p class="ln">✅ <strong>Official app</strong> by ${esc(off.seller)}${off.rating ? ` · ⭐ ${off.rating} from ${fmtNum(off.ratings)} ratings` : ''} <span class="muted">(App Store, checked ${esc(fmtDate(off.checked_at))})</span></p>` : '';
+    const warn = r.lookalikes?.count ? `<p class="ln warn-ln">⚠️ ${r.lookalikes.count} other App Store apps use the name "${esc(r.lookalikes.brand)}" but aren't made by ${esc(off?.seller || r.publisher)}${r.lookalikes.examples?.length ? ` (for example ${r.lookalikes.examples.slice(0, 2).map((x) => `"${esc(x.name)}" by ${esc(x.seller)}`).join(', ')})` : ''}. Check the seller before you pay.</p>` : '';
+    const cs = r.access?.app_store_countries;
+    const where = cs ? `<p class="ln muted">🌍 In the App Store in ${cs.value.length} of ${cs.checked} countries checked${view.country ? (cs.value.includes(view.country) ? `, including ${esc(countryName(view.country))}` : cs.checked >= 150 ? `, not in ${esc(countryName(view.country))}` : '') : ''}.</p>` : '';
+    return btns.length || note ? `<div class="start"><p class="ln">🚀 <strong>Start:</strong></p><div class="share">${btns.join('')}</div>${note}${where}${warn}</div>` : '';
   }
   if (r.type !== 'model' || !r.local_ready) return '';
   const opts = r.hardware?.options || [];

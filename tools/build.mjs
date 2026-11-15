@@ -401,6 +401,31 @@ if (PROV) {
   console.log(`Use it online: ${n} models served by API providers`);
 }
 
+// ---- App Store check (tools/appstore.mjs) and store links (data/app-stores.json) ----
+const APPSTORE = existsSync(join(importDir, 'appstore.json')) ? JSON.parse(readFileSync(join(importDir, 'appstore.json'), 'utf8')) : null;
+const STORE_IDS = existsSync(join(root, 'data', 'app-stores.json')) ? JSON.parse(readFileSync(join(root, 'data', 'app-stores.json'), 'utf8')) : {};
+let storeConfirmed = 0;
+for (const r of published) {
+  if (r.type !== 'app') continue;
+  const urls = new Set(r.app_store_urls || []);
+  const e = APPSTORE?.apps?.[r.id];
+  if (e?.apple?.confirmed) {
+    storeConfirmed++;
+    // A confirmed id replaces any unconfirmed Apple link.
+    for (const u of [...urls]) if (/apps\.apple\.com/.test(u)) urls.delete(u);
+    urls.add(e.apple.url);
+    r.official_store = { seller: e.apple.seller, url: e.apple.url, rating: e.apple.rating, ratings: e.apple.ratings, checked_at: e.apple.checked_at };
+    const cs = Object.entries(e.countries || {});
+    if (cs.length && r.access) r.access.app_store_countries = { value: cs.filter(([, v]) => v).map(([c]) => c).sort(), checked: cs.length,
+      source_url: `https://itunes.apple.com/lookup?id=${e.apple.id}`, source_type: 'official', observed_at: e.countries_checked_at };
+    if (e.lookalikes) r.lookalikes = e.lookalikes;
+  }
+  const gp = STORE_IDS[r.id]?.google_play;
+  if (gp && ![...urls].some((u) => /play\.google\.com/.test(u))) urls.add(gp);
+  if (urls.size) r.app_store_urls = [...urls];
+}
+if (APPSTORE) console.log(`App Store: ${storeConfirmed} apps with a confirmed official listing`);
+
 // ---- re-check of access source pages (tools/recheck.mjs) and the age of access facts ----
 const { accessCheck } = await import('./recheck.mjs');
 const RECHECK = existsSync(join(importDir, 'recheck.json')) ? JSON.parse(readFileSync(join(importDir, 'recheck.json'), 'utf8')) : null;
