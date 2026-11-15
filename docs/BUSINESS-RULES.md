@@ -195,6 +195,10 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10d. Offline on your phone
+
+- Apps with `on_device: true` run AI models on the phone itself and work offline once a model is downloaded. Badge "📱 Offline on your phone"; filter on the Apps tab. First set (10): PocketPal AI, Google AI Edge Gallery, Off Grid, MNN Chat, SmolChat, RTranslator, Layla, Private LLM, Enclave, Locally AI. Open-source ones were verified from their official READMEs; the others are candidates.
+
 ## 10c. How to start
 
 - **Local models:** the `ollama run <tag>` command for each Ollama size (up to 4, MLX copies skipped), each with its memory need and a copy button. With the visitor's memory chosen, the biggest size needing at most 80% of it is marked "best fit"; otherwise the smallest is. A Hugging Face model with GGUF files and no Ollama entry gets `ollama run hf.co/<id>`. Point-and-click alternatives: LM Studio and Jan, searching for the Hugging Face id.

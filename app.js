@@ -56,6 +56,7 @@ function filterDefs(type) {
     { key: 'free', toggle: '🆓 Free or free tier' },
     { key: 'nocard', toggle: '💳 Usable without a card' },
     { key: 'here', toggle: 'Available in my country', needsCountry: true },
+    { key: 'offline', toggle: '📱 Offline on your phone' },
     { key: 'xp', toggle: '📣 Praised on X' },
   ];
   return [
@@ -97,6 +98,7 @@ function matches(r) {
   if (f.nobar && !r.answers?.no_barriers) return false;
   if (f.xp && !r.answers?.x_praised) return false;
   if (f.online && !r.answers?.online) return false;
+  if (f.offline && !r.on_device) return false;
   const hasMethod = (m) => recordAccesses(r).some((a) => methodsOf(a).some((x) => x.method === m));
   if (r.type === 'model') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;

@@ -114,6 +114,7 @@ for (const r of records) {
     if (!Array.isArray(r[f])) err(id, `${f} must be a list`);
   }
   if (!r.official_urls?.length) err(id, 'needs at least one official URL');
+  if ('on_device' in r && typeof r.on_device !== 'boolean') err(id, 'on_device must be true or false');
   if (!VOCAB.verification_status.includes(r.verification_status)) err(id, 'bad verification_status');
   if (!VOCAB.warning.includes(r.warning)) err(id, 'bad warning');
   for (const f of ['first_seen_at', 'last_content_change_at']) if (!ISO_TS.test(r[f] || '')) err(id, `${f} must be an ISO UTC timestamp`);
@@ -284,6 +285,7 @@ function answers(r) {
     benchmarks: bench,
     independent: (r.independent_benchmarks || []).length,
     x_praised: !!r.x_buzz?.praised,
+    on_device: r.on_device === true,
     online: r.online?.length || 0, online_free: !!r.online?.some((p) => p.free), online_no_card: !!r.online?.some((p) => p.no_card),
   };
 }
