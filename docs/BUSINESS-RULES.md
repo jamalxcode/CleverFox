@@ -195,6 +195,14 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10b. Use it online (`tools/providers.mjs`)
+
+- Daily, after benchmarks. Sources: Hugging Face's Inference Providers mapping (`/api/models?inference_provider=all`, live providers only) and OpenRouter's public model list (models with a Hugging Face id). Kept in `data/imported/providers.json`; a failed or shrunken source (below 80%) keeps the last data.
+- Matched to models by their Hugging Face id. Each provider shows its price per million tokens (input / output) as the source states it, "free" for OpenRouter's free variants, or "price on site" when none is given.
+- Order: free first, then cheapest output price; unknown prices last. Up to 5 shown, the rest counted.
+- When the provider is one of our host listings, a link goes to its payment facts, with 🪙 if it accepts a way to pay without a card.
+- Card badge: "☁️ Free online", "☁️ Online from $X/M" (cheapest output price) or "☁️ Use online". Filter: "☁️ Use it online".
+
 ## 10a. X monitoring (`tools/x.mjs`)
 
 - Runs daily before the import, only if `X_BEARER_TOKEN` is set. Budget: `X_MONTHLY_READS` (default 10,000) per calendar month; each day spends at most remaining ÷ days left.

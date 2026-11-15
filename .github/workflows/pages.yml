@@ -31,7 +31,7 @@ jobs:
       - name: Import from Hugging Face and the Ollama library
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.import)
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
-        run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/recheck.mjs
+        run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
       - name: Save imports to the data branch (one commit, overwritten)

@@ -90,6 +90,7 @@ export function cardBadges(r) {
     else b.push(badge(`🖥️ ${r.hardware.recommended_gb || need} GB+ recommended`));
   }
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
+  if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
   if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
   if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
   const eci = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci'); const aai = (r.independent_benchmarks || []).find((x) => x.id === 'aa_intelligence');
@@ -241,6 +242,7 @@ export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
   h += glance(r);
+  h += onlineLine(r);
   // Facts: one or two lines; unknown fields gathered at the end.
   const unknown = [];
   const f = (emoji, label, c, fmt) => { if (c === undefined) return null; const v = claimVal(c, fmt); if (!v) { unknown.push(label); return null; } return item(emoji, v, label); };
@@ -383,4 +385,19 @@ export function accessCheckLine(r) {
   if (c.changed?.length) h += `<p class="ln warn-ln">⚠️ ${c.changed.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')} changed on ${esc(fmtDate(c.changed[0].changed_at))}, after these facts were checked: prices, payments or countries may be out of date.</p>`;
   if (c.broken?.length) h += `<p class="ln warn-ln">🔗 Source link${c.broken.length > 1 ? 's' : ''} not loading: ${c.broken.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(host(x.url))}</a>`).join(', ')}</p>`;
   return h;
+}
+
+// Use it online: API providers serving this model, free first, then cheapest. Prices per million tokens (input / output).
+export function onlineLine(r) {
+  const list = r.online || [];
+  if (!list.length) return '';
+  const money = (v) => v == null ? '' : v === 0 ? '$0' : `$${v < 0.1 ? v : v.toFixed(2)}`;
+  const one = (p) => {
+    const price = p.free ? '<strong class="yes">free</strong>' : (p.input != null || p.output != null) ? `${money(p.input)} / ${money(p.output)}` : '<span class="muted">price on site</span>';
+    const pay = p.host_id ? ` <a class="src-i" href="${esc(view.base + 'l/host/' + p.host_id.replace('cf:host:', '') + '/')}" title="How to pay ${esc(p.name)}${p.no_card ? ': accepts a way to pay without a card' : ''}">${p.no_card ? '🪙' : 'ⓘ'}</a>` : '';
+    return `<a href="${esc(p.url)}" rel="noopener" target="_blank">${esc(p.name)}</a> ${price}${pay}`;
+  };
+  const shown = list.slice(0, 5).map(one).join('<span class="sep"> · </span>');
+  const src = list[0].source_url ? ` <a class="src-i" href="${esc(list[0].source_url)}" rel="noopener" target="_blank" title="Provider list from ${esc(list[0].source_url.includes('openrouter') ? 'OpenRouter' : 'Hugging Face')}, ${esc(fmtDate(list[0].observed_at))}">ⓘ</a>` : '';
+  return `<p class="ln">☁️ <strong>Use it online</strong> <span class="muted">(no GPU needed; $ per million tokens in / out)</span>: ${shown}${list.length > 5 ? ` <span class="muted">+${list.length - 5} more</span>` : ''}${src}</p>`;
 }

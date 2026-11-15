@@ -40,6 +40,7 @@ function filterDefs(type) {
     { key: 'uncensored', toggle: 'Uncensored / abliterated' },
     { key: 'bench', toggle: '📊 Has benchmarks' },
     { key: 'xp', toggle: '📣 Praised on X' },
+    { key: 'online', toggle: '☁️ Use it online' },
   ];
   if (type === 'dataset') return [
     { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
@@ -95,6 +96,7 @@ function matches(r) {
   if (state.cap && state.type !== 'host' && !(r.answers?.good_for || []).includes(state.cap)) return false;
   if (f.nobar && !r.answers?.no_barriers) return false;
   if (f.xp && !r.answers?.x_praised) return false;
+  if (f.online && !r.answers?.online) return false;
   const hasMethod = (m) => recordAccesses(r).some((a) => methodsOf(a).some((x) => x.method === m));
   if (r.type === 'model') {
     if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;

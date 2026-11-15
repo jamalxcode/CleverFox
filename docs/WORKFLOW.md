@@ -10,20 +10,21 @@ How the data flows, what runs when, and how changes are made. Rules and numbers 
 2. **X scan** (`tools/x.mjs`, needs the `X_BEARER_TOKEN` secret; the read budget is the `X_MONTHLY_READS` variable). It finds announcement posts linking to Hugging Face or Ollama, and reads posts about a rotating batch of listings (tone, likes, "praised"). Output: `x.json`, `x-state.json`.
 3. **Import** (`tools/import.mjs`). Hugging Face models and datasets and the Ollama library, with the inclusion, gap and quality rules. New models announced on X can come in too. Output: `models.json`, `datasets.json`.
 4. **Benchmarks** (`tools/benchmarks.mjs`): Epoch AI, plus Artificial Analysis if `AA_API_KEY` is set. Output: `benchmarks.json`.
-5. **Access re-check** (`tools/recheck.mjs`). It fingerprints the source pages of every access fact (pricing, payments, countries) and notes changes and pages that are gone. Output: `recheck.json`.
-6. **Test and build** (`npm test`, `npm run build`):
+5. **Use it online** (`tools/providers.mjs`): which API providers serve each model, with prices, from Hugging Face's provider mapping and OpenRouter's model list. Output: `providers.json`.
+6. **Access re-check** (`tools/recheck.mjs`). It fingerprints the source pages of every access fact (pricing, payments, countries) and notes changes and pages that are gone. Output: `recheck.json`.
+7. **Test and build** (`npm test`, `npm run build`):
    - validate every record;
    - curate: apply the corrections file, the dataset quality bar, and group re-uploads under their original;
    - attach benchmarks, X buzz and re-check results;
    - derive answers and hardware;
    - write the slim list files, `catalog.json`, a page and `record.json` per listing, the sitemap, and pages for grouped or hidden listings.
-7. **Save** `data/imported/*.json` to the `data` branch as one overwritten commit, so daily changes don't grow the history.
-8. **Assemble and deploy** the public files only (`data/seed/` stays private because it holds research notes), with `__BUILD__` replaced by the commit id.
+8. **Save** `data/imported/*.json` to the `data` branch as one overwritten commit, so daily changes don't grow the history.
+9. **Assemble and deploy** the public files only (`data/seed/` stays private because it holds research notes), with `__BUILD__` replaced by the commit id.
 
 **Safety rules:**
 - Every step keeps the last good data if a source fails or shrinks below 80%.
 - X and the re-check are skipped or degrade quietly without their secrets or network.
-- A push to `main` runs only steps 1, 6 and 8: it builds and deploys what's committed, without importing.
+- A push to `main` runs only steps 1, 7 and 9: it builds and deploys what's committed, without importing.
 
 ## 2. Data flow
 

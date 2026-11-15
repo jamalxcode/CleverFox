@@ -284,6 +284,7 @@ function answers(r) {
     benchmarks: bench,
     independent: (r.independent_benchmarks || []).length,
     x_praised: !!r.x_buzz?.praised,
+    online: r.online?.length || 0, online_free: !!r.online?.some((p) => p.free), online_no_card: !!r.online?.some((p) => p.no_card),
   };
 }
 // ---- hardware estimates (spec section 12; rough, labeled as estimates) ----
@@ -369,6 +370,34 @@ const XDATA = existsSync(xFile) ? JSON.parse(readFileSync(xFile, 'utf8')) : { bu
 let xMatched = 0;
 for (const r of published) { const b = XDATA.buzz?.[r.id]; if (b) { r.x_buzz = b; xMatched++; } }
 if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
+
+// ---- use it online: API providers serving each model (tools/providers.mjs) ----
+const PROV = existsSync(join(importDir, 'providers.json')) ? JSON.parse(readFileSync(join(importDir, 'providers.json'), 'utf8')) : null;
+if (PROV) {
+  const hostById = new Map(published.filter((r) => r.type === 'host').map((r) => [r.id, r]));
+  let n = 0;
+  for (const r of published) {
+    if (r.type !== 'model') continue;
+    const hf = (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.toLowerCase();
+    if (!hf) continue;
+    const list = [...(PROV.openrouter?.[hf] || []), ...(PROV.huggingface?.[hf] || [])];
+    if (!list.length) continue;
+    const seen = new Set(); const online = [];
+    for (const p of list) {
+      const key = `${p.provider}:${p.free ? 'free' : 'paid'}`; if (seen.has(key)) continue; seen.add(key);
+      const host = p.host_id && hostById.get(p.host_id);
+      const pm = host?.access?.payment_methods?.value;
+      online.push({ provider: p.provider, name: p.name, url: p.url, host_id: host ? p.host_id : null,
+        input: p.input == null ? null : +(+p.input).toFixed(3), output: p.output == null ? null : +(+p.output).toFixed(3), free: !!p.free,
+        no_card: Array.isArray(pm) ? pm.some((m) => !CARD_METHODS.has(m.method)) : null,
+        source_url: PROV.sources?.[p.via]?.url, observed_at: PROV.sources?.[p.via]?.observed_at });
+    }
+    // Free first, then cheapest output price, unknown prices last.
+    online.sort((a, b) => (b.free - a.free) || ((a.output ?? 1e9) - (b.output ?? 1e9)));
+    r.online = online; n++;
+  }
+  console.log(`Use it online: ${n} models served by API providers`);
+}
 
 // ---- re-check of access source pages (tools/recheck.mjs) and the age of access facts ----
 const { accessCheck } = await import('./recheck.mjs');
@@ -512,7 +541,7 @@ export function slim(r) {
     description: r.description, tasks: r.tasks, warning: r.warning, verification_status: r.verification_status,
     languages: slimClaim(r.languages), publisher_region: slimClaim(r.publisher_region), availability: slimClaim(r.availability),
     license: slimClaim(r.license), parameters: slimClaim(r.parameters), local_ready: r.local_ready, size_category: r.size_category,
-    answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised,
+    answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised, online: r.answers.online, online_free: r.answers.online_free, online_no_card: r.answers.online_no_card,
       uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free },
     hardware: r.hardware && { min_memory_gb: r.hardware.min_memory_gb, recommended_gb: r.hardware.recommended_gb },
     platforms: r.platforms && Object.fromEntries(Object.keys(r.platforms).map((k) => [k, []])),
@@ -521,6 +550,7 @@ export function slim(r) {
     distributions: (r.distributions || []).filter((d) => d.access || d.availability === 'downloadable').slice(0, 3).map((d) => ({ source: d.source, availability: d.availability, access: slimAccess(d.access) })),
     paper_urls: r.paper_urls?.length ? [r.paper_urls[0]] : undefined,
     variants: r.variants?.length ? r.variants.length : undefined,
+    online_from: r.online?.length ? (r.online.find((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity).filter(Number.isFinite))) : undefined,
   };
   return JSON.parse(JSON.stringify(o));
 }
