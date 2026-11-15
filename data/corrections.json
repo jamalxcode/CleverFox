@@ -1,0 +1,15 @@
+{
+ "_about": "Hand corrections applied by tools/build.mjs. hide: [{id, reason}] removes a listing (its page says why). merge: [{id, into, reason}] lists one as another version of another. keep: [{id, reason}] lists a dataset despite the quality bar. Every entry needs a reason.",
+ "hide": [],
+ "merge": [],
+ "keep": [
+  {
+   "id": "cf:dataset:harborframework/terminal-bench-3.0",
+   "reason": "well-known agent benchmark; sparse dataset card"
+  },
+  {
+   "id": "cf:dataset:sunblaze-ucb/cybergym",
+   "reason": "published security benchmark; sparse dataset card"
+  }
+ ]
+}

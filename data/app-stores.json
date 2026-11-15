@@ -1,0 +1,269 @@
+{
+ "_about": "Candidate official store ids for apps, from research (2026-11-15). tools/appstore.mjs confirms each Apple id with Apple's lookup API (the seller must match) before it is used; unconfirmed ids are never shown. Google Play packages are third-party-sourced unless evidence says official.",
+ "cf:app:anthropic/claude": {
+  "apple_id": 6473753684,
+  "apple_store": "us",
+  "expected_seller": "Anthropic PBC",
+  "google_play": "https://play.google.com/store/apps/details?id=com.anthropic.claude",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Anthropic PBC; Play package via listing mirrors/trackers (developer Anthropic PBC)"
+ },
+ "cf:app:openai/chatgpt": {
+  "apple_id": 6448311069,
+  "apple_store": "us",
+  "expected_seller": "OpenAI OpCo, LLC",
+  "google_play": "https://play.google.com/store/apps/details?id=com.openai.chatgpt",
+  "google_play_evidence": "https://help.openai.com/en/articles/8167604 (official help article on the Play app); web search: apps.apple.com listing names seller OpenAI OpCo, LLC"
+ },
+ "cf:app:google/gemini": {
+  "apple_id": 6477489729,
+  "apple_store": "us",
+  "expected_seller": "Google LLC",
+  "google_play": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Google LLC; Play package via trackers (developer Google LLC)"
+ },
+ "cf:app:microsoft/copilot": {
+  "apple_id": 6472538445,
+  "apple_store": "us",
+  "expected_seller": "Microsoft Corporation",
+  "google_play": "https://play.google.com/store/apps/details?id=com.microsoft.copilot",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Microsoft Corporation; Play package via APKMirror (Microsoft Corporation)"
+ },
+ "cf:app:mistral-ai/vibe": {
+  "apple_id": 6740410176,
+  "apple_store": "us",
+  "expected_seller": "Mistral AI",
+  "google_play": "https://play.google.com/store/apps/details?id=ai.mistral.chat",
+  "google_play_evidence": "https://mistral.ai/news/all-new-le-chat (official launch post points to both stores); ids via press links and trackers (developer Mistral AI)"
+ },
+ "cf:app:perplexity/perplexity": {
+  "apple_id": 1668000334,
+  "apple_store": "us",
+  "expected_seller": "Perplexity AI Inc.",
+  "google_play": "https://play.google.com/store/apps/details?id=ai.perplexity.app.android",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Perplexity AI Inc.; Play via trackers (Perplexity AI, Inc.)"
+ },
+ "cf:app:elevenlabs/elevenlabs": {
+  "apple_id": 6743162587,
+  "apple_store": "us",
+  "expected_seller": "ElevenLabs, Inc.",
+  "google_play": "https://play.google.com/store/apps/details?id=io.elevenlabs.coreapp",
+  "google_play_evidence": "https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/what-is-the-elevenlabs-app (official help page links Play id); web search: apps.apple.com listing names seller ElevenLabs, Inc."
+ },
+ "cf:app:suno/suno": {
+  "apple_id": 6480136315,
+  "apple_store": "us",
+  "expected_seller": "Suno, Inc.",
+  "google_play": "https://play.google.com/store/apps/details?id=com.suno.android",
+  "google_play_evidence": "https://suno.com/android and https://suno.com/blog/android (official, Play); web search: apps.apple.com listing names seller Suno, Inc."
+ },
+ "cf:app:deepseek/deepseek-chat": {
+  "apple_id": 6737597349,
+  "apple_store": "us",
+  "expected_seller": "Hangzhou DeepSeek Artificial Intelligence Co., Ltd.",
+  "google_play": "https://play.google.com/store/apps/details?id=com.deepseek.chat",
+  "google_play_evidence": "https://api-docs.deepseek.com/news/news250115 (official launch note); developer per trackers"
+ },
+ "cf:app:qwen/qwen-chat": {
+  "apple_id": 6743778442,
+  "apple_store": "us",
+  "expected_seller": "Alibaba Cloud (Singapore) Private Limited (copyright line; seller not seen)",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing 'Qwen Chat-Ask Qwen, Know More', © Alibaba Cloud (Singapore)"
+ },
+ "cf:app:moonshot-ai/kimi": {
+  "apple_id": 6474233312,
+  "apple_store": "us",
+  "expected_seller": "Beijing Moonshot Technology Co., Ltd",
+  "google_play": "https://play.google.com/store/apps/details?id=com.moonshot.kimichat",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Beijing Moonshot Technology Co., Ltd; Play via AppBrain/Similarweb/APKMirror (Moonshot AI)"
+ },
+ "cf:app:bytedance/doubao": {
+  "apple_id": 6459478672,
+  "apple_store": "cn",
+  "expected_seller": "北京春田知韵科技有限公司",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller 北京春田知韵科技有限公司"
+ },
+ "cf:app:yandex/alice-ai": {
+  "apple_id": 6621272550,
+  "apple_store": "us",
+  "expected_seller": "Direct Cursus Computer Systems Trading",
+  "google_play": "https://play.google.com/store/apps/details?id=com.yandex.aliceapp",
+  "google_play_evidence": "https://alice.yandex.ru/support/ru/assistant/alice-app (official: lists App Store/Google Play); web search: listing 'Алиса — AI-ассистент' seller Direct Cursus Computer Systems Trading; Play via APKMirror (same developer)"
+ },
+ "cf:app:sarvam-ai/indus": {
+  "apple_id": 6758622680,
+  "apple_store": "us",
+  "expected_seller": "Axonwise Private Limited",
+  "google_play": "https://play.google.com/store/apps/details?id=ai.sarvam.indus",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Axonwise Private Limited (matches record); Play via AppGoblin tracker (developer Sarvam AI)"
+ },
+ "cf:app:humain/humain-chat": {
+  "apple_id": 6747641024,
+  "apple_store": "us",
+  "expected_seller": "Humain (one storefront shows AL-MUSTAQBAL LIL-THAKA AL-ISTINAI COMPANY)",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Humain, © HUMAIN"
+ },
+ "cf:app:sahabat-ai/sahabat-ai-chat": {
+  "apple_id": null,
+  "apple_store": "us",
+  "expected_seller": null,
+  "google_play": "https://play.google.com/store/apps/details?id=com.indosat.sahabatai",
+  "google_play_evidence": "tracker: AppGoblin lists com.indosat.sahabatai by Indosat Ooredoo Hutchison"
+ },
+ "cf:app:inception/jais-chat": {
+  "apple_id": 6480010004,
+  "apple_store": "us",
+  "expected_seller": "G Forty Two General Trading LLC",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller G Forty Two General Trading LLC (G42 entity, 'powered by Core42')"
+ },
+ "cf:app:algorine-research/khaya": {
+  "apple_id": 1549294522,
+  "apple_store": "us",
+  "expected_seller": "Algorine Inc.",
+  "google_play": "https://play.google.com/store/apps/details?id=com.nlpghana.khaya",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Algorine Inc. (developer Algorine Research)"
+ },
+ "cf:app:addis-ai/addis-ai": {
+  "apple_id": 6748835704,
+  "apple_store": "us",
+  "expected_seller": "Omer Saeday (individual; © Addis AI Technologies PLC)",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing copyright Addis AI Technologies PLC"
+ },
+ "cf:app:mobobi/abena-ai": {
+  "apple_id": null,
+  "apple_store": "us",
+  "expected_seller": null,
+  "google_play": "https://play.google.com/store/apps/details?id=com.mobobi.abena",
+  "google_play_evidence": "tracker: AppGoblin/Similarweb list com.mobobi.abena by Mobobi LLC"
+ },
+ "cf:app:ulesson/ulesson": {
+  "apple_id": 1564729764,
+  "apple_store": "us",
+  "expected_seller": "uLesson Education",
+  "google_play": "https://play.google.com/store/apps/details?id=com.ulesson",
+  "google_play_evidence": "web search: apps.apple.com listing names seller uLesson Education; Play listing page found in search results"
+ },
+ "cf:app:mbzuai/k2-think": {
+  "apple_id": 6744862356,
+  "apple_store": "us",
+  "expected_seller": "Mohamed bin Zayed University of Artificial Intelligence",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller MBZUAI"
+ },
+ "cf:app:cntxt/munsit": {
+  "apple_id": 6749622996,
+  "apple_store": "us",
+  "expected_seller": "CNTXT - FZCO",
+  "google_play": "https://play.google.com/store/apps/details?id=com.munsit.android",
+  "google_play_evidence": "web search: apps.apple.com listing names seller CNTXT - FZCO; Play via apkcombo/AppBrain (developer CNTXT AI)"
+ },
+ "cf:app:aic-egypt/karnak-chat": {
+  "apple_id": null,
+  "apple_store": "us",
+  "expected_seller": null,
+  "google_play": "https://play.google.com/store/apps/details?id=com.aic.karnak",
+  "google_play_evidence": "web search: AIC/MCIT launch page links play.google.com/store/apps/details?id=com.aic.karnak"
+ },
+ "cf:app:kuaishou/kling-ai": {
+  "apple_id": 6738049229,
+  "apple_store": "us",
+  "expected_seller": "KLING AI PTE. LTD. (some storefronts: LOHAS GAMES PTE. LTD.)",
+  "google_play": "https://play.google.com/store/apps/details?id=kling.ai.video.chat",
+  "google_play_evidence": "web search: apps.apple.com listing names seller KLING AI PTE. LTD.; Play via APKMirror/AppBrain (KLING AI)"
+ },
+ "cf:app:minimax/hailuo-ai": {
+  "apple_id": 6741675037,
+  "apple_store": "us",
+  "expected_seller": "NANONOBLE PTE. LTD.",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller NANONOBLE PTE. LTD. (matches record)"
+ },
+ "cf:app:baidu/ernie-bot": {
+  "apple_id": 6446882473,
+  "apple_store": "cn",
+  "expected_seller": "Beijing Baidu Netcom Science & Technology Co., Ltd.",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Beijing Baidu Netcom Science & Technology Co., Ltd."
+ },
+ "cf:app:tencent/yuanbao": {
+  "apple_id": 6480446430,
+  "apple_store": "cn",
+  "expected_seller": "Tencent Technology (Shenzhen) Company Limited",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Tencent Technology (Shenzhen) Company Limited"
+ },
+ "cf:app:wrtn-technologies/wrtn": {
+  "apple_id": 6448556170,
+  "apple_store": "us",
+  "expected_seller": "(주)뤼튼테크놀로지스",
+  "google_play": "https://play.google.com/store/apps/details?id=com.wrtn.app",
+  "google_play_evidence": "web search: apps.apple.com listing names seller (주)뤼튼테크놀로지스; Play app on developer page play.google.com/store/apps/developer?id=wrtn"
+ },
+ "cf:app:liner/liner": {
+  "apple_id": 955395198,
+  "apple_store": "us",
+  "expected_seller": "Liner Corp.",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Liner Corp."
+ },
+ "cf:app:kakao/kanana": {
+  "apple_id": 6636466515,
+  "apple_store": "us",
+  "expected_seller": "Kakao Corp.",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Kakao Corp."
+ },
+ "cf:app:felo/felo-search": {
+  "apple_id": 6598782546,
+  "apple_store": "us",
+  "expected_seller": "Sparticle Inc (© Felo Inc.)",
+  "google_play": "https://play.google.com/store/apps/details?id=ai.felo.search",
+  "google_play_evidence": "https://felo.ai/blog/felo-ai-search-mobile/ and https://felo.ai/blog/download-android-app-apk/ (official blog links both)"
+ },
+ "cf:app:brainlogic-ai/zapia": {
+  "apple_id": 6470821480,
+  "apple_store": "us",
+  "expected_seller": "BrainLogic AI S.A.S.",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller BrainLogic AI S.A.S."
+ },
+ "cf:app:luzia/luzia": {
+  "apple_id": 6472703434,
+  "apple_store": "us",
+  "expected_seller": "Factoria Elcano SL",
+  "google_play": "https://play.google.com/store/apps/details?id=co.thewordlab.luzia",
+  "google_play_evidence": "web search: apps.apple.com listing names seller Factoria Elcano SL; Play via AppGoblin/android-stats (developer Factoria Elcano SL)"
+ },
+ "cf:app:ytl-ai-labs/ilmuchat": {
+  "apple_id": 6748936268,
+  "apple_store": "us",
+  "expected_seller": "YTL AI Labs Sdn Bhd",
+  "google_play": "https://play.google.com/store/apps/details?id=com.ytlailabs.ilmu.chat",
+  "google_play_evidence": "web search: apps.apple.com listing names seller YTL AI Labs Sdn Bhd"
+ },
+ "cf:app:vbee/vbee-aivoice": {
+  "apple_id": 6737223131,
+  "apple_store": "us",
+  "expected_seller": "Vbee",
+  "google_play": null,
+  "google_play_evidence": "web search: apps.apple.com listing names seller Vbee (developer page id1734747258)"
+ },
+ "cf:app:botnoi/botnoi-voice": {
+  "apple_id": 6670564712,
+  "apple_store": "us",
+  "expected_seller": "Botnoi Group (copyright line)",
+  "google_play": "https://play.google.com/store/apps/details?id=com.mobile.botnoivoice",
+  "google_play_evidence": "web search: apps.apple.com listing © Botnoi Group; Play via trackers (AppBrain developer BOTNOI GROUP)"
+ },
+ "cf:app:digital-india-bhashini/bhashini": {
+  "apple_id": 6446089978,
+  "apple_store": "us",
+  "expected_seller": "National e-Governance Division",
+  "google_play": "https://play.google.com/store/apps/details?id=com.dibd.bhashini",
+  "google_play_evidence": "web search: apps.apple.com listing names seller National e-Governance Division (MeitY); Play via AppGoblin (MeitY / Digital India Bhashini Division)"
+ }
+}
