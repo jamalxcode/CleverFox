@@ -232,7 +232,121 @@
     "source_url": null,
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "deepseek-flash input, cache miss, peak hours",
+     "amount": 0.3,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-flash input, cache miss, off-peak",
+     "amount": 0.15,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-flash output, peak hours",
+     "amount": 1.2,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-flash output, off-peak",
+     "amount": 0.6,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro input, cache miss, peak hours",
+     "amount": 1.32,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro input, cache miss, off-peak",
+     "amount": 0.66,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro output, peak hours",
+     "amount": 3.96,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro output, off-peak",
+     "amount": 1.98,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-flash input, cache miss, peak hours (Chinese docs)",
+     "amount": 2,
+     "currency": "CNY",
+     "period": "million_tokens",
+     "country": "CN",
+     "source_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-flash output, peak hours (Chinese docs)",
+     "amount": 8,
+     "currency": "CNY",
+     "period": "million_tokens",
+     "country": "CN",
+     "source_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro input, cache miss, peak hours (Chinese docs)",
+     "amount": 9,
+     "currency": "CNY",
+     "period": "million_tokens",
+     "country": "CN",
+     "source_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "deepseek-v4-pro output, peak hours (Chinese docs)",
+     "amount": 27,
+     "currency": "CNY",
+     "period": "million_tokens",
+     "country": "CN",
+     "source_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -338,7 +452,18 @@
     "source_url": null,
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "PRO account (includes $2 of Inference Providers credits a month)",
+     "amount": 9,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://huggingface.co/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -495,7 +620,63 @@
     "source_url": "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "qwen3.8-max input (Singapore, international)",
+     "amount": 2,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "qwen3.8-max output (Singapore, international)",
+     "amount": 6,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "qwen3.7-plus input, up to 256K tokens, list price (Singapore, international)",
+     "amount": 0.4,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "qwen3.7-plus output, up to 256K tokens, list price (Singapore, international)",
+     "amount": 1.6,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "qwen3.8-flash input (Singapore, international)",
+     "amount": 0.15,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "qwen3.8-flash output (Singapore, international)",
+     "amount": 0.47,
+     "currency": "USD",
+     "period": "million_tokens",
+     "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {

@@ -36,7 +36,15 @@ Entry format:
   - names cleaned before X queries;
   - the data-branch push uses the checkout's credentials instead of a token in the URL;
   - "Prototype" removed from the footer.
-- **Started:** a research run for price amounts, mobile money and African GPU hosts.
+- **Research merged:**
+  - 60 prices on 8 listings, read on official pages;
+  - Dala Studio, an Ethiopian AI studio that takes M-Pesa, Telebirr, Airtel Money and MTN MoMo;
+  - Servercore, Nairobi GPU hosting that takes M-Pesa;
+  - HostAfrica, Johannesburg GPU servers;
+  - all new listings are candidates.
+- **Held back:**
+  - snippet-only prices;
+  - AWS and Oracle records that listed only their African regions.
 - **Waiting:**
   - App Store payments (Apple's page);
   - translation review;

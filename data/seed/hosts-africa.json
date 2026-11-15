@@ -1,0 +1,251 @@
+[
+ {
+  "schema_version": 1,
+  "id": "cf:host:servercore",
+  "type": "host",
+  "name": "Servercore",
+  "description": "Cloud provider with a Nairobi data centre renting NVIDIA GPU cloud servers and dedicated GPU servers, billed hourly in Kenyan shillings; accepts M-Pesa.",
+  "publisher": "Servercore",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://servercore.com/services/cloud-based-gpu-servers/",
+   "https://servercore.com/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://servercore.com/services/cloud-based-gpu-servers/",
+   "https://servercore.com/services/dedicated-servers/dedicated-servers-with-gpu/",
+   "https://servercore.com/solutions/healthcare/",
+   "https://servercore.com/services/",
+   "https://servercore.com/services/cloud-hosting/",
+   "https://servercore.com/solutions/ai-and-ml/"
+  ],
+  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Kenya pages say billing is in KES with payment by M-Pesa or bank transfer (healthcare and services pages); cloud GPU page says you pay in local currency or bonus credits from an account balance, charged hourly. GPU list: cloud GPU page names RTX A5000, A100, RTX PRO 6000 and an H200 row with KES prices (about KES 136.40/h A5000 to 1,355.83/h H200); the Kenya dedicated GPU page names H100, RTX 6000 Ada, A100, RTX 4090. The cloud GPU page says the VM location depends on the configuration chosen, and a Servercore post says H200 servers are only planned (Central Asia), so which GPUs are in Nairobi specifically is not confirmed. Servercore also runs data centres in Kazakhstan and Uzbekistan (not listed here because GPU availability there was not checked). Company registration/HQ not found, so publisher and provider region left unknown. No free tier found. Card payments mentioned only in a blog post, so not listed.",
+  "provider_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "gpu_cloud",
+   "bare_metal",
+   "vm"
+  ],
+  "data_centers": {
+   "value": [
+    {
+     "country": "KE",
+     "city_or_region": "Nairobi (one availability zone, Tier III)",
+     "provider_region_code": null
+    }
+   ],
+   "source_url": "https://servercore.com/services/cloud-hosting/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": [
+    "NVIDIA RTX A5000",
+    "NVIDIA A100",
+    "NVIDIA RTX PRO 6000",
+    "NVIDIA H200",
+    "NVIDIA H100",
+    "NVIDIA RTX 6000 Ada",
+    "NVIDIA GeForce RTX 4090"
+   ],
+   "source_url": "https://servercore.com/services/cloud-based-gpu-servers/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "Kenyan data hosted in the Nairobi data centre; Servercore markets this for Kenya Data Protection Act compliance. Which GPU models run in Nairobi is not stated.",
+   "source_url": "https://servercore.com/blog/articles/kenya-data-protection-act-data-residency/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://servercore.com/services/cloud-based-gpu-servers/",
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": [
+     {
+      "method": "mobile_money",
+      "note": "M-Pesa (Kenya); tops up the account balance in KES"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "Bank transfer in KES (Kenya)"
+     }
+    ],
+    "source_url": "https://servercore.com/solutions/healthcare/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://servercore.com/services/cloud-based-gpu-servers/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": []
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:hostafrica",
+  "type": "host",
+  "name": "HostAfrica GPU Servers",
+  "description": "African hosting company renting dedicated NVIDIA RTX PRO 6000 Blackwell GPU servers from Johannesburg, monthly, priced in rand, naira and other currencies.",
+  "publisher": "Host Africa (Pty) Ltd",
+  "publisher_region": {
+   "value": "ZA",
+   "source_url": "https://hostafrica.co.za/grounding-page/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://hostafrica.co.za/servers/gpu-servers/",
+   "https://www.hostafrica.com/servers/gpu-servers/"
+  ],
+  "documentation_urls": [
+   "https://www.hostafrica.com/how-to-pay/"
+  ],
+  "evidence_urls": [
+   "https://hostafrica.co.za/servers/gpu-servers/",
+   "https://hostafrica.co.za/blog/servers/dedicated-nvidia-rtx-pro-gpu-servers-south-africa/",
+   "https://www.hostafrica.com/servers/gpu-servers/",
+   "https://www.hostafrica.ng/servers/gpu-servers/",
+   "https://www.hostafrica.com/rw/servers/gpu-servers/",
+   "https://hostafrica.co.za/grounding-page/",
+   "https://www.hostafrica.com/how-to-pay/"
+  ],
+  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Launched March 2026 at Digital Parks Africa, Samrand (Centurion), per HostAfrica's own press release (itweb/techcentral promoted content); its regional GPU pages (Rwanda, Nigeria) say the servers are in a Tier 3 data centre in Johannesburg, so city given as Johannesburg/Centurion (Gauteng). Plans Neural 24/48/96 (MIG slices of an RTX PRO 6000 Blackwell Server Edition 96 GB); billed monthly, no hourly billing, monthly contract, cancel anytime. Prices conflict between the main SA page (R12,500/R20,000/R35,000) and a blog post (R17,500/R34,000/R67,000 excl. VAT); see prices-unconfirmed.json. Each plan shows an \"Enquire Now\" button, so ordering may go through sales rather than instant self-serve. Payment: how-to-pay page lists card (Visa/Mastercard) and PayPal in the client area; SA pages also list EFT. Flutterwave, PayFast and SnapScan appear only on website-builder pages, so not listed; no mobile money confirmed. Legal entity and HQ (Somerset West, Cape Town) from the grounding page; group data centres in South Africa, Kenya, Nigeria and Ghana, but GPU servers are only stated for Johannesburg.",
+  "provider_region": {
+   "value": "ZA",
+   "source_url": "https://hostafrica.co.za/grounding-page/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "bare_metal"
+  ],
+  "data_centers": {
+   "value": [
+    {
+     "country": "ZA",
+     "city_or_region": "Johannesburg / Centurion, Gauteng (Digital Parks Africa Samrand)",
+     "provider_region_code": null
+    }
+   ],
+   "source_url": "https://www.hostafrica.com/rw/servers/gpu-servers/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": [
+    "NVIDIA RTX PRO 6000 Blackwell Server Edition (96 GB, also sold as 24 GB and 48 GB slices)"
+   ],
+   "source_url": "https://hostafrica.co.za/servers/gpu-servers/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "GPU servers hosted in South Africa; HostAfrica markets this for POPIA compliance.",
+   "source_url": "https://hostafrica.co.za/blog/servers/local-gpu-servers-for-your-data/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://hostafrica.co.za/servers/gpu-servers/",
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Visa or Mastercard in the client area (one-off or recurring)"
+     },
+     {
+      "method": "paypal",
+      "note": "In the client area"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "EFT to HostAfrica's bank account (South Africa pages)"
+     }
+    ],
+    "source_url": "https://www.hostafrica.com/how-to-pay/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://www.hostafrica.ng/servers/gpu-servers/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": []
+ }
+]

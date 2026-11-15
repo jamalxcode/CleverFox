@@ -24,9 +24,9 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 
 - [ ] **App and hosting launches spotted on X** ("New this week" → "Spotted on X"): research each at its official site and add it to `data/seed/` with sources.
 - [ ] **App Store payment methods per country:** read Apple's page (support.apple.com/en-us/111741) directly and add an `app_store` table to `data/store-payments.json`. The search summaries contradicted each other (decision 64).
-- [ ] **Price amounts:** `access.prices` (plan, amount, currency, period, source) is ready, but none are filled in.
-- [ ] **Mobile money:** only 1 listing has it as its own payment method. Look for services that take M-Pesa, MTN MoMo or Airtel Money directly, for example through Paystack or Flutterwave checkouts.
-- [ ] **More regional hosting:** only 2 hosts have African data centers. Look for GPU or inference providers in Nigeria, Kenya, Egypt, Morocco and South Africa.
+- [ ] **Price amounts:** 60 prices on 8 listings so far (Claude, Mistral Vibe, Hetzner, OVHcloud with INR, Nebius, Hugging Face, Alibaba Model Studio, DeepSeek with CNY), read on official pages on 15 November. Still missing: Gemini, ChatGPT, RunPod, Vast and most regional apps (their pages were blocked or price by script). Amounts seen only in search snippets are kept out.
+- [ ] **Mobile money:** now 3 listings (adding Dala Studio in Ethiopia, and Servercore in Kenya), all candidates. Look for services that take M-Pesa, MTN MoMo or Airtel Money directly, for example through Paystack or Flutterwave checkouts.
+- [ ] **More regional hosting:** Servercore (Nairobi) and HostAfrica (Johannesburg) added as candidates. AWS (Cape Town) and Oracle (Johannesburg) were found but held back: their records listed only African regions, which would misrepresent global providers; add them with all their GPU regions. Look for GPU or inference providers in Nigeria, Kenya, Egypt, Morocco and South Africa.
 - [ ] **App Store ids to check:**
   - rejected by seller: Jais Chat (listed under MBZUAI), PocketPal AI (Gooya UG), Locally AI (Element Labs);
   - not found: Microsoft Copilot, uLesson, Hailuo AI, Qwen Chat, Kanana. Kanana was reported shut down in October 2026; confirm it and mark it withdrawn;
