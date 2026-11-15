@@ -178,3 +178,10 @@ table.hw td:nth-child(-n+3) { white-space: nowrap; }
 @media (max-width: 900px) { .listing-grid { grid-template-columns: minmax(0, 1fr); } .xside { position: static; max-height: none; } }
 .warn-ln { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 4px 8px; }
 .warn-ln a { color: inherit; }
+
+/* how to start */
+.start { margin: 4px 0 8px; padding: 8px 10px; background: var(--chip); border-radius: 10px; }
+.start .share { margin: 4px 0 0; }
+.cmd-ln { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+code.cmd, .start code { font: .88rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; overflow-wrap: anywhere; }
+.copy-btn { min-height: 30px; padding: 2px 10px; }

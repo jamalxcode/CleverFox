@@ -195,6 +195,11 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10c. How to start
+
+- **Local models:** the `ollama run <tag>` command for each Ollama size (up to 4, MLX copies skipped), each with its memory need and a copy button. With the visitor's memory chosen, the biggest size needing at most 80% of it is marked "best fit"; otherwise the smallest is. A Hugging Face model with GGUF files and no Ollama entry gets `ollama run hf.co/<id>`. Point-and-click alternatives: LM Studio and Jan, searching for the Hugging Face id.
+- **Apps:** buttons to open it on the web and its official store pages (App Store, Google Play, Microsoft Store) where known.
+
 ## 10b. Use it online (`tools/providers.mjs`)
 
 - Daily, after benchmarks. Sources: Hugging Face's Inference Providers mapping (`/api/models?inference_provider=all`, live providers only) and OpenRouter's public model list (models with a Hugging Face id). Kept in `data/imported/providers.json`; a failed or shrunken source (below 80%) keeps the last data.

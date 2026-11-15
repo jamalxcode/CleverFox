@@ -242,6 +242,7 @@ export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
   h += glance(r);
+  h += startBlock(r);
   h += onlineLine(r);
   // Facts: one or two lines; unknown fields gathered at the end.
   const unknown = [];
@@ -339,6 +340,11 @@ export function wireShare(root) {
   root.addEventListener('click', async (e) => {
     const b = e.target.closest?.('[data-act]'); if (!b) return;
     const box = b.closest('.share');
+    if (b.dataset.act === 'copy-cmd') {
+      try { await navigator.clipboard.writeText(b.dataset.text); b.textContent = '✓ Copied'; } catch { prompt('Copy this command:', b.dataset.text); }
+      setTimeout(() => { b.textContent = '📋 Copy'; }, 2000);
+      return;
+    }
     if (b.dataset.act === 'copy') {
       try { await navigator.clipboard.writeText(box.dataset.url); b.textContent = '✓ Copied'; } catch { prompt('Copy this link:', box.dataset.url); }
       setTimeout(() => { b.textContent = '📋 Copy link'; }, 2000);
@@ -400,4 +406,42 @@ export function onlineLine(r) {
   const shown = list.slice(0, 5).map(one).join('<span class="sep"> · </span>');
   const src = list[0].source_url ? ` <a class="src-i" href="${esc(list[0].source_url)}" rel="noopener" target="_blank" title="Provider list from ${esc(list[0].source_url.includes('openrouter') ? 'OpenRouter' : 'Hugging Face')}, ${esc(fmtDate(list[0].observed_at))}">ⓘ</a>` : '';
   return `<p class="ln">☁️ <strong>Use it online</strong> <span class="muted">(no GPU needed; $ per million tokens in / out)</span>: ${shown}${list.length > 5 ? ` <span class="muted">+${list.length - 5} more</span>` : ''}${src}</p>`;
+}
+
+// ---- how to start: one step, for the visitor's device ----
+export const BEGINNER_APPS = [['Ollama', 'https://ollama.com/download', 'Windows, macOS, Linux; one command per model'], ['LM Studio', 'https://lmstudio.ai/', 'Windows, macOS, Linux; point and click'], ['Jan', 'https://jan.ai/', 'Windows, macOS, Linux; open source, point and click']];
+const storeLabel = (u) => /apps\.apple\.com/.test(u) ? '🍎 App Store' : /play\.google\.com/.test(u) ? '▶ Google Play' : /microsoft\.com|apps\.microsoft/.test(u) ? '🪟 Microsoft Store' : '⬇️ Download';
+export function startBlock(r) {
+  if (r.type === 'app') {
+    const btns = [];
+    if (r.url) btns.push(`<a class="share-btn" href="${esc(r.url)}" rel="noopener" target="_blank">🌐 Open on the web</a>`);
+    for (const u of r.app_store_urls || []) btns.push(`<a class="share-btn" href="${esc(u)}" rel="noopener" target="_blank">${storeLabel(u)}</a>`);
+    return btns.length ? `<div class="start"><p class="ln">🚀 <strong>Start:</strong></p><div class="share">${btns.join('')}</div></div>` : '';
+  }
+  if (r.type !== 'model' || !r.local_ready) return '';
+  const opts = r.hardware?.options || [];
+  const ollama = (r.distributions || []).filter((d) => d.source === 'ollama' && d.native_id && !/-mlx$/.test(d.native_id));
+  const hf = (r.distributions || []).find((d) => d.source === 'huggingface');
+  const cmds = [];
+  if (ollama.length) {
+    for (const d of ollama.slice(0, 4)) {
+      const tag = String(d.native_id).split(':')[1] || '';
+      const o = opts.find((x) => x.label === tag) || opts.find((x) => x.label.toLowerCase().startsWith(tag.toLowerCase()));
+      cmds.push({ cmd: `ollama run ${d.native_id}`, need: o?.memory_gb ?? (d.file_size_bytes ? +(d.file_size_bytes / 1e9 * 1.2 + 0.5).toFixed(1) : null) });
+    }
+  } else if (hf && (hf.formats || []).includes('gguf')) {
+    cmds.push({ cmd: `ollama run hf.co/${hf.native_id}`, need: r.hardware?.min_memory_gb ?? null });
+  }
+  // Pick the biggest size that fits comfortably in the visitor's memory; otherwise the smallest.
+  const fits = (n) => view.mem && n != null && n <= view.mem * 0.8;
+  const best = cmds.filter((c) => fits(c.need)).sort((a, b) => b.need - a.need)[0] || [...cmds].sort((a, b) => (a.need ?? 1e9) - (b.need ?? 1e9))[0];
+  let h = '<div class="start"><p class="ln">🚀 <strong>Run it on your computer:</strong> ';
+  if (best) {
+    h += `install <a href="https://ollama.com/download" rel="noopener" target="_blank">Ollama</a>, then run:</p>`;
+    h += cmds.map((c) => `<p class="ln cmd-ln"><code class="cmd">${esc(c.cmd)}</code> <button class="share-btn copy-btn" type="button" data-act="copy-cmd" data-text="${esc(c.cmd)}">📋 Copy</button> <span class="muted">${c.need != null ? `needs ~${c.need} GB` : ''}${c === best && view.mem ? (fits(c.need) ? ` · ✓ best fit for your ${view.mem} GB` : ` · smallest size; more than your ${view.mem} GB`) : ''}</span></p>`).join('');
+    h += `<p class="ln muted">Prefer clicking to typing? ${BEGINNER_APPS.slice(1).map(([n, u, t]) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(t)}">${n}</a>`).join(' or ')}${hf ? `, then search for <code>${esc(hf.native_id)}</code>` : ''}.</p>`;
+  } else {
+    h += `use a beginner app: ${BEGINNER_APPS.map(([n, u, t]) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(t)}">${n}</a>`).join(', ')}${hf ? `, and search for <code>${esc(hf.native_id)}</code>` : ''}.</p>`;
+  }
+  return h + '</div>';
 }
