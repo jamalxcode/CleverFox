@@ -34,6 +34,10 @@ jobs:
         run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
+      - name: Weekly post on X (off unless the X_POST_ENABLED variable is true)
+        if: github.event_name == 'schedule'
+        env: { X_POST_ENABLED: "${{ vars.X_POST_ENABLED }}", X_API_KEY: "${{ secrets.X_API_KEY }}", X_API_SECRET: "${{ secrets.X_API_SECRET }}", X_ACCESS_TOKEN: "${{ secrets.X_ACCESS_TOKEN }}", X_ACCESS_SECRET: "${{ secrets.X_ACCESS_SECRET }}" }
+        run: node tools/xpost.mjs
       - name: Save imports to the data branch (one commit, overwritten)
         if: github.event_name != 'push'
         run: |
@@ -47,7 +51,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html style.css app.js render.js picks.js i18n.js .nojekyll sitemap.xml robots.txt _site/
-          cp -r l new glossary _site/ && cp feed.xml _site/
+          cp -r l new guides glossary _site/ && cp feed.xml _site/
           cp -r img _site/ && rm -rf _site/img/source
           cp data/*.json _site/data/
           sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html _site/app.js _site/picks.js _site/glossary/index.html

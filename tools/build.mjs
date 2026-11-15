@@ -487,7 +487,7 @@ if (!checkOnly) {
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published, grouped: CURATED.folded, hidden: CURATED.hidden }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
-  writeListingPages(published, countries).then(() => writeMovedPages()).then(() => writeNewPages(published));
+  writeListingPages(published, countries).then(() => writeMovedPages()).then(() => writeNewPages(published)).then(() => writeGuides(published));
 }
 
 const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
@@ -665,4 +665,76 @@ ${GOATCOUNTER}
   const items = fresh.slice(0, 50).map((r) => `<item><title>${xml(`${r.name} (${r.type})`)}</title><link>${SITE}${R.listingPath(r)}</link><guid isPermaLink="true">${SITE}${R.listingPath(r)}</guid><pubDate>${new Date(r.first_seen_at).toUTCString()}</pubDate><description>${xml(r.description)}</description></item>`);
   writeFileSync(join(root, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>CleverFox: new listings</title><link>${SITE}</link><description>New AI models, datasets, apps and hosting on CleverFox.</description><language>en</language>\n${items.join('\n')}\n</channel></rss>\n`);
   console.log(`New this week: ${week.length} listings; feed has ${items.length}`);
+}
+
+// ---- guide pages: a small, hand-picked set of questions people search for (spec phase 2 guides) ----
+// Each is built from stated facts in the catalog, refreshed with every build. Not a page per filter combination.
+async function writeGuides(records) {
+  const R = await import('../render.js');
+  R.view.country = ''; R.view.mem = 0; R.view.ulang = ''; R.view.base = '../../';
+  const esc = R.esc;
+  const by = (t) => records.filter((r) => r.type === t && r.warning === 'none' && !r.possibly_discontinued);
+  const models = by('model'); const apps = by('app'); const hosts = by('host');
+  const eci = (r) => { const b = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci' || x.id === 'aa_intelligence'); return b ? parseFloat(b.display) || 0 : 0; };
+  const rating = (r) => (r.official_store?.rating || 0) * Math.log10(10 + (r.official_store?.ratings || 0));
+  const speaks = (r, l) => (Array.isArray((r.type === 'app' ? r.interface_languages : r.languages)?.value) && (r.type === 'app' ? r.interface_languages : r.languages).value.includes(l));
+  const nonCard = (r) => R.methodsOf(r.access).filter((m) => !R.CARDS.includes(m.method)).map((m) => R.METHOD_LABELS[m.method] + (m.note ? ` (${m.note})` : ''));
+  const localFits = (gb) => models.filter((r) => r.local_ready && r.hardware && r.hardware.min_memory_gb <= gb * 0.8 && !r.answers?.uncensored && (r.answers?.good_for || []).some((c) => ['chat', 'writing', 'coding'].includes(c)))
+    .sort((a, b) => eci(b) - eci(a) || R.popularity(b) - R.popularity(a));
+  const AFRICAN = ['sw', 'yo', 'ha', 'am', 'zu', 'ig', 'so', 'rw'];
+  const REGIONS = { 'Africa': ['ZA', 'NG', 'KE', 'EG', 'MA', 'GH', 'TZ', 'ET', 'RW', 'SN', 'CI', 'TN', 'DZ'], 'Middle East and Turkey': ['AE', 'SA', 'QA', 'IL', 'TR', 'BH', 'KW', 'OM', 'JO'], 'South Asia': ['IN', 'PK', 'BD', 'LK', 'NP'], 'Southeast Asia': ['SG', 'ID', 'MY', 'TH', 'VN', 'PH'], 'Latin America': ['BR', 'MX', 'CL', 'CO', 'AR', 'PE'] };
+  const play = R.view.storePayments?.google_play;
+  const guides = [
+    { slug: 'pay-without-a-card', title: 'AI you can pay for without a card', intro: 'Apps, API providers and hosting that officially accept a way to pay other than a Visa or Mastercard: mobile money, UPI, Pix, PayPal, bank transfer, crypto, app-store billing and more. Plus: many apps can be paid through Google Play, which takes other methods in 66 countries.',
+      items: [...apps, ...hosts].filter((r) => nonCard(r).length).sort((a, b) => nonCard(b).length - nonCard(a).length).map((r) => [r, `Pay with: ${nonCard(r).slice(0, 4).join(', ')}`]) },
+    { slug: 'pay-with-mobile-money', title: 'AI you can pay for with mobile money', intro: 'Listings that officially accept mobile money, and the countries where Google Play takes mobile money or your phone bill for apps sold in Android apps.',
+      items: [...apps, ...hosts].filter((r) => R.methodsOf(r.access).some((m) => m.method === 'mobile_money')).map((r) => [r, `Mobile money: ${R.methodsOf(r.access).filter((m) => m.method === 'mobile_money').map((m) => m.note || 'yes').join(', ')}`]),
+      extra: play ? `<h2>Through Google Play</h2><ul class="new-list">${Object.entries(play.countries).filter(([, l]) => l.some(([m]) => m === 'mobile_money' || m === 'carrier_billing')).map(([c, l]) => `<li><strong>${esc(R.countryName(c))}</strong>: ${esc(l.filter(([m]) => m === 'mobile_money' || m === 'carrier_billing').map(([m, n]) => n || R.METHOD_LABELS[m]).join(', '))}</li>`).join('')}</ul><p class="muted">Source: <a href="${esc(play.source_url)}">Google Play Help</a>. Apps sold through Google Play: ${apps.filter(R.soldOnPlay).map((r) => `<a href="../../${R.listingPath(r)}">${esc(r.name)}</a>`).join(', ')}.</p>` : '' },
+    { slug: 'free-ai-apps', title: 'Free AI apps', intro: 'AI apps you can use for free, completely or on a free plan, most-rated first.',
+      items: apps.filter((r) => ['free', 'free_tier'].includes(r.access?.free?.value)).sort((a, b) => rating(b) - rating(a)).map((r) => [r, R.FREE_LABELS[r.access.free.value] + (r.access.free_limits ? `: ${r.access.free_limits}` : '')]) },
+    { slug: 'ai-for-an-8gb-laptop', title: 'AI that runs on an 8 GB laptop', intro: 'Models for chat, writing or coding that fit in 8 GB of memory and run offline, for free. Strongest independent score first, then most downloaded.',
+      items: localFits(8).map((r) => [r, `Needs ~${r.hardware.min_memory_gb} GB${eci(r) ? ` · independent score ${eci(r)}` : ''}`]) },
+    { slug: 'ai-for-a-16gb-laptop', title: 'AI that runs on a 16 GB laptop or Mac', intro: 'Models for chat, writing or coding that fit in 16 GB of memory and run offline, for free.',
+      items: localFits(16).map((r) => [r, `Needs ~${r.hardware.min_memory_gb} GB${eci(r) ? ` · independent score ${eci(r)}` : ''}`]) },
+    { slug: 'offline-ai-on-your-phone', title: 'AI that runs offline on your phone', intro: 'Apps that run AI models on the phone itself: private, free to use after the download, and working without internet.',
+      items: apps.filter((r) => r.on_device).map((r) => [r, R.FREE_LABELS[r.access?.free?.value] || 'Price unknown']) },
+    { slug: 'ai-in-african-languages', title: 'AI in African languages', intro: 'Models and apps that handle Swahili, Yoruba, Hausa, Amharic, Zulu, Igbo, Somali or Kinyarwanda, as their pages state.',
+      items: [...apps, ...models].filter((r) => AFRICAN.some((l) => speaks(r, l))).sort((a, b) => (b.type === 'app') - (a.type === 'app') || R.popularity(b) - R.popularity(a)).map((r) => [r, AFRICAN.filter((l) => speaks(r, l)).map(R.langName).join(', ')]) },
+    { slug: 'ai-in-arabic', title: 'AI in Arabic', intro: 'Apps and models that handle Arabic, as their pages state.',
+      items: [...apps, ...models].filter((r) => speaks(r, 'ar')).sort((a, b) => (b.type === 'app') - (a.type === 'app') || R.popularity(b) - R.popularity(a)).map((r) => [r, r.type === 'app' ? 'App' : r.local_ready ? 'Model, runs locally' : 'Model']) },
+    { slug: 'free-ai-models-online', title: 'Use strong AI models online for free', intro: 'Models you can use for free through an API provider: no GPU and no payment needed, within the provider\'s limits.',
+      items: models.filter((r) => r.online?.some((p) => p.free)).sort((a, b) => eci(b) - eci(a) || R.popularity(b) - R.popularity(a)).map((r) => [r, `Free on ${r.online.filter((p) => p.free).map((p) => p.name).join(', ')}`]) },
+    { slug: 'gpu-hosting-near-you', title: 'GPU hosting near you', intro: 'Providers that rent GPUs from data centers in Africa, the Middle East, South and Southeast Asia and Latin America.',
+      items: hosts.filter((r) => Array.isArray(r.data_centers?.value)).flatMap((r) => { const cs = r.data_centers.value.map((d) => d.country); const regs = Object.entries(REGIONS).filter(([, l]) => cs.some((c) => l.includes(c))).map(([n]) => n); return regs.length ? [[r, `${regs.join(', ')}: ${[...new Set(cs.filter((c) => Object.values(REGIONS).flat().includes(c)))].map(R.countryName).join(', ')}`]] : []; }) },
+  ];
+  const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
+  const page = (title, desc, canonical, body, depth) => `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(title)} · CleverFox</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical}">
+<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:image" content="${SITE}img/og.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="${'../'.repeat(depth)}img/favicon-32.png?v=${build}"><link rel="stylesheet" href="${'../'.repeat(depth)}style.css?v=${build}">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head><body>
+<header class="top"><div class="wrap top-row"><a class="brand" href="${'../'.repeat(depth)}"><img src="${'../'.repeat(depth)}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="${'../'.repeat(depth)}">← All listings</a> · <a href="${'../'.repeat(depth)}guides/">📚 All guides</a> · <a href="${'../'.repeat(depth)}glossary/">📖 Glossary</a></p></div></header>
+<main class="wrap listing">${body}</main>
+<footer class="wrap foot"><p>Built from the CleverFox catalog on ${esc(R.fmtDate(new Date().toISOString()))}. Every fact links to its source on the listing's page. Payment and country facts change often, so check the official page before paying.</p></footer>
+${GOATCOUNTER}
+</body></html>
+`;
+  const urls = [];
+  for (const g of guides) {
+    const items = g.items.slice(0, 30);
+    const body = `<h1>${esc(g.title)}</h1><p>${esc(g.intro)}</p><p class="muted">${g.items.length} listing${g.items.length === 1 ? '' : 's'}${g.items.length > 30 ? ', top 30 shown' : ''}.</p>
+<ol class="guide-list">${items.map(([r, why]) => `<li><a href="../../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)}</span><br>${esc(r.description)}<br><span class="chip">${esc(why)}</span></li>`).join('')}</ol>${g.extra || ''}`;
+    mkdirSync(join(root, 'guides', g.slug), { recursive: true });
+    writeFileSync(join(root, 'guides', g.slug, 'index.html'), page(g.title, g.intro, `${SITE}guides/${g.slug}/`, body, 2));
+    urls.push(`${SITE}guides/${g.slug}/`);
+  }
+  writeFileSync(join(root, 'guides', 'index.html'), page('Guides', 'Answers to common questions about using AI from anywhere: paying without a card, running AI on your laptop or phone, AI in your language, hosting near you.', `${SITE}guides/`,
+    `<h1>📚 Guides</h1><p>Answers to common questions, built from the catalog and refreshed every day.</p><ul class="new-list">${guides.map((g) => `<li><a href="${g.slug}/"><strong>${esc(g.title)}</strong></a> <span class="muted">(${g.items.length})</span><br>${esc(g.intro)}</li>`).join('')}</ul>`, 1));
+  urls.push(`${SITE}guides/`);
+  // Add the guides to the sitemap.
+  const sm = join(root, 'sitemap.xml');
+  if (existsSync(sm)) writeFileSync(sm, readFileSync(sm, 'utf8').replace('</urlset>', urls.map((u) => `<url><loc>${esc(u)}</loc></url>`).join('\n') + '\n</urlset>'));
+  console.log(`Guides: ${guides.map((g) => `${g.slug} (${g.items.length})`).join(', ')}`);
 }

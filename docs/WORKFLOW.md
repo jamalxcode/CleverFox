@@ -84,5 +84,7 @@ Its old page then explains where it went.
 | `X_MONTHLY_READS` | repo variable | Monthly X read budget (default 10,000; set to 2,000) |
 | `HF_TOKEN` | repo secret (optional) | Higher Hugging Face rate limits |
 | `AA_API_KEY` | repo secret (optional) | Artificial Analysis benchmarks |
+| `X_POST_ENABLED` | repo variable (optional) | `true` turns on the weekly X post |
+| `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | repo secrets (optional) | X posting keys (OAuth 1.0a, read and write) for the weekly post |
 
 X credits are shared with another project on the same X account, so keep the read budget modest and set a billing cap in the X developer portal.

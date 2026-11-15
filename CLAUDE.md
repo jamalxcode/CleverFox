@@ -47,6 +47,8 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/recheck.mjs`: daily re-check of access facts' source pages (fingerprints visible text) into `data/imported/recheck.json`; the build adds `access_check` (changed pages, gone pages, fact age) and listings show warnings. Tested offline by `tools/test-recheck.mjs` (part of `npm test`). It never edits facts.
 - `tools/providers.mjs`: "use it online": API providers per model with prices (Hugging Face Inference Providers mapping, OpenRouter model list) into `data/imported/providers.json`; the build attaches `online` to models. Tested by `tools/test-providers.mjs`.
 - `tools/appstore.mjs`: App Store check (confirms official ids by seller, countries per storefront, look-alike counts) into `data/imported/appstore.json`; candidates in `data/app-stores.json`. Tested by `tools/test-appstore.mjs`.
+- `tools/xpost.mjs`: weekly X post of what's new (Mondays, off unless `X_POST_ENABLED` is `true` and the posting keys are set). Tested by `tools/test-xpost.mjs`.
+- `glossary/index.html`: plain-language glossary (static). `guides/`, `new/` and `feed.xml` are written by the build.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
 - `.github/workflows/pages.yml`: on push, restores imports and deploys. Daily, it also re-imports first and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.
 - `tools/build.mjs`: the validator and catalog builder. It enforces vocabularies, claim provenance, ISO country codes, identity tests and access blocks, and derives `no_card_needed`.

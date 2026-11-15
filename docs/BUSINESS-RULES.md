@@ -197,6 +197,11 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10l. Guides and the weekly X post
+
+- **Guides** (`guides/`, written by the build from the live catalog, in the sitemap): pay without a card; pay with mobile money (with Google Play's mobile-money and phone-bill countries); free AI apps; AI on an 8 GB laptop; AI on a 16 GB laptop or Mac; offline AI on your phone; AI in African languages; AI in Arabic; strong models online for free; GPU hosting near you. Up to 30 listings each, each with the fact it was picked for. Listings with warnings or possibly discontinued are left out; uncensored models are left out of the laptop guides.
+- **Weekly X post** (`tools/xpost.mjs`): on Mondays' scheduled run, if the `X_POST_ENABLED` variable is `true` and the posting keys are set (`X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`), one post: counts of listings new this week by type, up to 3 names (apps and hosts first, then most popular), and a link to "new this week"; within 280 characters. At most once every 6 days. Off by default.
+
 ## 10k. Paying through Google Play
 
 - `data/store-payments.json`: the payment methods Google Play accepts in each of 72 countries, from Google Play Help (official, read 2026-11-15, one source link per country). Countries not listed take cards only. E-wallets are `other` with the brand in the note; only operator wallets (Airtel Money, MTN MoMo, Vodafone Cash) are `mobile_money`. Methods Google says are ending are left out.

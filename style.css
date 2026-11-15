@@ -221,3 +221,5 @@ table.cmp tbody th { color: var(--muted); font-weight: 600; white-space: nowrap;
 [dir="rtl"] .pick-list { padding-left: 0; padding-right: 20px; }
 @media (max-width: 560px) { .lang-pick { flex: 1 1 100%; } .lang-pick select { width: 100%; max-width: none; } }
 .compare-bar[hidden], .compare[hidden] { display: none; }
+.guide-list { padding-left: 22px; } .guide-list li { margin-bottom: 12px; }
+.guide-list .chip, .new-list .chip { white-space: normal; }
