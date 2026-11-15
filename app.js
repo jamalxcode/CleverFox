@@ -1,6 +1,6 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
 import { LANGS, t, pickLang, applyLang } from './i18n.js?v=__BUILD__';
-import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart } from './picks.js?v=__BUILD__';
+import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart, ORDERING } from './picks.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -155,7 +155,8 @@ function render() {
   recs.sort((a, b) => suits(a) - suits(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
   $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
-  if (!recs.length && state.q) trackEmpty(`search-empty/${state.type}/${state.q.toLowerCase().slice(0, 40)}`);
+  // The tab and the filters in use, never the words typed.
+  if (!recs.length && (state.q || Object.values(state.f[state.type]).some(Boolean))) trackEmpty(`search-empty/${state.type}/${Object.entries(state.f[state.type]).filter(([, v]) => v).map(([k]) => k).sort().join('+') || 'text'}${state.cap ? '/' + state.cap : ''}`);
   $('#more-btn').hidden = recs.length <= state.limit;
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
   $('#summary').textContent = `${recs.length} of ${all.length} ${TYPE_WORDS[state.type]}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
@@ -196,7 +197,6 @@ $('#list').addEventListener('toggle', (e) => {
 // The list holds slim records; the full one (sources, links, hardware table) sits next to the listing's page.
 const fullCache = new Map();
 async function fullRecord(rec) {
-  if (rec.type === 'app' || rec.type === 'host') return rec;
   if (!fullCache.has(rec.id)) fullCache.set(rec.id, fetch(`${listingPath(rec)}record.json`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(() => rec));
   return fullCache.get(rec.id);
 }
@@ -241,6 +241,12 @@ $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => 
 $('#ulang').insertAdjacentHTML('beforeend', (catalog.languages || []).map((l) => [l, langName(l)]).sort((a, b) => a[1].localeCompare(b[1])).map(([l, n]) => `<option value="${l}"${l === state.ulang ? ' selected' : ''}>${esc(n)}</option>`).join(''));
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
+// Freshness: when each source last refreshed; a stale one is flagged, so a deploy doesn't look like everything refreshed.
+{
+  const ago = (at) => { const h = (Date.now() - new Date(at)) / 3600000; return h < 1 ? 'under an hour ago' : h < 48 ? `${Math.round(h)} h ago` : `${Math.round(h / 24)} days ago`; };
+  const parts = (catalog.freshness || []).map((s) => !s.at ? `<span class="stale">⚠️ ${esc(s.label)}: not yet</span>` : (Date.now() - new Date(s.at)) / 3600000 > s.max_hours ? `<span class="stale">⚠️ ${esc(s.label)}: ${esc(ago(s.at))}</span>` : `${esc(s.label)}: ${esc(ago(s.at))}`);
+  if (parts.length) $('#generated').insertAdjacentHTML('afterend', `<p class="muted fresh">🔄 Last refreshed: ${parts.join(' · ')}</p>`);
+}
 // ---- compare up to 3 listings (same type) ----
 const cmp = [];
 const recById = (id) => TYPES.flatMap((t) => loaded[t] || []).find((r) => r.id === id);
@@ -314,6 +320,7 @@ async function showPicks(share = true) {
   const item = (p) => `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`;
   for (const [h, list] of cols) if (!list.length) try { window.goatcounter?.count?.({ path: `picks-empty/${h.replace(/^\S+\s/, '')}/${s.task}/${s.device}/${s.country || 'any'}/${s.ulang || 'any'}`, title: 'No picks', event: true }); } catch {}
   $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p>`}</div>`).join('')}</div>
+    <details class="pick-how"><summary>How picks are ordered</summary><ul>${[ORDERING.local, ORDERING.offline, ORDERING.apps, ORDERING.online, ORDERING.not].map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>
     <p class="share pick-share"><button class="share-btn" type="button" id="s-share">${esc(t('share'))}</button></p>`;
   if (share) history.replaceState(null, '', encodeStart(s));
   $('#s-share').addEventListener('click', async () => {

@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, rmSync
 // The live site's address. Change it when the custom domain (cleverfox.sala.company) is set.
 const SITE = process.env.SITE_URL || 'https://jamalxcode.github.io/CleverFox/';
 import { join, dirname } from 'node:path';
+import { slim, isEstimate } from './slim.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -110,6 +111,11 @@ for (const r of records) {
   seenIds.add(id);
   for (const f of ['name', 'description', 'publisher']) if (!r[f]) err(id, `${f} is missing`);
   if (r.description && r.description.split(/\s+/).length > 30) err(id, 'description is longer than 30 words');
+  // Every link that becomes an href must be http(s).
+  const isHttp = (u) => typeof u === 'string' && /^https?:\/\/[^\s"'<>]+$/i.test(u);
+  for (const f of ['official_urls', 'documentation_urls', 'evidence_urls', 'paper_urls', 'app_store_urls']) for (const u of r[f] || []) if (!isHttp(u)) err(id, `${f} has a link that isn't http(s): ${String(u).slice(0, 60)}`);
+  if (r.url != null && !isHttp(r.url)) err(id, `url isn't an http(s) link`);
+  for (const d of r.distributions || []) if (d.url && !isHttp(d.url)) err(id, `distribution url isn't an http(s) link: ${String(d.url).slice(0, 60)}`);
   for (const f of ['official_urls', 'documentation_urls', 'evidence_urls', 'relations']) {
     if (!Array.isArray(r[f])) err(id, `${f} must be a list`);
   }
@@ -461,13 +467,11 @@ for (const r of published) {
   if (dates.length) chk.facts_checked_at = dates[0];
   if (dates.length && (Date.now() - new Date(dates[0])) / 86400000 > ACCESS_STALE_DAYS) chk.stale = true;
   if (chk.changed?.length) recheckChanged++;
-  // Automatic verification: a candidate whose checked facts were all found on their source pages (and none changed since).
-  if (r.verification_status === 'candidate' && chk.facts?.length && chk.facts.every((f) => f.status === 'confirmed') && chk.facts.some((f) => f.field === 'payment_methods') && !chk.changed?.length) {
-    r.verification_status = 'verified'; r.verified_by = `automatic page check, ${chk.facts[0].checked_at.slice(0, 10)}`; autoVerified++;
-  }
+  // The automatic page check only reports what it found; "verified" stays a human check (decision 66).
+  if (chk.facts?.length && chk.facts.every((f) => f.status === 'confirmed')) autoVerified++;
   if (Object.keys(chk).length) r.access_check = chk;
 }
-if (RECHECK) console.log(`Access re-check: ${recheckChanged} listings have source pages that changed after their facts were checked; ${autoVerified} verified automatically`);
+if (RECHECK) console.log(`Access re-check: ${recheckChanged} listings have source pages that changed after their facts were checked; ${autoVerified} with every checked fact found on its page`);
 
 for (const r of published) { r.answers = answers(r); const hw = hardware(r); if (hw) r.hardware = hw; }
 
@@ -481,7 +485,15 @@ if (!checkOnly) {
   for (const r of published.filter((x) => x.type === 'model' || x.type === 'app')) for (const l of [...(Array.isArray(r.languages?.value) ? r.languages.value : []), ...(Array.isArray(r.interface_languages?.value) ? r.interface_languages.value : [])]) if (/^[a-z]{2}$/.test(l)) langCount[l] = (langCount[l] || 0) + 1;
   const languages = Object.entries(langCount).filter(([l, n]) => n >= 3 || ['sw', 'yo', 'ha', 'am', 'zu', 'ig', 'so', 'rw'].includes(l)).map(([l]) => l).sort();
   const storePayments = existsSync(join(root, 'data', 'store-payments.json')) ? JSON.parse(readFileSync(join(root, 'data', 'store-payments.json'), 'utf8')) : null;
-  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, store_payments: storePayments ? { google_play: storePayments.google_play } : null, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
+  // When each source last refreshed successfully, and how old is too old (hours).
+  const readJ = (f) => { try { return JSON.parse(readFileSync(join(importDir, f), 'utf8')); } catch { return null; } };
+  const imp = readJ('import-state.json') || {}; const xs = readJ('x-state.json') || {}; const pv = readJ('providers.json'); const ap = readJ('appstore.json'); const rc = readJ('recheck.json'); const bm = readJ('benchmarks.json');
+  const freshness = [
+    ['Hugging Face models', imp.huggingface_models, 48], ['Hugging Face datasets', imp.huggingface_datasets, 48], ['Ollama', imp.ollama, 48],
+    ['X', xs.last_scan ? xs.last_scan.replace(/\.\d+Z$/, 'Z') : null, 24], ['API providers', pv?.sources?.huggingface?.observed_at, 48],
+    ['Benchmarks', bm?.observed_at, 72], ['App Store check', ap?.checked_at, 72], ['Access page re-check', rc?.checked_at, 48],
+  ].map(([label, at, max_hours]) => ({ label, at: at || null, max_hours }));
+  writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, freshness, store_payments: storePayments ? { google_play: storePayments.google_play } : null, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
   // fetches the listing's full record from its page folder (l/.../record.json).
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
@@ -567,7 +579,7 @@ async function writeListingPages(records, countryList) {
   <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${r.independent_benchmarks?.length ? ` · Benchmarks: ${[...new Set(r.independent_benchmarks.map((x) => x.source))].map((s) => s === 'Epoch AI' ? '<a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0)' : '<a href="https://artificialanalysis.ai/">Artificial Analysis</a>').join(', ')}` : ''} · <a href="${base}">CleverFox</a></p>
 </footer>
 <script type="module">import { wireShare } from '${base}render.js?v=${build}'; wireShare(document);</script>
-${r.x_buzz?.posts ? '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' : ''}
+${r.x_buzz?.posts ? `<script>document.getElementById('x-load')?.addEventListener('click', function () { this.disabled = true; this.textContent = 'Loading posts from X…'; var s = document.createElement('script'); s.async = true; s.src = 'https://platform.twitter.com/widgets.js'; document.body.appendChild(s); });</script>` : ''}
 ${GOATCOUNTER}
 </body>
 </html>
@@ -581,38 +593,6 @@ ${GOATCOUNTER}
   console.log(`Wrote ${records.length} listing pages under l/, sitemap.xml and robots.txt`);
 }
 
-// ---- slim list records (page weight; spec: first load under 200 KB) ----
-function slimClaim(c) { return c && typeof c === 'object' && !Array.isArray(c) && 'value' in c ? { value: c.value } : c; }
-function slimAccess(a) {
-  if (!a) return a;
-  return {
-    countries_available: slimClaim(a.countries_available), countries_unavailable: slimClaim(a.countries_unavailable),
-    free: slimClaim(a.free), no_card_needed: a.no_card_needed,
-    payment_methods: Array.isArray(a.payment_methods?.value) ? { value: a.payment_methods.value.map((m) => ({ method: m.method })) } : slimClaim(a.payment_methods),
-  };
-}
-export function slim(r) {
-  if (r.type === 'app' || r.type === 'host') { const { research_notes, evidence_urls, ...rest } = r; return { ...rest, access: slimAccess(r.access) }; }
-  const pop = r.popularity || [];
-  const o = {
-    id: r.id, type: r.type, name: r.name, publisher: r.publisher, publisher_name: r.publisher_name, family: r.family,
-    description: r.description, tasks: r.tasks, warning: r.warning, verification_status: r.verification_status,
-    languages: slimClaim(r.languages), publisher_region: slimClaim(r.publisher_region), availability: slimClaim(r.availability),
-    license: slimClaim(r.license), parameters: slimClaim(r.parameters), local_ready: r.local_ready, size_category: r.size_category,
-    answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised, online: r.answers.online, online_free: r.answers.online_free, online_no_card: r.answers.online_no_card,
-      uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free },
-    hardware: r.hardware && { min_memory_gb: r.hardware.min_memory_gb, recommended_gb: r.hardware.recommended_gb },
-    platforms: r.platforms && Object.fromEntries(Object.keys(r.platforms).map((k) => [k, []])),
-    popularity: pop.length ? [{ downloads_30d: pop.reduce((n, p) => n + (p.downloads_30d || 0) + pullsN(p.pulls), 0), likes: pop.reduce((n, p) => n + (p.likes || 0), 0) }] : undefined,
-    independent_benchmarks: (r.independent_benchmarks || []).filter((x) => ['epoch_eci', 'aa_intelligence'].includes(x.id)).map((x) => ({ id: x.id, display: x.display })),
-    distributions: (r.distributions || []).filter((d) => d.access || d.availability === 'downloadable').slice(0, 3).map((d) => ({ source: d.source, availability: d.availability, access: slimAccess(d.access) })),
-    paper_urls: r.paper_urls?.length ? [r.paper_urls[0]] : undefined,
-    variants: r.variants?.length ? r.variants.length : undefined,
-    online_from: r.online?.length ? (r.online.find((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity).filter(Number.isFinite))) : undefined,
-  };
-  return JSON.parse(JSON.stringify(o));
-}
-function pullsN(s) { const m = String(s || '').match(/^([\d.]+)([KMB]?)$/); return m ? +m[1] * ({ K: 1e3, M: 1e6, B: 1e9 }[m[2]] || 1) : 0; }
 
 // Pages for listings that were grouped or hidden: say where they went (old links keep working).
 function writeMovedPages() {
@@ -678,7 +658,8 @@ async function writeGuides(records) {
   const R = await import('../render.js');
   R.view.country = ''; R.view.mem = 0; R.view.ulang = ''; R.view.base = '../../';
   const esc = R.esc;
-  const by = (t) => records.filter((r) => r.type === t && r.warning === 'none' && !r.possibly_discontinued);
+  // Apps and hosts in guides only once their official page was read (verified); candidates stay on their own pages.
+  const by = (t) => records.filter((r) => r.type === t && r.warning === 'none' && !r.possibly_discontinued && (t === 'model' || t === 'dataset' || r.verification_status === 'verified'));
   const models = by('model'); const apps = by('app'); const hosts = by('host');
   const eci = (r) => { const b = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci' || x.id === 'aa_intelligence'); return b ? parseFloat(b.display) || 0 : 0; };
   const rating = (r) => (r.official_store?.rating || 0) * Math.log10(10 + (r.official_store?.ratings || 0));

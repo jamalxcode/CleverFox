@@ -111,7 +111,7 @@ async function main() {
   if (count < Object.keys(prev.models || {}).length * 0.8) { console.warn(`Only ${count} benchmarked models vs ${Object.keys(prev.models).length} last time; keeping the previous file.`); return; }
   mkdirSync(dirname(out), { recursive: true });
   const sorted = Object.fromEntries(Object.entries(merged).sort(([a], [b]) => a.localeCompare(b)).map(([k, m]) => [k, { names: m.names.sort(), results: m.results.sort((a, b) => a.id.localeCompare(b.id)) }]));
-  writeFileSync(out, JSON.stringify({ sources: { epoch: { name: 'Epoch AI', url: EPOCH_PAGE, license: 'CC BY 4.0' }, aa: { name: 'Artificial Analysis', url: 'https://artificialanalysis.ai/', license: 'attribution required' } }, models: sorted }, null, 1) + '\n');
+  writeFileSync(out, JSON.stringify({ observed_at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), sources: { epoch: { name: 'Epoch AI', url: EPOCH_PAGE, license: 'CC BY 4.0' }, aa: { name: 'Artificial Analysis', url: 'https://artificialanalysis.ai/', license: 'attribution required' } }, models: sorted }, null, 1) + '\n');
   console.log(`Benchmarks: ${count} models (${Object.keys(sources).join(', ')})`);
 }
 

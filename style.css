@@ -223,3 +223,6 @@ table.cmp tbody th { color: var(--muted); font-weight: 600; white-space: nowrap;
 .compare-bar[hidden], .compare[hidden] { display: none; }
 .guide-list { padding-left: 22px; } .guide-list li { margin-bottom: 12px; }
 .guide-list .chip, .new-list .chip { white-space: normal; }
+.card.candidate { border-style: dashed; }
+.pick-how { font-size: .85rem; margin: 8px 0 0; } .pick-how summary { cursor: pointer; color: var(--accent-text); } .pick-how ul { margin: 4px 0 0; padding-left: 18px; }
+.fresh { font-size: .8rem; } .fresh .stale { color: var(--warn); font-weight: 600; }

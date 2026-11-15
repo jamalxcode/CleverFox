@@ -5,8 +5,8 @@ for (const t of ['so disappointing', 'it hallucinates a lot', 'overhyped tbh', '
 assert.equal(tone('not bad at all'), 'general'); assert.equal(tone('amazing but buggy'), 'general'); assert.equal(tone('released v2 today'), 'general');
 
 // praise words, other languages, emoji, negation
-for (const t of ['This model is amazing', 'Qwen3 is a game changer', 'absolutely blown away', 'رائع جدا', '这个模型太强了', 'すごい速さ', 'increíble modelo', 'love it 🔥', 'beats GPT on my tests']) assert.ok(isPraise(t), t);
-for (const t of ['not great at coding', 'this is not amazing', 'released today', 'how do I run this?', 'greatest hits playlist']) assert.ok(!isPraise(t), t);
+for (const t of ['This model is amazing', 'Qwen3 is a game changer', 'absolutely blown away', 'رائع جدا', '这个模型太强了', 'すごい速さ', 'increíble modelo', 'love it 🔥', 'beats GPT on my tests', '这个模型牛逼']) assert.ok(isPraise(t), t);
+for (const t of ['not great at coding', 'this is not amazing', 'released today', 'how do I run this?', 'greatest hits playlist', '🔥🔥🔥', '❤️', '牛肉面 recipe', '我吃了牛']) assert.ok(!isPraise(t), t);
 
 // links
 assert.deepEqual(linksIn(['https://huggingface.co/Qwen/Qwen3-14B', 'https://huggingface.co/datasets/HuggingFaceFW/fineweb', 'https://huggingface.co/spaces/x/y', 'https://huggingface.co/docs/x', 'https://ollama.com/library/qwen3:14b', 'https://example.com']),
@@ -42,8 +42,9 @@ assert.equal(queryFor({ type: 'app', name: 'Claude', access: {} }), '("Claude" (
 
 // validation rule
 const p = (author, text, likes, reposts = 0) => ({ id: String(Math.random()).slice(2), author, text, likes, reposts, quotes: 0, created_at: '2026-11-14T10:00:00Z', lang: 'en', urls: [] });
-let s = summarizeBuzz([p('a', 'amazing', 60), p('b', 'so good', 30), p('c', '🔥🔥', 20), p('d', 'meh', 500)]);
-assert.equal(s.praise_posts, 3); assert.equal(s.likes, 110); assert.equal(s.praised, true); assert.equal(s.top.positive.length, 3); assert.ok(!('text' in s.top.all[0]));
+let s = summarizeBuzz([p('a', 'amazing', 60), p('b', 'so good', 30), p('c', '🔥🔥', 20), p('d', 'meh', 500), p('e', 'impressive', 60), p('f', 'excellent', 40), p('a', 'really good', 30)]);
+assert.equal(s.praise_posts, 5, 'emoji alone are not praise'); assert.equal(s.likes, 220); assert.equal(s.praised, true); assert.equal(s.top.positive.length, 3); assert.ok(!('text' in s.top.all[0]));
+assert.equal(summarizeBuzz([p('a', 'amazing', 60), p('b', 'so good', 60), p('c', 'great', 60)]).praised, false, 'three posts are not enough');
 assert.equal(s.top.all[0].author, 'd', 'top overall is the most liked, whatever its tone');
 s = summarizeBuzz([p('a', 'amazing', 60), p('a', 'so good', 60), p('a', 'wow', 60)]);
 assert.equal(s.praised, false, 'one account alone does not validate');
@@ -54,8 +55,8 @@ let calls = 0;
 const fetchImpl = async (url) => {
   calls++;
   const q = new URL(url).searchParams.get('query');
-  const data = q.includes('url:"huggingface.co" OR') ? [tweet('1', 'u1', 'New model out', 300, ['https://huggingface.co/acme/Acme-7B'])] : [tweet('2', 'u2', 'incredible results', 80), tweet('3', 'u3', 'wow', 40), tweet('4', 'u4', 'best local model', 30), ...[5, 6, 7, 8, 9, 10, 11].map((n) => tweet(String(n), 'u4', 'trying it today', 1))];
-  return new Response(JSON.stringify({ data, includes: { users: [{ id: 'u1', username: 'acme' }, { id: 'u2', username: 'bob' }, { id: 'u3', username: 'cat' }, { id: 'u4', username: 'dan' }] } }), { status: 200 });
+  const data = q.includes('url:"huggingface.co" OR') ? [tweet('1', 'u1', 'New model out', 300, ['https://huggingface.co/acme/Acme-7B'])] : [tweet('2', 'u2', 'incredible results', 80), tweet('3', 'u3', 'wow', 60), tweet('4', 'u4', 'best local model', 40), tweet('5', 'u5', 'really good', 30), tweet('6', 'u2', 'impressive', 20), ...[7, 8, 9, 10, 11].map((n) => tweet(String(n), 'u4', 'trying it today', 1))];
+  return new Response(JSON.stringify({ data, includes: { users: [{ id: 'u1', username: 'acme' }, { id: 'u2', username: 'bob' }, { id: 'u3', username: 'cat' }, { id: 'u4', username: 'dan' }, { id: 'u5', username: 'eve' }] } }), { status: 200 });
 };
 const listings = [1, 2, 3, 4, 5].map((i) => ({ id: `cf:model:x/model-${i}`, type: 'model', name: `Model Number ${i}`, distributions: [] }));
 const saved = RULES.monthlyReads; RULES.monthlyReads = 45 * 16; // ~45 reads a day on 2026-11-15 (16 days left incl. today)
@@ -107,4 +108,13 @@ for (const id of Object.keys(out.data.buzz)) assert.equal(next.data.buzz[id].obs
   RULES.monthlyReads = saved;
 }
 
+// Names can't change the query; a failed scan leaves its slot open.
+assert.equal(queryFor({ type: 'model', name: 'Evil" OR (spam) -foo', relations: [], distributions: [] }), '("Evil foo") -is:retweet');
+{
+  RULES.monthlyReads = 90 * 16;
+  const down = async () => new Response('{}', { status: 429, headers: { 'x-rate-limit-reset': String(Math.floor(Date.now() / 1000) + 900) } });
+  const r = await run({ token: 't', fetchImpl: down, now: new Date('2026-11-21T03:00:00Z'), listings, log: () => {} });
+  assert.equal(r.state.scans, 0, 'failed searches do not use up the scan slot');
+  RULES.monthlyReads = saved;
+}
 console.log('All X monitoring tests passed.');

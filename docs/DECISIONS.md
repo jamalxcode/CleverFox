@@ -298,6 +298,23 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** cron-job.org starts the workflow 3 times a day through GitHub's API, with GitHub's schedule as a late backup. The first run in 20 hours is a full refresh; the others are quick scans that read X announcements and fill in new models and datasets from Hugging Face. Each UTC day still has one X read share, split across up to 3 scans at least 5 hours apart; a run outside a scan slot reads nothing. A second search finds AI app and hosting launch posts; those are listed as "Spotted on X" until researched, because payment and country facts can't be read from a post (and no AI is used to guess them).
 **Why:** the owner asked for X scans 3 times a day for new models, datasets, apps and hosting, with the rest of the information filled in, timed by cron-job.org as for Flattery, whose lesson is that GitHub's schedules run late or not at all. The daily read share keeps X costs the same however many runs start.
 
+### 66. Apply the outside review: the page is as careful as the pipeline
+**Decision:** an outside review (15 November) found the live page could overstate facts. Applied:
+- **Full records:** apps and hosts keep their full access records in the list, and every card loads its full record.
+- **Google Play:** a country missing from the table is unknown.
+- **Verified:** the page check no longer promotes listings to verified. Candidates are flagged first on cards and kept out of picks and guides.
+- **Picks:** only listings that claim a task count for it, the ordering is published on the page, and X praise is out of the ordering.
+- **Praise detection:** stricter (no emoji-only posts, no single CJK characters, 5 posts from 4 accounts with 200+ likes). Failed searches keep their scan slot. Listing names are cleaned before they go into a query.
+- **Memory:** estimates from the parameter count are labelled and need twice the room in picks.
+- **Validator:** links must be http(s).
+- **Footer:** shows when each source last refreshed.
+- **X embeds:** load on click.
+- **GoatCounter:** events carry filters, not search words.
+- **Deploy:** the weekly X post runs after it and can't fail it. A page check (phone widths, contrast) and a slim-record test stop the deploy on a regression. The data-branch push uses the checkout's credentials instead of a token in the URL.
+- **Footer text:** "Prototype" is gone.
+
+**Why:** the parts that make CleverFox different (country, payment, verified, what to use) were the ones most likely to overstate a fact. Hiding the doubtful ones, and saying what we don't know, matters more than looking complete. Fewer apps in picks and guides is the honest result of only 17 being verified.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

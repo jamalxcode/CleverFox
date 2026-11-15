@@ -45,18 +45,14 @@ jobs:
         run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
-      - name: Weekly post on X (off unless the X_POST_ENABLED variable is true)
-        if: steps.mode.outputs.mode == 'full'
-        env: { X_POST_ENABLED: "${{ vars.X_POST_ENABLED }}", X_API_KEY: "${{ secrets.X_API_KEY }}", X_API_SECRET: "${{ secrets.X_API_SECRET }}", X_ACCESS_TOKEN: "${{ secrets.X_ACCESS_TOKEN }}", X_ACCESS_SECRET: "${{ secrets.X_ACCESS_SECRET }}" }
-        run: node tools/xpost.mjs
+      - name: Page check - phone widths and colour contrast (stops the deploy on a problem)
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.49.1 axe-core@4.10.2
+          npx playwright install --with-deps chromium
+          node tools/ui-check.cjs --root .
       - name: Save imports to the data branch (one commit, overwritten)
         if: steps.mode.outputs.mode != 'none'
-        run: |
-          ls data/imported/*.json >/dev/null 2>&1 || { echo "No imports to save."; exit 0; }
-          rm -rf /tmp/data && mkdir -p /tmp/data/imported && cp data/imported/*.json /tmp/data/imported/
-          cd /tmp/data && git init -q -b data && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Imported models and datasets ($(date -u +%F))"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data
+        run: bash tools/save-data.sh "Imported data"
       - name: Assemble the public site
         # Only public files: data/seed/ keeps internal research notes and is never published.
         run: |
@@ -71,3 +67,9 @@ jobs:
         with: { path: _site }
       - id: deployment
         uses: actions/deploy-pages@v4
+      # After the deploy, so a failed post never holds back the catalog. The "already posted" flag is saved in the same step.
+      - name: Weekly post on X (off unless the X_POST_ENABLED variable is true)
+        if: steps.mode.outputs.mode == 'full'
+        continue-on-error: true
+        env: { X_POST_ENABLED: "${{ vars.X_POST_ENABLED }}", X_API_KEY: "${{ secrets.X_API_KEY }}", X_API_SECRET: "${{ secrets.X_API_SECRET }}", X_ACCESS_TOKEN: "${{ secrets.X_ACCESS_TOKEN }}", X_ACCESS_SECRET: "${{ secrets.X_ACCESS_SECRET }}" }
+        run: node tools/xpost.mjs && if [ -f data/imported/xpost-state.json ] && [ data/imported/xpost-state.json -nt data/imported/x.json ]; then bash tools/save-data.sh "Weekly X post"; fi

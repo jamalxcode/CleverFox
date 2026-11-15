@@ -12,6 +12,37 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: outside review applied
+**Where:** Claude Code session.
+**Asked:** apply the attached review "CleverFox: how to make it better": 4 must-dos, 8 important items, 8 nice-to-haves.
+**Outcome (decision 66):**
+- **Must-dos, all done:**
+  - full app and host records on the page;
+  - Google Play's missing countries shown as unknown;
+  - no automatic promotion to verified (verified apps and hosts went back from 39 to 17);
+  - the X post runs after the deploy and can't fail it.
+- **Important, all done:**
+  - candidates are flagged first and kept out of picks and guides;
+  - picks count only listings that claim the task, X praise is out of the ordering, and the ordering is shown;
+  - a stricter praise detector;
+  - memory estimates labelled;
+  - a failed scan keeps its slot;
+  - a slim-record test, plus phone and contrast checks that stop the deploy;
+  - a freshness line;
+  - the validator accepts http(s) links only.
+- **Nice-to-haves done:**
+  - click-to-load X embeds;
+  - no search words sent to GoatCounter;
+  - names cleaned before X queries;
+  - the data-branch push uses the checkout's credentials instead of a token in the URL;
+  - "Prototype" removed from the footer.
+- **Started:** a research run for price amounts, mobile money and African GPU hosts.
+- **Waiting:**
+  - App Store payments (Apple's page);
+  - translation review;
+  - new sources (ModelScope, Kaggle) until the current ones are solid;
+  - the custom domain (DNS).
+
 ## 2026-11-15: cron-job.org steps; docs brought up to date
 **Where:** Claude Code session.
 **Asked:**

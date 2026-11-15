@@ -163,7 +163,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - **Changed:** a page whose fingerprint changed after the facts citing it were observed gives "⚠️ Pricing page changed" on the card and a note naming the page. Facts are never changed automatically.
   - **Broken:** a source page answering 404 or 410 on 2 checks in a row shows "Source link not loading". Bot walls (401, 403, 429) and network errors never count.
   - **Fact check:** each readable source page is searched for the words of each stated payment method and for "free" (lists in `TERMS` in `tools/recheck.mjs`, many languages; short words match whole words only; "other" can't be checked). Each fact is confirmed, partly confirmed or not found; the listing shows what was found and what wasn't.
-  - **Automatic verification:** a `candidate` listing becomes `verified` ("automatic page check, <date>") when every checked fact was found, at least one of them is a payment method, and no source page changed since. Nothing is downgraded or rewritten automatically.
+  - **No automatic verification:** the page check only reports "found on the source page" or "not found"; `verified` is set only after a person reads the official page (decision 66). Common words (card, wire, wave…) can match by accident, so a match is evidence, not proof.
   - **Old facts:** access facts first observed over 180 days ago show "⏳ Access facts are old".
 
 - **Daily import** (GitHub Actions, 03:41 UTC) imports, gathers benchmarks, builds and deploys. A push to `main` builds and deploys without importing.
@@ -206,12 +206,13 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 - `data/store-payments.json`: the payment methods Google Play accepts in each of 72 countries, from Google Play Help (official, read 2026-11-15, one source link per country). Countries not listed take cards only. E-wallets are `other` with the brand in the note; only operator wallets (Airtel Money, MTN MoMo, Vodafone Cash) are `mobile_money`. Methods Google says are ending are left out.
 - **Sold through Google Play:** an app with a Google Play link and paid plans (store billing, a free tier, a trial or paid only).
+- A country missing from the table is **unknown**, not cards only (cards-only countries are stored as such).
 - With a country chosen, such an app shows "🛒 If you subscribe in the Android app, Google Play in <country> accepts: …" and, when the app has no non-card method of its own, the badge "🪙 Via Google Play: <methods>". It counts as payable without a card in highlighting and picks (+1.5). Without a country, a summary with examples links to Google's page.
 - The App Store table isn't included: Apple's page couldn't be read directly, and search summaries aren't good enough (decision 64).
 
 ## 10j. Gaps, discontinued listings, glossary
 
-- **What people can't find:** a search with no results (after 2 seconds of no typing) and an empty picks column are counted as GoatCounter events (`search-empty/<tab>/<words>`, `picks-empty/<column>/<task>/<device>/<country>/<language>`). Only the search words and choices, nothing about the person. These show which data to research next.
+- **What people can't find:** a search with no results (after 2 seconds of no typing) and an empty picks column are counted as GoatCounter events (`search-empty/<tab>/<filters in use>`, `picks-empty/<column>/<task>/<device>/<country>/<language>`). The tab, filters and choices only: never the words typed, nothing about the person. These show which data to research next.
 - **Possibly discontinued:** an app whose App Store listing was confirmed before and is missing on 2 checks in a row, or an app or provider whose homepage answers 404/410 on 2 checks, shows "⚠️ Possibly discontinued" with the reason, and is left out of picks. It isn't removed.
 - **Glossary** (`glossary/`): plain explanations of model, local, memory, 4-bit, parameters, tokens, API, GGUF, Ollama, open weights and licenses, benchmarks, free tiers, paying without a card, uncensored, verified. The "Use it online" line links to "what's a token?".
 
@@ -233,13 +234,13 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 10f. Find what to use (top picks, `picks.js`)
 
-"I want to <task> on <my computer | my phone | the web>", with memory and country from the pickers. Up to 3 picks per column, at most one per model family; every pick shows its reasons. Uncensored models and listings with a warning are never picked.
-- **💻 Run it yourself** (computer): local models good for the task that need at most 80% of the visitor's memory (8 GB assumed if none chosen). Score: independent benchmark (ECI or AA index above 100, ×1.5 per 8 points), log of downloads and pulls, +2 praised on X, +2 × share of memory used (bigger fitting models rank higher), +0.5 verified.
-- **📱 Offline on your phone** (phone): on-device apps. Score: free +3, free tier +2, good for the task +2, verified +1, open source +0.5.
-- **📲 Apps**: apps good for the task and not unavailable in the visitor's country (on phone: with a store link or on-device). Score: available there +3, made there +2, free +2.5, free tier +2, pay without a card +1.5, App Store rating ÷ 2.5, on-device on phone +1.5, praised on X +1, verified +0.5, log of App Store ratings × 0.3.
-- **☁️ Use it online**: models good for the task with API providers. Score: benchmark as above, log of popularity × 0.6, free online +2, a provider that takes payment without a card +1.5, providers (up to 6) × 0.3.
+"I want to <task> on <my computer | my phone | the web>", with memory and country from the pickers. Up to 3 picks per column, at most one per model family; every pick shows its reasons. Uncensored models and listings with a warning are never picked. **Only listings that claim the task count for it** (no "general chat model counts for coding"). **Apps and hosts must be verified** (official page read); candidates stay off picks and guides. **Praise on X isn't part of the ordering** until its word rules are tested against hand-labelled posts. The page shows the ordering in plain words ("How picks are ordered", `ORDERING` in `picks.js`).
+- **💻 Run it yourself** (computer): local models that claim the task and fit: a memory figure from the download size must need at most 80% of the visitor's memory, a rough estimate from the parameter count at most 50% (8 GB assumed if none chosen). Score: independent benchmark (ECI or AA index above 100, ×1.5 per 8 points), log of downloads and pulls, +2 × share of memory used (not for rough estimates), +3 your language.
+- **📱 Offline on your phone** (phone): verified on-device apps that claim the task. Score: free +3, free tier +2, open source +0.5.
+- **📲 Apps**: verified apps that claim the task and aren't unavailable in the visitor's country (on phone: with a store link or on-device). Score: available there +3, made there +2, free +2.5, free tier +2, pay without a card (own or through Google Play) +1.5, local prices +0.5, App Store rating ÷ 2.5, on-device on phone +1.5, log of App Store ratings × 0.3, your language +3.
+- **☁️ Use it online**: models that claim the task with API providers. Score: benchmark as above, log of popularity × 0.6, free online +2, a provider that takes payment without a card +1.5, providers (up to 6) × 0.3, your language +3.
 - Model picks without an independent benchmark say "📊 no independent score yet", so popularity isn't read as quality.
-- **Text tasks** (writing, translation, reasoning, math, analytics, search, coding) also accept general chat models that have an independent benchmark score.
+- **Memory estimates:** a figure from the parameter count only is a rough estimate: the card says "≈ May fit your N GB (estimate)" instead of "✓ Fits", and "recommended" shows "≈ … (estimate)".
 - **Sharing:** the choice is kept in the link (`#start=<task>,<device>,<memory>,<country>`); opening it shows the same picks.
 
 ## 10e. App Store check (`tools/appstore.mjs`)
@@ -286,11 +287,20 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 - **Per listing:** up to 10 posts per listing, listings in a rotating order (seed first, then by popularity), resuming where the last run stopped. Query: the quoted full name, OR its **short name**, OR the Hugging Face address; generic names need extra context or are skipped. No retweets.
 - **Short name** (models and datasets): the name cut at its first size or variant tag (7B, A3B, 16E, Instruct, IT, Chat, Base, Preview, FP8, a 4-digit date…), versions kept: "Llama 4 Scout 17B-16E Instruct" → "Llama 4 Scout". Only if everything cut is such a tag, the listing isn't a derivative (abliterated, GGUF and other re-uploads, fine-tunes, merges, or a relation other than `variant_of`), and the result isn't a bare brand (one word needs a digit, like "Qwen3.8"). Listings sharing a short name (sizes of one family) share family buzz.
 - **Retry:** listings whose last search found nothing with an older query are searched again first.
-- **Tone:** positive if it has a praise word or emoji and no negation; critical if it has a criticism word or emoji; otherwise general. Multilingual lists in `tools/x.mjs`.
-- **Praised on X:** 3+ positive posts, from 3+ accounts, with 100+ likes between them.
+- **Tone:** positive if it has a praise word and no negation just before; critical if it has a criticism word; otherwise general. Emoji alone never set the tone. Latin-script words match whole words only; single CJK characters aren't used ("牛" alone isn't praise; "牛逼" is). Multilingual lists in `tools/x.mjs`.
+- **Praised on X:** 5+ positive posts, from 4+ accounts, with 200+ likes between them. Shown as a badge and filter; not used in picks.
+- **Query safety:** quotes, brackets, operators (OR, AND, NOT, leading minus) and search symbols are stripped from listing names before they go into a query.
+- **Failed scans:** a scan slot counts only when an announcement search actually answered; a rate limit or error leaves it open for the next run.
 - **Kept:** post URL, author handle, likes, reposts, date, language and tone; never the text. Top 3 per group (most liked, positive, critical, general). Buzz older than 30 days is dropped. On failure the last data is kept.
 
 ## 11. The site
+
+- **List records:** apps and hosts keep their whole record in the list (sources, payment notes, prices, App Store countries); only internal notes and the evidence list are left out (`tools/slim.mjs`). Every card loads its full record (`record.json`) when opened. Models keep the slim list.
+- **Verified first:** apps and hosts that aren't verified show "⚠️ Not yet verified: facts from search results" as their first badge, with a dashed card border.
+- **Freshness line** in the footer: when each source last refreshed (Hugging Face models and datasets, Ollama, X, API providers, benchmarks, App Store check, re-check), flagged ⚠️ when older than 48 hours (X: 24, benchmarks and App Store: 72) or never.
+- **X embeds** on listing pages load only when the visitor clicks "Show the posts".
+- **Links:** every link that becomes an href (official, documentation, evidence, paper, store, distribution URLs and `url`) must be http(s); the validator rejects anything else.
+- **Before every deploy:** `npm test` (including `tools/test-slim.mjs`, which reads a slim app back as the browser does) and `tools/ui-check.cjs` (no sideways scrolling at 320 and 375 px, axe colour contrast in light and dark, on 8 pages). A failure stops the deploy.
 
 - **Page weight:** list files are slim (claim values without sources, a popularity total, hardware minimum and recommendation only, platform names, headline benchmarks, up to 3 distributions). Full records are fetched per listing when a card opens. Models list: about 0.9 MB raw, about 70 KB compressed (was 3.1 MB).
 

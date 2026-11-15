@@ -422,11 +422,21 @@ function seedKeys() {
   return keys;
 }
 
+// Which sources refreshed in this run, for the freshness line (data/imported/import-state.json).
+const keptPrevious = new Set();
+function markFresh(keys) {
+  const p = join(outDir, 'import-state.json');
+  const s = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {};
+  const now = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+  for (const k of keys) s[k] = now;
+  writeFileSync(p, JSON.stringify(s, null, 1) + '\n');
+}
 function keepOrWrite(file, records, label) {
   const path = join(outDir, file);
   const prev = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : [];
   if (!QUICK && prev.length && records.length < prev.length * 0.8) {
     console.warn(`${label}: only ${records.length} records vs ${prev.length} last time; keeping the previous file.`);
+    keptPrevious.add(label);
     return prev.length;
   }
   // Keep first_seen_at from earlier runs; last_content_change_at moves only when content changed.
@@ -515,6 +525,7 @@ async function main() {
     const seen = new Set();
     const unique = all.filter((r) => (seen.has(r.id) ? false : seen.add(r.id)));
     console.log(`models written: ${keepOrWrite('models.json', unique, 'models')}`);
+    if (!keptPrevious.has('models')) markFresh(['huggingface_models', ...(ollama.length ? ['ollama'] : [])]);
   }
   if (datasets) {
     const seen = new Set();
@@ -525,6 +536,7 @@ async function main() {
     const unique = datasets.filter((r) => !inSeed(r) && (real(r) || keepIds.has(r.id) || r.discovered_via) && (seen.has(r.id) ? false : seen.add(r.id)));
     for (const r of unique) { r.capabilities = capabilitiesOf(r, []); applyPublisher(r); }
     console.log(`datasets written: ${keepOrWrite('datasets.json', unique, 'datasets')}`);
+    if (!keptPrevious.has('datasets')) markFresh(['huggingface_datasets']);
   }
 }
 

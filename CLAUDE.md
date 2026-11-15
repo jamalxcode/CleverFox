@@ -68,6 +68,9 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/xpost.mjs`: weekly X post of what's new (Mondays, off unless `X_POST_ENABLED` is `true` and the posting keys are set). Tested by `tools/test-xpost.mjs`.
 - `glossary/index.html`: plain-language glossary (static). `guides/`, `new/` and `feed.xml` are written by the build.
 - `tools/mode.mjs`: decides each workflow run's mode (full refresh if the last was 20+ hours ago, else a quick X scan; `none` on push). Tested by `tools/test-mode.mjs`. cron-job.org starts the workflow at 03:41, 11:41 and 19:41 UTC.
+- `tools/slim.mjs`: the slim list records (models slimmed; apps and hosts keep their access block). Tested by `tools/test-slim.mjs`, which reads them back with `render.js` as the browser does.
+- `tools/ui-check.cjs`: page check before deploy (phone widths 320 and 375, axe contrast in light and dark); needs Playwright and axe-core, which the workflow installs (`npm i --no-save`).
+- `tools/save-data.sh`: saves `data/imported/` to the `data` branch with the checkout's credentials.
 - `tools/import.mjs --x-only`: quick mode that only adds models and datasets announced on X.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
 - `.github/workflows/pages.yml`: on push, restores imports and deploys. Three times a day (cron-job.org, GitHub's schedule as backup) it scans X, imports (full refresh once a day, quick X-only fill-in otherwise) and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.

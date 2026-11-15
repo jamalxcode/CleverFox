@@ -32,15 +32,18 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
   - not found: Microsoft Copilot, uLesson, Hailuo AI, Qwen Chat, Kanana. Kanana was reported shut down in October 2026; confirm it and mark it withdrawn;
   - Qwen Chat's publisher ("Nth Power…") looks odd.
 - [ ] **Facts not found on their source pages:** the automatic page check lists 15 (7 partly found, 8 not found). Re-check them by hand.
-- [ ] **Unverified listings:** 54 of 93 apps and hosts are still candidates. They come from search results and need their official pages read.
+- [ ] **Unverified listings:** 76 of 93 apps and hosts are candidates now that the page check no longer verifies automatically (decision 66). They're kept out of picks and guides until a person reads their official page. This is the most valuable research task.
 - [ ] **Country lists for apps:** many apps still show "unknown" outside the App Store check. Use official availability pages where they exist.
 - [ ] **Publisher countries:** extend `data/publisher-map.json` beyond the first 59 organisations.
 
 ## Development
 
-- [ ] **Checks before deploy:** run the phone check and an accessibility check (axe, contrast in light and dark) in the workflow, and stop the deploy if they fail, as Flattery does.
-- [ ] **Freshness page:** show when each source last refreshed (Hugging Face, Ollama, X, providers, App Store, re-check), with warnings when one is stale. The spec promises this.
-- [ ] **Click-to-load X embeds:** load X's script only when a visitor asks to see the posts (privacy and page weight).
+- [ ] **Tone test set:** label about 200 real posts by hand, measure the praise and criticism rules, and only then consider putting praise back into the ordering.
+- [ ] **Translation review first:** native speakers review the interface translations before more text or languages are added.
+
+- [x] **Checks before deploy:** phone widths and axe contrast in light and dark (`tools/ui-check.cjs`) stop the deploy (decision 66).
+- [x] **Freshness:** the footer shows when each source last refreshed, with ⚠️ when stale (decision 66).
+- [x] **Click-to-load X embeds** (decision 66).
 - [ ] **Public feedback from X:**
   - turn credible posts about access and payment into `web_reported` claims, shown separately and never overriding official facts;
   - add `reported` and `dont_touch` warnings from public scam reports, with thresholds still to decide (spec section 19).

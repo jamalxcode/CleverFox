@@ -21,9 +21,9 @@ export const RULES = {
   scansPerDay: 3,             // announcement scans a day (cron-job.org starts the runs)
   scanGapHours: 5,            // minimum gap between two announcement scans
   postsPerListing: 10,        // X's minimum page size
-  praisedMinPosts: 3,         // "📣 Praised on X": at least this many praise posts...
-  praisedMinAuthors: 3,       // ...from this many different accounts...
-  praisedMinLikes: 100,       // ...with at least this many likes between them
+  praisedMinPosts: 5,         // "📣 Praised on X": at least this many praise posts...
+  praisedMinAuthors: 4,       // ...from this many different accounts...
+  praisedMinLikes: 200,       // ...with at least this many likes between them
   announceMinLikes: 25,       // an announcement is imported only with this much engagement
   buzzKeepDays: 30, refreshHours: 24,           // buzz older than this is dropped as stale
 };
@@ -35,7 +35,7 @@ const PRAISE = [
   'state of the art', 'state-of-the-art', 'goated', 'killer', 'superb', 'blazing fast', 'so good', 'really good', 'works great', 'recommend',
   'increíble', 'excelente', 'genial', 'incrível', 'ótimo', 'incroyable', 'génial', 'excellent', 'großartig', 'fantastisch', 'beeindruckend',
   'потрясающ', 'отличн', 'круто', 'mükemmel', 'harika', 'luar biasa', 'keren', 'mantap', 'tuyệt vời', 'yang terbaik',
-  'رائع', 'ممتاز', 'مذهل', 'أفضل', 'शानदार', 'बेहतरीन', 'कमाल', 'すごい', '素晴らしい', '最高', '最强', '厉害', '牛', '强大', '太强', '好用', '최고', '대박', '굉장',
+  'رائع', 'ممتاز', 'مذهل', 'أفضل', 'शानदार', 'बेहतरीन', 'कमाल', 'すごい', '素晴らしい', '最高', '最强', '厉害', '牛逼', '太牛', '强大', '太强', '好用', '최고', '대박', '굉장',
 ];
 const PRAISE_EMOJI = ['🔥', '🚀', '🤯', '😍', '👏', '💯', '🙌', '❤️', '😮'];
 // Critical words: complaints and disappointment, in several languages.
@@ -57,7 +57,7 @@ export function isCritical(text) {
     const m = re.exec(t);
     if (m && !NEGATION.test(t.slice(Math.max(0, m.index - 40), m.index + (m[1] || '').length))) return true;
   }
-  return CRITICAL_EMOJI.some((e) => t.includes(e));
+  return false; // emoji alone never mark a post critical
 }
 // positive, critical or general (both or neither -> general)
 export function tone(text) {
@@ -70,7 +70,7 @@ export function isPraise(text) {
     const m = re.exec(t);
     if (m && !NEGATION.test(t.slice(Math.max(0, m.index - 40), m.index + (m[1] || '').length))) return true;
   }
-  return PRAISE_EMOJI.some((e) => t.includes(e));
+  return false; // emoji alone never mark a post positive
 }
 
 // Links in a post: Hugging Face models and datasets, Ollama library families.
@@ -151,18 +151,21 @@ export function shortName(r) {
   return short;
 }
 
+// A listing name can't change the query: quotes, brackets, operators and search keywords are stripped.
+export const cleanForQuery = (s) => String(s || '').replace(/["“”'`()[\]{}:#@$*\\]/g, ' ').replace(/(^|\s)-+/g, ' ').replace(/\b(OR|AND|NOT)\b/g, ' ').replace(/\s+/g, ' ').trim();
 export function queryFor(r) {
-  const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+  const name = cleanForQuery(r.name.replace(/\s*\(.*?\)\s*/g, ' '));
   const hf = (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id || (r.type === 'dataset' ? r.official_urls?.[0]?.split('/datasets/')[1] : null);
   const parts = [];
+  if (!name) return null;
   const generic = name.length < 5 || GENERIC.has(name.toLowerCase());
   if (!generic) parts.push(`"${name}"`);
   else if (r.type === 'app' || r.type === 'host') parts.push(`"${name}" ${r.type === 'app' ? '(AI OR app)' : '(GPU OR cloud)'}`);
   const sn = shortName(r);
-  if (sn) parts.push(`"${sn}"`);
-  if (hf) parts.push(`url:"huggingface.co/${r.type === 'dataset' ? 'datasets/' : ''}${hf}"`);
+  if (sn) parts.push(`"${cleanForQuery(sn)}"`);
+  if (hf && /^[\w.-]+\/[\w.-]+$/.test(hf)) parts.push(`url:"huggingface.co/${r.type === 'dataset' ? 'datasets/' : ''}${hf}"`);
   if (!parts.length) return null;
-  return `(${parts.join(' OR ')}) -is:retweet`;
+  return `(${[...new Set(parts)].join(' OR ')}) -is:retweet`;
 }
 
 export function summarizeBuzz(posts, now = NOW()) {
@@ -221,9 +224,11 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
   const annMax = Math.min(RULES.announcementPosts, Math.max(10, Math.floor(runBudget / 3)));
   let ann = []; let launches = [];
   if (scanNow) {
-    ann = (await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', Math.ceil(annMax * 0.6))) || [];
-    launches = (await x.search(LAUNCH_QUERY, Math.max(10, Math.floor(annMax * 0.4)))) || [];
-    state.scans++; state.last_scan = now.toISOString();
+    const a1 = await x.search('(url:"huggingface.co" OR url:"ollama.com/library") -is:retweet -is:reply', Math.ceil(annMax * 0.6));
+    const a2 = await x.search(LAUNCH_QUERY, Math.max(10, Math.floor(annMax * 0.4)));
+    ann = a1 || []; launches = a2 || [];
+    // The slot counts only when a search actually answered; a rate limit or error leaves it for the next run.
+    if (a1 || a2) { state.scans++; state.last_scan = now.toISOString(); } else log('X: announcement searches failed; the scan slot stays open for the next run');
   }
   const shape = (p, kind) => ({ kind, url: postUrl(p), author: p.author, created_at: p.created_at, likes: p.likes, reposts: p.reposts, lang: p.lang, links: linksIn(p.urls), found_at: now.toISOString() });
   const announcements = [

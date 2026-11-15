@@ -83,13 +83,16 @@ export function goodForLine(r) {
 }
 export function cardBadges(r) {
   const b = [];
+  if ((r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? '⚠️ Not yet verified: facts from search results' : '⚠️ Last check failed', 'b-warn'));
   const a = r.answers || {};
   if (a.no_barriers) b.push(badge('🕊️ No barriers', 'b-ok'));
   else if (a.barriers?.length && r.type !== 'host') b.push(badge(`🚧 ${a.barriers[0]}${a.barriers.length > 1 ? ` +${a.barriers.length - 1}` : ''}`, 'b-warn'));
   if (r.hardware) {
     const need = r.hardware.min_memory_gb;
-    if (view.mem) b.push(need <= view.mem * 0.8 ? badge(`✓ Fits your ${view.mem} GB`, 'b-ok') : need <= view.mem ? badge(`⚠ Tight on ${view.mem} GB`, 'b-warn') : badge(`✗ Needs ~${need} GB`, 'b-no'));
-    else b.push(badge(`🖥️ ${r.hardware.recommended_gb || need} GB+ recommended`));
+    // From the download size: a fair figure. From the parameter count only: a rough estimate, never a plain ✓.
+    const est = r.hardware.estimate ?? (r.hardware.options?.length && r.hardware.options.every((o) => /^parameter/i.test(o.basis || '')));
+    if (view.mem) b.push(need > view.mem ? badge(`✗ Needs ~${need} GB${est ? ' (estimate)' : ''}`, 'b-no') : est ? badge(`≈ May fit your ${view.mem} GB (estimate)`, 'b-warn') : need <= view.mem * 0.8 ? badge(`✓ Fits your ${view.mem} GB`, 'b-ok') : badge(`⚠ Tight on ${view.mem} GB`, 'b-warn'));
+    else b.push(badge(`🖥️ ${est ? '≈ ' : ''}${r.hardware.recommended_gb || need} GB+ recommended${est ? ' (estimate)' : ''}`));
   }
   if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
   if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
@@ -137,7 +140,7 @@ export function cardBadges(r) {
   const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) b.push(badge(`🔁 +${nv} version${nv > 1 ? 's' : ''}`));
   if (r.access_check?.changed?.length) b.push(`<span class="badge b-warn" title="A pricing, payment or availability page changed after these facts were checked">⚠️ Pricing page changed</span>`);
   else if (r.access_check?.stale) b.push(badge('⏳ Access facts are old', 'b-warn'));
-  if (r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
+  if (r.verification_status !== 'verified' && r.type !== 'app' && r.type !== 'host') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
   return b.join('');
 }
 
@@ -320,7 +323,7 @@ export function suits(r) {
 }
 export function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
-  return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
+  return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}${(r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified' ? ' candidate' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
     <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
     <p class="desc">${esc(r.description)}</p>
     ${goodForLine(r)}
@@ -394,6 +397,7 @@ export function xPanel(r) {
   return `<aside class="xside" id="x"><h2>What people say on X</h2>
     <p class="ln">👍 <strong>${b.positive || 0}</strong> positive · 👎 <strong>${b.critical || 0}</strong> critical · 💬 <strong>${b.general || 0}</strong> general <span class="muted">of ${b.posts} recent posts</span></p>${bar}
     <p class="ln muted">❤️ ${fmtK(b.total_likes ?? b.likes)} likes · checked ${esc(fmtDate(b.observed_at))}${b.praised ? ' · 📣 praised by several accounts' : ''}</p>
+    <p><button type="button" id="x-load" class="share-btn">▶ Show the posts <span class="muted">(loads content from X)</span></button></p>
     ${group('⭐ Most liked', uniq(b.top?.all))}${group('👍 Positive', uniq(b.top?.positive))}${group('👎 Critical', uniq(b.top?.critical))}${group('💬 General', uniq(b.top?.general))}
     <p class="muted src">Tone is sorted by simple word rules, so treat it as a rough guide. ${live}</p></aside>`;
 }
@@ -506,7 +510,7 @@ export function playLine(r) {
   const list = t.countries[c];
   const url = t.country_url.replace('{CC}', c);
   const srcLink = `<a class="src-i" href="${esc(url)}" rel="noopener" target="_blank" title="Google Play Help, checked ${esc(fmtDate(t.observed_at))}">ⓘ</a>`;
-  if (!list) return `<p class="ln muted">🛒 If you subscribe in the Android app, Google Play in ${esc(countryName(c))} takes cards only.${srcLink}</p>`;
+  if (!list) return `<p class="ln muted">🛒 Google Play's payment page doesn't list ${esc(countryName(c))}, so how you can pay through Google Play there is unknown.<a class="src-i" href="${esc(t.source_url)}" rel="noopener" target="_blank" title="Google Play Help">ⓘ</a></p>`;
   const non = list.filter(([m]) => !CARDS.includes(m));
   return `<p class="ln">🛒 If you subscribe in the Android app, <strong>Google Play in ${esc(countryName(c))}</strong> accepts: ${non.length ? non.map(([m, n]) => `<strong>${esc(n || METHOD_LABELS[m] || m)}</strong>`).join(' · ') + ' · cards' : 'cards only'}${srcLink}</p>`;
 }
