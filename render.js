@@ -125,6 +125,7 @@ export function cardBadges(r) {
     const cs = [...new Set(r.data_centers.value.map((d) => d.country))];
     b.push(badge(cs.map(flag).join(' ') || 'Data centers'));
   }
+  const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) b.push(badge(`🔁 +${nv} version${nv > 1 ? 's' : ''}`));
   if (r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
   return b.join('');
 }
@@ -268,6 +269,7 @@ export function detail(r) {
   const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(u)}">${esc(mid(short(u)))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
   h += line([item('🔗', linkList(links, 3)), r.documentation_urls?.length && item('🛠️', linkList(r.documentation_urls, 3)), r.paper_urls?.length && item('📄', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · '))]);
+  if (r.variants?.length) h += line([item('🔁', `<strong>Other versions:</strong> ${r.variants.slice(0, 6).map((v) => `<a href="${esc(v.url)}" rel="noopener" target="_blank" title="${esc(v.kind)}${v.downloads_30d ? ' · ↓ ' + fmtNum(v.downloads_30d) + ' a month' : ''}">${esc(v.name)}</a>${v.publisher !== r.publisher ? ` <span class="muted">by ${esc(v.publisher)}</span>` : ''}`).join(' · ')}${r.variants.length > 6 ? ` <span class="muted">+${r.variants.length - 6}</span>` : ''}`)]);
   h += `<p class="ln src">${r.verification_status === 'verified' ? '✅ Verified at an official source' : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
 }

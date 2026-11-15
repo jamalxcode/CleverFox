@@ -175,7 +175,7 @@ const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 const countries = ISO_CODES.map((code) => [code, regionNames.of(code) || code]);
 countries.sort((x, y) => x[1].localeCompare(y[1]));
 
-const published = records.map((r) => {
+const prepared = records.map((r) => {
   const { research_notes, ...rec } = r;
   const sources = new Set(rec.evidence_urls);
   collectSources(rec, sources);
@@ -184,6 +184,62 @@ const published = records.map((r) => {
   for (const d of rec.distributions || []) if (d.access) d.access.no_card_needed = noCardNeeded(d.access);
   return rec;
 });
+
+// ---- curation: corrections file, dataset quality bar, re-uploads grouped under their original ----
+// Nothing is silently lost: hidden and grouped listings are recorded in catalog.json, and their old
+// pages say where they went.
+const CORRECTIONS = existsSync(join(root, 'data', 'corrections.json')) ? JSON.parse(readFileSync(join(root, 'data', 'corrections.json'), 'utf8')) : {};
+const FORMAT_TAG = /^(fp8|fp16|bf16|fp4|nvfp4|mxfp4|int4|int8|w4a16|w8a8|gguf|awq|gptq|exl2|exl3|mlx|onnx|openvino|ov|\d+bit|q\d\w*|iq\d\w*|dynamic|quantized|quant)$/i;
+const normName = (n) => n.toLowerCase().split(/[-_\s.]+/).filter(Boolean);
+export function datasetQuality(r) {
+  // A real dataset card: at least two of license, task, size, paper, language, its own summary. Very popular ones (100+ likes) pass.
+  const likes = (r.popularity || []).reduce((n, p) => n + (p.likes || 0), 0);
+  if (likes >= 100) return true;
+  const signals = [r.license && !isUnknown(r.license.value), (r.tasks || []).length > 0, !!r.size_category, (r.paper_urls || []).length > 0,
+    Array.isArray(r.languages?.value) && r.languages.value.length > 0, !/^Dataset published by [^.]+ on Hugging Face\.$/.test(r.description || '')];
+  return signals.filter(Boolean).length >= 2;
+}
+function curate(all) {
+  const hidden = []; const folded = [];
+  const hide = new Map((CORRECTIONS.hide || []).map((h) => [h.id, h.reason]));
+  const keep = new Set((CORRECTIONS.keep || []).map((k) => k.id));
+  const merge = new Map((CORRECTIONS.merge || []).map((m) => [m.id, m]));
+  let list = all.filter((r) => {
+    if (hide.has(r.id)) { hidden.push({ id: r.id, name: r.name, reason: `correction: ${hide.get(r.id)}` }); return false; }
+    if (r.type === 'dataset' && r.import_source && !keep.has(r.id) && !datasetQuality(r)) { hidden.push({ id: r.id, name: r.name, reason: 'below the dataset quality bar (no real dataset card)' }); return false; }
+    return true;
+  });
+  // Group: a listed model's format re-uploads (name = its name + format tags only) or declared quantizations.
+  const byName = new Map(list.filter((r) => r.type === 'model').map((r) => [normName(r.name).join(' '), r]));
+  const byId = new Map(list.map((r) => [r.id, r]));
+  const parentOf = (r) => {
+    if (merge.has(r.id)) return byId.get(merge.get(r.id).into);
+    if (r.type !== 'model' || !r.import_source) return null;
+    const q = (r.relations || []).find((x) => x.type === 'quantization_of' && byId.has(x.target));
+    if (q) return byId.get(q.target);
+    const t = normName(r.name); let cut = t.length;
+    while (cut > 1 && FORMAT_TAG.test(t[cut - 1])) cut--;
+    if (cut === t.length) return null;
+    const p = byName.get(t.slice(0, cut).join(' '));
+    return p && p !== r ? p : null;
+  };
+  const moves = list.map((r) => [r, parentOf(r)]).filter(([, p]) => p);
+  const gone = new Set();
+  for (const [r, p] of moves) {
+    if (gone.has(p.id)) continue; // never fold into something that is itself folded
+    gone.add(r.id);
+    const hf = (r.distributions || []).find((d) => d.source === 'huggingface');
+    (p.variants ||= []).push({ id: r.id, name: r.name, publisher: r.publisher, url: hf?.url || r.official_urls?.[0], kind: merge.get(r.id)?.reason || 'format re-upload',
+      downloads_30d: (r.popularity || []).reduce((n, x) => n + (x.downloads_30d || 0), 0), uncensored: !!r.uncensored });
+    folded.push({ id: r.id, name: r.name, into: p.id });
+  }
+  list = list.filter((r) => !gone.has(r.id));
+  for (const p of list) if (p.variants) p.variants.sort((a, b) => b.downloads_30d - a.downloads_30d);
+  return { list, hidden, folded };
+}
+const CURATED = curate(prepared);
+const published = CURATED.list;
+console.log(`Curation: ${CURATED.folded.length} re-uploads grouped under their original, ${CURATED.hidden.length} hidden (${CURATED.hidden.filter((h) => h.reason.startsWith('correction')).length} by corrections)`);
 
 // ---- answers to what people look for (spec section 12) ----
 // Each answer is derived from stated fields; nothing here is a quality score.
@@ -326,9 +382,9 @@ if (!checkOnly) {
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
   // fetches the listing's full record from its page folder (l/.../record.json).
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
-  writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
+  writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published, grouped: CURATED.folded, hidden: CURATED.hidden }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
-  writeListingPages(published, countries);
+  writeListingPages(published, countries).then(() => writeMovedPages());
 }
 
 const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
@@ -452,3 +508,18 @@ export function slim(r) {
   return JSON.parse(JSON.stringify(o));
 }
 function pullsN(s) { const m = String(s || '').match(/^([\d.]+)([KMB]?)$/); return m ? +m[1] * ({ K: 1e3, M: 1e6, B: 1e9 }[m[2]] || 1) : 0; }
+
+// Pages for listings that were grouped or hidden: say where they went (old links keep working).
+function writeMovedPages() {
+  const path = (id) => `l/${id.replace(/^cf:/, '').replace(':', '/')}/`;
+  const page = (title, body, target) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} · CleverFox</title><meta name="robots" content="noindex">${target ? `<link rel="canonical" href="${SITE}${target}"><meta http-equiv="refresh" content="0; url=${SITE}${target}">` : ''}<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 16px}</style></head><body>${body}</body></html>`;
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  for (const f of CURATED.folded) {
+    const dir = join(root, path(f.id)); mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, 'index.html'), page(esc(f.name), `<p>${esc(f.name)} is listed as another version of <a href="${SITE}${path(f.into)}">its original model</a>.</p>`, path(f.into)));
+  }
+  for (const h of CURATED.hidden) {
+    const dir = join(root, path(h.id)); mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, 'index.html'), page(esc(h.name), `<p>${esc(h.name)} is no longer listed on CleverFox: ${esc(h.reason)}.</p><p><a href="${SITE}">Back to CleverFox</a></p>`));
+  }
+}

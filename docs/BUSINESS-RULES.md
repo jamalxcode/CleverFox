@@ -36,6 +36,11 @@ Last updated: 14 November 2026.
 
 ## 4. What gets listed (inclusion rules)
 
+**Curation at build time** (`curate()` in `tools/build.mjs`; nothing is silently lost: `catalog.json` lists every grouped and hidden listing, and their old pages say where they went):
+- **Corrections file** `data/corrections.json`: `hide` (removed, with a reason), `merge` (listed as another version of another listing), `keep` (a dataset listed despite the quality bar). Every entry needs a reason.
+- **Dataset quality bar:** an imported dataset needs at least two of: a known license, a task, a size category, a paper, a language, its own summary (not the placeholder "Dataset published by … on Hugging Face."). Datasets with 100+ likes pass anyway. The importer applies the same bar and fetches the top 250 by downloads and 100 by likes, so real datasets fill the slots.
+- **Re-uploads grouped under their original:** an imported model whose name is a listed model's name plus only format tags (FP8, BF16, GGUF, AWQ, GPTQ, EXL2, MLX, ONNX, OpenVINO, 4bit, Q4_K_M…), or that declares `quantization_of` a listed model, becomes one of that model's "other versions" (🔁 on the card) instead of its own listing. Fine-tunes, adapters and uncensored versions stay their own listings.
+
 All numbers are provisional, in `tools/import.mjs`.
 
 **Hugging Face models**, across 15 tasks (text generation, vision-language, text-to-image, speech recognition, text-to-speech, embeddings, sentence similarity, translation, image-to-text, text-to-video, image-to-image, audio-language, any-to-any, summarization, text classification):

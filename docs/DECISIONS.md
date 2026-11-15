@@ -270,6 +270,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** `data/<type>s.json` holds only what the list needs. Each listing's full record is written next to its page (`record.json`) and fetched when its card opens. Apps and hosts stay whole (they're small).
 **Why:** the Models tab loaded 3.1 MB, against the spec's 200 KB first-load budget, on the slow and costly connections the site is meant for. Now about 70 KB compressed.
 
+### 59. Curate at build time: corrections file, dataset quality bar, re-uploads grouped
+**Decision:** the build applies `data/corrections.json` (hide, merge, keep, each with a reason), hides imported datasets without a real dataset card (two of license, task, size, paper, language, own summary; 100+ likes pass), and groups format re-uploads and declared quantizations under the listed original as "other versions". Fine-tunes, adapters and uncensored versions stay separate. Grouped and hidden listings are recorded in `catalog.json`, and their old pages redirect or explain. First run: 18 grouped, 59 hidden.
+**Why:** test and spam repos with bot downloads (`wegrthj/e94fjt-qi9l-raw` and the like) and FP8/GGUF copies made the catalog look careless. The spec already says a quantization isn't a new model. Uncensored versions stay because the owner asked for them to be included.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

@@ -22,7 +22,7 @@ const HF_HEADERS = process.env.HF_TOKEN ? { Authorization: `Bearer ${process.env
 
 // ---- inclusion rules (provisional; spec section 4) ----
 const RULES = QUICK ? { topModels: 20, likedModels: 10, trendingModels: 10, perLanguageModels: 2, perUncensoredTerm: 3, topDatasets: 15, likedDatasets: 5, perLanguageDatasets: 1, readmes: 40 }
-  : { topModels: 250, likedModels: 120, trendingModels: 120, perLanguageModels: 10, perUncensoredTerm: 30, topDatasets: 150, likedDatasets: 80, perLanguageDatasets: 6, readmes: 2000 };
+  : { topModels: 250, likedModels: 120, trendingModels: 120, perLanguageModels: 10, perUncensoredTerm: 30, topDatasets: 250, likedDatasets: 100, perLanguageDatasets: 6, readmes: 2000 };
 const MIN_DOWNLOADS_GAP = 200; // gap rule: models/datasets for underrepresented languages need only this many downloads
 const UNCENSORED_TERMS = ['abliterated', 'uncensored', 'heretic'];
 const MIN_DOWNLOADS_UNCENSORED = 500; // uncensored rule: minimum downloads
@@ -510,7 +510,11 @@ async function main() {
   }
   if (datasets) {
     const seen = new Set();
-    const unique = datasets.filter((r) => !inSeed(r) && (seen.has(r.id) ? false : seen.add(r.id)));
+    // Quality bar (same rule as tools/build.mjs datasetQuality): a real dataset card, or 100+ likes.
+    const real = (r) => (r.popularity || []).reduce((n, p) => n + (p.likes || 0), 0) >= 100 || [r.license && r.license.value !== 'unknown', (r.tasks || []).length > 0, !!r.size_category,
+      (r.paper_urls || []).length > 0, Array.isArray(r.languages?.value) && r.languages.value.length > 0, !/^Dataset published by [^.]+ on Hugging Face\.$/.test(r.description || '')].filter(Boolean).length >= 2;
+    const keepIds = new Set((existsSync(join(outDir, '..', 'corrections.json')) ? JSON.parse(readFileSync(join(outDir, '..', 'corrections.json'), 'utf8')).keep || [] : []).map((k) => k.id));
+    const unique = datasets.filter((r) => !inSeed(r) && (real(r) || keepIds.has(r.id)) && (seen.has(r.id) ? false : seen.add(r.id)));
     for (const r of unique) { r.capabilities = capabilitiesOf(r, []); applyPublisher(r); }
     console.log(`datasets written: ${keepOrWrite('datasets.json', unique, 'datasets')}`);
   }
