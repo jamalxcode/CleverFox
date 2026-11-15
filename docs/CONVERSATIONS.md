@@ -12,6 +12,17 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: personalised highlighting; X monitoring started
+**Where:** Claude Code session.
+**Asked:**
+- Start building X monitoring.
+- Explain that choosing memory and country highlights the models that work best for the user and the services that accept their payment options or aren't restricted in their country.
+
+**Outcome:**
+- A hint under the pickers.
+- Suitable listings sorted first with ⭐ and a green outline (DECISIONS 54).
+- X monitoring: see its own entry.
+
 ## 2026-11-14: saving everything to the repo
 **Where:** Claude Code session.
 **Asked:** update and save all business rules, information, conversations, design decisions and the data collected so far to the repo.

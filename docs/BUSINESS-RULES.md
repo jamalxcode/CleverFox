@@ -199,6 +199,10 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - gatekeeping;
   - no barriers.
 - **Details layout:** emoji-led lines with several related facts each. Sources sit behind ⓘ, and unknown fields are gathered into one "❓ Unknown:" line.
+- **Highlighting what suits you:** with a device memory and/or country chosen, listings that suit are sorted first and marked ⭐ with a green outline. A hint under the pickers explains this.
+  - **Models:** the smallest size fits (needs at most 80% of the chosen memory).
+  - **Apps, hosting and paid APIs:** available in the chosen country (a hosting data center there counts), and free, free tier, or payable without a card.
+  - Unknown availability isn't highlighted, and listings that don't suit (too big, or not offered there) go last.
 - **Choices remembered in the browser:**
   - a country picker, which filters availability;
   - a device memory picker, which drives the fit marks.

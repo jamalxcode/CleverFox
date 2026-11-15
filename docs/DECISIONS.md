@@ -250,6 +250,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** `docs/BUSINESS-RULES.md` lists every rule and number the code applies (inclusion, answers, hardware, platforms, benchmarks, freshness, access, site), and is updated in the same commit as any rule change. Dated snapshots of the collected data (catalog, imports, benchmarks) are saved under `data/snapshots/<date>/`; the first is 2026-11-14. The live data still refreshes daily on the `data` branch, and snapshots aren't used by the build.
 **Why:** the owner asked to save all business rules, information, conversations, design decisions and the data collected so far to the repo. Snapshots are taken on request, so daily changes don't grow the history.
 
+### 54. Highlight what suits the visitor's device and country
+**Decision:** a hint under the pickers explains that choosing your device memory and country makes CleverFox put first, and highlight with ⭐, the models that fit your machine and the apps and services available in your country that accept a payment you can make (or are free). Unknowns aren't highlighted; misfits go last.
+**Why:** the owner asked to explain the pickers this way. Doing it, not only saying it, makes the pickers worth using.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

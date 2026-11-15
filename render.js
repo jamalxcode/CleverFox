@@ -267,9 +267,30 @@ export function detail(r) {
   h += `<p class="ln src">${r.verification_status === 'verified' ? '✅ Verified at an official source' : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
 }
+// How well a listing suits the visitor's choices (device memory, country): 0 best, 1 unknown, 2 doesn't.
+// Used to sort listings and highlight the best ones. Without choices, everything is 1.
+export function suits(r) {
+  let s = 1; let any = false;
+  if (view.mem && r.type === 'model') {
+    any = true;
+    const need = r.hardware?.min_memory_gb;
+    s = !need ? 1 : need <= view.mem * 0.8 ? 0 : need <= view.mem ? 1 : 2;
+  }
+  if (view.country && (r.type === 'app' || r.type === 'host' || (r.distributions || []).some((d) => d.access))) {
+    any = true;
+    const acc = r.access ? [r.access] : (r.distributions || []).map((d) => d.access).filter(Boolean);
+    const av = acc.map((a) => availableIn(a, view.country));
+    const dcHere = r.type === 'host' && Array.isArray(r.data_centers?.value) && r.data_centers.value.some((d) => d.country === view.country);
+    const c = av.includes('no') && !av.includes('yes') ? 2 : (av.includes('yes') || dcHere) ? 0 : 1;
+    const pay = acc.some((a) => payNoCard(a) || ['free', 'free_tier'].includes(a.free?.value)) ? 0 : 1;
+    const countryScore = c === 2 ? 2 : c === 0 && pay === 0 ? 0 : 1; // available there and payable without a card (or free)
+    s = Math.max(view.mem && r.type === 'model' ? s : 0, countryScore);
+  }
+  return any ? s : 1;
+}
 export function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
-  return `<li class="card" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
+  return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
     <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
     <p class="desc">${esc(r.description)}</p>
     ${goodForLine(r)}

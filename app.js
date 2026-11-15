@@ -1,5 +1,5 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
-import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare } from './render.js?v=__BUILD__';
+import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -136,7 +136,7 @@ function render() {
   const all = recordsOf(state.type);
   const recs = all.filter(matches);
   const weight = (r) => (r.warning === 'dont_touch' ? 2 : 0) + (r.verification_status === 'verified' ? 0 : 1);
-  recs.sort((a, b) => weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
+  recs.sort((a, b) => suits(a) - suits(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
   $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
   $('#more-btn').hidden = recs.length <= state.limit;
