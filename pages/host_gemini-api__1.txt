@@ -1,0 +1,110 @@
+URL: https://aistudio.google.com/
+FINAL: https://aistudio.google.com/welcome
+STATUS: 200
+TITLE: Google AI Studio | Build with the Gemini API
+FETCHED: 2026-11-15T15:58:12.848Z
+
+Pricing
+Documentation
+Case studies
+login
+Get started
+Build with Google AI Studio
+Go from prompt to production with Gemini, Omni, Nano Banana, and more
+Create a|
+login
+Get started
+Experiment with the latest models
+auto_awesome
+Gemini 3
+State-of-the-art reasoning
+image
+Nano Banana
+High-quality image generation
+movie
+Veo
+High-fidelity video generation
+volume_up
+Gemini TTS
+Controllable text-to-speech generation
+voice_chat
+Gemini Live
+Real-time voice and video interactions
+movie
+Omni
+Next-generation video editing and creation
+music_note
+Lyria
+Professional-grade music generation
+Start building with Gemini API
+Get an API key
+Manage API keys and monitor resource usage in one place
+Start
+GenAI SDKs
+Official SDKs for Python, JavaScript, Go, Java, and C++
+Start
+Interactions API
+Build stateful, multi-turn agents with managed tool execution and history
+Start
+Tools
+Extensible function calling and native tool support, including Search and Maps grounding
+Start
+Projects ready to Remix
+star
+Featured
+language
+Personal websites
+stadia_controller
+2D & 3D games
+palette
+Interactive art
+Remix app
+Multiplayer Neon Snake
+Collect orbs to dominate the neon grid in this real-time multiplayer snake game.
+Remix app
+Window Seat
+Generate photorealistic window views based on live weather and specific locations.
+Remix app
+Sky Metropolis
+Manage a virtual metropolis and fulfill tasks provided by Gemini.
+Explore the app gallery
+Bring your ideas to life
+Get started
+auto_stories
+A conversational language learning app
+center_focus_strong
+An app to remove backgrounds
+yard
+Help me design my dream garden
+How developers build with Gemini API
+Shopify
+Read case study
+chevron_right
+Holywater
+Read case study
+chevron_right
+CompScience
+Read case study
+chevron_right
+Start exploring and building with Google’s latest models.
+Sign up and get started
+Models
+Gemini 3
+Nano Banana
+Veo
+Lyria
+TTS
+Transcribe
+Product
+API key
+App gallery
+Documentation
+Pricing
+Capabilities
+Live API
+Managed agents
+Vibe coding
+Information
+Gemini app
+Privacy
+Terms

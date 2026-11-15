@@ -1,0 +1,82 @@
+URL: https://www.latitude.sh/changelog/metal-gpu-now-available-in-sydney-and-tokyo
+FINAL: https://www.latitude.sh/changelog/metal-gpu-now-available-in-sydney-and-tokyo
+STATUS: 200
+TITLE: Metal GPU now available in Sydney and Tokyo - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.132Z
+
+Metal GPU now available in Sydney and Tokyo - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+Blog / Changelog
+Metal GPU now available in Sydney and Tokyo
+February 28, 2026
+You can now deploy Blackwell-powered bare metal GPUs in APAC:
+Sydney: starting at $1.63/gpu/hr ( Deploy )
+Tokyo: starting at $1.30/gpu/hr ( Deploy )
+Learn more about the RTX PRO 6000 , NVIDIA&#x27;s universal GPU.
+Share this release
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

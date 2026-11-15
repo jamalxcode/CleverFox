@@ -1,0 +1,83 @@
+URL: https://z.ai/model-api
+FINAL: https://z.ai/model-api
+STATUS: 200
+TITLE: Z.ai API Platform — Start building with GLM-5.3
+FETCHED: 2026-11-15T15:58:07.358Z
+
+Z.ai API Platform — Start building with GLM-5.3
+Chat API Coding Plan Pricing Contact Docs
+English
+Login
+Open menu
+Frontier Intelligence
+One Simple API
+Turn cutting-edge AI into real-world impact. Build faster, launch sooner, and scale with GLM.
+View Docs Start Building
+Choose the Suitable Model
+Save more with GLM Usage Bundles Various model API token usage bundles, with instant activation and exclusive discounts
+Buy Now Core capabilities of GLM
+Deep Thinking
+Adjustable reasoning effort
+Security
+Cybersecurity capabilities
+Long Context
+Up to 1M tokens
+Function Calling
+Connect models to external tools
+Structured Output
+Reliable JSON outputs
+Vision Understanding
+Image · Video · File
+Streaming
+Real-time responses
+Web Search
+Current information from the web
+Context Caching
+Lower repeated-context cost
+Trusted by leading coding tools
+Crush
+As one of today’s premier model families, the GLM series—with its open-source roots and aggressive pricing—proves the team’s commitment to competing at the highest level. We utilized GLM to architect critical components of Crush and the experience was exceptional. We highly recommend it to any team serious about building products on top of LLMs.
+Factory
+GLM-5 delivers frontier intelligence at a fraction of the cost. It thinks through system design before coding, handling complex refactors with ease. Built for endurance, it maintains perfect coherence across multi-step workflows and generates crisp documentation with professional diagrams. It is the definitive intersection of performance and affordability.
+OpenCode
+GLM-5.3-Flash combines strong coding capabilities with native multimodal support and fast, responsive performance. We’ve been impressed by how well it works in OpenCode, and it quickly became popular with our users.
+Cline
+We really loved Glm-5.3-flash as it has one of the best price to performance ratio on our evals. Its both cheap and token efficient.
+Choose how to get started
+Build on your own
+Launch your own generative AI solution with:
+Access to all Z.ai models
+Simple pay-as-you-go pricing
+Save more with prepaid usage bundles
+Self-serve deployment on workbench
+Prompting guides and developer docs
+Start Building
+Get extra support
+Need custom rate limits or hands-on help? Contact our sales team for:
+Direct tech expertise, one-on-one
+On-premises or cloud private deployment
+Agent Development
+Enterprise MaaS Platform
+Consultation and custom development
+Contact Sales
+Z.ai
+Product
+Language Models
+Vision Models
+Video Gen Models
+Agent
+Documents
+Quick Start
+Overview
+API Reference
+Coding Plan
+Contact
+Contact Sales
+X.com
+Discord
+More
+Others
+API Keys
+Billing
+Transparency
+Terms & Policy

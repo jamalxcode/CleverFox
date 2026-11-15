@@ -1,0 +1,767 @@
+URL: https://speedcloud.nxtgen.com/terms-n-conditions.html
+FINAL: https://speedcloud.nxtgen.com/terms-n-conditions.html
+STATUS: 200
+TITLE: SpeedCloud by NxtGen
+FETCHED: 2026-11-15T15:58:24.896Z
+
+SpeedCloud by NxtGen
+-->
+Log In
+Get Started
+-->
+-->
+Aurora
+Best Open Source LLMs for Public Use
+Lumina
+Transform Ideas into Stunning Images Instantly
+Accura
+Coming Soon
+Domain-adapted AI-assistant for Finance Professionals
+<Ada>
+Powerful AI Assistant for Developers
+Visia
+Decipher Meaningful Insights from Media
+Juris
+Coming Soon
+Domain-adapted AI-assistant for Legal Practitioners
+-->
+Aurora
+<Ada>
+Lumina
+Visia
+Accura
+Coming Soon
+Juris
+Coming Soon
+Terms & Conditions
+Last Updated: January 1, 2025
+PLEASE READ THIS END USER LICENSE AGREEMENT (“ EULA ”) CAREFULLY. BY CHOOSING TO TAKE ANY STEP TO SIGN UP, SET-UP,
+SUBSCRIBE OR USE ALL OR ANY PORTION OF NXTGEN CLOUD TECHNOLOGIES
+PRIVATE LIMITED (PREVIOUSLY KNOWN AS NXTGEN DATA CENTER AND
+TECHNOLOGIES PRIVATE LIMITED) (“ NXTGEN ”) PRODUCT ‘SpeedCloud’ (“ Platform ”), OR USING NXTGEN’S SERVICES IN CONNECTION WITH THE PLATFORM,
+INCLUDING BUT NOT LIMITED TO (A) ACCESS TO RESOURCES THROUGH OR ON
+NXTGEN’S NETWORK AND/OR ANY OTHER NETWORKS ON THE PLATFORM; (B)
+CONTROL AND ACCESS OF NXTGEN SERVICES AND UNDERLYING TECHNOLOGIES
+FOR MANAGEMENT OF AUTOMATED DEPLOYMENT SERVICES/ MODULES, COMPONENTS
+AND BUNDLES THEREOF VIA A SELF-SERVICE DASHBOARD (“ SERVICES ”),YOU (“ LICENSEE/ YOU ”) ACCEPT AND
+AGREE TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS EULA. IF
+YOU, SIGN UP, SET-UP, SUBSCRIBE OR USE THE PLATFORM OR ITS SERVICES,
+YOU REPRESENT THAT YOU HAVE THE CAPACITY TO ENTER INTO THIS EULA
+LEGALLY. IF YOU ARE USING THE SERVICES ON BEHALF ON ANY ENTITY, YOU
+REPRESENT AND WARRANT THAT YOU ARE AUTHORISED TO ACCEPT THE TERMS
+AND CONDITIONS SET FORTH IN THIS EULA ON SUCH ENTITY’S BEHALF AND
+THAT SUCH ENTITY AGREES TO BE BOUND BY THIS EULA AND AGREES TO
+INDEMNIFY NXTGEN FOR ANY VIOLATION OF THIS EULA. BY AGREEING TO THIS
+EULA, YOU ALSO AGREE TO THE PRIVACY POLICY AND/OR SUCH OTHER TERMS
+AND POLICIES AS MAY BE INTRODUCED BY NXTGEN FROM TIME TO TIME.
+YOU ARE REQUIRED TO REVIEW THIS EULA THOROUGHLY AND ACCEPT THE SAME
+BY CLICKING THE BUTTON BELOW, PRIOR TO USING THE PLATFORM AND ITS
+SERVICES. IN CASE YOU FIND ANY ERROR IN THIS EULA, YOU MAY
+COMMUNICATE THE SAME TO NXTGEN IN WRITING AT THE ADDRESS PROVIDED IN
+CLAUSE 21 OF THIS EULA. IF ANY TERM OF THE EULA IS NOT ACCEPTABLE TO
+YOU, PLEASE CEASE FROM SUBSCRIBING AND CONSUMING OR USING THE NXTGEN
+SERVICES FORTHWITH. YOUR CONTINUED USE OF THE NXTGEN SERVICES SHALL
+BE DEEMED TO BE AN ACCEPTANCE BY YOU OF THE TERMS OF THIS EULA.
+THIS EULA MAY BE UPDATED BY NXTGEN FROM TIME TO TIME. ONCE THIS EULA
+IS AMENDED OR UPDATED, NXTGEN WILL RELEASE THE UPDATED TERMS OF THE
+EULA IN THE USER DASHBOARD (“ Dashboard ”) OR ON NXTGEN’S/ PLATFORM’S HOME PAGE AT
+https://speedcloud.nxtgen.com/ , RESPECTIVELY. ONCE THE UPDATED/ AMENDED TERMS OF THE EULA ARE
+RELEASED IN THE MANNER STATED HEREIN, THE UPDATED TERMS WILL
+EFFECTIVELY SUBSTITUTE THE ORIGINAL TERMS OF THE EULA CONSEQUENTLY.
+YOU MAY LOGIN INTO THE PLATFORM OR VISIT THE WEBSITE TO REVIEW THE
+LATEST VERSION OF THE TERMS OF THIS EULA AT ANY TIME.
+This EULA is important because it:
+outlines and details your legal rights and obligations vis-à-vis
+the Platform;
+is consumed directly or indirectly by you via NXTGEN and /or their
+authorized partners / representatives.
+contains the mechanism to be followed for dispute resolution, if
+any;
+explains the specific terms and conditions upon which you may use
+the Services offered on the Platform;
+1. SERVICE PRE-REQUISITES
+1.1 The use of the Services requires one or
+more compatible Devices, software’s and Internet access/connectivity
+(third-party fees may apply), and certain software (third-party fees
+may apply), and may require you to upkeep updates or upgrades from
+time to time. Since use of the Services involves hardware, software
+and Internet access, the Licensee’s ability to access and use the
+Services may be affected by the performance of these external
+factors. The Licensee acknowledges and agrees that such system
+requirements and prerequisites, which may change from time to time,
+are the Licensee’s/ end users’ sole responsibility.
+2. OWNERSHIP OF THE PLATFORM
+The Licensee understands that the Platform and all of its Services
+(except those parts which are open source) are the sole and
+exclusive property of NXTGEN and are protected by the Indian and
+international copyright, trademark and other applicable laws. NXTGEN
+owns and has the license to use the Platform, and the Services,
+including without limitation, all intellectual property rights
+protected therein such as trade secrets, copyrights, trademarks,
+service marks, trade dress, or proprietary or confidential
+information, whether or not they happen to be registered. However,
+any third-party software or third-party services introduced on the
+Platform by the Licensee or made available by NXTGEN are made
+available under the relevant third-party software license terms
+which will be applicable to the Licensee (in accordance with Clause
+10) in case of the Licensee’s use of such software or services.
+3. PLATFORM LICENSE
+3.1 Subject to the terms of this EULA,
+NXTGEN grants the Licensee a personal, non-exclusive,
+non-transferable, revocable and limited license to the Platform
+for the Licensee’s use through the web portal login provided to
+the Licensee, upon the Licensee duly subscribing to the Services.
+Except as expressly stated herein, this EULA does not grant the
+Licensee any intellectual property rights for NXTGEN SERVICES that
+are subscribed/ consumed, and all rights not expressly granted
+herein are reserved by NXTGEN.
+3.2 This EULA will be valid for the
+entire tenure of the subscription period in accordance with the
+terms of this EULA.
+4. LEGAL REQUIREMENTS
+4.1. In order to access the Services of the
+Platform, the Licensee must:
+(a) fulfil the legal age requirements in
+the respective country from which the Licensee is intending to use
+the Services on the Platform;
+(b) be legally authorized to execute a
+binding contract with NXTGEN and not be barred from doing so under
+any applicable law; and
+(c) reside in a country where the
+Platform is made available legally.
+4.2. In case the Licensee does not fulfil
+the legal age requirement in the country in which the Licensee
+intends to use the Platform from, the Licensee’s parent or guardian
+(as the case may be) will be deemed to have read and accepted the
+terms of this EULA on the Licensee’s behalf, and in such a case, the
+parent or guardian (as the case may be) shall be bound by this EULA.
+5. ACCOUNT CREATION
+5.1. To get started with using the
+Services offered on the Platform, the Licensee is required to create
+an account on the Platform, by accessing the ‘Sign Up’ section on
+the following web page: https://speedcloud.nxtgen.com/ and manually
+creating an account using his/ her email address and/or phone
+number; (“Account”). The Platform may employ additional verification
+steps to ensure that the Licensee is a verified user, and in such a
+case, the Licensee shall be obligated to complete such additional
+verification steps for full/ continued access to the Platform.
+5.2. On successfully signing-up, the
+subscription page of the Platform will be displayed, wherein the
+Licensee can select the resources (such as storage,
+random-access-memory (RAM), processor, cloud service package, etc.)
+(“Resources”) for subscription. The Licensee will have an option to
+select the Resources he/ she requires and create a custom package of
+Resources/Services in line with his/ her requirements. Each
+Resource/Services shall have its own cost, as determined by NxtGen
+and displayed on the website.
+5.3. The Platform will provide the
+following common Services to its Licensee: (a) self-service
+manageability, (b) click to deploy-speed, (c) open-source ecosystem,
+(d) high price-to-performance ratio, (e) cloud billing and payment
+system, and (f) underlying technologies.
+5.4. In addition, the Platform will
+provide the following specific services to the Licensee, based on
+the subscription of Services selected by the Licensee:
+5.4.1 For developers: (a) seamless
+connectivity between services and simplified deployment through JUJU
+charms, (b) pre-integrated micro-services based advanced bundles
+across AI/ ML/ IOT/ NFV/ media, (c) DevOps ready environments with
+distributed databases, app messaging and other developer
+productivity modules, (d) container management modules, (e) big data
+management modules, and (f) security and access management modules.
+5.4.2 For enterprises: (a) service
+orchestration via self-service, (b) quick time to market with
+unbelievable pricing across services, (c) provision to build
+standalone or private cloud instances on OpenStack/third party
+software, (d) pre-integrated micro-services based advanced bundles
+across AI/ ML/ IOT/ NFV/ media/ technologies thereof, (e) security
+and access management modules, and (f) seamless connectivity between
+services and simplified deployment through automation.
+5.4.3 Cloud services: The Licensee
+will have an option of choosing:
+(a) Single Instance Cloud Services:
+Subscribing to a ‘single-instances cloud service’ package will
+enable the user to manage components such as but not limited to
+guest OS templates, public IP, backup & SSL/cert manager, resource
+utilization view and add-on block/ object storage.
+(b) Private Cloud Services: Subscribing to
+a ‘private cloud service’ package will enable the user to have
+access to features provided in the ‘single-instances cloud service’
+and in addition, will add access to manage other controllers
+specific to multi-instance deployments such as LBaaS, HA Proxy, DNS,
+etc.
+All these Services can be managed by the Licensee (in its capacity
+as a user) through the Dashboard.
+5.5. To manually create an Account,
+the Licensee may provide the following true and correct information
+(collectively, “Account Information”):
+Information
+Requirement
+Reason
+Name
+Mandatory
+For creating an Account to avail of the Services.
+Phone number
+Mandatory
+Billing/ email address
+Organization email address
+Optional
+GST
+Mandatory
+PAN
+Mandatory
+5.6. The Licensee has the right to
+change or delete his/ her personal Account Information and User
+Content (as defined below) uploaded on the Platform through their
+Account in the manner prescribed except for the mandatory fields
+which are important for accessing the Platform. The Licensee may
+choose to delete its Account from the Platform which will delete all
+the Account Information as well as all User Content, subject to
+applicable laws. The Licensee hereby acknowledges that the deleted
+data will not be recovered, and the Licensee bears the risk
+associated with such action and shall in no circumstances/ event
+hold NXTGEN liable for such loss of Account Information and/or User
+Content. Further, the Licensee understands that NXTGEN may store the
+data of the Licensee on its servers for a certain period to comply
+with applicable laws.
+5.7. The Licensee acknowledges and
+understands that it may take up to 48 (forty-eight) hours or more to
+validate and activate the Account and verify the receipt of the
+payment made by the Licensee. The Licensee further agrees that it
+will not disclose its Account Information (including the password)
+to a third party and will notify NXTGEN immediately of any
+unauthorized use of his/ her Account. The Licensee understands that
+the Licensee is responsible for all activities that occur under the
+Account, irrespective of whether the Licensee is aware of them or
+not and that NXTGEN shall in no event be held responsible for any
+illegal activities conducted by the Licensee. The Licensee
+acknowledges and understands that NXTGEN is only responsible for
+providing a self-service cloud platform to the Licensee through its
+Platform.
+5.8. NXTGEN reserves the right to
+add, edit, modify, migrate, delete any information or data
+(including Account Information), in the event that the same, in
+NXTGEN’s sole discretion, is in breach of any applicable law and/ or
+this EULA and/or any of NXTGEN’s policies at any time. NXTGEN
+reserves the right to force forfeiture of any Account that remains
+inactive for a period of 120 (one hundred and twenty) days or
+violates any intellectual property rights or misleads other users or
+breaches any applicable laws, enforcement regulators or the terms of
+this EULA or policies of NXTGEN. Further, NXTGEN reserves the right
+to reclaim any Account (along with the Account Information) on
+behalf of the businesses or individuals that hold legal claims/
+directions under the court of law or intellectual property right
+claims over such Account Information.
+5.9. The Licensee understands and
+acknowledges that the Licensee is solely responsible for (a)
+safeguarding the Account details, including any passwords / pin used
+to access the Account and the Platform; and (b) the use of the
+Platform and its Services, including any purchases made or payment
+obligations arising under the Account.
+6. PAYMENTS
+6.1 Individuals as well as organisations/
+entities can register themselves on the Platform and create an
+Account without making any payment, however, their access to the
+Platform will be restricted only to the Dashboard of the Platform
+and no Services will become active until the Licensee duly
+subscribes and remits the payment for usage of the Services on the
+Platform’s website. Upon registering the account, the Licensee can
+select the Resources they wish to utilize and then make an advance
+payment towards a monthly/ quarterly/ bi-annual or annual
+subscription of Services/ Resources offered through the Platform.
+The Licensee will be responsible for all applicable fees and charges
+incurred, including applicable taxes
+6.2 The Licensee acknowledges and accepts
+that the Platform is only a self-service cloud platform which
+combines the automated tasks in the cloud into a workflow to deliver
+the Services. The Platform is powered by OpenStack/third-party
+software, a cloud operating system that controls large pools of
+compute, storage and networking resources through multiple
+bare-metal servers, all managed and provisioned through Application
+Programming Interfaces (APIs) with common authentication mechanisms.
+With respect to such software’s technologies deployed on the
+Platform, with their respective licenses e.g., Terms of Service GNU
+General Public License, Creative Common License, etc. shall apply to
+the Licensee and the Licensee hereby acknowledges and agrees that it
+shall comply with the same. Notwithstanding anything contained in
+this EULA, in no event shall NXTGEN be responsible or held liable in
+any manner for any incident, transaction, or occurrence of an event
+of any nature, that occurs between the Licensee and any external
+entity integrated/ deployed by the Licensee on the Platform
+including any monetary transactions of any nature.
+6.3 The Licensee can cancel its
+subscription to the Platform at any time via the Dashboard. Such
+cancellation will become effective 30 (thirty) days from the date of
+cancellation received and accepted. Please note that cancellation of
+the subscription by such Licensee has no bearing on an active
+subscription for which such Licensee has already been charged. Upon
+cancellation, the Licensee will continue to have access to the
+Services (subject to this EULA), until the end of the month for
+which the Licensee has already been charged.
+7. RESTRICTIONS
+The Licensee shall not:
+7.1 sell, assign, sub-license, disclose or
+otherwise transfer or make available the Platform, in whole or in
+part, to any third party;
+7.2 access the Platform from any proxy
+source other than the official website/ weblink authorized by
+NXTGEN;
+7.3 impersonate or attempt to impersonate
+any person or entity;
+7.4 use the Services offered by the
+Platform to promote competing services;
+7.5 use the Platform to provide services to
+third parties, except in accordance with the terms of this EULA and
+the privacy policy (available at:
+https://nxtgen.com/privacy-policy
+);
+7.6 implement, use, sell, distribute,
+transfer or permit any third party to implement, use, sell,
+distribute or transfer the Platform (and all the intellectual
+property rights thereto) for the purpose of profit-making;
+7.7 copy, alter, amend, run by mount or
+create any derivative work based on the Platform or any part or
+component thereof. For avoidance of doubt, the forms of restricted
+use include, but are not limited to, the creation of plug-ins,
+add-on programs or any unauthorized third-party tools/ services that
+access or try to access the Platform or its source code and other
+co-relative systems;
+7.8 remove, delete or alter any proprietary
+notices or marks (including without limitation, the copyright
+statements) on the Platform;
+7.9 re-engineer, de-compile, disassemble,
+alter, translate, access or reverse-engineer the Platform (or its
+source code, except that part which is open-source which is governed
+under GNU/CC) or any part or component thereof;
+7.10 use any technology or automated system
+such as scripts, spiders, offline readers or bots in order to
+collect or disseminate usernames, passwords, email addresses or
+other data stored on the Platform;
+7.11 use the Platform to take any action to
+threaten the security of the network, server, any other account on
+the Platform, without permission; attempting, without permission, to
+detect, scan or test the weakness of the Platform or its network
+system;
+7.12 introduce or attempt to introduce any
+virus, trojan, bug, bots, worms or any other malicious program on
+the Platform;
+7.13 use the Platform to deliver, publish,
+transmit or store any content that contravenes the laws of any
+country, or threatens the national security or social stability of
+any country;
+7.14 publish, deliver, transmit or store
+any content that is inappropriate, insulting, defamatory, obscene
+(including pornographic content), violent or is against the laws of
+any country;
+7.15 use the Platform to publish, deliver,
+transmit or store any content that infringes the intellectual
+property rights, trade secrets or other legal rights of any third
+party;
+7.16 sell, lend, spread or sub-license the
+Platform and/ or its Services or gain profits from using the
+Platform and/or its Services;
+7.17 use the Platform and its Services in
+any other illegal manner, for any illegal purpose or in any form
+which is in contravention of the terms of this EULA.
+8. TERMINATION OF LICENSE
+8.1 If the Licensee breaches any of the
+terms contained in this EULA or the privacy policy, NXTGEN, at its
+sole and absolute discretion, can immediately terminate, suspend in
+part or whole, or restrict the Licensee’s right to use the Platform
+and its Services without any notice.
+8.2 Once the license is terminated or
+suspended, the Licensee may not be entitled to continue to use the
+Services and/or account credentials.
+8.3 Any suspension or termination will not
+affect the Licensee’s obligations towards NXTGEN under this EULA,
+which by their nature are intended to survive such suspension or
+termination.
+8.4 Any suspension or termination shall not
+entitle the Licensee to claim refund of any payments made towards
+subscription of Services offered on the Platform in accordance with
+clause 6.1 above.
+9. PLATFORM UPDATES/ USE OF THE
+LICENSEE’S DEVICE
+9.1 NXTGEN reserves the right to
+unilaterally change or restrict the functional aspects of the
+Platform pursuant to directions from any governmental authority or
+in the course of compliance with applicable laws and NXTGEN takes no
+responsibility whatsoever in respect of any direct or indirect
+damages or losses suffered by the Licensee as a result of such
+change or restriction on the Platform.
+9.2 In order for NXTGEN to provide the
+Platform to the Licensee, NXTGEN may require virtual access rights
+to and/or use of the Licensee’s Device that the Licensee uses to
+access the Platform. For example, use of the Device’s processor,
+location and storage to provide certain interactive functions within
+the Platform.
+9.3 The Licensee agrees to give NXTGEN
+limited access to and use of the Licensee’s Device and the Licensee
+acknowledges that if it does not provide NXTGEN with such right of
+use or access, the Licensee may not be able to enjoy all the
+Services offered on the Platform.
+9.4 NXTGEN is not responsible for any
+third-party charges that the Licensee incurs (including any charges
+from the internet service providers) in relation to the use of the
+Platform (or its Services) by the Licensee.
+10. THIRD PARTY CONTENT AND SERVICES
+10.1 The Services offered by the Platform
+have not been integrated with or otherwise interact with any
+third-party applications, websites, micro-applications and services,
+to make the Services available to the Licensee. However, the
+Licensee may choose to integrate or otherwise invite any third-party
+applications, websites, micro-applications and/or services from his
+end to interact with the Platform, for the Licensee’s personal use,
+on its own accord and assuming full sole liability for any such
+interactions. These third-party applications or micro-applications
+may have their own terms and conditions of use and privacy policies
+and the Licensee’s use of these third-party applications on the
+Platform will be governed by and subject to such terms and
+conditions and privacy policies. NXTGEN is not responsible for and
+does not endorse, support or guarantee the lawfulness, accuracy or
+reliability of any content submitted to, transmitted or displayed on
+the Platform (or the website), including content provided by users
+of the Platform or by our advertisers or by the micro-applications
+deployed and integrated on the Platform by the Licensee. Any
+reliance on or use of any content/ micro-application on the Platform
+by the Licensee is at the Licensee’s own sole risk and NXTGEN shall
+not be responsible for any claims/ liabilities arising out of such
+use in any manner whatsoever.
+10.2 NXTGEN does not guarantee the quality,
+reliability or suitability of any third-party services, services,
+programs or websites that are linked to the Platform by the Licensee
+and NXTGEN will not bear any responsibility for the Licensee’s use
+of or relationship with any such third party services, including any
+payment obligations or fees that the Licensee may incur by use of
+such third party services or their websites.
+11. INTELLECTUAL PROPERTY RIGHTS
+11.1 For purposes of this EULA, (a) “NXTGEN
+Content” means the Services, and all information and/ or content
+that you see, hear or otherwise experience on the Platform including
+but not limited to text, graphics, images, music, software, audio,
+video, stills, works of authorship of any kind, and digital
+assets/information or other materials that are posted, transmitted,
+displayed, generated or otherwise made available through the
+Platform; and (b) “User Content” means any content that the Licensee
+makes available, deploys, creates or uses on the Platform, however,
+it does not include Account Information.
+11.2 NXTGEN does not claim ownership rights
+in any User Content that the Licensee develops, deploys, creates or
+makes available through the use of the Platform. The Licensee
+acknowledges that NXTGEN will not commercially use any User Content
+made available, developed, created, deployed, stored or researched
+by the Licensee on the Platform, without prior permission from the
+Licensee.
+11.3 NXTGEN does not have access and/ or
+does not review the User Content uploaded, developed, deployed,
+created or stored by the Licensee and such User Content is
+considered to be confidential information. Therefore, NXTGEN is not
+responsible for the User Content and does not endorse anything
+contained in such User Content. NXTGEN makes no warranties or
+representations, express or implied, about the User Content,
+including as to its legality or accuracy.
+11.4 NXTGEN grants the Licensee a personal,
+non-exclusive, non-transferable, revocable and limited license as
+mentioned in clause 3.1 above. The Services made available through
+the Platform are not sold or transferred to the Licensee and NXTGEN
+and its licensors (if any) retain ownership of the Platform,
+software applications, data, content, visuals, stills, etc.
+regardless of the Licensee’s access of the Platform from any of the
+following: Licensee’s personal computer, mobile handsets, tablets,
+wearable devices, smart speakers, IoT devices, smart-home hubs
+and/or other devices (“Devices”). The Licensee will not use, copy,
+adapt, modify, prepare derivative works based upon, distribute,
+license, sell, transfer, publicly display, transform, stream,
+broadcast or otherwise exploit NXTGEN’s Content, except as expressly
+permitted in this EULA, without NXTGEN’s express prior written
+consent. No license or rights are granted to the Licensee by
+implication or otherwise under any intellectual property rights
+owned or controlled by NXTGEN or its licensors, except for the
+licenses and rights expressly granted in this EULA.
+12. ERRORS, INACCURACIES AND OMISSIONS
+12.1 Occasionally there may be information
+on the Platform that contain errors, inaccuracies or omissions that
+may relate to descriptions, pricing, promotions, offers, and
+availability. We reserve the right to correct any errors,
+inaccuracies or omissions, and to change or update information if
+any information on the Platform or on any related website is
+inaccurate at any time without prior notice.
+12.2 We undertake no obligation to update,
+amend or clarify information on the Platform or on any related
+website except as required by law. No specified update or refresh
+date applied in the Services or on any related website should be
+taken to indicate that all information on the Platform or on any
+related website has been modified or updated.
+12.3 NXTGEN’s Platform will support agreed
+service levels at all times. However, there may be occasions when
+the Services on the Platform are interrupted for scheduled
+maintenance or upgrades, for emergency repairs, or due to failure of
+telecommunications links and equipment, hardware and software that
+are beyond NXTGEN’s control, that may further result in loss of
+certain or all content, features, and functionalities in part or
+full. In such an event, the Licensee acknowledges and agrees that it
+shall not hold NXTGEN and/or its Platform responsible for such
+interruption.
+13. DISCLAIMER OF WARRANTIES
+13.1 The Licensee expressly agrees that use
+of the Platform (including its Services) thereon is at its sole
+risk. The Platform and its Services are provided on an “as is” and
+“as available” basis. NXTGEN expressly disclaims any and all
+liabilities, warranties, representations, conditions, or indemnities
+of any kind, whether express or implied including, but not limited
+to any and all liabilities and warranties of fitness for a
+particular use or purpose, non-infringement, title, operability,
+condition, value, accuracy of data and system integration.
+13.2 NXTGEN and/or its affiliates expressly
+disclaim any liabilities and warranties regarding security,
+accuracy, reliability, timeliness and performance of the Platform or
+that the Platform and its Services will be error free or that any
+errors will be corrected. No advice or information provided to you
+by NXTGEN will create any liability or warranty that is not
+expressly stated in this EULA.
+13.3 NXTGEN makes no representations
+concerning, and does not guarantee, the accuracy of the Services
+offered on the Platform, including but not limited to, any
+information provided through the Platform or their applicability to
+the Licensee’s individual circumstances.
+13.4 The Licensee acknowledges and agrees
+that the Platform is only a self-service cloud operating system that
+provides large pools of Resources to the Licensee for its use.
+14. REPRESENTATIONS, WARRANTIES,
+UNDERTAKINGS AND INDEMNITY
+14.1 The Licensee covenants that it
+shall:
+(a) comply with any and all applicable laws and/ or such other rules
+and guidelines as may be applicable to the Licensee;
+(b)
+comply with all of the Licensee’s wireless carrier’s/ data
+provider’s terms and conditions;
+(c) not breach any of the
+terms set forth in this EULA;
+(d) verify and affirm the
+accuracy and truthfulness of all the information the Licensee
+provides to NXTGEN; and
+(e) not upload any information on the
+Platform that will infringe any third party rights, including
+without limitation, intellectual property rights and rights of
+privacy or publicity.
+14.2 In addition to the above, the
+Licensee agrees, acknowledges and confirms the following:
+(a) NXTGEN and/or its affiliates (including their directors,
+officers and/or employees) accept no responsibility for any legal or
+financial events or outcomes arising out of the use of the Platform;
+(b) The Services offered on the Platform are for personal or
+commercial use.
+(c) The Licensee will use the Platform and its
+Services in a manner consistent with any and all applicable laws and
+regulations; and
+(d) The Licensee will not falsify its
+identity or misrepresent itself or any other user or any third
+party, in any way, on the Platform.
+14.3 The Licensee understands that the
+failure to comply with the foregoing provisions or the restrictions
+contained in clause 7 (Restrictions) may result in immediate
+suspension or termination of the Licensee’s right to use the
+Platform. NXTGEN reserves the right, at its sole discretion and in
+all instances, to determine whether the Licensee has or has not
+complied with any provision of this EULA.
+14.4 The Licensee will indemnify, defend,
+and hold harmless NXTGEN, NXTGEN’s licensors and affiliates and
+our respective directors, officers, employees, contractors, agents
+and representatives, from and against any and all claims, causes
+of action, demands, liabilities, losses, costs or expenses
+(including, but not limited to, reasonable attorneys’ fees and
+expenses) arising out of or relating to any of the following
+matters:
+(a) Licensee’s access to and use of the Platform;
+(b)
+Licensee’s violation of any of the provisions of this EULA;
+(c) Licensee’s violation of any rules, regulations, acts or
+laws that are in force or that may come into force from time to
+time;
+(d) any activity related to Licensee’s Account by the
+Licensee or any other person accessing the Platform through the
+Licensee’s Account, including without limitation, negligent or
+wrongful conduct; or
+(e) Licensee’s violation of any third
+party rights.
+14.5 NXTGEN reserves the right to assume
+the exclusive defense and control of any matter otherwise subject to
+indemnification by the Licensee, in which event the Licensee hereby
+agrees, undertakes and confirms to cooperate with NXTGEN in
+asserting any available defenses.
+15. LIMITATION OF LIABILITY
+15.1 To the maximum extent permissible by
+applicable laws, in no event will NXTGEN and/or its affiliates be
+liable to you or any third party for any damages whatsoever,
+including without limitation, indirect, incidental, special,
+punitive or consequential damages, or lost profits, arising out of,
+or in connection with, the use of the Platform or its Services
+and/or NXTGEN’s Content, whether or not the damages are foreseeable,
+and/or whether or not NXTGEN has been advised of the possibility of
+such damages in advance. Notwithstanding anything contained in this
+EULA, NXTGEN’s maximum liability towards the Licensee shall be
+limited to the aggregate amount of the previous month subscription
+fees paid by the Licensee towards use of the Platform and its
+Services. In the event you are in a jurisdiction that does not allow
+limitation of liability in the manner stated hereinabove, the
+limitation shall apply to you to the extent permitted by applicable
+laws. If you are dissatisfied with the Services on the Platform,
+your sole and exclusive remedy is to discontinue using the Services
+and the Platform.
+15.2 Except as otherwise required by
+applicable law, any claim or cause of action arising out of or
+relating to your use of the Platform and/or NXTGEN’s relationship
+with you, must be brought within 30 (thirty) days of the occurrence
+of the event giving rise to the claim or cause of action, or the
+same will be deemed to be forever barred.
+15.3 NXTGEN and/or its affiliates shall,
+under no circumstances whatsoever, be liable for any delay and/or
+default in performance under this EULA caused by an event beyond
+their reasonable control, including but not limited to, war,
+accident, lock-down, act of god, pandemic, industrial action,
+embargo or a delay, failure or default by you, your wireless
+carrier, or any other supplier of goods or services to NXTGEN or to
+you.
+15.4 NXTGEN AND/OR ITS AFFILIATES DISCLAIM
+ANY LIABILITIES AND WARRANTIES REGARDING SECURITY, ACCURACY,
+RELIABILITY, TIMELINESS AND PERFORMANCE OF THE PLATFORM OR THAT THE
+SERVICES ON THE PLATFORM WILL BE ERROR FREE OR THAT ANY ERRORS WILL
+BE CORRECTED OR THE SERVICES OFFERED BY THIRD PARTIES ON THE
+PLATFORM OF THE PLATFORM WILL NEVER RESULT IN ANY LIABILITY FOR THE
+LICENSEE. NO ADVICE OR INFORMATION PROVIDED TO YOU BY NXTGEN WILL
+CREATE ANY LIABILITY OR WARRANTY THAT IS NOT EXPRESSLY STATED IN
+THIS EULA.
+16. CLASS ACTION WAIVER
+Where permitted under the applicable law, the Licensee agrees that
+it may bring claims against NXTGEN only in its individual capacity
+and not as a plaintiff or class member in any purported class or
+representative action. Unless both NXTGEN and the Licensee, as a
+party to this EULA agree, no arbitrator or judge may consolidate
+more than one person’s claims or otherwise preside over any form of
+a representative or class proceeding
+17. ARBITRATION
+17.1 In the event of any disputes,
+differences or claims arising in connection with this EULA, during
+its subsistence and/or after their termination in any manner
+whatsoever, including the validity and/or construction and/or
+interpretation of any of the sections hereof or anything done or
+omitted to be done pursuant hereto, the parties entering into this
+EULA shall to the fullest extent possible, try to settle the
+disputes, differences or claims in the first instance by prompt and
+good faith negotiations between themselves.
+17.2 Any dispute that is not resolved
+within 30 (thirty) days of the occurrence thereof shall be referred
+to and finally settled by way of arbitration in Bangalore, under the
+Arbitration and Conciliation Act, 1996, as amended from time to time
+(the “Arbitration Act”). The arbitration shall be conducted by a
+sole arbitrator appointed in accordance with the Arbitration Act.
+17.3 The seat, place and venue of the
+arbitration proceedings shall be Bangalore, India and the language
+of the arbitral proceedings shall be English. All aspects of the
+arbitration shall be treated as confidential. The law governing this
+arbitration agreement shall be the law of India.
+17.4 The arbitrator shall have the power to
+grant any legal or equitable remedy or relief available under
+applicable law, including injunctive relief (whether interim and/ or
+final) and specific performance. For avoidance of doubt, each party
+to the dispute shall be entitled to apply to the appropriate court
+of competent jurisdiction for interim or interlocutory relief in
+respect of such arbitration.
+17.5 The arbitrator shall also have the
+power to decide on any dispute regarding the validity of this clause
+17.
+17.6 During the course of any arbitration
+under this clause 17, except for the matters under dispute and
+subject to any interim reliefs/ orders granted by courts/ or the
+arbitrator, the parties entering into this EULA shall continue to
+exercise their remaining respective rights and fulfil their
+remaining respective obligations under this EULA.
+17.7 The parties entering into this EULA
+shall participate in good faith to reasonably expedite (to the
+extent practicable) the conduct of any arbitral proceedings
+commenced under this EULA.
+17.8 The arbitrator shall render a written
+and reasoned award in writing at the earliest and in its award,
+also, decide on and apportion the costs and reasonable expenses
+(including reasonable fees of counsel) incurred in the arbitration.
+Any arbitral award or measures ordered by the arbitrator: (a) may be
+specifically enforced by any court of competent jurisdiction; and
+(b) shall be final and binding on the parties entering into this
+EULA.
+18. GOVERNING LAW AND JURISDICTION
+This EULA shall be strictly governed by and constructed in
+accordance with the laws of India and subject to Clause 17
+hereinabove, the courts of Bangalore, India shall have exclusive
+jurisdiction over any disputes arising from this EULA or use of the
+Services and the Platform.
+19. CHANGES TO THIS EULA
+NXTGEN reserves the right to change the terms of this EULA at any
+time for any reasons deemed fit by NXTGEN, including but not limited
+to, improving the existing functions or features of the Platform,
+adding new functions or features to the Services offered on the
+Platform, reasonable technical adjustments to the Platform, ensuring
+the effectivity of security features of the Platform, and
+adjustments to the Platform pursuant to legal or regulatory
+compliance requirements. Any changes that we make will become a part
+of this EULA when they are posted and as such, you are required to
+regularly check this page. NXTGEN may choose to notify you of any
+changes to this EULA by way of push notifications, pop-ups and/or
+e-mails within the Platform. Your continued use of the Platform will
+constitute your consent to any changes made to this EULA by NXTGEN.
+If you do not wish to continue using the Platform under the new
+version of the terms of this EULA, you may terminate your Account by
+contacting NXTGEN. The last date on which the terms of this EULA
+were revised is set forth at the top of this EULA.
+20. PRIVACY POLICY
+With Licensee’s use of the Platform and its Services, NXTGEN will
+collect certain information as set forth in more detail in our
+Privacy Policy, which is hereby incorporated by reference. The
+Privacy Policy is available at
+https://nxtgen.com/privacy-policy .
+21. CONTACT INFORMATION
+If you have any questions about the terms of this EULA or the
+Platform or the Services offered on the Platform, please contact on
+the following details:
+(a) Entity Name: NXTGEN
+CLOUD TECHNOLOGIES PRIVATE LIMITED
+(b) Registered Office Address: Plot No. 25-P-13B, 1st
+Phase, Bidadi Industrial Area, Ramanagar, Bangalore – 562109,
+Karnataka, India
+(c) Grievance Officer: The
+Legal and Compliance Department
+(d)
+Contact Details:
+compliance@nxtgen.com
+-->
+SpeedCloud AI
+Aurora
+<Ada>
+Lumina
+Visia
+Accura
+Juris
+-->
+Company
+About us
+contact@nxtgen.com
+&copy; 2026 NxtGen, all rights reserved
+•
+Privacy
+•
+Terms
+🍪 We use cookies
+We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+Essential Only
+Settings
+Accept All
+Cookie Preferences
+Choose which cookies you want to accept. You can change these settings at any time.
+Essential Cookies
+Required for basic site functionality
+Analytics Cookies
+Help us understand how visitors interact with our website
+Marketing Cookies
+Used to deliver relevant advertisements
+Cancel
+Save Preferences

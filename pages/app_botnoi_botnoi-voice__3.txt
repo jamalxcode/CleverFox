@@ -1,0 +1,45 @@
+URL: https://botnoigroup.com/docs?lang=en
+FINAL: https://botnoigroup.com/docs?lang=en
+STATUS: 200
+TITLE: เอกสารและคู่มือการใช้งาน BOTNOI | BOTNOI Docs
+FETCHED: 2026-11-15T15:57:24.475Z
+
+Why BOTNOI
+Solutions
+Industries
+Blog
+FAQ
+🇺🇸
+Contact Us
+Documentation
+Select a guide to get started
+Botnoi Chatbot Guide
+Botnoi Voice Guide
+Guide for using Botnoi Voice text-to-speech
+Enterprise AI for Thailand — Chatbot, Voicebot, Agent. All solutions in one place.
+Solutions
+AI Agent Platform
+Real-time Translation
+BOTNOI Voice
+AI Voicebot
+Document Search
+AI Web Avatar
+Industries
+Banking/Finance
+Banking/Finance
+Customer support
+Healthcare
+Healthcare
+Restaurant
+Hospitality
+Media & Events
+Resources
+AI Articles & Case Studies
+Guides & Developer Docs
+Contact
+admin@botnoigroup.com
+Facebook
+LinkedIn
+YouTube
+Academy
+© 2026 BOTNOI Group. All rights reserved.

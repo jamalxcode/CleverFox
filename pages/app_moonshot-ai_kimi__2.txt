@@ -1,0 +1,96 @@
+URL: https://www.kimi.com/en/help/membership/membership-payment-issues
+FINAL: https://www.kimi.com/en/help/membership/membership-payment-issues
+STATUS: 200
+TITLE: Kimi Membership Payment Troubleshooting - Kimi Help Center
+FETCHED: 2026-11-15T15:57:44.503Z
+
+Products Products Products
+Kimi Kimi Work Kimi Code Kimi Browser Extension Kimi Office Extension Downloads
+All products
+API API
+Business Business Kimi Business Business plans Contact sales
+Research Research Kimi K3.1 Pro Kimi K3 PerceptionBench Kimi K2.6 Agent Swarm WorldVQA Kimi K2.5 Kimi Vendor Verifier Kimi K2 Thinking Kimi K2
+All research
+Help Help
+Pricing Pricing
+Download Download
+Download
+Download Try Kimi
+Getting Started
+Features
+Agent Mode
+Kimi Work
+Plugins & Skills
+Kimi Browser Extension
+Docs & Sheets
+PPT
+Deep Research
+Build
+3D Make
+Membership Membership Subscription Benefits
+Membership Credit Updates and Usage Rules
+How is membership billed, and what is included in each plan?
+Membership Benefits: Activation and Status Check
+Plan Upgrades and Downgrades
+Extra Usage Pack: Purchasing Additional Usage
+Cancel Auto-Renewal
+Payment Issues
+Kimi Membership Invoicing
+Membership Support Contacts
+Kimi Code
+Kimi API and Enterprise Partnerships
+Kimi Business
+Kimi Claw
+Kimi Bulletin
+FAQ
+Help Center Membership Payment Issues
+Membership Payment Issues
+Below are common payment issues you may encounter during a membership subscription, along with their solutions.
+Why isn’t my membership active after the payment agreement was set up?
+If you have completed a payment agreement, such as WeChat password-free payment or Alipay auto-debit, but your membership has not taken effect, possible reasons include:
+Agreement ≠ charge : Setting up an agreement only means you have authorized automatic billing. The first charge may not have been completed yet. Please check whether your bank or payment platform has actually processed the payment.
+Payment delay : Some payment channels may have a short delay. Please wait a few minutes, then refresh the page and check again.
+Account mismatch : Make sure the account you are currently logged in with is the same account used when setting up the agreement.
+If you confirm that the payment has been deducted but your benefits have not been credited, please contact [email protected] .
+What should I do if payment fails?
+Common reasons for payment failure and how to resolve them:
+Insufficient balance : Make sure your payment account has enough funds.
+Bank card limit : Some bank cards have per-transaction or daily limits. Please contact your bank to confirm, or use another payment method.
+Network issue : Check your network connection and try again.
+Payment channel maintenance : A payment channel may occasionally be under maintenance. Please try again later.
+Risk control block : The payment platform may block a transaction for security reasons. Please contact the relevant payment platform’s customer support.
+If payment still fails after multiple attempts, please email [email protected] and include a screenshot of the error.
+What should I do if I was charged automatically by mistake?
+If you notice an unexpected charge on your account, please troubleshoot as follows: first check whether there is an uncancelled auto-renewal, then confirm whether a trial has converted to a paid subscription.
+Check subscription status : Log in to Kimi and check whether there is an active subscription. It may be an auto-renewal from a previous purchase that was not cancelled.
+Check trial conversion : If you previously started a 7-day trial and did not cancel during the trial period, the system will automatically charge you after the trial ends.
+Check billing services : Check whether Kimi has an automatic billing authorization in WeChat, Alipay, or Apple ID.
+Cancel renewal : If you no longer need the service, refer to the “Cancel Auto-Renewal” document to turn off automatic billing.
+Contact support : If you confirm the payment was not made by you, contact [email protected] immediately. We will help verify and handle the issue.
+Are paid services refundable?
+Paid services are virtual services. Once successfully purchased and activated, they are deemed to have been successfully consumed. Unless otherwise required by laws and regulations, they are non-refundable and non-transferable. Before purchasing, please carefully check the service and benefit details, price, validity period, and make sure the purchasing account information is correct.
+If you have any questions about a charge, please contact [email protected] . We will help verify it.
+Notice on Purchases by Minors
+Minors under the age of 18 should read the relevant agreements under the guidance of a guardian, and may purchase paid services only with the guardian’s consent. Guardians should properly safeguard accounts, devices, and passwords to prevent minors from making paid purchases without consent. If an issue arises from an unauthorized payment made by a minor, please contact [email protected] .
+Was this article helpful?
+Yes No
+Previous Cancel Auto-Renewal Next Kimi Membership Invoicing
+Why isn’t my membership active after the payment agreement was set up?
+What should I do if payment fails?
+What should I do if I was charged automatically by mistake?
+Are paid services refundable?
+Notice on Purchases by Minors
+System
+English
+Products
+Kimi Kimi Work Kimi Code Kimi Browser Extension Kimi Platform Downloads All products
+Pricing
+Individual Business API
+Business
+Kimi Business Contact sales
+Research
+Kimi K3.1 Pro tech blog Kimi K3 tech blog Kimi K2.6 tech blog Kimi K2.5 tech blog PerceptionBench Agent Swarm WorldVQA All research
+Company
+About us Moonshot AI Brand guidelines Terms of Service Privacy Policy
+© 2026 Moonshot AI | 京ICP备2023011302号-14 | 京B2-20240852 | 京公网安备11010802043150号
+Kimi Membership Payment Troubleshooting - Kimi Help Center

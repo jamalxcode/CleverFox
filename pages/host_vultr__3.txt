@@ -1,0 +1,79 @@
+URL: https://docs.vultr.com/platform/create-an-account
+FINAL: https://docs.vultr.com/platform/create-an-account
+STATUS: 200
+TITLE: Create a Vultr Account and Verify Your Payment Method | Vultr Docs
+FETCHED: 2026-11-15T15:58:16.585Z
+
+Over 80,000,000 Cloud Servers Launched
+Over 80,000,000 Cloud Servers Launched
+Products Cloud Compute Cloud GPU Bare Metal File System Object Storage Block Storage Managed Databases CDN Serverless Kubernetes Container Registry Direct Connect Load Balancers
+Features Regions Advanced Network Control Panel Operating Systems Upload ISO
+Solutions Industry Cloud One-Click Deployment Use Cases
+Marketplace Browse Apps Become a Vendor
+Resources FAQ Developers / APIs Vultr Docs Server Status Bug Bounty Promotions Solution Partners Start-Up Programs
+Company Our Team News Brand Assets Referral Program Creator Program Careers SLA Legal Vultr Trust Center Contact Your Privacy Choices Subprocessors Accessibility
+Contact Sales Sign Up
+© Vultr 2026 | VULTR is a registered trademark of The Constant Company, LLC.
+Terms of Service AUP DMCA Privacy Policy Cookie Policy
+Products
+Features
+Marketplace
+Pricing
+Partners
+Company
+Dashboard Contact Sales
+⌘K
+Blogs
+Discover
+Docs
+Community
+Agent Beta
+Menu
+Platform
+General
+Billing
+Other
+Customer Advisory
+Security Best Practices
+IAM
+Trust & Compliance
+Logs
+Marketplace Vendor
+Reserved Hardware
+Create a Vultr Account and Verify Your Payment Method | Vultr Docs
+Docs
+Platform
+Create an Account
+How to Create a Vultr Account
+1 min read Updated 23 October 2026
+0 comments
+Register a Vultr account, verify your email, link a payment method with a $0.00 card deposit, and apply a promo code.
+Vultr offers free credits for up to 30 days for you to try our services.
+Follow this guide to create an account on Vultr and start using Vultr Cloud services.
+Navigate to the Vultr registration page page.
+Enter your account details:
+A valid email address.
+A strong password.
+Review and accept the Terms of Service and Privacy Policy .
+Click Create free account .
+Verify your email address. Check your inbox for a verification email from Vultr and click Verify Your E-mail .
+You will land on the Billing page after creating your account. Add a payment method of your choice for verification purposes.
+If you select Credit Card as your payment method, choose I just want to link my credit card - $0.00 deposit to verify without an initial deposit. Your provider may place a small temporary authorization hold that will be released shortly.
+For other payment options, you need to make a small deposit.
+On the right side of the page under the Summary section, you can add a Promotional coupon. Check the latest Promotional Coupons to get deals.
+Apply promotional coupons (optional):
+Check for available promotional codes .
+Enter the code under the Summary section.
+Click Apply to add credits to your account.
+Review and agree to the Terms of Service and proceed to link your Credit Card, or pay using your payment method.
+After adding your Payment details, you can start using Vultr services. Explore the dashboard to deploy your first server instance or browse the documentation to learn about Vultr&#x27;s various services.
+Note
+Monitor your credit balance in the billing section to avoid unexpected charges.
+Ensure to deprovision the resources before your credits expire or end to avoid getting billed extra.
+0 Comments
+Newest First Post Comment
+Start the conversation
+Be the first to comment and share your perspective with the community.
+Post Comment
+Share
+Docs Menu

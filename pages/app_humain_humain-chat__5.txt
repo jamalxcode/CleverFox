@@ -1,0 +1,108 @@
+URL: https://node.humain.com/legal/privacy
+FINAL: https://node.humain.com/legal/privacy
+STATUS: 200
+TITLE: Privacy Notice — HUMAIN Node
+FETCHED: 2026-11-15T15:57:52.344Z
+
+Privacy Notice — HUMAIN Node
+&larr; All legal documents
+HUMAIN M3 Limited Preview Privacy Notice
+Effective Date: 31 August 2026
+Last Updated: 31 August 2026
+AL-MUSTAQBAL LIL-THAKA AL-IISTINAI COMPANY (HUMAIN), commercial register number 1009089438, at King Fahd District 3254, King Fahd Branch Street 7295, Postal Code 12262, Riyadh, Kingdom of Saudi Arabia, is the controller of personal data described in this Privacy Notice ( HUMAIN, we, us or our ).
+This Notice applies to people worldwide who visit the HUMAIN M3 Preview pages on Node, register or apply, use the Playground or API, opt into Research Access, submit a safety or support report, or otherwise communicate with HUMAIN about the Preview. Regional rights and supplements appear in Section 13.
+IMPORTANT DATA NOTICE . Every prompt and response submitted to HUMAIN M3 is recorded and may be received and reviewed by authorized HUMAIN personnel and authorized model technology provider personnel. With separate affirmative electronic consent, HUMAIN and its model technology provider may use selected interactions and feedback to evaluate, train, fine-tune and further develop HUMAIN M3 and its related safeguards. Do not enter personal, confidential, privileged, sensitive or regulated information.
+1. Personal Data We Collect
+Category
+Examples
+Account and eligibility
+Name, email, mobile number, age confirmation, country or location signals, organization, role, account identifiers and access status.
+Research verification
+Identity and age verification, country, application responses, risk or eligibility records, selection and activation status. No formal test plan or professional research credential is required.
+Interaction content
+Every prompt, instruction, file or content submitted if enabled, response, edit, rating, reaction and feedback.
+Technical and usage
+IP address, device and browser, approximate location, timestamps, account or API identifiers, token counts, session data, model and safeguard settings, logs, errors and safety signals.
+Communications
+Support requests, safety reports, privacy requests, survey responses and related correspondence.
+We collect data directly from you, automatically through your device and use, from your organization where applicable, and from verification providers or lawful public sources used for eligibility and security checks. We do not intentionally collect data from children.
+2. Purposes and Legal Bases
+Purpose
+Data and legal basis
+Provide and administer access
+Account, eligibility, technical and interaction data; to enter into and perform the Preview agreement and take requested steps before access.
+Safety, security and enforcement
+Interaction, technical and communications data; legal obligations, consent where required and HUMAIN's legitimate interests in securing the Preview and preventing harm, where those interests are not overridden.
+Evaluate quality, safety and alignment
+Inputs, Outputs, feedback and safety signals; separate affirmative consent where consent is the applicable basis, and legitimate interests where permitted for de-identified or operational safety analysis.
+Train and further develop
+Selected Inputs, Outputs and feedback; separate affirmative consent where required. HUMAIN's model technology provider may receive and use this data to train and further develop HUMAIN M3 and its related safeguards in accordance with HUMAIN's provider arrangements and applicable law.
+Research Access
+Identity and eligibility data, opt-in status, activation, interactions and feedback; requested access steps, contract performance, consent where required and safety or security interests.
+Support, communications and analytics
+Account, technical and communications data; contract performance, consent where required and legitimate interests in support, service measurement and improvement.
+Legal compliance and claims
+Relevant data; legal obligations, public-interest duties where applicable and establishment, exercise or defence of legal claims.
+Where HUMAIN relies on consent, you may withdraw it at any time. Where HUMAIN relies on legitimate interests, you may object as described below. HUMAIN does not use Preview data to make solely automated decisions producing legal or similarly significant effects about you.
+3. Full Interaction Logging and Human Review
+Every Input and Output is recorded. Automated systems and authorized HUMAIN reviewers may analyze any interaction. Authorized reviewers working for HUMAIN's model technology provider may also receive and review interactions under applicable contractual, confidentiality, access-control and data-protection requirements.
+Review may support safety, security, quality, Arabic and multilingual evaluation, regional or cultural alignment, abuse response, troubleshooting, support, benchmarking, training and further model development. Research Access interactions may receive heightened review because HUMAIN's filtering-layer safeguards may be reduced or removed.
+Do not submit personal data or confidential, privileged, sensitive or regulated information. If you submit another person's data, you must have lawful authority and provide any required notice. HUMAIN may remove or restrict content that should not have been submitted.
+4. Electronic Consent and Voluntary Research Opt-In
+Contract acceptance, logging and review consent, training and development consent, and the Research Access opt-in or heightened-risk acknowledgement are presented as separate, unticked electronic controls. HUMAIN records the text or version, purpose, time, account and withdrawal status.
+Participation in the Preview is voluntary. The disclosed recording, review and model-improvement activities are integral to the Preview, so HUMAIN will not enable new interactions unless required current consents are active. Marketing consent is separate.
+Research Access is an additional voluntary option. Declining or leaving Research Access does not by itself end eligible Guarded Access. Any adult user may request Research Access and may be selected after HUMAIN verification; professional research credentials and a formal test plan are not required.
+5. Recipients and Service Providers
+Authorized HUMAIN personnel with a need to know.
+HUMAIN's contracted model technology provider, which may receive and use Preview data for inference, support, review, evaluation, safety, training and further development of HUMAIN M3 and its related safeguards, subject to applicable contractual, confidentiality, access-control and data-protection requirements. The provider is described by category unless HUMAIN obtains any approval needed to identify it publicly.
+HUMAIN-approved cloud, hosting, identity-verification, security, analytics, communications and support providers, only as necessary and under appropriate contractual and data-protection controls.
+Professional advisers, auditors, insurers, competent authorities, affected persons and parties to a corporate transaction where permitted or required and subject to appropriate safeguards.
+The model technology provider may use Preview data for the disclosed inference, review, safety, evaluation, training and development purposes relating to HUMAIN M3 and its related safeguards, in accordance with HUMAIN's provider arrangements and applicable law.
+HUMAIN does not sell personal data collected through the Preview or share it for cross-context behavioural advertising.
+6. International Processing and Transfers
+HUMAIN and its service providers may process personal data in the Kingdom of Saudi Arabia and other countries in which they operate or provide approved infrastructure or support. The specific processing and storage locations applicable to your access will be identified in the interface or a layered notice before collection begins.
+Where personal data is transferred internationally, HUMAIN will use measures required by applicable law, which may include adequacy decisions, standard contractual clauses, transfer risk assessments, contractual safeguards, security controls and regulatory approvals. You may request information about applicable safeguards through the privacy channel.
+7. Retention and De-identification
+Data
+Retention approach
+Raw user-linked Inputs and Outputs
+Twelve (12) months from collection, then securely deleted or effectively de-identified unless longer retention is required by law or for a documented legal claim.
+Selected effectively de-identified training data
+May be retained longer for safety, evaluation, training and further development only after direct and indirect identifiers are removed and re-identification is not reasonably possible.
+Account, verification, consent and security records
+For the Preview and afterward only as necessary for administration, consent evidence, security, legal compliance and claims under HUMAIN's approved retention schedule.
+Support, reports and rights requests
+As long as necessary to respond, investigate and meet legal, audit and claims requirements.
+If data remains capable of identifying a person, HUMAIN will not treat it as de-identified. Deletion is designed to prevent recovery. Data already lawfully incorporated into trained model parameters may not be technically reversible or associated with an individual; HUMAIN will address requests according to applicable law and technical status.
+8. Your Choices and Rights
+obtain information about processing and request access to or a copy of your personal data;
+request correction, completion or updating of inaccurate data;
+request deletion or destruction, restriction or cessation of processing where applicable;
+object to processing based on legitimate interests and request portability where applicable;
+withdraw consent as easily as it was given, without affecting processing already lawfully completed;
+complain to HUMAIN and to a competent data-protection authority; and
+seek compensation or another remedy where applicable law provides it.
+Rights vary by jurisdiction and may be subject to lawful limits, identity verification and exemptions. HUMAIN may need information to verify and respond. Authorized agents must provide evidence of authority.
+Withdrawing an integral logging or training consent means you can no longer submit new Preview interactions. HUMAIN will explain the effect on stored, de-identified and technically irreversible data. Withdrawing only the Research Access opt-in returns you to eligible Guarded Access.
+9. Security and Incidents
+HUMAIN uses risk-based technical, organizational and administrative safeguards, including access controls, reviewer authorization, logging, encryption where appropriate, environment separation and retention controls. No system is completely secure.
+HUMAIN investigates and responds to personal-data incidents and provides notices to authorities or affected persons where applicable law requires. Promptly report suspected compromise through the privacy or security channel in the interface.
+10. Cookies, Analytics and Communications
+The Preview may use strictly necessary cookies or similar technologies for authentication, security, settings and session management and, where permitted or consented, analytics technologies to understand performance and use. Regional cookie controls will be presented where required.
+HUMAIN may send service, security, access, consent, policy and activation notices through the interface, account, dashboard, email or another reasonable electronic channel. Marketing communications require any separate consent required by law and may be opted out of without ending service messages.
+11. Children
+The Preview is for adults aged eighteen (18) or older and is not directed to children. If HUMAIN learns that it collected personal data from a child through the Preview, it will take appropriate steps under applicable law.
+12. Changes and Contact
+HUMAIN may update this Notice to reflect changes in the Preview, processing or law. The updated Notice will identify its date. HUMAIN will provide additional notice or obtain fresh consent where applicable law requires.
+Privacy questions, rights requests and complaints may be submitted through the privacy channel identified in the Preview interface. You may also contact AL-MUSTAQBAL LIL-THAKA AL-IISTINAI COMPANY (HUMAIN), King Fahd District 3254, King Fahd Branch Street 7295, Postal Code 12262, Riyadh, Kingdom of Saudi Arabia.
+13. Regional Supplements
+Kingdom of Saudi Arabia
+Saudi-based users may exercise rights available under the Personal Data Protection Law and its Implementing Regulations and may complain to the competent Saudi authority. Cross-border transfers will be handled under applicable Saudi requirements.
+European Economic Area, United Kingdom and Switzerland
+Where applicable, you may have rights to access, rectify, erase, restrict, object, port data and complain to your supervisory authority. HUMAIN relies on the legal bases described above. Details of any required local representative and transfer safeguard will be made available in the regional interface or notice before the Preview is offered in the relevant jurisdiction.
+California and other United States
+Depending on your residence, you may have rights to know or access categories and specific pieces of personal information, correct, delete, obtain a portable copy, opt out of certain processing, limit use of sensitive information and appeal a decision. HUMAIN will not discriminate for exercising a privacy right. HUMAIN does not sell Preview personal data or share it for cross-context behavioral advertising.
+Other jurisdictions
+HUMAIN will honor additional non-waivable privacy rights applicable in your jurisdiction. A regional notice or interface disclosure may supplement this Notice and will control for the specific mandatory requirement.
+&larr; All legal documents
+Back to HUMAIN Node

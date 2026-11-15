@@ -1,0 +1,230 @@
+URL: https://www.latitude.sh/accelerate
+FINAL: https://www.latitude.sh/metal-gpu
+STATUS: 200
+TITLE: Bespoke bare metal infrastructure - Latitude.sh
+FETCHED: 2026-11-15T15:58:39.967Z
+
+Bespoke bare metal infrastructure - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+lsh/metal-GPU
+Unlock unprecedented AI performance
+Don&#x27;t let capacity constraints slow you down. Dedicated NVIDIA GPUs on bare metal help you train, fine-tune and serve AI models, fast.
+Start now
+Speak to sales
+See how Zyte reduced costs by 30%
+Whatever you&#x27;re building, deploy the GPUs for it
+AI inference
+LLM training
+Fine-tuning
+Agentic AI
+Computer vision & generative AI
+Batch inference
+Distributed training
+HPC
+Serve models on bare metal with low, predictable latency and no noisy neighbours.
+Start now
+Performance your models will be proud of
+Features
+Dedicated GPUs, zero overhead
+No hypervisor, no shared tenancy. Just full access to the hardware for maximum throughput.
+Low-latency networking
+Fast provisioning
+High-throughput storage
+Predictable cost at scale
+./gpu-portfolio
+A GPU instance for every need
+NVIDIA RTX PRO 6000
+Starting at $12,264/mo
+g4.rtx6kpro.large
+GPU 8 x NVIDIA RTX PRO 6000
+VRAM 768 GB Total
+CPU Dual AMD 9355, 64 Cores @ 3.55 GHz
+RAM 1.5 TB
+STR 4 x 3.8 TB NVME
+NIC 2 x 100 Gbps
+Select location
+NVIDIA HGX B300
+Starting at $32,704/mo
+g4.b300.large
+GPU 8 x NVIDIA HGX B300
+VRAM 2.3 TB Total
+CPU Dual AMD Epyc 9555, 64 Cores @ 3.2 GHz
+RAM 1.5 TB
+STR 2 x 960 GB NVME + 4 x 7.6 TB NVME
+NIC 2 x 100 Gbps
+Select location
+NVIDIA H100 80GB
+Starting at $861/mo
+g3.h100.small
+GPU 1 x NVIDIA H100 80GB
+VRAM 80 GB Total
+CPU AMD 9124, 16 Cores @ 3 GHz
+RAM 192 GB
+STR 2 x 3.8 TB NVME
+NIC 2 x 10 Gbps
+Select location
+GPUs are one piece. We give you the whole .
+Everything around your GPUs – storage, networking, orchestration and automation – owned and integrated by Latitude.
+Storage
+Object, File and Block storage. NVMe-backed and high-throughput to keep GPUs fed.
+Storage
+Object, File and Block storage. NVMe-backed and high-throughput to keep GPUs fed.
+Explore Storage
+Networking
+High-speed, low-latency networking between nodes for distributed training.
+Networking
+High-speed, low-latency networking between nodes for distributed training.
+Explore Networking
+Kubernetes (LKS)
+Orchestrate GPU workloads on managed Kubernetes, on bare metal.
+Kubernetes (LKS)
+Orchestrate GPU workloads on managed Kubernetes, on bare metal.
+Explore LKS
+Bare Metal
+Pair GPUs with CPU bare metal for pre- and post-processing in the same environment.
+Bare Metal
+Pair GPUs with CPU bare metal for pre- and post-processing in the same environment.
+Explore Metal
+Build
+Custom AI infrastructure designed around your workload.
+Build
+Custom AI infrastructure designed around your workload.
+Latitude for Enterprise
+APIs & Terraform
+Provision every layer programmatically. REST API, Terraform, SDKs and the lsh CLI.
+APIs & Terraform
+Provision every layer programmatically. REST API, Terraform, SDKs and the lsh CLI.
+APIs
+ML-ready images
+Deep-learning instances pre-installed with PyTorch, TensorFlow, Keras and CUDA.
+Explore
+Deploy GPU s close to your models and your users
+Run on our own global backbone for the lowest latency, wherever your data and users live.
+Explore locations
+N. America S. America Europe APAC
+Ashburn ASH
+Chicago CHI
+Dallas DAL
+Los Angeles LAX
+Los Angeles 2 LAX2
+Miami 2 MIA2
+New York NYC
+Silicon Valley SJC2
+Tokyo
+San Jose
+Dallas
+London
+New York
+Miami
+Chicago
+Los Angeles
+Ashburn
+Sydney
+Amsterdam
+./products
+Purpose-built for AI workloads
+Select Deploy Manage Automate
+01 - Select Choose your hardware
+Pick a configuration and region in a few clicks.
+02 - Deploy Deploy in seconds
+Servers live in under 5 seconds, secure by default.
+03 - Manage Manage your fleet
+Projects, users, SSO/MFA/SCIM and real-time monitoring in one dashboard.
+04 - Automate Automate everything
+Drive it all through the API, Terraform, SDKs and the lsh CLI.
+Full control of your infra.
+And your costs.
+On-demand
+Pay by the hour for GPUs. Ideal for experiments, fine-tunes and bursty inference.
+Self-service
+Deploy instantly from the dashboard. Pay by card. Or crypto, if you prefer.
+Reserved capacity
+Lower rates for always-on servers, billed monthly or yearly.
+Enterprise
+Custom agreements, volume pricing, SSO/SAML and dedicated account support.
+Custom AI infrastructure
+Bespoke environments designed around your workload.
+Latitude for Enterprise
+Trusted by teams shipping AI in production
+“ The overall stability, performance, and cost-effectiveness of the platform make it a reliable choice for our infrastructure needs. ” Syed Ghazanfer Anwar
+CTO
+Read full story
+View all customer stories
+Frequently asked questions
+Which GPUs are available?
+Are the GPUs dedicated or shared?
+Can I run distributed training across multiple GPUs?
+Do instances come with an ML environment?
+How do I pay for GPUs?
+Which regions have GPUs?
+Can I automate GPU provisioning?
+What if I need a custom AI cluster?
+Can bare metal replace on-prem or the cloud?
+Power your AI models
+Book a consultation
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

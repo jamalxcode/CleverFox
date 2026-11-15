@@ -1,0 +1,102 @@
+URL: https://dicta.org.il/tools?lang=en
+FINAL: https://dicta.org.il/tools?lang=en
+STATUS: 200
+TITLE: DICTA
+FETCHED: 2026-11-15T15:56:09.375Z
+
+Contact Us
+Send
+DICTA
+Analytical tools for Hebrew texts
+עברית
+Contact Us
+HomeOur ToolsAbout DictaPublicationsDevelopers
+Dicta's Tools
+Quick Nakdan
+Automatically add nikud (vocalization) to text as you type.
+Add Nikud
+Nakdan Pro
+Automatic Nakdan with an interface that is adapted for professionals. The Nakdan offers a variety of solutions designed to significantly shorten the time required in adding vocalization
+Add Nikud
+Demo
+Search the Bible
+Search the Bible intuitively, with no need to worry about alternate spellings, prefixes and suffixes, or about multiple meanings of a word. Dicta’s search engine understands what you’re looking for.
+Start search
+Iluy
+The Iluy, created using AI technology, is designed to delve deeply into questions across all areas of Torah study and to offer a broad and diverse database of sources.
+Start asking
+Translator
+Two-way automatic translation of Hebrew-English and English-Hebrew, based on Dicta's generative language model.
+Start translating
+Charuzit
+Find rhymes, assonance, and alliteration for any given Hebrew word. Search results can be filtered by entering semantic words and configuring various grammatical settings.
+Start rhyming
+Remove Nikud
+Remove vocalization and add Vuvs and Yods, producing a normalized modern Hebrew text.
+Remove Nikud
+Dicta Library
+Dicta's library enhances access to rabbinic literature by automatically adding nikud, punctuation, expanding acronyms, and providing references to sources mentioned in the text. Users can choose from a variety of books within the library or, soon, upload their own rabbinic texts and view them in an accessible format in real time.
+Browse
+Citation Finder
+Identify exact or approximate quotations of biblical and talmudic sources in a given text.
+Find citations
+Rabbinic Abbreviation Expander
+Expand abbreviations in Rabbinic texts. An entered text will be displayed including expanded abbreviations. The automated expansions are editable by the user.
+Start expanding
+Talmud Search
+Search the Talmud and Mishnah for words and phrases intuitively, with no need to worry about alternate spellings and multiple meanings. Dicta’s search engine understands what you’re looking for.
+Start search
+Synopsis Builder
+Align two or more versions of the same (arbitrarily long) text, highlighting differences between versions and matching parallel words, including variant spellings and synonyms.
+Build synopsis
+Tiberias: Bible Classification
+Categorize text using stylistic markers
+Classify
+Stylistic Segmentation
+Partition any selected text into distinct stylistic components. For example, a multi-authored text can be automatically decomposed and displayed so that distinct authorial threads are shown in different colors.
+Segment text
+Illuminate
+A new application that enables the automatic transition from printed text to digital text, by identifying the exact source of a text as it appears in an image.
+Google Play
+App Store
+Vocalized Talmud
+The Vocalized Talmud here was made possible thanks to the Dicta Rabbinic Nakdan. All tractates can be viewed with normative vocalized orthography or with the orthography of the standard printings.
+Shas library
+Beta Tools
+Rashi Script OCR
+Convert PDF files written in Rashi script into live text.
+Convert Text
+Talmud Search by Clusters
+Search for words and phrases in the Talmud and Mishnah using AI, organizing the results by topics and halakhic contexts.
+Start
+Index Creator
+Automatically create a detailed index for Jewish texts
+Start
+Analytics
+Query Hebrew texts to receive data such as frequencies, common forms of expression and more.
+Demo Analyze
+Bible Analytics
+Query Bible texts to receive data such as frequencies, common forms of expression and more.
+Demo Analyze
+Parallel Finder
+Find parallels in Hebrew texts.
+Search Parallels
+Stylistic Text Analysis
+View stylistic characteristics and variations of multiple uploaded texts.
+Compare Texts
+Morphology Analysis
+Morphological analysis of Hebrew texts
+Analyze
+(Telegram) Nakdan Bot
+Automatically add nikud to text being sent in Telegram.
+Demo Add Nikud
+Nikud Search
+Find words in Bible and Talmud with identical patterns for a specific word.
+Search Nikud
+Interested in partnering with Dicta? Please contact us.
+DICTA
+Analytical tools for Hebrew texts
+Terms of Service
+עב
+Contact Us
+Send

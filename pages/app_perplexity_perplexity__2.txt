@@ -1,0 +1,324 @@
+URL: https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you
+FINAL: https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you
+STATUS: 200
+TITLE: Which Perplexity Subscription Plan is right for you? - Perplexity Help Center
+FETCHED: 2026-11-15T15:56:01.093Z
+
+Which Perplexity Subscription Plan is right for you? - Perplexity Help Center
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Assistant
+Responses are generated using AI and may contain mistakes.
+Perplexity Help Center home page English
+Help Center
+Perplexity
+Enterprise
+Computer
+Perplexity API
+Contact support
+Contact support
+Search...
+Search...
+Navigation
+Subscription Plans & Billing
+Which Perplexity Subscription Plan is right for you?
+Home
+Overview
+Getting Started
+Perplexity Enterprise
+Computer
+Teammates
+Desktop App
+Features
+AI Models & Content Generation
+Subscription Plans & Billing
+What is Perplexity Pro?
+Perplexity Max
+Which Perplexity Subscription Plan is right for you?
+Billing FAQ for Pro Plan Subscribers
+How to transfer your subscription
+Billing for Android Subscriptions
+Billing for iOS Subscriptions
+Canceling a Subscription
+Refunds
+Instant Buy + Buy with PayPal
+What is Instant Buy?
+Paying in Local Currency
+How credits work on Perplexity
+Why is my subscription Paused?
+Why can’t I see my Pro status?
+What is Education Pro?
+Account & Sign-In
+Privacy & Data
+Connectors & Integrations
+Premium Data Sources
+Comet
+Mobile Apps
+Perplexity API
+Promotions & Partnerships
+Troubleshooting & Support
+On this page
+Back to top What Perplexity plans are available? Individual
+Enterprise
+API (Individual and Enterprise)
+What do I get with the Free (Standard) plan?
+What does Perplexity Pro (Individual) offer?
+What does Education Pro offer?
+What does Perplexity Max (Individual) include?
+What does Enterprise Pro include?
+What does Enterprise Max offer?
+What is the Perplexity API Platform for?
+How do the plans compare?
+How do I choose the right plan?
+Frequently asked questions
+Trial and promotional subscriptions: payment method required Overall requirements
+New users vs. existing users
+Where notifications appear
+How do I update my payment information?
+Need more help?
+Subscription Plans & Billing
+Which Perplexity Subscription Plan is right for you?
+Copy page Copy page
+Compare Perplexity subscription plans: the free Standard tier, Perplexity Pro, Max, and Education Pro, plus Enterprise and API Platform options.
+Copy page Copy page
+Choosing the right Perplexity plan depends on your usage needs, team size, and the features you require.
+What Perplexity plans are available?
+Individual
+Standard (Free)
+Perplexity Pro
+Perplexity Max
+Education Pro
+($10/mo with verification from SheerID).
+Enterprise
+Enterprise Pro
+Enterprise Max
+API (Individual and Enterprise)
+API Platform
+What do I get with the Free (Standard) plan?
+Search history access
+Practically unlimited basic searches
+Very limited amount of Pro Searches
+Perplexity picks the best model for your query
+Basic file uploads (limited)
+No access to advanced AI models, image generation, or premium support.
+What does Perplexity Pro (Individual) offer?
+Extended access to Pro Search
+A limited number of Create files and apps queries every 30 days
+Access to advanced AI models. For the full list, see What advanced AI models are included in my subscription?
+Image and video generation
+Increased rate limits for file and attachment uploads and analysis
+Exclusive support channels
+Up to 50 file uploads per project
+Best for: Anyone who wants the latest AI productivity and research tools.
+What does Education Pro offer?
+Education Pro is offered to verified students and educators at a discount. It includes everything in Pro — access to Perplexity Computer, access to Learn Mode , unlimited Pro Searches, file and image uploads, access to premium models, and more — plus education-specific tips and nudges.
+Best for: Students or faculty who are looking to supercharge their teaching, learning, and maximize proven study methods for long-term understanding.
+What does Perplexity Max (Individual) include?
+Max includes everything in the Pro plan , plus:
+Highest level of access to the full suite of advanced AI models: Get faster access to the latest models from OpenAI, Anthropic, and others in Perplexity Research, and create files and apps with minimal limits on volume or frequency.
+Extended limits for Create files and apps queries: Create as many reports or projects as you need using advanced tools to create dashboards, spreadsheets, presentations, and web applications.
+Early access to the newest products: Try the latest features and products before they’re available to everyone else.
+Brain (Research Preview): Max subscribers using Perplexity Computer get access to Brain , a self-improving memory system that builds a working model of your projects, people, and files so Computer can act on what you’ve been doing. Free during the current preview period.
+Priority support: Max subscribers receive the highest level of support, with dedicated infrastructure and faster response times.
+Annual billing for Max is only available on perplexity.ai .
+Best for: Users who need advanced access to Perplexity’s most powerful research features and early access to new features and products.
+What does Enterprise Pro include?
+All Pro features, plus:
+Trust Center access and strict data privacy (data never used for training)
+Per-seat pricing (starts at $40/month or $400/year per seat)
+Advanced seat management for organizations
+Internal knowledge search through shared Projects and centrally governed File Connectors
+Increased daily file uploads (with organization-level controls)
+Dedicated support
+Administrators manage billing and account access
+Projects for team collaboration, custom knowledge hubs, and internal file search.
+Best for: Businesses and organizations needing robust collaboration, security, and administrator controls.
+What does Enterprise Max offer?
+All Enterprise Pro features, plus:
+Create more files and apps: Generate the reports or projects you need with extended rate limits for advanced tools to build dashboards, spreadsheets, presentations, and web applications.
+More Research queries: Generate comprehensive reports on complex topics, using autonomous, multi-step analysis.
+Enhanced video generation: Enterprise Max users can generate 15 videos per month. Each video is 8 seconds long, includes audio, and is in landscape (16:9) format.
+Advanced models in Perplexity Search: Enterprise Max users get the highest level of access to advanced models like GPT-6 Astra and Claude Opus 5.5 , with higher usage limits. This applies only within Perplexity on the web and not to programmatic access through the API , which is billed separately.
+Greater file limits: Your personal repository (My Files) holds up to 10,000 files.
+Premium security features: No seat minimum for organization-wide access to SCIM , Audit Logs , configurable Data Retention , and Insights dashboard if an organization has at least one Enterprise Max user.
+Early access to new features: Try the latest features and products before they’re available to everyone else.
+Priority support: Enterprise Max subscribers get faster support response times.
+Best for: Businesses and organizations needing advanced data security, powerful collaboration tools, and the highest access to the latest AI models, Create files and apps and Research search modes, Comet Assistant, and Perplexity’s newest features.
+What is the Perplexity API Platform for?
+Designed for developers and businesses integrating Perplexity’s AI into their own products. Get started with the Agent API Quickstart .
+Pay-as-you-go pricing: Buy credits or set up auto top-off
+No access to advanced models or Pro features within the web/app interface
+No complimentary API credits
+No data logging or storage
+Access to API projects for usage tracking and sharing API keys.
+Best for: Developers needing API access for custom applications or automation.
+How do the plans compare?
+Feature
+Free
+Pro
+Education Pro
+Max
+Pro Searches
+3/day
+Weekly limits (average use)
+Weekly limits (average use)
+Weekly limits (advanced use)
+Research Queries
+1/month
+Monthly limits (average use)
+Monthly limits (average use)
+Monthly limits (advanced use)
+Browser Agent (Comet Assistant) Queries
+No
+Monthly limits (average use)
+Monthly limits (average use)
+Monthly limits (advanced use)
+Advanced AI Models
+No
+Yes
+Yes
+Yes
+Image Generation
+No
+Yes
+Yes
+Yes
+File and App Creation
+No
+Monthly limits (average use)
+Monthly limits (average use)
+Monthly limits (advanced use)
+File Uploads (sessions)*
+Limited
+Weekly limits (average use)
+Weekly limits (average use)
+Weekly limits (advanced use)
+Organization File Repository
+No
+No
+No
+No
+Seat Management
+No
+No
+No
+No
+Support
+Basic
+Priority
+Priority
+Dedicated
+Data Privacy
+Standard
+Opt-out AI training available
+Opt-out AI training available
+Opt-out AI training available
+Education/NPO Discounts
+No
+No
+Yes (auto-applied)
+No
+Table 1 — Individual plan features compared.
+*For persistent files in Projects and personal repositories, additional limits apply.
+Feature
+Enterprise Pro
+Enterprise Max
+Pro Searches
+Extended limits (400/week)
+Highest limits (4000/week)
+Research Queries
+Extended limits (50/month)
+Highest limits (500/month)
+Browser Agent (Comet Assistant) Queries
+Extended limits (80/month)
+Highest limits (800/month)
+Advanced AI Models
+Yes
+Yes
+Image Generation
+Yes
+Yes
+File and App Creation
+Extended limits (50/month)
+Highest limits (500/month)
+File Uploads (sessions)*
+Extended limits (100/week)
+Highest limits (1000/week)
+Organization File Repository
+Being retired
+Being retired
+Seat Management
+Yes — can be combined with Enterprise Max seats
+Yes — can be combined with Enterprise Pro seats
+Support
+Dedicated
+Dedicated
+Data Privacy
+Data never used for model training
+Data never used for model training
+Education/NPO Discounts
+Yes
+Yes
+Table 2 — Enterprise plan features compared.
+*For persistent files in Projects and personal repositories, additional limits apply.
+The Organization File Repository is being retired on October 1, 2026 and is not available as a new Enterprise entitlement. Existing customers should download and move their organization files before the deadline. Files remaining after that date will be deleted.
+How do I choose the right plan?
+Choose Free if:
+You’re a light user, just exploring, or need occasional answers.
+Choose Pro if:
+You want advanced AI, frequent research, file analysis, or image generation.
+Choose Education Pro if:
+You’re a current student or educator looking for ways to make learning more engaging and effective, and need extended access to Perplexity Academic .
+Choose Max if:
+You’re a power user who often does deep research on topics and wants to maximize the Create files and apps feature.
+Choose Enterprise Pro if:
+You’re a business or organization needing collaboration, security, and administrator controls.
+Choose Enterprise Max if:
+You’re a business or organization requiring Enterprise-grade security, control and collaboration tools, and would benefit from Perplexity’s most advanced plan, including the highest access to Create files and apps and Research search modes.
+Choose the API Platform if:
+You’re a developer integrating Perplexity into your own products.
+Frequently asked questions
+Can I switch plans later?
+Yes. You can upgrade or downgrade your plan at any time in your account settings. For Perplexity Pro, cancel before deleting your account to avoid being charged.
+Is my data private?
+Pro, Education Pro, and Max: You can opt out of data collection in your settings.
+Enterprise Pro and Enterprise Max: Your data is never logged or used for training. Administrators can enforce strict privacy and organization-level controls.
+API Platform: Your data is never logged or used for training.
+Are there discounts for students, educational institutions, nonprofits, or government agencies?
+Yes. Perplexity offers a 25% discount on Enterprise Pro and Enterprise Max seats for eligible educational institutions (not covered by the standard Student Program), nonprofit organizations, and government agencies. To apply, complete the discount request form using your organization email.
+What support is available?
+Free: Basic Help Center
+Pro, Education Pro, and Max: Priority support through Discord and Help > Contact Support
+Enterprise Pro and Enterprise Max: Dedicated support
+Trial and promotional subscriptions: payment method required
+If you’ve redeemed a trial or promotional subscription (for example, through a partner promotion), a valid payment method is required to activate and maintain your access.
+Overall requirements
+A valid credit or debit card is required for all promotional and trial redemptions.
+No charges are applied during your promotional/trial period.
+Unless you cancel before the trial ends, your subscription will auto-renew at the standard rate for the plan you selected during redemption (monthly or annual).
+New users vs. existing users
+New users are prompted to add a payment method during the sign-up and redemption flow.
+Existing promotional/trial users who receive a payment method prompt must add a credit or debit card within 7 days of the original notification. If no card is added within that window, your account will be downgraded to Perplexity’s free version. Once you add a valid card, your promotional access resumes immediately. Any missed days will not be added back to your trial period.
+Where notifications appear
+Email: You will receive an email notification prompting you to add a payment method.
+In-app: An in-app banner will appear prompting you to add your payment information.
+How do I update my payment information?
+Web (desktop):
+1
+Go to perplexity.ai/settings/account .
+2
+Scroll to the Subscription section.
+3
+Click Manage Plan (or Manage Subscription ).
+4
+Under Billing and Shipping Information , add or update your payment method.
+Do not update your Perplexity payment information through the Google Play Store or Apple App Store. Doing so creates a new, separate subscription and you will be charged. Always update your payment method on the Perplexity website.
+Need more help?
+Contact us via Help > Contact Support . Pro subscribers can access live chat in Settings.
+Last modified on November 12, 2026
+Perplexity Max
+Billing FAQ for Pro Plan Subscribers
+⌘ I
+{"docsConfig":{"theme":"linden","$schema":"https://mintlify.com/docs.json","name":"Perplexity Help Center","description":"Official Perplexity Help Center. Clear answers on getting started, plans and billing, account management, and using Perplexity, Comet, and the API — in 11 languages.","colors":{"primary":"#20808D","light":"#2CA0AB","dark":"#20808D"},"logo":{"light":"https://mintcdn.com/perplexity-help-center/XljILS5hGYCRosm0/help-center/logo/perplexity-lockup-offblack.svg?fit=max\u0026auto=format\u0026n=XljILS5hGYCRosm0\u0026q=85\u0026s=d5e9032316cb9be028212b05bd5f295d","dark":"https://mintcdn.com/perplexity-help-center/egirCgTZ-jAIelGH/help-center/logo/perplexity-lockup-offwhite.svg?fit=max\u0026auto=format\u0026n=egirCgTZ-jAIelGH\u0026q=85\u0026s=eabe2a0ef19ffe7291c76e1c9f783ed8","href":"/help-center/en"},"favicon":"https://mintcdn.com/perplexity-help-center/XljILS5hGYCRosm0/help-center/favicon.png?fit=max\u0026auto=format\u0026n=XljILS5hGYCRosm0\u0026q=85\u0026s=d75e4d8513c632babaf870b3bd564057","background":{"color":{"light":"#FFFFFF","dark":"#121516"}},"navbar":{"links":[{"href":"https://perplexity.ai","label":"Perplexity"},{"href":"https://www.perplexity.ai/enterprise","label":"Enterprise"},{"href":"https://www.perplexity.ai/products/computer","label":"Computer"},{"href":"https://www.perplexity.ai/api-platform","label":"Perplexity API"}],"primary":{"type":"button","label":"Contact support","href":"https://www.perplexity.ai/?support=true#settings/account"}},"footer":{"socials":{}},"seo":{"metatags":{"canonical":"https://www.perplexity.ai","referrer":"strict-origin-when-cross-origin","og:site_name":"Perplexity Help Center","twitter:site":"@perplexity_ai","twitter:card":"summary_large_image","og:type":"website"},"organization":{"name":"Perplexity","legalName":"Perplexity AI, Inc.","url":"https://www.perplexity.ai","logo":"https://www.perplexity.ai/help-center/logo/perplexity-symbol-offblack-512.png","sameAs":["https://x.com/perplexity_ai","https://www.linkedin.com/company/perplexity-ai","https://www.youtube.com/@perplexity_ai"]},"indexing":"all"},"icons":{"library":"lucide"},"styling":{"eyebrows":"section","latex":false},"errors":{"404":{"redirect":false,"title":"Page not found","description":"The page you're looking for doesn't exist or may have been moved."}},"contextual":{"options":["copy","view","assistant","download-pdf"],"display":"header"},"interaction":{"drilldown":false},"metadata":{"timestamp":true},"markdown":{"instructions":"This content comes from the official Perplexity Help Center. Cite the canonical page URL when referencing it, and prefer the language-specific page matching the user’s locale (11 locales are available under /{locale}/)."},"navigation":{"languages":[{"language":"en","default":true,"href":"help-center/en"},{"language":"de","href":"help-center/de"},{"language":"es","href":"help-center/es"},{"language":"fr","href":"help-center/fr"},{"language":"hi","href":"help-center/hi"},{"language":"it","href":"help-center/it"},{"language":"ja","href":"help-center/ja"},{"language":"ko","href":"help-center/ko"},{"language":"pt-BR","href":"help-center/pt-BR"},{"language":"ru","href":"help-center/ru"},{"language":"zh-CN","href":"help-center/zh-CN"}]}},"deployment":{"deploymentMetadataValue":{"subdomain":"perplexity-help-center","hasAudioNarration":false,"actualSubdomain":"perplexity-help-center","customDomains":["www.perplexity.ai"],"gitSource":{"type":"github","owner":"ppl-ai","repo":"help-center-mintlify","deployBranch":"main","contentDirectory":"","isPrivate":true,"mountPath":"","label":""},"feedback":{"thumbs":true,"agentFeedback":true},"entitlements":{"AI_CHAT":{"status":"ENABLED"},"REMOVE_BRANDING":{"status":"ENABLED"},"CONTEXTUAL_FEEDBACK":{"status":"ENABLED"},"CODE_SNIPPET_FEEDBACK":{"status":"ENABLED"},"WEB_MCP":{"status":"ENABLED"},"NARRATION":{"status":"ENABLED"}},"buildId":"6af93248d49d28f986f3cb96","clientVersion":"0.0.4143","searchFilterCounts":[{"language":"de","tag":"Home","count":292},{"language":"en","tag":"Home","count":292},{"language":"es","tag":"Home","count":292},{"language":"fr","tag":"Home","count":292},{"language":"hi","tag":"Home","count":292},{"language":"it","tag":"Home","count":292},{"language":"ja","tag":"Home","count":292},{"language":"ko","tag":"Home","count":292},{"language":"pt-BR","tag":"Home","count":292},{"language":"ru","tag":"Home","count":292},{"language":"zh-CN","tag":"Home","count":292},{"language":"de","tag":"Hilfe-Center","count":233},{"language":"en","tag":"Help Center","count":233},{"language":"es","tag":"Centro de ayuda","count":233},{"language":"fr","tag":"Centre d’aide","count":233},{"language":"hi","tag":"सहायता केंद्र","count":233},{"language":"it","tag":"Centro assistenza","count":233},{"language":"ja","tag":"ヘルプセンター","count":233},{"language":"ko","tag":"도움말 센터","count":233},{"language":"pt-BR","tag":"Central de Ajuda","count":233},{"language":"ru","tag":"Справочный центр","count":233},{"language":"zh-CN","tag":"帮助中心","count":233},{"language":"de","tag":"Comet","count":56},{"language":"en","tag":"Comet","count":56},{"language":"es","tag":"Comet","count":56},{"language":"fr","tag":"Comet","count":56},{"language":"hi","tag":"Comet","count":56},{"language":"it","tag":"Comet","count":56},{"language":"ja","tag":"Comet","count":56},{"language":"ko","tag":"Comet","count":56},{"language":"pt-BR","tag":"Comet","count":56},{"language":"ru","tag":"Comet","count":56},{"language":"zh-CN","tag":"Comet","count":56},{"language":"de","tag":"Perplexity Enterprise","count":43},{"language":"en","tag":"Perplexity Enterprise","count":43},{"language":"es","tag":"Perplexity Empresarial","count":43},{"language":"fr","tag":"Perplexity Entreprise","count":43},{"language":"hi","tag":"Perplexity Enterprise","count":43},{"language":"it","tag":"Perplexity Enterprise","count":43},{"language":"ja","tag":"Perplexity Enterprise","count":43},{"language":"ko","tag":"Perplexity 엔터프라이즈","count":43},{"language":"pt-BR","tag":"Perplexity Empresarial","count":43},{"language":"ru","tag":"Perplexity Enterprise","count":43},{"language":"zh-CN","tag":"Perplexity 企业版","count":43},{"language":"de","tag":"Konnektoren \u0026 Integrationen","count":26},{"language":"en","tag":"Connectors \u0026 Integrations","count":26},{"language":"es","tag":"Conectores e integraciones","count":26},{"language":"fr","tag":"Connecteurs et intégrations","count":26},{"language":"hi","tag":"कनेक्टर और इंटीग्रेशन","count":26},{"language":"it","tag":"Connettori e integrazioni","count":26},{"language":"ja","tag":"コネクタと連携","count":26},{"language":"ko","tag":"커넥터 및 연동","count":26},{"language":"pt-BR","tag":"Conectores e integrações","count":26},{"language":"ru","tag":"Коннекторы и интеграции","count":26},{"language":"zh-CN","tag":"连接器与集成","count":26},{"language":"de","tag":"Funktionen","count":20},{"language":"de","tag":"Computer","count":20},{"language":"en","tag":"Features","count":20},{"language":"en","tag":"Computer","count":20},{"language":"es","tag":"Funciones","count":20},{"language":"es","tag":"Computer","count":20},{"language":"fr","tag":"Fonctionnalités","count":20},{"language":"fr","tag":"Computer","count":20},{"language":"hi","tag":"सुविधाएँ","count":20},{"language":"hi","tag":"Computer","count":20},{"language":"it","tag":"Funzionalità","count":20},{"language":"it","tag":"Computer","count":20},{"language":"ja","tag":"機能","count":20},{"language":"ja","tag":"Computer","count":20},{"language":"ko","tag":"기능","count":20},{"language":"ko","tag":"Computer","count":20},{"language":"pt-BR","tag":"Recursos","count":20},{"language":"pt-BR","tag":"Computer","count":20},{"language":"ru","tag":"Функции","count":20},{"language":"ru","tag":"Computer","count":20},{"language":"zh-CN","tag":"功能","count":20},{"language":"zh-CN","tag":"Computer","count":20},{"language":"de","tag":"Fehlerbehebung \u0026 Support","count":19},{"language":"en","tag":"Troubleshooting \u0026 Support","count":19},{"language":"fr","tag":"Dépannage et assistance","count":19},{"language":"hi","tag":"समस्या निवारण और सहायता","count":19},{"language":"it","tag":"Risoluzione dei problemi e supporto","count":19},{"language":"ja","tag":"トラブルシューティングとサポート","count":19},{"language":"ko","tag":"문제 해결 및 지원","count":19},{"language":"pt-BR","tag":"Solução de problemas e suporte","count":19},{"language":"ru","tag":"Устранение неполадок и поддержка","count":19},{"language":"zh-CN","tag":"故障排除与支持","count":19},{"language":"de","tag":"Abonnementpläne \u0026 Abrechnung","count":16},{"language":"en","tag":"Subscription Plans \u0026 Billing","count":16},{"language":"es","tag":"Planes de suscripción y facturación","count":16},{"language":"fr","tag":"Abonnements et facturation","count":16},{"language":"hi","tag":"सब्सक्रिप्शन प्लान और बिलिंग","count":16},{"language":"it","tag":"Piani di abbonamento e fatturazione","count":16},{"language":"ja","tag":"サブスクリプションプランと請求","count":16},{"language":"ko","tag":"구독 요금제 및 결제","count":16},{"language":"pt-BR","tag":"Planos de assinatura e cobrança","count":16},{"language":"ru","tag":"Планы подписки и оплата","count":16},{"language":"zh-CN","tag":"订阅方案与账单","count":16},{"language":"en","tag":"Privacy \u0026 Data","count":14},{"language":"es","tag":"Privacidad y datos","count":14},{"language":"fr","tag":"Confidentialité et données","count":14},{"language":"it","tag":"Privacy e dati","count":14},{"language":"ja","tag":"プライバシーとデータ","count":14},{"language":"ko","tag":"개인정보 보호 및 데이터","count":14},{"language":"ru","tag":"Конфиденциальность и данные","count":14},{"language":"zh-CN","tag":"隐私与数据","count":14},{"language":"de","tag":"Enterprise-Funktionen","count":13},{"language":"es","tag":"Funciones empresariales","count":13},{"language":"hi","tag":"एंटरप्राइज़ सुविधाएँ","count":13},{"language":"pt-BR","tag":"Recursos corporativos","count":13}],"searchSettings":{"showContentSnippets":true,"maxResults":5}},"assistantConfig":{"enableAskAiButton":false,"enableStarterQuestions":true,"enableContextualStarterQuestions":true,"enableAskAiSearchBar":true,"deflection":{"enabled":true,"type":"link","email":"support@perplexity.ai","url":"https://www.perplexity.ai/?support=true#settings/account"}},"basePath":"/help-center","hasChatPermissions":true,"hasWebMcpPermissions":true,"toggles":[{"name":"kill-isr","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"custom-rbac-roles","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"agent-mintlify-slack","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"agent-integrations-settings","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"rbac-expansion","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automations-pr-grouping","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"custom-prefix","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"analytics-v7","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"user-flows-analytics","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"no-publish-flow","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-onboarding","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"snapshot-serving-live","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"stripTemperatureMiddleware","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"support-platform-pylon-zendesk","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"snapshot-serving","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"instant-rollback","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"granular-notifications-server","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"granular-notifications","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automations-fable","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"fixed-ai-action-pricing","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automation-resolve-merge-conflict","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"scoped-publishing","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"mintql","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"page-level-analytics","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"editor-version-history-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"billing-page-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"full-page-search","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workspace-projects","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"assistant-v5","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"fork-pr-previews","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"revalidation-jwt","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-sso-scim","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"hobby-abuse-scan","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"dashboard-inbox","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-signup","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"turbopuffer-dual-write","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-enabled","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"approve-review-flow","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"editor-metadata","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"sso-setup-deadline-banner","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"turbopuffer-serve","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"live-agents","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"llms-txt-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false}],"privacy":{"consentBanner":{"enabled":true}},"googleFontsInlined":false},"customCss":[{"filePath":"help-center/styles.css","href":"/_mintlify/custom/perplexity-help-center/08af1d9ac86e8e9c/help-center/styles.css"}],"page":{"pagePath":"help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you","slug":"/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you","pageMetadata":{"title":"Which Perplexity Subscription Plan is right for you?","description":"Compare Perplexity subscription plans: the free Standard tier, Perplexity Pro, Max, and Education Pro, plus Enterprise and API Platform options.","keywords":["11187416"],"href":"/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"},"description":{"compiledSource":"\"use strict\";\nconst {jsx: _jsx} = arguments[0];\nconst {useMDXComponents: _provideComponents} = arguments[0];\nfunction _createMdxContent(props) {\n const _components = {\n p: \"p\",\n ..._provideComponents(),\n ...props.components\n };\n return _jsx(_components.p, {\n children: \"Compare Perplexity subscription plans: the free Standard tier, Perplexity Pro, Max, and Education Pro, plus Enterprise and API Platform options.\"\n });\n}\nfunction MDXContent(props = {}) {\n const {wrapper: MDXLayout} = {\n ..._provideComponents(),\n ...props.components\n };\n return MDXLayout ? _jsx(MDXLayout, {\n ...props,\n children: _jsx(_createMdxContent, {\n ...props\n })\n }) : _createMdxContent(props);\n}\nreturn {\n default: MDXContent\n};\n","frontmatter":{},"scope":{}},"pageType":"default","mdx":{"mdxSource":{"compiledSource":"\"use strict\";const{Fragment:_Fragment,jsx:_jsx,jsxs:_jsxs}=arguments[0];const{useMDXComponents:_provideComponents}=arguments[0];function _createMdxContent(props){const _components={a:`a`,p:`p`,..._provideComponents(),...props.components},{Accordion,AccordionGroup,Card,CardGroup,Heading,Info,Step,Steps,Warning}=_components;if(!Accordion)_missingMdxReference(`Accordion`,true);if(!AccordionGroup)_missingMdxReference(`AccordionGroup`,true);if(!Card)_missingMdxReference(`Card`,true);if(!CardGroup)_missingMdxReference(`CardGroup`,true);if(!Heading)_missingMdxReference(`Heading`,true);if(!Info)_missingMdxReference(`Info`,true);if(!Step)_missingMdxReference(`Step`,true);if(!Steps)_missingMdxReference(`Steps`,true);if(!Warning)_missingMdxReference(`Warning`,true);return _jsxs(_Fragment,{children:[_jsx(`p`,{children:`Choosing the right Perplexity plan depends on your usage needs, team size, and the features you require.`}),`\n`,_jsx(Heading,{level:`2`,id:`h_3324ea66e1`,children:`What Perplexity plans are available?`}),`\n`,_jsx(Heading,{level:`3`,id:`h_04035877a4`,children:`Individual`}),`\n`,_jsxs(CardGroup,{cols:2,children:[_jsx(Card,{title:`Standard (Free)`}),_jsx(Card,{title:`Perplexity Pro`,href:`/help-center/en/articles/10352901-what-is-perplexity-pro`}),_jsx(Card,{title:`Perplexity Max`,href:`/help-center/en/articles/11680686-perplexity-max`}),_jsx(Card,{title:`Education Pro`,href:`/help-center/en/articles/12590157-what-is-education-pro`,children:_jsx(_components.p,{children:`($10/mo with verification from SheerID).`})})]}),`\n`,_jsx(Heading,{level:`3`,id:`h_33135138b7`,children:`Enterprise`}),`\n`,_jsxs(CardGroup,{cols:2,children:[_jsx(Card,{title:`Enterprise Pro`,href:`/help-center/en/articles/10352973-what-is-enterprise-pro`}),_jsx(Card,{title:`Enterprise Max`,href:`/help-center/en/articles/12310544-what-is-enterprise-max`})]}),`\n`,_jsx(Heading,{level:`3`,id:`h_8c2082205e`,children:`API (Individual and Enterprise)`}),`\n`,_jsx(CardGroup,{cols:2,children:_jsx(Card,{title:`API Platform`,href:`/help-center/en/articles/10354842-what-is-the-perplexity-api-platform`})}),`\n`,_jsx(Heading,{level:`2`,id:`h_603a3641b9`,children:`What do I get with the Free (Standard) plan?`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsx(`p`,{children:`Search history access`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Practically unlimited basic searches`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Very limited amount of Pro Searches`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Perplexity picks the best model for your query`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Basic file uploads (limited)`})}),_jsx(`li`,{children:_jsx(`p`,{children:`No access to advanced AI models, image generation, or premium support.`})})]}),`\n`,_jsx(Heading,{level:`2`,id:`h_c3de98f47d`,children:`What does Perplexity Pro (Individual) offer?`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsx(`p`,{children:`Extended access to Pro Search`})}),_jsx(`li`,{children:_jsx(`p`,{children:`A limited number of Create files and apps queries every 30 days`})}),_jsx(`li`,{children:_jsxs(`p`,{children:[`Access to advanced AI models. For the full list, see `,_jsx(_components.a,{href:`/help-center/en/articles/10354919-what-advanced-ai-models-are-included-in-my-subscription`,children:`What advanced AI models are included in my subscription?`})]})}),_jsx(`li`,{children:_jsx(`p`,{children:`Image and video generation`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Increased rate limits for file and attachment uploads and analysis`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Exclusive support channels`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Up to 50 file uploads per project`})})]}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Anyone who wants the latest AI productivity and research tools.`]}),`\n`,_jsx(Heading,{level:`2`,id:`h_abf158798b`,children:`What does Education Pro offer?`}),`\n`,_jsxs(`p`,{children:[`Education Pro is offered to verified students and educators at a discount. It includes everything in `,_jsx(_components.a,{href:`/help-center/en/articles/10352901-what-is-perplexity-pro`,children:`Pro`}),` — access to Perplexity Computer, access to `,_jsx(_components.a,{href:`/help-center/en/articles/12120542-what-is-learn-mode`,children:`Learn Mode`}),`, unlimited Pro Searches, file and image uploads, access to premium models, and more — plus education-specific tips and nudges.`]}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Students or faculty who are looking to supercharge their teaching, learning, and maximize proven study methods for long-term understanding.`]}),`\n`,_jsx(Heading,{level:`2`,id:`h_edbd356736`,children:`What does Perplexity Max (Individual) include?`}),`\n`,_jsxs(`p`,{children:[`Max includes everything in the `,_jsx(_components.a,{href:`/help-center/en/articles/10352901-what-is-perplexity-pro`,children:`Pro plan`}),`, plus:`]}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Highest level of access to the full suite of advanced AI models:`}),` Get faster access to the latest models from OpenAI, Anthropic, and others in Perplexity Research, and create files and apps with minimal limits on volume or frequency.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Extended limits for Create files and apps queries:`}),` Create as many reports or projects as you need using advanced tools to create dashboards, spreadsheets, presentations, and web applications.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Early access to the newest products:`}),` Try the latest features and products before they’re available to everyone else.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Brain (Research Preview):`}),` Max subscribers using Perplexity Computer get access to `,_jsx(_components.a,{href:`/help-center/en/articles/19700001-what-is-brain`,children:`Brain`}),`, a self-improving memory system that builds a working model of your projects, people, and files so Computer can act on what you’ve been doing. Free during the current preview period.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Priority support:`}),` Max subscribers receive the highest level of support, with dedicated infrastructure and faster response times.`]})})]}),`\n`,_jsxs(`p`,{children:[`Annual billing for Max is only available on `,_jsx(`a`,{href:`https://www.perplexity.ai/`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`perplexity.ai`}),`.`]}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Users who need advanced access to Perplexity’s most powerful research features and early access to new features and products.`]}),`\n`,_jsx(Heading,{level:`2`,id:`h_ed7f256908`,children:`What does Enterprise Pro include?`}),`\n`,_jsx(`ul`,{children:_jsxs(`li`,{children:[_jsx(`p`,{children:`All Pro features, plus:`}),_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsx(`p`,{children:`Trust Center access and strict data privacy (data never used for training)`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Per-seat pricing (starts at $40/month or $400/year per seat)`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Advanced seat management for organizations`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Internal knowledge search through shared Projects and centrally governed File Connectors`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Increased daily file uploads (with organization-level controls)`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Dedicated support`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Administrators manage billing and account access`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Projects for team collaboration, custom knowledge hubs, and internal file search.`})})]})]})}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Businesses and organizations needing robust collaboration, security, and administrator controls.`]}),`\n`,_jsx(Heading,{level:`2`,id:`h_c313a2200d`,children:`What does Enterprise Max offer?`}),`\n`,_jsx(`p`,{children:`All Enterprise Pro features, plus:`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Create more files and apps:`}),` Generate the reports or projects you need with extended rate limits for advanced tools to build dashboards, spreadsheets, presentations, and web applications.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`More Research queries:`}),` Generate comprehensive reports on complex topics, using autonomous, multi-step analysis.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Enhanced video generation:`}),` Enterprise Max users can generate 15 videos per month. Each video is 8 seconds long, includes audio, and is in landscape (16:9) format.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Advanced models in Perplexity Search:`}),` Enterprise Max users get the highest level of access to advanced models like `,_jsx(`span`,{\"data-model\":`openai-max`,children:`GPT-6 Astra`}),` and `,_jsx(`span`,{\"data-model\":`anthropic-max`,children:`Claude Opus 5.5`}),`, with higher usage limits. This applies only within Perplexity on the web and not to programmatic access through the `,_jsx(_components.a,{href:`/help-center/en/articles/10354847-api-payment-and-billing`,children:`API`}),`, which is billed separately.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Greater file limits:`}),` Your personal repository (My Files) holds up to 10,000 files.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Premium security features:`}),` No seat minimum for organization-wide access to `,_jsx(_components.a,{href:`/help-center/en/articles/11652604-scim-based-user-account-management`,children:`SCIM`}),`, `,_jsx(_components.a,{href:`/help-center/en/articles/11652747-audit-logs`,children:`Audit Logs`}),`, configurable `,_jsx(_components.a,{href:`/help-center/en/articles/11652701-data-retention-for-enterprise`,children:`Data Retention`}),`, and `,_jsx(_components.a,{href:`/help-center/en/articles/11844346-enterprise-usage-analytics`,children:`Insights`}),` dashboard if an organization has at least one Enterprise Max user.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Early access to new features:`}),` Try the latest features and products before they’re available to everyone else.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Priority support:`}),` Enterprise Max subscribers get faster support response times.`]})})]}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Businesses and organizations needing advanced data security, powerful collaboration tools, and the highest access to the latest AI models, Create files and apps and Research search modes, Comet Assistant, and Perplexity’s newest features.`]}),`\n`,_jsxs(Heading,{level:`2`,id:`h_959283f0f4`,children:[`What is the Perplexity `,_jsx(`a`,{href:`https://www.perplexity.ai/api-platform`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`API Platform`}),` for?`]}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[`Designed for developers and businesses integrating Perplexity’s AI into their own products. Get started with the `,_jsx(`a`,{href:`https://docs.perplexity.ai/docs/agent-api/quickstart`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`Agent API Quickstart`}),`.`]})}),_jsx(`li`,{children:_jsx(`p`,{children:`Pay-as-you-go pricing: Buy credits or set up auto top-off`})}),_jsx(`li`,{children:_jsx(`p`,{children:`No access to advanced models or Pro features within the web/app interface`})}),_jsx(`li`,{children:_jsx(`p`,{children:`No complimentary API credits`})}),_jsx(`li`,{children:_jsx(`p`,{children:`No data logging or storage`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Access to API projects for usage tracking and sharing API keys.`})})]}),`\n`,_jsxs(`p`,{children:[_jsx(`b`,{children:`Best for:`}),` Developers needing API access for custom applications or automation.`]}),`\n`,_jsx(Heading,{level:`2`,id:`h_33c5d4e4d7`,children:`How do the plans compare?`}),`\n`,_jsxs(`table`,{children:[_jsx(`thead`,{children:_jsxs(`tr`,{children:[_jsx(`th`,{children:`Feature`}),_jsx(`th`,{children:`Free`}),_jsx(`th`,{children:`Pro`}),_jsx(`th`,{children:`Education Pro`}),_jsx(`th`,{children:`Max`})]})}),_jsxs(`tbody`,{children:[_jsxs(`tr`,{children:[_jsx(`td`,{children:`Pro Searches`}),_jsx(`td`,{children:`3/day`}),_jsx(`td`,{children:`Weekly limits (average use)`}),_jsx(`td`,{children:`Weekly limits (average use)`}),_jsx(`td`,{children:`Weekly limits (advanced use)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Research Queries`}),_jsx(`td`,{children:`1/month`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (advanced use)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Browser Agent (Comet Assistant) Queries`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (advanced use)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Advanced AI Models`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Image Generation`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`File and App Creation`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (average use)`}),_jsx(`td`,{children:`Monthly limits (advanced use)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`File Uploads (sessions)*`}),_jsx(`td`,{children:`Limited`}),_jsx(`td`,{children:`Weekly limits (average use)`}),_jsx(`td`,{children:`Weekly limits (average use)`}),_jsx(`td`,{children:`Weekly limits (advanced use)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Organization File Repository`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Seat Management`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Support`}),_jsx(`td`,{children:`Basic`}),_jsx(`td`,{children:`Priority`}),_jsx(`td`,{children:`Priority`}),_jsx(`td`,{children:`Dedicated`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Data Privacy`}),_jsx(`td`,{children:`Standard`}),_jsx(`td`,{children:`Opt-out AI training available`}),_jsx(`td`,{children:`Opt-out AI training available`}),_jsx(`td`,{children:`Opt-out AI training available`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Education/NPO Discounts`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`No`}),_jsx(`td`,{children:`Yes (auto-applied)`}),_jsx(`td`,{children:`No`})]})]})]}),`\n`,_jsx(`p`,{children:_jsx(`i`,{children:`Table 1 — Individual plan features compared.`})}),`\n`,_jsx(`p`,{children:_jsx(`i`,{children:`*For persistent files in Projects and personal repositories, additional limits apply.`})}),`\n`,_jsxs(`table`,{children:[_jsx(`thead`,{children:_jsxs(`tr`,{children:[_jsx(`th`,{children:`Feature`}),_jsx(`th`,{children:`Enterprise Pro`}),_jsx(`th`,{children:`Enterprise Max`})]})}),_jsxs(`tbody`,{children:[_jsxs(`tr`,{children:[_jsx(`td`,{children:`Pro Searches`}),_jsx(`td`,{children:`Extended limits (400/week)`}),_jsx(`td`,{children:`Highest limits (4000/week)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Research Queries`}),_jsx(`td`,{children:`Extended limits (50/month)`}),_jsx(`td`,{children:`Highest limits (500/month)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Browser Agent (Comet Assistant) Queries`}),_jsx(`td`,{children:`Extended limits (80/month)`}),_jsx(`td`,{children:`Highest limits (800/month)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Advanced AI Models`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Image Generation`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`File and App Creation`}),_jsx(`td`,{children:`Extended limits (50/month)`}),_jsx(`td`,{children:`Highest limits (500/month)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`File Uploads (sessions)*`}),_jsx(`td`,{children:`Extended limits (100/week)`}),_jsx(`td`,{children:`Highest limits (1000/week)`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Organization File Repository`}),_jsx(`td`,{children:`Being retired`}),_jsx(`td`,{children:`Being retired`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Seat Management`}),_jsx(`td`,{children:`Yes — can be combined with Enterprise Max seats`}),_jsx(`td`,{children:`Yes — can be combined with Enterprise Pro seats`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Support`}),_jsx(`td`,{children:`Dedicated`}),_jsx(`td`,{children:`Dedicated`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Data Privacy`}),_jsx(`td`,{children:`Data never used for model training`}),_jsx(`td`,{children:`Data never used for model training`})]}),_jsxs(`tr`,{children:[_jsx(`td`,{children:`Education/NPO Discounts`}),_jsx(`td`,{children:`Yes`}),_jsx(`td`,{children:`Yes`})]})]})]}),`\n`,_jsx(`p`,{children:_jsx(`i`,{children:`Table 2 — Enterprise plan features compared.`})}),`\n`,_jsx(`p`,{children:_jsx(`i`,{children:`*For persistent files in Projects and personal repositories, additional limits apply.`})}),`\n`,_jsx(Info,{children:_jsxs(`p`,{children:[`The Organization File Repository is being retired on October 1, 2026 and is not available as a new Enterprise entitlement. Existing customers should `,_jsx(_components.a,{href:`/help-center/en/articles/20260902-download-and-move-your-organization-files`,children:`download and move their organization files`}),` before the deadline. Files remaining after that date will be deleted.`]})}),`\n`,_jsx(Heading,{level:`2`,id:`h_1978f5c18f`,children:`How do I choose the right plan?`}),`\n`,_jsxs(CardGroup,{cols:2,children:[_jsx(Card,{title:`Choose Free if:`,children:_jsx(`p`,{children:`You’re a light user, just exploring, or need occasional answers.`})}),_jsx(Card,{title:`Choose Pro if:`,children:_jsx(`p`,{children:`You want advanced AI, frequent research, file analysis, or image generation.`})}),_jsx(Card,{title:`Choose Education Pro if:`,children:_jsxs(`p`,{children:[`You’re a current student or educator looking for ways to make learning more engaging and effective, and need extended access to `,_jsx(`a`,{href:`https://www.perplexity.ai/academic`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`Perplexity Academic`}),`.`]})}),_jsx(Card,{title:`Choose Max if:`,children:_jsx(`p`,{children:`You’re a power user who often does deep research on topics and wants to maximize the Create files and apps feature.`})}),_jsx(Card,{title:`Choose Enterprise Pro if:`,children:_jsx(`p`,{children:`You’re a business or organization needing collaboration, security, and administrator controls.`})}),_jsx(Card,{title:`Choose Enterprise Max if:`,children:_jsx(`p`,{children:`You’re a business or organization requiring Enterprise-grade security, control and collaboration tools, and would benefit from Perplexity’s most advanced plan, including the highest access to Create files and apps and Research search modes.`})}),_jsx(Card,{title:`Choose the API Platform if:`,children:_jsx(`p`,{children:`You’re a developer integrating Perplexity into your own products.`})})]}),`\n`,_jsx(Heading,{level:`2`,id:`h_4b2b8780c7`,children:`Frequently asked questions`}),`\n`,_jsxs(AccordionGroup,{children:[_jsx(Accordion,{title:`Can I switch plans later?`,id:`can-i-switch-plans-later`,children:_jsx(`p`,{children:`Yes. You can upgrade or downgrade your plan at any time in your account settings. For Perplexity Pro, cancel before deleting your account to avoid being charged.`})}),_jsx(Accordion,{title:`Is my data private?`,id:`is-my-data-private`,children:_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Pro, Education Pro, and Max:`}),` You can opt out of data collection in your settings.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Enterprise Pro and Enterprise Max:`}),` Your data is never logged or used for training. Administrators can enforce strict privacy and organization-level controls.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`API Platform:`}),` Your data is never logged or used for training.`]})})]})}),_jsx(Accordion,{title:`Are there discounts for students, educational institutions, nonprofits, or government agencies?`,id:`are-there-discounts-for-students-educational-institutions-nonprofits-or-government-agencies`,children:_jsxs(`p`,{children:[`Yes. Perplexity offers a 25% discount on Enterprise Pro and Enterprise Max seats for eligible educational institutions (not covered by the standard Student Program), nonprofit organizations, and government agencies. To apply, complete the `,_jsx(`a`,{href:`https://perplexity.typeform.com/npoandedu25`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`discount request form`}),` using your organization email.`]})}),_jsx(Accordion,{title:`What support is available?`,id:`what-support-is-available`,children:_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Free:`}),` Basic Help Center`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Pro, Education Pro, and Max:`}),` Priority support through Discord and `,_jsx(`b`,{children:`Help > Contact Support`})]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Enterprise Pro and Enterprise Max:`}),` Dedicated support`]})})]})})]}),`\n`,_jsx(Heading,{level:`2`,id:`h_f710c49a80`,children:`Trial and promotional subscriptions: payment method required`}),`\n`,_jsx(`p`,{children:`If you’ve redeemed a trial or promotional subscription (for example, through a partner promotion), a valid payment method is required to activate and maintain your access.`}),`\n`,_jsx(Heading,{level:`3`,id:`h_297c766b50`,children:`Overall requirements`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsx(`p`,{children:`A valid credit or debit card is required for all promotional and trial redemptions.`})}),_jsx(`li`,{children:_jsx(`p`,{children:`No charges are applied during your promotional/trial period.`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Unless you cancel before the trial ends, your subscription will auto-renew at the standard rate for the plan you selected during redemption (monthly or annual).`})})]}),`\n`,_jsx(Heading,{level:`3`,id:`h_6a7e59b209`,children:`New users vs. existing users`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsx(`p`,{children:`New users are prompted to add a payment method during the sign-up and redemption flow.`})}),_jsx(`li`,{children:_jsx(`p`,{children:`Existing promotional/trial users who receive a payment method prompt must add a credit or debit card within 7 days of the original notification. If no card is added within that window, your account will be downgraded to Perplexity’s free version. Once you add a valid card, your promotional access resumes immediately. Any missed days will not be added back to your trial period.`})})]}),`\n`,_jsx(Heading,{level:`3`,id:`h_6910422c93`,children:`Where notifications appear`}),`\n`,_jsxs(`ul`,{children:[_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`Email:`}),` You will receive an email notification prompting you to add a payment method.`]})}),_jsx(`li`,{children:_jsxs(`p`,{children:[_jsx(`b`,{children:`In-app:`}),` An in-app banner will appear prompting you to add your payment information.`]})})]}),`\n`,_jsx(Heading,{level:`2`,id:`h_1bcac7330e`,children:`How do I update my payment information?`}),`\n`,_jsx(`p`,{children:_jsx(`b`,{children:`Web (desktop):`})}),`\n`,_jsxs(Steps,{children:[_jsx(Step,{children:_jsxs(`p`,{children:[`Go to `,_jsx(`a`,{href:`https://www.perplexity.ai/settings/account`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`perplexity.ai/settings/account`}),`.`]})}),_jsx(Step,{children:_jsxs(`p`,{children:[`Scroll to the `,_jsx(`b`,{children:`Subscription`}),` section.`]})}),_jsx(Step,{children:_jsxs(`p`,{children:[`Click `,_jsx(`b`,{children:`Manage Plan`}),` (or `,_jsx(`b`,{children:`Manage Subscription`}),`).`]})}),_jsx(Step,{children:_jsxs(`p`,{children:[`Under `,_jsx(`b`,{children:`Billing and Shipping Information`}),`, add or update your payment method.`]})})]}),`\n`,_jsx(Warning,{children:_jsx(`p`,{children:`Do not update your Perplexity payment information through the Google Play Store or Apple App Store. Doing so creates a new, separate subscription and you will be charged. Always update your payment method on the Perplexity website.`})}),`\n`,_jsx(Heading,{level:`2`,id:`h_need_more_help`,children:`Need more help?`}),`\n`,_jsxs(`p`,{children:[_jsx(`a`,{href:`https://www.perplexity.ai/?support=true#settings/account`,rel:`nofollow noopener noreferrer`,target:`_blank`,children:`Contact us via Help > Contact Support`}),`. Pro subscribers can access live chat in Settings.`]})]})}function MDXContent(props={}){const{wrapper:MDXLayout}={..._provideComponents(),...props.components};return MDXLayout?_jsx(MDXLayout,{...props,children:_jsx(_createMdxContent,{...props})}):_createMdxContent(props)}return{default:MDXContent};function _missingMdxReference(id,component){throw new Error(`Expected `+(component?`component`:`object`)+\" `\"+id+\"` to be defined: you likely forgot to import, pass, or provide it.\")}","frontmatter":{},"scope":{"config":{},"pageMetadata":{"title":"Which Perplexity Subscription Plan is right for you?","description":"Compare Perplexity subscription plans: the free Standard tier, Perplexity Pro, Max, and Education Pro, plus Enterprise and API Platform options.","keywords":["11187416"],"href":"/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"}}},"mdxSourceWithNoJs":null},"mdxExtracts":{"tableOfContents":[{"title":"What Perplexity plans are available?","slug":"h_3324ea66e1","depth":2,"children":[{"title":"Individual","slug":"h_04035877a4","depth":3,"children":[]},{"title":"Enterprise","slug":"h_33135138b7","depth":3,"children":[]},{"title":"API (Individual and Enterprise)","slug":"h_8c2082205e","depth":3,"children":[]}]},{"title":"What do I get with the Free (Standard) plan?","slug":"h_603a3641b9","depth":2,"children":[]},{"title":"What does Perplexity Pro (Individual) offer?","slug":"h_c3de98f47d","depth":2,"children":[]},{"title":"What does Education Pro offer?","slug":"h_abf158798b","depth":2,"children":[]},{"title":"What does Perplexity Max (Individual) include?","slug":"h_edbd356736","depth":2,"children":[]},{"title":"What does Enterprise Pro include?","slug":"h_ed7f256908","depth":2,"children":[]},{"title":"What does Enterprise Max offer?","slug":"h_c313a2200d","depth":2,"children":[]},{"title":"What is the Perplexity API Platform for?","slug":"h_959283f0f4","depth":2,"children":[]},{"title":"How do the plans compare?","slug":"h_33c5d4e4d7","depth":2,"children":[]},{"title":"How do I choose the right plan?","slug":"h_1978f5c18f","depth":2,"children":[]},{"title":"Frequently asked questions","slug":"h_4b2b8780c7","depth":2,"children":[]},{"title":"Trial and promotional subscriptions: payment method required","slug":"h_f710c49a80","depth":2,"children":[{"title":"Overall requirements","slug":"h_297c766b50","depth":3,"children":[]},{"title":"New users vs. existing users","slug":"h_6a7e59b209","depth":3,"children":[]},{"title":"Where notifications appear","slug":"h_6910422c93","depth":3,"children":[]}]},{"title":"How do I update my payment information?","slug":"h_1bcac7330e","depth":2,"children":[]},{"title":"Need more help?","slug":"h_need_more_help","depth":2,"children":[]}],"codeExamples":{}},"jsLinks":["/_mintlify/custom/perplexit

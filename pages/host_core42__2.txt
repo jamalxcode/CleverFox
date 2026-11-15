@@ -1,0 +1,80 @@
+URL: https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html
+FINAL: https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html
+STATUS: 200
+TITLE: etisalat | e&amp; UAE and Core42 partner to deliver sovereign AI infrastructure
+FETCHED: 2026-11-15T15:58:43.887Z
+
+etisalat | e& UAE and Core42 partner to deliver sovereign AI infrastructure
+Who we are
+About Us
+Governance
+Senior Management
+Sustainability
+Awards and recognitions
+Carrier & Wholesale
+Responsible AI
+Since 1976, we have given people the power to come together .
+Investors
+Financial Highlights
+Share Information
+Debt Profile
+Dividends
+Analyst Coverage
+Financial Results
+Annual Reports
+Financial Calendar
+Corporate Announcements
+Invest in etisalat
+We operate in 38 countries across Middle East, Asia, Africa and central and eastern Europe
+Stories
+Careers
+عربي
+Who we are
+About Us
+Governance
+Senior Management
+Sustainability
+Awards and recognitions
+Carrier & Wholesale
+Responsible AI
+Investors
+Financial Highlights
+Share Information
+Debt Profile
+Dividends
+Analyst Coverage
+Financial Results
+Annual Reports
+Financial Calendar
+Corporate Announcements
+Stories
+Careers
+Language
+عربي
+Etisalat Group
+Telecoms
+Capital
+Abdulla Ebrahim Al Ahmed, Chief Government and VVIP Relations Officer, e& UAE, and Sherif Tawfik, Chief Business Officer, Core42
+Back
+Strategy & Operations
+e& UAE and Core42 partner to deliver sovereign AI infrastructure
+20 Jul 2026
+e& UAE and Core42 partner to deliver sovereign AI infrastructure at scale
+First joint offering brings on-demand GPU infrastructure to enterprise and government customers, accelerating the UAE's sovereign AI ambitions globally
+Abu Dhabi, UAE: e& UAE and Core42, a G42 company specialising in sovereign cloud, AI infrastructure and digital services, today announced a partnership to deliver Sovereign AI Compute , giving organisations in the UAE and international markets immediate and secure access to in-country AI infrastructure for faster deployment of AI applications and use cases. The GPU Sovereign AI Compute platform marks the first joint offering under a broader global partnership, which also encompasses collaborative approaches to ensuring the resilience of critical AI services and safeguarding national digital continuity across the UAE.
+The new offering combines Core42’s Sovereign AI Cloud with e& UAE’s national-scale digital infrastructure, secure connectivity, local customer relationships and professional services, creating a fully integrated platform that enables organisations to move from AI strategy to production deployment under a unified commercial and operational framework. The service is intended to keep sensitive workloads and data within the UAE while giving customers a practical and accelerated path to build, train, fine-tune, infer and deploy AI at scale.
+As AI adoption accelerates, many of the UAE’s leading enterprises face growing operational barriers to deployment — accessing in-country GPU infrastructure at scale remains difficult, traditional cloud environments may lack sufficient local capacity, and on-premises deployments often require significant capital investment and lengthy implementation timelines.
+Esam Mahmoud, Senior Vice President, SMB Sales and Marketing, e& UAE, said : “AI is becoming a key part of how organisations operate. Through our collaboration with Core42, we are enabling UAE enterprises and government entities a simpler, faster and more secure way to access sovereign GPU infrastructure, connect their data and operationalise AI at scale. This directly supports the UAE’s vision to build an AI-native economy and advance the national agentic AI agenda by enabling organisations to deploy intelligent systems that can analyse, decide and act with greater speed and confidence. The value of this platform is not only AI compute; it is the combination of AI infrastructure, private connectivity, local support and a practical route to production.”
+This platform and the broader partnership support the UAE’s vision of building an AI-native economy and system of governance in which intelligent AI agents can autonomously analyse, decide and execute tasks across public services, industry and everyday life. Building on the UAE National Strategy for Artificial Intelligence 2031, the country aims to embed agentic AI across government operations, healthcare, finance, mobility and digital infrastructure to improve efficiency, reduce bureaucracy and drive economic diversification.
+Jaafar Al Hashmi, VP of Government Relations and Market Development, Core42, said : "AI deployment at scale demands infrastructure that can operate securely, compliantly, and with the resilience required for real-world execution. This partnership with e& UAE extends sovereign AI from foundational infrastructure into an operational capability, integrating compute, connectivity, and implementation into a single framework built for deployment. By strengthening these invisible foundations, we are enabling organisations across the UAE to move beyond AI ambition and towards sustained, production-grade execution."
+Sovereign AI Compute supports a broad range of workloads, providing immediate access to Core42’s heterogeneous accelerators and is supported by expert implementation services through Core42 Delivery Services. e& UAE complements this with dedicated, carrier-grade, high-bandwidth connectivity that securely links enterprise environments directly to sovereign GPU infrastructure. The platform is designed for sectors where sovereign AI infrastructure and secure connectivity are critical, including government, healthcare, financial services, energy, education, retail, manufacturing, industrial operations and large enterprises.
+For customers, this translates into faster time to value for AI projects, no capital expenditure requirement, a competitive cost model with zero egress fees and full compliance with sovereignty requirements through in-country data residency. The collaboration further strengthens the UAE’s sovereign AI ecosystem and builds on e& UAE’s broader AI strategy and its ongoing work with national partners to support secure digital transformation, cyber resilience and sovereign technology development.
+This focus on resilience also reflects Core42’s broader work in national digital continuity, including the development of Signature National Disaster Recovery Cloud (NDRC), a fully sovereign infrastructure solution designed to help governments, regulated industries and national critical infrastructure maintain operational continuity during national-scale disruptions.
+To further maximise value, e& UAE is introducing GPU Connect, an exclusive service designed to simplify the AI journey. By offering advanced GPU capabilities together with premium e& UAE connectivity in one integrated package, e& UAE ensures customers receive maximum technical performance and compelling commercial benefits.
+Customers can contact their e& UAE account managers or submit a request through the e& UAE website.
+eand x GPU PRL_Eng-20.7.2026.docx
+&copy; etisalat. All Rights Reserved.
+Careers
+Terms & Conditions
+Privacy Policy
+Code of Conduct

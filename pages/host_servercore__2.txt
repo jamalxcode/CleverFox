@@ -1,0 +1,821 @@
+URL: https://servercore.com/solutions/healthcare/
+FINAL: https://servercore.com/solutions/healthcare/
+STATUS: 200
+TITLE: Healthcare Cloud Infrastructure in Kenya
+FETCHED: 2026-11-15T15:58:00.568Z
+
+Healthcare Cloud Infrastructure in Kenya
+VRAM Calculator
+New HighFreq Servers
+Select the Optimal GPU for Running an LLM
+Estimate
+AL73-NVMe-10GE and AL26-NVMe-10GE for Large-Scale Projects
+Order
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Search
+All services available
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Sign up
+Sign in
+Popular
+Computing
+Data Storage and Processing
+Network Services
+Security
+Looking Glass
+Status panel
+API
+Cloud Servers
+Flexible virtual machines
+Dedicated Servers
+Strong physical resources
+GPU Cloud Servers
+New
+High-performance computing for AI and ML
+Managed Cloud Databases
+Scalable data storage
+Object Storage
+Unlimited data and multimedia storage
+Cloud Backup Solutions
+Automatic backup of network drives
+Managed Kubernetes
+Automation and container management for efficient development
+Cloud Servers
+Flexibility and scalability for any task
+GPU Cloud Servers
+High-performance computing for AI and ML
+Dedicated Servers
+Complete resource and permormance control
+Managed Kubernetes
+Automation and container management for efficient development
+VMware Cloud
+Enterprise virtualization solution
+Managed Cloud Databases
+For all types available in Servercore
+PostgreSQL
+Relational database for complex queries and analytics
+MySQL
+Fast database for web applications and data storage
+Redis
+Caching and session management for high-performance applications
+Kafka
+Real-time data processing for streaming applications
+TimescaleDB
+Time series and analysis for monitoring and IoT
+ClickHouse
+Analytics and DWH/DLH deployment
+PGVector
+New
+Managed PostgreSQL with support for vector data types
+Object Storage
+Unlimited data and multimedia storage
+File Storage
+User-friendly file management and sharing
+Cloud Backup Solutions
+Automatic backup of network drives
+Secrets Manager
+Free
+Confidential information storage
+DNS-hosting
+Free
+Quick and reliable domain setup
+Private DNS Server
+New
+Isolated DNS server and resolver for private networks
+Anti-DDoS Solutions
+Real-time automated DDoS protection
+Global Router (L3VPN)
+Free
+Secure global data routing
+Mail Service
+Solution to send transaction emails from the Servercore cloud
+Direct Connect
+A secure channel without Internet access
+Search...
+Administration
+By industry
+Free Migration to Servercore
+Turnkey migration service
+Service Administration
+IT service management and support
+Hybrid Cloud Infrastructure
+Combine on-premises infrastructure with Servercore cloud
+AI and ML
+New
+Infrastructure for neural networks, LLMs, and machine learning
+FinTech
+Financial project solutions
+E-commerce
+E-commerce infrastructure
+Healthcare
+Healthcare cloud hosting
+About the Company
+Case Studies
+For Customers
+Legal Information
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Kenya
+M-PAYA Energy
+Metering solutions
+Unlocking Cloud Speed and Reliability with Servercore
+Uzapoint
+Software development
+How to Reduce Cloud Costs by 60% and Latency by 100x: The Nairobi Servers Advantage
+GoDeliveries
+Food delivery
+How to Cut Cloud Costs by 43% and Enhance Incident Response Times
+Case studies from Kenya
+Kazakhstan
+PayLink
+Fintech
+Migration to Servers in Kazakhstan: How to Increase System Response by 6 Times
+Provizor
+Pharmaceuticals
+How to Ensure Fault Tolerance of a Procurement Platform for 3,000 Pharmacies
+Case studies from Kazakhstan
+Uzbekistan
+Uzum Nasiya
+Fintech
+Seamless migration and custom cloud solution tailored to business objectives
+Alif Tech
+Fintech
+How to Reduce Service Downtime by 80%
+Bosch
+Retail
+How Bosch Accelerated Customer Engagement Fivefold and Automated Cloud-Based Business Processes
+CyberNet AI
+AI
+How to Deploy AI Solutions on Custom Servers and Accelerate System Response Time by 80%
+Case studies from Uzbekistan
+Servercore on Techcabal
+Servercore Enables Kenya-Based Food Delivery Service GoDeliveries Cut Cloud Costs by 43%
+All publications about us
+Demo
+Product Video Guide by Servercore CTO
+Servercore Solutions Security
+We ensure IT systems and data protection at five levels
+Network Infrastructure
+Types of our networks and their structure
+Affiliate Program
+Help us find new clients and earn up to 15%
+Грант 1 млн тенге на миграцию в Servercore
+Казахстан
+Legal Information
+Legal documents, bank details, etc.
+Sign up
+Sign in
+Sign up
+/
+Sign in
+Sign up
+/
+Sign in
+All services available
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Popular
+Cloud Servers
+Dedicated Servers
+GPU Cloud Servers
+New
+Managed Cloud Databases
+Object Storage
+Cloud Backup Solutions
+Managed Kubernetes
+Computing
+Cloud Servers
+GPU Cloud Servers
+Dedicated Servers
+Managed Kubernetes
+VMware Cloud
+Data Storage and Processing
+Managed Cloud Databases
+PostgreSQL
+MySQL
+Redis
+Kafka
+TimescaleDB
+ClickHouse
+PGVector
+New
+Object Storage
+File Storage
+Cloud Backup Solutions
+Secrets Manager
+Free
+Network Services
+DNS-hosting
+Free
+Private DNS Server
+New
+Anti-DDoS Solutions
+Global Router (L3VPN)
+Free
+Mail Service
+Direct Connect
+Security
+Looking Glass
+Status panel
+API
+Administration
+Free Migration to Servercore
+Service Administration
+Hybrid Cloud Infrastructure
+By industry
+AI and ML
+New
+FinTech
+E-commerce
+Healthcare
+About the Company
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Case Studies
+M-PAYA Energy
+Metering solutions
+Uzapoint
+Software development
+GoDeliveries
+Food delivery
+PayLink
+Fintech
+Provizor
+Pharmaceuticals
+Uzum Nasiya
+Fintech
+Alif Tech
+Fintech
+Bosch
+Retail
+CyberNet AI
+AI
+For Customers
+Demo
+Servercore Solutions Security
+Network Infrastructure
+Affiliate Program
+Legal Information
+Legal Information
+Home
+Solutions
+Healthcare
+Healthcare Cloud Hosting in Kenya: Hybrid or Fully In-Country
+Host patient data on a Tier III cloud in Nairobi. Keep your existing hospital systems, connect them to Servercore, and stay audit-ready under the Data Protection Act 2019 and the Digital Health Act 2023.
+Talk to an engineer
+Submit a request
+When Your Hospital Needs Servercore
+You don’t want to pay to run two systems at once
+01
+Part of your infrastructure sits outside Kenya, and data residency is now under scrutiny
+02
+Patient data is sensitive, and you need to be ready for ODPC audits
+03
+Staying in SHA contracting for 2026/28 requires a DHA-certified HMIS integrated with the national HIE
+04
+Legacy clinical systems that can’t be rebuilt from scratch
+05
+Non-compliance is costly: ODPC fines reach KES 5 million or 1% of annual turnover, plus daily penalties until resolved
+06
+Consultation request
+Two Ways to Meet Data Residency
+Hybrid
+Keep your certified HMIS/EMR and on-prem systems, and connect them to Servercore&rsquo;s Nairobi cloud over a private channel. Only the data that must stay in Kenya moves in-country.
+Full in-country hosting
+Move your systems to a Tier III cloud in Nairobi with free migration. Your data stays in Kenya.
+Redundancy and DR
+Replicate your systems across environments for fault tolerance, backed by automated backups and fast recovery.
+Contact us
+What Connects Your Hospital to Servercore
+Global Router (L3VPN)
+Private network linking your on-prem systems with the Nairobi cloud.
+Learn more
+Direct Connect
+Secure, high-speed channel without the public internet.
+Learn more
+Cloud Backup
+Automated backups of clinical data and databases.
+Learn more
+Object Storage (S3)
+Scalable in-country storage for records, images, and archives.
+Learn more
+Why Hospitals Host with Servercore
+Get a consultation
+In-country data residency
+Patient data stored in a partner Tier III data center in Nairobi.
+Certified infrastructure
+ISO 27001 and PCI DSS 4.0.1, which helps you meet DPA 2019 and Digital Health Act 2023 requirements.
+Hybrid-ready
+Keep existing systems and add only what you need locally, with no paying for two full stacks.
+Free migration
+Turnkey move from a foreign cloud or on-premises.
+24/7 local support in English
+Average chat response 15 minutes. Billing in Kenyan shillings, payment by M-Pesa or bank transfer.
+Security and Compliance for Health Data
+5-tier protection
+From data center to application: 24/7 surveillance, 2FA, encryption.
+Meets the Act’s security measures
+The Data Protection Act (Sections 41–42, General Regulations 2021) mandates encryption, access controls, audit logging, and backups for personal data. Servercore delivers all four at the infrastructure layer.
+Standards
+ISO 27001, PCI DSS 4.0.1, GDPR, DPA 2019. In-country hosting supports the safeguards and in-country storage many facilities choose for sensitive health data under the Digital Health Act 2023.
+Shared responsibility
+Servercore provides the infrastructure and acts as your data processor, while your facility remains the data controller responsible for its own DPA and Digital Health Act obligations. If a breach occurs, your facility must notify the ODPC within 72 h; Servercore, as processor, must notify you within 48 h and supports fast detection through logging and monitoring.
+More about security at Servercore
+Choose the Region Where You Want to Deploy Your Service
+Nairobi
+Almaty
+Tashkent
+1 availability zone
+TIER III Design
+TIER III
+ISO27001
+PCI DSS
+Nairobi
+Kenya
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+1 availability zone
+TIER III Design
+TIER III Facility
+ISO14001
+ISO20000
+ISO9001
+ISO27001
+ISO45000
+Almaty
+Kazakhstan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+1 availability zone
+2 availability zone
+3 availability zone
+Reliability level — N+1
+TIER II
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+TIER III
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+S3
+Managed Kubernetes
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+Tier III data center in Nairobi
+Tier III infrastructure, ISO 27001 and PCI DSS certified. Keep personal data in-country and stay audit-ready under the Data Protection Act 2019. Fault tolerance level of at least 99.982% (no more than 95 minutes of downtime per year).
+Compliance with global and local security standards
+The data centers hosting Servercore products comply with DPA 2019 and GDPR standards and are PCI DSS 4.0.1 certified.
+Five levels of client data protection
+We ensure security of projects at all levels, from data centers to apps, through a range of measures, including 24/7 video surveillance, 2FA, encryption, and more.
+Go to control panel
+Our Сustomer Stories
+IT development
+Kazakhstan
+SkyMetrics:
+How to Build Hybrid Infrastructure in Kazakhstan: Combining On-premises and Cloud
+Read case study
+SkyMetrics Needs
+Migrate to reliable local servers in Kazakhstan
+Flexible scaling and optimized operating costs
+A full range of modern PaaS solutions
+Servercore Solution
+Servercore selected reliable cloud servers with a 99.98% uptime SLA and hosted client resources in a Tier III data center in Almaty.
+Servercore implemented a hybrid architecture: production workloads run on Servercore, while development environments are deployed on premises to optimize costs.
+Servercore provided access to Managed Kubernetes, S3 storage, and cloud databases to speed up development and improve application fault tolerance.
+Telecommunications
+Uzbekistan
+Mrnet:
+How Mrnet Builds Fault-Tolerant Connectivity in Uzbekistan on Hundreds of Virtual Machines
+Read case study
+Mrnet Project Needs
+Deploy infrastructure on high-performance cloud servers
+Store personal data in accordance with the laws of Uzbekistan
+Ensure high service availability and accelerate work with IT systems
+Servercore Solution
+Provided custom configurations based on the client&rsquo;s requirements
+Provided resources in Tier III data centers in Tashkent
+Ensured 99.98% availability of cloud servers with an SLA guarantee
+Kenya
+Metering solutions
+M-PAYA:
+M-PAYA Energy Unlocks Cloud Speed and Reliability with Servercore
+Read case study
+Client business objectives
+Ensure accurate billing and reduce tenant and landlord disputes
+Scale IT infrastructure for growth and regional expansion
+Improve system responsiveness
+Maintain predictable, affordable IT costs
+Servercore solution
+Cloud resources for prepaid metering systems with real-time tracking
+Self-service cloud infrastructure with control and easy scalability
+Locally-hosted, high-performance cloud servers with 99.98% uptime
+Transparent pay-as-you-go billing system
+Food delivery
+Kenya
+GoDeliveries:
+How to Cut Cloud Costs by 43% and Enhance Incident Response Times
+Read case study
+GoDeliveries requirements
+Reduce costs on maintaining IT infrastructure
+Ensure stable operations with minimal downtime and latency
+Decrease incident resolution time with the technical support
+Servercore solution
+Offered resource-based servers through a pay-as-you-use billing system with no hidden costs
+Provided SLA level of 99.98% for cloud servers located in Nairobi with financial guarantees
+Ensured free 24/7 local support service with an average response time of 15 minutes
+Kenya
+Software development
+Uzapoint:
+How to Reduce Cloud Costs by 60% and Latency by 100x: The Nairobi Servers Advantage
+Read case study
+Uzapoint requirements
+Migrate IT infrastructure to Nairobi-based servers
+Reduce IT infrastructure maintenance costs
+Ensure stable operations, minimal downtime and latency
+Servercore solution
+Provided cloud resources in a local data center that is compliant with GDPR and DPA 2019
+Offered resource-based servers through a pay-as-you-use billing system with no hidden costs
+Provided SLA level of 99.98% for cloud servers located in Nairobi with financial guarantees
+IT development
+Kazakhstan
+DaraSoft:
+How a Migration to Custom Dedicated Servers Boosted Performance by 40%
+Read case study
+DaraSoft Project Needs
+Migrate to custom dedicated servers for big data workloads
+Store personal and payment data according to the laws
+Ensure high service availability and accelerate work with IT systems
+Servercore Solution
+Provided dedicated server configurations according to client specifications
+Provided resources in a local PCI DSS certified data center
+Ensured 100% availability of dedicated servers with an SLA guarantee
+IT development
+Uzbekistan
+SmartBooking:
+How to Deploy a Hotel PMS System in the Cloud and Accelerate Data Exchange by 50%
+Read case study
+SmartBooking Needs
+Enhance server scalability to integrate the AI assistant into the product
+Improve infrastructure availability, reduce latency, and accelerate data exchange within the PMS system
+Regulate resource consumption and process payments as a legal entity
+Servercore Solution
+Selected cloud servers for AI solution implementation, offering flexible and rapid resource management through the control panel
+Ensured low latency and high availability (99.98% SLA) on servers hosted in a Tier II+ data center in Uzbekistan
+Provided resources with pay-as-you-go pricing and the option for payments from a legal entity
+Kazakhstan
+Pharmaceuticals
+Provizor:
+How to Ensure Fault Tolerance of a Procurement Platform for 3,000 Pharmacies
+Read case study
+Provizor Project Requirements
+Minimize downtime and scale the service
+Store personal and payment data according to the laws
+Optimize load on the servers and ensure quick response of the system
+Servercore Solution
+Delivered up to 100% server SLA and rapid resource upscaling capability
+Provided resources in a local PCI DSS certified data center
+Provided high-performance physical and virtual machines
+Fintech
+Kazakhstan
+PayLink:
+Migration to Servers in Kazakhstan: How to Increase System Response by 6 Times
+Read case study
+PayLink project needs
+Store personal and payment data according to the laws
+Achieve high service availability and accelerate system response
+Optimize server resource usage and costs
+Servercore’s solution
+Provided resources with PCI DSS certification in a Tier III data center in Almaty compliant with ISO 27001
+Ensured 99.98% availability of cloud servers with an SLA guarantee
+Upon request, servers with custom flavors were offered, allowing savings of up to 26% on resource costs
+Retail
+Uzbekistan
+M Cosmetic:
+Selecting High-Uptime Servers for a Major Retail Chain
+Read case study
+M Cosmetic’s requirements
+Implement flexible and reliable cloud servers for stable operation of internal and client services
+Ensure data storage security in compliance with regional and global standards
+Optimize IT infrastructure operational costs and facilitate convenient payments
+Servercore’s solution
+Delivered 99.98% SLA for cloud servers, providing a user-friendly dashboard for easy resource management and scaling
+Provided resources in a PCI DSS certified data center for secure handling of customer and payment card data, free DDoS protection
+Offered servers with pay-as-you-go billing, allowing payment in local currency based on resource consumption
+AI
+Uzbekistan
+CyberNet AI:
+How to Deploy AI Solutions on Custom Servers and Accelerate System Response Time by 80%
+Read case study
+CyberNet AI Needs
+Migrate to custom servers to optimize load and costs
+Flexibly scale resources to accelerate AI solution development
+Ensure high availability of AI services and improve system response times
+Servercore Solution
+Provided custom-flavor servers per client request for flexible load management and a transparent billing model
+Deployed flexible, high-performance scalable servers for voice AI bots with convenient panel management
+Ensured uninterrupted server operation with 99.98 % SLA in a local Tier II+ data center
+Fintech
+Uzbekistan
+Uzum Nasiya:
+Seamless migration and custom cloud solution tailored to business objectives
+Read case study
+Uzum Nasiya’s business needs
+Seamless migration of IT infrastructure from the previous provider to a cloud with flexible resources
+Optimize operational expenses for IT infrastructure
+Customize cloud platform products to meet business objectives
+Ensure data storage security in line with global and regional standards
+Servercore’s solution
+Servercore organized a turnkey migration and selected flexibly scalable cloud services to meet the company&rsquo;s objectives free of charge
+Provided resources for rent with a pay-as-you-go model
+Designed custom Managed Kubernetes clusters for the business process
+Provided a 99.98% SLA for cloud servers with free DDoS attack protection, provided cloud resources in a data center certified to handle personal data
+AI
+Uzbekistan
+Robiq:
+How to Reliably Deploy a Speech AI Service on Dedicated GPU Servers in Uzbekistan
+Read case study
+Robiq Requirements
+Store customers&rsquo; personal data according to the law of Uzbekistan
+Accommodate a transformer model for bilingual bots
+Scale the speech AI platform on reliable servers
+Optimize IT infrastructure costs
+Servercore Solution
+Provided resources in a local Tier II+ data center with PCI DSS 4.0.1 certification
+Provided NVIDIA Tesla T4 GPUs to ensure responsiveness and quality of bot responses
+Provided 100% SLA for bare metal servers and fast resource resizing
+Provided a transparent billing system in the control panel
+Fintech
+Uzbekistan
+OZPLANET:
+How to Cost-Efficiently Scale a Platform Used by 50% of Uzbekistan’s Banks
+Read case study
+OZPLANET Requirements
+Maintain personal data and banking confidential information in compliance with the laws of Uzbekistan
+Scale the digital factoring platform, using reliable servers
+Optimize IT infrastructure costs
+Servercore Solution
+Provided resources in a local data center with PCI DSS 4.0.1 certification
+Delivered 100% SLA for dedicated servers with rapid IT system response
+Offered competitive pricing with transparent panel billing
+Cybersecurity
+Uzbekistan
+HWG Sababa:
+How to Localize IT Infrastructure in 7 Days
+Read case study
+HWG Sababa’s requirements
+Localize IT infrastructure in Uzbekistan
+Tailor product configurations to business needs
+Manage operational expenses for IT infrastructure
+Delegate equipment setup and maintenance to the provider
+Servercore’s solution
+Provided cloud resources in a local data center certified for handling personal data
+Selected scalable cloud servers with sufficient power to run B2B security services
+Offered all resources for rent with the pay-as-you-go consumption-based payment model
+Ensured a 99.98% SLA, taking care of all technical and organizational aspects of resource deployment in the Servercore cloud
+IT development
+Uzbekistan
+Global Solutions:
+How to Migrate from Foreign Cloud and Triple Speed of Delivery Process
+Read case study
+Global Solutions’ requirements
+Migrate IT projects to local servers with a high uptime and ensure secure data storage
+Select a cloud provider with a user-friendly control panel and familiar tools
+Reduce the time DevOps team spent on configuring and maintaining IT infrastructure operation
+Optimize expenses on maintaining IT infrastructure
+Servercore’s solution
+Ensured SLA level of 99.98% for cloud servers, provided resources in a PCI DSS certified data center, and offered free DDoS protection
+Provided a control panel with easy resource management and rapid scaling capabilities, along with Managed Kubernetes, backups, etc.
+Took care of setting up, monitoring, and ensuring the smooth infrastructure running
+Offered servers with resource-based pay-as-you-use billing, without any additional charges for Internet speed
+Fintech
+Uzbekistan
+Alif Tech:
+How to Reduce Service Downtime by 80%
+Read case study
+Alif Tech’s business needs
+Seamlessly migrate from another local provider&rsquo;s IT infrastructure and on-premise solutions to a flexible cloud solution
+Optimize operational expenses for IT infrastructure
+Reduce downtime and cut down on IT infrastructure management time
+Transition to a modern technology stack for IT project development
+Servercore’s solution
+Servercore organized a turnkey migration and selected flexibly scalable cloud services to meet the company&rsquo;s objectives free of charge
+Provided rented resources via a pay-as-you-go model
+Provided cloud servers with a 99.98% SLA, reducing unexpected downtime by 80%. Delivered a control panel with an easy-to-use resource management system
+Provided new hardware and cutting-edge software that supports the latest technologies on the market, including application clustering
+IT consulting
+Uzbekistan
+BPMN Solution:
+Speeding Up Service Response by 35% and Reducing IT Costs by 20% When Migrating to Cloud
+Read case study
+BPMN Solution’s needs
+Migrate to the cloud and store data under Uzbek laws
+Accelerate IT system response and ensure rapid resource scaling
+Optimize IT infrastructure costs
+Servercore’s solution
+Provided resources in a local Tier II+ data center
+Guaranteed 99.98% SLA for cloud servers and resource resizing in just a few clicks
+Provided competitive resource pricing and a transparent billing system within the control panel
+Retail
+Uzbekistan
+Bosch:
+How Bosch Accelerated Customer Engagement Fivefold and Automated Cloud-Based Business Processes
+Read case study
+Bosch Requirements
+Store personal and payment data in compliance with the laws of Uzbekistan
+Automate business processes on reliable servers and accelerate its customer engagement
+Optimize IT infrastructure costs
+Servercore Solution
+Provided resources in a local Tier II+ data center with PCI DSS 4.0.1 certification
+Guaranteed 99.98% SLA for cloud servers and rapid resource resizing
+Provided competitive resource pricing and a transparent billing system within the control panel
+Aviation industry
+Uzbekistan
+Air Samarkand:
+50% User Growth through Cloud Migration and Delegated IT Administration
+Read case study
+Air Samarkand’s business needs
+Seamlessly migrate a portion of IT infrastructure from on-premise solutions to the cloud
+Achieve uninterrupted operation and high availability of critical services
+Ensure data storage security in accordance with global, regional, and industry standards
+Delegate corporate portal administration
+Servercore’s solution
+Organized a free turnkey migration, selected easily scalable and powerful cloud services tailored to the company&rsquo;s needs
+Provided an SLA of 99.98% for cloud servers, optimized the load to ensure high availability for users
+Provided cloud resources in a data center certified for work with personal data and free DDoS protection
+Provided an administration service with free 24/7 technical support and continuous service monitoring
+Servercore is Stable, Simple, and Offers Local Infrastructure
+Request a consultation
+01
+Secured technologies
+IaaS и PaaS
+A wide range suitable for any task
+Availability zones in Kenya, Uzbekistan, and Kazakhstan​
+IAM service for managing authorization and access levels
+02
+Stability
+SLA up to 100%
+Maximum server availability
+Compliance with GDPR and DPA 2019
+Processing of personal data
+PCI DSS
+Payment data under protection
+03
+Benefit and convenience
+Free migration
+Billing in Kenyan shillings
+Payment by MPesa or bank transfer
+24/7
+Free technical support
+FAQ
+Can Kenyan hospitals store patient data outside the country?
+Health data is classified as sensitive personal data under the Data Protection Act 2019, and the Digital Health Act 2023 governs how it’s held and transferred. Under the Act, transferring personal data abroad requires proof of adequate safeguards, and moving sensitive data, which includes health data, out of Kenya requires each patient’s consent. Hosting in Kenya removes both burdens by keeping data in-country.
+What does the Digital Health Act 2023 require for hosting health data?
+The Act (No. 15 of 2023) established the Digital Health Agency and a comprehensive integrated health information system, with standards for privacy, security, and secure exchange of health data. Servercore provides ISO 27001- and PCI DSS-certified in-country infrastructure that supports those requirements. Certification of the HMIS software itself sits with your software vendor.
+Is a certified HMIS mandatory for SHA contracting?
+Yes. SHA requires providers to use a DHA-certified HMIS connected to the national digital health infrastructure to join the 2026/28 contracting cycle, with the compliance deadline extended to 30 September 2026. Servercore hosts the infrastructure your certified HMIS/EMR runs on.
+Do hospitals need to register with the ODPC?
+Yes. Health administration and patient care is on the ODPC list of activities that must register as a data controller or processor, regardless of turnover or headcount, with a certificate valid for 24 months. Registration is your facility’s responsibility. Servercore provides the certified infrastructure your registered operations run on.
+Can we keep our existing systems and still meet data residency?
+Yes. In a hybrid setup you keep your on-prem or existing systems and connect them to Servercore’s Nairobi cloud over a private channel (Global Router or Direct Connect), placing only the data that must stay in Kenya in-country.
+What certifications should a healthcare hosting provider have?
+Look for a Tier III facility, ISO 27001, and PCI DSS. Servercore’s Nairobi data center is Tier III with ISO 27001 and PCI DSS 4.0.1, and complies with DPA 2019 and GDPR.
+Who is responsible for DPA 2019 compliance, the hospital or Servercore?
+Your facility is the data controller and stays responsible for lawful processing, consent, DPIAs, and audit readiness. Servercore acts as a data processor providing certified in-country infrastructure. It’s a shared model, not a transfer of responsibility.
+Discuss healthcare hosting with Servercore
+We will carefully review your request and respond within one business day.
+I agree to the processing of my personal data in accordance with the Privacy Policy .
+I agree to receive informational newsletters.
+Submit a request
+Servercore News
+Subscribe
+Products
+Dedicated Servers
+Cloud Servers
+Managed Kubernetes
+Cloud Databases
+S3 Object Storage
+All products
+Company
+About Us
+Client Cases
+Network Infrastructure
+Security & Certificates
+Careers
+Kazakhstan site
+Clients & Partners
+Demo
+Pricing
+Partnership Program
+For Client Requests
+hello@servercore.com
+Need help with our services?
+Submit a support ticket , and our team will assist you.
+Services
+Cloud Migration
+IT Administration Services
+All services
+Resources
+Documentation
+Blog
+Status Panel
+Looking Glass
+API
+Legal
+User Agreement
+Privacy Notice
+Personal Data Processing Policy
+Legal Details
+PR Department
+pr@servercore.com
+© PE LLC «Servercore CIS»
+© LLP «SSR»
+© Servercore Africa Ltd
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+We use cookies
+Please find more detailed information in our cookie policy.
+Functional cookies
+This type of cookies is required for the stable functioning of the website; therefore, you cannot disable these cookies unless your browser settings specify otherwise.
+Analytical cookies
+Analytical cookies help us better understand site visitor behaviour and product usage patterns. Specifically, we leverage these cookies to gain insights into how visitors navigate the platform, using this data to enhance your experience.
+Remarketing cookies
+We leverage remarketing services to feature advertisements on third‑party platforms following your visit to our website. Our third‑party vendors and we employ cookies to inform, optimize, and serve advertisements based on your historical visits to our platform.
+Accept
+Reject
+Subscribe to Servercore News
+We share updates about product launches, current events, and special offers.
+I agree to receive the newsletter in accordance with the
+Privacy Policy .
+Subscribe
+Couldn't find the right service or configuration?
+Tell us about your project requirements. Our engineers will reach out to discuss custom terms or build a tailored
+solution specifically for your business.
+Company size 1–10 employees 11–50 employees 51–250 employees 251–1,000 employees 1,000+ employees
+What resources were you looking for? Cloud servers Cloud servers with GPUs Dedicated servers S3 Databases Network services and security Other
+Next
+1/2
+I agree to the processing of my personal data in accordance with the
+Privacy Policy .
+Back
+Submit request
+2/2

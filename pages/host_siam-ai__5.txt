@@ -1,0 +1,346 @@
+URL: https://siam.ai/inference-service/
+FINAL: https://siam.ai/inference-service/
+STATUS: 200
+TITLE: Inference Service – SIAM.AI CLOUD
+FETCHED: 2026-11-15T15:58:38.740Z
+
+Inference Service – SIAM.AI CLOUD
+SEARCH
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Inference Service
+SIAM.AI CLOUD
+Inference Service
+SIAM.AI CLOUD
+INFERENCE SERVICE
+Quicker spin-up durations and heightened responsiveness in auto-scaling.
+Efficiently handle increased demand by providing superior inference and autoscaling capabilities across thousands of GPUs, ensuring that you can seamlessly accommodate user growth without being overwhelmed.
+Maximize cost savings across all aspects of inference.
+Our solutions are designed to be cost-effective for your workloads, offering optimized GPU usage, autoscaling, and sensible resource pricing. Additionally, you have the flexibility to configure your instances according to your deployment needs, all within a 30-minute timeframe.
+Experience the raw speed and performance of bare-metal infrastructure.
+We deploy Kubernetes directly on bare metal servers, reducing overhead and increasing speed significantly.
+Scale your operations without incurring excessive costs.
+Instantly deploy thousands of GPUs within seconds and automatically scale down to zero during periods of inactivity, ensuring no resource consumption or billing charges.
+No charges for inbound - outbound data, or API requests.
+Opt for cost-effective solutions that allow you to pay solely for the resources you utilize.
+Quicker inference serving with a scalable solution tailored to your needs.
+Our Inference Service provides a contemporary approach to conducting inference, resulting in superior performance and negligible latency, all at a lower cost compared to alternative platforms. In just 30 minutes.
+HERE TO HELP
+AUTOSCALING
+Maximize GPU utilization for increased efficiency and reduced expenses.
+Enable automatic container scaling according to demand, enabling rapid fulfillment of user requests much faster than relying on the scaling of hypervisor-backed instances offered by other cloud providers. Upon receiving a new request, response times can be as swift as
+5 seconds for small models
+10-15 seconds for GPT-J/GPT-NeoX
+30-60 seconds for larger models
+SERVERLESS KUBERNETES
+Deploy models effortlessly, free from the concern of configuring the underlying framework correctly.
+Kubernetes Server simplifies serverless inferencing on Kubernetes through a user-friendly interface, supporting popular ML frameworks such as TensorFlow, XGBoost, scikit-learn, PyTorch, and ONNX to address production model serving requirements.
+HERE TO HELP
+HERE TO HELP
+NETWORKING
+Experience cutting-edge networking capabilities with high performance out of the box.
+With our network architecture, essential functionalities are integrated into the network fabric, providing the required functionality, speed, and security without the need for IP and VLAN management.
+Easily deploy Load Balancer services
+Access the public internet through multiple Tier 1 providers globally, with speeds of up to 100Gbps per node
+Accessing and scaling storage capacity is made simple with tailored solutions for your specific workloads.
+STORAGE
+Easily access and scale storage capacity with solutions designed for your workloads.
+Our storage solutions, based on open-source software designed for enterprise scalability—enable effortless serving of machine learning models. These models can be sourced from various storage backends, such as S3-compatible object storage, HTTP, ensuring versatility and adaptability.
+HERE TO HELP
+Need more information?
+Contact Us
+Contact Us
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200&H100
+CPU Compute
+GPU Compute
+GPU Calculator
+Virtual Server
+Storage
+Networking
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+Company
+News & Events
+About Us
+Contact Us
+Contact
+1252/1 True Tower 2 (Building 2, 7th floor), Pattanakarn Road, Suan Luang, Suan Luang, Bangkok 10250
+support@siam.ai
+(+66) 2-041-1899
+Facebook-square
+Instagram
+Tiktok
+Lemon
+© All Copyright 2026 by SIAM.AI CLOUD
+Terms & Condition
+Privacy Policy
+Privacy Policy
+We use cookies to enhance performance and improve your experience on our website. You can learn more details in the Privacy Policy and manage your own privacy settings by clicking on Settings
+Allow
+Privacy Preferences
+You can choose cookie settings by enabling/disabling cookies for each type as needed, except for necessary cookies.
+Allow All
+Manage Consent Preferences
+Always Active
+Save
+ปิดโหมดสีเทา

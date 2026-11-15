@@ -1,0 +1,8 @@
+URL: https://app.klingai.com/terms
+FINAL: https://kling.ai/app/terms
+STATUS: 200
+TITLE: Kling AI: Next-Generation AI Creative Studio
+FETCHED: 2026-11-15T15:56:59.687Z
+
+Kling AI: Next-Generation AI Creative Studio
+Kling AI Video and Image Generator

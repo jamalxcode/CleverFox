@@ -1,0 +1,341 @@
+URL: https://liner.com/privacy
+FINAL: https://liner.com/privacy
+STATUS: 200
+TITLE: Liner | Privacy Policy
+FETCHED: 2026-11-15T15:57:17.469Z
+
+Liner | Privacy Policy
+Products
+API/MCP
+Pricing
+Resources
+Company
+Get started
+Get started
+Privacy Policy
+Updated: Jul 21, 2026
+This document covers the scope and purpose of the personal information collected for Liner product operations, as well as the retention period and disposal methods.
+These updates do not apply to individuals located in the European Economic, UK, Switzerland, and Republic of Korea. If you reside in European Economic, UK, or Switzerland, this version applies to you, and if you reside in Republic of Korea, this version applies to you.
+We respect your personal information and strive to securely preserve user information and user-related information obtained from users. This Privacy Policy covers the policy for handling personal information collected during your use of Liner websites, applications, and services.
+1. Collection of information within the service and scope
+We process the following personal information items:
+User-provided information
+We collect information provided by users when creating an account for service utilization or when using the service.
+Account information : We collect information such as username, password, email address, name, age, and payment card information when users create an account or attempt to make a paid payment.
+User Content: When you use our services, we collect Personal Data that is included in the input (including text and audio), file uploads, or feedback that you provide to our Services ("Content").
+Communication information : We collect information such as email addresses and communication messages when users communicate with us regarding service-related inquiries.
+Automatically collected information
+We collect visit and usage history when users visit or use the service.
+Log data : This is information collected through the browser when using the service. Log data includes IP addresses, browser types, and request timestamps.
+Usage data : This is records collected during the process of using the service. It includes highlight history, conversation history, feature usage history, and transaction records. It also includes time zones, countries, service usage timestamps, and user agents.
+Device information : This includes device names, operating systems, and device identifiers. The collected device information may vary depending on device settings.
+Analytics : We may use online analytics tools to analyze user patterns of using the service and improve user experience.
+Location Information : We may determine the general area from which your device accesses our Services based on information like its IP address for security reasons and to make your product experience better, for example to protect your account by detecting unusual login activity or to provide more accurate responses. In addition, some of our Services allow you to choose to provide more precise location information from your device, such as location information from your device&#x27;s GPS.
+Cookies and Similar Technologies : We use cookies and similar technologies to operate and administer our services, and improve your experience. If you use our services without creating an account, we may store some of the information described in this policy with cookies, for example to help maintain your preferences across browsing sessions. Most browsers accept cookies automatically, but you may be able to control the way in which your devices permit the use of Cookies and Similar Technologies. If you so choose, you may block or delete our cookies from your browser or limit cross-site tracking; however, blocking or deleting cookies may cause some of the services, including certain features and general functionality, to work incorrectly. If you have questions regarding the specific information about you that we process or retain, as well as your choices regarding our collection and use practices, please contact us using the information listed below.
+2. Purpose of personal information utilization
+We may utilize personal information for the following purposes:
+To provide, manage, maintain, and analyze the service
+To provide personalized services, including content and ads
+To improve and conduct research on the service
+To communicate with users
+To develop new features and services
+To prevent misuse and abuse of the service
+To protect the systems, infrastructure, and network that constitute the service
+To protect the legal rights of the company, users, and third parties and comply with legal obligations
+Personal information is not used for purposes other than those specified above, and if the purpose of use changes, necessary measures will be taken in accordance with relevant laws, including obtaining separate consent. We don’t “sell” Personal Information or “share” Personal Information for cross-contextual behavioral advertising (as those terms are defined under applicable local law).
+3. Disclosure of personal information
+In certain circumstances we may provide your Personal Information to third parties without further notice to you, unless required by the law:
+Vendors and Service Providers : To assist us in meeting business operations needs and to perform certain services and functions, we may provide Personal Information to vendors and service providers, including providers of hosting services, customer service vendors, cloud services, email communication software, web analytics services, and other information technology providers, among others. Pursuant to our instructions, these parties will access, process, or store Personal Information only in the course of performing their duties to us.
+Business Transfers : If we are involved in strategic transactions, reorganization, bankruptcy, receivership, or transition of service to another provider (collectively, a “Transaction”), your Personal Information and other information may be disclosed in the diligence process with counterparties and others assisting with the Transaction and transferred to a successor or affiliate as part of that Transaction along with other assets.
+Legal Requirements : We may share your Personal Information, including information about your interaction with our Services, with government authorities, or other third parties (i) if required to do so by law or in the good faith belief that such action is necessary to comply with a legal obligation, (ii) to protect and defend our rights or property, (iii) if we determine, in our sole discretion, that there is a violation of our terms, policies, or the law; (iv) to detect or prevent fraud or other illegal activity; (v) to protect the safety, security, and integrity of our products, employees, or users, or the public, or (vi) to protect against legal liability.
+Affiliates : We may disclose Personal Information to our affiliates, meaning an entity that controls, is controlled by, or is under common control with Liner Corp. Our affiliates may use the Personal Information we share in a manner consistent with this Privacy Policy.
+Other Users and Third Parties You Share Information With : Certain features allow you to display or share information with other users or third parties. For example, you may share Liner thread with other users via shared links. Don&#x27;t share a thread that contains personal information or sensitive information to others through shared links.
+Advertisement Vendors : The specific providers we use for advertising may change from time to time. Google&#x27;s use of advertising cookies enables it and its partners to serve ads based on your visits to our Services and/or other sites on the Internet. You may opt out of personalized cookie-based advertising by visiting Ads Settings or www.aboutads.info . In addition, some advertising partners receive User Content and AI-generated responses (see Section 8) to provide contextually relevant ads within our Services.
+Third-Party AI Service Providers: To provide AI-powered features and generate responses to requests submitted by the user(including text and audio), we transmit the content provided by the user to third-party AI service providers, including Google LLC , OpenAI, L.L.C. , and Anthropic, PBC . By using Liner, the user consents to such data sharing.
+4. User rights
+Users have the following rights:
+Request deletion of personal information within the service
+Restrict or refuse the use of personal information within the service
+Modify personal information
+Withdraw consent for the use of personal information
+Users can exercise these rights through their service accounts. If you wish to exercise your rights, please contact us at [email protected] .
+5. Children’s Privacy
+We do not knowingly collect or solicit any information from children under 13 or the equivalent minimum age as prescribed by law in the relevant jurisdiction. If, in the course of business, we obtain actual knowledge that we have collected personal information from a child, all such information will be deleted. However, this does not apply in countries where the use of our Services is permitted for younger users.
+6. Retention period of personal information
+We process and retain personal information within the period specified in accordance with the law or the period agreed upon by the information subject at the time of collection.
+The retention periods for each type of personal information processing and retention are as follows:
+Service membership registration and management: Until service withdrawal
+Provision of goods or services: Until completion of supply, payment, and settlement
+However, following service withdrawal, we retain member information, including your email address, for up to 30 days for purposes such as account recovery, system stability, prevention of fraudulent withdrawal, and service-related communications, after which it is deleted without delay. Also, data reviewed or annotated by reviewers in Section 9 is stored separately from user accounts and retained for a maximum of 3 years.
+7. Disposal of personal information
+7.1 We promptly delete personal information when it becomes unnecessary due to the expiration of the retention period or the achievement of the processing purpose.
+7.2 If the retention period agreed upon by the information subject has expired or the processing purpose has been achieved but personal information needs to be retained under other laws, we transfer the personal information to a separate database or store it in a different location.
+8. Outsourcing for service provision and infrastructure management
+We transfer personal information overseas for service provision and infrastructure management as follows:
+Cloud Service
+Company
+Transferred country
+Transfer time/method
+Purpose of transfer
+Information provided
+Retention and use period of personal information
+Contact
+Google Cloud Platform
+USA
+Transmitted via network at the time of service usage
+Infrastructure management for service provision and analysis
+ID, email, name, service usage data, device information
+Until membership withdrawal or termination of service contract
+[email protected]
+Amazon Web Service
+USA
+Transmitted via network at the time of service usage
+Marketing
+Email address
+Until membership withdrawal or termination of service contract (up to 30 days after withdrawal for the purposes described in Section 6)
+Amazon Web Services, Inc., 410 Terry Avenue North, Seattle, WA 98109-5210, ATTN: AWS Legal
+Customer.io
+USA
+Transmitted via network at the time of service usage
+Marketing
+Email address
+Until membership withdrawal or termination of service contract (up to 30 days after withdrawal for the purposes described in Section 6)
+[email protected]
+Amplitude
+USA
+Transmitted via network at the time of service usage
+Collection of customer activity information, product improvement, and information statistics through service and usage behavior analysis
+ID, visit date, service usage records, device information
+Until membership withdrawal or termination of service contract
+[email protected]
+Payment Service
+Company
+Transferred country
+Transfer time/method
+Purpose of transfer
+Information provided
+Retention and use period of personal information
+Contact
+PayPal
+USA
+Transmitted via network at the time of service usage
+Payment agency
+Credit/debit card details
+Until membership withdrawal or termination of service contract
+1-888-221-1161
+Stripe
+USA
+Transmitted via network at the time of service usage
+Payment agency
+Credit/debit card details , email address
+Until membership withdrawal or termination of service contract
+[email protected]
+Paddle
+USA, UK
+Transmitted via network at the time of service usage
+Payment agency (merchant of record)
+Credit/debit card details, email address
+Until membership withdrawal or termination of service contract
+[email protected]
+Ads
+Company
+Transferred country
+Transfer time/method
+Purpose of transfer
+Information provided
+Retention and use period of personal information
+Contact
+Google Ads
+USA
+Transmitted via network at the time of service usage
+To provide users with relevant advertising content.
+User Content and AI-generated responses
+Termination of service contract
+080-230-2002
+Koah
+USA
+Transmitted via network at the time of service usage
+To provide users with relevant advertising content.
+User Content and AI-generated responses
+Termination of service contract
+[email protected]
+Kontext
+USA
+Transmitted via network at the time of service usage
+To provide users with relevant advertising content.
+User Content and AI-generated responses
+Termination of service contract
+[email protected]
+Affinity
+USA
+Transmitted via network at the time of service usage
+To provide users with relevant advertising content.
+User Content and AI-generated responses
+Termination of service contract
+[email protected]
+Velocity
+USA
+Transmitted via network at the time of service usage
+To provide users with relevant advertising content.
+User Content and AI-generated responses
+Termination of service contract
+[email protected]
+Customer Support Service
+Company
+Transferred country
+Transfer time/method
+Purpose of transfer
+Information provided
+Retention and use period of personal information
+Contact
+Zendesk
+USA
+Transmitted via network at the time of service usage
+Collection and management of customer inquiries and guidance
+ID, email, information written in inquiries
+Until membership withdrawal or termination of service contract
+[email protected]
+Typeform
+USA
+Transmitted via network at the time of service usage
+Collection and management of customer survey response data
+ID, name, survey response information
+Until membership withdrawal or termination of service contract
+[email protected]
+AI Service
+Company
+Transferred country
+Transfer time/method
+Purpose of transfer
+Information provided
+Retention and use period of personal information
+Contact
+Google LLC (Gemini API)
+USA
+Transmitted via network at the time of service usage
+Processing user content to provide AI-powered features and generate responses to user requests
+Content provided by the user
+Deleted after processing (up to 30 days per provider&#x27;s retention policy)
+[email protected]
+OpenAI, L.L.C.
+USA
+Transmitted via network at the time of service usage
+Processing user content to provide AI-powered features and generate responses to user requests
+Content provided by the user (including text and audio)
+Deleted after processing (up to 30 days per provider&#x27;s retention policy)
+[email protected]
+Anthropic, PBC
+USA
+Transmitted via network at the time of service usage
+Processing user content to provide AI-powered features and generate responses to user requests
+Content provided by the user
+Deleted after processing (up to 30 days per provider&#x27;s retention policy)
+[email protected]
+We use information received from Google APIs in adherence to the Google API Services User Data Policy, including the Limited Use requirements.
+If you refuse to transfer your personal information overseas, you will not be able to use the Liner service. Therefore, in order to refuse to transfer your personal information overseas, you must stop using the Liner service and delete your account.
+9. User control over model training within the service
+We allow users to contribute to creating a better-functioning product by using their usage data to improve the service. Specifically, we may use internally developed models to analyze queries in order to provide accurate results. To train these models, we may utilize the data provided by users to Liner. During this process, reviewers read, annotate, and process query details for quality management and product improvement.
+We take measures to protect user&#x27;s personal information during this process. Specifically, user activity information is not connected to user accounts and cannot be identified by reviewers before they review or annotate it. The data used for training is randomly sampled.
+We provide settings that allow users to refuse the use of their data for service model training. By deactivating history and learning items in the settings menu, new data will not be used for model training. For more information, please refer to this page .
+Data obtained through Google APIs or Google OAuth, such as information accessed via Google Drive or other Google services, is not included in the data used for model training described above.
+10. Modification of the Privacy Policy
+We regularly review and improve the Privacy Policy. When there are modifications, the modified version of the Privacy Policy will be uploaded to this page unless additional notice is required by relevant laws.
+11. Links to other websites
+The service may provide links to external sites that are not directly managed by us. The personal information provided by users when visiting those sites is subject to the personal information processing policies of the respective site providers, not our policy.
+The provision of links within the service does not indicate that we have approved or transferred rights to the linked services. If you need additional information or have any requests regarding these sites, please contact the respective site.
+12. Contact
+We have appointed a data protection officer (DPO) for our services who is responsible for overseeing questions in relation to this privacy notice.
+If you have any questions or suggestions regarding the Privacy Policy, please send an email to this address.
+Liner Corp.
+Attn: Data Protection Officer
+Email: [email protected]
+Address: 8F, 140, Yanghwa-ro, Mapo-gu, Seoul, Republic of Korea (Zip Code: 04050)
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+© 2026 Liner. All Rights Reserved.
+Do not sell or share my personal information
+Select language, en

@@ -1,0 +1,54 @@
+URL: https://www.gotocompany.com/en/news/press/sahabat-ai-gets-smarter-indosat-and-goto-launch-new-70-billion-parameter-model-with-multilingual-chat-service
+FINAL: https://www.gotocompany.com/en/news/press/sahabat-ai-gets-smarter-indosat-and-goto-launch-new-70-billion-parameter-model-with-multilingual-chat-service
+STATUS: 200
+TITLE: Sahabat-AI Gets Smarter: Indosat and GoTo Launch New 70 Billion Parameter Model with Multilingual Chat Service
+FETCHED: 2026-11-15T15:57:53.836Z
+
+Sahabat-AI Gets Smarter: Indosat and GoTo Launch New 70 Billion Parameter Model with Multilingual Chat Service
+Home
+About Us
+Corporate Governance
+Investor Relations
+Our Commitment
+Products
+Newsroom
+Careers
+Contact Us
+EN ID
+English English Indonesia
+Newsroom
+Press Release Press Release
+Media Kit
+Back
+Sahabat-AI Gets Smarter: Indosat and GoTo Launch New 70 Billion Parameter Model with Multilingual Chat Service
+02 June 2025
+Jakarta, June 2, 2025 - PT GoTo Gojek Tokopedia Tbk (GoTo or GoTo Group) and Indosat Ooredoo Hutchison (Indosat or IOH) are proud to announce the latest advancement in Indonesia's open-source Large Language Model (LLM) ecosystem with the launch of Sahabat-AI's 70-billion parameter model and multilingual chat service.
+Building on the initial Sahabat-AI launch at Indosat’s Indonesia AI Day in November 2024, this development marks a pivotal step in reinforcing Indonesia's digital sovereignty, aligned with Indonesian government commitments. Now upgraded to 70 billion parameters, Sahabat-AI offers enhanced accuracy, enabling the launch of the new Sahabat-AI chat service, which is available on sahabat-ai.com or under “Popular Services” within the GoPay app’s home screen. The new chat service is built with strong reasoning capabilities, enabling users to ask questions and receive insightful, natural-language responses. It is one of the many use cases made possible by the more powerful model.
+Patrick Walujo, Chief Executive Officer of GoTo Group, said, “With the launch of our 70 billion parameter model and the new chat service, Sahabat-AI takes a major leap forward in building a uniquely Indonesian AI ecosystem. Its multilingual capability, combined with enhanced accuracy, enables Sahabat-AI to better serve the diverse needs of people and businesses across the country. It reflects our commitment to digital sovereignty and supports President Prabowo’s vision for locally developed, locally hosted technology.”
+“By building this model in partnership with Indosat and a broad range of partners, we’ve created a platform that is smarter, faster, and more affordable. We’re also making the Sahabat-AI chat service available through the GoPay app, which is used by millions, ensuring people across the country can easily benefit from this uniquely Indonesian LLM. Sahabat-AI is already making a significant impact on customers across the GoTo ecosystem, lowering costs, improving service quality, and deepening engagement. More than a technological breakthrough, Sahabat-AI is a strategic advantage for us, and a powerful engine of growth for Indonesia’s digital economy.”
+Vikram Sinha, President Director and CEO of Indosat Ooredoo Hutchison, said, “Indosat is proud to lead the development of Indonesia’s sovereign AI capabilities. Through GPU Merdeka, our sovereign AI cloud, we’re laying the digital foundation to ensure that AI innovation is not only advanced but also nationally secured, culturally relevant, and equitably accessible. Sahabat-AI is more than a model — it’s a national asset powered by collaboration and built for all Indonesians.”
+Indosat initiated the Sahabat-AI ecosystem as part of its larger purpose to empower Indonesia. From deploying GPU Merdeka of Lintasarta – Indosat’s AI Factory – to enabling real-time multilingual services, Indosat provides the technical backbone that powers Sahabat-AI’s training, inference, and scalability. This locally operated infrastructure ensures data residency, performance, and regulatory alignment — a critical enabler for public sector adoption and enterprise innovation.
+The latest Sahabat-AI model can now operate across five local languages: Bahasa Indonesia, Javanese, Sundanese, Balinese and Bataknese in addition to a number of international languages. The model is optimized to run on locally accessible infrastructure , enabling a broader range of users, from early-stage startups and university labs to large-scale public service institutions, to integrate AI into their workflows.
+Its development is testament to the Indonesian spirit of gotong royong (mutual cooperation), bringing together research institutions, universities, media organizations, government agencies, and other partners in a national effort. Collaborations are ongoing with leading universities, including the University of Indonesia, Gadjah Mada University, Bandung Institute of Technology, IPB University, University of Udayana, and University of Sumatera Utara, as well as media groups such as Kompas Group, Republika, Tempo, and Hukumonline, to ensure that Sahabat-AI is optimized for local context and cultural relevance.
+Advancing Indonesia’s digital sovereignty
+Sahabat-AI has been designed from the ground up to align with Indonesia’s digital sovereignty goals. All data and GPU infrastructure used to serve the model are stored within Indonesian territory or on users’ own servers, ensuring compliance with national data regulations. By localizing data storage and processing, Sahabat-AI also opens new opportunities for the Indonesian government and public sector to build secure, sovereign AI-powered services.
+Luhut Binsar Pandjaitan, Chairman of the National Economic Council, said, “Data sovereignty isn’t just a technical matter, it’s a matter of national independence in the digital era. I applaud GoTo and Indosat for pioneering the ecosystem of Sahabat-AI, and fostering technological innovation rooted in our national identity. By developing AI solutions that understand and cater to our unique yet diverse linguistic and cultural landscape, we are taking a significant step towards ensuring digital transformation benefits all Indonesians.”
+Empowering AI tech talent
+The development of Indonesian talent lies at the heart of the Sahabat-AI mission. For this reason, a structured internship program has been introduced to help local university students gain hands-on experience in AI development. Working alongside GoTo and Indosat’s engineers, interns contributed directly to training and refining the model, developing real-world skills that are often unavailable in traditional classroom settings. This approach positions Sahabat-AI not only as a national innovation, but as a platform for advancing Indonesia’s next generation of AI talent.
+One intern, Komang Ayu from the University of Udayana , said: “This experience deepened my understanding of the end-to-end development of large language models. I learned how to collect and preprocess datasets, explored model architectures, and gained practical insights into how data is prepared and used to train AI models.”
+Since the launch of the 8 and 9 billion parameter models, Sahabat-AI has been downloaded more than 35,000 times on Hugging Face. For developers, the LLM can be freely downloaded from the Sahabat-AI website and the official Hugging Face page of Sahabat-AI. This open access approach empowers Indonesia’s broader AI ecosystem to build, experiment, and collaborate—encouraging the creation of AI applications tailored to local needs.
+Download the Sahabat-AI Large Language Model on Hugging Face .
+-END-
+About GoTo
+GoTo is the largest digital ecosystem in Indonesia. GoTo's mission is to 'empower progress' by oﬀering technology infrastructure and solutions that help everyone to access and thrive in the digital economy. The GoTo ecosystem provides a wide range of services, including mobility, delivery, payments, financial services, and technology solutions for merchants. The ecosystem also provides e-commerce services through Tokopedia and banking services through its partnership with Bank Jago.
+Media contact:
+corporate.affairs@gotocompany.com
+About Indosat Ooredoo Hutchison
+Indosat Ooredoo Hutchison (Indosat, IDX: ISAT) has the vision to become the most preferred digital telecommunications company in Indonesia. Together with its subsidiaries and affiliates, Indosat provides cellular services, ICT solutions, data centers, Fiber to the Home (FTTH), electronic payment services, financial services, and other digital services. Indosat has a larger purpose of empowering Indonesia, and with the spirit of Gotong Royong, Indosat wants to be the main collaborator in realizing it and creating meaningful change.
+Media Contact:
+Eni Nur Ifati, VP Head of External Communications
+eni.nurifati@ioh.co.id
+corporatecommunication@ioh.co.id
+(+62) 8559061001
+Powered By
+Privacy Notice Sitemap Cookie Settings

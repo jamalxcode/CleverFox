@@ -1,0 +1,3764 @@
+{
+ "fetched_at": "2026-11-15T15:58:44.533Z",
+ "listings": 40,
+ "pages": 395,
+ "readable": 256,
+ "note": "",
+ "index": {
+  "cf:app:openai/chatgpt": {
+   "file": "apps-global.json",
+   "pages": [
+    {
+     "url": "https://help.openai.com/articles/10193193",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://help.openai.com/articles/10193193"
+    },
+    {
+     "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries"
+    },
+    {
+     "url": "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free"
+    },
+    {
+     "url": "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt"
+    },
+    {
+     "url": "https://chatgpt.com",
+     "file": "pages/app_openai_chatgpt__0.txt",
+     "status": 200,
+     "chars": 1625,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chatgpt.com/"
+    },
+    {
+     "url": "https://chatgpt.com/plans",
+     "file": "pages/app_openai_chatgpt__6.txt",
+     "status": 200,
+     "chars": 1625,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chatgpt.com/"
+    },
+    {
+     "url": "https://chatgpt.com/pricing",
+     "file": "pages/app_openai_chatgpt__5.txt",
+     "status": 200,
+     "chars": 18507,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chatgpt.com/pricing/"
+    },
+    {
+     "url": "https://chatgpt.com/terms",
+     "file": "pages/app_openai_chatgpt__8.txt",
+     "status": 200,
+     "chars": 7,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chatgpt.com/terms"
+    },
+    {
+     "url": "https://chatgpt.com/faq",
+     "file": "pages/app_openai_chatgpt__7.txt",
+     "status": 200,
+     "chars": 7,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chatgpt.com/faq"
+    }
+   ]
+  },
+  "cf:app:perplexity/perplexity": {
+   "file": "apps-global.json",
+   "pages": [
+    {
+     "url": "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe"
+    },
+    {
+     "url": "https://www.perplexity.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/pricing"
+    },
+    {
+     "url": "https://www.perplexity.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/faq"
+    },
+    {
+     "url": "https://www.perplexity.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/plans"
+    },
+    {
+     "url": "https://www.perplexity.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/terms"
+    },
+    {
+     "url": "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+     "file": "pages/app_perplexity_perplexity__2.txt",
+     "status": 200,
+     "chars": 108505,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
+    },
+    {
+     "url": "https://www.perplexity.ai",
+     "file": "pages/app_perplexity_perplexity__0.txt",
+     "status": 200,
+     "chars": 1377,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.perplexity.ai/"
+    }
+   ]
+  },
+  "cf:app:addis-ai/addis-ai": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://apps.apple.com/us/app/addis-ai/id6748835704",
+     "file": "pages/app_addis-ai_addis-ai__3.txt",
+     "status": 200,
+     "chars": 5910,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://apps.apple.com/us/app/addis-ai/id6748835704"
+    },
+    {
+     "url": "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap",
+     "file": "pages/app_addis-ai_addis-ai__4.txt",
+     "status": 200,
+     "chars": 4143,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap"
+    },
+    {
+     "url": "https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat",
+     "file": "pages/app_addis-ai_addis-ai__5.txt",
+     "status": 200,
+     "chars": 4474,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat"
+    },
+    {
+     "url": "https://addisassistant.com/",
+     "file": "pages/app_addis-ai_addis-ai__0.txt",
+     "status": 200,
+     "chars": 8128,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/"
+    },
+    {
+     "url": "https://addisassistant.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/faq"
+    },
+    {
+     "url": "https://addisassistant.com/terms",
+     "file": "pages/app_addis-ai_addis-ai__9.txt",
+     "status": 200,
+     "chars": 29506,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/terms"
+    },
+    {
+     "url": "https://addisassistant.com/pricing",
+     "file": "pages/app_addis-ai_addis-ai__1.txt",
+     "status": 200,
+     "chars": 4333,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/pricing"
+    },
+    {
+     "url": "http://addisassistant.com/en/blogs/addis-ai-the-smart-voice-assistant-for-amharic-afan-oromo-how-it-works/",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/en/blogs/addis-ai-the-smart-voice-assistant-for-amharic-afan-oromo-how-it-works"
+    },
+    {
+     "url": "https://platform.addisassistant.com/docs",
+     "file": "pages/app_addis-ai_addis-ai__2.txt",
+     "status": 200,
+     "chars": 6227,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.addisassistant.com/docs/get-started/introduction"
+    },
+    {
+     "url": "https://addisassistant.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://addisassistant.com/plans"
+    }
+   ]
+  },
+  "cf:app:ulesson/ulesson": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://play.google.com/store/apps/details?id=com.ulesson",
+     "file": "pages/app_ulesson_ulesson__4.txt",
+     "status": 200,
+     "chars": 6720,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://play.google.com/store/apps/details?id=com.ulesson"
+    },
+    {
+     "url": "https://ulesson.com/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ulesson.com/pricing"
+    },
+    {
+     "url": "https://ulesson.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ulesson.com/plans"
+    },
+    {
+     "url": "https://ulesson.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ulesson.com/faq"
+    },
+    {
+     "url": "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
+     "file": "pages/app_ulesson_ulesson__1.txt",
+     "status": 200,
+     "chars": 9679,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://blog.ulesson.com/ulesson-frequently-asked-questions/"
+    },
+    {
+     "url": "https://ulesson.com/terms",
+     "file": "pages/app_ulesson_ulesson__2.txt",
+     "status": 200,
+     "chars": 34161,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://blog.ulesson.com/terms-conditions/"
+    },
+    {
+     "url": "https://ulesson.com/",
+     "file": "pages/app_ulesson_ulesson__0.txt",
+     "status": 200,
+     "chars": 6345,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://ulesson.com/"
+    },
+    {
+     "url": "https://ulesson.com/subscription",
+     "file": "pages/app_ulesson_ulesson__3.txt",
+     "status": 200,
+     "chars": 1212,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://ulesson.com/subscription"
+    }
+   ]
+  },
+  "cf:app:dicta/dicta": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf",
+     "file": null,
+     "status": 200,
+     "chars": 0,
+     "rendered": false,
+     "error": "not a text page (application/pdf)",
+     "final_url": "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf"
+    },
+    {
+     "url": "https://dicta.org.il/",
+     "file": "pages/app_dicta_dicta__0.txt",
+     "status": 200,
+     "chars": 1095,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/"
+    },
+    {
+     "url": "https://nakdan.dicta.org.il/",
+     "file": "pages/app_dicta_dicta__1.txt",
+     "status": 200,
+     "chars": 34,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://nakdan.dicta.org.il/"
+    },
+    {
+     "url": "https://rav.dicta.org.il/",
+     "file": "pages/app_dicta_dicta__2.txt",
+     "status": 200,
+     "chars": 389,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://iluy.dicta.org.il/"
+    },
+    {
+     "url": "https://dicta.org.il/tools?lang=en",
+     "file": "pages/app_dicta_dicta__3.txt",
+     "status": 200,
+     "chars": 4285,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/tools?lang=en"
+    },
+    {
+     "url": "https://dicta.org.il/?lang=en",
+     "file": "pages/app_dicta_dicta__4.txt",
+     "status": 200,
+     "chars": 1314,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/?lang=en"
+    },
+    {
+     "url": "https://dicta.org.il/pricing",
+     "file": "pages/app_dicta_dicta__7.txt",
+     "status": 200,
+     "chars": 217,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/pricing"
+    },
+    {
+     "url": "https://dicta.org.il/plans",
+     "file": "pages/app_dicta_dicta__8.txt",
+     "status": 200,
+     "chars": 217,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/plans"
+    },
+    {
+     "url": "https://nakdanpro.dicta.org.il/",
+     "file": "pages/app_dicta_dicta__6.txt",
+     "status": 200,
+     "chars": 552,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://nakdanpro.dicta.org.il/"
+    },
+    {
+     "url": "https://dicta.org.il/faq",
+     "file": "pages/app_dicta_dicta__9.txt",
+     "status": 200,
+     "chars": 217,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://dicta.org.il/faq"
+    },
+    {
+     "url": "https://dicta.org.il/terms",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    }
+   ]
+  },
+  "cf:app:mbzuai/k2-think": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://www.k2think.ai/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.ifm.ai/"
+    },
+    {
+     "url": "https://mbzuai.ac.ae/news/k2-think-v2-a-fully-sovereign-reasoning-model/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://mbzuai.ac.ae/news/k2-think-v2-a-fully-sovereign-reasoning-model/"
+    },
+    {
+     "url": "https://apps.apple.com/us/app/k2-think/id6744862356",
+     "file": "pages/app_mbzuai_k2-think__2.txt",
+     "status": 200,
+     "chars": 6540,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://apps.apple.com/us/app/k2-horizon/id6744862356"
+    },
+    {
+     "url": "https://mbzuai.ac.ae/news-events/news/mbzuai-g42-launch-k2-think-leading-open-source-system-advanced-ai-reasoning",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://mbzuai.ac.ae/news-events/news/mbzuai-g42-launch-k2-think-leading-open-source-system-advanced-ai-reasoning"
+    },
+    {
+     "url": "https://apps.apple.com/us/app/k2-horizon/id6744862356",
+     "file": "pages/app_mbzuai_k2-think__4.txt",
+     "status": 200,
+     "chars": 6540,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://apps.apple.com/us/app/k2-horizon/id6744862356"
+    },
+    {
+     "url": "https://www.k2think.ai/pricing",
+     "file": "pages/app_mbzuai_k2-think__5.txt",
+     "status": 200,
+     "chars": 293,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.k2think.ai/auth?redirect=%2Fpricing"
+    },
+    {
+     "url": "https://www.k2think.ai/plans",
+     "file": "pages/app_mbzuai_k2-think__6.txt",
+     "status": 200,
+     "chars": 293,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.k2think.ai/auth?redirect=%2Fplans"
+    },
+    {
+     "url": "https://www.k2think.ai/faq",
+     "file": "pages/app_mbzuai_k2-think__7.txt",
+     "status": 200,
+     "chars": 293,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.k2think.ai/auth?redirect=%2Ffaq"
+    },
+    {
+     "url": "https://www.k2think.ai/terms",
+     "file": "pages/app_mbzuai_k2-think__8.txt",
+     "status": 200,
+     "chars": 1908,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.k2think.ai/terms"
+    }
+   ]
+  },
+  "cf:app:vira/vira": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://web.ivira.ai/billing/subscription",
+     "file": "pages/app_vira_vira__3.txt",
+     "status": 200,
+     "chars": 3279,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://web.ivira.ai/billing/subscription"
+    },
+    {
+     "url": "https://cafebazaar.ir/app/ai.ivira.app",
+     "file": "pages/app_vira_vira__5.txt",
+     "status": 200,
+     "chars": 5904,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://cafebazaar.ir/app/ai.ivira.app"
+    },
+    {
+     "url": "https://ivira.ai/",
+     "file": "pages/app_vira_vira__0.txt",
+     "status": 200,
+     "chars": 8516,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/"
+    },
+    {
+     "url": "https://web.ivira.ai/",
+     "file": "pages/app_vira_vira__1.txt",
+     "status": 200,
+     "chars": 46,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://web.ivira.ai/"
+    },
+    {
+     "url": "https://ivira.ai/chatbot/",
+     "file": "pages/app_vira_vira__4.txt",
+     "status": 200,
+     "chars": 10897,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/chatbot/"
+    },
+    {
+     "url": "https://ivira.ai/blog/vira-web-service-guide/",
+     "file": "pages/app_vira_vira__2.txt",
+     "status": 200,
+     "chars": 24356,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/blog/vira-web-service-guide/"
+    },
+    {
+     "url": "https://ivira.ai/text-to-image/",
+     "file": "pages/app_vira_vira__6.txt",
+     "status": 200,
+     "chars": 8004,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/text-to-image/"
+    },
+    {
+     "url": "https://api.ivira.ai/partai/avanegar",
+     "file": "pages/app_vira_vira__7.txt",
+     "status": 200,
+     "chars": 829,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://api.ivira.ai/partai/avanegar"
+    },
+    {
+     "url": "https://ivira.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/pricing"
+    },
+    {
+     "url": "https://ivira.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/plans"
+    },
+    {
+     "url": "https://ivira.ai/faq",
+     "file": "pages/app_vira_vira__10.txt",
+     "status": 200,
+     "chars": 9699,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/faq/"
+    },
+    {
+     "url": "https://ivira.ai/terms",
+     "file": "pages/app_vira_vira__11.txt",
+     "status": 200,
+     "chars": 11741,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ivira.ai/terms/"
+    }
+   ]
+  },
+  "cf:app:aic-egypt/karnak-chat": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://english.ahram.org.eg/NewsContent/1/2/576301/Egypt/Society/Egypt-launches-Karnak-Chat,-Loghat-AI-apps-to-supp.aspx",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://english.ahram.org.eg/NewsContent/1/2/576301/Egypt/Society/Egypt-launches-Karnak-Chat,-Loghat-AI-apps-to-supp.aspx"
+    },
+    {
+     "url": "https://karnak.aic.gov.eg/",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://www.aic.gov.eg/news/43/",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://www.aic.gov.eg/projects/38/",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://mcit.gov.eg/en/Media_Center/Latest_News/News/117415",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://karnak.aic.gov.eg/plans",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://karnak.aic.gov.eg/pricing",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://karnak.aic.gov.eg/faq",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://karnak.aic.gov.eg/terms",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    }
+   ]
+  },
+  "cf:app:aic-egypt/belmasry": {
+   "file": "apps-regional-africa-mena.json",
+   "pages": [
+    {
+     "url": "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx"
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/login",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/plans",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/pricing",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/faq",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://belmasry.aic.gov.eg/terms",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    }
+   ]
+  },
+  "cf:app:kuaishou/kling-ai": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://app.klingai.com/global/membership/membership-plan",
+     "file": "pages/app_kuaishou_kling-ai__1.txt",
+     "status": 200,
+     "chars": 5153,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://kling.ai/app/membership/membership-plan"
+    },
+    {
+     "url": "https://app.klingai.com/global/docs/user-policy",
+     "file": "pages/app_kuaishou_kling-ai__2.txt",
+     "status": 200,
+     "chars": 53674,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kling.ai/docs/user-policy"
+    },
+    {
+     "url": "https://app.klingai.com/global/docs/payment-policy",
+     "file": "pages/app_kuaishou_kling-ai__3.txt",
+     "status": 200,
+     "chars": 69610,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kling.ai/docs/payment-policy"
+    },
+    {
+     "url": "https://app.klingai.com/global",
+     "file": "pages/app_kuaishou_kling-ai__0.txt",
+     "status": 200,
+     "chars": 1054,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://kling.ai/app"
+    },
+    {
+     "url": "https://app.klingai.com/global/docs/point-policy",
+     "file": "pages/app_kuaishou_kling-ai__4.txt",
+     "status": 200,
+     "chars": 5760,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kling.ai/docs/point-policy"
+    },
+    {
+     "url": "https://app.klingai.com/global/docs/privacy-policy",
+     "file": "pages/app_kuaishou_kling-ai__5.txt",
+     "status": 200,
+     "chars": 58086,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kling.ai/docs/privacy-policy"
+    },
+    {
+     "url": "https://klingai.com/docs/payment-policy",
+     "file": "pages/app_kuaishou_kling-ai__6.txt",
+     "status": 200,
+     "chars": 20389,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://klingai.com/docs/payment-policy"
+    },
+    {
+     "url": "https://app.klingai.com/pricing",
+     "file": "pages/app_kuaishou_kling-ai__7.txt",
+     "status": 200,
+     "chars": 564,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://kling.ai/app"
+    },
+    {
+     "url": "https://app.klingai.com/terms",
+     "file": "pages/app_kuaishou_kling-ai__10.txt",
+     "status": 200,
+     "chars": 79,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kling.ai/app/terms"
+    },
+    {
+     "url": "https://app.klingai.com/plans",
+     "file": "pages/app_kuaishou_kling-ai__8.txt",
+     "status": 200,
+     "chars": 564,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://kling.ai/app"
+    },
+    {
+     "url": "https://app.klingai.com/faq",
+     "file": "pages/app_kuaishou_kling-ai__9.txt",
+     "status": 200,
+     "chars": 823,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://kling.ai/app"
+    }
+   ]
+  },
+  "cf:app:zhipu-ai/z-ai-chat": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://chat.z.ai/legal-agreement/terms-of-service",
+     "file": "pages/app_zhipu-ai_z-ai-chat__1.txt",
+     "status": 200,
+     "chars": 52519,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.z.ai/legal-agreement/terms-of-service"
+    },
+    {
+     "url": "https://docs.z.ai/legal-agreement/privacy-policy",
+     "file": "pages/app_zhipu-ai_z-ai-chat__2.txt",
+     "status": 200,
+     "chars": 81981,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/legal-agreement/privacy-policy"
+    },
+    {
+     "url": "https://docs.z.ai/legal-agreement/subscription-terms",
+     "file": "pages/app_zhipu-ai_z-ai-chat__3.txt",
+     "status": 200,
+     "chars": 40136,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/legal-agreement/subscription-terms"
+    },
+    {
+     "url": "https://chat.z.ai/",
+     "file": "pages/app_zhipu-ai_z-ai-chat__0.txt",
+     "status": 200,
+     "chars": 384,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://chat.z.ai/"
+    },
+    {
+     "url": "https://chat.z.ai/pricing",
+     "file": "pages/app_zhipu-ai_z-ai-chat__4.txt",
+     "status": 200,
+     "chars": 258,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.z.ai/pricing"
+    },
+    {
+     "url": "https://chat.z.ai/plans",
+     "file": "pages/app_zhipu-ai_z-ai-chat__5.txt",
+     "status": 200,
+     "chars": 258,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.z.ai/plans"
+    },
+    {
+     "url": "https://chat.z.ai/faq",
+     "file": "pages/app_zhipu-ai_z-ai-chat__6.txt",
+     "status": 200,
+     "chars": 258,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.z.ai/faq"
+    },
+    {
+     "url": "https://chat.z.ai/terms",
+     "file": "pages/app_zhipu-ai_z-ai-chat__7.txt",
+     "status": 200,
+     "chars": 258,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.z.ai/terms"
+    }
+   ]
+  },
+  "cf:app:baidu/ernie-bot": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://home.baidu.com/home/index/news_detail/id/18020",
+     "file": "pages/app_baidu_ernie-bot__2.txt",
+     "status": 200,
+     "chars": 1977,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://home.baidu.com/home/index/news_detail/id/18020"
+    },
+    {
+     "url": "https://baike.baidu.com/item/%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/62642976",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://baike.baidu.com/item/%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/62642976"
+    },
+    {
+     "url": "https://yiyan.baidu.com/",
+     "file": "pages/app_baidu_ernie-bot__0.txt",
+     "status": 200,
+     "chars": 193,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    },
+    {
+     "url": "https://yiyan.baidu.com/notice/feature",
+     "file": "pages/app_baidu_ernie-bot__1.txt",
+     "status": 200,
+     "chars": 192,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    },
+    {
+     "url": "https://yiyan.baidu.com/plans",
+     "file": "pages/app_baidu_ernie-bot__5.txt",
+     "status": 200,
+     "chars": 196,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    },
+    {
+     "url": "https://yiyan.baidu.com/pricing",
+     "file": "pages/app_baidu_ernie-bot__4.txt",
+     "status": 200,
+     "chars": 198,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    },
+    {
+     "url": "https://yiyan.baidu.com/faq",
+     "file": "pages/app_baidu_ernie-bot__6.txt",
+     "status": 200,
+     "chars": 194,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    },
+    {
+     "url": "https://yiyan.baidu.com/terms",
+     "file": "pages/app_baidu_ernie-bot__7.txt",
+     "status": 200,
+     "chars": 202,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://wenxin.baidu.com/?enter_type=yiyan_site"
+    }
+   ]
+  },
+  "cf:app:tencent/yuanbao": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://cloud.tencent.com/developer/news/2175374",
+     "file": "pages/app_tencent_yuanbao__2.txt",
+     "status": 200,
+     "chars": 2520,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://cloud.tencent.com/developer/news/2175374"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/",
+     "file": "pages/app_tencent_yuanbao__0.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/plans",
+     "file": "pages/app_tencent_yuanbao__4.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/download",
+     "file": "pages/app_tencent_yuanbao__1.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/pricing",
+     "file": "pages/app_tencent_yuanbao__3.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/faq",
+     "file": "pages/app_tencent_yuanbao__5.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    },
+    {
+     "url": "https://yuanbao.tencent.com/terms",
+     "file": "pages/app_tencent_yuanbao__6.txt",
+     "status": 200,
+     "chars": 133,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://yuanbao.tencent.com/browser-support.html"
+    }
+   ]
+  },
+  "cf:app:wrtn-technologies/wrtn": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://2025-update.wrtn.ai/",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "fetch failed",
+     "final_url": null
+    },
+    {
+     "url": "https://login.wrtn.ai/policy/service",
+     "file": "pages/app_wrtn-technologies_wrtn__1.txt",
+     "status": 200,
+     "chars": 21169,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://login.wrtn.ai/policy/service"
+    },
+    {
+     "url": "https://wrtn.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.ai/plans"
+    },
+    {
+     "url": "https://wrtn.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.ai/faq"
+    },
+    {
+     "url": "https://wrtn.io/",
+     "file": "pages/app_wrtn-technologies_wrtn__3.txt",
+     "status": 200,
+     "chars": 1437,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.io/"
+    },
+    {
+     "url": "https://wrtn.ai/terms",
+     "file": "pages/app_wrtn-technologies_wrtn__8.txt",
+     "status": 200,
+     "chars": 21169,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://login.wrtn.ai/policy/service"
+    },
+    {
+     "url": "https://wrtn.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.ai/pricing"
+    },
+    {
+     "url": "https://wrtn.io/%EB%A4%BC%ED%8A%BC-gpt-5-%EC%9C%A0%EB%A3%8C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%AC%B4%EB%A3%8C-%EB%AC%B4%EC%A0%9C%ED%95%9C-%EC%A0%9C%EA%B3%B5/",
+     "file": "pages/app_wrtn-technologies_wrtn__4.txt",
+     "status": 200,
+     "chars": 1639,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.io/news/%eb%a4%bc%ed%8a%bc-gpt-5-%ec%9c%a0%eb%a3%8c-%ec%84%9c%eb%b9%84%ec%8a%a4-%eb%ac%b4%eb%a3%8c-%eb%ac%b4%ec%a0%9c%ed%95%9c-%ec%a0%9c%ea%b3%b5/"
+    },
+    {
+     "url": "https://wrtn.ai/",
+     "file": "pages/app_wrtn-technologies_wrtn__0.txt",
+     "status": 200,
+     "chars": 196,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://wrtn.ai/"
+    }
+   ]
+  },
+  "cf:app:liner/liner": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://liner.com/",
+     "file": "pages/app_liner_liner__0.txt",
+     "status": 200,
+     "chars": 6373,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/"
+    },
+    {
+     "url": "https://liner.com/pricing",
+     "file": "pages/app_liner_liner__1.txt",
+     "status": 200,
+     "chars": 11237,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/pricing"
+    },
+    {
+     "url": "https://liner.com/terms",
+     "file": "pages/app_liner_liner__2.txt",
+     "status": 200,
+     "chars": 24418,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/terms"
+    },
+    {
+     "url": "https://liner.com/privacy",
+     "file": "pages/app_liner_liner__3.txt",
+     "status": 200,
+     "chars": 19585,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/privacy"
+    },
+    {
+     "url": "https://liner.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/plans"
+    },
+    {
+     "url": "https://support.liner.com/hc/en-us/sections/22372249828633-Subscription-Account",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://support.liner.com/hc/en-us/sections/22372249828633-Subscription-Account"
+    },
+    {
+     "url": "https://liner.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/faq"
+    },
+    {
+     "url": "https://liner.com/news/liner-interview-zdnet",
+     "file": "pages/app_liner_liner__5.txt",
+     "status": 200,
+     "chars": 8414,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://liner.com/news/liner-interview-zdnet"
+    }
+   ]
+  },
+  "cf:app:kakao/kanana": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://www.kakaocorp.com/page/detail/11809?lang=ENG",
+     "file": "pages/app_kakao_kanana__4.txt",
+     "status": 200,
+     "chars": 2709,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kakaocorp.com/page/detail/11809?lang=ENG"
+    },
+    {
+     "url": "https://www.kakaocorp.com/page/detail/11545?lang=ENG",
+     "file": "pages/app_kakao_kanana__5.txt",
+     "status": 200,
+     "chars": 3748,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kakaocorp.com/page/detail/11545?lang=ENG"
+    },
+    {
+     "url": "https://mate.kanana.ai/policy/terms/sv",
+     "file": "pages/app_kakao_kanana__1.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/welcome",
+     "file": "pages/app_kakao_kanana__0.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/pricing",
+     "file": "pages/app_kakao_kanana__6.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/policy/privacy",
+     "file": "pages/app_kakao_kanana__2.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/policy/operation",
+     "file": "pages/app_kakao_kanana__3.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/plans",
+     "file": "pages/app_kakao_kanana__7.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/terms",
+     "file": "pages/app_kakao_kanana__9.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    },
+    {
+     "url": "https://mate.kanana.ai/faq",
+     "file": "pages/app_kakao_kanana__8.txt",
+     "status": 200,
+     "chars": 1397,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://kanana.kakao.com/"
+    }
+   ]
+  },
+  "cf:app:botnoi/botnoi-voice": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://botnoigroup.com/docs?lang=en",
+     "file": "pages/app_botnoi_botnoi-voice__3.txt",
+     "status": 200,
+     "chars": 659,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://botnoigroup.com/docs?lang=en"
+    },
+    {
+     "url": "https://voice.botnoi.ai/agreement",
+     "file": "pages/app_botnoi_botnoi-voice__2.txt",
+     "status": 200,
+     "chars": 6325,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/agreement"
+    },
+    {
+     "url": "https://voice.botnoi.ai/payment/quote",
+     "file": "pages/app_botnoi_botnoi-voice__4.txt",
+     "status": 200,
+     "chars": 2026,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/payment/quote"
+    },
+    {
+     "url": "https://voice.botnoi.ai/payment",
+     "file": "pages/app_botnoi_botnoi-voice__1.txt",
+     "status": 200,
+     "chars": 1328,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/payment"
+    },
+    {
+     "url": "https://voice.botnoi.ai/pricing",
+     "file": "pages/app_botnoi_botnoi-voice__5.txt",
+     "status": 200,
+     "chars": 175,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/pricing"
+    },
+    {
+     "url": "https://voice.botnoi.ai/",
+     "file": "pages/app_botnoi_botnoi-voice__0.txt",
+     "status": 200,
+     "chars": 14081,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/"
+    },
+    {
+     "url": "https://voice.botnoi.ai/plans",
+     "file": "pages/app_botnoi_botnoi-voice__6.txt",
+     "status": 200,
+     "chars": 175,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/plans"
+    },
+    {
+     "url": "https://voice.botnoi.ai/terms",
+     "file": "pages/app_botnoi_botnoi-voice__8.txt",
+     "status": 200,
+     "chars": 175,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/terms"
+    },
+    {
+     "url": "https://voice.botnoi.ai/faq",
+     "file": "pages/app_botnoi_botnoi-voice__7.txt",
+     "status": 200,
+     "chars": 175,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://voice.botnoi.ai/faq"
+    }
+   ]
+  },
+  "cf:app:digital-india-bhashini/bhashini": {
+   "file": "apps-regional-asia-latam.json",
+   "pages": [
+    {
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2239132",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2239132"
+    },
+    {
+     "url": "https://bhashini.gov.in/",
+     "file": "pages/app_digital-india-bhashini_bhashini__0.txt",
+     "status": 200,
+     "chars": 11636,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/"
+    },
+    {
+     "url": "https://anuvaad.bhashini.gov.in/",
+     "file": "pages/app_digital-india-bhashini_bhashini__1.txt",
+     "status": 200,
+     "chars": 524,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://anuvaad.bhashini.gov.in/text-to-text-translation"
+    },
+    {
+     "url": "https://bhashini.gov.in/about-bhashini",
+     "file": "pages/app_digital-india-bhashini_bhashini__2.txt",
+     "status": 200,
+     "chars": 3257,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/about-bhashini"
+    },
+    {
+     "url": "https://bhashini.gov.in/pricing",
+     "file": "pages/app_digital-india-bhashini_bhashini__4.txt",
+     "status": 200,
+     "chars": 1996,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/pricing"
+    },
+    {
+     "url": "https://bhashini.gov.in/faq",
+     "file": "pages/app_digital-india-bhashini_bhashini__6.txt",
+     "status": 200,
+     "chars": 1996,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/faq"
+    },
+    {
+     "url": "https://bhashini.gov.in/terms",
+     "file": "pages/app_digital-india-bhashini_bhashini__7.txt",
+     "status": 200,
+     "chars": 1996,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/terms"
+    },
+    {
+     "url": "https://bhashini.gov.in/plans",
+     "file": "pages/app_digital-india-bhashini_bhashini__5.txt",
+     "status": 200,
+     "chars": 1996,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://bhashini.gov.in/plans"
+    }
+   ]
+  },
+  "cf:app:qwen/qwen-chat": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://qwen.ai/qwenchat",
+     "file": "pages/app_qwen_qwen-chat__1.txt",
+     "status": 200,
+     "chars": 3081,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://qwen.ai/qwenchat"
+    },
+    {
+     "url": "https://chat.qwen.ai/",
+     "file": "pages/app_qwen_qwen-chat__0.txt",
+     "status": 200,
+     "chars": 292,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.qwen.ai/"
+    },
+    {
+     "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/",
+     "file": "pages/app_qwen_qwen-chat__5.txt",
+     "status": 200,
+     "chars": 31386,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/"
+    },
+    {
+     "url": "https://qwen.ai/download",
+     "file": "pages/app_qwen_qwen-chat__2.txt",
+     "status": 200,
+     "chars": 554,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://qwen.ai/download"
+    },
+    {
+     "url": "https://qwen.ai/termsservice",
+     "file": "pages/app_qwen_qwen-chat__3.txt",
+     "status": 200,
+     "chars": 40546,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://qwen.ai/termsservice"
+    },
+    {
+     "url": "https://qwen.ai/privacypolicy",
+     "file": "pages/app_qwen_qwen-chat__4.txt",
+     "status": 200,
+     "chars": 37505,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://qwen.ai/privacypolicy"
+    },
+    {
+     "url": "https://chat.qwen.ai/pricing",
+     "file": "pages/app_qwen_qwen-chat__6.txt",
+     "status": 200,
+     "chars": 292,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.qwen.ai/pricing"
+    },
+    {
+     "url": "https://chat.qwen.ai/faq",
+     "file": "pages/app_qwen_qwen-chat__8.txt",
+     "status": 200,
+     "chars": 292,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.qwen.ai/faq"
+    },
+    {
+     "url": "https://chat.qwen.ai/plans",
+     "file": "pages/app_qwen_qwen-chat__7.txt",
+     "status": 200,
+     "chars": 292,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.qwen.ai/plans"
+    },
+    {
+     "url": "https://chat.qwen.ai/terms",
+     "file": "pages/app_qwen_qwen-chat__9.txt",
+     "status": 200,
+     "chars": 292,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.qwen.ai/terms"
+    }
+   ]
+  },
+  "cf:app:moonshot-ai/kimi": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://www.kimi.com/en/help/membership/membership-overview",
+     "file": "pages/app_moonshot-ai_kimi__1.txt",
+     "status": 200,
+     "chars": 9205,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/en/help/membership/membership-overview"
+    },
+    {
+     "url": "https://www.kimi.com/user/agreement/en/paidServiceAgreement",
+     "file": "pages/app_moonshot-ai_kimi__4.txt",
+     "status": 200,
+     "chars": 6033,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/user/agreement/en/paidServiceAgreement"
+    },
+    {
+     "url": "https://www.kimi.com/en/help/membership/membership-payment-issues",
+     "file": "pages/app_moonshot-ai_kimi__2.txt",
+     "status": 200,
+     "chars": 5575,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/en/help/membership/membership-payment-issues"
+    },
+    {
+     "url": "https://www.kimi.com/user/agreement/en/kimiClawPrivacy",
+     "file": "pages/app_moonshot-ai_kimi__5.txt",
+     "status": 200,
+     "chars": 27104,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/user/agreement/en/kimiClawPrivacy"
+    },
+    {
+     "url": "https://www.kimi.com/resources/kimi-2-7-pricing",
+     "file": "pages/app_moonshot-ai_kimi__3.txt",
+     "status": 200,
+     "chars": 12050,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/resources/"
+    },
+    {
+     "url": "https://www.kimi.com/help/membership/membership-pricing",
+     "file": "pages/app_moonshot-ai_kimi__6.txt",
+     "status": 200,
+     "chars": 3872,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "url": "https://www.kimi.com/user/agreement/userprivacy?version=v2",
+     "file": "pages/app_moonshot-ai_kimi__7.txt",
+     "status": 200,
+     "chars": 41972,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/user/agreement/userprivacy?version=v2"
+    },
+    {
+     "url": "https://www.kimi.com/en/help/kimi-business/kimi-business-faq",
+     "file": "pages/app_moonshot-ai_kimi__9.txt",
+     "status": 200,
+     "chars": 7508,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/en/help/kimi-business/kimi-business-faq"
+    },
+    {
+     "url": "https://www.kimi.com/es-419/help/membership/membership-pricing",
+     "file": "pages/app_moonshot-ai_kimi__8.txt",
+     "status": 200,
+     "chars": 3872,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.kimi.com/help/membership/membership-pricing"
+    },
+    {
+     "url": "https://www.kimi.com/",
+     "file": "pages/app_moonshot-ai_kimi__0.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.kimi.com/"
+    },
+    {
+     "url": "https://www.kimi.com/plans",
+     "file": "pages/app_moonshot-ai_kimi__11.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.kimi.com/"
+    },
+    {
+     "url": "https://www.kimi.com/pricing",
+     "file": "pages/app_moonshot-ai_kimi__10.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.kimi.com/"
+    },
+    {
+     "url": "https://www.kimi.com/faq",
+     "file": "pages/app_moonshot-ai_kimi__12.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.kimi.com/"
+    },
+    {
+     "url": "https://www.kimi.com/terms",
+     "file": "pages/app_moonshot-ai_kimi__13.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.kimi.com/"
+    }
+   ]
+  },
+  "cf:app:sarvam-ai/indus": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://indus.sarvam.ai/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://indus.sarvam.ai/login?return_to=%2F"
+    },
+    {
+     "url": "https://docs.sarvam.ai/",
+     "file": "pages/app_sarvam-ai_indus__2.txt",
+     "status": 200,
+     "chars": 8039,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.sarvam.ai/"
+    },
+    {
+     "url": "https://www.sarvam.ai/terms-of-service",
+     "file": "pages/app_sarvam-ai_indus__3.txt",
+     "status": 200,
+     "chars": 59107,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.sarvam.ai/terms-of-service"
+    },
+    {
+     "url": "https://www.sarvam.ai/blogs/sarvam-30b-105b",
+     "file": "pages/app_sarvam-ai_indus__4.txt",
+     "status": 200,
+     "chars": 52631,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.sarvam.ai/blogs/sarvam-30b-105b"
+    },
+    {
+     "url": "https://docs.sarvam.ai/api/getting-started/pricing",
+     "file": "pages/app_sarvam-ai_indus__5.txt",
+     "status": 200,
+     "chars": 15904,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.sarvam.ai/api/getting-started/pricing"
+    },
+    {
+     "url": "https://indus.sarvam.ai/pricing",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://indus.sarvam.ai/login?return_to=%2Fpricing"
+    },
+    {
+     "url": "https://indus.sarvam.ai/plans",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://indus.sarvam.ai/login?return_to=%2Fplans"
+    },
+    {
+     "url": "https://indus.sarvam.ai/faq",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://indus.sarvam.ai/login?return_to=%2Ffaq"
+    },
+    {
+     "url": "https://indus.sarvam.ai/terms",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://indus.sarvam.ai/login?return_to=%2Fterms"
+    },
+    {
+     "url": "https://www.sarvam.ai/app",
+     "file": "pages/app_sarvam-ai_indus__1.txt",
+     "status": 200,
+     "chars": 444,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.sarvam.ai/app"
+    }
+   ]
+  },
+  "cf:app:humain/humain-chat": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://chat.humain.com/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/"
+    },
+    {
+     "url": "https://www.humain.com/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.humain.com/"
+    },
+    {
+     "url": "https://chat.humain.com/login",
+     "file": "pages/app_humain_humain-chat__3.txt",
+     "status": 200,
+     "chars": 44,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/login"
+    },
+    {
+     "url": "https://www.humain.com/en/news/humain-chat-launch.html",
+     "file": "pages/app_humain_humain-chat__2.txt",
+     "status": 200,
+     "chars": 49,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.humain.com/en/news/humain-chat-launch"
+    },
+    {
+     "url": "https://chat.humain.com/pricing",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/pricing"
+    },
+    {
+     "url": "https://chat.humain.com/faq",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/faq"
+    },
+    {
+     "url": "https://chat.humain.com/plans",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/plans"
+    },
+    {
+     "url": "https://node.humain.com/legal/privacy",
+     "file": "pages/app_humain_humain-chat__5.txt",
+     "status": 200,
+     "chars": 13806,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://node.humain.com/legal/privacy"
+    },
+    {
+     "url": "https://www.humain.com/news/hrh-crown-prince-launches-humain-as-global-ai-powerhouse",
+     "file": "pages/app_humain_humain-chat__4.txt",
+     "status": 200,
+     "chars": 56,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.humain.com/news/hrh-crown-prince-launches-humain-as-global-ai-powerhouse"
+    },
+    {
+     "url": "https://chat.humain.com/terms",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://chat.humain.com/terms"
+    }
+   ]
+  },
+  "cf:app:sahabat-ai/sahabat-ai-chat": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://www.gotocompany.com/en/news/press/sahabat-ai-gets-smarter-indosat-and-goto-launch-new-70-billion-parameter-model-with-multilingual-chat-service",
+     "file": "pages/app_sahabat-ai_sahabat-ai-chat__2.txt",
+     "status": 200,
+     "chars": 8375,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.gotocompany.com/en/news/press/sahabat-ai-gets-smarter-indosat-and-goto-launch-new-70-billion-parameter-model-with-multilingual-chat-service"
+    },
+    {
+     "url": "https://sahabat-ai.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://sahabat-ai.com/plans"
+    },
+    {
+     "url": "https://sahabat-ai.com/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://sahabat-ai.com/pricing"
+    },
+    {
+     "url": "https://intelligencesuite-ai.ioh.co.id/en/products/",
+     "file": "pages/app_sahabat-ai_sahabat-ai-chat__4.txt",
+     "status": 200,
+     "chars": 4220,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://intelligencesuite-ai.ioh.co.id/en/products/"
+    },
+    {
+     "url": "https://sahabat-ai.com/documents/Sahabat-AI-Responsible-Use-Guide-v7.pdf",
+     "file": null,
+     "status": 200,
+     "chars": 0,
+     "rendered": false,
+     "error": "not a text page (application/pdf)",
+     "final_url": "https://sahabat-ai.com/documents/Sahabat-AI-Responsible-Use-Guide-v7.pdf"
+    },
+    {
+     "url": "https://sahabat-ai.com/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://sahabat-ai.com/terms"
+    },
+    {
+     "url": "https://sahabat-ai.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://sahabat-ai.com/faq"
+    },
+    {
+     "url": "https://sahabat-ai.com/",
+     "file": "pages/app_sahabat-ai_sahabat-ai-chat__0.txt",
+     "status": 200,
+     "chars": 3892,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://sahabat-ai.com/"
+    },
+    {
+     "url": "https://ioh.co.id/id/contents?slug=ioh-q-1-2026-report-press-release",
+     "file": "pages/app_sahabat-ai_sahabat-ai-chat__3.txt",
+     "status": 200,
+     "chars": 236,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ioh.co.id/id/contents?slug=ioh-q-1-2026-report-press-release"
+    }
+   ]
+  },
+  "cf:app:inception/jais-chat": {
+   "file": "apps-regional.json",
+   "pages": [
+    {
+     "url": "https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/"
+    },
+    {
+     "url": "https://www.jaischat.ai/jaischat/en",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ifm.ai/jais/"
+    },
+    {
+     "url": "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception",
+     "file": "pages/app_inception_jais-chat__2.txt",
+     "status": 200,
+     "chars": 11630,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception"
+    },
+    {
+     "url": "https://www.g42.ai/resources/news/core42-launches-jais-chat",
+     "file": "pages/app_inception_jais-chat__4.txt",
+     "status": 200,
+     "chars": 6796,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.g42.ai/resources/news/core42-launches-jais-chat"
+    },
+    {
+     "url": "https://www.g42.ai/companies",
+     "file": "pages/app_inception_jais-chat__5.txt",
+     "status": 200,
+     "chars": 3390,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.g42.ai/companies"
+    },
+    {
+     "url": "https://www.jaischat.ai/",
+     "file": "pages/app_inception_jais-chat__0.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.jaischat.ai/language?redirect=%2F"
+    },
+    {
+     "url": "https://www.jaischat.ai/pricing",
+     "file": "pages/app_inception_jais-chat__6.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.jaischat.ai/language?redirect=%2Fpricing"
+    },
+    {
+     "url": "https://www.jaischat.ai/faq",
+     "file": "pages/app_inception_jais-chat__8.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.jaischat.ai/language?redirect=%2Ffaq"
+    },
+    {
+     "url": "https://www.jaischat.ai/plans",
+     "file": "pages/app_inception_jais-chat__7.txt",
+     "status": 200,
+     "chars": 265,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.jaischat.ai/language?redirect=%2Fplans"
+    },
+    {
+     "url": "https://www.jaischat.ai/terms",
+     "file": "pages/app_inception_jais-chat__9.txt",
+     "status": 200,
+     "chars": 2052,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://www.jaischat.ai/terms"
+    }
+   ]
+  },
+  "cf:host:servercore": {
+   "file": "hosts-africa.json",
+   "pages": [
+    {
+     "url": "https://servercore.com/services/cloud-based-gpu-servers/",
+     "file": "pages/host_servercore__0.txt",
+     "status": 200,
+     "chars": 34831,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/services/cloud-based-gpu-servers/"
+    },
+    {
+     "url": "https://servercore.com/solutions/healthcare/",
+     "file": "pages/host_servercore__2.txt",
+     "status": 200,
+     "chars": 30136,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/solutions/healthcare/"
+    },
+    {
+     "url": "https://servercore.com/",
+     "file": "pages/host_servercore__1.txt",
+     "status": 200,
+     "chars": 19167,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/"
+    },
+    {
+     "url": "https://servercore.com/services/cloud-hosting/",
+     "file": "pages/host_servercore__3.txt",
+     "status": 200,
+     "chars": 36334,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/services/cloud-hosting/"
+    },
+    {
+     "url": "https://servercore.com/solutions/ai-and-ml/",
+     "file": "pages/host_servercore__6.txt",
+     "status": 200,
+     "chars": 31384,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/solutions/ai-and-ml/"
+    },
+    {
+     "url": "https://servercore.com/services/dedicated-servers/dedicated-servers-with-gpu/",
+     "file": "pages/host_servercore__4.txt",
+     "status": 200,
+     "chars": 36193,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/services/dedicated-servers/dedicated-servers-with-gpu/"
+    },
+    {
+     "url": "https://servercore.com/services/",
+     "file": "pages/host_servercore__5.txt",
+     "status": 200,
+     "chars": 10557,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/services/"
+    },
+    {
+     "url": "https://servercore.com/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/pricing"
+    },
+    {
+     "url": "https://servercore.com/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/terms"
+    },
+    {
+     "url": "https://servercore.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/plans"
+    },
+    {
+     "url": "https://servercore.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://servercore.com/faq"
+    }
+   ]
+  },
+  "cf:host:deepseek-api": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://platform.deepseek.com/",
+     "file": null,
+     "status": 202,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://platform.deepseek.com/"
+    },
+    {
+     "url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "file": "pages/host_deepseek-api__1.txt",
+     "status": 200,
+     "chars": 3766,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+     "url": "https://api-docs.deepseek.com/",
+     "file": "pages/host_deepseek-api__2.txt",
+     "status": 200,
+     "chars": 4047,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://api-docs.deepseek.com/"
+    },
+    {
+     "url": "https://platform.deepseek.com/pricing",
+     "file": null,
+     "status": 202,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://platform.deepseek.com/pricing"
+    },
+    {
+     "url": "https://platform.deepseek.com/plans",
+     "file": null,
+     "status": 202,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://platform.deepseek.com/plans"
+    },
+    {
+     "url": "https://platform.deepseek.com/faq",
+     "file": null,
+     "status": 202,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://platform.deepseek.com/faq"
+    },
+    {
+     "url": "https://platform.deepseek.com/terms",
+     "file": null,
+     "status": 202,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://platform.deepseek.com/terms"
+    },
+    {
+     "url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+     "file": "pages/host_deepseek-api__4.txt",
+     "status": 200,
+     "chars": 1950,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+    },
+    {
+     "url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html",
+     "file": "pages/host_deepseek-api__5.txt",
+     "status": 200,
+     "chars": 22929,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html"
+    },
+    {
+     "url": "https://api-docs.deepseek.com/faq",
+     "file": "pages/host_deepseek-api__3.txt",
+     "status": 200,
+     "chars": 745,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://static.deepseek.com/faq/index.html?lang=en#/category/4"
+    }
+   ]
+  },
+  "cf:host:cerebras-inference": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://www.cerebras.ai/inference",
+     "file": "pages/host_cerebras-inference__0.txt",
+     "status": 200,
+     "chars": 14116,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/inference"
+    },
+    {
+     "url": "https://inference-docs.cerebras.ai/console/account-billing",
+     "file": "pages/host_cerebras-inference__3.txt",
+     "status": 200,
+     "chars": 62226,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://inference-docs.cerebras.ai/console/account-billing"
+    },
+    {
+     "url": "https://inference-docs.cerebras.ai/support/rate-limits",
+     "file": "pages/host_cerebras-inference__4.txt",
+     "status": 200,
+     "chars": 77108,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://inference-docs.cerebras.ai/support/rate-limits"
+    },
+    {
+     "url": "https://inference-docs.cerebras.ai/support/pricing",
+     "file": "pages/host_cerebras-inference__2.txt",
+     "status": 200,
+     "chars": 2354,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/pricing"
+    },
+    {
+     "url": "https://inference-docs.cerebras.ai/integrations/aws-marketplace",
+     "file": "pages/host_cerebras-inference__6.txt",
+     "status": 200,
+     "chars": 83408,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://inference-docs.cerebras.ai/integrations/aws-marketplace"
+    },
+    {
+     "url": "https://www.cerebras.ai/pricing",
+     "file": "pages/host_cerebras-inference__7.txt",
+     "status": 200,
+     "chars": 2354,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/pricing"
+    },
+    {
+     "url": "https://www.cerebras.ai/company",
+     "file": "pages/host_cerebras-inference__5.txt",
+     "status": 200,
+     "chars": 5710,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/company"
+    },
+    {
+     "url": "https://www.cerebras.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/plans"
+    },
+    {
+     "url": "https://www.cerebras.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/faq"
+    },
+    {
+     "url": "https://www.cerebras.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cerebras.ai/terms"
+    },
+    {
+     "url": "https://cloud.cerebras.ai/",
+     "file": "pages/host_cerebras-inference__1.txt",
+     "status": 200,
+     "chars": 559,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://cloud.cerebras.ai/"
+    }
+   ]
+  },
+  "cf:host:hyperbolic": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://www.hyperbolic.ai/inference",
+     "file": "pages/host_hyperbolic__0.txt",
+     "status": 200,
+     "chars": 7282,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/inference"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/",
+     "file": "pages/host_hyperbolic__1.txt",
+     "status": 200,
+     "chars": 15964,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/docs/overview/quickstart",
+     "file": "pages/host_hyperbolic__3.txt",
+     "status": 200,
+     "chars": 56426,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/docs/overview/quickstart"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/docs/general/billing-payments",
+     "file": "pages/host_hyperbolic__2.txt",
+     "status": 200,
+     "chars": 58570,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/docs/general/billing-payments"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/pricing"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/docs/general/account-management",
+     "file": "pages/host_hyperbolic__4.txt",
+     "status": 200,
+     "chars": 78807,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/docs/general/account-management"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/blog/pay-for-gpu-and-ai-inference-models-with-crypto",
+     "file": null,
+     "status": 500,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/blog/pay-for-gpu-and-ai-inference-models-with-crypto"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/plans"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/faq"
+    },
+    {
+     "url": "https://www.hyperbolic.ai/terms",
+     "file": "pages/host_hyperbolic__10.txt",
+     "status": 200,
+     "chars": 97015,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.hyperbolic.ai/terms"
+    },
+    {
+     "url": "https://builtin.com/company/hyperbolic",
+     "file": "pages/host_hyperbolic__6.txt",
+     "status": 200,
+     "chars": 2082,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://builtin.com/company/hyperbolic"
+    }
+   ]
+  },
+  "cf:host:z-ai-api": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://docs.z.ai/guides/overview/pricing",
+     "file": "pages/host_z-ai-api__1.txt",
+     "status": 200,
+     "chars": 41871,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/guides/overview/pricing"
+    },
+    {
+     "url": "https://docs.z.ai/guides/overview/quick-start",
+     "file": "pages/host_z-ai-api__2.txt",
+     "status": 200,
+     "chars": 98886,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/guides/overview/quick-start"
+    },
+    {
+     "url": "https://docs.z.ai/devpack/faq",
+     "file": "pages/host_z-ai-api__4.txt",
+     "status": 200,
+     "chars": 46178,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/devpack/faq"
+    },
+    {
+     "url": "https://docs.z.ai/help/faq",
+     "file": "pages/host_z-ai-api__3.txt",
+     "status": 200,
+     "chars": 22946,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.z.ai/help/faq"
+    },
+    {
+     "url": "https://qz.com/china-six-tigers-ai-startup-zhipu-moonshot-minimax-01ai-1851768509",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://qz.com/china-six-tigers-ai-startup-zhipu-moonshot-minimax-01ai-1851768509"
+    },
+    {
+     "url": "https://z.ai/model-api",
+     "file": "pages/host_z-ai-api__0.txt",
+     "status": 200,
+     "chars": 2660,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://z.ai/model-api"
+    },
+    {
+     "url": "https://z.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://z.ai/faq"
+    },
+    {
+     "url": "https://z.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://z.ai/plans"
+    },
+    {
+     "url": "https://z.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://z.ai/terms"
+    },
+    {
+     "url": "https://z.ai/pricing",
+     "file": "pages/host_z-ai-api__6.txt",
+     "status": 200,
+     "chars": 2162,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://z.ai/pricing"
+    }
+   ]
+  },
+  "cf:host:krutrim-cloud": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://docs.cloud.olakrutrim.com/basics/ai-studio",
+     "file": "pages/host_krutrim-cloud__2.txt",
+     "status": 200,
+     "chars": 4812,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloud.olakrutrim.com/basics/ai-studio"
+    },
+    {
+     "url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio",
+     "file": "pages/host_krutrim-cloud__3.txt",
+     "status": 200,
+     "chars": 4022,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio"
+    },
+    {
+     "url": "https://yourstory.com/ai-story/krutrim-announces-strategic-pivot-to-ai-cloud-services",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://yourstory.com/ai-story/krutrim-announces-strategic-pivot-to-ai-cloud-services"
+    },
+    {
+     "url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/ai-jobs/inferencing",
+     "file": "pages/host_krutrim-cloud__6.txt",
+     "status": 200,
+     "chars": 4519,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/ai-jobs/inferencing"
+    },
+    {
+     "url": "https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits",
+     "file": "pages/host_krutrim-cloud__4.txt",
+     "status": 200,
+     "chars": 1565,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloud.olakrutrim.com/basics/cloud-billing/adding-credits"
+    },
+    {
+     "url": "https://www.olakrutrim.com/ai-studio",
+     "file": "pages/host_krutrim-cloud__0.txt",
+     "status": 200,
+     "chars": 4337,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.olakrutrim.com/ai-studio"
+    },
+    {
+     "url": "https://www.olakrutrim.com/pricing",
+     "file": "pages/host_krutrim-cloud__1.txt",
+     "status": 200,
+     "chars": 3277,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.olakrutrim.com/pricing"
+    },
+    {
+     "url": "https://www.olakrutrim.com/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.olakrutrim.com/terms"
+    },
+    {
+     "url": "https://www.olakrutrim.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.olakrutrim.com/faq"
+    },
+    {
+     "url": "https://www.olakrutrim.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.olakrutrim.com/plans"
+    }
+   ]
+  },
+  "cf:host:gemini-api": {
+   "file": "hosts-api.json",
+   "pages": [
+    {
+     "url": "https://aistudio.google.com/",
+     "file": "pages/host_gemini-api__1.txt",
+     "status": 200,
+     "chars": 2015,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/welcome"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs",
+     "file": "pages/host_gemini-api__0.txt",
+     "status": 200,
+     "chars": 6768,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs/billing",
+     "file": "pages/host_gemini-api__3.txt",
+     "status": 200,
+     "chars": 33161,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/billing"
+    },
+    {
+     "url": "https://ai.google.dev/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ai.google.dev/plans"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs/available-regions",
+     "file": "pages/host_gemini-api__4.txt",
+     "status": 200,
+     "chars": 5504,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/available-regions"
+    },
+    {
+     "url": "https://ai.google.dev/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ai.google.dev/faq"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+     "file": "pages/host_gemini-api__5.txt",
+     "status": 200,
+     "chars": 7432,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/rate-limits"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs/pricing",
+     "file": "pages/host_gemini-api__2.txt",
+     "status": 200,
+     "chars": 21437,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/terms",
+     "file": "pages/host_gemini-api__6.txt",
+     "status": 200,
+     "chars": 22225,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/terms"
+    },
+    {
+     "url": "https://ai.google.dev/pricing",
+     "file": "pages/host_gemini-api__7.txt",
+     "status": 200,
+     "chars": 21437,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+     "url": "https://ai.google.dev/terms",
+     "file": "pages/host_gemini-api__10.txt",
+     "status": 200,
+     "chars": 22225,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://aistudio.google.com/docs/terms"
+    }
+   ]
+  },
+  "cf:host:vultr": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://www.vultr.com/products/cloud-gpu/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/products/cloud-gpu/"
+    },
+    {
+     "url": "https://docs.vultr.com/platform/billing/make-account-payments",
+     "file": "pages/host_vultr__1.txt",
+     "status": 200,
+     "chars": 3257,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.vultr.com/platform/billing/make-account-payments"
+    },
+    {
+     "url": "https://docs.vultr.com/support/platform/billing/what-payment-methods-do-you-accept",
+     "file": "pages/host_vultr__2.txt",
+     "status": 200,
+     "chars": 3244,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.vultr.com/support/platform/billing/what-payment-methods-do-you-accept"
+    },
+    {
+     "url": "https://www.vultr.com/company/contact/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/company/contact/"
+    },
+    {
+     "url": "https://www.vultr.com/solutions/machine-learning/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/solutions/machine-learning/"
+    },
+    {
+     "url": "https://www.vultr.com/products/cloud-gpu/nvidia-a100/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/products/cloud-gpu/nvidia-a100/"
+    },
+    {
+     "url": "https://www.vultr.com/products/cloud-gpu/nvidia-a16/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/products/cloud-gpu/nvidia-a16/"
+    },
+    {
+     "url": "https://www.vultr.com/legal/partner-program/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/legal/partner-program/"
+    },
+    {
+     "url": "https://docs.vultr.com/products/compute/instances/bare-metal/explore-gpu-variants",
+     "file": "pages/host_vultr__4.txt",
+     "status": 200,
+     "chars": 8766,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.vultr.com/products/compute/instances/bare-metal/explore-gpu-variants"
+    },
+    {
+     "url": "https://www.vultr.com/coupons/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/coupons/"
+    },
+    {
+     "url": "https://www.vultr.com/plans",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/plans"
+    },
+    {
+     "url": "https://www.vultr.com/pricing",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/pricing"
+    },
+    {
+     "url": "https://www.vultr.com/terms",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/terms"
+    },
+    {
+     "url": "https://docs.vultr.com/platform/create-an-account",
+     "file": "pages/host_vultr__3.txt",
+     "status": 200,
+     "chars": 3286,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.vultr.com/platform/create-an-account"
+    },
+    {
+     "url": "https://www.vultr.com/faq",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.vultr.com/faq"
+    }
+   ]
+  },
+  "cf:host:akamai-cloud": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://www.akamai.com/cloud/pricing/gpu",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.akamai.com/cloud/pricing/gpu"
+    },
+    {
+     "url": "https://techdocs.akamai.com/cloud-computing/docs/gpu-compute-instances",
+     "file": "pages/host_akamai-cloud__2.txt",
+     "status": 200,
+     "chars": 25007,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://techdocs.akamai.com/cloud-computing/docs/gpu-compute-instances"
+    },
+    {
+     "url": "https://www.akamai.com/company/locations",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.akamai.com/company/locations"
+    },
+    {
+     "url": "https://www.akamai.com/blog/developers/new-gpus-nvidia-rtx-4000-ada-generation",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.akamai.com/blog/developers/new-gpus-nvidia-rtx-4000-ada-generation"
+    },
+    {
+     "url": "https://www.linode.com/products/gpu/",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.akamai.com/products/gpu"
+    },
+    {
+     "url": "https://www.linode.com/pricing",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.akamai.com/cloud/pricing"
+    },
+    {
+     "url": "https://www.linode.com/docs/products/platform/billing/guides/payment-methods/",
+     "file": "pages/host_akamai-cloud__3.txt",
+     "status": 200,
+     "chars": 17137,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://techdocs.akamai.com/cloud-computing/docs/manage-payment-methods"
+    },
+    {
+     "url": "https://www.linode.com/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.linode.com/terms/"
+    },
+    {
+     "url": "https://www.linode.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.linode.com/faq/"
+    },
+    {
+     "url": "https://www.linode.com/docs/products/platform/billing/faqs/",
+     "file": "pages/host_akamai-cloud__4.txt",
+     "status": 200,
+     "chars": 19360,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://techdocs.akamai.com/cloud-computing/docs/billing-faqs"
+    },
+    {
+     "url": "https://www.linode.com/plans",
+     "file": null,
+     "status": 0,
+     "chars": 0,
+     "rendered": false,
+     "error": "timeout",
+     "final_url": null
+    }
+   ]
+  },
+  "cf:host:nxtgen": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://speedcloud.nxtgen.com/",
+     "file": "pages/host_nxtgen__0.txt",
+     "status": 200,
+     "chars": 6233,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/india"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/terms-n-conditions.html",
+     "file": "pages/host_nxtgen__2.txt",
+     "status": 200,
+     "chars": 39014,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/terms-n-conditions.html"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/global.html",
+     "file": "pages/host_nxtgen__3.txt",
+     "status": 200,
+     "chars": 5146,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/global.html"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/pricing"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/plans"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/terms"
+    },
+    {
+     "url": "https://speedcloud.nxtgen.com/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://speedcloud.nxtgen.com/faq"
+    },
+    {
+     "url": "https://nxtgen.com/gpu-as-a-service",
+     "file": "pages/host_nxtgen__1.txt",
+     "status": 200,
+     "chars": 6604,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://nxtgen.com/gpu-as-a-service"
+    },
+    {
+     "url": "https://nxtgen.com/",
+     "file": "pages/host_nxtgen__4.txt",
+     "status": 200,
+     "chars": 7942,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://nxtgen.com/"
+    },
+    {
+     "url": "https://nxtgen.com/sp-supreme",
+     "file": "pages/host_nxtgen__5.txt",
+     "status": 200,
+     "chars": 8274,
+     "rendered": true,
+     "error": null,
+     "final_url": "https://nxtgen.com/sp-supreme"
+    }
+   ]
+  },
+  "cf:host:jarvislabs": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://jarvislabs.ai/",
+     "file": "pages/host_jarvislabs__0.txt",
+     "status": 200,
+     "chars": 11155,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/"
+    },
+    {
+     "url": "https://jarvislabs.ai/in",
+     "file": "pages/host_jarvislabs__1.txt",
+     "status": 200,
+     "chars": 18914,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/in"
+    },
+    {
+     "url": "https://docs.jarvislabs.ai/faqs/",
+     "file": "pages/host_jarvislabs__3.txt",
+     "status": 200,
+     "chars": 5933,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.jarvislabs.ai/faqs/"
+    },
+    {
+     "url": "https://docs.jarvislabs.ai/cli/",
+     "file": "pages/host_jarvislabs__2.txt",
+     "status": 200,
+     "chars": 59318,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.jarvislabs.ai/cli/"
+    },
+    {
+     "url": "https://jarvislabs.ai/contactus",
+     "file": "pages/host_jarvislabs__4.txt",
+     "status": 200,
+     "chars": 1101,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/contactus"
+    },
+    {
+     "url": "https://jarvislabs.ai/blog/dstack-jarvislabs",
+     "file": "pages/host_jarvislabs__5.txt",
+     "status": 200,
+     "chars": 19517,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/blog/dstack-jarvislabs"
+    },
+    {
+     "url": "https://jarvislabs.ai/careers",
+     "file": "pages/host_jarvislabs__6.txt",
+     "status": 200,
+     "chars": 6613,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/careers"
+    },
+    {
+     "url": "https://jarvislabs.ai/pricing",
+     "file": "pages/host_jarvislabs__7.txt",
+     "status": 200,
+     "chars": 7369,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/pricing"
+    },
+    {
+     "url": "https://jarvislabs.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/faq"
+    },
+    {
+     "url": "https://jarvislabs.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/plans"
+    },
+    {
+     "url": "https://jarvislabs.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://jarvislabs.ai/terms"
+    }
+   ]
+  },
+  "cf:host:lintasarta-deka-gpu": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://docs.cloudeka.id/billing/balance",
+     "file": "pages/host_lintasarta-deka-gpu__2.txt",
+     "status": 200,
+     "chars": 1256,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloudeka.id/billing/balance"
+    },
+    {
+     "url": "https://docs.cloudeka.id/starter-guide-deka-flexi",
+     "file": "pages/host_lintasarta-deka-gpu__3.txt",
+     "status": 200,
+     "chars": 14929,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://docs.cloudeka.id/starter-guide-deka-flexi"
+    },
+    {
+     "url": "https://www.cloudeka.id/en/products/deka-gpu-en/",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cloudeka.id/en/products/deka-gpu-en/"
+    },
+    {
+     "url": "https://datacenterdynamics.com/en/news/indosats-lintasarta-launches-ai-cloud-gpu-merdeka-in-indonesia",
+     "file": null,
+     "status": 403,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://datacenterdynamics.com/en/news/indosats-lintasarta-launches-ai-cloud-gpu-merdeka-in-indonesia"
+    },
+    {
+     "url": "https://www.lintasarta.net/en/deka-gpu",
+     "file": "pages/host_lintasarta-deka-gpu__1.txt",
+     "status": 200,
+     "chars": 9235,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.lintasarta.net/en/deka-gpu/"
+    },
+    {
+     "url": "https://www.lintasarta.net/en/news/lintasarta-presents-gpu-merdeka-an-advanced-sovereign-ai-cloud-for-indonesia-powered-by-nvidia-ai",
+     "file": "pages/host_lintasarta-deka-gpu__4.txt",
+     "status": 200,
+     "chars": 8482,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.lintasarta.net/en/news/lintasarta-presents-gpu-merdeka-an-advanced-sovereign-ai-cloud-for-indonesia-powered-by-nvidia-ai/"
+    },
+    {
+     "url": "https://www.cloudeka.id/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cloudeka.id/pricing"
+    },
+    {
+     "url": "https://www.cloudeka.id/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cloudeka.id/faq"
+    },
+    {
+     "url": "https://www.cloudeka.id/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cloudeka.id/plans"
+    },
+    {
+     "url": "https://www.cloudeka.id/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.cloudeka.id/terms"
+    }
+   ]
+  },
+  "cf:host:siam-ai": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://siam.ai/gpu-compute/",
+     "file": "pages/host_siam-ai__0.txt",
+     "status": 200,
+     "chars": 7863,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/gpu-compute/"
+    },
+    {
+     "url": "https://siam.ai/nvidia-hseries/",
+     "file": "pages/host_siam-ai__1.txt",
+     "status": 200,
+     "chars": 10015,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/nvidia-hseries/"
+    },
+    {
+     "url": "https://siam.ai/",
+     "file": "pages/host_siam-ai__2.txt",
+     "status": 200,
+     "chars": 7855,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/"
+    },
+    {
+     "url": "https://siam.ai/nvidia-b200/",
+     "file": "pages/host_siam-ai__3.txt",
+     "status": 200,
+     "chars": 9456,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/nvidia-b200/"
+    },
+    {
+     "url": "https://calc.siam.ai/en",
+     "file": null,
+     "status": 503,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://calc.siam.ai/en"
+    },
+    {
+     "url": "https://siam.ai/about-us/",
+     "file": "pages/host_siam-ai__4.txt",
+     "status": 200,
+     "chars": 7520,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/about-us/"
+    },
+    {
+     "url": "https://siam.ai/inference-service/",
+     "file": "pages/host_siam-ai__5.txt",
+     "status": 200,
+     "chars": 7910,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/inference-service/"
+    },
+    {
+     "url": "https://siam.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/pricing"
+    },
+    {
+     "url": "https://siam.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/plans"
+    },
+    {
+     "url": "https://siam.ai/announcement-response-of-siamai-to-bloomberg-news-report-of-may-8-2026/",
+     "file": "pages/host_siam-ai__7.txt",
+     "status": 200,
+     "chars": 8162,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/announcement-response-of-siamai-to-bloomberg-news-report-of-may-8-2026/"
+    },
+    {
+     "url": "https://siam.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/faq"
+    },
+    {
+     "url": "https://siam.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://siam.ai/terms"
+    }
+   ]
+  },
+  "cf:host:latitude-sh": {
+   "file": "hosts-regional.json",
+   "pages": [
+    {
+     "url": "https://www.latitude.sh/accelerate",
+     "file": "pages/host_latitude-sh__0.txt",
+     "status": 200,
+     "chars": 5673,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/metal-gpu"
+    },
+    {
+     "url": "https://www.latitude.sh/pricing",
+     "file": "pages/host_latitude-sh__1.txt",
+     "status": 200,
+     "chars": 5826,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/pricing"
+    },
+    {
+     "url": "https://www.latitude.sh/blog/digitalocean-or-latitude-sh-for-ai-workloads",
+     "file": "pages/host_latitude-sh__4.txt",
+     "status": 200,
+     "chars": 10305,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/blog/digitalocean-or-latitude-sh-for-ai-workloads"
+    },
+    {
+     "url": "https://www.latitude.sh/legal/terms-archival",
+     "file": "pages/host_latitude-sh__5.txt",
+     "status": 200,
+     "chars": 24445,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/legal/terms-archival"
+    },
+    {
+     "url": "https://www.latitude.sh/changelog/metal-gpu-now-available-in-sydney-and-tokyo",
+     "file": "pages/host_latitude-sh__6.txt",
+     "status": 200,
+     "chars": 1218,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/changelog/metal-gpu-now-available-in-sydney-and-tokyo"
+    },
+    {
+     "url": "https://www.latitude.sh/changelog/nvidias-l40s-is-now-available",
+     "file": "pages/host_latitude-sh__7.txt",
+     "status": 200,
+     "chars": 1745,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/changelog/nvidias-l40s-is-now-available"
+    },
+    {
+     "url": "https://www.latitude.sh/instances/rtx-pro-6000",
+     "file": "pages/host_latitude-sh__8.txt",
+     "status": 200,
+     "chars": 6432,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/instances/rtx-pro-6000"
+    },
+    {
+     "url": "https://www.latitude.sh/docs/api-reference/get-plans",
+     "file": "pages/host_latitude-sh__3.txt",
+     "status": 200,
+     "chars": 108543,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/docs/api-reference/get-plans"
+    },
+    {
+     "url": "https://www.latitude.sh/blog/latitudesh-megaport-acquisition",
+     "file": "pages/host_latitude-sh__9.txt",
+     "status": 200,
+     "chars": 5406,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/blog/latitudesh-megaport-acquisition"
+    },
+    {
+     "url": "https://www.latitude.sh/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/plans"
+    },
+    {
+     "url": "https://www.latitude.sh/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/faq"
+    },
+    {
+     "url": "https://www.latitude.sh/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/terms"
+    },
+    {
+     "url": "https://www.latitude.sh/changelog/pay-with-crypto",
+     "file": "pages/host_latitude-sh__10.txt",
+     "status": 200,
+     "chars": 1379,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/changelog/pay-with-crypto"
+    },
+    {
+     "url": "https://docs.latitude.sh/docs/payment-methods",
+     "file": "pages/host_latitude-sh__2.txt",
+     "status": 200,
+     "chars": 35311,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.latitude.sh/docs/billing/payment-methods"
+    }
+   ]
+  },
+  "cf:host:yotta": {
+   "file": "hosts.json",
+   "pages": [
+    {
+     "url": "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/",
+     "file": "pages/host_yotta__2.txt",
+     "status": 200,
+     "chars": 30697,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/"
+    },
+    {
+     "url": "https://shakticloud.ai/?p=2249",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/?p=2249"
+    },
+    {
+     "url": "https://shakticloud.ai/",
+     "file": "pages/host_yotta__0.txt",
+     "status": 200,
+     "chars": 9787,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/"
+    },
+    {
+     "url": "https://shakticloud.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/faq"
+    },
+    {
+     "url": "https://shakticloud.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/plans"
+    },
+    {
+     "url": "https://shakticloud.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/terms"
+    },
+    {
+     "url": "https://shakticloud.ai/pricing",
+     "file": "pages/host_yotta__4.txt",
+     "status": 200,
+     "chars": 42154,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/pricing/"
+    },
+    {
+     "url": "https://shakticloud.ai/shakti-bare-metal",
+     "file": "pages/host_yotta__1.txt",
+     "status": 200,
+     "chars": 13245,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://shakticloud.ai/bare-metal-service/"
+    }
+   ]
+  },
+  "cf:host:core42": {
+   "file": "hosts.json",
+   "pages": [
+    {
+     "url": "https://aicloud.core42.ai/",
+     "file": "pages/host_core42__0.txt",
+     "status": 200,
+     "chars": 9947,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://aicloud.core42.ai/"
+    },
+    {
+     "url": "https://www.core42.ai/ai-cloud",
+     "file": "pages/host_core42__1.txt",
+     "status": 200,
+     "chars": 14260,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.core42.ai/products/ai-cloud"
+    },
+    {
+     "url": "https://aicloud.core42.ai/pricing",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://aicloud.core42.ai/pricing"
+    },
+    {
+     "url": "https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html",
+     "file": "pages/host_core42__2.txt",
+     "status": 200,
+     "chars": 6857,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://www.eand.com/en/news/20-07-26-eand-uae-core42-sovereign-ai-infrastructure.html"
+    },
+    {
+     "url": "https://aicloud.core42.ai/plans",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://aicloud.core42.ai/plans"
+    },
+    {
+     "url": "https://aicloud.core42.ai/faq",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://aicloud.core42.ai/faq"
+    },
+    {
+     "url": "https://aicloud.core42.ai/terms",
+     "file": null,
+     "status": 404,
+     "chars": 0,
+     "rendered": false,
+     "error": null,
+     "final_url": "https://aicloud.core42.ai/terms"
+    }
+   ]
+  }
+ }
+}

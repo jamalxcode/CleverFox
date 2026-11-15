@@ -1,0 +1,196 @@
+URL: https://www.latitude.sh/legal/terms-archival
+FINAL: https://www.latitude.sh/legal/terms-archival
+STATUS: 200
+TITLE: Terms of Service - Archival - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.046Z
+
+Terms of Service - Archival - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+Privacy Policy
+Data Act Addendum (EU Data Act)
+Data Processing Addendum
+Terms of Service
+Security at Latitude.sh
+Fair Usage Policy
+Terms of Service - Archival
+Last updated May 15, 2026
+By signing up for the Latitude.sh service (“Service”) or any of the services of Latitude.sh LTDA or Latitude.sh LLC (“Latitude.sh”) you are agreeing to be bound by the following terms and conditions (“Terms of Service”). The Services offered by Latitude.sh under the Terms of Service include various products and services to help you deploy and manage your internet infrastructure. Any new features or tools which are added to the current Service shall be also subject to the Terms of Service. You can review the current version of the Terms of Service at any time at http://www.latitude.sh/legal/terms . Latitude.sh reserves the right to update and change the Terms of Service by posting updates and changes to the Latitude.sh website. You are advised to check the Terms of Service from time to time for any updates or changes that may impact you.
+You must read, agree with and accept all of the terms and conditions contained in this Terms of Service agreement, including Latitude.sh&#x27;s Privacy Policy before you may become a Latitude.sh user.
+Everyday language summaries are provided for convenience only and are not legally binding. Please read the “Terms of Service” for the complete picture of your legal requirements. By using Latitude.sh or any Latitude.sh services, you are agreeing to these terms. Be sure to occasionally check back for updates.
+1. Account Terms
+You must be 18 years or older or at least the age of majority in the jurisdiction where you reside or from which you use this Service.
+To access and use the Services, you must register for a Latitude.sh account (“Account”) by providing your full legal name, current address, phone number, a valid email address, and any other information indicated as required. Latitude.sh may reject your application for an Account, or cancel an existing Account, for any reason, in our sole discretion.
+You acknowledge that Latitude.sh will use the email address you provide as the primary method for communication.
+You are responsible for keeping your password secure. Latitude.sh cannot and will not be liable for any loss or damage from your failure to maintain the security of your Account and password.
+You are responsible for all activity and content such as photos, images, videos, graphics, written content, audio files, code, information, or data uploaded, collected, generated, stored, displayed, distributed, transmitted or exhibited on or in connection with your Account (“Materials”).
+A breach or violation of any term in the Terms of Service, including the Privacy Policy, as determined in the sole discretion of Latitude.sh will result in an immediate termination of your services.
+Which means
+You are responsible for your Account and any Materials you upload to the services you have with Latitude.sh. Remember that with any violation of these terms we will cancel your service.
+If we need to reach you, we will send you an email.
+2. Account Activation
+2.1 Latitude.sh Account
+Subject to section 2.1.2, the person signing up for the Service will be the contracting party (“Account Owner”) for the purposes of our Terms of Service and will be the person who is authorized to use any corresponding account we may provide to the Account Owner in connection with the Service.
+If you are signing up for the Service on behalf of your employer, your employer shall be the Account Owner. If you are signing up for the Service on behalf of your employer, then you represent and warrant that you have the authority to bind your employer to our Terms of Service.
+Which means
+The person signing up for the Latitude.sh Service is responsible for the account and is bound by these Terms of Service. If you signup on behalf of your employer, your employer owns the account and is also bound by our Terms of Service.
+3. General Conditions
+You must read, agree with and accept all of the terms and conditions contained in these Terms of Service, including the Privacy Policy before you may become a member of Latitude.sh.
+Technical support is only provided to paying Account holders and is only available via email, except for data center related services, such as Dedicated Hosting and Colocation.
+The Terms of Service shall be governed by and interpreted in accordance with the laws of the United States applicable therein, without regard to principles of conflicts of laws. The parties irrevocably and unconditionally submit to the exclusive jurisdiction of the courts of the State of Wyoming with respect to any dispute or claim arising out of or in connection with the Terms of Service. The United Nations Convention on Contracts for the International Sale of Goods will not apply to these Terms of Service and is hereby expressly excluded.
+You acknowledge and agree that Latitude.sh may amend these Terms of Service at any time by posting the relevant amended and restated Terms of Service on Latitude.sh&#x27;s website, available at http://www.latitude.sh/legal/terms and such amendments to the Terms of Service are effective as of the date of posting. Your continued use of the Services after the amended Terms of Service are posted to Latitude.sh&#x27;s website constitutes your agreement to, and acceptance of, the amended Terms of Service. If you do not agree to any changes to the Terms of Service, do not continue to use the Service.
+You may not use the Latitude.sh service for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws), the laws applicable to you in your customer’s jurisdiction, or the laws of the United States and the State of Wyoming. You will comply with all applicable laws, rules and regulations in your use of the Service.
+You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service without the express written permission by Latitude.sh.
+You shall not purchase search engine or other pay per click keywords (such as Google AdWords), or domain names that use Latitude.sh or Latitude.sh trademarks and/or variations and misspellings thereof.
+Questions about the Terms of Service should be sent to legal@latitude.sh.
+You understand that your Materials (not including credit card information), may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit Card information is always encrypted during transfer over networks.
+You acknowledge and agree that your use of the Service, including information transmitted to or stored by Latitude.sh, is governed by its privacy policy at https://www.latitude.sh/legal/privacy .
+Which means
+The Latitude.sh service belongs to us. You are not allowed to rip it off or use it for any illegal or sketchy purpose.
+Your Materials may be transferred unencrypted and may be altered, but credit card information is always encrypted.
+4. Latitude.sh Rights
+We reserve the right to modify or terminate the Service for any reason, without notice at any time.
+We reserve the right to refuse service to anyone for any reason at any time.
+We may, but have no obligation to, remove Materials and suspend or terminate Accounts if we determine in our sole discretion that the content or object of a server, or the Materials uploaded or posted to a server, violate these Terms of Service.
+Verbal or written abuse of any kind (including threats of abuse or retribution) of any Latitude.sh customer, Latitude.sh employee, member, or officer will result in immediate Account termination.
+Latitude.sh does not pre-screen Materials and it is in our sole discretion to refuse or remove any Materials from the Service.
+We reserve the right to provide our services to your competitors and make no promise of exclusivity in any particular market segment. You further acknowledge and agree that Latitude.sh employees and contractors may also be Latitude.sh customers and that they may compete with you, although they may not use your confidential information in doing so.
+In the event of a dispute regarding Account ownership, we reserve the right to request documentation to determine or confirm Account ownership. Documentation may include, but is not limited to, a scanned copy of your business license, government issued photo ID, the last four digits of the credit card on file, etc.
+Latitude.sh retains the right to determine, in our sole judgment, rightful Account ownership and transfer an Account to the rightful owner. If we are unable to reasonably determine the rightful Account owner, Latitude.sh reserves the right to temporarily disable an Account until resolution has been determined between the disputing parties.
+Which means
+We can modify, cancel or refuse the service at anytime.
+In the event of an ownership dispute over a Latitude.sh account, we can freeze the account or transfer it to the rightful owner.
+5. Limitation of Liability
+You expressly understand and agree that Latitude.sh shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses resulting from the use of or inability to use the service.
+In no event shall Latitude.sh or our suppliers be liable for lost profits or any special, incidental or consequential damages arising out of or in connection with our site, our services or these Terms of Service (however arising including negligence). You agree to indemnify and hold us and (as applicable) our parent, subsidiaries, affiliates, Latitude.sh partners, officers, directors, agents, employees, and suppliers harmless from any claim or demand, including reasonable attorneys’ fees, made by any third party due to or arising out of your breach of these Terms of Service or the documents it incorporates by reference, or your violation of any law or the rights of a third party.
+Your use of the Service is at your sole risk. The Service is provided on an “as is” and “as available” basis without any warranty or condition, express, implied or statutory.
+Latitude.sh does not warrant that the Service will be uninterrupted, timely, secure, or error-free.
+Latitude.sh does not warrant that the results that may be obtained from the use of the Service will be accurate or reliable.
+Latitude.sh does not warrant that the quality of any products, services, information, or other Materials purchased or obtained by you through the Service will meet your expectations, or that any errors in the Service will be corrected.
+Which means
+We are not responsible if you break the law, breach this agreement or go against the rights of a third party, especially if you get sued.
+Service is “as is” so it may have errors or interruptions and we provide no warranties.
+6. Waiver and Complete Agreement
+The failure of Latitude.sh to exercise or enforce any right or provision of the Terms of Service shall not constitute a waiver of such right or provision. The Terms of Service and the documents it incorporates by reference constitute the entire agreement between you and Latitude.sh and govern your use of the Service, superseding any prior agreements between you and Latitude.sh (including, but not limited to, any prior versions of the Terms of Service).
+Which means
+If Latitude.sh chooses not to enforce any of these provisions at any time, it does not mean that they give up that right later.
+These terms of service make up the agreement that applies to you. This means that any previous agreements between you and Latitude.sh don’t apply if they conflict with these terms.
+7. Intellectual Property and Customer Content
+We do not claim any intellectual property rights over the Materials you provide to the Latitude.sh service. All Materials you upload remains yours.
+By uploading Materials, you agree: (a) to allow other internet users to view the Materials you post publicly to your servers; (b) to allow Latitude.sh to store, and in the case of Materials you post publicly, display, your Materials; and (c) that Latitude.sh can, at any time, review all the Materials submitted to its Service, although Latitude.sh is not obligated to do so.
+You retain ownership over all Materials that you upload to a Latitude.sh server; however, by making server access public, you agree to allow others to view Materials that you post publicly to your server. You are responsible for compliance of the Materials with any applicable laws or regulations.
+We will not disclose your confidential information to third parties, except as required in the course of providing our services. Confidential information includes any Materials or information provided by you to us which is not publicly known. Confidential information does not include information that: (a) was in the public domain at the time we received it; (b) comes into the public domain after we received it through no fault of ours; (c) we received from someone other than you without breach of our or their confidentiality obligations; or (d) we are required by law to disclose.
+Latitude.sh shall have the non-exclusive right and license to use the names, trademarks, service marks and logos associated with your company to promote the Service.
+Which means
+Anything you upload remains yours and your responsibility.
+8. Payment of Fees
+You will pay the Fees applicable to your subscription to Service (“Subscription Fees”) and any other applicable fees, including but not limited to fees relating to the Bandwidth (“Bandwidth Fees”), and any fees relating to your purchase of any other products or services (“Additional Fees”). Together, the Subscription Fees, Bandwidth Fees and the Additional Fees are referred to as the “Fees”.
+You must keep a valid credit card on file with us to pay for all incurred and recurring Fees, either by adding your credit card via the customer portal , or by authorizing a Billing Agreement between Latitude.sh and your PayPal account. Latitude.sh will charge applicable Fees to the credit card account that you authorize (“Authorized Card”), and Latitude.sh will continue to charge the Authorized Card (or any replacement card) for applicable Fees until the Services are terminated, and any and all outstanding Fees have been paid in full. Unless otherwise indicated, all Fees and other charges are in U.S. dollars, and all payments shall be in U.S. currency.
+Subscription Fees are paid in advance and will be billed in 30 day intervals (each such date, a “Billing Date”). Bandwidth Fees and Additional Fees will be charged from time to time at Latitude.sh&#x27;s discretion. You will be charged on each Billing Date for all outstanding Fees that have not previously been charged. Fees will appear on an invoice, which will be sent to the Account Owner via the email provided. As well, an invoice will appear on the Account page of your Latitude.sh customer portal. Users have approximately two weeks to bring up and settle any issues with the billing of Subscription Fees.
+All Fees are exclusive of applicable federal, provincial, state, local or other governmental sales, goods and services, harmonized or other taxes, fees or charges now in force or enacted in the future (“Taxes”).
+Latitude.sh does not provide refunds.
+Which means
+A valid credit card is required. You will be billed for your Subscription Fees every 30 days and have two weeks to pay. Any Bandwidth Fees or Additional Fees will be charged to your credit card. No refunds.
+9. Cancellation and Termination
+You may cancel your Account at anytime by emailing support@latitude.sh and then following the specific instructions indicated to you in Latitude.sh&#x27;s response. If your account is under contract, you still may cancel, but will be required to pay any early termination fees.
+Upon termination of the Services by either party for any reason:
+Latitude.sh will cease providing you with the Services and you will no longer be able to access your Account;
+unless otherwise provided in the Terms of Service, you will not be entitled to any refunds of any Fees, pro rata or otherwise;
+any outstanding balance owed to Latitude.sh for your use of the Services through the effective date of such termination will immediately become due and payable in full; and
+your servers will be taken offline.
+If at the date of termination of the Service, there are any outstanding Fees owing by you, you will receive one final invoice via email. Once that invoice has been paid in full, you will not be charged again.
+We reserve the right to modify or terminate the Latitude.sh Service or your Account for any reason, without notice at any time.
+Fraud: Without limiting any other remedies, Latitude.sh may suspend or terminate your Account if we suspect that you (by conviction, settlement, insurance or escrow investigation, or otherwise) have engaged in fraudulent activity in connection with the Service.
+Which means
+To initiate a cancellation, email support@latitude.sh . Latitude.sh will respond with specific information regarding the cancellation process for your account. Once cancellation is confirmed, domains purchased through Latitude.sh will no longer be automatically renewed. If you cancel in the middle of your billing cycle, you’ll have one last email invoice.
+We may change or cancel your account at any time. Any fraud and we will suspend or cancel your account.
+10. Modifications to the Service and Prices
+Prices for using the Services are subject to change at any time 30 days notice from Latitude.sh. Such notice may be provided at any time by posting the changes to the Latitude.sh Site (latitude.sh) or the customer portal (latitude.sh/dashboard) via an announcement.
+Latitude.sh reserves the right at any time, and from time to time, to modify or discontinue, the Service (or any part thereof) with or without notice.
+Latitude.sh shall not be liable to you or to any third party for any modification, price change, suspension or discontinuance of the Service.
+Which means
+We may change or discontinue the service at anytime, without liability.
+11. Third Party Services
+In addition to these Terms of Service, you also agree to be bound by the additional service-specific terms applicable to services you purchase from, or that are provided by, Latitude.sh&#x27;s partners or other third parties.
+Latitude.sh may from time to time recommend, provide you with access to, or enable third party software, applications (“Apps”), products, services or website links (collectively, “Third Party Services”) for your consideration or use, including via the Latitude.sh customer portal. Such Third Party Services are made available only as a convenience, and your purchase, access or use of any such Third Party Services is solely between you and the applicable third party services provider (“Third Party Provider”). Any use by you of Third Party Services offered through the Services or Latitude.sh&#x27;s website is entirely at your own risk and discretion, and it is your responsibility to read the terms and conditions and/or privacy policies applicable to such Third Party Services before using them.
+We do not provide any warranties with respect to Third Party Services. You acknowledge that Latitude.sh has no control over Third Party Services, and shall not be responsible or liable to anyone for such Third Party Services. The availability of Third Party Services on Latitude.sh&#x27;s websites, including the Latitude.sh customer portal, or the integration or enabling of such Third Party Services with the Services does not constitute or imply an endorsement, authorization, sponsorship, or affiliation by or with Latitude.sh. Latitude.sh strongly recommends that you seek specialist advice before using or relying on Third Party Services, to ensure they will meet your needs.
+If you install or enable a Third Party Service for use with the Services, you grant us permission to allow the applicable Third Party Provider to access your data and to take any other actions as required for the interoperation of the Third Party Service with the Services, and any exchange of data or other interaction between you and the Third Party Provider is solely between you and such Third Party Provider. Latitude.sh is not responsible for any disclosure, modification or deletion of your data or other Materials, or for any corresponding losses or damages you may suffer, as a result of access by a Third Party Service or a Third Party Provider to your data or other Materials.
+Google Maps is a Third Party Service that is used within the Services. Your use of the Service is subject to your acceptance of the Google Maps and Earth Enterprise Universal Acceptable Use Policy , as it may be amended by Google from time to time.
+Under no circumstances shall Latitude.sh be liable for any direct, indirect, incidental, special, consequential, punitive, extraordinary, exemplary or other damages whatsoever, that result from any Third Party Services or your contractual relationship with any Third Party Provider, including any Expert. These limitations shall apply even if Latitude.sh has been advised of the possibility of such damages. The foregoing limitations shall apply to the fullest extent permitted by applicable law.
+You agree to indemnify and hold us and (as applicable) our parent, subsidiaries, affiliates, Latitude.sh partners, officers, directors, agents, employees, and suppliers harmless from any claim or demand, including reasonable attorneys’ fees, arising out of your use of a Third Party Service or your relationship with a Third Party Provider.
+Which means
+We are not responsible for third party services so use them at your own risk. If you use any third party services on the Latitude.sh service, you permit us to send your data to those services. If you use them you agree that we do not provide a warranty, so get advice beforehand.
+12. DMCA Notice and Takedown Procedure
+Latitude.sh supports the protection of intellectual property and asks Latitude.sh customers to do the same. It’s our policy to respond to all notices of alleged copyright infringement. If someone believes that one of our customers is infringing their intellectual property rights, they can send a DMCA Notice to Latitude.sh&#x27;s designated agent using our form. Upon receiving a DMCA Notice, we may remove or disable access to the Materials claimed to be a copyright infringement. Once provided with a notice of takedown, the customer can reply with a counter notification using our form if they object to the complaint. The original complainant has 14 business days after we receive a counter notification to seek a court order restraining the customer from engaging in the infringing activity, otherwise we restore the material.
+Which means
+Latitude.sh respects intellectual property rights and you should too. If we receive a DMCA Notice, we may disable access or remove the allegedly infringing content from your servers. If you don’t think the claim is valid, you can proceed with a counter notification.
+If you believe one of our customers is infringing your intellectual property rights, you can send Latitude.sh a DMCA Notice. We will expeditiously disable access or remove the content and notify the customer. Be advised that we post all notices we receive.
+Latitude.sh LLC
+3 Germay Dr
+Wilmington DE 19804
+United States
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

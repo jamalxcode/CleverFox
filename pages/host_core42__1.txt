@@ -1,0 +1,316 @@
+URL: https://www.core42.ai/ai-cloud
+FINAL: https://www.core42.ai/products/ai-cloud
+STATUS: 200
+TITLE: AI Models and Sovereign Infrastructure | Sovereign AI Cloud | Core42
+FETCHED: 2026-11-15T15:58:43.499Z
+
+AI Models and Sovereign Infrastructure | Sovereign AI Cloud | Core42
+Core42 and Assolombarda to Promote Sovereign Enabled AI Adoption Across Lombardy’s Industrial Ecosystem
+View announcement →
+Home
+Products
+Sovereign AI Cloud
+Sovereign Public Cloud
+Signature Private Cloud
+Resources
+News
+Webinars
+Product Videos
+Blogs
+About Core42
+Partnerships
+Contact Us
+Get In Touch
+Accelerate Your AI Journey Today
+Connect with us to unlock next gen GPU infrastructure for your AI and computational needs.
+Talk to Sales
+── Speak to an expert
+See sovereign AI infrastructure, end‑to‑end.
+A 30-minute walkthrough of Core42 products, tailored to your AI journey.
+Required fields marked *
+Core42 Sovereign AI Cloud
+A heterogeneous sovereign AI platform powering model, token, and agent consumption at scale, combining multi-architecture compute, flexible consumption models, and sovereign-grade control to turn AI into production outcomes.
+Explore Sovereign AI Cloud
+Contact Sales
+Flexibility to Choose
+Harness the power of NVIDIA, AMD, Qualcomm, Microsoft, or Cerebras by aligning each AI workload with the most suitable accelerator.
+Scale Without Borders
+Scale instantly with thousands of GPUs globally, supporting everything from rapid prototyping to enterprise-grade training and inference.
+Built for Trust
+Run mission-critical AI on secure, sovereign infrastructure designed to meet full regulatory requirements.
+Who
+is this for
+From AI teams experimenting with the latest models to enterprises rolling out AI across thousands of users, Compass API Gateway provides the unified access, security, and control needed to scale with confidence.
+Government/ Sovereign Cloud
+Data sovereignty and compliance for public sector excellence across cloud, data, and AI.
+Learn More
+Large Enterprises
+Scalable infrastructure for complex operations , multi-accelerator infrastructure and go from idea to production without friction.
+Learn More
+AI/ML Teams
+Purpose-built for AI researchand production cloud with UAE-centric sovereign and security controls through Core42 Insight application
+Learn More
+Built for Choice, Scale, and Trust
+Core42 Sovereign AI Cloud brings together diverse accelerators, AI-optimized infrastructure, and production-ready inference in one platform at scale.
+Multi-Accelerator Platform
+Harness the power of NVIDIA, AMD, Qualcomm, Microsoft, or Cerebras by aligning each AI workload with the most suitable accelerator .
+Global Scale, Sovereign Infrastructure
+Access 86K+ GPUs across sovereign data centers globally.
+AI-Optimized Storage
+Accelerate large-scale training and high-concurrency workloads with fast, resilient storage.
+Proven HPC Performance
+Built on globally ranked Top500 and IO500 infrastructure for high-performance AI workloads.
+Core42 Compass Inference
+Deploy leading models with low latency, built-in scalability, and sovereign-grade control.
+ACCELERATORS
+Peak Performance at Global Scale
+Deploy AI workloads globally on NVIDIA, AMD, Cerebras, and Qualcomm accelerators with high-performance InfiniBand and Ethernet networking, orchestrated through Kubernetes or Slurm for peak efficiency.
+NVIDIA H100
+Deploy
+Enquire
+NVIDIA H100
+Price: From $2.50/hr
+The proven standard with InfiniBand networking for training and inference at scale.
+Deploy
+Enquire
+NVIDIA H200
+Enquiry
+NVIDIA H200
+Price: FROM $4.00/HR
+Deliver breakthrough acceleration for large-scale AI training and long-context LLM inference workloads.
+Enquiry
+NVIDIA B200
+Enquire
+NVIDIA B200
+Price: FROM $5.00/HR
+Next-generation Blackwell architecture with InfiniBand networking and NVLink interconnect for exceptional AI performance at scale.
+Enquire
+AMD MI300X
+Enquire
+AMD MI300X
+Price: FROM $3.50/HR
+Power AI and HPC workloads with memory-optimized GPU, ROCm software stack and CDNA architecture optimized for inference acceleration and multi-chip efficiency.
+Enquire
+AMD Instinct MI355X
+Enquire
+AMD Instinct MI355X
+Price: On Request
+Runs large LLM models with a massive 288GB of HBM3E memory, reducing infrastructure footprint without sacrificing performance.
+Enquire
+Cerebras WSE-3
+Enquire
+Cerebras WSE-3
+Price: On Request
+Wafer-scale design removes interconnect bottlenecks, dramatically accelerating large-model training.
+Enquire
+Qualcomm Cloud AI100 Ultra
+Enquire
+Qualcomm Cloud AI100 Ultra
+Price: On Request
+Optimized for performance per watt while delivering 870 TOPS of power in cost-efficient, sustainable high-volume inference.
+Enquire
+NVIDIA GB300 (Blackwell Ultra)
+Enquire
+NVIDIA GB300 (Blackwell Ultra)
+Price: On Request
+Built for next-generation liquid-cooled SuperPODs, powering real-time, multimodal AI at frontier scale.
+Enquire
+NVIDIA H100
+Deploy
+Enquire
+NVIDIA H200
+Enquiry
+NVIDIA B200
+Enquire
+AMD MI300X
+Enquire
+AMD Instinct MI355X
+Enquire
+Cerebras WSE-3
+Enquire
+Qualcomm Cloud AI100 Ultra
+Enquire
+NVIDIA GB300 (Blackwell Ultra)
+Enquire
+Your browser does not support the video tag.
+From Pilot to Production Inference
+Core42 Compass unifies leading AI models, scalable inference, and built-in governance, eliminating the complexity of deploying sovereign AI at scale.
+Unified Model Access
+50+ industry leading models, including GPTs and open-source models across text, vision, speech, and embeddings all through one unified API.
+Secure & Sovereign Deployment
+Secure your GenAI deployments with in-country data residency, private endpoints, end-to-end encryption, guardrails, and enterprise-grade access controls.
+Production-Scale Inference
+High throughput processing capable of handling hundreds of millions of tokens in minutes from prototype to enterprise rollout.
+Agentic Workflows
+Build AI agents, multi-step orchestration, tool-calling systems, and autonomous workflows with production-ready frameworks.
+Compass Playground
+Experiment with prompts, test models, and validate performance before production.
+Fine-Tuning Services
+Customize models to your domain with fine-tuning services and optional white-glove support from data preparation to deployment.
+PLATFORM
+One Platform. Built for Every AI Builder.
+Train, fine-tune, and deploy agentic and inference workloads faster on a full-stack Sovereign AI Cloud with leading accelerators, integrated tools, and expert support.
+GenAI Services
+Core42 Compass
+AI OPS
+Infrastructure as a Service
+Sovereign AI-Optimized
+Infrastructure
+Sovereign AI
+Inference
+Sovereign AI Cloud Orchestration
+GenAI Services
+GenAI Services
+Accelerate innovation with services for agents, RAG, guardrails, and fine-tuning. Build and scale next-generation AI applications with confidence and speed.
+Core42 Compass
+Core42 Compass
+Deploy and scale models in seconds with Core42 Compass, a unified platform for enterprise-grade inference. Access leading models through a single API, eliminate integration complexity, and run production workloads with low latency, sovereign control, and built-in reliability.
+AI OPS
+AI OPS
+Go beyond training with built-in AI lifecycle management. Customize and fine-tune models, monitor performance, and enforce governance with integrated AIOps to keep models reliable, compliant, and production-ready.
+Infrastructure as a Service
+Infrastructure as a Service
+High-performance infrastructure with the freedom to choose from NVIDIA, AMD, Microsoft, Qualcomm, or Cerebras accelerators. Powered by diverse accelerators, AI-optimized storage, and high-speed InfiniBand and Ethernet networking, delivered as a fully managed platform for peak efficiency and performance.
+Core
+Benefits
+Experiment, build, and scale GenAI seamlessly with Core42 Compass, combining startup speed with enterprise-grade control, 24×7 support, and 99.5% uptime.
+Data Sovereignty
+Keep AI models and data exchanges fully within UAE borders with comprehensive sovereign policies.
+Powerful Unified API
+Access leading AI models through a single API. No multi-vendor complexity, no performance trade-offs.
+Flexible Deployment Options
+Choose cloud or on-premises deployment with infrastructure tailored to your unique security, performance, and compliance needs.
+Future-Ready Architecture
+Stay ahead of rapid AI advancements with a platform that evolves alongside your needs and maximizes long-term value.
+Sovereign AI Cloud by the numbers
+Peak performance, proven at scale.
+Deployments Managed
++150 MW
+GPU's Deployed/Planned
+76 K
+Worldwide
+Global Data Centers
+9
+Worldwide
+Exaflops
+310
+Worldwide
+Top 500 HPC
+#20
+AMD MI300X globally
+IO500
+#3
+Core42 Maximus-01 globally
+Real-Time Responsiveness
+20 MS
+Time To First Token
+Production Ready
+10 B+
+Tokens Processed Weekly
+Start Fast. Scale on Your Terms.
+Immediate, pay-as-you-go pricing via the sovereign AI Cloud console. Perfect for prototyping, model testing, and ML experiments that need to launch fast without commitment.
+Get started with Sovereign AI Cloud
+How it works
+Architecture overview
+GenAI Services
+Agent
+RAG
+Guardrails
+Fine-tuning
+Evaluation
+Model Hosting & Inference
+Inference
+Model catalog
+Model-as-a-service
+AI Ops
+Training
+Model customization
+Model governance
+Infrastructure-as-a-service
+Compute
+Ultra-fast,
+AI-optimized storage
+High speed
+networking
+Throttling
+User management
+Billing
+Metering
+Managed
+kubernetes & slurm
+Access
+management
+Vector data
+management
+Security & Compliance
+Trusted by Industry
+Resources
+Start your AI journey with the insights, tools, and resources to turn ideas into production-ready solutions.
+Sovereign AI Cloud Overview
+Download to learn about Sovereign AI Cloud.
+DOWNLOAD NOW
+Sovereign AI Cloud Platform Demo
+Watch the platform demo to learn more about sovereign AI Cloud capabilities.
+WATCH NOW
+Compass
+brochure
+Download Compass brochure to learn how to simplify your sovereign AI journey
+DOWNLOAD NOW
+Compass Platform
+Demo
+See sovereign Core42 Compass in action with a guided platform walkthrough.
+WATCH DEMO
+FAQs about Core42 Sovereign AI Cloud
+What is Core42 Sovereign AI Cloud and how is it different from a standard GPU cloud?
+Core42 Sovereign AI Cloud is a full-stack, AI-native cloud platform, not a general-purpose cloud with GPUs added. It integrates heterogeneous compute (NVIDIA, AMD, Qualcomm, Cerebras), AI-optimized storage, high-speed networking, unified orchestration (bare metal, Kubernetes, SLURM), and Core42 Compass inference into one platform. The result is an environment built for the full AI lifecycle: training, fine-tuning, inference, deployment, and continuous refinement without operational handoff friction between stages.
+What accelerators are available, and can I mix different GPU types?
+Core42 AI Cloud supports NVIDIA, AMD, Qualcomm, Cerebras, and Microsoft. Mixed accelerator fleets are supported - you can align each workload with the most suitable hardware without disrupting your broader infrastructure strategy. This is a deliberate architectural choice: frontier AI is not monolithic, and different workloads demand different memory architectures and scaling behaviors. You are not locked into any single vendor's roadmap.
+What consumption models and pricing options are available on Core42 Sovereign AI Cloud?
+Core42 offers flexible consumption models including on-demand GPUaaS, large scale clusters, and inference-based pricing through Core42 Compass such as pay-as-you-go or tokens-per-minute with full cost transparency.
+How does Core42 Sovereign AI Cloud support large-scale AI training and high-performance workloads?
+The platform supports everything from on-demand GPU instances to large-scale clusters, with high-speed networking, AI-optimized storage, and managed orchestration through Kubernetes and Slurm, enabling efficient training and high-concurrency workloads at scale.
+How does Core42 ensure data sovereignty, security, and compliance?
+Core42 Sovereign AI Cloud operates across sovereign data centers, with in-country data residency, encryption at rest and in transit, and enterprise-grade governance controls, ensuring compliance for regulated industries and national-scale AI initiatives.
+Which model providers are available on Compass?
+We regularly onboard new closed-source and open-source releases and currently offers models from 12 providers including OpenAI, Anthropic, Cohere, Meta, Mistral, Stability AI, xAI, DeepSeek, Qwen, MBZUAI, Liquid AI, and Inception. The model provider is transparently disclosed in the platform, and customers explicitly choose which model to use.
+Does Compass store or use customer data for training?
+No. Customer data is processed transiently for inference only. Compass does not store prompts or outputs, does not reuse data, and does not train or fine-tune models using customer inputs. All data remains fully owned by the customer.
+How does Compass support governance and access control?
+Compass provides platform-level governance through API key management, role-based access control, audit logs, usage monitoring, and billing transparency. Customers can monitor model usage, manage users at admin or department level, and track activity through the Compass portal or APIs.
+How easy is it to integrate Compass?
+Compass offers a single unified API that allows developers to integrate AI models directly into applications. This streamlines development, reduces integration complexity, and enables rapid deployment across legacy and modern systems.
+Compass API protocol is compatible with OpenAI and Azure OpenAI.
+What service levels and support are available?
+Compass provides uptime-focused SLAs with 99.5% availability. Customer support is available 24×7.
+How does Compass improve time and cost efficiency?
+Enterprises can accelerate innovation by using pre-built, pre-trained models without investing in complex infrastructure or specialized machine learning expertise. The as-a-service model reduces upfront costs while enabling scalable, production-grade AI deployment.
+Ready to Accelerate
+Your Sovereign AI Journey?
+Deploy AI workloads globally across sovereign data centers with built-in scale, security, and accelerator choice.
+Products
+Sovereign AI Cloud
+Sovereign Public Cloud
+Signature Private Cloud
+Resources
+News
+Whitepapers
+Webinars
+Become a Core42 Partner
+Company
+About
+Careers
+Contact
+Core42 Code
+Business Continuity Policy
+Documentation
+Sovereign AI Cloud
+Compass
+© 2026 Core42. All rights reserved.
+Cookie Policy
+Privacy Notice
+Terms of Service
+Connect:
+Follow us on X
+Follow us on LinkedIn
+Follow us on Youtube
+Follow us on Instagram

@@ -1,0 +1,670 @@
+URL: https://docs.sarvam.ai/api/getting-started/pricing
+FINAL: https://docs.sarvam.ai/api/getting-started/pricing
+STATUS: 200
+TITLE: Pricing, Credits &amp; Rate Limits | Sarvam API Docs
+FETCHED: 2026-11-15T15:57:49.106Z
+
+Pricing, Credits & Rate Limits | Sarvam API Docs For AI agents: a documentation index is available at the root level at /llms.txt. Append /llms.txt to any URL for a page-level index, or .md for the markdown version of any page.
+Search /
+Ask AI
+Community API Status Sign Up
+Model APIs Voice Agents Document AI Content Studio Cowork API Reference Changelog Model APIs
+Model APIs
+Token Factory open-weight LLMs & Sarvam models
+Skip to navigation On this page
+Plans
+Credits
+Prices by API
+Language Models
+Sarvam Models
+Open-Weight Models
+Speech to Text
+Text to Speech
+Text Processing
+Document Intelligence
+Document Translation
+Dubbing
+Rate Limits
+Speech to Text limits
+Real-time REST
+WebSocket Streaming
+Batch
+Text to Speech limits
+Real-time REST and HTTP Streaming
+WebSocket Streaming
+Instant Voice Cloning limits
+Translation & Text Services limits
+Text translation (POST /translate)
+Document Translation
+Language model limits
+Default models
+Sarvam-105B model
+Dubbing limits
+Document AI limits
+Exceeding Your Limits
+REST rate limits (429 / 503)
+Exhausted credits (402)
+WebSocket connection limits
+Upgrading Your Limits
+Scroll to top
+Getting Started
+Pricing, Credits & Rate Limits
+Ask a question | Copy page | View as Markdown | More actions
+This page is for Model APIs.
+What you pay and how much you can use, on one page: plans, credits, per-API prices, and per-API rate limits. All prices are in Indian Rupees (₹) and exclude GST. Usage is rounded as described in the billing notes for each service.
+Plans
+Pay as you go
+Pro
+Growth
+Business
+Enterprise
+Monthly fee
+None
+₹9,999
+₹49,999
+₹1,99,999
+Custom
+Support
+Community
+Email
+Email
+Priority
+Dedicated
+Best for
+Prototyping & testing
+Startups & POCs
+Production workloads
+Sustained high-volume production
+Scale deployments
+Business includes everything in Growth, plus ₹1,99,999 worth of credits included and the best public API rates.
+Choose or change a plan from the Sarvam Dashboard . For Enterprise pricing, contact us .
+Credits
+Sarvam offers ₹100 worth of free credits for every verified user on signup. These credits can be used across any of our APIs, explore, prototype, and build without upfront cost.
+Credits are universal and never expire. Once exhausted, add more credits or upgrade your plan from the Sarvam Dashboard .
+For commercial production rights when you ship generated audio (Bulbul v3, Content Studio exports, cloned voices), see Commercial Licensing .
+If your credits are exhausted, API requests fail with 402 ( insufficient_quota_error ), which is separate from a 429 rate limit. You can add credits at any time, adding credits does not change your plan or rate limits.
+Add Credits : Top up from the Billing page at any time. Credits never expire.
+Upgrade Your Plan : Higher plans include bonus credits and increased rate limits.
+Enterprise : For volume discounts and custom billing arrangements, email support@sarvam.ai .
+Prices by API
+Rates are listed for each self-serve plan.
+Language Models
+The open-weight models (Gemma, GLM, DeepSeek, Kimi, Qwen, Clef, EmbeddingGemma) are served by Token Factory .
+All prices are ₹ per 1M tokens and are the same on every plan. Reasoning tokens, where applicable, are billed as output tokens.
+Sarvam Models
+Model
+Input
+Cached input
+Output
+Status
+Sarvam 105B ( sarvam-105b )
+₹15
+₹5
+₹60
+Serverless
+Sarvam 105B Chat ( sarvam-105b-conversations )
+₹15
+₹5
+₹60
+Serverless
+Sarvam Prism ( sarvam-prism )
+₹4
+—
+₹0
+Serverless
+Sarvam Prism is billed on input tokens only: output is ₹0 because it returns probabilities, not text. The state is counted once per request, so asking 3 short questions about a 1,000-token state bills a little over 1,000 input tokens. See Token usage .
+Open-Weight Models
+Model
+Input
+Cached input
+Output
+Status
+GLM-5.3 ( glm5.3 )
+₹126
+₹20
+₹390
+Serverless
+GLM-5.3 Flash ( glm5.3-flash )
+₹13.5
+₹2.5
+₹45
+Serverless
+Gemma 4 31B ( gemma4 )
+₹35
+₹10
+₹90
+Serverless
+DeepSeek V4.1 Flash 1017 ( deepseekv4.1-flash-1017 )
+₹14
+₹0.25
+₹55
+Serverless
+DeepSeek V4.1 Flash 1017 Interactive ( deepseekv4.1-flash-1017-interactive )
+₹25
+₹0.5
+₹105
+Serverless
+DeepSeek V4 Pro ( deepseekv4-pro )
+₹115
+₹4
+₹350
+Provisioned Throughput
+Kimi K3.1 Pro ( kimi-k3.1-pro )
+₹200
+₹20
+₹950
+Provisioned Throughput
+Qwen 3.8 27B ( qwen38-27b )
+₹18
+₹5
+₹230
+Provisioned Throughput
+Clef ( clef )
+₹20
+—
+—
+Provisioned Throughput
+EmbeddingGemma 2 ( embeddinggemma-2 )
+₹2
+—
+—
+Provisioned Throughput
+DeepSeek V4 Pro, Kimi K3.1 Pro, Qwen 3.8 27B, Clef, and EmbeddingGemma 2 are on
+Provisioned Throughput and are enabled per organisation.
+Clef and EmbeddingGemma 2 are billed on input tokens only: they return probabilities and
+vectors, not generated text, so there are no output tokens.
+Speech to Text
+Priced per minute, billed per second.
+Service
+Pay as you go
+Pro
+Growth
+Speech to Text (real-time, streaming, batch)
+₹0.49
+₹0.45
+₹0.41
+Speech to Text with Diarization (batch)
+₹0.59
+₹0.54
+₹0.50
+Text to Speech
+Priced per 1,000 characters, rounded to the nearest character. Rates apply to REST, HTTP streaming, and WebSocket streaming.
+Service
+Pay as you go
+Pro
+Growth
+Bulbul v4 Flash
+₹1.00
+₹0.925
+₹0.85
+Bulbul v3
+₹3.00
+₹2.85
+₹2.70
+Instant Voice Cloning
+₹2.00
+₹2.00
+₹2.00
+Text Processing
+Priced per 1,000 characters, rounded to the nearest character.
+Service
+Pay as you go
+Pro
+Growth
+Translate (formal and colloquial)
+₹2.00
+₹1.70
+₹1.50
+Transliteration
+₹2.00
+₹2.00
+₹1.80
+Language Identification
+₹0.35
+₹0.35
+₹0.31
+Document Intelligence
+Priced per page.
+Service
+Pay as you go
+Pro
+Growth
+Document Digitization API
+₹0.50
+₹0.50
+₹0.50
+Document Extraction API
+₹1.00
+₹1.00
+₹1.00
+Document Translation
+Priced per 1,000 billable characters, per target language. Character count is computed after parsing; each target language in a job is billed separately. Charges round up to the nearest rupee; minimum ₹1 when any billable text is present.
+Service
+Pay as you go
+Pro
+Growth
+Document Translation API
+₹5.00
+₹5.00
+₹4.50
+Dubbing
+Priced per minute of source media, multiplied by the number of target languages. Duration is rounded to whole seconds before billing.
+Service
+Pay as you go
+Pro
+Growth
+Dubbing API ( editor_flow: false )
+₹40
+₹40
+₹38
+Dubbing with Editor Flow ( editor_flow: true )
+₹80
+₹80
+₹75
+Editor Flow costs about twice the standard API rate and should only be enabled when the interactive editor workflow is required. See the Dubbing overview .
+Rate Limits
+Rate limits restrict the number of API requests your account can make within a given time window. Key points:
+Per-account enforcement : limits apply to your account as a whole, not individual API keys. All keys share the same rate limit pool.
+Continuous replenishment : capacity refills steadily over the window period rather than resetting all at once (token bucket model).
+Per-API granularity : each API has its own independent rate limits. WebSocket, Document AI, and LLM APIs have different limits from standard REST APIs. Check your specific API below.
+Your current limits are on the Dashboard → Rate Limits page.
+Rate limits vary significantly by API type and plan. Review the limits for each API below before building your integration.
+Speech to Text limits
+Real-time REST
+Pay as you go
+Pro
+Growth
+Rate Limit
+60 req/min
+100 req/min
+4,000 req/min
+WebSocket Streaming
+Pay as you go
+Pro
+Growth
+Rate Limit
+20 concurrent
+100 concurrent
+100 concurrent
+Batch
+Pay as you go
+Pro
+Growth
+Rate Limit
+20 req/min
+100 req/min
+500 req/min
+For batch endpoints, avoid tight polling loops. Poll no faster than your plan’s rate limit allows, for example every 3 seconds on Pay as you go’s 20 req/min.
+The SDK’s wait_until_complete() uses safe defaults out of the box:
+Batch STT / Speech-to-Text-Translate: 5-second poll interval. See Polling Defaults .
+Document Digitization (legacy document_intelligence ): 2-second poll interval.
+Document AI has no wait_until_complete() helper. You poll get_status() yourself, so pick your own interval (the examples use 5 seconds).
+If you poll manually instead of using the SDK helper, match or exceed these intervals.
+Text to Speech limits
+Limits are the same for Bulbul v3 and Bulbul v4 Flash.
+Real-time REST and HTTP Streaming
+Pay as you go
+Pro
+Growth
+Rate Limit
+60 req/min
+200 req/min
+1,000 req/min
+WebSocket Streaming
+Pay as you go
+Pro
+Growth
+Rate Limit
+60 concurrent
+200 concurrent
+1,000 concurrent
+Instant Voice Cloning limits
+Pay as you go
+Pro
+Growth
+Sustained
+60 req/min
+200 req/min
+1,000 req/min
+Burst
+100 req
+300 req
+1,200 req
+The sustained figure is the steady-state rate; short spikes are allowed up to the burst figure before requests are rejected with a 429 . Limits are subject to change.
+Translation & Text Services limits
+Text translation ( POST /translate )
+Pay as you go
+Pro
+Growth
+Rate Limit
+60 req/min
+200 req/min
+1,000 req/min
+Transliteration and Language Identification share the same limits.
+Document Translation
+Job lifecycle endpoints ( POST /translate/document/jobs , start , live-status , export , export/status ):
+Pay as you go
+Pro
+Growth
+Rate Limit
+200 req/min
+500 req/min
+1,000 req/min
+Document Translation is asynchronous. Poll live-status every 10–15 seconds (see the overview ) rather than tight loops that burn your per-minute quota.
+Language model limits
+Default models
+Pay as you go
+Pro
+Growth
+Rate Limit
+50 req/min
+200 req/min
+1,000 req/min
+Applies to: gemma4 , glm5.3 , deepseekv4.1-flash-1017
+Sarvam-105B model
+This large model has lower limits due to its compute requirements.
+Pay as you go
+Pro
+Growth
+Rate Limit
+60 req/min
+200 req/min
+300 req/min
+Applies to: sarvam-105b , sarvam-105b-conversations
+Dubbing limits
+Pay as you go
+Pro
+Growth
+Rate Limit
+5 req/min
+50 req/min
+300 req/min
+Document AI limits
+Document AI limits are set per operation and scale with your plan. Each limit assumes the number of pages per request shown below.
+Operation
+Pages per request
+Pay as you go
+Pro
+Growth
+Parse
+20
+200 req/min
+300 req/min
+400 req/min
+Extract
+30
+30 req/min
+50 req/min
+60 req/min
+Split
+500
+60 req/min
+120 req/min
+180 req/min
+Classify
+20
+100 req/min
+150 req/min
+200 req/min
+Exceeding Your Limits
+REST rate limits (429 / 503)
+When your account exceeds a rate limit, the API returns a 429 Too Many Requests response:
+{
+" error " : {
+" message " : " Rate limit exceeded " ,
+" code " : " rate_limit_exceeded_error "
+}
+}
+A 503 Service Unavailable can also occur under high backend load. Retry it the same way you would a 429, using a fixed exponential backoff. See Retry with exponential backoff for a reference implementation.
+Exhausted credits (402)
+A 402 Payment Required is not a rate limit. It means the organisation’s credit balance is empty, and no retry will clear it. Add credits on Settings → Billing and the account resumes immediately, with no key rotation or redeploy. See Billing & payments and Out of credits .
+WebSocket connection limits
+The limiter reacts to how fast new connections are opened, not how many are held open at once:
+Connections opened in a fast burst can be rejected well below the concurrent ceilings listed above.
+The same number of connections opened gradually (for example, 300ms apart) and held open simultaneously can succeed past those ceilings.
+A rejected connection is closed, not queued. The close code is 1003 , with this reason text:
+Rate limit exceeded. Visit the API Dashboard to review and manage your subscription.
+This differs from the 4xxx range described elsewhere on this site for application-specific closures.
+The burst threshold is not a fixed number and can vary between runs at the same burst size. Space out new connections rather than relying on a specific count.
+Upgrading Your Limits
+1 Check your current limits
+Visit the Dashboard → Rate Limits to see your exact per-API limits.
+2 Upgrade your plan
+Purchase a higher plan directly from the dashboard. Your rate limits increase immediately after upgrade, no downtime.
+3 Need custom limits?
+For limits beyond the Growth plan, contact our team for an Enterprise arrangement.
+Upgrade Plan
+View plans and upgrade directly from the dashboard. Rate limits update instantly.
+Enterprise & Custom Limits
+Need higher rate limits, dedicated infrastructure, or custom SLAs? Talk to our team.
+Was this page helpful? Yes No
+Previous Talk to us
+Next Built with
+DesktopMenu) --> Getting Started
+Welcome
+Quickstart
+SDKs & Libraries
+Pricing, Credits & Rate Limits
+Talk to us
+Token Factory (Open-Weight) Models
+Chat Completions
+Responses API
+Decisions API
+How-to
+Migration Guides
+Sarvam Models
+Models
+Speech to Text
+Text to Speech
+Text Processing
+Document Intelligence
+Document Translation
+Dubbing
+Instant Voice Cloning Beta
+Self-Hosted Deployments
+Integration
+Developer Tools
+Cookbook
+Guides
+Example Voice Agents
+Migrations
+Resources
+Building for Indian Languages
+All Models
+Errors & Troubleshooting
+Commercial Licensing
+Account & Billing
+Welcome
+Quickstart
+SDKs & Libraries
+Pricing, Credits & Rate Limits
+Talk to us
+Token Factory (Open-Weight)
+Models
+Sarvam 105B
+Sarvam Prism
+GLM-5.3
+GLM-5.3 Flash
+Gemma 4 31B
+DeepSeek V4.1 Flash 1017
+DeepSeek V4 Pro
+Kimi K3.1 Pro
+Qwen 3.8 27B
+Clef
+EmbeddingGemma 2
+Chat Completions
+Responses API
+Decisions API
+List your chat messages
+Control response randomness
+Control response diversity
+Adjust the model's thinking level
+Encourage new topics in response
+Reduce repetition words or phrases in response
+Get repeatable results
+Control the response length
+Control where the model stops
+Overview
+Chat Completion
+Responses API
+Overview
+Chat Completion
+Responses API
+Overview
+Chat Completion
+Saaras
+Bulbul
+Mayura
+Sarvam Translate
+Sarvam Vision
+Saarika (Deprecated)
+Sarvam 30B (Deprecated)
+Sarvam M (Deprecated)
+Overview
+Which API to Use
+Rest API
+Batch API
+Realtime Streaming
+Best Practices
+FAQs
+Select Output Mode
+Specify Language Codes
+Enable Speaker Diarization
+Keyterm Prompting
+IVR & Contact Center
+BFSI Voice Bots
+EdTech
+Government Services
+Agri & Rural
+Streaming API
+Overview
+Voices
+Which API to Use
+Rest API
+HTTP Stream
+WebSocket
+Pronunciation Dictionary
+Best Practice Guide for Bulbul v4 Flash
+Best Practices (Bulbul v3)
+Set the Language
+Change the Speaker Voice
+Adjust the Tone
+Adjust the Speed
+Adjust the Loudness
+Set the Sample rate
+Enable Text Preprocessing
+Set audio format for output
+Set bitrate for output
+Set maximum length for sentence splitting
+Set buffer size to start processing
+IVR & Contact Center
+BFSI Voice Bots
+EdTech
+Government Services
+Agri & Rural
+Overview
+Text Translation
+Transliteration
+Language Detection
+Overview
+Parse
+Extract
+Split
+Classify
+Jobs & Errors
+Languages, Formats & Limits
+Overview
+Set Style Guidelines
+Pick a Genre
+Use Native Numerals
+Poll Status and Export Results
+FAQs
+Use Cases
+Translate a PDF
+Overview
+Job Lifecycle
+Specify Language Codes
+Control Translation Tone
+Choose a Voice
+Choose Export Formats
+FAQs
+Overview
+Prepare Reference Audio
+Clone Across Languages
+Choose Audio Formats
+Use Quality Control
+HTTP Streaming
+WebSocket Streaming
+Supported Languages
+FAQs
+Introduction
+Managed vs Self-Hosted
+How it works
+Get started
+Speech-to-Text (Saaras v3)
+Sarvam Vision
+Text-to-Speech (Bulbul v3)
+Deploy with Terraform
+Speech-to-Text
+Sarvam Vision
+Text-to-Speech
+Error handling
+Configure & tune
+Operations
+Limitations
+Troubleshooting
+LiveKit
+Pipecat
+Twilio
+Exotel
+Vobiz
+Vapi
+n8n
+Vercel AI SDK
+LangChain
+LiveKit in Production
+Pipecat in Production
+MCP Server
+Markdown & llms.txt
+Context7
+Agent Skills
+Call Analytics Pipeline
+Live Video Transcription
+Podcast Generator
+WhatsApp Bot
+Support Voice Notes
+Collection Agent
+Government Scheme Agent
+Tutor Agent
+Loan Advisory Agent
+Overview
+Text to Speech
+Speech to Text
+Instant Voice Cloning
+Overview
+Text to Speech
+Speech to Text
+Overview
+Text to Speech
+Speech to Text
+Overview
+Chat Completion
+Text to Speech
+Speech to Text
+Building for Indian Languages
+All Models
+Errors & Troubleshooting
+Commercial Licensing
+Organisations & workspaces
+Create an organisation
+Create a workspace
+Invite your team
+Billing & payments
+Platform FAQ
+Model APIs
+Voice Agents
+Document AI
+Content Studio
+Cowork
+API Reference
+Changelog

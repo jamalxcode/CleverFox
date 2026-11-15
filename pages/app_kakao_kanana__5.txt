@@ -1,0 +1,106 @@
+URL: https://www.kakaocorp.com/page/detail/11545?lang=ENG
+FINAL: https://www.kakaocorp.com/page/detail/11545?lang=ENG
+STATUS: 200
+TITLE: 카카오, AI 메이트 서비스 ‘카나나’ CBT 시작 | 카카오
+FETCHED: 2026-11-15T15:57:19.874Z
+
+카카오, AI 메이트 서비스 ‘카나나’ CBT 시작 | 카카오 본문 바로가기 메뉴 바로가기
+KaKao
+메인메뉴
+About
+Kakao Culture
+KakaoGroup
+Milestones
+AI
+Kakao AI
+Tech & Service
+Kakao Tech
+Kakao Service
+All Services kakaoTalk download
+Sustainability
+Kakao ESG
+News
+Press Kit
+Press Release
+Mediakit
+Partners
+Partner with us
+IR
+Open a new window
+Open the Search box open menu
+KaKao
+Change to Dark mode
+View in Korean 메인 메뉴 닫기
+메인메뉴
+About Kakao Culture
+KakaoGroup
+Milestones
+AI Kakao AI
+Tech & Service Kakao Tech
+Kakao Service
+All Services kakaoTalk download
+Sustainability Kakao ESG
+News Press Kit
+Press Release
+Mediakit
+Partners
+Partner with us
+IR (Open a new window)
+Careers
+Open a new window
+Support Kakao Customer Center (Open a new window)
+Daum Customer Center (Open a new window)
+Commerce Customer Center (Open a new window)
+Detail page main text
+보도자료
+May 08, 2025
+카카오, AI 메이트 서비스 ‘카나나’ CBT 시작
+Share
+- 정식 출시 앞서 일부 이용자 대상 비공개 테스트…개인·그룹 방에서 이용자 돕는 AI 메이트 역할
+- 이용자의 다양한 사용성 파악, 정기 업데이트 통해 완성도 높인 이후 정식 버전 선보일 예정
+- 개인메이트 ‘나나’, 그룹메이트 ‘카나’가 이용자 요청 및 대화 맥락 맞춰 다양한 기능 수행
+[2025-05-08] 카카오(대표이사 정신아)가 AI 서비스 ‘카나나’의 CBT(Closed Beta Test)를 8일부터 시작한다. 구글 플레이와 애플 앱스토어에서 앱을 다운로드 받은 이용자 중 가입 순서에 따라 선착순으로 CBT에 참여할 수 있다.
+CBT는 소프트웨어나 앱, 게임 등을 정식 출시하기 전, 제한된 이용자를 대상으로 서비스 기능 및 안정성을 실험하는 것이다. 누구나 참여 가능한OBT(Open Beta Test)와는 성격이 다르다. 카나나는 새로운 개념의 서비스인 만큼 CBT 기간동안 이용자 피드백을 적극 수렴하고, 약 3주마다 정기 업데이트를 진행해 기술 및 서비스 품질을 지속적으로 높여 갈 계획이다. 서비스 완성도가 일정 수준에 이르면 정식 버전을 출시할 예정이다.
+# 개인 및 그룹방에서 이용자 돕는 ‘AI 메이트’… 서비스 사용할수록 성장 및 고도화
+카나나는 개인 및 그룹방에서 이용자를 돕는 ‘AI 메이트’로 기획됐다. 이용자가 주고 받은 대화 내용의 맥락을 파악해 그에 맞는 답변을 제공한다. 기존 AI 서비스들이 이용자와의 1:1 대화만을 통해 기능을 수행했다면, 카나나는 그룹 대화에서도 작동함으로써 관계 형성과 강화를 돕는 것이 특징이다. 이용자들이 서비스를 사용할수록 AI메이트의 이용자에 대한 이해도가 높아져, 개인화 수준 역시 한층 고도화된다. 카나나가 ‘나를 이해하는 초개인화 서비스’라는 방향성을 강조하는 이유다.
+카나나 서비스에는 개인메이트 ‘나나’와 그룹메이트 ‘카나’가 있다. ‘나나’는 개인과 그룹방 모두에 존재하며, 이용자의 정보를 기억해 개인화된 답변을 제공한다. 그룹 메이트 ‘카나’는 이용자가 속한 모든 그룹방에서 조별 과제나 동호회, 가족, 지인 간의 대화 내용을 요약하고 모임 일정 및 장소 정하는 것을 돕는 등 다양한 기능을 수행한다.
+예를 들어, 러닝 동호회에서 다가오는 마라톤 대회 일정과 관련한 이야기를 나눈다면 그 내용을 파악해 일정을 등록하고 리마인드도 해준다. 새로운 러닝 코스도 추천해주며, 대회 일정에 대한 알림 요청을 해두면 주기적으로 정보를 공유해 준다.
+그룹방에서 귓속말 모드를 통해 개인메이트 나나와 1:1 대화를 나눌 수도 있다. 뒤늦게 그룹방에 참여한 상황에서 지난 대화를 요약 받거나, 대화 중 오가는 내용에 대한 추가 정보를 얻을 수 있다.
+카나나는 카카오 계정으로 가입 가능하고 메이트 프로필 설정 단계에서 ‘친구같은’, ‘전문가같은’, ‘분위기 메이커’, ‘사춘기 같은’ 등으로 메이트의 말투, 성격 등을 특정할 수 있다. 이용자가 원하는 대화 스타일을 직접 입력해 설정하는 것도 가능하다.
+카카오의 김종한 카나나 성과리더는 “AI를 통해 사람 사이의 소통을 더욱 자연스럽고 의미 있게 만드는 것이 목표”라며 “이용자가 서비스를 사용할수록 고도화되는 성장형 서비스인 만큼, CBT기간 동안 각종 피드백을 적극 반영하여 완성도를 높여 나갈 것”이라고 말했다.
+# 오픈AI 협력 등 통해 이용자 일상에 스며드는 AI 서비스들 잇따라 선보일 예정
+카카오는 올해 카나나 이외에도, 오픈AI 협력 등을 통해 이용자의 일상에 스며드는 다양한 AI 서비스들을 선보일 계획이다.
+카카오톡 채널 형태로 지난 1분기 베타 서비스를 시작한 ‘AI 메이트 쇼핑’에 이어, ‘AI 메이트 로컬’을 연내 신규 출시할 예정이다. 쇼핑과 로컬을 시작으로 다양한 버티컬 메이트를 출시함으로써 기존 사업의 진입점을 확대하고 이용자의 사용성을 강화하려는 전략이다.
+이용자가 요청한 내용의 문맥까지 추론해 최적의 답변을 요약 정리해주는 AI 기반 생성형 검색 서비스도 준비 중이다. 이와 더불어 오픈 AI와의 전략적 제휴를 기반으로 AI 서비스 고도화를 위한 기술 협력을 진행하고, 카카오 생태계 전반을 아우르는 AI 에이전트 개발을 통해 서비스 사용성 및 경험 확대에도 집중할 계획이다. (끝)
+#카카오 #카나나 #CBT #AI메이트
+Share
+list view
+Recommended Contents 보도자료 카카오, AI 트렌드와 사업 노하우 나누는 ‘카카오 비즈니스 페어 2026’ 개최…소상공인·소규모 파트너 성장 돕는다 #카카오 #카카오비즈니스 #카카오비즈니스페어
+공유하기
+보도자료 카카오, 에이전트의 판단과 선택 돕는 모델 ‘Kanana-2-v-decide’ 오픈소스 공개 #카카오 #자체개발AI모델 #의사결정모델 #카나나
+공유하기
+보도자료 카카오, ‘2026 대한민국 소상공인대회’ 참가…
+소상공인·지역 상생 사업 알린다 #상생 #소상공인 #지속가능경영 #카카오프로젝트단골
+공유하기
+Go to top
+하단 메뉴
+서비스 이용정보
+Terms of Service Open a new window
+Location Terms of Service Open a new window
+Privacy Policy
+corporate website Open a new window
+kakao service Open a new window
+Operation Policy Open a new window
+Accessibility Information Open a new window
+Brand Protection Policy Open a new window
+Notice Open a new window
+Contact Us Open a new window
+Family Site Go to the
+Kakao Privacy
+Go to the
+Kakao Developers
+Go to the
+Daum Portal Site
+Go to the
+Jeju with kakao
+© Kakao Corp. All rights reserved.

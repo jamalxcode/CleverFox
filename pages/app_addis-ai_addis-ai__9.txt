@@ -1,0 +1,188 @@
+URL: https://addisassistant.com/terms
+FINAL: https://addisassistant.com/terms
+STATUS: 200
+TITLE: Terms of Use · Addis AI
+FETCHED: 2026-11-15T15:56:02.343Z
+
+Terms of Use · Addis AI
+Voice Lab Playground Pricing Benchmarks Open source Docs
+Terms of Use
+Effective date: 13 July 2026 · Version: 2026-07-13
+These Terms allocate responsibility for use of Addis AI&#x27;s language, speech, voice-generation, and realtime services. Read them carefully: they contain important restrictions, warranty disclaimers, liability limits, an indemnity, and an arbitration agreement.
+Important: If you do not agree to these Terms, do not access or use the Services. By creating an account, clicking an acceptance control, obtaining or using an API key, purchasing credits, accessing an API, or otherwise using the Services, you agree to these Terms. If you use the Services for an organization, that organization also agrees to them.
+1. Agreement and scope
+These Terms of Use (the “Terms” ) are a legally binding agreement between you and Addis AI ( “Addis AI,” “we,” “us,” or “our” ).
+They govern your access to and use of addisassistant.com, addisai.ch, the developer portal, dashboards, playgrounds, mobile and web applications, application programming interfaces, software development kits, documentation, text-to-speech, speech-to-text, language-model, voice, dubbing, agent, realtime audio, and related products and services that link to these Terms (collectively, the “Services” ).
+Addis AI provides the Services through operations and infrastructure in Ethiopia and Europe, including Switzerland, together with service providers in other locations where needed to operate the Services.
+Our Privacy Policy explains how we process personal data. Service-specific documentation, order forms, enterprise agreements, data processing addenda, acceptable-use notices, pricing pages, and other written terms we make applicable to a feature are incorporated into these Terms. A signed agreement controls if it expressly states that it overrides a conflicting part of these Terms.
+Mandatory consumer protections and other rights that cannot lawfully be excluded remain unaffected.
+2. Eligibility and authority
+You must be at least 18 years old and legally capable of entering into a binding contract. The Services are not directed to children. You may not use the Services if applicable law bars you from doing so or if we previously suspended or terminated you for a violation.
+If you accept these Terms for a company, government, school, or other entity, you represent and warrant that you have authority to bind it. You are responsible for the acts and omissions of your personnel, contractors, agents, and End Users who access the Services through your account, credentials, product, or integration.
+3. Accounts and API credentials
+You must provide accurate, current, and complete information and keep it updated. You are responsible for all activity under your account, including activity by anyone using your API keys, access tokens, or other credentials, whether or not you authorized that activity.
+Keep credentials confidential, use reasonable security controls, and do not embed secret keys in publicly accessible code or client applications.
+Notify support@addisassistant.com immediately if credentials are lost, exposed, or misused.
+Do not sell, transfer, share, or rent an account or credentials, and do not create accounts with temporary email services, false identities, or to evade restrictions, rate limits, or free-credit controls.
+We may rotate, revoke, limit, or require replacement of credentials where reasonably necessary for security, legal compliance, abuse prevention, or service integrity.
+4. Services and changes
+Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, and revocable right to access and use the Services during the term. Paid API customers may integrate Outputs into their own products for lawful internal or commercial purposes, but may not resell, lease, or provide the Services themselves as a standalone or substantially equivalent service without our written permission.
+We may add, modify, limit, replace, suspend, or discontinue models, voices, endpoints, features, documentation, quotas, compatibility, or other parts of the Services. We do not promise that any model, voice, beta feature, endpoint, or Output format will remain available indefinitely. Where reasonably practicable, we will provide notice before a material discontinuation that affects paid use.
+5. Input, Output, and ownership
+“Input” means text, prompts, instructions, system messages, files, images, payment receipts, recordings, audio streams, voice samples, transcripts, knowledge-base material, personal data, or other material submitted to or collected through the Services. “Output” means text, audio, transcripts, predictions, classifications, or other material generated or returned by the Services. Input and Output together are “Content.”
+Your Input. As between you and Addis AI, you retain your rights in Input. You represent and warrant that you have all rights, notices, permissions, consents, and lawful bases necessary to submit and permit us to process Input as described in these Terms and the Privacy Policy. Input must not violate law, a contract, a duty of confidentiality, or another person&#x27;s intellectual-property, privacy, publicity, personality, biometric, data-protection, or other rights.
+Your Output. To the extent permitted by applicable law and subject to these Terms, we assign to you any right, title, and interest we may have in Output generated specifically for you. This assignment does not include our Services, models, model weights, algorithms, voices, software, documentation, prompts, safeguards, or other underlying technology; third-party material; or Output generated for another user.
+AI Output may not be unique. Other users may receive the same or similar Output, and you receive no right to prevent that. We do not represent that Output is copyrightable, registrable, exclusive, or non-infringing, or that use of Output will secure intellectual property rights in any jurisdiction.
+6. Our use and review of Content
+You grant Addis AI and our affiliates, contractors, and service providers a worldwide, non-exclusive, royalty-free, fully paid, transferable, and sublicensable license to host, store, reproduce, transmit, format, adapt, translate, create derivative technical representations of, display, perform, and otherwise process Content to:
+provide, operate, support, and personalize the Services;
+detect, prevent, investigate, and address fraud, abuse, security incidents, policy violations, and unlawful or harmful activity;
+evaluate, test, research, develop, train, fine-tune, and improve models, voices, systems, and related products;
+debug errors, perform quality assurance, respond to support requests, and enforce these Terms; and
+comply with law and protect rights, safety, and property.
+The license lasts for as long as necessary for those purposes, subject to the Privacy Policy and applicable law. Rights relating to lawfully de-identified or aggregated information, evaluations, safety records, and model or system improvements that do not identify you may survive deletion of an account or Content.
+Automated systems and a limited number of authorized personnel or service providers may review Content when reasonably necessary for the purposes above. We do not undertake to review all Content and do not assume a duty to monitor, screen, or approve it.
+7. Output risks and your responsibility
+Generative and speech AI are probabilistic. Output may be inaccurate, fabricated, incomplete, outdated, offensive, unsafe, biased, or unsuitable; may mistranscribe names, numbers, dialects, intent, or speaker identity; may imitate features of existing material; and may not reflect Addis AI&#x27;s views.
+You—not Addis AI—are solely responsible for deciding whether and how to use, publish, distribute, communicate, perform, transmit, commercialize, or rely on Output and for all resulting consequences. Before using Output, you must independently evaluate its accuracy, legality, safety, appropriateness, and fitness for your use case, use qualified human review where appropriate, and obtain all required clearances.
+Output is not a substitute for professional advice and must not be relied on as the sole source of truth for legal, medical, financial, tax, employment, safety, engineering, or other professional matters. You assume all risk from decisions or actions based on Output.
+8. Voice, audio, and realtime rules
+Audio, voice-generation, speech-recognition, dubbing, and realtime services create special legal and safety risks. In addition to all other obligations, you agree that:
+you will submit, record, clone, synthesize, transform, or use only a voice or recording that you own or for which you have documented, informed, legally sufficient permission covering the intended use;
+you will give every speaker, caller, participant, and affected person all notices and obtain all consents required for recording, transcription, storage, review, AI interaction, automated calling, and cross-border processing;
+you will clearly and prominently disclose when a person is interacting with AI and when audio has been artificially generated or manipulated, wherever law or context requires and always where omission could mislead a reasonable person;
+you will not impersonate another person; misrepresent identity, authority, endorsement, or authenticity; create deceptive deepfakes; bypass voice-verification controls; or use synthetic audio for fraud, extortion, harassment, defamation, political deception, unauthorized biometric identification, or identity theft;
+you will comply with call-recording, wiretap, telecommunications, robocalling, caller-identification, consumer-protection, biometric, publicity, labor, and election laws in every relevant jurisdiction; and
+you will not create or use a voice model of a child, public official, candidate, celebrity, or other person without all permissions and safeguards required by law and by us.
+Our provision of a voice, tool, or technical capability does not mean that a particular use is lawful or authorized. We may require proof of consent, identity, rights, notices, or legitimate purpose and may block, label, remove, preserve, or report Content or activity where permitted by law.
+9. Developers, integrations, and End Users
+“End User” means anyone who accesses or is affected by the Services through your application, agent, call, workflow, account, or integration. You are responsible for your integration and End Users as if their activity were your own.
+Provide accurate, prominent, and legally compliant terms and privacy notices to End Users before collecting or sending their data to us.
+Obtain a lawful basis and every required consent, including for audio recording, transcription, sensitive data, automated processing, and international transfers.
+Tell End Users when they are interacting with AI and do not represent Output as solely human-created where that would be misleading.
+Implement authentication, access controls, human escalation, testing, monitoring, and other safeguards proportionate to the use case and potential harm.
+Do not expose API credentials or allow End Users to circumvent safeguards or use the Services contrary to these Terms.
+You are the controller or responsible party for personal data you choose to collect from End Users, except to the extent a signed data processing agreement expressly states otherwise. You will respond to End User requests and complaints relating to your product and use.
+10. Prohibited uses
+You must not use or help anyone use the Services to:
+violate any law, regulation, court order, sanctions rule, export control, or third-party right, including privacy, data-protection, intellectual-property, publicity, and personality rights;
+exploit, groom, sexualize, endanger, or abuse children, or create, solicit, transform, or distribute child sexual abuse material;
+facilitate terrorism, violent extremism, human trafficking, weapons development, unlawful violence, credible threats, or instructions intended to cause serious harm;
+create or distribute hate speech, unlawful disinformation, non-consensual intimate content, defamatory content, or material intended to harass, stalk, intimidate, or discriminate;
+defraud, scam, phish, spam, manipulate, impersonate, mislead, evade disclosure obligations, or falsely claim human authorship;
+create malware, steal credentials, compromise systems, defeat security controls, or conduct unauthorized surveillance, vulnerability exploitation, or cyber abuse;
+infer or classify highly sensitive traits, identify a person from biometric data, or track or monitor a person without a lawful basis and required consent;
+engage in unlawful automated calling, mass messaging, advertising, political persuasion, or election interference;
+reverse engineer, decompile, extract, discover, replicate, or derive the Services, models, weights, training data, system prompts, or underlying components except where law expressly prohibits this restriction;
+scrape, systematically extract, or use Output or the Services to train, benchmark for publication, develop, or improve a competing model or service without our written permission;
+bypass rate limits, quotas, safety filters, access restrictions, billing, metering, geographic limits, or enforcement measures;
+overload, disrupt, damage, or interfere with the Services or other users, including through abusive automation; or
+use the Services in a way that creates a foreseeable risk of death, serious injury, significant property or environmental damage, or a material violation of rights.
+These examples are not exhaustive. We may publish additional safety rules and may restrict a use where we reasonably believe it is illegal, harmful, abusive, deceptive, or likely to expose us or others to risk.
+11. High-impact and regulated uses
+Unless we expressly approve the use in a signed agreement, the Services are not designed or warranted for high-risk or regulated environments, including emergency dispatch, life-support, medical diagnosis or treatment, legal representation, autonomous weapons, critical infrastructure control, or systems subject to HIPAA, GLBA, FISMA, or equivalent sector-specific regimes.
+You must not use Output about a person as the sole or determinative basis for decisions that have legal or similarly significant effects, including decisions about employment, education, credit, lending, housing, insurance, healthcare, law enforcement, immigration, public benefits, or access to essential services. Any permitted supporting use requires qualified human review, notice, contestability, nondiscrimination testing, and all safeguards required by law.
+12. Monitoring, investigation, and enforcement
+We may use automated systems and human review to monitor use for security, safety, service integrity, legal compliance, and enforcement. We may investigate suspected violations; preserve and review relevant Content and records; request information or proof; limit Output; refuse or remove Content; throttle or block requests; suspend or terminate access; revoke credits or credentials obtained through abuse; and report conduct to affected parties or authorities where permitted or required by law.
+You must cooperate with a reasonable investigation and preserve relevant records. Our decision not to act in one instance does not waive our right to act later. Safety systems are not guaranteed to detect every violation and do not transfer responsibility to us.
+13. Confidential and sensitive data
+The standard Services are not a secure repository for secrets or a substitute for a negotiated confidentiality, data-processing, or regulated-industry agreement. Do not submit confidential business information, passwords, private keys, payment-card data, government identifiers, protected health information, children&#x27;s data, or other sensitive personal data unless it is necessary, lawful, and you have implemented appropriate safeguards and obtained our written agreement where required.
+No duty of confidentiality applies to Content merely because you submit it through the standard Services. Any confidentiality obligation must be stated in a separate written agreement signed by Addis AI. You are responsible for redacting unnecessary sensitive information and maintaining your own backups.
+14. Our intellectual property
+We and our licensors retain all rights, title, and interest in the Services, including models, model weights, voice assets, datasets, software, APIs, algorithms, documentation, interfaces, designs, trademarks, and improvements. Except for the limited right granted in Section 4 and the Output assignment in Section 5, no right or license is granted by implication, estoppel, or otherwise.
+If you provide feedback, ideas, suggestions, evaluations, or error reports, you grant us a perpetual, irrevocable, worldwide, sublicensable, transferable, royalty-free right to use and exploit them without restriction or compensation. You may not use our name, marks, or branding in a way that implies endorsement or partnership without written permission.
+15. Third-party services and material
+The Services may interoperate with or rely on third-party hosting, authentication, analytics, payment, communication, model, open-source, or other services. Third-party services and material are governed by their own terms and may change or become unavailable. We do not control and are not responsible for third-party services, content, acts, omissions, security, availability, or data practices.
+You are responsible for obtaining any third-party rights and complying with third-party terms. References or links do not imply endorsement, sponsorship, or affiliation.
+16. Beta and experimental services
+Services labeled alpha, beta, preview, experimental, evaluation, or similar are provided for testing, may be incomplete or materially change, may have lower reliability or additional risks, and may be suspended without notice. Do not use them in production or for safety-critical, high-impact, or regulated purposes. To the maximum extent permitted by law, beta services are provided without service levels, support commitments, warranties, or liability obligations.
+17. Fees, service credits, and payments
+You must pay all fees, taxes, and charges shown at purchase or incurred through your account. Usage measurements made by our systems control billing. Prices, currencies, metering units, exchange-rate displays, minimum top-up amounts, and limits may change. Currency conversions shown in the interface may be estimates; the transaction currency shown at checkout controls.
+Service credits are prepaid rights to use eligible Services, are not deposits or stored value, have no cash value, are non-transferable, and may not be resold.
+Purchases and consumed usage are final and non-refundable except where required by law or expressly stated in writing.
+Promotional or free credits may have separate conditions, may be revoked for fraud or abuse, and are limited to one eligible grant per person or organization unless we state otherwise.
+You authorize us and our payment processors to charge the selected method and share necessary transaction information. A chargeback or payment dispute does not eliminate valid charges and may result in suspension while investigated.
+You must review transaction details. Report a suspected billing error promptly and no later than 30 days after it appears, unless law requires a longer period.
+We may correct pricing or metering errors, refuse suspicious payments, require verification, set credit or spending limits, and suspend access for overdue or negative balances. Any mandatory refund or withdrawal right under applicable consumer law remains intact.
+18. Suspension and termination
+You may stop using the Services at any time and may request account deletion through account settings, subject to outstanding balances and records we must retain. We may immediately restrict, suspend, or terminate access, revoke credentials, or close an account if we reasonably believe:
+you breached these Terms or law;
+your use creates risk or harm to us, a user, or another person;
+the account or payment activity is fraudulent or unauthorized;
+you are attempting to evade an enforcement measure;
+we must act to comply with law or a provider requirement; or
+continued provision is no longer commercially or technically feasible.
+Where practicable and appropriate, we may provide notice and an opportunity to appeal. On termination, your right to use the Services ends immediately. Sections that by their nature should survive—including Content licenses, payment obligations, intellectual-property terms, disclaimers, liability limits, indemnity, dispute terms, and general provisions—will survive.
+19. Disclaimers
+To the maximum extent permitted by law, the Services and all Output are provided “as is” and “as available,” at your sole risk. Addis AI and its affiliates, licensors, suppliers, and personnel disclaim all express, implied, statutory, and other warranties, including merchantability, satisfactory quality, fitness for a particular purpose, title, non-infringement, quiet enjoyment, and warranties arising from course of dealing or usage of trade.
+We do not warrant that the Services or Output will be uninterrupted, secure, available, compatible, accurate, complete, unique, lawful, error-free, free of harmful components, or preserved without loss or alteration; that defects will be corrected; or that Output will meet your requirements. You accept that use of Output is at your sole risk and that you will not rely on it as a sole source of truth or as a substitute for professional advice.
+20. Limitation of liability
+To the maximum extent permitted by law, Addis AI and its affiliates, licensors, suppliers, and personnel will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages; loss of profits, revenue, business, opportunity, goodwill, data, Content, or use; replacement-service costs; personal or reputational harm caused by Output; or business interruption, even if advised that such damage was possible.
+To the maximum extent permitted by law, the aggregate liability of Addis AI and its affiliates, licensors, suppliers, and personnel for all claims arising out of or relating to the Services or these Terms will not exceed the greater of (a) the amount you paid Addis AI for the Services giving rise to the claim during the 12 months before the event giving rise to liability, or (b) CHF 100.
+These exclusions and limits apply regardless of the theory of liability and even if a remedy fails of its essential purpose. They do not exclude liability that cannot lawfully be excluded, including liability for fraud, willful misconduct, or other liability where a mandatory law prohibits exclusion. Where a jurisdiction does not permit a limitation, liability is limited to the maximum extent permitted there.
+21. Indemnity
+To the maximum extent permitted by law, you will defend, indemnify, and hold harmless Addis AI, its affiliates, and their officers, directors, employees, contractors, licensors, suppliers, and agents from and against claims, demands, investigations, proceedings, losses, liabilities, damages, judgments, penalties, fines, costs, and expenses (including reasonable legal fees) arising out of or relating to:
+your or your End Users&#x27; access to or use of the Services;
+Input, Output, your product, or use or distribution of Content;
+a claim that Input, your instructions, or your use of Output violates law or another person&#x27;s rights;
+recording, voice, biometric, privacy, publicity, impersonation, robocalling, consumer-protection, or disclosure claims;
+your breach of these Terms or a representation or warranty; or
+fraud, negligence, willful misconduct, or unlawful activity.
+We may control the defense and settlement of an indemnified matter. You will cooperate and may not settle in a way that admits fault by, imposes obligations on, or fails to fully release Addis AI without our written consent. This Section applies to consumers only to the extent permitted by mandatory law.
+22. Governing law and dispute resolution
+These Terms and any non-contractual obligations arising from them are governed by the laws of Ethiopia, without regard to conflict-of-laws rules, except to the extent mandatory law in your place of residence applies. Consumers in Switzerland, the European Economic Area, and other jurisdictions retain any protections and remedies that cannot lawfully be excluded by contract.
+Informal resolution
+Before starting arbitration or court proceedings, the complaining party must send a written notice describing the dispute, requested relief, and supporting information. The parties will attempt in good faith to resolve it for 30 days after receipt. Notices to Addis AI must be sent to support@addisassistant.com with the subject “Legal Dispute Notice.”
+Binding arbitration
+Except for the exceptions below and where prohibited by mandatory law, any unresolved dispute, claim, or controversy arising out of or relating to these Terms or the Services will be finally resolved by arbitration under the UNCITRAL Arbitration Rules in effect when the arbitration begins. There will be one arbitrator, the seat will be Addis Ababa, Ethiopia, and proceedings will be in English. Judgment on the award may be entered by any court with jurisdiction. Mandatory consumer rights, including any right to bring a claim in a competent local court, are not restricted by this paragraph.
+Individual proceedings
+To the fullest extent permitted by law, disputes must be brought only in an individual capacity and not as a plaintiff or class member in a class, collective, consolidated, mass, coordinated, representative, or private-attorney-general proceeding. The arbitrator may award relief only to the individual party seeking it.
+Exceptions and courts
+Either party may seek urgent injunctive or equitable relief in a competent court for misuse of intellectual property, unauthorized access, security abuse, privacy or personality-right violations, or conduct likely to cause imminent or irreparable harm. Claims that cannot lawfully be arbitrated may be brought exclusively in the competent courts of Addis Ababa, Ethiopia, and each party consents to their jurisdiction, subject to mandatory consumer venue rights.
+23. Changes to these Terms
+We may update these Terms for legal, regulatory, security, safety, technical, commercial, or product reasons. The version and effective date appear above. For changes that materially and adversely affect existing users, we will provide reasonable advance notice by email, account notice, or another appropriate method where required by law. Changes may take effect immediately where necessary to address legal requirements, security, abuse, or urgent harm.
+Continuing to use the Services after updated Terms take effect means you accept them. If you do not agree, you must stop using the Services before the effective date and close your account.
+24. General terms
+Entire agreement. These Terms and incorporated documents are the entire agreement about the Services and replace prior or contemporaneous understandings on that subject.
+Order of precedence. A signed order form or enterprise agreement controls over these Terms only for an express conflict; service-specific terms then control over these Terms.
+Assignment. You may not assign or transfer these Terms without our written consent. We may assign them to an affiliate or in connection with a financing, reorganization, merger, acquisition, or sale of assets.
+Severability. If a provision is unenforceable, it will be enforced to the maximum lawful extent and the remainder will continue. If the class waiver is unenforceable for a particular claim, that claim will be severed as required by law.
+No waiver. A failure or delay to enforce a right is not a waiver. Waivers must be in writing.
+No agency. These Terms do not create a partnership, joint venture, employment, fiduciary, franchise, or agency relationship.
+Force majeure. We are not liable for delay or failure caused by events beyond our reasonable control, including network, cloud, utility, labor, governmental, conflict, epidemic, natural-disaster, or third-party service events.
+Electronic communications. You consent to receive agreements, notices, disclosures, and records electronically. A notice sent to your account email is effective when sent, subject to mandatory law.
+Language. The English version controls to the extent permitted by law if a translation conflicts with it.
+25. Contact
+Questions, notices, and complaints about these Terms may be sent to:
+Addis AI
+Hauptstrasse, 2552 Orpund, Switzerland
+support@addisassistant.com
+contact@addisai.ch
+Voice-first AI infrastructure for African languages. Build with speech-to-text, text-to-speech, language models, and realtime voice for Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama and Wolaytta.
+Download on the App Store Get it on Google Play
+Products
+Text to Speech
+Speech to Text
+LLM
+Realtime API (Beta)
+Voice Lab
+Creatives
+Captions
+Developers
+Documentation
+API reference
+Pricing
+API keys
+Benchmarks
+Open source
+Compare
+vs ElevenLabs
+vs Google Cloud
+vs Microsoft Azure
+vs Meta (MMS)
+vs OpenAI
+Company
+Enterprise
+FAQ
+Orpund, Switzerland 🇨🇭 +41 798 74 99 37 🇪🇹 +251 703 75 35 00 contact@addisassistant.com
+© 2026 Addis AI Terms Privacy

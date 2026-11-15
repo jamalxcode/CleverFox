@@ -1,0 +1,139 @@
+URL: https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception
+FINAL: https://www.g42.ai/resources/news/meet-jais-worlds-most-advanced-arabic-llm-open-sourced-g42s-inception
+STATUS: 200
+TITLE: Meet Jais, The World’s Most Advanced Arabic LLM
+FETCHED: 2026-11-15T15:57:55.757Z
+
+Meet Jais, The World’s Most Advanced Arabic LLM
+-->
+About G42
+What We Do
+Our Companies
+Collaborations
+Impact
+Resources
+Contact
+Careers
+Make Enquiry
+G42 Logo
+=
+G42 Logo
+عربي
+-->
+Search
+Make Enquiry
+Full Name *
+Organization
+Role
+Email Address *
+Subject *
+Message
+I have read and accept the G42
+Terms and Conditions and the Privacy Notice
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+Home
+Resources
+News
+Meet Jais, The World&rsquo;s Most Advanced Arabic LLM Open Sourced by G42&rsquo;s Inception
+Meet Jais, The World’s Most Advanced Arabic LLM Open Sourced by G42’s Inception
+30 Aug 2023
+Share
+Developed in partnership with MBZUAI, Jais was trained on the Condor Galaxy 1 AI supercomputer on 116 billion Arabic tokens and 279 billion English tokens of data.
+Inception, the pioneering G42 company dedicated to pushing the boundaries of AI, announced the open-source release of Jais , the world&rsquo;s highest quality Arabic Large Language Model. Jais is a 13-billion parameter model trained on a newly developed 395-billion-token Arabic and English dataset.
+With a name inspired by UAE&rsquo;s highest peak, Jais will bring the advantages of generative AI across the Arabic-speaking world. The model is the result of a collaboration between Inception, Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) -- the world&rsquo;s first graduate research university dedicated to AI -- and Cerebras Systems. It was trained on Condor Galaxy , the recently announced multi-exaFLOP AI supercomputer built by G42 and Cerebras.
+Jais&rsquo; release marks a significant milestone in the realm of AI for the Arabic world. It is a model homegrown in the UAE&rsquo;s capital, Abu Dhabi, offering more than 400 million Arabic speakers the opportunity to harness the potential of generative AI. It will facilitate and expedite innovation, highlighting Abu Dhabi&rsquo;s leading position as a hub for AI, innovation, culture preservation, and international collaboration.
+By open-sourcing Jais, Inception aims to engage the scientific, academic, and developer communities to accelerate the growth of a vibrant Arabic language AI ecosystem. This can serve as a model for other languages currently underrepresented in mainstream AI.
+"We believe that innovation thrives when we collaborate," says Andrew Jackson, CEO of Inception. "With this release, we are setting a new standard for AI advancement in the Middle East and ensuring that the Arabic language, with its depth and heritage, finds its voice within the AI landscape. Jais is a testament to our commitment to excellence and our dedication to democratizing AI and promoting innovation."
+Jais outperforms existing Arabic models by a sizable margin. It is also competitive with English models of similar size despite being trained on significantly less English data. This exciting result shows that the model&rsquo;s English component learned from the Arabic data and vice versa, opening a new era in LLM&rsquo;s development and training.
+MBZUAI President and University Professor Eric Xing said, &rdquo;Developing such a high-caliber Arabic LLM demanded cutting-edge AI research in addition to an in-depth and nuanced understanding of the Arabic language, its diversity and heritage, and the growing importance of LLMs across all echelons of society. Thanks to our research and partnerships with Inception and other top regional and global organizations, MBZUAI will continue pioneering LLMs that are efficient, effective, and accurate.&rdquo;
+In tandem with the model release, Inception and MBZUAI also established an academic partnership to give early-release access to current and future Arabic LLMs developed by the team for testing purposes. Academic partners for the launch included Carnegie Mellon University, Ecole Polytechnique, Hamad bin Khalifa University, Sorbonne Paris Nord - LIPN, NYU Abu Dhabi&rsquo;s CAMeL Lab, and The University of Edinburgh. Several organizations, including the UAE Ministry of Foreign Affairs, the UAE Ministry of Industry and Advanced Technology, The Department of Health &ndash; Abu Dhabi, Abu Dhabi National Oil Company (ADNOC), Etihad Airways, First Abu Dhabi Bank (FAB), and e& will start utilizing Jais, offering valuable insights to further enhance the model.
+Jais&rsquo; development and training
+Jais is a transformer-based large language model that incorporates many cutting-edge features, including ALiBi position embeddings, which enables the model to extrapolate to much longer inputs, providing better context handling and accuracy. Other state-of-the-art techniques include SwiGLU and maximal update parameterization to improve the model&rsquo;s training efficiency and accuracy.
+Jais&rsquo; training, fine-tuning, and evaluation were undertaken by an Inception/MBZUAI joint team on the Condor Galaxy 1 (CG-1), the recently announced, state-of-the-art AI supercomputer co-developed by G42 and Cerebras Systems. The 13-billion parameter open-source model was trained on a unique and purpose-built dataset of 116 billion Arabic tokens designed to capture the complexity, nuance, and richness of Arabic. It also included 279 billion English word tokens aimed at increasing the model&rsquo;s performance through cross-language transfer. Inception and MBZUAI will continue to expand and refine Jais as its user community grows.
+&ldquo;Our strategic partnership with G42 is already delivering pioneering results. A few weeks ago, we introduced the first multi-exaFLOP AI supercomputer, Condor Galaxy 1 (CG-1). Now, the partnership delivers another key breakthrough: the leading Arabic LLM for the open-source community,&rdquo; said Andrew Feldman, co-founder and CEO of Cerebras Systems. &ldquo;At Cerebras our passion is building groundbreaking technology. One of the great rewards is seeing the innovative ways it is used. Jais is a significant contribution to the international open-source community. It is also a testament to how incredibly easy CG-1 is to use and how it enables extremely rapid AI model development.&rdquo;
+Today, Inception sits at the intersection of the academic, business, and regulatory realms to unlock synergies, foster collaboration, and accelerate the commercialization of AI across industries.
+Jais is available for download on Hugging Face . Users can also try Jais online upon registering interest on Jais&rsquo; website and receiving an invite to access the playground environment. To know more about Jais and how it benchmarks against other models, you can read the Jais white paper .
+About Inception
+Inception, a G42 company focused on applied AI research and advancements, has been at the forefront of driving innovation in AI since 2017. As a disruptor in the field, Inception operates at the intersection of academic, research, business, and regulatory domains to unlock synergies, foster collaboration, and accelerate the commercialization of responsible AI across industries. To learn more about Inception, visit: www.inceptioniai.org
+About Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
+MBZUAI is a graduate research university focused on artificial intelligence, computer science, and digital technologies across industrial sectors. The university aims to empower students, businesses, and governments to advance artificial intelligence as a global force for positive progress. MBZUAI offers various graduate programs designed to pursue advanced, specialized knowledge and skills in artificial intelligence, including computer vision, machine learning, natural language processing, robotics, and computer science. For more information, please visit www.mbzuai.ac.ae
+To apply for admission, visit mbzuai.ac.ae or contact admissions@mbzuai.ac.ae .
+About Cerebras Systems
+Cerebras Systems is a team of pioneering deep learning researchers, computer architects, and solutions specialists of all types. We have come together to bring generative AI to enterprises and organizations of all sizes around the world. Our flagship product, the CS-2 system, powered by WSE-2, the world&rsquo;s largest and fastest AI processor, makes training large models simple and easy, by avoiding the complexity of distributed computing. Our software tools simplify the deployment and training process, providing deep insights and ensuring best in class accuracy. Through our team of world-class ML researchers and practitioners who bring decades of experience developing and deploying the most advanced AI models, we help our customers stay on the cutting edge of AI. Cerebras solutions are available in the cloud, through the Cerebras AI Model Studio or on premise. For further information, visit https://www.cerebras.net .
+Related News
+23 Apr 2022
+Khazna Data Centers breaks ground on Masdar data center
+21 Nov 2021
+G42 signs Indonesian deals
+20 Oct 2021
+G42, Etisalat to establish UAE’s largest data center provider
+02 Nov 2020
+G42 Acquires Injazat & Khazna
+20 Nov 2019
+G42’s Artemis Supercomputer ranks #26 in the world
+21 Jun 2022
+Khazna Data Centers marks 10th anniversary
+07 Sep 2022
+Khazna, BEEAH Group JV to bring Sharjah its first Tier 3 Data Centre
+12 Oct 2022
+Khazna Data Centers Begin Construction on Two New Dubai Data Centers
+15 Feb 2023
+Mercedes-AMG PETRONAS F1 Team announces G42 as an Official Partner
+Mercedes-AMG PETRONAS F1 Team announces G42 as an Official Partner
+10 Aug 2023
+AIQ expands globally: MOU with PETRONAS
+09 Nov 2023
+Core42 Sets New Benchmark for Arabic Large Language Models with the Release of Jais 30B
+22 Nov 2023
+Jais Climate: Core42 and MBZUAI launch first bilingual LLM dedicated to climate intelligence
+06 Feb 2024
+Khazna Data Centers Launches Hyperscale AI-ready Data Center
+07 Mar 2024
+Core42 supported by Microsoft unlocks new business excellence opportunities with First Abu Dhabi Bank
+First Abu Dhabi Bank unlocks new business excellence opportunities with Core42, supported by Microsoft
+13 May 2024
+Core42 launches JAIS Chat
+15 Oct 2024
+Khazna Announces the UAE’s First AI-Optimized Data Center and the Largest in its Portfolio
+10 Feb 2025
+G42 & AMD to Enable AI Innovation in France Through Strategic Investments
+30 Apr 2025
+G42’s Khazna Data Centers Expands into Türkiye to Support Country’s AI Ambitions
+15 May 2025
+G42 to lead a consortium with US partners to build 5GW UAE-US AI Campus
+22 May 2025
+Global Tech Alliance Launches Stargate UAE
+11 Jun 2025
+Khazna Data Centers and NVIDIA Collaborate to Accelerate AI Infrastructure Development Across the MEA Region
+26 Jun 2025
+G42 Named to TIME’s List of the TIME100 Most Influential Companies 2025
+08 Jul 2025
+Khazna Data Centers Standardizes on International Data Center Authority (IDCA) for Global Excellence
+11 Jul 2025
+Khazna Data Centers and Eni Partner to Develop 500 MW AI Data Center Campus Near Milan
+09 Sep 2025
+MBZUAI and G42 Launch K2 Think: A Leading Open-Source System for Advanced AI Reasoning
+20 Feb 2026
+UAE to Deploy 8 Exaflop Supercomputer in India to Strengthen Local Sovereign AI Infrastructure
+20 Feb 2026
+G42 Joins Forces with Credo AI To Advance Responsible AI Adoption Across Global South
+07 May 2026
+UAE CYBER SECURITY COUNCIL AND CPX LAUNCH UAE CYBER FACTORY TO ADVANCE NATIONAL CYBER SOVEREIGNTY
+02 Nov 2026
+ADNOC Signs Landmark Partnership Agreement with OpenAI and G42, Becoming First Energy Company to Deploy OpenAI Frontier Technology
+G42 Logo
+About G42
+News
+What We Do
+Case Studies
+Cookie Policy
+Become a G42 Supplier
+G42 Voice
+Business Continuity Policy
+Careers
+Contact Us
+Social Media :
+2026 G42. All rights reserved
+Terms & Conditions
+Privacy Policy
+For better web experience, please use the website in portrait mode

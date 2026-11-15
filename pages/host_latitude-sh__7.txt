@@ -1,0 +1,94 @@
+URL: https://www.latitude.sh/changelog/nvidias-l40s-is-now-available
+FINAL: https://www.latitude.sh/changelog/nvidias-l40s-is-now-available
+STATUS: 200
+TITLE: NVIDIA&#x27;s L40S is Now Available - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.138Z
+
+NVIDIA&#x27;s L40S is Now Available - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+Blog / Changelog
+NVIDIA&#x27;s L40S is Now Available
+February 6, 2024
+We are excited to introduce a new GPU option to our products, NVIDIA&#x27;s L40S.
+This new chip from NVIDIA is powered by the Ada Lovelace Architecture, designed with 4th Generation Tensor Cores, 3rd Generation Ray-Tracing Cores, and CUDA cores, bringing 91.6 Teraflops of FP32 tensor compute.
+With 48 GB of vRAM, this new GPU is a great option** for running inference **and has enough memory to train models with up to 24 Billion parameters in FP16.
+The L40S is now available for Latitude.sh Accelerate and Latitude.sh Launchpad.
+**Accelerate - ** From $1.04/hr
+8 x NVIDIA L40S
+Dual AMD 9354, 64 Cores @ 3.25 GHz
+1536 GB RAM
+4 x 3.8TB NVME
+2 x 10 Gbps NIC
+**Launchpad - ** From $1.32/hr
+1x NVIDIA L40S
+16 CPUs
+185 GB of RAM
+1 TB of NVMe Storage
+Get started
+Share this release
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

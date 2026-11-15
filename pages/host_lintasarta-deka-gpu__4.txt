@@ -1,0 +1,160 @@
+URL: https://www.lintasarta.net/en/news/lintasarta-presents-gpu-merdeka-an-advanced-sovereign-ai-cloud-for-indonesia-powered-by-nvidia-ai
+FINAL: https://www.lintasarta.net/en/news/lintasarta-presents-gpu-merdeka-an-advanced-sovereign-ai-cloud-for-indonesia-powered-by-nvidia-ai/
+STATUS: 200
+TITLE: Lintasarta Presents GPU Merdeka, an Advanced Sovereign AI Cloud for Indonesia, Powered by NVIDIA AI - Lintasarta
+FETCHED: 2026-11-15T15:58:31.159Z
+
+Lintasarta Presents GPU Merdeka, an Advanced Sovereign AI Cloud for Indonesia, Powered by NVIDIA AI - Lintasarta
+info@lintasarta.co.id
++6221 230 2345
+My LA Network Contact Us EN
+ID
+Home
+Products & Services Products & Services
+All Services
+Lintasarta Infrastructure Solutions
+Lintasarta Connectivity
+Data Communication
+Lintasarta Data Center
+SQURA Cybersec by Lintasarta
+Lintasarta Cloudeka
+Lintasarta Collaboration
+Lintasarta Industry Solution
+SKOTA by Lintasarta
+Owlexa Healthcare by Lintasarta
+Finance Industry Platform
+Resources Solution Platform
+AI and Apps Solution
+IT Outsourcing Production
+Lintasarta Infrastructure Solutions Lintasarta Connectivity Lintasarta Data Communication
+Lintasarta Internet Services
+Lintasarta Data Center
+SQURA Cybersec by Lintasarta
+Lintasarta Cloudeka
+Managed Services IT Operation
+Managed Multi-Cloud
+Lintasarta Managed Services
+Lintasarta Collaboration
+Lintasarta Industry Solution Skota by Lintasarta
+OWLEXA Healthcare by Lintasarta
+Finance Industry Solution
+Resource Industry Solution
+AI and Apps Solution
+Solutions Public Sector
+Manufacturing, Retail, and Distribution
+Finance
+Resources
+Service Areas
+About Us Who Are We
+Why Lintasarta
+Career
+Media & Information Media
+News
+Blog
+Information
+Brochure
+Video
+Latest News
+16 July 2025
+Lintasarta Introduced “AI Merdeka” to Empowering Indonesia’s AI Sovereignty
+More
+15 May 2024
+Improve Employee Experience, Lintasarta and Bank Mandiri Collaborate with Mandiri Payroll Plus
+More
+13 May 2024
+Lintasarta and KORIKA Form Strategic Partnership to Develop AI Implementation for Industries
+More
+Press Release
+Press Release – Hari Kartini Lintasarta
+More
+Press Release – Lintasarta Jaringan Lebaran 2024
+More
+Press Release – CSR Anak Yatim HUT 36 Tahun Lintasarta
+More
+Media News
+Blog
+Information Brochure
+Video
+Sustainability
+Whistleblowing
+Contact Us
+EN ID
+EN
+Home
+News
+Lintasarta Presents GPU Merdeka, an Advanced Sovereign AI Cloud for Indonesia, Powered by NVIDIA AI
+21 August 2024 |
+arif.wicaksono
+Lintasarta
+Lintasarta Presents GPU Merdeka, an Advanced Sovereign AI Cloud for Indonesia, Powered by NVIDIA AI
+Copy link
+Lintasarta, Indonesia’s leading ICT (Information and Communication Technology) total solutions company, today announced its latest product, GPU Merdeka, at its launch event at the Kempinski Hotel, Jakarta. A GPU-as-a-Service (GPUaaS) for AI infrastructure, GPU Merdeka is a sovereign AI cloud, powered by NVIDIA accelerated computing, designed for advanced supercomputing in Indonesia using the nation’s leading technologies.
+The launch of GPU Merdeka featured national and global figures, including the Coordinating Minister of Maritime Affairs and Investment, Luhut Binsar Panjaitan, Minister of Communication and Informatics Budi Arie Setiadi, Application Developments Department Head of the Financial Services Authority (OJK) Dwi Kurniawan, Secretary of SKK Migas Luky A Yusgiantoro, Chairman of the Advisory Board SGPP Gita Wirjawan, Digital Business Director of Peruri Farah Fitria Rahmayanti, President Director and CEO of Indosat Ooredoo Hutchison (Indosat or IOH) Vikram Sinha, and NVIDIA’s Head of Developer Programs for Big Data and Analytics in the ASEAN and ANZ Regions Deb Goswami.
+The launch of GPU Merdeka is a testament to Lintasarta and the Indosat Group’s larger purpose to empower Indonesia with AI technology. This is part of the company’s strategic expansion and builds on an initial collaboration announcement with NVIDIA made in early 2024, as well as Lintasarta’s status as an NVIDIA Cloud Partner in the NVIDIA Partner Network since late May.
+GPU Merdeka will provide AI cloud infrastructure and platforms for national businesses, offering access to NVIDIA’s advanced GPUs and AI software with one of the highest-density data centers in the market. It will also provide access to enhanced capabilities in generative AI, machine learning, rendering, and computer-aided design (CAD) applications with powerful specifications and optimal cost and energy efficiency.
+With the sovereign AI cloud, powered by NVIDIA accelerated computing, Lintasarta will position itself as a national AI cloud leader, bringing technological advancements and innovations for the digital transformation of national industry players. With AI capabilities in cloud infrastructure, Lintasarta will drive collaboration to help accelerate the growth of the national digital economy.
+GPU Merdeka is hosted domestically, managed and operated by skilled Indonesian IT professionals, and supports the growth of national industries and ecosystems. Lintasarta will also introduce an AI Nation Program, aimed at accelerating the adoption and development of AI technology by building a robust and sustainable AI ecosystem.
+President Director & CEO of Lintasarta, Bayu Hanantasena, said that GPU Merdeka is a step towards empowering Indonesia through advanced technology solutions to help companies from various industrial sectors accelerate digital transformation with optimal results. “GPU Merdeka aligns with Lintasarta’s noble goal of empowering Indonesia to accelerate the nation’s digital potential. This new service launch helps propel Indonesia to the forefront of the global AI cloud community,” Bayu said on Wednesday (8/21) in Jakarta.
+President Director and CEO of Indosat Ooredoo Hutchison, Vikram Sinha, stated, “We are proud to announce the launch of Lintasarta’s GPU Merdeka. As part of the Indosat group, Lintasarta plays a crucial role in paving the way for our transformative journey into becoming an AI-native TechCo. We believe that the technology and expertise offered by Lintasarta will bring us closer to fulfilling our larger purpose of empowering Indonesia and propel the way towards achieving the 2045 Golden Indonesia Vision.”
+Head of Developer Programs for Big Data and Analytics in the ASEAN and ANZ Regions at NVIDIA, Deb Goswami, said, “Lintasarta has implemented NVIDIA accelerated computing in GPU Merdeka, helping enable high-performance AI cloud services to empower Indonesia with sovereign AI.”
+GPU Merdeka features high-performance GPU servers with a configuration of 8x NVIDIA H100 SXM Tensor Core GPUs in one server. This configuration provides capabilities for generative AI and accelerated computing not found in prior-generation NVIDIA GPUs.
+With these advantages, GPU Merdeka is ideal for applications requiring high accuracy and performance, such as TNavigator and SLB Petrel high-performance computing in the oil and gas industry. The NVIDIA H100 SXM GPU on GPU Merdeka can handle advanced generative AI workloads with support for 3.35 TB/s bandwidth. In addition, the H100 GPU features third-generation RT Cores, ideal for rendering, 3D modeling, and CAD applications like AutoCAD.
+GPU Merdeka is backed by AI data center infrastructure supporting up to 20 KW per rack, data center connectivity features up to 3.2 Tbps Infiniband RDMA per server, and NVIDIA GPUDirect access to storage, enhancing overall service performance. GPU Merdeka customers will have free access to internet traffic up to 100 Gbps with integrated DDoS protection, providing high levels of comfort and security.
+Other News
+16 July 2025 |
+arif.wicaksono
+Lintasarta
+Lintasarta Introduced “AI Merdeka” to Empowering Indonesia’s AI Sovereignty
+15 May 2024 |
+arif.wicaksono
+Lintasarta
+Improve Employee Experience, Lintasarta and Bank Mandiri Collaborate with Mandiri Payroll Plus
+13 May 2024 |
+arif.wicaksono
+Lintasarta
+Lintasarta and KORIKA Form Strategic Partnership to Develop AI Implementation for Industries
+8 May 2024 |
+arif.wicaksono
+Lintasarta
+President Director and CEO of Lintasarta discussed Cloud and AI Transformation in a Joint Discussion with Dell Technologies
+24 April 2024 |
+arif.wicaksono
+Lintasarta
+Owlexa Healthcare Supports Healthcare Cost Efficiency at Artajasa by Launching CITAZEN Health Clinic
+Central Jakarta Menara Thamrin 12th Floor Jl. M.H. Thamrin Kav.3 Jakarta 10250
+Telephone (Hunting)
++6221 230 2345
+Fax
++6221 230 3567
+Product Information
+14052
+Email
+info@lintasarta.co.id
+Customer Service
+14052 / +6221 80669499
+Email: support@lintasarta.co.id
+Whatsapp: 08561114052
+Products & Services
+Infrastructure Solutions
+Industry Solution
+Solution
+Finance
+Manufacturing, Retail, and Distribution
+Resources
+Public Sector
+GPU Marketplace
+About Us
+Who Are We
+Why Lintasarta
+Information
+Updates
+Blog
+CSR
+Service Areas
+Whistleblowing
+Career
+Privacy Notice
+RFC-2350
+Responsible AI Program
+Copyright © 2026 PT Aplikanusa Lintasarta. All rights reserved.
+Menu

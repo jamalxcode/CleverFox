@@ -1,0 +1,154 @@
+URL: https://www.kimi.com/user/agreement/en/kimiClawPrivacy
+FINAL: https://www.kimi.com/user/agreement/en/kimiClawPrivacy
+STATUS: 200
+TITLE: Kimi AI Official Site | K3.1 Pro Launches with Upgraded Coding &amp; Agentic Capabilities
+FETCHED: 2026-11-15T15:57:44.769Z
+
+Kimi AI Official Site | K3.1 Pro Launches with Upgraded Coding & Agentic Capabilities
+Privacy Policy For Kimi Claw
+Last Updated: April 1st, 2026
+Welcome to Kimi Claw!
+Moonshot AI PTE. LTD. ("we," "our," or "Moonshot AI") is the provider and controller of services offered through our website, applications, and browser extensions ("the Services"). We are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and protect your personal data and outlines your rights.
+By continuing to use the Services, you agree to this Privacy Policy. If you do not agree or are under the age of 13 (US) or 14 (outside the US), you must not access or use the Services.
+We would like to specifically remind you that when you access third-party products and services through the services, the handling of your personal information and privacy will be managed by the third party in accordance with its own policies. We cannot be responsible for the processing activities of third parties. In such cases, we recommend that you carefully read the relevant policies of the third parties to understand your rights and obligations.
+1. Personal Information We Collect
+How We Collect Information
+We collect your personal information in the following manner:
+Information You Voluntarily Provide
+Account Registration and Product Usage: When you register for an account or use our products and services, you may be required to provide basic information, such as your mobile phone number.
+At this stage, this product and service are available exclusively to Kimi paid subscribers. Kimi Claw and Kimi utilize a unified account system. When using our products and services, including but not limited to performing the "Kimi App One-click Configuration," the product interface will redirect to the Kimi App for account authentication, supporting three login methods: Google Account Login, Mobile Number Login, and Apple ID Login. You are required to authorize and consent to our association of your Kimi account information so that we can provide consistent feature display and service experience across our product series based on the unified account.
+Necessary System Permissions: To enable the functionality of this product and service, you must agree to grant the following necessary system permissions ("Necessary System Permissions"). If you refuse to authorize these permissions, you will be unable to successfully configure Kimi Claw:
+System Notification Permission: When configuring Kimi Claw, we will request permission to use your system notifications to display gateway status and alerts.
+Battery Optimization Exemption Permission: When configuring Kimi Claw, we will request permission to ignore battery optimization to ensure the application continues running in the background without being terminated by the system.
+Storage Permission: When configuring Kimi Claw, we will request storage permission to backup and restore OpenClaw workspace data, ensuring your configurations and work results are not lost.
+Background Running Permission: When configuring Kimi Claw, we will request permission to run in the background to ensure the gateway service remains active when the application is switched to the background.
+Accessibility Service Permission: When configuring Kimi Claw, we will request Accessibility Service permission to enable the OpenClaw agent to perform application operations on your behalf (such as clicking, swiping, reading interface elements, etc.). This permission only takes effect when you actively enable the gateway service and will not collect or upload your interface information in the background.
+API Key Configuration: After installing Kimi Claw, you may configure the connection to Kimi services in two ways to establish a Kimi Coding Plan API Key:
+"Kimi App One-Click Configuration": The interface will redirect to the Kimi App for account authentication, supporting WeChat Login, Mobile Number Login, and Apple ID Login. Paid subscribers may directly complete authorization to create an API Key.
+Content Upload and Usage Data: During use, you may voluntarily upload text, images, audio, video, or other files. When you use Kimi Claw to demonstrate intent for web search, operations, or invoke relevant tools or plugins in conversation, Kimi Claw will collect task-related page information according to your intent to complete web automation operations. Some webpages may require you to log in before access; if you choose to log in to relevant pages, you authorize Kimi Claw to access such pages and obtain page information. Kimi Claw will generate text or complete operations based on information you provide and third-party information found through search. When you provide feedback, suggestions, complaints, or request customer support, you may provide relevant personal information.
+Payment Information: When you subscribe to or renew Kimi paid membership services, you may provide information related to payment and orders.
+When using certain features, you may provide personal information necessary for the implementation of those specific features.
+Personal Information You Provide
+Account Information: This includes your username, phone number, profile picture, email address, and account credentials that you provide during registration or use of your account. We use this information to create and manage your account, based on the necessity of performing our contract with you.
+User Content: This includes prompts, audio, images, videos, files, and any content you input or generate while using our products and services. We process this information to provide and improve the Services, including training and optimizing our models. The legal basis for this processing may be our legitimate interests or your consent, depending on your jurisdiction.
+In some regions, you may choose to use My Voice Feature, which allows you to interact with the Services using your voice. To activate it, you must voluntarily provide a voice recording of a specific phrase. This enables us to create a voiceprint to support personalized voice interactions. Because voiceprint data is considered sensitive personal information, we will collect and use it only with your explicit consent. You can withdraw this consent at any time in your settings or by contacting us.
+Communication Data: When you contact us through email, support forms, or our social media pages, we collect the information you submit, such as your name, contact details, and message content. We use this information to respond to your inquiries and improve our customer service, based on our legitimate interest or your consent, depending on applicable law.
+Surveys, Research, and Promotions: If you choose to participate in surveys, promotions, contests, research studies, or events sponsored by us, we may collect the information you provide—such as responses, contact details, or preferences—with your consent. Participation is voluntary, and you may withdraw your consent at any time.
+Information We Collect Automatically
+When you access or interact with our Services, we automatically collect certain technical and usage-related information, including:
+Log Data: We collect standard log information sent by your browser, device, or application when you use the Services. This includes your IP address, browser type, language settings, referring URLs, time of access, and error logs.
+Device and Usage Information: We collect information about your device and how you interact with the Services, such as:
+Device type, model, and operating system;
+Browser version and user agent;
+Unique device identifiers (such as device ID, MAC address);
+Conversation IDs and session identifiers;
+Network and telecommunications provider;
+Clipboard data (if applicable and permitted by your settings);
+Date and time of access, pages viewed, and interaction patterns.
+This information helps us monitor service performance, troubleshoot issues, and optimize user experience.
+Cookies and Similar Technologies: We may use cookies and similar tracking technologies (e.g., web beacons, local storage, SDKs) to:
+Remember your settings and preferences;
+Understand how you navigate and interact with our Services;
+Personalize your experience;
+Measure performance and detect technical errors.
+Some cookies are strictly necessary for the functioning of our Services, while others (such as analytics or advertising cookies) may require your prior consent, depending on your location and applicable law. You can manage or withdraw your consent to cookies through the settings in your browser or device, or via our cookie banner when required.
+Information We Collect from Third Parties
+We may receive personal information about you from third-party sources as described below:
+Third-Party Login or Authentication Providers: If you choose to register or log in using a third-party service (such as Google), we will collect certain information from that provider with your authorization. This may include your access tokens, profile photo, username, email address, or other public profile information. We use this information to create and link your account, streamline authentication, and personalize your experience. We may also request additional information if any essential registration details are missing.
+Security and Fraud Prevention Partners: We may receive information from our trusted security partners, such as device fingerprints, fraud scores, or blacklists, to detect, prevent, and respond to abuse, fraudulent activity, spam, or other threats to the security and integrity of our Services.
+Publicly Available Sources: We may obtain personal or technical information that is publicly available online (e.g., from public datasets, published websites, or open forums) for the purpose of improving and training the models that power our Services. Where such data is used, we apply data minimization and pseudonymization techniques where feasible.
+2. How We Use Personal Information
+We use the personal information we collect to operate, maintain, improve, and provide our Services, including for the following purposes:
+To Provide and Manage the Services: We use your personal information to create and manage your account, authenticate your login, and enable you to interact with the features of our Services (such as chat, content generation, and personalization). This processing is necessary to perform our contract with you and ensure the core functionality of the Services.
+To Improve and Develop Our Services: We analyze usage data and user interactions to better understand how our Services are used, identify problems, and develop new features or products. This may also include training and improving our underlying models, algorithms, and user interfaces. Where required by law, we obtain your consent for such purposes; otherwise, we rely on our legitimate interests in enhancing our Services while respecting your rights and freedoms.
+To Communicate with You: We may contact you to provide service-related updates (such as changes to features or terms), respond to your inquiries or feedback, send administrative notifications, or resolve technical issues. We may also provide customer support and handle complaints or user requests. These communications are based on performance of our contract or our legitimate interest in maintaining service quality.
+To Ensure Security and Prevent Misuse: We process personal information to detect, prevent, and respond to fraud, abuse, spam, unauthorized access, and other harmful activities. This includes monitoring suspicious behaviors and securing our infrastructure. Such processing is necessary for compliance with legal obligations and our legitimate interest in ensuring the integrity and safety of our Services and users.
+To Comply with Legal Obligations: We process your personal information to comply with applicable laws and regulations, respond to valid legal requests, enforce our terms, and protect the rights, property, or safety of our users, us, or third parties.
+To Promote and Market Our Services: With your consent (where required), we may use your information to send promotional materials about our services or relevant third-party offerings, conduct marketing campaigns, or invite you to participate in surveys, contests, or other engagement initiatives. You can opt out of marketing communications at any time.
+3. How We Share Personal Information
+We do not sell your personal information. However, we may share your personal information with third parties under the following circumstances, in accordance with applicable data protection laws:
+Service Providers (Processors)
+We engage trusted third-party service providers to support the operation, maintenance, and improvement of our Services. These providers may process your personal information on our behalf, strictly under our instructions and only for the purposes outlined in this Privacy Policy. They are contractually obligated to implement appropriate security measures and are prohibited from using your information for their own purposes.
+These providers may include:
+Hosting and cloud infrastructure providers
+Customer support and moderation tools
+Real-time communication and push notification services
+Payment and subscription processors
+Email and communication platforms
+Analytics, monitoring, and A/B testing services
+Security and anti-fraud partners
+For example, service providers help us: (i) enable account creation and login; (ii) monitor system stability and detect anomalies; (iii) analyze usage and improve features; and (iv) process transactions securely.
+Affiliates
+We may share your personal information with our corporate affiliates (i.e., entities under common ownership or control), where necessary for internal administration, consistent product development, and to provide integrated service experiences. These affiliates are required to honor this Privacy Policy or implement equivalent protective measures.
+Third Parties You Choose to Share Information With
+Some features of our Services allow you to share user-generated content or data (e.g., conversations or voice outputs) with third parties via sharing links, social integrations, or embedded widgets. In such cases, those third parties process your personal data independently, and their use is governed by their own privacy policies. We encourage you to review their privacy practices before sharing.
+Corporate Transactions
+In the event of a business transaction (e.g., merger, acquisition, restructuring, or asset sale), we may transfer your personal information to relevant third parties as part of the transaction. Where such sharing is required, we will ensure that appropriate contractual safeguards (e.g., data transfer agreements) are in place. If required by applicable law, we will notify you or seek your consent prior to the transfer.
+Legal Requirements and Compliance
+We may disclose personal information to public authorities or other third parties if we believe, in good faith, that such disclosure is reasonably necessary to:
+Comply with legal obligations or lawful requests by public authorities, courts, or regulators (based on applicable legal standards, including international ones);
+Protect the rights, safety, or property of Moonshot AI, our users, or the public;
+Enforce our Terms of Service, investigate suspected violations, or detect and prevent fraud, security, or technical issues;
+Respond to legal claims or protect ourselves from legal liability.
+4. Subscription and Payment Information
+When you subscribe to paid services or make purchases through our platform, we may collect and process the following information related to your subscription and payment activities:
+Payment Details
+We use authorized third-party payment processors to process payments securely. When you make a purchase, these processors may collect payment information from you, including your name, billing address, payment method, and transaction identifiers. We do not store your full payment card details on our servers.
+We process this information to:
+Complete transactions and manage your subscriptions;
+Issue invoices and confirmations;
+Comply with tax, accounting, and legal obligations.
+The legal basis for this processing is the performance of a contract with you and our legal obligations under applicable financial regulations.
+Automatic Renewal and Cancellation
+If you subscribe to a plan with automatic renewal, we will clearly notify you of the renewal terms at the time of purchase and, where required by law, again before renewal. You can cancel your subscription at any time through your account settings or by contacting our customer support. Upon cancellation, your subscription will remain active until the end of the current billing cycle.
+If your subscription is managed through a mobile app store (such as the Apple App Store or Google Play), cancellation and refund policies will be governed by the relevant platform provider's terms. We do not control or access your full payment information in such cases.
+Retention of Transaction Information
+We retain limited transaction-related information—such as receipts, billing records, and refund history—for as long as necessary to fulfill our legal, financial, and operational obligations. This may include retaining records for accounting, tax reporting, fraud prevention, or legal compliance purposes, even after your account has been deleted.
+5. Your Rights and Choices
+Depending on your jurisdiction, you may have the following rights regarding your personal information:
+Right of Access: You have the right to request confirmation as to whether we process your personal data and to obtain a copy of that data.
+Right to Rectification: You may request that we correct or update any inaccurate or incomplete personal data about you.
+Right to Erasure ("Right to be Forgotten"): You may request deletion of your personal data, subject to certain exceptions (e.g., legal obligations, fraud prevention).
+Right to Restrict Processing: You can request that we limit the processing of your personal information under certain circumstances.
+Right to Data Portability: Where applicable, you may request a copy of your personal information in a structured, machine-readable format or request that we transmit it to another data controller.
+Right to Object: You may object to the processing of your personal data for direct marketing purposes or on grounds relating to your specific situation when we rely on legitimate interests.
+Right to Withdraw Consent: Where we process your data based on your consent, you have the right to withdraw that consent at any time without affecting the lawfulness of processing prior to withdrawal.
+Right to Lodge a Complaint: You can file a complaint with a supervisory authority or data protection authority in your country.
+You may be able to exercise many of these rights directly through your account settings if you are a registered user. You can also manage certain permissions (such as device-based identifiers) via your mobile device settings. You can also submit any privacy-related requests or inquiries via [email protected] .
+Account Deletion
+If you choose to delete your account, this action is permanent and irreversible. You will lose access to any associated content or services, and we may not be able to restore data after deletion. We recommend exporting or saving any personal data or content before initiating deletion.
+Regarding AI-Generated Content and Accuracy
+Please note that services like Kimi generate content using probabilistic machine learning models. The output may not always reflect factual or accurate information. If you believe the generated content includes inaccurate information about you and wish to request its correction or removal, please contact us. We will evaluate your request in accordance with applicable data protection laws and the technical limitations of our models.
+6. Information Security
+We are fully aware that the security and confidentiality of your personal information are of utmost importance to you. We will endeavor to avoid collecting irrelevant user information and will take reasonable technical and organizational measures to protect your personal information from unauthorized access, public disclosure, use, modification, damage, or loss, including but not limited to:
+Data Encryption: We will use industry-leading encryption algorithms to encrypt users' personal information, ensuring that even if the data is obtained by unauthorized third parties, they will not be able to decipher the actual information of the users.
+Data Transmission Security: We use encryption technology to provide reliable encrypted protection for communication between users and servers, ensuring that data is not intercepted or tampered with during transmission.
+System Security Protection: We regularly conduct security checks and vulnerability patches on servers and systems to prevent hacker attacks and virus intrusions.
+Institutional Safeguards: We have established a dedicated data protection department and appointed a person in charge to be responsible for the protection of users' personal information. We regularly provide training and education on personal information protection to our employees to ensure that all staff understand and value the protection of users' personal information. We strictly limit employees' access to user data, allowing only specific employees to access relevant data when necessary for business purposes. We also monitor and assess employees who access users' personal information, and take prompt action if any improper behavior is detected.
+Data Backup: We regularly back up users' personal information data and store the backup data in different physical locations to reduce the risk of data loss due to accidents or disasters.
+Data Breach Alert: We have set up a real-time monitoring system to monitor abnormal data access and leakage situations. Once signs of data leakage are detected, we will immediately take measures to stop the leakage, promptly identify the cause, and develop corresponding improvement measures.
+Please note that due to the limitations of technical and management means, although we have taken the above measures and made every effort to improve the security level, we cannot guarantee absolute security. Also, we cannot guarantee the effectiveness of privacy settings or security measures on third parties related to the services. Therefore, you should take special care in deciding what information you send to us. We strongly recommend that you take more proactive security measures together with us, such as refusing to lend accounts, disclose verification codes, or upload sensitive information, which are high-risk operations.
+We have developed a cybersecurity incident emergency response plan. In the unfortunate event of a personal information leak or other security incidents, we will immediately activate the emergency response plan to take measures to prevent the expansion of harm. We will promptly inform you of the basic situation of the security incident, the potential impact, and the remedial measures we have taken through means such as telephone or push notifications. When it is difficult to notify each individual whose personal information is affected, we will issue a public announcement in a reasonable and effective manner. At the same time, we will also report the relevant situation to the regulatory authorities, cooperate with the investigation, and hold the responsible parties accountable for their legal responsibilities.
+7. Retention
+We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, including to:
+Provide and maintain the Services;
+Comply with legal and regulatory obligations;
+Resolve disputes and enforce our agreements;
+Improve the safety, security, and performance of the Services;
+Support our legitimate business interests.
+Retention periods may vary depending on the nature of the information, its sensitivity, and applicable legal or contractual requirements.
+If you request account deletion, we will delete or anonymize your personal data unless retention is required to comply with legal obligations or to resolve disputes.
+Your information may be transferred to and stored on servers located outside of your country of residence. Where international data transfers occur, we take appropriate safeguards to protect your personal data in accordance with applicable data protection laws. We take steps to ensure that any data transferred internationally receives adequate protection as required by law.
+8. Children
+Our Services are not directed to, or intended for, children under the age of 14 (or the minimum age required in your jurisdiction to provide valid consent to data processing). We do not knowingly collect personal information from children under this age. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at [email protected] . We will promptly review and, where appropriate, delete such information in accordance with applicable laws.
+If you are at least 14 but under 18 years of age (or the age of majority in your jurisdiction), you must review this Privacy Policy with your parent or legal guardian. Your parent or guardian must consent to your use of the Services before you may use them.
+We encourage parents and guardians to take an active role in their children's online activities and to help enforce this policy by instructing minors never to provide personal information without their permission.
+9. Privacy Policy Updates
+We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or other operational needs. When we do, we will update the "Last Updated" date at the top of this page and, where required by applicable law, provide you with additional notice (such as a prominent notice within the Services or via email).
+If we make material changes to the way we collect, use, or share your personal information, we will notify you in advance and, where required by law, obtain your consent before such changes take effect.
+We encourage you to regularly review this Privacy Policy to stay informed about how we protect your information.
+10. Contact Us
+If you have any questions, suggestions, or concerns about this Privacy Policy or our data practices, or if you wish to exercise your rights regarding your personal information, you can contact us through the following methods:
+For general suggestions or feedback: You may use the built-in feedback features within our products and services.
+For privacy-related inquiries, complaints, or data subject rights requests: Please send a detailed request or complaint to [email protected] .
+We will review and respond to all requests or complaints in accordance with applicable data protection laws. Please note that for security and verification purposes, we may request additional information to confirm your identity before processing your request.

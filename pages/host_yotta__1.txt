@@ -1,0 +1,440 @@
+URL: https://shakticloud.ai/shakti-bare-metal
+FINAL: https://shakticloud.ai/bare-metal-service/
+STATUS: 200
+TITLE: Yotta Shakti Cloud: Bare Metal Services | High-Performance Bare Metal Solutions
+FETCHED: 2026-11-15T15:58:44.533Z
+
+Yotta Shakti Cloud: Bare Metal Services | High-Performance Bare Metal Solutions
+window.pagesense = window.pagesense || [];
+window.pagesense.push(['trackEvent', 'website tracking']);
+Product
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+Shakti Studio
+Why Shakti Cloud
+AI Factory
+Plan & Pricing
+-->
+News & Resources
+-->
+Pricing
+Plan & Pricing
+Calculators
+AI Lab
+VM
+Baremetal
+News & Resources
+Blogs
+NemoClaw and Shakti Studio Integration Guide
+OpenClaw and Shakti Studio Integration Guide
+-->
+Corporate
+One Yotta
+Yntraa
+Colocation
+Drishticam
+Sudarshan
+Suraksha
+Urja
+Rudra
+Contact Us
+Login
+-->
+Login
+Shakti Studio
+Shakti Cloud
+-->
+Products
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+Shakti Studio
+Why Shakti Cloud
+AI Factory
+Plan & Pricing
+-->
+Pricing
+Plan & Pricing
+Calculators
+AI Lab
+VM
+Baremetal
+News &amp Resources
+Blogs
+NemoClaw and Shakti Studio Integration Guide
+OpenClaw and Shakti Studio Integration Guide
+Contact Us
+Login
+-->
+Login
+Shakti Studio
+Shakti
+Cloud
+Shakti Bare Metal
+Uncompromised AI power with dedicated GPU servers built for training, inference, and HPC workloads at scale.
+Shakti Bare Metal
+Your AI shouldn’t compete for resources. With Shakti Bare Metal , it never will.
+Shakti Bare Metal delivers dedicated GPU servers with NVIDIA HGX H100 (8 GPUs for ultra-fast training) and L40S nodes for efficient inference. With no oversubscription or virtualization, it ensures predictable, high-performance AI for enterprises and startups
+Built with the Best
+Train trillion-parameter models faster on dedicated,
+uncompromised Shakti Bare Metal.
+Foundation Model Training & Fine-Tuning
+HGX H100 SXM5 is purpose-built for training trillion-parameter models, multimodal AI, and enterprise-scale generative AI applications.
+Real-Time AI Inference at Scale
+L40S GPU nodes deliver ultra-low latency for conversational AI, recommendation systems, fraud detection, and personalized search engines.
+High-Performance Computing (HPC)
+Run weather forecasting, genomics, computational fluid dynamics, and seismic imaging workloads with near-linear scalability.
+AI-Powered Big Data & Analytics
+Enable streaming analytics, predictive maintenance, and anomaly detection by processing petabyte-scale datasets in real time.
+Autonomous Systems Development
+Accelerate training and validation for self-driving cars, robotics, and edge AI systems with massive parallel computers.
+Bare Metal Advantage
+Peak AI Performance
+with Shakti Bare Metal Precision
+Dedicated Single-Tenant Infrastructure
+No noisy neighbors or shared resources; complete isolation for performance-sensitive AI workloads.
+Maximum GPU Performance
+Direct access to NVIDIA HGX H100 (8x SXM5 with NVLink + NVSwitch) and L40S GPUs, with no virtualisation overhead.
+Ultra-Fast Interconnects
+900 GB/s GPU-to-GPU bandwidth via NVLink 4.0/NVSwitch and InfiniBand Quantum-2 (NDR, up to 32 Tbps) for seamless multi-node scaling.
+Optimized for AI Training & Inference
+H100 for training foundation models, LLMs, and generative AI. L40S for large-scale inference, multi-workload processing, and energy-efficient AI ops.
+Scalable & Flexible Configurations
+Start with a single node and scale to clusters, tailored for enterprise, research, and startup workloads.
+High-Performance Storage Integration
+Designed to pair with WEKA HSS parallel file system for high-throughput, low-latency data access at scale.
+Supports HPC & Advanced Simulations
+Optimized for emerging workloads like autonomous systems, multimodal AI, digital twins, and metaverse-scale 3D simulations.
+Sovereign AI Advantage
+Hosted in India, ensuring compliance, data sovereignty, and a secure AI infrastructure platform.
+Peak Performance
+Unveiling the Secrets of
+High- Performance Architecture
+Dedicated NVIDIA HGX H100 & L40S GPUs
+Fourth-Generation NVLink 4.0 & NVSwitch Interconnects
+InfiniBand Quantum-2 NDR 400G
+Spectrum-4 400GbE Ethernet Networking
+NVIDIA BlueField-3 DPUs
+NVMe High-Speed Storage & SSD-Backed Object Storage
+Full NVIDIA AI Enterprise Stack Integration
+Dedicated NVIDIA HGX H100 & L40S GPUs
+Bare-metal access to the latest GPU architectures for training, inference, and visualization.
+Fourth-Generation NVLink 4.0 & NVSwitch Interconnects
+Up to 900 GB/s GPU-to-GPU bandwidth , ensuring faster model parallelism and reduced communication bottlenecks.
+InfiniBand Quantum-2 NDR 400G
+Industry-leading low latency, adaptive routing, and congestion control for large-scale AI and HPC clusters.
+Spectrum-4 400GbE Ethernet Networking
+Flexible high-throughput connectivity for multi-tenant or hybrid workloads.
+NVIDIA BlueField-3 DPUs
+Offloads networking, storage, security, and infrastructure management from CPUs, delivering faster and more secure performance.
+NVMe High-Speed Storage & SSD-Backed Object Storage
+Accelerated data access for training datasets, inference pipelines, and high-speed checkpoints.
+Full NVIDIA AI Enterprise Stack Integration
+End-to-end AI software support including CUDA, TensorRT, RAPIDS, and frameworks like PyTorch/TensorFlow.
+Why Shakti Cloud Works for You
+Flexible Plans for Every AI Ambition
+Monthly Price
+6 Months
+1 Year
+2 Year
+3 Year
+4 Year
+5 Year
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*Monthly Price
+(Per GPU Per Hour)
+8 x HGX H100 (640 GB GPU Memory)
+224
+2 TB
+61.44 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 428.00
+4 x L40S (192 GB GPU Memory)
+128
+1 TB
+7.68 TB
+PCIe
+Ethernet
+₹ 238.00
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 473
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*6 Month Price
+(Per GPU Per Hour)
+8 x HGX H100 (640 GB GPU Memory)
+224
+2 TB
+61.44 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 380.00
+4 x L40S (192 GB GPU Memory)
+128
+1 TB
+7.68 TB
+PCIe
+Ethernet
+₹ 200.00
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 473
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*1 Year Price
+(Per GPU Per Hour)
+8 x HGX H100 (640 GB GPU Memory)
+224
+2 TB
+61.44 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 352.00
+4 x L40S (192 GB GPU Memory)
+128
+1 TB
+7.68 TB
+PCIe
+Ethernet
+₹ 181.00
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 473
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 1056
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*2 Years Price
+(Per GPU Per Hour)
+8 x HGX H100 (640 GB GPU Memory)
+224
+2 TB
+61.44 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 314.00
+4 x L40S (192 GB GPU Memory)
+128
+1 TB
+7.68 TB
+PCIe
+Ethernet
+₹ 162.00
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 437
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 864
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details.
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*3 Years Price
+(Per GPU Per Hour)
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 378
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 672
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details.
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*4 Years Price
+(Per GPU Per Hour)
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 316
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 480
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details.
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*4 Years Price
+(Per GPU Per Hour)
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 279
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 380
+* Unit Rate: Per GPU, per Hour Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details.
+Get started now
+Know More
+Frequently Asked Questions
+What are the advantages of Bare Metal over virtualized solutions?
+Bare Metal servers deliver uncompromised performance by providing direct access to physical hardware with zero virtualization overhead. With complete hardware isolation, root-level control, and deterministic low-latency I/O, they are engineered for mission-critical workloads that demand raw computational power and security - such as AI/ML training, high-performance computing (HPC), large-scale data analytics, and latency-sensitive financial applications. Bare Metal infrastructure also ensures strict tenant separation, making it well-suited for compliance-driven environments requiring auditability, data sovereignty, and enhanced workload isolation.
+Can I scale my Bare Metal server resources as my demand grows?
+Yes, you can seamlessly scale your resources by adding additional nodes with GPUs as your workload requirements increase. If centralized storage is needed, you can integrate high-speed or object storage solutions based on the data type - whether it’s hot (frequently accessed) or cold (infrequently accessed) data.
+Can I migrate my existing workloads to Shakti Cloud Bare Metal servers?
+Yes, Shakti Cloud offers a streamlined platform to help you migrate your existing workloads to our Bare Metal infrastructure with minimal downtime. To begin, you can provision S3-compatible object storage and initiate your data transfer. Once the migration is complete, the data can be moved to High-Speed Storage (HSS), after which you can launch your Bare Metal instances with the volume attached. This approach supports efficient collaboration, especially if you’re working with multiple nodes that require shared data access. Object storage can also be leveraged for archiving or storing cold data over the long term
+For whom is Bare Metal the ideal choice?
+Enterprises training foundation models or LLMs | AI-first startups needing raw performance | Research & academia running large simulations | Government & defence requiring sovereignty
+How is Bare Metal GPU different from standard cloud GPU instances?
+Unlike standard cloud VMs that use virtualization, Bare Metal GPU nodes on Shakti Cloud provide direct access to physical NVIDIA GPUs (H100 SXM5 or L40S). This eliminates performance overhead, noisy neighbours, and throttling, ensuring maximum throughput and lowest latency for AI/ML workloads.
+What are the ingress and egress charges associated with my BareMetal?
+We offer unlimited free ingress and egress to support running your workloads at scale.
+Can I add or remove Bare Metal nodes?
+Yes. You can scale nodes up or down as required. For long-term contracts, scaling terms depend on capacity reservations, while short-term contracts allow flexible node scaling.
+Yotta Data Services is India’s sovereign cloud and AI infrastructure provider, operating hyperscale data centers in Navi Mumbai and Greater Noida. With Yntraa Cloud (MeitY-empanelled) and Shakti Cloud (AI services with NVIDIA partnership), Yotta delivers secure cloud, AI, connectivity, and managed IT services to enterprises and governments.
+Social Media
+We’re here to answer your questions
+marketing@yotta.com
+Terms of Use
+Terms of Use
+Terms of Use
+Terms of Use
+-->
+Privacy Policy
+Cookie Policy
+Grievance Officer Details
+Yotta Policy Statements
+Acceptable Use of Products & Services
+Products
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+AI Inference Platform
+Shakti Studio
+About
+AI factory
+About Shakti Cloud
+News & Resources
+Blogs
+Case Studies
+-->
+Company
+About Yotta
+Investor Relations
+Press & Media
+Contact Us
+Events
+Leadership Team
+Social Responsibility
+Our Partners
+Company
+About Yotta
+Investor Relations
+Press & Media
+Contact Us
+Events
+Leadership Team
+Social Responsibility
+Our Partners
+-->
+Office address
+BG House, Lake Blvd Rd, Hiranandani Gardens, MHADA Colony 19, Powai,
+Mumbai, Maharashtra 400076
+2026 Yotta. All rights reserved.
+Back TOP ↑

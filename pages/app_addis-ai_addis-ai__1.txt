@@ -1,0 +1,110 @@
+URL: https://addisassistant.com/pricing
+FINAL: https://addisassistant.com/pricing
+STATUS: 200
+TITLE: Addis AI pricing · pay-as-you-go voice and language AI
+FETCHED: 2026-11-15T15:56:02.377Z
+
+Addis AI pricing · pay-as-you-go voice and language AI
+Voice Lab Playground Pricing Benchmarks Open source Docs
+Pricing Pay for what you use.
+Pay-as-you-go by modality. No subscription, no seats. Every model is metered per token, per character, or per minute.
+USD EUR ETB
+Usage is billed in ETB. USD and EUR figures are indicative, converted at the latest exchange rate.
+$3.17 free credit when you sign up. Enough to ship and test across every model. No card required. Start free
+Models and rates
+TTS · Voice New
+Addis Voices 2
+$0.032 / min generated audio
+Batch $0.016 / min results within 24 hours
+Lifelike speech in 7 African languages at one flat rate. Streaming and real time in Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama and Wolaytta.
+Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama, Wolaytta Voice apps, narration & IVR
+LLM · Multimodal
+Addis-Aleph-1
+Input $0.0019 / 1k tokens
+Output $0.0051 / 1k tokens
+Translation is included, no separate endpoint pricing.
+Flagship African-language model for chat, generation, and translation.
+Amharic, Afaan Oromo Chatbots, content & translation
+STT · Speech
+Addis Scribe
+$0.022 / 1,000 output characters
+Billed on transcribed text only, audio input is free, one rate for Amharic, Afaan Oromo, Tigrinya, Hausa, Sidama, Wolaytta and Swahili. About ETB 1.40 per minute of speech. Hausa, Sidama, Wolaytta and Swahili are written in the Latin alphabet, which takes about twice as many characters, so a minute costs about twice as much.
+Accurate speech to text, live or from uploads, in 7 African languages and English.
+Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama, Wolaytta, English Transcription
+Voice is metered per generated audio minute, the same flat rate in every voice language. Character limits still protect generation quality, but billing follows the final audio duration.
+In beta available now, pricing may change
+Realtime · Audio Beta
+Addis Live
+Audio input $0.013 / 1k tokens
+Audio output $0.051 / 1k tokens
+Native-like speech to speech with under 300ms response. Built for live audio.
+Amharic Live audio agents
+Deprecated existing integrations only, use Addis Voices 2 for new work
+TTS · Voice Deprecated
+Addis Voice Legacy · AM
+$0.0063 / min
+Previous-generation Amharic voice. Superseded by Addis Voices 2.
+Amharic
+TTS · Voice Deprecated
+Addis Voice Legacy · OM
+$0.032 / min
+Previous-generation Afaan Oromo voice. Superseded by Addis Voices 2.
+Afaan Oromo
+Worked examples
+New to tokens? A token is a small chunk of text the model reads, roughly a short word or a couple of characters. Text models bill per token and voice bills per generated minute, so the examples below show what real tasks come to.
+Task
+Detail
+Cost
+Narrate a 500-word article
+Addis Voices 2, ~4 minutes of generated audio
+$0.13
+Summarize an article
+Addis-Aleph, ~400 input + 150 output tokens
+$0.0015
+Transcribe a 1-minute voice note
+Addis Scribe, ~400 output characters (input free)
+$0.0089
+Addis Live example
+1K audio input + 1K audio output tokens
+$0.063
+Frequently asked questions
+Which languages does Addis AI support?
+Voices (text-to-speech) and Addis Scribe (speech-to-text) work in Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama and Wolaytta, including streaming voice and Realtime Audio. The Addis-፩-አሌፍ language model and translation work in Amharic, Afaan Oromo and Tigrinya.
+Do you run your own models?
+How does Addis AI compare to ElevenLabs, Google, or Azure?
+What is the voice pricing?
+Is there a cheaper rate for large jobs?
+How is speech-to-text billed?
+Is translation priced separately?
+Can I use my existing OpenAI code?
+What&#x27;s the free credit?
+Do prepaid credits expire?
+What are the rate limits?
+Voice-first AI infrastructure for African languages. Build with speech-to-text, text-to-speech, language models, and realtime voice for Amharic, Afaan Oromo, Tigrinya, Swahili, Hausa, Sidama and Wolaytta.
+Download on the App Store Get it on Google Play
+Products
+Text to Speech
+Speech to Text
+LLM
+Realtime API (Beta)
+Voice Lab
+Creatives
+Captions
+Developers
+Documentation
+API reference
+Pricing
+API keys
+Benchmarks
+Open source
+Compare
+vs ElevenLabs
+vs Google Cloud
+vs Microsoft Azure
+vs Meta (MMS)
+vs OpenAI
+Company
+Enterprise
+FAQ
+Orpund, Switzerland 🇨🇭 +41 798 74 99 37 🇪🇹 +251 703 75 35 00 contact@addisassistant.com
+© 2026 Addis AI Terms Privacy

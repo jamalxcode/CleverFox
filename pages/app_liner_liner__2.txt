@@ -1,0 +1,222 @@
+URL: https://liner.com/terms
+FINAL: https://liner.com/terms
+STATUS: 200
+TITLE: Liner | Terms of Service
+FETCHED: 2026-11-15T15:57:17.456Z
+
+Liner | Terms of Service
+Products
+API/MCP
+Pricing
+Resources
+Company
+Get started
+Get started
+Terms of Service
+Updated: May 14, 2026
+Effective: May 15, 2026.
+1. Your Relationship with Liner
+1.1 Liner is an AI workspace that helps users save time on the web by solving even the most complex tasks.
+1.2 By accessing and using the Service, user hereby READS, UNDERSTANDS, ACCEPTS, and AGREES to be bound by this Agreement&#x27;s Terms. Should the user NOT accept these Terms, user must neither access nor otherwise use any part of the Service or the Content.
+1.3 Your use of the Service is subject to the Terms of a legal agreement between you and Liner. Liner’s principal place of business is at 8F, 140, Yanghwa-ro, Mapo-gu, Seoul, Republic of Korea.
+1.4 Your legal agreement with Liner is made up of (A) the Terms set out in this document, (B) Liner&#x27;s Privacy Policy ( liner.com/privacy )
+2. Changes to the Terms
+2.1 We may, at any time, revise these Terms. If we modify the Terms of Service, we will post the modification on our website, through Liner, or otherwise provide you with notice of the modification.
+2.2 For your convenience, we include the effective date of the Agreement at the beginning of the document, so that you can easily ascertain whether it has been updated since the last time you viewed the Terms of Service.
+2.3 Your continued use of the Service constitutes acceptance of these Terms at the time of each use. If the modified Terms of Service are not acceptable to you, your only recourse is to cease using Liner. Notwithstanding the preceding sentences of this paragraph, no revisions to the Terms of Service will apply to any dispute between you and Liner that arose prior to the date of such revision.
+3. Liner Account
+3.1 You must be at least 13 years old or the minimum age required in your country to consent to use the Service. If you are under 18 you must have your parent or legal guardian’s permission to use the Service.
+3.2 By accessing, installing, downloading or using our Service, you confirm that (A) you are over 18 years old or (B) have permission to use the Service.
+3.3 In order to access some features of the Service, you will have to create a Liner account. When creating your account, you must provide accurate and complete information. If information that you provide is untrue, inaccurate, not current or incomplete, we retain the right, in our sole discretion, to suspend or terminate your user account and your access to the Service. It is important that you must keep your Liner account password secure and confidential.
+3.4 You may not share your account credentials or make your account available to anyone else and are responsible for all activities that occur under your account. If you create an account or use the Service on behalf of another person or entity, you must have the authority to accept these Terms on their behalf.
+3.5 We will communicate with you by email or by posting notices on the website. You agree that Liner will send changes to your service, subscription, or other reasons deemed appropriate through email. Payment information related to subscriptions or any announcements deemed important by Liner will be sent regardless of agreeing to receive messages.
+You agree that we may send email to you for the purpose of advising you of changes to Liner, your subscription status, or for such other purposes as we deem appropriate.
+3.6 You must notify Liner immediately of any breach of security or unauthorized use of your account that you become aware of.
+3.7 You agree that you will be solely responsible (to Liner, and to others) for all activity that occurs under your Liner account.
+4. Using Our Service
+4.1 Liner hereby grants you permission to access and use the Service, subject to the following express conditions, and you agree that your failure to adhere to any of these conditions shall constitute a breach of the Terms on your part:
+You Shall Not
+A. Copy, reproduce, distribute, modify, or broadcast any part of the Service, including but not limited to the Content, in any means without Liner’s prior authorization, unless Liner makes available the means for such action through features offered by the Service (such as the “sharing with other users” feature);
+B. Access the Content through any technology or means other than the Service itself, the Liner, or such other means as Liner may explicitly designate for this purpose;
+C. Circumvent, disable, or otherwise interfere with any security-related features of the Service or the Content;
+D. Use the Service for any of the following commercial uses unless you obtain Liner&#x27;s prior written approval;
+4.2 Liner is constantly innovating in order to provide the best possible experience for its users. You acknowledge and agree that the form and nature of the Service that Liner provides may change from time to time without prior notice to you.
+4.3 As part of this continuing innovation, you acknowledge and agree that Liner may stop (permanently or temporarily) providing the Service (or any features within the Service) to you or to users generally at Liner&#x27;s sole discretion, without prior notice to you. You may stop using the Service at any time. You do not need to specifically inform Liner when you stop using the Service.
+5. Content
+5.1 Your input to the Service (“Input”) and output from the Service based on the Input (“Output”) are collective “Content”. Content also includes the information of highlight and annotation. As a Liner account holder, you may submit the Content.
+5.2 By using the Service, you grant us a limited license, which is required to use and save content that was uploaded, submitted, or sent. This license is for the purpose of operating, promoting, improving our Service, and developing new ones.
+5.3 You retain all of your ownership rights in your Content, but you are required to grant limited license rights to Liner and other users of the Service. Liner does not endorse any Content or any opinion, recommendation, or advice expressed therein, and Liner expressly disclaims any and all liability in connection with Content.
+5.4 You agree that you will not post or upload any Content which contains material which it is unlawful for you to possess in the country in which you are resident, or which it would be unlawful for Liner to use or possess in connection with the provision of the Service.
+5.5 You agree that the Content you submit to the Service will not contain any third-party copyright material, or material that is subject to other third-party proprietary rights (including rights of privacy or rights of publicity), unless you have a formal license or permission from the rightful owner, or are otherwise legally entitled, to post the material in question and to grant Liner the license referred to in paragraph 7.1 below.
+5.6 On becoming aware of any potential violation of these Terms, Liner reserves the right (but shall have no obligation) to decide whether Content complies with the content requirements set out in these Terms and may remove such Content and/or terminate the user&#x27;s access for uploading Content which is in violation of these Terms at any time, without prior notice and at its sole discretion.
+5.7 You further understand and acknowledge that in using the Service, you may be exposed to Content that is factually inaccurate, offensive, indecent, or otherwise objectionable to you. You agree to waive, and hereby do waive, any legal or equitable rights or remedies you have or may have against Liner with respect to any such Content.
+5.8 As part of operations, ads may be displayed on the content results.
+6. Copyright Policy
+6.1 Liner operates a clear copyright policy in relation to any Content that is alleged to infringe the copyright of a third party.
+6.2 As part of Liner&#x27;s copyright policy, Liner will terminate user access to the Service if a user has been determined to be a repeat infringer. A repeat infringer is a user who has been notified of infringing activity more than twice.
+6.3 If you believe that your copyrights are being infringed and you’d like to have the content removed, visit our support page to submit a copyright removal notice to us. You can submit a request to us by using our web form , or provide notice by any other means specified in the Digital Millennium Copyright Act.
+When you submit a request, make sure that the information provided is true and accurate. Knowingly submitting false infringement notices can result in liability for damages under section 512(f) of the DMCA or similar laws in other countries.
+6.4 Only the owner of a copyright (or an authorized agent acting on their behalf) can submit a copyright removal request. Before submitting a copyright removal request, you should consider whether you are the copyright owner of that content.
+Written claims concerning copyright infringement must include the following information: A physical or electronic signature of the person authorized to act on behalf of the owner of the copyright interest
+A description of the copyrighted work that you claim has been infringed upon
+A description of where the allegedly infringing material is located on our site so we can find it
+Your address, telephone number, and e-mail address
+A statement by you that you have a good-faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law
+A statement by you that the above information in your notice is accurate and, under penalty of perjury, that you are the copyright owner or authorized to act on the copyright owner’s behalf
+7. Copyright
+7.1 The copyright of all content (text, images, etc.) created through the use of the service belongs to the user. In other words, the user owns the copyright to the content created, and Liner does not have rights to that content. As a result, the user retains ownership and rights to their own content. Liner respects these copyrights and legally protects the user-created content, as well as respects the rights of the users.
+7.2 While the copyright belongs to the user who created the content, it is important to note that by sharing the content externally using links, others may have access to it and be able to use it. Users should be mindful of how they share their content and the associated implications.
+7.3 For the purpose of improving Liner&#x27;s products and services, the company may review the user&#x27;s content. This is intended to gather insights for product enhancement and does not infringe upon the user&#x27;s copyright ownership.
+8. Links to Third-Party Sites
+8.1 The Service may include hyperlinks to other sites that are not owned or controlled by Liner. Liner has no control over and assumes no responsibility for, the content, privacy policies, or practices of any third-party sites.
+8.2 You acknowledge and agree that Liner is not responsible for the availability of any such external sites or resources, and does not endorse any advertising, products, or other materials on or available from such sites or resources.
+8.3 You acknowledge and agree that Liner is not liable for any loss or damage which may be incurred by you as a result of the availability of those external sites or resources, or as a result of any reliance placed by you on the completeness, accuracy, or existence of any advertising, products or other materials on, or available from, such sites or resources.
+9. Ending Your Relationship with Liner
+9.1 You are free to stop using our Service at any time. You are also free to close your Liner account at any time. We reserve the right to suspend or terminate your access to our Service or delete your account if we determine.
+9.2 Liner may at any time terminate its legal agreement with you if: A. You have breached any provision of the Terms; or
+B. Liner is required to do so by law (e.g. where the provision of the Service to you is, or becomes, unlawful); or
+C. Liner is transitioning to no longer providing the Service to users in the provision in which you are resident or from which you use the Service; or
+D. The provision of the Service to you by Liner is, in Liner&#x27;s opinion, no longer commercially viable.
+9.3 If you believe we have suspended or terminated your account in error, you can file an appeal with us by contacting our Support team.
+10. Disclaimer of Warranties
+10.1 Nothing in the Terms shall affect any statutory rights that you are always entitled to as a consumer and that you cannot contractually agree to alter or waive.
+10.2 Liner (including, without limitation, our application, software, products, services, and website) is provided "As is" and with all faults. We make no representation or warranty whatsoever regarding the completeness, accuracy, adequacy, suitability, features, availability, or operation of Liner.
+10.3 You acknowledge that we do not have control over your use of Liner, and we do not warrant the performance or results that may be obtained through your use of the Liner. You assume all risks and responsibility for your use of Liner and for any loss of or errors in any data or information.
+10.4 To the full extent permissible by applicable law, we disclaim all warranties, express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement, and any warranties arising through course of dealing or usage of trade. Without limiting the foregoing, we neither warrant nor represent that your use of Liner will not infringe the rights of any third parties, nor that Liner will be available for your access or use, nor that operation of Liner will be error-free or uninterrupted.
+11. Limitation of Liability
+11.1 Nothing in the Terms shall exclude or limit Liner&#x27;s liability for losses which may not be lawfully excluded or limited by applicable law.
+11.2 Subject to the overall provision in paragraph 11.1 above Liner shall not be liable to you for: A. Any indirect or consequential losses which may be incurred by you. This shall include;
+(i) Any loss of profit (whether incurred directly or indirectly);
+(ii) Any loss of goodwill or business reputation;
+(iii) Any loss of opportunity;
+(iv) Any loss of data suffered by you;
+B. Any loss or damage which may be incurred by you as a result of:
+(i) Any reliance placed by you on the completeness, accuracy or existence of any advertising, or as a result of any relationship or transaction between you and any advertiser or sponsor whose advertising appears on the Service;
+(ii) The deletion of, corruption of, or failure to store, any Content and other communications data maintained or transmitted by or through your use of the Service;
+11.3 The limitations on Liner&#x27;s liability to you in paragraph 11.2 above shall apply whether or not Liner has been advised of or should have been aware of the possibility of any such losses arising.
+11.4 OUR AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED THE GREATER OF THE AMOUNT YOU PAID FOR THE SERVICE THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS BEFORE THE LIABILITY AROSE OR ONE HUNDRED DOLLARS ($100).
+11.5 Some countries and states do not allow the disclaimer of certain warranties or the limitation of certain damages, so some or all of the terms above may not apply to you, and you may have additional rights. In that case, the Terms only limit our responsibilities to the maximum extent permissible in your country of residence.
+12. Indemnity
+To the extent permitted by law, you will indemnify and hold harmless us, our affiliates, and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys’ fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms.
+13. Subscription
+13.1 Our Service is available under monthly and yearly subscription plans, each of which is applicable to a single user account.
+13.2 In relation to the purchase you have requested, you will be required to submit standard billing information, including your name, billing address, and credit card details, to a third-party payment processor.
+13.3 You agree to remit payment to Liner for any purchases confirmed in relation to your Liner account, utilizing one of the payment methods outlined by the Service. You hereby grant permission for the collection of such sums through the charge of the credit card submitted at the time of purchase request, executed via a third-party payment processor. We retain the right to engage alternative third-party payment processors for such transactions in the future.
+13.4 Your subscription agreement specifies your billing cycle, based on the chosen plan. You are responsible for settling any due amounts. If a payment fails due to reasons such as card expiration or insufficient funds, and your account is under subscription, we can attempt payment with a valid payment method for a certain period of time. During this period, access to certain features included in your subscription plan may be limited.
+13.5 Your payment method may apply specific charges, such as foreign transaction fees or other relevant payment processing fees.
+13.6 Liner may provide a free trial period for selected paid services. It is important that this trial is used within the given period. A. In order to avoid charges, you need to cancel before the trial period ends. By agreeing to these terms and starting the trial, you understand that the trial will automatically become a paid subscription when it ends, and it will renew based on the chosen subscription plan, unless you cancel.
+B. Liner and its affiliates will not have any warranty, indemnity, support, or other obligations or liabilities at all for trial periods. Liner can end a trial period whenever and for any reason.
+13.7 We may charge for the features that are currently free in the future. You will not be charged for any Service unless you explicitly agree to enroll in a paid subscription plan. If you continue to use our Service after these changes are made, it means you accept the new terms.
+13.8 We may change our prices from time to time. If we increase the price of your subscription, we will give you at least 30 days&#x27; notice. The new price will apply to your subscription when it renews, and you can cancel if you don&#x27;t agree with the new terms.
+13.9 Please be aware that you can cancel your subscription at any time. If you decide to cancel or choose not to renew, your subscription plan will be downgraded either right away or after your current subscription period ends. If we don&#x27;t receive payment for your subscription on time, we may either suspend your paid subscription or downgrade your subscription plan. To cancel your subscription, please visit our subscription management page.
+13.10 We do not offer refunds. To avoid being charged for your next billing period, cancel your subscription at least 24 hours before your next billing date.
+If you live in the EU, UK, or Turkey, you can get a refund if you cancel your subscription within 14 days of purchase. To request a refund, send us an email and include your country of residence.
+You will not receive a partial refund unless required by law.
+13.11 If there are any concerns or disputes about the Service, it is agreed that an initial attempt shall be made to resolve the matter informally through direct communication with the Company.
+14. General Legal Terms
+14.1 You agree that Liner may serve legal documents including summons or notice of legal proceedings by way of email and courier delivery (“Expedited Service”), in the event that you reside outside of HQ Country.
+14.2 You acknowledge that you prefer Expedited Service to alternative service for the delivery of legal documents and that by agreeing to Expedited Service you are likely to be better noticed of such proceedings. This Agreement shall further be governed by the laws of HQ Country without regard to conflict of laws principles.
+14.3 You hereby expressly agree to submit to the exclusive personal jurisdiction of HQ Country for the purpose of resolving any dispute relating to this Agreement. Any and all disputes arising out of this Agreement shall be brought before a court within the district where Liner is located.
+14.4 You further agree to waive any defense based on lack of personal jurisdiction, inconvenient forum, venue, or other similar principles. You further agree that a judgment entered by a court of HQ Country is enforceable in the country of your residence. “HQ Country” is the state where Liner designates as the place of its headquarter at any time during a controversy exists between Liner and you; provided that Liner may re-designate it from time to time within its sole discretion by noticing you of such change(s) and appropriate government agency, if required.
+15. Credits
+Credits are used for certain services within Liner. Credits are divided into subscription credits, which are available through a paid subscription, and credit packs that can be purchased additionally.
+Credits are deducted when using features within Liner&#x27;s Service, such as chat or Agent functions. The amount deducted may vary depending on the feature used and the complexity of the question. Users can purchase a paid subscription or credit packs to use more credits. Users can also earn credits via Liner&#x27;s special events.
+Subscription credits vary depending on the paid plan and are reset monthly based on the user&#x27;s registration date or subscription date.
+Among subscription credits and credit packs, purchased credit packs will be deducted first, followed by credit packs in order of the soonest expiration date. However, any Agent credits received via missions will be the first to be used among all types of credits.
+You can check your remaining credits on the Credits page ( link ). You are responsible for confirming the addition or deduction of credits.
+Purchased credit packs will expire 6 months from the date of purchase.
+Credits earned through Liner&#x27;s special events may have varying expiration periods, and any credits past their expiration date will be immediately forfeited.
+15.3 All credits are subject to change in terms of use or price depending on changes in service operations.
+15.4 Liner may notify users of the expiration or scheduled accumulation of credits. Users cannot demand restoration, additional accumulation, etc., due to not receiving such notifications.
+15.5 Liner will not intervene in any tax-related matters arising from the use of credits. This is the sole responsibility of the user.
+15.6 Credits have no currency or exchange value, are non-transferable, and non-refundable. Credits may not be used for third-party transactions, or provided through inheritance, collateral, or similar means. They are not legal tender and cannot be exchanged for money or anything of monetary value. Credits cannot be transferred and may only be used for the services for which they were issued.
+15.7 Liner reserves the right to suspend or terminate your use of the Service if it is deemed to be carried out in an abnormal manner or in violation of these Terms and Conditions, within the scope of applicable law. This includes the retrieval of any remaining credits without refund, or termination of access.
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+© 2026 Liner. All Rights Reserved.
+Do not sell or share my personal information
+Select language, en

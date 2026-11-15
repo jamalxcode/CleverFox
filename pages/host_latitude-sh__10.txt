@@ -1,0 +1,81 @@
+URL: https://www.latitude.sh/changelog/pay-with-crypto
+FINAL: https://www.latitude.sh/changelog/pay-with-crypto
+STATUS: 200
+TITLE: Pay with crypto - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.299Z
+
+Pay with crypto - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+Blog / Changelog
+Pay with crypto
+June 16, 2023
+We&#x27;re excited to announce that Latitude.sh now supports adding credits through cryptocurrency payments. This streamlined payment option allows you to use various cryptocurrencies.
+To get started, connect your wallet, select the desired amount of credits, and complete the transaction. Experience the convenience and flexibility of using cryptocurrencies on Latitude.sh today.
+Learn more about cryptocurrency payments in our guide
+Share this release
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

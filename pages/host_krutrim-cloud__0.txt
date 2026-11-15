@@ -1,0 +1,131 @@
+URL: https://www.olakrutrim.com/ai-studio
+FINAL: https://www.olakrutrim.com/ai-studio
+STATUS: 200
+TITLE: AI Studio | Krutrim Cloud
+FETCHED: 2026-11-15T15:58:08.640Z
+
+AI Studio | Krutrim Cloud
+Cloud Products
+Pricing Docs Contact Us Login Register
+Llama 4 Models on Krutrim Cloud
+Krutrim becomes the first to deploy Llama models on domestic servers, ensuring data privacy while slashing training costs
+Explore Models Contact Sales
+All Text Generation Text to Image Automatic speech recognition Image Understanding
+meta-llama /
+Llama-4-Scout-17B-16E-Instruct
+# text-generation ₹ 7 /1M TOKENS*
+meta-llama /
+Llama-4-Maverick-17B-128E-Instruct
+# text-generation ₹ 17 /1M TOKENS*
+google /
+gemma-3-27B
+# text-generation ₹ 8 /1M TOKENS*
+meta-llama /
+meta/Llama-3.3-70B-Instruct
+# Image-Understanding ₹ 73 /1M TOKENS*
+deepseek_ai /
+DeepSeek-R1-Distill-Llama-8B
+# text-generation ₹ 3 /1M TOKENS*
+deepseek_ai /
+DeepSeek-R1-Distill-Llama-70B
+# text-generation ₹ 10 /1M TOKENS*
+deepseek_ai /
+DeepSeek-R1-Distill-Qwen-14B
+# text-generation ₹ 10 /1M TOKENS*
+deepseek_ai /
+DeepSeek-R1-Distill-Qwen-32B
+# text-generation ₹ 15 /1M TOKENS*
+deepseek_ai /
+DeepSeek-R1
+# text-generation ₹ 11 /1M TOKENS*
+Krutrim /
+Krutrim-spectre-V2
+# text-generation ₹ 16.60 /1M TOKENS
+meta-llama /
+Meta-Llama-3-8B-Instruct
+# text-generation ₹ 16.60 /1M TOKENS
+google /
+google/gemma-27B
+# text-generation ₹ 66.40 /1M TOKENS
+meta-llama /
+Meta-Llama-3-70B
+# text-generation ₹ 74.70 /1M TOKENS
+openai /
+whisper-large-v3
+# automatic-speech-recognition ₹ 0.04 /MIN AUDIO
+HuggingFaceM4 /
+idefics2-8B
+# Image-Understanding ₹ 16.60 /1M TOKENS
+stabilityai /
+Stable-diffusion-3-medium
+# text-to-image ₹ 0.0084 /1M TOKENS
+* Introductory launch price is applicable only for a month from launch date.
+Key Offerings of Krutrim AI Studio
+Did You Know? Krutrim AI Studio can reduce your AI development time by up to 60%.
+Customization Options
+Tailor models to fit unique business use cases.
+Learn more
+Wide Range of Pre-trained Models
+Explore a diverse selection of state-of-the-art AI models.
+Explore Models
+Developer-Friendly APIs
+Seamless integration with straightforward API access.
+Learn more
+Dedicated Support Team
+Expert assistance for implementation and troubleshooting.
+Learn more
+Faster Time-to-Market
+Reduce development time by up to 60%.
+Cost-Effective
+Save up to 25% compared to in-house development.
+State-of-the-Art Performance
+Always access the latest AI advancements.
+Reliable & Robust
+Thoroughly tested models to ensure consistent results.
+Simplify building AI applications with Krutrim&#x27;s AI Studio!
+Advantages of
+Krutrim AI Studio
+Seamless Scaling
+Ola Krutrim Cloud automatically adjusts to traffic spikes, scaling up to meet demand. When traffic is low, it scales down to zero, ensuring you only pay for what you use
+Cost-Efficient Usage
+You’re billed based on the duration your code runs, so there’s no charge for idle GPUs. Enjoy cost savings by paying only for actual usage
+Simplified Deployment
+Ola Krutrim Cloud simplifies the process. Say goodbye to managing API servers, dependencies, model weights, CUDA, GPUs, and batching.
+Comprehensive Monitoring
+Monitor your model’s performance with detailed metrics, and use logs to investigate specific predictions and debug any issues
+Frequently asked questions
+Got questions? We&#x27;ve already got answers. It&#x27;s like we can hear you thinking.
+What is Krutrim AI Studio?
+How can I explore and use the pre-trained models available on Krutrim platform?
+Can I deploy my own custom AI models on Krutrim’s platform?
+What are the benefits of using Krutrim AI Studio?
+How does Krutrim ensure cost-efficient and scalable AI model deployment?
+Your AI Journey with
+कृत्रिम AI Studio
+Benefit from automatic scaling based on demand, ensuring cost efficiency without compromising performance. Start integrating AI into your projects effortlessly with Krutrim AI Studio.
+Explore Models
+Start for free today
+Ready to build on
+India&#x27;s AI Cloud?
+Start deploying AI workloads in minutes with Krutrim Cloud&#x27;s developer-first platform.
+Get Started Free Talk to Sales
+No credit card required · Setup in under 5 minutes
+कृत्रिम is a part of the Ola Group, building the AI computing stack of tomorrow.
+Products
+AI Cloud
+General Purpose Cloud
+AI Studio
+Ola Maps
+Resources
+Documentation
+Blog
+Pricing
+Contact Sales
+Responsible Disclosure
+Legal
+Terms and Conditions
+Privacy Policy
+🇮🇳 Made in India
+© 2026 Krutrim SI Designs Private Limited. All Rights Reserved.
+SOC 2 ISO 27001
+Terms · Privacy

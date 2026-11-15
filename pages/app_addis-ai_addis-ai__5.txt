@@ -1,0 +1,152 @@
+URL: https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat
+FINAL: https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat
+STATUS: 200
+TITLE: Addis AI - Apps on Google Play
+FETCHED: 2026-11-15T15:56:01.861Z
+
+Addis AI - Apps on Google Play
+Games
+Apps
+Movies & TV
+Books
+Kids
+google_logo Play Games
+Apps
+Movies & TV
+Books
+Kids
+Gift Cards
+none
+search
+help_outline
+Sign in with Google
+play_apps Library & devices
+payment Payments & subscriptions
+reviews My Play activity
+redeem Offers
+redeem Gift cards
+Play Pass
+storefront Third-party app stores
+Personalization in Play
+settings Settings
+Privacy Policy • Terms of Service
+Games
+Apps
+Movies & TV
+Books
+Kids
+Addis AI
+Addis AI
+4.5 star
+2.93K reviews
+Everyone info
+100K+
+Downloads
+Install
+Share
+Add to wishlist
+Everyone
+Learn more
+About this app
+arrow_forward
+Addis AI is building voice-first AI infrastructure for African languages.
+This app gives you direct access to Addis AI’s speech and language models in Amharic and Afaan Oromo through voice, chat, translation, and multimodal features.
+With Addis AI, you can:
+• Speak and chat in Amharic and Afaan Oromo
+• Ask questions using voice
+• Translate between Amharic, Afaan Oromo, and English
+• Generate and work with images
+• Get help with writing, learning, ideas, and everyday questions
+The same underlying speech and language technology is also available to developers through Addis AI’s APIs and official SDKs.
+Learn more:
+https://addisassistant.com
+Voice, chat, translation, and image generation for Amharic and Afaan Oromo.
+Updated on
+Oct 22, 2026
+Productivity
+Data safety
+arrow_forward
+Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region, and age. The developer provided this information and may update it over time. This app may share these data types with third parties Audio
+No data collected Learn more about how developers declare collection
+Data is encrypted in transit
+You can request that data be deleted
+See details
+Ratings and reviews
+Ratings and reviews are verified info_outline
+arrow_forward
+Ratings and reviews are verified info_outline
+phone_android Phone
+tablet_android Tablet
+4.5
+2.87K reviews
+5
+4
+3
+2
+1
+Fikre Kidanu
+more_vert
+Flag inappropriate
+December 20, 2025
+Generally, This App is Good. But when i trying to use the language translation page, always says "ያልተጠበቀ ችግር ተፈጥረዋል" you guys should work on this issue. In nutshell, this App is so far excellent 👍
+8 people found this review helpful
+Did you find this helpful?
+Yes
+No
+Endale kinfe
+more_vert
+Flag inappropriate
+November 30, 2024
+Great Amharic Ai assistant but if you want to stop the read out by the Ai there is no way to do that , also if you add reading option and make the UI better it would be great app to use
+55 people found this review helpful
+Did you find this helpful?
+Yes
+No
+Addis AI
+December 2, 2024
+Thank you for your kind words! We truly appreciate your support. Rest assured, we're committed to continually improving our app for you. Your feedback motivates us to strive for excellence with every update!
+teacher nigus ቲቸር ንጉስ
+more_vert
+Flag inappropriate
+April 15, 2025
+Addis AI is a powerful and exciting app, especially knowing it’s created by an Ethiopian team! The chatbot works well, the translation feature is helpful, and I love that it even creates pictures. It’s so refreshing to see AI in Amharic! I gave it 4 stars because the voice still sounds a bit robotic—but that’s understandable at this early stage. I believe with time, it will only get better. Big respect to the creators—this is a proud moment for Ethiopian tech!
+44 people found this review helpful
+Did you find this helpful?
+Yes
+No
+See all reviews
+What’s new
+What's New:
+- Audio & Translation Fixes: Resolved audio playback issues for both languages and fixed the translation feature for a seamless experience.
+- Mobile-Friendly Images: Generated images are now sized in a portrait format to perfectly fit your mobile screen for better viewing.
+- Bug Fixes & Stability: We've made minor bug fixes and performance improvements to make your app experience even better.
+Update now to enjoy the latest enhancements!
+flag Flag as inappropriate
+Everyone
+Learn more
+App support
+expand_more
+public Website
+phone Phone number
++251703753500
+email Support email
+support@addisassistant.com
+shield Privacy Policy
+About the developer
+Biniyam Daniel Ayele
+biniyamdaniel.47@gmail.com
+Ethiopia
+flag Flag as inappropriate
+Google Play Play Pass
+Play Points
+Gift cards
+Redeem
+Refund policy
+Kids & family Parent Guide
+Family sharing
+Terms of Service
+Privacy
+About Google Play
+Developers
+Google Store
+United States (English (United States))

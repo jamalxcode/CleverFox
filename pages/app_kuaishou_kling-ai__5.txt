@@ -1,0 +1,299 @@
+URL: https://app.klingai.com/global/docs/privacy-policy
+FINAL: https://kling.ai/docs/privacy-policy
+STATUS: 200
+TITLE: Kling AI Privacy Policy
+FETCHED: 2026-11-15T15:56:54.261Z
+
+Kling AI Privacy Policy
+Terms of Service
+Privacy Policy
+Terms of Paid Service
+Credits Policy
+Community Guidelines
+Copyright Complaint Policy
+Cookie Policy
+AI Content Detection
+Transparency
+Last Updated Date: 2026/04/21
+Effective Date: 2026/04/21
+Kling AI Privacy Policy
+Kling AI Pte. Ltd respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you.
+This Privacy Policy (this "Policy") applies to your use of Kling AI, which includes its associated software applications and websites (all together, the "Services", "Kling AI", or the "Platform"). In this Policy, "you" or "your" refers to any user who purchase or use any of the Services, including any user of the Platform.
+This Privacy Policy describes our practices with respect to, and the basis on which we handle, your personal data which we collect from or about you. Your personal data refers to data whether true or not, about you which can be identified either (a) from that data or (b) from that data and other information to which we have or are likely to have access ("Data").
+By using the Services, including accessing or using the Platform, contacting or interacting with us or submitting information to us, you agree to the terms of this Policy and to the collection, use, disclosure and processing of your Data in accordance with this Policy.
+CONTENTS OF THIS PRIVACY POLICY
+1. Data We Collect
+2. How We Use Your Data
+3. Our Legal Basis for Processing Data
+4. Data Storage and Retention
+5. Data Security and Protection
+6. To Whom We May Share Your Data
+7. International Data Transfer
+8. Your Rights Relating to Your Data
+9. Cookies
+10. Third Party Application
+11. Changes to the Policy
+12. Parental and Guardian Consent
+13. Contact Information
+14. Country / Region Specific Terms
+1. Data We Collect
+We may collect a variety of Data from or about you or your devices from various sources, as described below.
+The types of Data we collect depend on how you use the Services. The Services offer optional features which, if used by you, require us to collect optional data to provide such features. You will be notified of such collection, as appropriate.
+If you do not provide your Data when requested, you may not be able to use our Services if that Data is necessary to provide you with our Services or if we are legally required to collect such Data.
+A. Personal Data You Provide
+(1) Registration and contact information. When you register to use our Services, you may be required to provide certain Data including email address, user name, age to create an account on the Platform. The first time you log in Kling AI using E-mail verification, a user account on the Platform will be created for you("Account"). You can access the Services by logging in with your Account.
+(2) User content. We store and process the content you upload to the Platform, as well as data generated through your use of the Platform. This includes photographs, images, audio, videos, comments, feedback and any other content you upload, as well as interactions with the Platform (collectively "User Content").When you create User Content, we may upload or import it to the Platform before you save or post the User Content (also known as pre-uploading).
+When you use our Services, we may collect information about the images and audio that are form part of your User Content, including identifying the objects and scenery that appear, the existence, the nature of the audio, and the text transcript of the words spoken in your User Content to enable special video effects, for the purposes of content moderation, tone operations, and other operations that will not identify any individual.
+When you use our AIGC (Artificial Intelligence Generated Content) services or features to create content containing portraits (such as Character Face Mode), we may analyze the material you upload and upload the feature points (such as vector points of eyes, nose, mouth,etc.) and contour lines in the input material for portrait processing.
+(3) Financial information. When you use our paid Services, including redeeming voucher codes or purchasing paid Services, we collect information related to the payment transaction (with your consent). This may include payment card details (e.g. card account number), billing information, order details, the Services you purchased, and transaction records regarding transactions, transfers,invoice information (e.g. legal name,TAX Registration Number,registration Address), withdrawals, rewards, tipping and/or other ID information necessary to identify users/accounts. We collect this information to process payments and ensure the security of all transactions.
+(4) Communication Information:If you communicate with us, we will collect your contact information, such as email address, and the contents of any messages you send to us.
+(5) Business Cooperation: With your explicit consent, we collect certain information when you request additional information about us or our Services, subscribing to marketing or otherwise contacting us. This may include: (i)contact information (such as your name, address, telephone number and email address) as well as the nature of your communication; (ii)professional information (such as your company name, job title); (iii)marketing information (such as your contact preferences, source or campaign details); and(iv)any information you choose to provide to us (for example, for event sign-up or bot interaction).
+(6) Other data inferred from or associated with any of the above. When you use our Services, you may provide us with certain Data, including metadata accompanying user-generated content, audiovisual clips segmentation, annotation, frame or text extraction, object and image recognition symbolling, aggregated classification tagging and other non-personally identifying information inferred from the Data you provide to us or that we collect during your use of Kling AI. We may process the above Data locally on your device to enable special video effects, and it will be used solely to provide the mentioned features. We do not analyze any facial recognition features in pictures or identify individuals from such pictures, or collect, share or store any face data. The above Data cannot be used to identify any individual. We will not use the aforementioned Data for any purposes other than those explicitly stated in this Policy.
+B. Personal Data We Automatically Collect
+(1) Network and device data, log data. When you use our Services, we may automatically collect your Data including IP address, operating system, browser you are using, your Account's preference settings, advertising identifiers, WiFi/WLAN Bluetooth, mobile network information, your computer's or mobile device's operating system type and version, manufacturer and model, browser type, your online operations/usage records on Kling AI, screen resolution, RAM and disk size, CPU usage, language settings, and app and file names. We automatically assign you a user ID and a device ID.
+(2) Usage and activity data. When you use our Services, we may automatically collect data about your interactions with Kling AI and other users of Kling AI.This includes your choices, follow history, followers, likes or participation records in challenges, surveys, contests, or other activities provided through Kling AI. Additionally, we may automatically collect data such as the pages or screens you viewed, the time spent on each page or screen, your browsing history, navigation paths, activity on specific pages, access timings, duration of access, and whether you opened our marketing emails or clicked on links within them.
+(3) Online activity data. When you use our Services, we may automatically collect personal data including pages or screens you viewed, how long you spent on a page or screen, browsing history, navigation paths between pages or screens, information about your activity on a page or screen, access timings, and duration of access, and whether you opened our marketing emails or clicked links within them.
+(4) Location data. We automatically collect data about your approximate location, such as country, state or city, based on your SIM card or IP address.
+(5) Cookies: We use cookies, mobile IDs, and other similar technologies (“Cookies”) to operate the Platform, enable us to provide certain features and functionality, and enhance your experience using the Platform. To learn more about our use of cookies, please see our cookie policy .
+(6) Analytics: We may use a variety of online analytics products that use cookies to help us analyze how users use our Services and to enhance your experience when you use our Services.
+The categories and scope of data we collect about you may vary from time to time, depending on your choice of and interaction with Kling AI, as well as the country or region where you use Kling AI. You will be notified of such a variation, as appropriate.
+Where features are available, you may choose to browse certain content in the platform without logging in an account or registering, in which case we may still collect certain Data, including the content you browse, IP address,your interactions with the platform,and associated your device information such as device ID, WiFi information.
+C. Combination of Data
+By using our Services, you agree that we may combine the Data we receive from and about you, including the Data you provide and the Data we automatically collect as mentioned above, as well as Data we may receive from third parties to help us tailor our communication to you and to improve our Services. If you do not agree to this section, please do not use the Platform or any of the Services.
+You may be required to provide certain categories of Data to us under the following circumstances: (i) as required under any applicable laws or regulations; (ii) as required under any contract entered into between us, (iii) as required for us enter into any contract or agreement with you, (iv) or that you are otherwise obliged to provide the Data to us. If that is the case, we will inform you thereof separately, and will also explain the possible consequences if you fail to provide such Data.
+2. How We Use Your Data
+We may use your Data for a number of purposes associated with operating our business and providing the Services to you, including:
+(1) Identification and authentication: We use your Data to verify your identity or eligibility to access the features of Kling AI, as well as for receiving rewards or prizes that we periodically offer to users. In some instances, we may use your Data to verify your age to provide certain Services or to authenticate your identity when fulfilling your requests in relation to your Data.
+(2) Provision of the Services: We process your Data to provide you with the Services that you request, to respond to your queries, or to contact you about changes to Kling AI and the Platform or any of our Services, and to otherwise manage our relationship with you. This may also include managing the content ecosystem across Kling AI, or aspects, thereof, facilitating third party partnerships or integrations across Kling AI, monitoring and testing Kling AI, troubleshooting, or allowing you and other users to connect with each other.
+(3) Payment processing: We may use your Data for billing and payment processing purposes or to distribute awards to you or to recover monies owed to us. This may also include enabling payment through third-party payment systems.
+(4) Guarantee of services and algorithms: We will review and analyze usage information and statistical data to support customer service operations, implement user feedback, and conduct surveys.
+(5) Communications:We may use your Data to contact and communicate with you. Communications may include, for example, providing changes or updates about our Services, changes to this Policy, changes to our Terms of Service, changes to our Terms of Paid Service, user information reports on users who are minors, or responses to your questions, comments, feedbacks or requests, etc.
+(6) Content safety: To ensure the safety, security and stability of Kling AI, we may scan, analyze, and review User Content to detect and combat harmful activity and content, frauds, illegal activity or content on this Platform.
+(7) Preferences, promotions and sales: We may use your Data to build a profile about you, to analyze and understand your preferences, to help determine which marketing materials would be of interest to you, to display advertising, to conduct award activities, to measure the effectiveness of advertising and promotions, and to facilitate sales, purchases and delivery (where applicable). We may also process your Data in the above ways for conducting sweepstakes, contests or other promotions.
+(8) Marketing activities:We may also use your Data to carry out marketing activities, also in situations where you provide your Personal Data or give your consent to its processing in return we makes content or services available to you. Such activities may include:
+carrying out other activities related to the direct marketing of services (sending of commercial information by electronic means or other marketing activities) through various electronic communication channels, including email, text/MMS and push messages. Such activities are undertaken based on the legitimate interests of the us or the legitimate interests of the entities cooperating with us, in particular, as part of Additional Services and on your consent to receive said messages or information. You may withdraw your consent at any time.
+(9) Exercising our rights: We may use your Data to exercise our rights where it is necessary to do so, for example to detect, prevent, investigate and respond to security incidents or breaches, data scrapping, fraud, abuse, intellectual property infringement claims and any other claims, financial crimes, other violations of law, violations of our Terms of Service or violations of our Terms of Paid Service.
+(10) Complying with our obligations: We may process your Data to comply with legal or regulatory obligations, codes of practice, guidelines or rules, including without limitation our legal obligation to prevent users under the Minimum Age (as defined below) from accessing the Platform or the Services, to respond to lawsuits, claims or investigations, to assist in law enforcement and investigations conducted by any governmental and/or regulatory authority in any instance of mergers, acquisitions, sales and asset transfers, insolvency proceedings, corporate restructuring, winding up or liquidation, whether within or outside your country or region. We may also aggregate and/or de-identify your Data and may use such aggregate or de-identified information for any other purposes to the extent permitted under applicable law and not attempt to re-identify the information, unless required by law.
+3. Our Legal Basis for Processing Data
+In order to process your Data, we will rely upon the legal bases afforded by applicable laws and regulations. We only process your Data when we have a valid "legal basis," including as set forth below.
+(1) Consent: We may process your Data where you have consented to certain processing of your Data. For example, we may process your Data to use cookies where you have consented to such use.
+(2) Contractual Necessity: We may process your Data where required to provide you with our Services requested by you, or where necessary for the conclusion or performance of any transaction between you and us. For example, we may need to use or process your Data to respond to your inquiries or requests.
+(3) Compliance with Legal Obligations: We may process your Data where we have a legal obligation to do so. For example, we may process your Data to comply with tax, labor and accounting obligations.
+(4) Legitimate Interests. We may process your Data where we or a third party have a legitimate interest in doing so, as recognized in certain jurisdictions. Specifically, we have a legitimate interest in using your Data for product development and internal analytics purposes, as well as to ensure the safety, security and performance of our Services. We only rely on our or a third party's legitimate interests to process your Data when these interests are not overridden by your rights and interests.
+4. Data Storage and Retention
+(1) We store your Data on our servers located in Singapore. We also have support, engineering, content moderation, and other functional teams located around the world to support the operation of the Platform and the provision of Services to you. We have rigorous internal control measures in place to strictly limit data access to designated personnel only.
+(2) We will retain your Data for as long as necessary:
+(i) to achieve the purposes as set out in this Policy;
+(ii) as required by applicable laws and regulations, including any mandated retention periods, taking into account the statute of limitations;
+(iii) to serve our legitimate and lawful purposes, including any business, compliance and legal purposes; and/or
+(iv) to defend against any actual, threatened or potential claims or disputes.
+(3) We will not retain your Data for longer than necessary or beyond its intended purposes, unless required or permitted by applicable laws. In addition, we reserve the right to delete, destroy, or anonymize your Data that is no longer needed.
+(4) We will retain your Data for only as long as we need in order to provide our Services to you, or for other legitimate business purposes such as resolving disputes, safety and security reasons, or complying with our legal obligations. The retention period will depend on a number of factors, such as the amount, nature and sensitivity of the information, potential risks of harm from unauthorized use or disclosure, our purpose for processing, and any legal requirements.
+(5) We may retain some of your Data even after you cease to use our Services, for instance if the Data is necessary to meet our legal obligations, such as tax and accounting requirements.
+(6) Where applicable, we will delete your Data upon your request unless retention is required by applicable laws. We reserve the right to delete your Data without notice, and we will not owe you any compensation for such deletions.
+(7) If you have question about the retention periods applied to your Data, you may contact us using the information in the "Contact Information" section of this Policy.
+5. Data Security and Protection
+(1) We will take appropriate technical and organizational measures to help protect and secure your Data. We will endeavor to protect your Data against unauthorized or unlawful processing, accidental loss, destruction, or damage through these measures, including:
+(i) using encryption techniques;
+(ii) establishing specialized systems and procedures, such as strictly limiting the scope of personnel with access to your Data, and requiring those who have such access to comply with relevant confidentiality obligations; and
+(iii) forming a specialized department in charge of information security. In the event of incidents such as information leakage or data or security breach, we will take timely measures to handle such incidents, and we will notify you promptly in an appropriate manner, including through messages or announcements.
+(2) We will endeavor to ensure that, by default, we only collect and process your Data needed to provide you access to the Platform and our Services. We also apply this principle of data privacy and protection controls to our processing activities. This means that we will neither publish nor share your Data by default.
+(3) While we are committed to protecting your Data, no electronic data transmission or storage of information can be completely secure. We kindly request you do not disclose certain Data, such as passwords, credit card numbers, PINs or other confidential data during your use of our Services. Our commitment to safeguarding your privacy is unwavering, but the security of Data also relies on your safe practices. Therefore, although we take appropriate technical and organizational measures to secure your Data, we do not guarantee, and you should not expect, that your Data will always remain secure. In particular, any email sent to or from us may not be secure. If our email is misused by any third party with malicious intent during the transmission process, you will need to exercise caution. Therefore, please consider carefully what information you choose to send to us via our Services or email. In addition, we are not responsible for circumvention of any privacy settings or security measures contained on the Services, or third-party websites. We are not responsible for the privacy practices of third parties, and the information practices of these third parties are not covered by this Policy. If you do not agree to these risks and conditions, you must discontinue your use of Kling AI.
+6. To Whom We May Share Your Data
+We may share your Data in the following circumstances:
+(1) Affiliates
+We may share your Data with our corporate affiliates, group members, subsidiaries of our corporate group, who will process your Data in accordance with this Policy to facilitate the provision of Kling AI, to improve the Services, enhance security, and to support users.
+(2) Business transactions
+In the context of a transaction including mergers, acquisitions or asset sales: We may transfer your Data to another legal entity for the purposes of a collaboration, joint venture, corporate reorganization, change of legal form or other similar event or transaction. In order to develop our business, we may engage in transactions such as mergers, acquisitions, sales and asset transfers. In these circumstances, we will inform you of the relevant transactions, and will continue to protect or require the successor to protect your Data in accordance with applicable laws and regulations and this Policy.
+(3) Service Providers
+Third parties in support of Kling AI: We may engage or cooperate with third parties to perform certain functions or to provide certain of the Services to you. We share your Data with these service providers for purposes such as hosting or operating our Services, storage, content delivery, security, research and development, analytics, customer and technical support, content moderation, payment and transaction processing, advertisement, rewards, vouchers and commercial goods delivery (where applicable), cloud services, e-mail communication, the marketing of our Services to you. We may also share your Data with professional agencies and individuals that we engage to provide professional services to us, including advisors, auditors, lawyers and accountants. We will only share your Data on a need-to-know basis with third parties in order for them to perform corresponding functions and services, and we will request such parties to maintain appropriate security measures to protect such Data from unauthorized access or processing.
+(4) Legal obligations
+We may in limited cases share your Data to authorities such as legal, regulatory, law enforcement, government and tax authorities or other organizations, to satisfy our obligations or those of third parties (when they receive a request from an authority empowered by law to do so), pursuant to applicable laws and regulations.
+We have a good-faith belief that access, use, preservation, or disclosure of the such Data is reasonably necessary to (i) comply with any applicable law, regulation, or to commence or respond to any legal process/procedure, lawsuit or enforceable governmental request, (ii) protect and defend the rights an property of us, our users, or the public, (iii) detect or prevent technical issues, fraud, or criminal activities, (iv) respond under urgent circumstances to protect the personal safety of any entity, person or group, or (vi) to enforce our Terms of Service and other policies and standards.
+(5) Public content and shared information
+You may submit certain information through Kling AI (e.g., by uploading photographs, images and videos). Any such information that is meant to be shown to the public on our platform will be disclosed publicly. This Policy does not apply to the use of any such information by third parties after it is uploaded and displayed publicly on Kling AI. Additionally, certain functions of Kling AI enable you to share information with other users or third-party platforms. Information shared with third-party platforms is subject to their privacy policies. We recommend reviewing those policies to ensure you understand them before sharing any information.
+7. International Data Transfer
+We may transfer your Data to countries or regions located outside of the country where you reside solely for the purposes set out in this Policy and in accordance with applicable laws and regulations. Such transfers may involve disclosure of your Data to countries and regions that provide varying levels of data protection. Before any cross-border transfer of your data occurs, we consider all relevant legal and regulatory requirements. Our policies are as follows:
+We may share your Data with our group entities in other jurisdictions for internal, business and operational purposes in order to operate the Kling AI and provide you access to the Services. We will ensure, by way of appropriate contractual guarantees which are compliance with applicable laws and regulations, that all such entities with which we share your Data maintain appropriate security measures to protect your Data from unauthorized access or processing.
+8. Your Rights Relating to Your Data
+(1) Once you have completed your Account registration and put in place reasonable and necessary authentication measures, you can review, modify, and delete the Data you have submitted to us by contacting us using the contact information provided in the "Contact Information" section of this Policy. In general, you can browse, modify, and delete your own information at any time, but you may not be able to modify certain initial registration information and verification information provided at the time of registration for security and identification purposes.
+(2) You may have the following rights to the extent applicable under local laws and regulations which you can exercise by contacting us using the contact information provided in the "Contact Information" section of this Policy:
+(i) You have the right to be informed in a concise, transparent, intelligible and easily accessible form of the way in which your Data is processed. You also have the right to obtain confirmation as to whether or not Data concerning you is being processed, and where that is the case, to access such Data and obtain a copy thereof.
+(ii) You have the right to request rectification of your Data. You also have the right to have incomplete Data completed.
+(iii) Where you have provided your consent, you have the right to withdraw your consent. If you withdraw your consent, we may continue processing your Data to the extent permitted by applicable laws and/or set out in this Policy.
+(iv) You have the right to receive your Data in a structured, commonly used, and machine-readable format and have the right to transmit those data to another controller.
+(v) You have the right to request the deletion or restriction of your Data, as permitted by law;
+(vi) You have the right to object to our processing of your Data, for example, in case we process your data for direct marketing purposes, as permitted under applicable laws.
+(vii) You have the right to delete your Account, which is an irreversible process as you will not be able to access your Account upon deletion, and all data in relation to the Account will be deleted or de-identified, subject to any statutory retention requirements under applicable laws and regulations. If you wish to have your Account deleted, you can contact us by using the contact information provided in "Contact Information" of this Policy or by [My Space] - [Click on the head portrait] - [Account Deletion] in Kling AI APP.
+(viii) You may also have other rights as described under the "Country / Region Specific Terms" section below or otherwise under the local laws.
+(3) We will verify your identity first before we can fulfill your request. We will respond to your request within the timeframe as required or permitted by the local laws.
+(4) You can change your privacy settings on the website and/or APP of Kling AI, where applicable.
+(5) You may also be able to change your cookie settings as described in the section below to manage the Data we collect using cookies.
+(6) You can prevent us from obtaining your Data by suspending certain functions provided by our Services.
+You may exercise the abovementioned rights free of charge by contacting us at the contact details in the "Contact Information" section of this Policy. If requests are manifestly unfounded or excessive, in particular because of the repetitive nature of the requests, we will either charge you a reasonable fee or refuse to comply with the request. We may request specific information from you to help us confirm your identity before we comply with a request from you concerning one of your rights.
+We will provide you with information about the follow-up to the request without undue delay and in general, within one month of receipt of the request. The applicable privacy laws may allow or require us to refuse your request. If we cannot comply with your request, we will inform you of the reasons why, subject to any legal or regulatory restrictions.
+These rights are not absolute and they may be limited in some situations. For example, where we can demonstrate that we have a legal requirement to process your data or if making the information available to you would reveal personal data about another person or if we are legally prevented from disclosing such information. In some instances, this may mean that we are able to retain your Data even if you withdraw your consent.
+We hope that we can satisfy any queries you may have about the way we process your Data. In the event you still have unresolved concerns, you also have the right to lodge a complaint with a supervisory authority, in particular to the data protection authority in the country of your habitual residence or place of work.
+9. Third Party Application
+This Policy only applies to our Services.
+To better enrich your experience, our Service may contain links to other websites not operated or controlled by us (including our affiliates), including payment services. You can choose whether to access such content or links, or whether to use the third party's products or services. However, we do not have control over the products or services provided by third parties. Our provision of these links does not imply that we endorse or have reviewed these third-party services. Our Policy does not govern or apply to the data protection issues in connection with your use of any third-party services or websites. We strongly advise you to review the privacy policy of every site you visit.
+If any provisions from this Policy are in conflict with any applicable laws, such provisions will be replaced by provisions of the same purport that reflects the original intention of the provision, to the extent permissible under the applicable laws. In that case, the remaining provisions remain applicable and unchanged.
+10. Changes to the Policy
+We may update, change or modify this Policy from time to time, and such changes shall form a part of this Policy. We will notify you about those changes by updating the "Last Updated" date at the top of the revised Policy or through any other notice required by applicable law. We encourage you to periodically review this Policy to stay informed about our current privacy practices. Your continued use of the Platform and Kling AI constitutes acceptance of the updated Policy. If you do not agree to the updated Policy, you must stop accessing the Platform or using Kling AI.
+11. Parental and Guardian Consent
+Our Services are not intended for or directed to children as defined by the applicable laws in your country or region. For example, in South Korea, "children" refer to individuals under 14 years old, whereas in some other countries or regions, it refers to individuals under 13 years old ("Minimum Age").
+If you are above the Minimum Age but under the age of majority in your jurisdiction ("Majority Age"), you need your parent or guardian's permission and registration to use our Services. Their consent means they agree to this Policy on your behalf.
+We do not knowingly collect or solicit Data from children under the Minimum Age. If you are a guardian and discover that an individual under your care has used our Services or provided personal Data, please terminate their use of our Services immediately and notify us promptly at the contact details listed in the "Contact Information" section of this Policy so we can take appropriate action. If you wish to query or delete the Data, please contact us through the "Contact Information" section of this Policy. Our customer service team may need to verify and confirm the guardianship. Once confirmed, we will assist you in deleting the Data and the corresponding Account as per your request.
+12. Contact Information
+If you have any complaints, suggestions or questions regarding this Policy or in relation to the collection, use, disclosure, storage, protection and other forms of processing of your Data, please contact us:
+a) through email at support@kling.ai;
+b) by accessing [Community] in the top navigation bar of the website of Kling AI;
+c) by clicking on the [ top left menu] - [Contact Us] in Kling AI APP;
+If a data protection officer is required to be appointed under the local law of your jurisdiction, you may also contact the data protection officer using the contact details provided in the "Country / Region Specific Terms" section below.
+We will review the issues involved as soon as possible and reply to you in a timely manner as required by applicable laws. If you have any concerns regarding how we are handling your Data, please contact us. We will endeavor to address your concerns promptly.
+13. Country / Region Specific Terms
+In the event of a conflict between the provisions of Country / Region Specific Terms that are relevant to your jurisdiction from which you access or use the Services, and the rest of this Policy, the relevant jurisdiction's Country / Region Specific Terms will supersede and prevail to the extent of such conflict.
+California (United States)
+If you are a California resident, the following additional privacy disclosures under the California Consumer Privacy Act of 2018 ("CCPA") and other California laws may be applicable to you and allow you to exercise your rights regarding your personal data.
+1. Introduction
+If the CCPA is applicable, you have the right to know and understand how we collect, use, disclose, and share your Data, to access your Data, to request that we delete specific Data, to exercise your rights to opt-out, and also not be discriminated against when exercising your privacy rights granted under the CCPA.
+2. Your Rights and Choices
+Right to Know and Data Portability
+The CCPA provides California residents specific rights to know about our collection and use of their personal data over the past twelve (12) months (the "right to know"). Once we receive your request and confirm your identity, we will disclose to you:
+● The categories of personal data we collected about you.
+● The categories of sources for the personal data we collected about you.
+● Our business or commercial purpose for collecting or selling (if applicable) that personal data.
+● The categories of third parties with whom we share that personal data.
+● If we sold or disclosed (if applicable) your personal data for a business purpose, we will provide two separate lists that:
+○ identify the personal data categories that each category of recipient purchased in connection with sales of your personal data; and
+○ identify the personal data categories that each category of recipient obtained in connection with disclosures of your personal data for a business purpose.
+● The specific pieces of personal data we collected about you (also called a data portability request).
+Right to Delete
+The CCPA provides California residents specific rights to delete their personal data that we collected from them and retained, subject to certain exceptions (the "right to delete"). We may deny your deletion request if retaining the information is necessary for us or our service provider(s) to:
+● Provide the Services or any service that you requested from us, take actions reasonably anticipated within the context of our ongoing business relationship with you, fulfill the terms of a written warranty or product recall conducted in accordance with federal law, or otherwise perform our contract with you.
+● Detect security incidents, protect against malicious, deceptive, fraudulent, or illegal activity, or prosecute those responsible for such activities.
+● Debug the Services to identify and repair errors that impair existing intended functionality.
+● Exercise free speech, ensure the right of another consumer to exercise their free speech rights, or exercise another right provided for by law.
+● Comply with the California Electronic Communications Privacy Act (Cal. Penal Code § 1546 et. seq.).
+● Engage in public or peer-reviewed scientific, historical, or statistical research in the public interest that adheres to all other applicable ethics and privacy laws, when the deletion of such information may likely render impossible or seriously impair progress of the research, if you had provided informed consent.
+● Enable solely internal uses that are reasonably aligned with consumer expectations based on your relationship with us.
+● Comply with a legal obligation.
+Once we receive your request and confirm your identity, we will delete or deidentify personal data and direct our service providers to take similar action, unless subject to one of these exceptions above.
+How to Exercise the Rights to Know or Delete
+To exercise your rights to know or delete described above, please submit a request by using the contact information provided in "Contact Information" of this Policy.
+Only you, or someone legally authorized to act on your behalf, may make a request to know or delete related to your personal data.
+You may only submit a request to know twice within a 12-month period. Your request to know or delete must:
+● Provide sufficient information that allows us to reasonably verify you are the person about whom we collected personal data or an authorized representative, which may include: your identification information, a signed permission authorizing the representative to submit the request on your behalf, and any other information permitted or recommended by the CCPA and applicable regulations.
+● Describe your request with sufficient detail that allows us to properly understand, evaluate, and respond to it.
+We cannot respond to your request or provide you with personal data if we cannot verify your identity or authority to make the request and confirm the personal data relates to you.
+We will only use personal data provided in the request to verify the requestor's identity or authority to make the request.
+Response Timing and Format regarding Requests to Know or Delete
+We will confirm receipt of your request within [fifteen (15)] business days of receiving it and provide information on how we will likely handle the request. If you do not receive confirmation within the [fifteen (15)] business days timeframe, please contact us via the contact details displayed in the "Contact Information " section.
+We endeavor to substantively respond to a verifiable consumer request within forty-five (45) days of its receipt. If we require more time (up to another 45 days), we will inform you of the reason and extension period in writing. We may deliver our written response by email.
+Any disclosures we provide will only cover the 12-month period preceding our receipt of your request. The response we provide will also explain the reasons we cannot comply with a request, if applicable. For data portability requests, we will select a format to provide your personal data that is readily usable and should allow you to transmit the information from one entity to another entity without hindrance.
+We do not charge a fee to process or respond to your verifiable consumer request unless it is excessive, repetitive, or manifestly unfounded, or as otherwise permitted by the CCPA. If we determine that the request warrants a fee, we will tell you why we made that decision and provide you with a cost estimate before completing your request.
+Personal data Sales Opt-Out Rights
+Under the CCPA, consumers have the right to direct us to not sell their personal data at any time (the "right to opt-out"). We do not sell your personal data of consumers unless we obtain consent for the sale. Consumers who opt-in to personal data sales may opt-out of future sales at any time.
+To exercise your right to opt-out provided under CCPA, you (or your authorized representative) may submit a request to us by using the contact information provided in "Contact Information" of this Policy.
+We will only use personal data provided in an opt-out request to review and comply with the request.
+Non-Discrimination
+We will not discriminate against you for exercising any of your CCPA rights. Unless permitted by the CCPA, we will not:
+● Deny you goods or services.
+● Charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties.
+● Provide you a different level or quality of goods or services.
+● Suggest that you may receive a different price or rate for goods or services or a different level or quality of goods or services.
+However, we may offer you certain financial incentives permitted by the CCPA that can result in different prices, rates, or quality levels. Participation in a financial incentive program requires your prior opt-in consent, which you may revoke at any time.
+Other California Privacy Rights
+● Shine the Light Law Disclosure.
+California's "Shine the Light" law (Civil Code Section § 1798.83) permits users of the Services that are California residents to request certain information regarding our disclosure of personal data to third parties for their direct marketing purposes. To make such a request, please send an email by using the contact information provided in "Contact Information" of this Policy.
+● "Do Not Track" Disclosure.
+We do not monitor, recognize, or honor any opt-out or do not track mechanisms, including general web browser "Do Not Track" settings and/or signals or other mechanisms that provide consumers the ability to exercise choice regarding the collection of personal identifiable information about an individual consumer's online activities over time and across third-party websites or online services.
+When you use the Services, certain third parties may use automatic information collection technologies to collect information about you or your device. The information they collect may be associated with your personal data or they may collect information, including personal data, about your online activities over time and across different websites and other online services websites. We do not control these third parties' tracking technologies or how they may be used. If you have any questions about an advertisement or other targeted content, you should contact the responsible provider directly.
+● Eraser Law Disclosure for Minor Users.
+If you are a user under the age of 18, California Business and Professions Code Section 22581 allows you to request and obtain removal of content or information you have publicly posted. You can send a request to remove any content or information you posted on the Services by using the contact information provided in "Contact Information" of this Policy. Please notice that the removal does not ensure complete or comprehensive removal of your posted content or information in certain circumstances, for example, the content has been shared by you or other users to any third-party platforms.
+.
+Brazil
+If you are using our Services in Brazil, the following additional terms apply:
+Exercise of data protection rights. Brazilian law provides certain rights to individuals with regard to their personal data. Thus, we seek to ensure transparency and access controls in order to allow users to benefit from the mentioned rights.
+We will respond and/or fulfill your requests for the exercise of your rights below, according to the applicable law and when applicable, to the Brazilian General Data Protection Law - LGPD:
+a. confirmation of whether your data are being processed;
+b. access to your data;
+c. correction of incomplete, inaccurate or outdated data;
+d. anonymization, blocking or erasure of data;
+e. portability of personal data to a third party;
+f. object to the processing of personal data;
+g. information of public and private entities with which we shared data;
+h. information about the possibility to refuse providing personal data and the respective consequences, when applicable;
+i. withdrawal of your consent.
+Verifying your identity. To protect your data and ensure its security, we may request information and/or documentation to verify your identity before responding to data requests. All submitted information will be used solely for verifying your identity, processing your request, and providing a response.
+Limitations to your rights. We may be unable to fulfill certain data requests for legitimate reasons, such as protecting trade secrets, intellectual property, or complying with legal obligations. We will explain any limitations on your rights and the reasons why we cannot fulfill your request.
+Limitations to your rights. In certain situations, we may have legitimate reasons not to comply with some of your requests. For instance, we may choose not to disclose certain information to you when a disclosure could adversely impact our business whenever there is a risk of violation to our trade secrets or intellectual property rights. In addition, we may refrain from complying with a request for erasure when the maintenance of your data is required for complying with legal or regulatory obligations or when such maintenance is required to protect our rights and interests in case a dispute arises. Whenever this is the case and we are unable to comply with a request you make, we will let you know the reasons why we cannot fulfill your request.
+In case of doubt about your privacy, your rights or how to exercise them, please contact us at the contact details set out in the section "Contact Information". If you have any questions about the processing of your personal data, we would like to clarify them.
+International Transfer of Data. We may transfer your personal data globally within our business group and to third-party service providers located in other countries. We use internationally recognized data transfer mechanisms compliant with applicable data protection laws and regulations.
+Whenever we transfer your personal data to third parties located in other countries, we will ensure that these companies comply with applicable data protection laws and we will take all measures that are reasonably necessary to ensure the existence of adequate safeguards to protect your personal data and to ensure that are processed safely.
+Parental and Guardian Consent. If required by Brazilian data protection laws, (i) if you are over the age of 16 but under the age of 18, you can only use and register for an account with the assistance of your parent or legal guardian and you declare and represent that you had such assistance to use the Services and to agree to the Policy; (ii) if you are over the age of 13 but under the age of 16, you can only use and register for an account with the representation of your parent or legal guardian, and you must obtain the consent from your parent or legal guardian to the use of the Services and acceptance of this Privacy Policy.
+DPO. If you wish to contact the Data Protection Officer, please contact us at: support@kling.ai
+Turkey
+If you are using our Services in Turkey, the following additional terms:
+Data Controller Representative. You may contact our data controller representative at support@kling.ai to handle questions and complaints in connection with the processing of your personal data if you are in Turkey.
+Legal basis for the processing your personal data. We rely on the following legal basis while processing your personal data in accordance with Article 5 of the Law No. 6698 on Protection of Personal Data:
+● processing is explicitly laid down or dictated by laws
+● processing of your personal data is necessary provided that it is directly related to the conclusion or fulfillment of the contract between us
+● processing is mandatory for us to be able to comply with our legal obligations
+● the relevant data is made available to the public by yourself
+● processing is mandatory for the establishment, exercise or protection of a right
+● processing is mandatory for our legitimate interests, provided that it does not violate your fundamental rights and freedoms
+● your explicit consent (Please note that we rely on this legal basis only when we require your consent for the processing and we do not rely on this legal basis if and when we rely on one of the other legal grounds above)
+Your rights. According to Article 11 of the Data Protection Law, you have the following rights with respect to your personal data:
+● the right to learn whether we process your personal data,
+● the right to request information with regard to such processing, if we process your personal data,
+● the right to learn the purposes of the processing and whether they are used for such purpose or not;
+● the right to know the third parties within or outside the country, to whom we transfer your personal data,
+● the right to request correction of incomplete or inaccurate personal data,
+● the right to request deletion or destruction of your personal data under the conditions set forth in Article 7 of the Data Protection Law,
+● the right to request that we notify the third parties, to whom we transferred your personal data, about the correction, deletion and/or destruction of your personal data per your request within the scope of the foregoing two items,
+● the right to object to the negative results about you that are due to the analysis of your personal data processed solely by automated means,
+● the right to claim indemnification for damages incurred due to illegal processing of your personal data.
+You may exercise your rights listed above by contact us at: support@kling.ai
+The requests found in your application will be resolved as soon as possible according to the nature of your request and within thirty days at the latest free of charge. However, if your request incurs additional cost to our company, then you may be charged over the tariff fee determined by the Turkish Personal Data Protection Board.
+Vietnam
+If you are using our Services in Vietnam, the following additional terms apply:
+Age, Parental and Guardian Consent. To use our Services, you must be at least 16 years old or not under guardianship. If you are younger than 16 or under guardianship, you need your parent(s) or legal guardian(s) permission; and your parent(s) or legal guardian(s) are responsible for:
+(i) your activities while using our Services;
+(ii) your compliance with this Policy; and
+(iii) ensuring your use of the Services doesn't violate any child protection laws.
+If you do not have consent from your parent(s) or legal guardian(s) and your parent(s) or legal guardian(s) is not willing to create the account under their name, you must cease using the Services.
+Philippines
+This section details your data privacy rights under Philippine law, as recognized by the National Privacy Commission (NPC).
+Your Rights. You have the right to access, correct, delete, or object to the processing of your personal data. You also have the right to data portability and to file complaints with the NPC. Identity verification may be required before fulfilling your data requests.
+Mexico
+If you use our services in Mexico, the following additional terms apply.
+We process your data for necessary purposes as described in the main Policy, and for secondary purposes. We use both human and automated means to process your data.
+We may share your personal data with a third party for purposes other than processing on our behalf. We will obtain your consent to such disclosure as required by applicable laws.
+By providing us with your personal data and using our Platform, you agree to transfers that require your consent. You can always revoke your consent and exercise your rights as outlined below.
+Your Right. You have the rights of access, rectification, cancellation, opposition, revocation of consent, limitation of use and disclosure of your data. You may exercise your rights by sending your request to support@kling.ai.
+To learn about the applicable requirements and the procedure for exercising your rights, please contact us at the above email address. If you are under 18 years of age, you may exercise your rights through a parent or guardian. Requests for your rights will be resolved as soon as possible according to the nature of your request.
+Singapore
+Data Protection Officer. If you wish to access your Data, correct any Data in our possession, withdraw your consent for the collection, use, or disclosure of your Data, or if you have any queries or feedback on this Policy, please contact our Data Protection Officer in the following manner:
+International transfer of Data. If you live in Singapore or if we collect or store your Data in Singapore, before transferring any of your Data outside of Singapore, we will take appropriate steps to ensure that the recipient is bound by legally enforceable obligations to provide to the transferred personal data a standard of protection that is at least comparable to that under the Personal Data Protection Act 2012 of Singapore.
+Access and correction. If you wish to make (a) an access request for access to a copy your Data or information about the ways in which we use or disclose your Data, or (b) a correction request to correct or update any of your Data which we hold about you, you may submit your request to our Data Protection Officer at the contact details above. We will respond to your request as soon as reasonably possible. Should we not be able to respond to your request within thirty (30) days after receiving your request, we will inform you in writing within thirty (30) days of the time by which we will be able to respond to your request. If we are unable to provide you with any Data or to make a correction requested by you, we shall generally inform you of the reasons why we are unable to do so (except where we are not required to do so under applicable laws).
+South Korea
+If you are using our Services (the “Services”) in South Korea, the following additional terms apply. In the event of any conflict between the provisions below and the general provisions above, the provisions below shall prevail.
+1. Personal Information We Collect and Process
+Access to the Services is restricted to individuals aged 14 and older in South Korea.
+2. Retention and Processing Periods for Each Category of Personal Information
+1) The Company retains your personal information until the termination of your account subscription and service agreement, and for any additional period required under applicable Korean laws and regulations, including but not limited to Paragraph 2 below.
+2) In the following cases, the information shall be retained until the expiration of the statutory retention periods:
+(i) Records related to contracts or withdrawal of offers: 5 years
+(ii) Records related to payment and supply of goods: 5 years
+(iii) Records related to consumer complaints or dispute resolution: 3 years
+(iv) Records related to advertisements and labeling: 6 months
+(v) Computer communications and internet log data, and access location tracking data: 3 months
+(vi) Books and evidentiary documents related to all transactions prescribed under the tax laws: 5 years
+3. Procedures and Methods for the Destruction of Personal Information.
+We shall promptly destroy personal information without delay when the retention period has expired or when the purpose of processing has been achieved, and the personal information is no longer necessary.
+If you withdraw your membership or request the deletion of your personal information, the Company will, upon verification, promptly destroy the relevant personal information in a manner that makes it irrecoverable. However, this shall not apply to cases where retention is required for a certain period under applicable Korean laws and regulations.
+4. Matters regarding Overseas Collection and Overseas Transfer of personal information
+The Company collect and process personal information in [Singapore, Malaysia] for the purpose of providing the services.
+If the Company transfers personal information overseas, such overseas transfer will be made only on the grounds permitted under the Personal Information Protection Act of Korea and relevant subordinate legislation, including but not limited to Articles 28-8(1)(1) and 28-8(1)(3) the Personal Information Protection Act of Korea. Please note that if you refuse the overseas transfer, you will not be able to use the service.
+If you do not want your personal information to be transferred overseas, you may request membership withdrawal by [using the contact information provided in "Contact Information" of this Policy or by [My Space] - [Click on the head portrait] - [Account Deletion] in Kling AI APP.]

@@ -1,0 +1,130 @@
+URL: https://docs.cloud.olakrutrim.com/basics/ai-studio
+FINAL: https://docs.cloud.olakrutrim.com/basics/ai-studio
+STATUS: 200
+TITLE: AI Studio | Krutrim Cloud Documentation
+FETCHED: 2026-11-15T15:58:07.975Z
+
+AI Studio | Krutrim Cloud Documentation
+Skip to content
+⌘ Ctrl k
+Welcome
+Getting Started
+Quickstart
+Managing your Krutrim Cloud Account
+Basics
+Core Infrastructure
+Krutrim Pages
+AI Studio Model Catalogue
+AI Jobs
+Billing for AI Studio
+Certificate Manager
+Key Management System
+Cloud Billing
+Identity Access Management
+Pricing
+MCP
+Overview
+Hosted MCP
+Local MCP (stdio)
+Connect Claude Code & Desktop
+Connect Codex
+Connect Cursor
+Connect VS Code
+Connect Hermes
+Connect OpenCode
+Troubleshooting
+Developer Tools
+KrutrimConnect
+SDK Guide
+Core Infra SDK
+AI Studio SDK
+Load Balancer SDK
+Krutrim Kubernetes System SDK
+Key Certificate Manager SDK
+Auto Scaling Group SDK
+Terraform Provider Krutrim
+Powered by GitBook
+On this page
+For the complete documentation index, see llms.txt . This page is also available as Markdown .
+Copy
+On this page
+Basics
+AI Studio
+What is AI Studio?
+AI Studio is an end-to-end platform that empowers developers, researchers, and enterprises to explore, fine-tune, evaluate, and deploy large AI models—without the hassle of managing infrastructure or engineering complexity.
+Whether you&#x27;re experimenting with foundational models, adapting them to your domain, or scaling them for production—AI Studio provides everything in one place.
+Why AI Studio?
+Today’s AI demands go beyond access to pre-trained models. Organizations need infrastructure flexibility, customization workflows, and robust evaluation capabilities. AI Studio addresses this with:
+Curated Model Catalog : Access top-performing models in text, vision, speech, and multimodal domains.
+No-Code Fine-Tuning : Customize models with your data using efficient techniques like LoRA.
+Integrated Evaluation : Benchmark functional and performance metrics before deployment.
+Scalable Deployment : Launch models on-demand or via dedicated endpoints with GPU-backed infrastructure.
+Core Capabilities
+Model Catalog
+Browse a curated selection of foundational and fine-tuned models.
+Each model card includes:
+Overview and intended use cases
+Licensing and attribution
+GitHub repository links (if available)
+API model string and sample usage
+Interactive playground for real-time experimentation
+Inferencing
+Run inference directly on models using APIs or the playground.
+Control parameters such as:
+temperature , top_p , max_tokens , logit_bias , etc.
+Transparent, token-based pay-as-you-go pricing.
+Fine-Tuning
+Fine-tune models such as Llama-3 and Mistral using LoRA adapters.
+Upload datasets in instruction , input , output JSON format.
+Monitor checkpoint progress and deploy fine-tuned versions directly.
+Supports customization for specific domains such as healthcare, legal, or customer support.
+Evaluation
+Model Evaluation :
+Evaluate task performance using datasets such as MMLU, BoolQ, HellaSwag, GSM8k, and TruthfulQA.
+Multi-language support, including Indic languages.
+Metrics include accuracy, relevance, and ethicality.
+Performance Evaluation :
+Measure latency (TTFT, inter-token, end-to-end), throughput, and token counts.
+Configure test load parameters such as concurrency, input/output token length, etc.
+Compare evaluation runs across models and versions.
+Deployment
+On-Demand Deployment :
+Quick, pay-per-use deployment for experimentation or low-volume tasks.
+Dedicated Deployment :
+Persistent endpoints using dedicated GPUs like NVIDIA H100.
+Recommended for high-availability production use cases.
+Deployment cost is based on GPU time usage.
+Management Features :
+Monitor deployment status
+Bring down unused deployments to avoid unnecessary costs
+Who is AI Studio For?
+Developers & Engineers : Build and integrate AI-powered features quickly using APIs and SDKs.
+Researchers & Data Scientists : Experiment with model architectures and datasets without infrastructure setup.
+Product & Business Teams : Evaluate and compare models to inform decisions about product integration.
+How It Works
+Explore the Model Catalog and try out models in the playground or via API.
+Fine-Tune a model using your own dataset if needed.
+Evaluate both task and performance metrics using built-in tools.
+Deploy the best model variant with on-demand or persistent infrastructure.
+Monitor usage, costs, and metrics to ensure ongoing optimization.
+Key Advantages
+End-to-end AI model lifecycle support in a single platform
+Access to top open-source and proprietary models
+Efficient and scalable fine-tuning using LoRA
+Built-in evaluation with task and operational metrics
+Flexible deployment and billing options
+Developer-friendly experience with interactive playgrounds and starter code
+Next Steps
+Get Started with Quickstart
+Browse the Model Catalog
+Fine-Tune Your First Model
+Evaluate Your Model
+Deploy to Production
+Last updated 1 year ago
+What is AI Studio?
+Why AI Studio?
+Core Capabilities
+Who is AI Studio For?
+How It Works
+Key Advantages
+Next Steps

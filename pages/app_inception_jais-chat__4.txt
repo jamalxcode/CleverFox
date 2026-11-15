@@ -1,0 +1,135 @@
+URL: https://www.g42.ai/resources/news/core42-launches-jais-chat
+FINAL: https://www.g42.ai/resources/news/core42-launches-jais-chat
+STATUS: 200
+TITLE: Core42 launches JAIS Chat: Delivering advanced Generative AI capabilities to over 400 million Arabic-speaking users worldwide
+FETCHED: 2026-11-15T15:57:56.343Z
+
+Core42 launches JAIS Chat: Delivering advanced Generative AI capabilities to over 400 million Arabic-speaking users worldwide
+-->
+About G42
+What We Do
+Our Companies
+Collaborations
+Impact
+Resources
+Contact
+Careers
+Make Enquiry
+G42 Logo
+=
+G42 Logo
+عربي
+-->
+Search
+Make Enquiry
+Full Name *
+Organization
+Role
+Email Address *
+Subject *
+Message
+I have read and accept the G42
+Terms and Conditions and the Privacy Notice
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+Home
+Resources
+News
+Core42 launches JAIS Chat
+Core42 launches JAIS Chat
+13 May 2024
+Share
+Developed in the UAE, the advanced Arabic large language model (LLM) marks a significant step forward for the regional AI landscape in the Middle East
+Core42, a G42 company and provider of sovereign cloud, cybersecurity, AI infrastructure and services, has launched JAIS Chat as a mobile application available for download on iOS. This user-friendly chatbot developed to meet the growing demand and popularity of Generative AI capabilities regionally.
+As a bilingual English and Arabic chatbot, JAIS Chat understands multiple Arabic dialects and cultural nuances. It facilitates translation and cross-language communication at scale, powered by AI, and is specifically designed to empower Arabic speakers worldwide. JAIS Chat for mobile, adds convenience, accessibility and efficiency to users' daily lives, offering AI-enabled assistance on the go.
+JAIS Chat is based on JAIS 30B, the world&rsquo;s most performant Arabic Large Language Model (LLM), which has been trained on an extensive dataset on a total of 1.63 trillion tokens, with 475 billion Arabic tokens, and the remaining being English and Code. As a result, JAIS Chat delivers unparalleled results in Arabic language processing and accuracy while delivering uncompromising English language processing, rivaling top-performing English language models of a similar size.
+Andrew Jackson, EVP, Chief AI Officer at Core42, stated: &ldquo;Since the inception of JAIS in August 2023, the response has been overwhelmingly positive, and with the recent launch of JAIS 30B, we've witnessed a significant enhancement in its performance metrics compared to its predecessor, JAIS 13B. With its Arabic-first approach, JAIS reshapes how bilingual individuals interact with technology, and with JAIS Chat for mobile, we are delivering the next advancement in our mission to democratize AI access for the world&rdquo;.
+JAIS Chat promises to unlock new possibilities for the region, from enhancing government communications, to improving customer service automation and enabling entire workforces across various sectors.
+Key Features:
+Bilingual Capability: Proficient in both Arabic and English.
+Cultural and Linguistic Sensitivity: Engineered with an Arabic-centric model for efficient processing of Arabic text.
+Unique Features of JAIS Chat:
+Generative AI Power: Capable of summarization, content generation, and information retrieval with an Arabic-first approach.
+Upcoming functionalities for JAIS Chat include document processing, customizable user settings, voice conversation capabilities, and an enterprise support and subscription model for businesses seeking bespoke advanced functionalities.
+-Ends-
+About Core42:
+Core42, a G42 company, empowers individuals, enterprises, and nations to unlock the full potential of AI through its comprehensive enablement capabilities. As a leading provider of sovereign cloud, cybersecurity, AI infrastructure, and services, our mission is to accelerate the achievements of others and help them reach their most ambitious goals.
+To learn more, please visit www.core42.ai and follow Core42 LinkedIn, Core42 Instagram, Core42 X
+For more information on JAIS Chat, visit www.core42.ai/Jais.html
+Download the app on Apple App Store
+Related News
+23 Apr 2022
+Khazna Data Centers breaks ground on Masdar data center
+21 Nov 2021
+G42 signs Indonesian deals
+20 Oct 2021
+G42, Etisalat to establish UAE’s largest data center provider
+02 Nov 2020
+G42 Acquires Injazat & Khazna
+20 Nov 2019
+G42’s Artemis Supercomputer ranks #26 in the world
+21 Jun 2022
+Khazna Data Centers marks 10th anniversary
+07 Sep 2022
+Khazna, BEEAH Group JV to bring Sharjah its first Tier 3 Data Centre
+12 Oct 2022
+Khazna Data Centers Begin Construction on Two New Dubai Data Centers
+15 Feb 2023
+Mercedes-AMG PETRONAS F1 Team announces G42 as an Official Partner
+Mercedes-AMG PETRONAS F1 Team announces G42 as an Official Partner
+10 Aug 2023
+AIQ expands globally: MOU with PETRONAS
+30 Aug 2023
+Meet Jais, The World’s Most Advanced Arabic LLM Open Sourced by G42’s Inception
+09 Nov 2023
+Core42 Sets New Benchmark for Arabic Large Language Models with the Release of Jais 30B
+22 Nov 2023
+Jais Climate: Core42 and MBZUAI launch first bilingual LLM dedicated to climate intelligence
+06 Feb 2024
+Khazna Data Centers Launches Hyperscale AI-ready Data Center
+07 Mar 2024
+Core42 supported by Microsoft unlocks new business excellence opportunities with First Abu Dhabi Bank
+First Abu Dhabi Bank unlocks new business excellence opportunities with Core42, supported by Microsoft
+15 Oct 2024
+Khazna Announces the UAE’s First AI-Optimized Data Center and the Largest in its Portfolio
+10 Feb 2025
+G42 & AMD to Enable AI Innovation in France Through Strategic Investments
+30 Apr 2025
+G42’s Khazna Data Centers Expands into Türkiye to Support Country’s AI Ambitions
+15 May 2025
+G42 to lead a consortium with US partners to build 5GW UAE-US AI Campus
+22 May 2025
+Global Tech Alliance Launches Stargate UAE
+11 Jun 2025
+Khazna Data Centers and NVIDIA Collaborate to Accelerate AI Infrastructure Development Across the MEA Region
+26 Jun 2025
+G42 Named to TIME’s List of the TIME100 Most Influential Companies 2025
+08 Jul 2025
+Khazna Data Centers Standardizes on International Data Center Authority (IDCA) for Global Excellence
+11 Jul 2025
+Khazna Data Centers and Eni Partner to Develop 500 MW AI Data Center Campus Near Milan
+09 Sep 2025
+MBZUAI and G42 Launch K2 Think: A Leading Open-Source System for Advanced AI Reasoning
+20 Feb 2026
+UAE to Deploy 8 Exaflop Supercomputer in India to Strengthen Local Sovereign AI Infrastructure
+20 Feb 2026
+G42 Joins Forces with Credo AI To Advance Responsible AI Adoption Across Global South
+07 May 2026
+UAE CYBER SECURITY COUNCIL AND CPX LAUNCH UAE CYBER FACTORY TO ADVANCE NATIONAL CYBER SOVEREIGNTY
+02 Nov 2026
+ADNOC Signs Landmark Partnership Agreement with OpenAI and G42, Becoming First Energy Company to Deploy OpenAI Frontier Technology
+G42 Logo
+About G42
+News
+What We Do
+Case Studies
+Cookie Policy
+Become a G42 Supplier
+G42 Voice
+Business Continuity Policy
+Careers
+Contact Us
+Social Media :
+2026 G42. All rights reserved
+Terms & Conditions
+Privacy Policy
+For better web experience, please use the website in portrait mode

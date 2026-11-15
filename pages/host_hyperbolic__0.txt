@@ -1,0 +1,128 @@
+URL: https://www.hyperbolic.ai/inference
+FINAL: https://www.hyperbolic.ai/inference
+STATUS: 200
+TITLE: Serverless AI Inference API | Leading Models | Hyperbolic
+FETCHED: 2026-11-15T15:58:05.771Z
+
+Serverless AI Inference API | Leading Models | Hyperbolic
+GPUs GPU instances Managed Kubernetes
+Inference Resources About Hyperbolic Careers Blog
+Partner With Us Docs
+Log In
+Schedule a Call Schedule a Call
+Get Started Get Started
+Products
+GPUs H100, H200, B200 on demand or reserved Managed Kubernetes GPU clusters with a hosted control plane Inference Leading models through one API
+Resources
+About Careers Blog Partner With Us Docs
+Get Started Get Started
+Log In Log In
+Schedule a Call →
+State-of-the-art AI Models
+Start in minutes with pay-as-you-go serverless inference.
+Run Inference Run Inference
+Talk to Us Talk to Us
+Why Run Inference on Hyperbolic?
+01 Serverless API powered by Flux
+Flux is Hyperbolic’s inference platform, built on Forge, our unified compute and orchestration layer. Manage model access and token-based usage alongside GPU compute through one Hyperbolic account.
+02 Scalable inference capacity
+Access inference without reserving or managing GPUs. Requests are subject to model availability, capacity, and rate limits.
+03 Affordable pricing
+Pay only for the tokens you use, with clear model-specific rates and no hidden fees or long-term commitments.
+04 Leading models
+Run leading AI models through one OpenAI-compatible API, without provisioning GPUs or managing serving infrastructure. Build prototypes, internal tools, and production applications with models including DeepSeek V4.1 Flash, GLM 5.3 Flash, Step 5 Preview, and MiMo-V2.6-Flash.
+All models All models
+Pricing Pricing
+Our transparent, usage-based pricing model keeps things predictable. Rates are displayed upfront, billing is straightforward, and you can choose the setup that matches how you run inference today.
+All models
+Every model available through our inference API, billed per token.
+11 models
+Model Input Output Cached input ?
+MiMo-V2.6-Flash
+mimo-v2.6-flash
+Xiaomi · 1M context · Text
+$0.14 $0.28 $0.0028
+GLM 5.3
+glm-5.3
+Z.ai · 1M context · Text
+$1.40 $4.40 $0.26
+Kimi K3
+kimi-k3
+Moonshot AI · 1M context · Text
+$3.00 $15.00 $0.30
+GLM 5.3 Flash
+glm-5.3-flash
+Z.ai · 1M context · Text
+$0.15 $0.50 $0.03
+Nemotron 3 Ultra
+nemotron-3-ultra-550b-a55b
+NVIDIA · 262K context · Text
+$0.50 $2.20 $0.10
+DeepSeek V4 Flash 0731
+deepseek-v4-flash-0731
+DeepSeek · 1M context · Text
+$0.06 $0.18 $0.015
+MiniMax M3
+minimax-m3
+MiniMax · 1M context · Text
+$0.30 $1.20 $0.06
+Hy4 Preview
+hy4-preview
+Tencent · 1M context · Text
+$0.834 $2.501 $0.042
+DeepSeek V4.1 Flash
+deepseek-v4.1-flash
+DeepSeek · 1M context · Text
+$0.30 $1.20 $0.006
+Step 5 Preview
+step-5-preview
+StepFun · 1M context · Text
+$1.00 $2.70 $0.10
+Qwen3.8 27B
+qwen3.8-27b
+Alibaba · 196K context · Text
+$0.20 $2.00 $0.02
+Start Building Start Building
+Prices in USD per 1M tokens. Input is what you send; output is what the model writes back. Output pricing includes reasoning tokens. Cached-input rates apply where supported.
+Flux Inference Open-model inference, powered by Forge
+Run leading AI models through one OpenAI-compatible API, without provisioning GPUs or managing serving infrastructure. Flux brings model access, streaming responses, and token-based billing into your Hyperbolic account. Built on Forge, it connects inference with the orchestration platform behind our GPU services.
+Get Started Get Started
+Access leading models, including GLM-5.3-Flash and DeepSeek V4.1 Flash
+Use the OpenAI SDK with your Hyperbolic API key and endpoint
+Stream responses for AI applications, agents, and evaluation workflows
+Pay by token usage at model-specific rates with prepaid credits
+Manage inference and GPU compute through one Hyperbolic account
+Use Cases Made for Making
+Dedicated Hosting
+Accelerating Developer Access to Open-Source AI
+“
+Finding a host for the particular model we&#x27;ve been looking to use wasn&#x27;t easy — Hyperbolic was the only platform that had it ready to go. Not only has the performance been outstanding, but their pricing absolutely crushes the major competitors. On top of that, the Hyperbolic founders provide the best customer support we’ve experienced, always going above and beyond to solve our needs. Partnering with them has been a huge win for us.
+Taesung Park
+Co-Founder of Reve AI
+FAQs Inference FAQs
+What is Hyperbolic Flux? Flux is Hyperbolic’s inference service for running open AI models through one OpenAI-compatible API. Build applications, stream responses, and manage token-based usage without provisioning GPUs or operating model-serving infrastructure.
+Which AI models can I access? The Flux model catalog includes GLM-5.3-Flash, DeepSeek V4.1 Flash, Kimi K3, MiniMax M3, MiMo-V2.6-Flash, and other models. Check the current catalog for available models, pricing, and supported parameters.
+Is Hyperbolic’s inference API compatible with the OpenAI SDK? Yes. Flux supports OpenAI-compatible Chat Completions and streaming responses. Configure the OpenAI SDK with your Hyperbolic API key, set the base URL to https://api.hyperbolic.ai/inference/v1, and choose a supported model ID. Model-specific parameters and reasoning behavior may differ.
+How does inference pricing work? Flux uses token-based pricing, with rates set for each model. Input, cached-input, and output tokens may have different rates where supported. Reasoning tokens are billed as output tokens. Usage is deducted from your prepaid Hyperbolic balance.
+How do I get started with Hyperbolic inference? Use a Pro account or an Organization with prepaid credits, create an API key in the Hyperbolic console, and connect through the OpenAI SDK or REST API. Organization API keys use the organization’s balance. Requests are declined when the balance runs out.
+Does Flux support streaming responses? Yes. Flux streams Chat Completions through server-sent events, allowing applications to display responses incrementally. Reasoning models may generate reasoning before final-answer text appears, and reasoning response formats vary by model.
+Do I need to manage GPUs to use Flux? No. Hyperbolic manages the model-serving infrastructure behind the API. You select a supported model and send requests, without configuring GPU instances, installing serving software, or maintaining model deployments.
+What is the difference between an inference API and dedicated GPU compute? An inference API provides access to supported models with token-based billing. Dedicated GPU compute gives you control over the deployment environment, model weights, and serving configuration. The right choice depends on your customization needs, traffic, and GPU utilization.
+How does Flux use Forge? Flux is built on Forge, Hyperbolic’s infrastructure orchestration platform. Forge integrates compute across providers and clusters, supports virtualization, and dynamically allocates GPU capacity across workloads.
+Can I use my existing Hyperbolic API key? Flux requires an API key that starts with sk_live_. If your key uses the older format, create a new one in the Hyperbolic console. Applications using the earlier inference API also need the new base URL and a supported model ID.
+socials X
+LinkedIn
+YouTube
+GitHub
+Contact
+pages GPUs
+Managed Kubernetes
+Serverless Inference
+Partner With Us
+resources Docs
+About Us
+Careers
+Media Kit
+newsletter Email Address
+Privacy Policy Privacy FAQ Terms of Use Trust Center Cookie Settings
+© Hyperbolic 2026

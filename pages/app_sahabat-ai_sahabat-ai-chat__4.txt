@@ -1,0 +1,129 @@
+URL: https://intelligencesuite-ai.ioh.co.id/en/products/
+FINAL: https://intelligencesuite-ai.ioh.co.id/en/products/
+STATUS: 200
+TITLE: Products – Intelligence Suite
+FETCHED: 2026-11-15T15:57:54.383Z
+
+Products – Intelligence Suite : paints with the HTML, no flash on navigation. Wordmark uses currentColor:
+white in dark mode, IOH gray in light mode. --> Platform Overview
+Products
+Model & Marketplace Solutions Pricing Company Docs before paint (Layout.astro). --> EN English
+Indonesia
+中文
+Token Marketplace Book a demo
+Platform Overview Products
+Model & Marketplace Solutions Pricing Company Docs Token Marketplace Book a demo
+Products
+Five Products. One governed platform.
+From compute to agents, everything runs through the same connection, the same policy engine and the same bill.
+01 AI Compute
+02 AI Token Marketplace
+03 AI Factory Platform
+04 AI Industry Solutions
+05 Sahabat-AI
+01
+AI Compute
+Maximum tokens per second from every GPU.
+Reserved GPU clusters, on-demand GPU, AI storage and networking, run on Indosat's data centres, power and national network.
+Reserve Capacity →
+Reserved GPU clusters
+Dedicated capacity for long-running training and inference.
+On-demand GPU
+Burst capacity when workloads spike.
+AI storage & networking
+High-speed interconnect and storage built for AI.
+Powered by ZanKore
+AI-factory infrastructure on NVIDIA
+02
+AI Token Marketplace
+Every model through one governed API.
+One marketplace to browse, compare and access every model. Auth, rate limits, token metering, usage dashboards and spend controls are built in.
+Get endpoint access Browse the catalogue →
+Time to first token at P95
+< 3s
+Availability
+99.9%
+Throughput
+Guaranteed
+Models, launch to roadmap
+100+ → 300+
+Compare and choose
+See models side by side and pick the right one for each task.
+Compare on price
+Weigh cost per task across comparable models before you commit.
+Switch without rebuilding
+Change models through the same API, with no re-integration.
+Multimodal by default
+Serverless inference
+OpenAI-compatible
+03
+AI Factory Platform
+Live Nov 2026
+Build, adapt and serve AI as a managed service.
+Bring models and agents, ground them in your data, and deploy privately, without owning the serving stack. Your data is your differentiation; the Suite lets you use it without exposing it.
+Join the early-access list →
+MaaS
+Model-as-a-Service
+Bring any model and serve it privately.
+AaaS
+Agent-as-a-Service
+Governed agents with tools, memory and workflows, ready to run.
+RAG
+Retrieval
+Ground models in your own documents, so answers cite real, current sources.
+Guard
+Guardrails
+Prompt controls, output validation and PII redaction on every request.
+Tune
+Fine-tuning
+Adapt models to your data, under the same governance and residency.
+04
+AI Industry Solutions
+Ready-to-use AI, built for your industry.
+Start from a proven use case and work with us to tailor it to your needs.
+Contact Us →
+Learning as a Service
+AI-powered learning and knowledge tools, tailored to your organisation.
+Fraud Detection System
+Real-time fraud and anomaly detection for financial and transactional workloads.
+AI Customer Care
+Automated customer support that resolves and escalates intelligently.
+05
+Sahabat-AI
+AI that speaks Indonesia’s languages.
+Sahabat-AI is an open-source large language model family built for Bahasa Indonesia and local languages. It runs on Indosat infrastructure in Indonesia and is available through the AI Token Marketplace.
+Try Sahabat AI →
+Open-source and free
+Model weights are free to download and use, so you can inspect, fine-tune or self-host.
+Built for Bahasa Indonesia
+Trained for Bahasa Indonesia and local languages: Javanese, Sundanese, Balinese and Batak.
+Models for every size
+From 8B and 9B models to a 70B flagship, built on Llama and Gemma.
+Hosted in Indonesia
+Runs on local infrastructure, so data and processing stay in-country.
+Find the right entry point for your workload.
+Book a demo See pricing →
+: paints with the HTML, no flash on navigation. Wordmark uses currentColor:
+white in dark mode, IOH gray in light mode. --> {f.about}
+--> PT Indosat Tbk
+Jl Medan Merdeka Barat No. 21, Jakarta Pusat, Jakarta 10110, Indonesia.
+Tel: (021) 3000 3001 ext. 8803/8804
+support@intelligencesuite-ai.ioh.co.id YouTube
+Facebook
+Instagram
+X
+LinkedIn
+Main Menu
+Platform
+Products
+Solutions
+Models & Marketplace
+Pricing
+Resources
+Docs
+Privacy Notice
+Contact Us
+About
+Contact
+Email
+© Indosat Ooredoo Hutchison 2026

@@ -1,0 +1,45 @@
+URL: https://qwen.ai/download
+FINAL: https://qwen.ai/download
+STATUS: 200
+TITLE: Qwen
+FETCHED: 2026-11-15T15:57:41.278Z
+
+Qwen
+More
+EN
+Try Qwen
+Download Qwen
+For Mobile
+Chat on the go, have voice conversations, and ask about photos.
+App Store
+Google Play
+For Desktop
+Chat about email, screenshots, files, and anything on your screen.
+macOS
+Windows
+Try Qwen
+Web
+iOS
+Android
+macOS
+Windows
+Qwen
+Qwen Overview
+Download
+API Platform
+Our Flagship Models
+Platform Overview
+API Platform
+Qwen Cloud
+Research
+Latest Advancements
+Research Index
+GitHub
+Terms & Policies
+Terms of Service
+Privacy Policy
+Usage Policy
+Cookies Notice
+Training Data Summary
+Qwen © 2026
+Powered by Alibaba Cloud

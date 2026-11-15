@@ -1,0 +1,168 @@
+URL: https://www.cerebras.ai/company
+FINAL: https://www.cerebras.ai/company
+STATUS: 200
+TITLE: About Cerebras | AI Inference and Wafer-Scale Computing
+FETCHED: 2026-11-15T15:58:05.412Z
+
+About Cerebras | AI Inference and Wafer-Scale Computing
+Skip to main content
+Products
+Customers
+Partners
+Developers
+Resources
+Pricing
+Company
+Contact us Get Started
+Cerebras Systems Delivers Record Revenue in Third Quarter 2026 >>
+At the Forefront
+of AI Innovation
+Since our founding in 2015, Cerebras has consistently innovated at the edge of what’s possible in AI computing.
+We build impossible technologies so you can too.
+Today, Cerebras stands alone as the world’s fastest AI inference and training platform. Organizations across fields like medical research, cryptography, energy, and agentic AI use Cerebras systems to build on-premise supercomputers, while developers and enterprises everywhere can access the power of Cerebras through our pay-as-you-go cloud offerings.
+We have come a long way in our first decade. But our journey is just beginning.
+2015
+Cerebras is Founded
+Andrew Feldman, Gary Lauterbach, Michael James, Sean Lie and Jean-Philippe Fricker launch Cerebras with the aim of bringing wafer-scale computing to market. At the time, it was unclear if such a feat was technically possible.
+2019
+Launch of WSE-1 and CS-1
+Cerebras introduces the WSE-1 and the CS-1 system, making our technology available in data centers worldwide.
+2021
+WSE-2 and CS-2 Debut
+Teams at the National Energy Technology Laboratory (NETL) found that its CS-2 system was nearly 500X faster than NETL&#x27;s Joule Supercomputer in field equation modeling.
+2022
+Gordon Bell Special Prize
+Researchers at Argonne National Laboratory are awarded the Gordon Bell Special Prize for groundbreaking research into COVID-19 variants, powered by the Cerebras CS-2 cluster. This same year, the WSE-2 is honored by the Museum of Computing as an “epochal” achievement in chip-making.
+2023
+Condor Galaxy Network Unveiled
+In partnership with G42, we introduce the Condor Galaxy network of supercomputers, powered by Cerebras systems. The Condor Galaxy 1 (CG-1) supercomputer features 4 exaFLOPs of FP16 performance and 54 million cores.
+2024
+WSE-3 and CS-3
+With the introduction of the WSE-3 chip and CS-3 system, Cerebras shatters all benchmarks for AI inference and training, ushering in a new era of instantaneous AI applications and interactions.
+2025
+Speed Meets Scale
+Accelerating adoption through record-breaking model performance—now powering Meta’s Llama API, Perplexity, Mistral, and leading integrations like Hugging Face and OpenRouter—Cerebras announced rapid datacenter expansion across North America and Europe that will make it world’s #1 provider of high-speed inference.
+2026
+Cerebras Goes Public and CS-4 Debuts
+In May, Cerebras begins trading on Nasdaq under the ticker CBRS. In August, Cerebras launches CS-4, powered by three WSE-3 Turbo processors and delivering up to 30× faster inference than GPU systems.
+Our Team
+Cerebras is led by a pioneering team of technologists and entrepreneurs committed to driving the future of AI and computing.
+Andrew Feldman
+Chief Executive Officer and Co-Founder
+Jean-Philippe Fricker
+Chief System Architect and Co-Founder
+Michael James
+Chief Architect, Advanced Technologies and Co-Founder
+Gary Lauterbach
+Chief Technology Officer, Emeritus and Co-founder
+Sean Lie
+CTO and Co-Founder
+Alan Chhabra
+EVP of Worldwide Partners
+Julie Shin Choi
+Chief Marketing Officer
+Andy Hock, PhD
+Chief Strategy Officer
+Qi Jin
+EVP of Software
+Bob Komin
+SVP and Chief Financial Officer
+Shirley Li
+General Counsel
+Jessica Liu
+SVP Product Management
+Hagay Lupesko
+SVP, AI Cloud
+Dhiraj Mallick
+Chief Operating Officer
+Naor Penso
+Chief Security Officer
+Lakshmi Ramachandran
+VP and India Country Lead
+Nish Sinnadurai
+SVP of Core Software and GM for Canada
+Vinay Srinivas, PhD
+SVP, Software Engineering
+Alex Varel
+EVP, Worldwide Sales
+Natalia Vassilieva, PhD
+VP and Field CTO, ML
+Angela Yeung
+SVP Product Management
+Awards
+HPCwire Readers’ & Editors’ Choice 2025 – Best AI Product or Technology​
+Award
+Fast Company Most Innovative Companies 2026 - AI
+Award
+Forbes America’s Best Startup Employers 2026
+Award
+Past
+Awards
+2025
+HPCwire Readers’ & Editors’ Choice 2025 – Best AI Product or Technology
+HPCwire Readers’ & Editors’ Choice 2025 – Top 5 Vendors to Watch
+TSMC Demo of the Year 2025
+AI TechAwards 2025 – Best Machine Learning Innovation
+Fast Company Most Innovative Companies 2025 – Artificial Intelligence
+2024
+2023
+2022
+2021
+2020
+2019
+Investors
+Sam Altman
+CEO & Founder OpenAI and Former President of Combinator
+Andy Bechtolsheim
+Founder Sun Microsystems, Granite, Arista and DSSD
+Greg Brockman
+Former CTO of Stripe
+Adam D’Angelo
+Former CTO Facebook and CEO Quora
+Mark Leslie
+Former CEO Veritas; Professor Stanford GSB
+Nick McKeown
+Founder, Nicira and Barefoot; Professor Stanford University
+David "Dadi" Perlmutter
+Former EVP, Chief Product Officer, GM Intel Architecture Group
+Saiyed Atiq Raza
+Chairman and former CEO Virsec Systems, Former COO AMD
+Jeff Rothschild
+Former VP Engineering Facebook
+Pradeep Sindhu
+Founder and Former CEO Juniper Networks
+Ilya Sutskever
+Founder and Chief Scientist OpenAI
+Lip-Bu Tan
+CEO of Intel
+Fred Weber
+Former CTO and Corporate VP AMD
+Follow
+Get Updates
+Newsletter Signup
+Company
+About Us
+Careers
+Contact Us
+Investor Relations
+Website Terms of Use
+Privacy Policy
+Cookie Policy
+Other Terms & Policies
+Service Status
+Trust Center
+News
+Newsroom
+In the News
+Press kit
+Insights
+Customer Spotlight
+Blog
+Publications
+Whitepapers
+Performance comparisons are based on third-party benchmarking or internal testing. Observed inference speed improvements versus GPU-based systems may vary depending on workload, configuration, date and models being tested.
+info@cerebras.ai Your Privacy Choices
+1237 E. Arques Ave
+Sunnyvale, CA 94085
+© 2026 Cerebras.
+All rights reserved.

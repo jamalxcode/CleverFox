@@ -1,0 +1,435 @@
+URL: https://voice.botnoi.ai/
+FINAL: https://voice.botnoi.ai/
+STATUS: 200
+TITLE: Botnoi Voice | Free AI Text to Speech in Thai and 20+ Languages
+FETCHED: 2026-11-15T15:57:29.273Z
+
+STUDIO
+NEW
+VOICE OVER
+COMMUNITY
+API
+PRICE
+LOG IN
+LET'S TRY FREE
+AI VOICE, VIDEO
+AND VOICEBOTS
+Tap the bot to hear it speak
+Trusted by more than 3 million users
+0M+
+registered users
+0+
+AI voices
+0+
+languages
+0+
+educators
+First Thai app on Canva
+First Thai business on AWS Marketplace
+Verified node on n8n
+TRUSTED BY INDIVIDUALS AND COMPANIES IN ALL INDUSTRIES
+Become our partner
+BOTNOI VOICE STUDIO
+Write it, voice it, publish it
+The voice tools creators and teachers use every day: Voice Studio for scripts, MarAds for ads, Gen Skript for lessons and Gen Sub for subtitles.
+Start free
+VOICE STUDIO
+Write line by line, one voice per line
+Every line has its own voice, language, speed and volume. Import .docx or .csv, fix pronunciation, and generate the whole script at once.
+Ngam
+Good morning, class. Today we start chapter three.
+Leo
+New arrival! Drip coffee, only 159 baht this week.
+Nadia
+Welcome to our quarterly update.
+Open Voice Studio
+MARADS
+A sales script and voice-over in seconds
+Product name, brand and price in. A 15, 30 or 60 second ad script with its voice-over out.
+Open MarAds
+GEN SKRIPT
+Slides in, narration out
+Upload slides, a PDF or images and get a script for each page, ready to voice.
+Open Gen Skript
+GEN SUB
+Audio to text and subtitles
+Upload a file, record, or transcribe live.
+Open Gen Sub
+CANVA
+Voices inside Canva
+Add a voice-over to a design without leaving Canva.
+Open Canva
+MADE WITH BOTNOI
+What people make with it
+Lessons and slides
+Upload your slides and get a narration script for every page, then voice it in one click. Thousands of teachers use it for class materials.
+Sample voice
+Ngam
+Made with
+Gen Skript
+Ads and product videos
+Enter a product, brand and price. Get a 15, 30 or 60 second sales script with the voice-over, ready for TikTok and Reels.
+Sample voice
+Leo
+Made with
+MarAds
+News and announcements
+A clear, steady newsreader voice for daily updates, public announcements and company news.
+Sample voice
+Alan
+Made with
+Voice Studio
+Stories and audiobooks
+Give every character its own voice. Each line of the script can have a different speaker, speed and volume.
+Sample voice
+Bow
+Made with
+Voice Studio
+Videos in other languages
+Translate a script and voice it in English, Chinese, Japanese and more to reach viewers outside Thailand.
+Sample voice
+Nadia
+Made with
+Voice Studio
+FOR EDUCATION
+Free for teachers and students
+Teaching is where Botnoi Voice is used most. Teachers and students in Thailand get points at no cost to make lessons, listening exercises and class projects.
+BOTNOI VOICE X TEACHERS
+10,000
+free points per request
+Teachers can ask again as often as they need
+Make a lesson with Botnoi Voice.
+Fill in the points request form and attach a clip of your work.
+Receive 10,000 points. Repeat whenever they run out.
+How teachers apply
+BOTNOI VOICE FOR EDUCATION
+3,000
+free points
+For school and university students
+Enough for reports, presentations and project videos.
+Start free
+3,000+
+teachers helped nationwide
+“…enabled us to assist over 3,000 teachers nationwide in creating classroom modules.”
+Dr. Winn Voravuthikunchai, founder of Botnoi Group. AWS press release, December 2024
+BOTNOI VIDEO
+Pictures and video for every voice
+Generate the visuals in the same account that makes the voice: product shots, short clips and presenters that speak your script.
+Open the media studio
+SEEDREAM 5.0
+Image
+Images from a prompt
+Product shots, illustrations and thumbnails in nine styles, from realistic to cartoon, with an optional reference picture.
+SeeDream 5.0
+SEEDANCE 2.5
+Video
+Video from a prompt
+Short clips for ads, lessons and social posts.
+SeeDance 2.5
+OMNIHUMAN
+Avatar
+A presenter that speaks your script
+Turn a character picture into a talking avatar, lip-synced to your text.
+OmniHuman
+GEN SKRIPT
+Slides
+Slides to narrated video
+Upload slides, get the script and voice, then turn it into a video.
+Gen Skript
+Use characters you created, not pictures of real people.
+BOTNOI VOICEBOT
+Let a voice bot handle the calls
+Reminders, confirmations and follow-ups, spoken in a natural Thai voice. Create a project, add your contacts and let it run.
+Open Voicebot
+Talk to sales
+EXAMPLE CALL
+Voicebot
+Hello, this is Smile Dental Clinic. I'm calling to confirm your appointment tomorrow at 10 am.
+Customer
+Yes, I'll be there. Thank you.
+Voicebot
+Thank you. See you tomorrow at 10 am.
+Always on
+Calls and answers 24 hours a day, every day.
+Quick to set up
+Create a project, add contacts and start calling.
+Every answer recorded
+What customers say is kept for your team to follow up.
+Botnoi Group's AI assistants work in more than 70 Thai organisations
+Ramathibodi Hospital
+patient pre-screening
+HOP INN
+hotel booking
+Government Savings Bank
+customer follow-up
+Ngern Tid Lor
+customer follow-up
+Central Pattana
+Bangkok Hospital
+Source: AWS press release, December 2024
+BOTNOI API
+Add AI voices to your product with one API call
+Send text, get back a link to the audio. Works from your own code, from n8n and from AI agents. Everything needed to make the first call is on this page.
+BASE URL
+https://api-voice.botnoi.ai
+AUTHENTICATION
+Header botnoi-token: YOUR_API_KEY. No "Bearer" prefix.
+LIMIT
+500 characters for V2, 500 characters for V1, 1000 characters for V4, 200 for Voice Design, per request.
+BILLING
+Points per letter of text. Letters are counted without spaces, delay{x} pauses and [sound tags]. Each request is rounded up to a whole point, so a paid call costs at least 1 point. Subscribers (an active Trial+, Starter, Pro, Elite or Premium plan; NoAds alone does not count) pay half.
+V2
+Premium voices
+POST /openapi/v1/generate_audio_v2
+0.2 points per letter (0.1 for subscribers), rounded up per request. Speaker list: GET /openapi/v1/get_speaker_data_v2
+V1
+Classic voices
+POST /openapi/v1/generate_audio
+0.1 points per letter (0.05 for subscribers), rounded up per request. Speaker list: GET /openapi/v1/get_speaker_data
+V4
+Expressive voices with sound tags
+POST /openapi/v1/generate_audio_v4
+0.2 points per letter (0.1 for subscribers), rounded up per request. A line of only sound tags: 0.6 per tag (0.3 for subscribers). Voice Design and voice clones cost the same as V4. Speaker list: GET /openapi/v1/get_speaker_data_v4
+Use V2 for the most natural voices. Use V1 for the widest choice of voices and languages, or the lowest cost.
+Get an API key
+Full API reference
+V2
+V1
+V4
+cURL
+Python
+Node.js
+Copy
+V2 · CURL
+curl -X POST 'https://api-voice.botnoi.ai/openapi/v1/generate_audio_v2' \
+-H 'botnoi-token: YOUR_API_KEY' \
+-H 'Content-Type: application/json' \
+-d '{
+"text": "สวัสดีครับ",
+"speaker": "8",
+"volume": 1,
+"speed": 1,
+"type_media": "mp3",
+"save_file": "True",
+"language": "th"
+}'
+RESPONSE 200
+{
+"text": "สวัสดีครับ",
+"audio_url": "https://.../example.mp3",
+"point": 6534,
+"user_monthly_point": 0
+}
+Request body
+FIELD TYPE REQUIRED NOTES
+text string yes Text to speak. Up to 1000 characters per request for V4 (and voice clones), 500 for V1 and V2, 200 for Voice Design. Must be written in the language given in language.
+speaker string yes Speaker ID, as a string. V1 and V2 have separate ID lists.
+language string yes Language code of the text, for example th or en.
+type_media string yes Output format: mp3 or wav.
+speed number no Speaking speed, 0.5 to 2.0. Default 1.
+volume number no V1 and V2: 0.1 to 2.0, 1 is normal. V4: a percentage, 100 is normal (default 100).
+save_file string no Send "True" to get a hosted audio_url back.
+split_english boolean no V4 only. true voices long English names (2+ words or 10+ letters) on their own and joins them back into the Thai line. Default false.
+trim_breath boolean no V4 only. true cuts the breath before the first word and after the last. Default false.
+Language codes
+th Thai
+en English
+zh Chinese
+ja Japanese
+ko Korean
+vi Vietnamese
+id Indonesian
+ms Malay
+tl Filipino
+lo Lao
+my Burmese
+km Khmer
+hi Hindi
+ar Arabic
+de German
+fr French
+es Spanish
+pt Portuguese
+it Italian
+ru Russian
+nl Dutch
+pl Polish
+tr Turkish
+sv Swedish
+Example speaker IDs
+V2
+8 Ava V2 (Thai)
+4 Smoke V2 (Thai)
+12 Nadia V2 (English)
+13 Neo V2 (Thai)
+23 Bow V2 (Thai)
+27 Alan V2 (Thai)
+29 YingAiko V2 (Thai)
+32 Aunty Grace V2 (Thai)
+37 Nick V2 (Thai)
+41 Siren V2 (Thai)
+43 JaiDee V2 (Thai)
+46 Alisa V2 (Thai)
+V1
+1 Ava (Thai)
+2 Bow (Thai)
+3 Ngam (Thai)
+4 Max (Thai)
+5 Alan (Thai)
+8 Leo (Thai)
+59 Juan (Chinese)
+63 Kanna (Japanese)
+278 Park (Korean)
+69 Dang (Vietnamese)
+65 Dia (Indonesian)
+77 Phorn (Lao)
+279 Silvia (German)
+345 Alex (Russian)
+V1 and V2 have separate speaker IDs. Errors: 401 Missing or wrong botnoi-token. 402 Voice clone: not enough points. 403 V4 and Voice Design: not enough points (Insufficient play quota or credits). Also a private voice of another account, or empty V1/V2 text. 404 V1 and V2: not enough points (Not enough credits!). Also an unknown voice clone, or an unknown speaker in estimate. 422 A field is missing or has the wrong type, or the text is over the limit (V4, Voice Design, clones). 429 Over 30 calls a minute, or a call already running for this key (every voice route). Wait for Retry-After. 502 The voice engine failed. Try again. 503 V4 engine busy: no free slot within 45 seconds, no points taken. Retry after Retry-After. 504 No answer within 60 seconds. Try again, or send shorter text.
+llms.txt
+The API guide as plain text, for AI agents
+n8n
+Verified n8n node: use it without writing code
+AWS Marketplace
+Subscribe through your organisation's AWS account
+A voice for every job
+400+ voices across ages, tones and speaking styles
+Bow
+Thai · Female · Child
+Popular
+Cute
+Storytelling
+Drag to browse · tap to listen
++400 voices ready to use
+CHECK OUT 400+ VOICE SAMPLES
+Hear it in 20+ major languages
+Every ASEAN language, plus English, Chinese, Japanese and more. Press play to hear a sample, or open a language to try it.
+Thai
+Chinese
+Burmese
+Lao
+Vietnamese
+Indonesian
+Cambodia
+Filipino
+German
+Spanish
+French
+Malaysian
+Portuguese
+Russian
+English
+Dutch
+Korean
+Hindi
+Singapore
+Turkish
+Italian
+Japanese
+Arabic
+Start free
+WORKS WHERE YOU WORK
+Use it in the tools you already have
+First Thai app on Canva
+Canva
+Add voice-over to designs and videos inside Canva.
+Open in Canva
+First Thai business on AWS Marketplace
+AWS Marketplace
+Subscribe to the API and pay through your AWS account.
+View the listing
+Verified node
+n8n
+Drop text-to-speech into any automation, no code needed.
+See the node
+Mobile
+iOS app
+Generate voices on your phone.
+Get the app
+V1 and V2
+REST API
+Send text, get an audio link. One request.
+Read the API guide
+PRICING
+Start free. Pay only for what you generate.
+Voices are paid for with points. Top up when you need to, or subscribe for a monthly allowance at a better rate.
+Free: try the voices on this page 3 times a day, and generate more after you sign up.
+Top-up
+Buy points once, use them whenever.
+from
+99baht
+4,100 points
+No commitment
+Larger packs cost less per point
+Starter
+For regular personal use.
+200baht / month
+18,000 points every month
+No ads
+Points refill every month
+Most chosen
+Pro
+For creators who publish every week.
+400baht / month
+48,000 points every month
+No ads
+Points refill every month
+Elite
+For teams and heavy use.
+1,000baht / month
+160,000 points every month
+No ads
+Points refill every month
+See all prices
+Enterprise pricing
+Prices from voice.botnoi.ai on 6 October 2026. Subscription prices are monthly averages, billed every 3 months; yearly billing saves up to 20%. Promotions change often.
+Questions people ask
+What is Botnoi Voice?
+Botnoi Voice is a Thai AI media platform. It started with text to speech, with more than 400 voices in over 20 languages, and now also generates images, video and talking avatars, runs voice bots for phone calls, and offers tools for ad scripts, slide narration and subtitles.
+How do I turn text into speech?
+Type or paste your text, choose a language and a voice, then press Generate. In Voice Studio every line of a script can have its own voice, speed and volume, and you can download the result when you are happy with it.
+Can I try it before paying?
+Yes. You can try the voices on this page 3 times a day without an account, and new users can generate voices for free after signing up.
+How does pricing work?
+You pay with points, and points are used for each letter you turn into speech (V1 1 point a letter, V2 and V4 2 points; spaces are not counted). Top up from 99 baht, or subscribe from an average of 200 baht a month for monthly points, and subscribers pay half. Current prices are on the pricing page.
+Which languages and how many voices are there?
+More than 400 voices in over 20 languages: Thai and every ASEAN language, plus English, Chinese, Japanese, Korean, Hindi, Arabic and major European languages. Voices differ in age, tone and speaking style.
+Can it make video and images too?
+Yes. The media studio generates images with SeeDream, video with SeeDance and talking avatars with OmniHuman, and Gen Skript can turn a slide deck into a narrated video. They use the same points as voice generation.
+Can I use it for teaching materials?
+Yes. Gen Skript takes your slides, a PDF or images and writes a narration script for each page, which you can then voice. Many teachers use it to make lesson videos and listening materials.
+Is there an API?
+Yes. A REST API with two versions: V2 for the most natural voices and V1 for the widest choice. You send text and a speaker ID and receive a link to the audio. The Developers section on this page has everything needed for the first call.
+Where else can I use Botnoi voices?
+Botnoi Voice is available as an app inside Canva, as a verified node on n8n, on AWS Marketplace and as a mobile app.
+Create with voice, video and voicebots
+Free to start. One account for every tool.
+Start free
+Talk to sales
+www.botnoigroup.com
+Privacy & policy
+BOTNOI VOICE
+Studio
+Voice Over
+Media
+API
+Price
+Voice Bot
+MENU
+Buy package
+Buy point
+My account
+Document
+Report problem
+For business / contact sales
+Partner program
+TOOLS
+English Text to Speech
+แปลงข้อความเป็นเสียงภาษาไทย
+文字轉音訊轉換
+テキストからオーディオへの変換
+Chuyển đổi văn bản thành âm thanh
+Konversi teks ke audio
+©2023 Botnoi Group
+Don't show in the next 3 days
+Close

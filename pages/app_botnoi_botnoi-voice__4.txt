@@ -1,0 +1,158 @@
+URL: https://voice.botnoi.ai/payment/quote
+FINAL: https://voice.botnoi.ai/payment/quote
+STATUS: 200
+TITLE: Pricing: Points and Subscription Plans | Botnoi Voice
+FETCHED: 2026-11-15T15:57:25.902Z
+
+STUDIO
+NEW
+VOICE OVER
+COMMUNITY
+API
+PRICE
+LOG IN
+LET'S TRY FREE
+ราคาพอยท์และแพ็กเกจสมาชิก Botnoi Voice (Pricing: points and plans)
+The more you buy, the better it is
+Subscription is here!
+Pro yearly: only 345 Baht/month for up to 48,000 points! Buy now!
+Starter
+23,500 Points
+No Ads
+1
+month
+15.99
+10.49 USD
+within
+09:58
+Purchase
+12,500 Points
+No Ads
+1
+month
+8.99
+5.99 USD
+within
+09:58
+Purchase
+4,100 Points
+2.99 USD
+Purchase
+More price
+Regular
+97,500 Points
+No Ads
+3
+month
+51.99
+39.99 USD
+within
+09:58
+Purchase
+42,000 Points
+No Ads
+1
+month
+17.99 USD
+Purchase
+More price
+Professional
+1,000,000 Points
+No Ads
+12
+month
+599.99
+299.99 USD
+within
+09:58
+Purchase
+200,000 Points
+No Ads
+3
+month
+74.99 USD
+Purchase
+More price
+Buffet
+Unlimited / 1 days
+45.99 USD
+Purchase
+Unlimited / 7 days
+149.99 USD
+Purchase
+Unlimited / 31 days
+564.99
+364.99 USD
+within
+09:58
+Purchase
+*Unlimited download promotion, no API
+More price
+Members receive points every month
+Work without wasting time refilling frequently! Points will be reset to full every month.
+Monthly
+Yearly
+(Up to 20% Off)
+Starter
+18,000
+PT/Month
+15 USD/Month get 54,000 PT!
+45 USD
+Start 3 Month
+x2.25
+(90 points/thb)
+ADS
+No Ads
+Monthly points, auto-reset
+Pro
+48,000
+PT/Month
+30 USD/Month get 144,000 PT!
+90 USD
+Start 3 Month
+x3
+(120 points/thb)
+ADS
+No Ads
+Monthly points, auto-reset
+Elite
+160,000
+PT/Month
+75 USD/Month get 480,000 PT!
+225 USD
+Start 3 Month
+x4
+(160 points/thb)
+ADS
+No Ads
+Monthly points, auto-reset
+Membership
+Unlock your limits with the add-on package at an amazing price.
+More Text
+$31.99/Month
+Special $15.99/Month
+Create up to 2,000 chars.
+Join
+No Ads
+No ads with any point pack!
+Skip ads — just buy a point
+Join
+FAQ
+Can I try Botnoi voice before paying?
+What payment methods are supported?
+Can I cancel my add-on anytime?
+Can I have a tax invoice?
+Botnoi Voice
+Studio
+Select voices
+Developer
+Price
+Document
+Report problems
+Contact channels
+Email: admin@botnoigroup.com
+Phone: 064-192-2433
+Website: www.botnoigroup.com
+Social media
+Back to top
+© 2023 Botnoi Group

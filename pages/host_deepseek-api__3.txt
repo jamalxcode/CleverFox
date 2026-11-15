@@ -1,0 +1,29 @@
+URL: https://api-docs.deepseek.com/faq
+FINAL: https://static.deepseek.com/faq/index.html?lang=en#/category/4
+STATUS: 200
+TITLE: DeepSeek FAQ
+FETCHED: 2026-11-15T15:58:09.086Z
+
+Help Center
+Login Issues
+User Guide
+Chat Issues
+API
+Send feedback
+API
+How to Top Up?
+Incorrect Top-up Balance
+Does the balance expire?
+Is a refund possible?
+How to request an invoice
+Can usage details be added to the invoice?
+How to view usage by API Keys
+What to do if your API Key is leaked
+Do you support signing cooperation agreements?
+Are there plans with higher rate limits?
+Real-Name Verification Failed
+What is the difference between Personal and Enterprise Real-Name Verification?
+Can a Personal Account be changed to an Enterprise Verified Account?
+Can an Enterprise Verified Account be changed to a Personal Account?
+How can an enterprise-verified account update its verified company name？
+Why does the API keep returning empty lines?

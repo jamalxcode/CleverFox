@@ -1,0 +1,369 @@
+URL: https://siam.ai/
+FINAL: https://siam.ai/
+STATUS: 200
+TITLE: SIAM AI CORPORATION CO., LTD.
+FETCHED: 2026-11-15T15:58:35.752Z
+
+SIAM AI CORPORATION CO., LTD.
+SEARCH
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+SIAM.AI CLOUD
+We choose the best for your business.
+SIAM.AI CLOUD
+We choose the best for your business.
+Our Architecture
+A cutting-edge cloud platform leveraging both Kubernetes and NVIDIA Slurm, specifically designed for large-scale, GPU-accelerated workloads. Engineered with the needs of engineers and innovators in mind, it offers unmatched access to a wide array of computing solutions, delivering speeds up to 35 times faster and costs 80% lower than traditional cloud providers.
+35x
+FASTER
+80%
+LESS EXPENSIVE
+50%
+REDUCTION IN LATENCY
+Tier 4
+AVAILABLE DC IN
+THAILAND
+Infrastructure
+Every element of our infrastructure has been meticulously crafted to enable our clients to access the scale and diversity of computing resources necessary for their creation and innovation.
+on-demand scalable GPUs ?
+GPU Compute
+Featuring the industry’s most extensive selection of NVIDIA GPUs, offering high configurability and availability.
+Multiple NVIDIA GPU SKUs
+Available on demand
+Learn More
+Learn More
+requiring general-purpose computing?
+CPU Compute
+A vast array of CPU-only instances available for projects where GPU acceleration is unnecessary.
+Intel Xeon and AMD Epyc
+Scale in seconds
+Learn More
+Learn More
+deploy with virtual machines?
+Virtual Servers
+Deploy and manage Virtual Servers with NVIDIA GPU acceleration or CPU-only configurations.
+Spin-up new instances in seconds
+Responsive auto-scaling across GPUs
+Learn More
+Learn More
+dealing with rigid storage solutions?
+Storage
+Utilize distributed and resilient storage solutions with triple replication, managed independently from compute resources.
+Easily scale capacity.
+Optimized IOPS and throughput.
+Learn More
+Learn More
+networking that won’t slow you down
+Networking
+Our network infrastructure supports seamless horizontal scaling, incorporating routing, switching, firewalling, and load balancing within its fabric. Plus, unlike other providers, we won’t bill you for egress traffic.
+Built to power HPC workloads
+Scale to 100Gbps+
+Learn More
+Learn More
+Collaboration with the global leader in AI computing.
+SIAM.AI partners with NVIDIA to deliver optimal AI experiences through combined accelerated computing power and AI solutions."
+More Use Case
+Machine Learning & AI
+Leverage computational resources tailored to the intricacy of your models, within an infrastructure designed to support scalable inference operations.
+Rendering
+Boost your team's productivity with a cloud-based production pipeline, or scale up your rendering capacity as needed.
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200&H100
+CPU Compute
+GPU Compute
+GPU Calculator
+Virtual Server
+Storage
+Networking
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+Company
+News & Events
+About Us
+Contact Us
+Contact
+1252/1 True Tower 2 (Building 2, 7th floor), Pattanakarn Road, Suan Luang, Suan Luang, Bangkok 10250
+support@siam.ai
+(+66) 2-041-1899
+Facebook-square
+Instagram
+Tiktok
+Lemon
+© All Copyright 2026 by SIAM.AI CLOUD
+Terms & Condition
+Privacy Policy
+Privacy Policy
+We use cookies to enhance performance and improve your experience on our website. You can learn more details in the Privacy Policy and manage your own privacy settings by clicking on Settings
+Allow
+Privacy Preferences
+You can choose cookie settings by enabling/disabling cookies for each type as needed, except for necessary cookies.
+Allow All
+Manage Consent Preferences
+Always Active
+Save
+Announcement
+Response of SiamAI to Bloomberg News Report of May 8, 2026
+Regarding the Bloomberg report dated May 8, 2026, SiamAI clarifies that it has never engaged in the export of AI servers to China and is not involved in any U.S. legal proceedings mentioned. We remain committed to full compliance with international export regulations and continue our mission to strengthen Thailand’s AI infrastructure and technological sovereignty.
+ตามที่มีรายงานข่าวจาก Bloomberg เมื่อวันที่ 8 พฤษภาคม 2569 บริษัทฯ ขอยืนยันว่า SiamAI ไม่เคยส่งออก AI Server ไปยังประเทศจีน และไม่มีส่วนเกี่ยวข้องกับคดีความในสหรัฐฯ ตามที่ถูกกล่าวอ้าง เรามุ่งมั่นปฏิบัติตามกฎหมายควบคุมการส่งออกอย่างเคร่งครัด และยังคงเดินหน้าพัฒนาโครงสร้างพื้นฐาน AI เพื่ออธิปไตยทางเทคโนโลยีของประเทศไทยต่อไป
+อ่านแถลงการณ์ฉบับเต็ม / Read Full Announcement
+ACCEPT
+ปิดโหมดสีเทา

@@ -1,0 +1,536 @@
+URL: https://speedcloud.nxtgen.com/
+FINAL: https://speedcloud.nxtgen.com/india
+STATUS: 200
+TITLE: SpeedCloud by NxtGen
+FETCHED: 2026-11-15T15:58:22.746Z
+
+SpeedCloud by NxtGen
+-->
+-->
+Log In
+Get Started
+-->
+Aurora
+Best Open Source LLMs for Public Use
+Lumina
+Transform Ideas into Stunning Images
+Instantly
+Accura Coming
+Soon
+Domain-adapted AI-assistant for Finance
+Professionals
+<Ada>
+Powerful AI Assistant for Developers
+Visia
+Decipher Meaningful Insights from
+Media
+Juris Coming
+Soon
+Domain-adapted AI-assistant for Legal
+Practitioners
+-->
+Aurora
+<Ada>
+Lumina
+Visia
+Accura
+Coming
+Soon
+Juris
+Coming
+Soon
+-->
+-->
+Domestic
+Global
+-->
+Global
+Domestic
+Switch to
+Save upto 50% on TCO
+-->
+Built on
+OpenStack & OpenShift
+Know More
+Let's talk about your cloud
+Full name
+*
+Email
+*
+Description
+*
+Submit
+What
+makes us
+better?
+Cloud Solutions Rooted in Sovereignty,
+Transparency,
+and
+Innovation.
+India's Sovereign
+Cloud
+We are committed to ensure data, infrastructure and operations are free from control by external
+jurisdiction and
+protected from foreign government influence and access. SpeedCloud is a part of the country’s
+critical infrastructure
+and has adopted this posture to comply with its own privacy, security and risk management
+policies, with a deep-rooted
+culture of protecting India’s digital destiny.
+Built on
+Open Source
+SpeedCloud
+allows customers to achieve the
+pinnacle
+of
+operational
+agility,
+flexibility and
+businesses innovation at any scale, using any data, for any application. Our In-house technical
+expertise eliminates complexity for our customers.
+Dedicated
+CLM Support
+Our
+industry-first initiative to provide
+dedicated
+customer-lifecycle-managers ensures customers get a single point of accountability for any concerns
+and required assistance, complimenting the efforts of our sales and operations team.
+Fair Price
+Philosophy
+A
+combination of state-of-the-art infrastructure and open source technology allows SpeedCloud to
+deliver superior
+performance at a fraction of price compared to global cloud providers, we eradicate obscure margin
+on our services to
+deliver unprecedented value to our end customers.
+Over a Decade of
+Operational Excellence
+We run mission critical applications
+for large private & public
+enterprises and
+the government.
+0
+Customers
+0%
+Customer retention
+0
+Net promoter
+score
+0%
+Uptime since
+2017
+Manage and Scale
+Traditional,
+Modern and AI Workloads with Sublime Ease.
+App
+Available on
+Accelerate
+business
+productivity
+with
+Groundbreaking platform designed to empower businesses of all sizes to embrace AI and unlock new
+levels of
+efficiency
+and innovation. Our mission is to democratize AI by providing employees of all businesses with,
+ready-to-
+use AI
+solutions that dramatically improve productivity and drive tangible results.
+Try Now
+-->
+Experience
+Applications
+-->
+-->
+Our AI Instances
+Bring AI to your data using opensource
+models
+on dedicated GPU infrastructure hosted privately.
+NVIDIA
+AMD
+Intel
+NVIDIA L40S GPU
+L1-Spark
+Optimized for LLM inference while
+maintaining low latency.
+-->
+64
+vCPUs
+256
+GB
+RAM
+240
+GB
+Storage
+48
+GB
+GPU RAM
+1466
+TFLOPS
+fp8
+733
+TFLOPS
+fp16
+91.6
+TFLOPS
+fp32
+Supported
+fp64
+NNVIDIA
+H100
+GPU
+-->
+Ubuntu
+NVIDIA H100 GPU
+N1-Pulse
+SOLD
+OUT
+40
+vCPUs
+80
+GB
+RAM
+240
+GB
+Storage
+94
+GB
+GPU RAM
+3958
+TFLOPS
+fp8
+1979
+TFLOPS
+fp16
+67
+TFLOPS
+fp32
+Supported
+fp64
+NNVIDIA
+H100
+GPU
+-->
+Ubuntu
+NVIDIA H200 GPU
+H3-Glacier
+SOLD
+OUT
+32
+vCPUs
+192
+GB
+RAM
+240
+GB
+Storage
+141
+GB
+GPU RAM
+3958
+TFLOPS
+fp8
+1979
+TFLOPS
+fp16
+67
+TFLOPS
+fp32
+Supported
+fp64
+NNVIDIA
+H100
+GPU
+-->
+Ubuntu
+NVIDIA H200 GPU
+H4-Titan
+SOLD
+OUT
+192
+vCPUs
+1536
+GB
+RAM
+2400
+GB
+Storage
+1128
+GB
+GPU RAM
+31664
+TFLOPS
+fp8
+15832
+TFLOPS
+fp16
+536
+TFLOPS
+fp32
+Supported
+fp64
+NNVIDIA
+H100
+GPU
+-->
+Ubuntu
+AMD MI325X GPU
+Available from
+April 2025
+-->
+A3-Ember
+Ideal for training large foundation
+models.
+SOLD
+OUT
+32
+vCPUs
+192
+GB
+RAM
+480
+GB
+Storage
+256
+GB
+GPU RAM
+2614.8
+TFLOPS
+fp8
+1307.4
+TFLOPS
+fp16
+163.4
+TFLOPS
+fp32
+Supported
+fp64
+AMD
+MI325X
+GPU
+-->
+Ubuntu
+AMD MI325X GPU
+Available from
+April 2025
+-->
+A4-Furnace
+Best for enterprise-grade work that
+require massive parallelism.
+SOLD
+OUT
+256
+vCPUs
+1536
+GB
+RAM
+2400
+GB
+Storage
+2048
+GB
+GPU RAM
+20919
+TFLOPS
+fp8
+10459.2
+TFLOPS
+fp16
+1304
+TFLOPS
+fp32
+Supported
+fp64
+AMD
+MI325X
+GPU
+-->
+Ubuntu
+Intel Gaudi-3 GPU
+Available from
+April
+2025
+-->
+G2-Blaze
+Excels in LLM inferencing and high
+-throughput GenAI acceleration.
+32
+vCPUs
+224
+GB
+RAM
+240
+GB
+Storage
+128
+GB
+GPU RAM
+MME
+1835
+TFLOPS
+fp8
+1835
+TFLOPS
+bf16
+229
+TFLOPS
+fp32
+TPC
+57.3
+TFLOPS
+fp8
+28.7
+TFLOPS
+bf16
+14.3
+TFLOPS
+fp32
+Intel
+Gaudi-2
+GPU
+-->
+Ubuntu
+Intel Gaudi-3 GPU
+Available from
+April
+2025
+-->
+G3-Flame
+Excels in enterprise AI training &
+multi-billion parameter deployment.
+256
+vCPUs
+2048
+GB
+RAM
+2400
+GB
+Storage
+1024
+GB
+GPU RAM
+MME
+14680
+TFLOPS
+fp8
+14680
+TFLOPS
+bf16
+1832
+TFLOPS
+fp32
+TPC
+458.4
+TFLOPS
+fp8
+229.6
+TFLOPS
+bf16
+114.4
+TFLOPS
+fp32
+Intel
+Gaudi-2
+GPU
+-->
+Ubuntu
+Intel Gaudi-2 GPU
+Available from
+April
+2025
+-->
+G1-Core
+Excels in deep learning training &
+natural language processing.
+SOLD
+OUT
+152
+vCPUs
+768
+GB
+RAM
+240
+GB
+Storage
+96
+GB
+GPU RAM
+MME
+865
+TFLOPS
+fp8
+432
+TFLOPS
+bf16
+432
+TFLOPS
+bf16
+TPC
+11
+TFLOPS
+bf16
+45.2
+TFLOPS
+fp32
+432
+TFLOPS
+bf16
+Intel
+Gaudi-2
+GPU
+-->
+Ubuntu
+BUILT
+WITH THE BEST
+{
+let ul = $refs.logos;
+ul.insertAdjacentHTML('afterend', ul.outerHTML);
+ul.nextSibling.setAttribute('aria-hidden', 'true');
+})"
+class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+Featured In
+Akash Systems signs $27 million deal with NxtGen for diamond cooled AI servers
+ETtech Dec 04, 2024
+Akash Systems wins $27 mn contract from NxtGen to provide cooling servers
+Entrepreneur Dec 05, 2024
+NxtGen unveils SpeedCloud powered by Red Hat
+Express Computer Oct 23, 2024
+NxtGen unveils SpeedCloud powered by Red Hat
+CXO Today Oct 23, 2024
+Akash Systems Signs USD 27 Mn Deal with NxtGen to Revolutionise AI Compute Efficiency
+Entrepreneur Dec 05, 2024
+Red Hat & NxtGen will work jointly to empower ISVs to deliver managed open source services
+through SpeedCloud
+CRN Nov 13, 2024
+-->
+Want To
+Launch Your
+Cloud In
+Minutes?
+Get
+Started
+Let's talk about your
+cloud
+Full name
+*
+Email
+*
+Description
+*
+Submit
+-->
+SpeedCloud AI
+Aurora
+<Ada>
+Lumina
+Visia
+Accura
+Juris
+-->
+Company
+About us
+contact@nxtgen.com
+&copy; 2026 NxtGen, all rights reserved
+•
+Privacy
+•
+Terms & Conditions
+-->

@@ -1,0 +1,197 @@
+URL: https://www.latitude.sh/instances/rtx-pro-6000
+FINAL: https://www.latitude.sh/instances/rtx-pro-6000
+STATUS: 200
+TITLE: RTX PRO 6000 NVIDIA’s Universal AI Chip - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.183Z
+
+RTX PRO 6000 NVIDIA’s Universal AI Chip - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+./instances/rtx-pro-6000
+NVIDIA’s Universal AI Chip
+Blackwell architecture meets multi-purpose workloads
+Start now
+Speak to sales
+Unleash Next-Gen GPU Power. Bare Metal, No Abstraction
+Get ready to run any workload that demands real GPU muscle. With 96GB of VRAM per card, check out what the g4.rtx6kpro powered by NVIDIA’s Blackwell architecture can handle:
+LLM training & fine-tuning
+No hypervisor overhead, no noisy neighbors — every cycle and memory channel is yours.
+Inference at scale
+Deliver real-time inference throughput with consistent tail latencies, even at high query volumes.
+Rendering & VFX
+Power GPU render farms with deterministic performance per node — ideal for CGI, animation, simulation workflows.
+Gen-ai & Diffusion Models
+Optimize large model pipelines involving tensor ops, vision, and multimodal inference.
+Scientific computing & HPC
+Utilize full double & mixed-precision performance across GPU cores for physics, molecular, and engineering workloads.
+THE GPU &#x27;SWEET SPOT&#x27;
+AI infrastructure teams often face a trade-off: wait months and overpay for top-tier GPUs, or settle for older chips that can’t handle today’s compute demands.
+The RTX PRO 6000 resolves that tension: With Blackwell architecture, next-gen tensor cores, and generous VRAM, it delivers the performance needed for LLM fine-tuning, and inference at scale.
+LLM Inference Maximum Throughput
+(Tokens/s)
+Llama v4 Scout
+17857
+1105
+Llama v3.3 70B
+4776
+1694
+Llama v3.1 8B
+22757
+8471
+RTX PRO 6000 Server Edition
+NVIDIA L40S
+GPU Comparison Table
+GPU model
+Architecture
+Memory (GB)
+Max model size*
+Tensor cores
+Tensor cores gen
+NVIDIA B200
+Blackwell
+192
+98B
+1056
+5ᵗʰ
+NVIDIA RTX PRO 6000
+Blackwell
+96
+48B
+752
+5ᵗʰ
+NVIDIA H100 PCIE
+Hopper
+80
+40B
+456
+4ᵗʰ
+NVIDIA L40S
+Ada Lovelace
+48
+24B
+568
+4ᵗʰ
+*FP16
+Maximum performance, zero overhead
+From LLM training to Generative AI inference, deploy our RTX PRO 6000 Server Edition bare metal instance and put NVIDIA’s Blackwell architecture to work.
+g4.rtx6kpro.large
+Starting at $12,264/mo
+Metal GPU
+GPU 8 x NVIDIA RTX PRO 6000
+VRAM 768 GB Total
+CPU Dual AMD 9355, 64 Cores @ 3.55 GHz
+RAM 1.5 TB
+STR 4 x 3.8 TB NVME
+NIC 2 x 100 Gbps
+Select location
+Get the most out of your GPUs on bare metal
+Deploy fully dedicated NVIDIA RTX PRO 6000 Blackwell instances with zero virtualization overhead, ultra-low latency, and total resource control.
+Dedicated & Deterministic Performance
+No hypervisor overhead, no noisy neighbors — every cycle and memory channel is yours.
+Blackwell Architecture, Built for Scalability
+Next-gen GPUs with improved throughput, AI performance, and compute density over prior generations.
+Ultra-Low Latency Networking
+Leveraging NVIDIA’s Spectrum X-800 network, our platform enables sub-microsecond RDMA and GPU peer-to-peer transfers across nodes.
+Seamless Integration & Control
+Full CUDA, cuDNN, TensorRT support with root-level access, driver customization, and GPU direct RDMA.
+Accelerated AI Networking powered by Spectrum-X *
+We’ve integrated NVIDIA’s Spectrum X-800 switches across our data centers, enabling your GPU nodes to interconnect with minimal latency, full RDMA support, and high bisection bandwidth.
+Low-latency RDMA & GPUDirect
+Enable zero-copy data paths directly between GPU memory across nodes or within the same rack, eliminating host CPU involvement in inter-GPU transfers.
+High-throughput, non-blocking fabric
+Massive internal bandwidth ensures your GPUs don’t bottleneck on the network, even during all-to-all communication or large parameter exchanges.
+Isolation & QoS built-in
+Dedicated lanes and traffic shaping guarantee that your data flows remain predictable and secure, even at scale.
+Scale clusters seamlessly across racks and zones
+Build multi-node training or inference clusters with full high-speed connectivity across the fabric.
+* Spectrum-X is only available in selected instances. You can request access to Spectrum-X powered instances through this form .
+Set Up Your Private AI Inference Engine
+Don&#x27;t let GPU scarcity and AI privacy risks stop your growth.
+Combine our bare-metal GPUs with Megaport&#x27;s VXC to build your AI infrastructure.
+Data never leaves your network
+Latitude bare metal + Megaport VXC means the enterprise&#x27;s data travels over a private connection, never touching the public internet. Available now, no waitlist: Dedicated 8x NVIDIA RTX PRO 6000 servers with 96GB VRAM per card (768GB total) are deployable today. No 6‑month queue. No fractional GPU with noisy neighbors.
+Run GPT‑4 class models privately
+The hardware supports Llama‑3‑405B, Mixtral 8x22B, and similar open‑weight models without sending a single token to a third‑party platform.
+Predictable cost
+Flat monthly billing from fully dedicated resources instead of variable per‑token billing from API providers, or massive CAPEX from buying and managing your own cluster on‑prem.
+Purpose-built for AI workloads
+Enjoy complete control over hardware configurations and optimized software stacks tailored to your AI workloads. Integrate seamlessly with your favorite AI tools and libraries, and never look back.
+./built-for-developers
+Start with Terraform
+Create GPU instances programmatically with Latitude.sh&#x27;s powerful, friendly API. Get started quickly with integrations like Terraform and client libraries for your preferred programming language.
+Explore the API docs
+Terraform
+Terraform
+CLI
+Go SDK
+Node SDK
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+View provider
+Power your AI models
+Start now
+Contact sales
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

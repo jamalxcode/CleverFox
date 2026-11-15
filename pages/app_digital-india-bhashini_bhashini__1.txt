@@ -1,0 +1,29 @@
+URL: https://anuvaad.bhashini.gov.in/
+FINAL: https://anuvaad.bhashini.gov.in/text-to-text-translation
+STATUS: 200
+TITLE: Anuvaad
+FETCHED: 2026-11-15T15:57:33.874Z
+
+Text to Text
+Text to Speech
+Speech to Speech
+Speech to Text
+Language Detection
+Toggle Dark Mode
+Light Mode
+BHASHINI | Text to Text
+Speak Freely, Translate Instantly
+Login
+Select source language
+Select target language
+Upload Document
+0 / 1000 characters
+Translation will appear here...
+Advanced Options
+Translation Model
+Select a model
+Please select both source and target languages to choose a model.
+Transliteration
+Profanity Filter
+Note: Profanity filter is always ON for this platform.
+Varnika Hindi Keyboard CDAC (India)

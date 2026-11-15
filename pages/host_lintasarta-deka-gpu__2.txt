@@ -1,0 +1,55 @@
+URL: https://docs.cloudeka.id/billing/balance
+FINAL: https://docs.cloudeka.id/billing/balance
+STATUS: 200
+TITLE: Balance | Cloudeka
+FETCHED: 2026-11-15T15:58:28.884Z
+
+Balance | Cloudeka
+Skip to content Cloudeka
+⌘ Ctrl k
+Cloudeka
+Service Portal Cloudeka
+Starter Guide Deka Flexi
+Introduction
+Deka Flexi
+Deka Prime
+Storage
+Network
+Platform
+Security
+CI/CD
+Software
+Monitoring
+Support
+Billing Check Billing
+Balance Billing Payment type Postpaid Project
+Billing Payment type Prepaid Project
+Miscellaneous
+Deka GPU
+Certification
+Certification Lintasarta & Cloud
+Powered by GitBook
+On this page
+For the complete documentation index, see llms.txt . This page is also available as Markdown .
+Copy
+On this page
+Billing
+Balance
+This guide allows you to view remaining balance, transaction history, top-up history, payment details, and make bill payments.
+On the main page, click the Balance menu.
+List Project
+Information contained on the Balance page.
+Balance Page
+Column
+Description
+Balance
+User can see the balance
+Detail Payment
+User can see Organization , Total Project , Project , Email
+Outstanding
+User can see Project Name , Payment Method , and Outstanding Amount payment fee to be paid
+Choose Payment
+Users can choose to make payment transactions using ATM or VA via Credit Card / Bank BNI / Bank Mandiri / Bank Maybank / Bank Permata
+Previous Check Billing
+Next Billing Payment type Postpaid Project
+Last updated 1 year ago

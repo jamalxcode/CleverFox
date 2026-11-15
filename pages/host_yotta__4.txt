@@ -1,0 +1,1092 @@
+URL: https://shakticloud.ai/pricing
+FINAL: https://shakticloud.ai/pricing/
+STATUS: 200
+TITLE: Yotta Shakti Cloud | Explore on Plans &amp; Pricing
+FETCHED: 2026-11-15T15:58:44.495Z
+
+Yotta Shakti Cloud | Explore on Plans & Pricing
+window.pagesense = window.pagesense || [];
+window.pagesense.push(['trackEvent', 'website tracking']);
+Product
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+Shakti Studio
+Why Shakti Cloud
+AI Factory
+Plan & Pricing
+-->
+News & Resources
+-->
+Pricing
+Plan & Pricing
+Calculators
+AI Lab
+VM
+Baremetal
+News & Resources
+Blogs
+NemoClaw and Shakti Studio Integration Guide
+OpenClaw and Shakti Studio Integration Guide
+-->
+Corporate
+One Yotta
+Yntraa
+Colocation
+Drishticam
+Sudarshan
+Suraksha
+Urja
+Rudra
+Contact Us
+Login
+-->
+Login
+Shakti Studio
+Shakti Cloud
+-->
+Products
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+Shakti Studio
+Why Shakti Cloud
+AI Factory
+Plan & Pricing
+-->
+Pricing
+Plan & Pricing
+Calculators
+AI Lab
+VM
+Baremetal
+News &amp Resources
+Blogs
+NemoClaw and Shakti Studio Integration Guide
+OpenClaw and Shakti Studio Integration Guide
+Contact Us
+Login
+-->
+Login
+Shakti Studio
+Shakti
+Cloud
+Transparent, Scalable Pricing for your AI Workloads
+From development to deployment, our pricing adapts to your needs
+AI Lab
+AI Workspace – VM
+Bare Metal
+Cluster
+Shakti Studio
+AI Support Services
+Partner AI Services
+AI Lab
+Shakti AI Lab provides an instant, hassle-free AI development environment with pre-loaded libraries, available for users to begin developing immediately.
+Workstation Name
+Configuration
+*Price
+AI Lab-H100-10GB
+GPU Compute: 10 GB slice of Nvidia H100
+CPU Compute: 1 core of Intel Xeon Platinum 8480+ with 28 GB RAM
+₹ 30,000
+AI Lab-H100-20GB
+GPU Compute: 20 GB slice of Nvidia H100
+CPU Compute: 3 cores of Intel Xeon Platinum 8480+ with 56 GB RAM
+₹ 60,000
+AI Lab-H100-40GB
+GPU Compute: 40 GB slice of Nvidia H100
+CPU Compute: 7 cores of Intel Xeon Platinum 8480+ with 112 GB RAM
+₹ 120,000
+AI Lab-H100-80GB
+GPU Compute: 1x Nvidia H100 with 80 GB GPU memory
+CPU Compute: 14 cores of Intel Xeon Platinum 8480+ with 224 GB RAM
+₹ 197,000
+AI Lab-H100-2x80GB
+GPU Compute: 2x Nvidia H100 with 160 GB GPU memory
+CPU Compute: 28 cores of Intel Xeon Platinum 8480+ with 448 GB RAM
+₹ 397,000
+AI Lab-H100-4x80GB
+GPU Compute: 4x Nvidia H100 with 320 GB GPU memory
+CPU Compute: 56 cores of Intel Xeon Platinum 8480+ with 896 GB RAM
+₹ 790,000
+AI Lab-H100-8x80GB
+GPU Compute: 8x Nvidia H100 with 640 GB GPU memory
+CPU Compute: 112 cores of Intel Xeon Platinum 8480+ with 1.792 TB RAM
+₹ 1,580,000
+AI Lab-L40S-48GB
+GPU Compute: 1x Nvidia L40S with 48 GB GPU memory
+CPU Compute: 16 cores of Intel Xeon Gold 6448Y with 248 GB RAM
+₹ 81,000
+AI Lab-L40S-2x48GB
+GPU Compute: 2x Nvidia L40S with 96 GB GPU memory
+CPU Compute: 32 cores of Intel Xeon Gold 6448Y with 496 GB RAM
+₹ 160,000
+AI Lab-L40S-4x48GB
+GPU Compute: 4x Nvidia L40S with 192 GB GPU memory
+CPU Compute: 64 cores of Intel Xeon Gold 6448Y with 992 GB RAM
+₹ 320,000
+AI Lab Platform Access
+Effortless Container Management: Deploy pre-configured ML/DL environments instantly.
+User Access: 10 end-user accounts for development + 2 admin accounts for lab management.
+Built-in IDEs: Work seamlessly with Jupyter & VSCode.
+Object Storage: 250 GB included allocate per user as needed.
+Unlimited Data Transfer: No limits on ingress or egress
+₹ 70,000
+* Unit Rate: Per Workstation, per Month
+AI Workspace - VM
+Shakti Cloud AI Workspace - VM delivers a seamless experience with flexible configurations, offering Virtual Machine to meet diverse AI workload demands.
+Dedicated GPU Compute
+On Demand GPU Compute
+1 Month Pricing
+3 Month Pricing
+6 Month Pricing
+1 Year Pricing
+Product Name
+Product Description
+*Price
+VM – 1 x H100 Dedicated
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 1 x Nvidia H100 SXM (80 GB)
+vCPU : 24 RAM : 240 GB
+Root Disk : 500 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 392,740
+VM – 2 x H100 Dedicated
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 2 x Nvidia H100 SXM (160 GB)
+GPU Interconnect : NVLink
+vCPU : 52
+RAM : 480 GB
+Root Disk : 500 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 773,070
+VM – 4 x H100 Dedicated
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 4 x Nvidia H100 SXM (320 GB)
+GPU Interconnect : NVLink
+vCPU : 102
+RAM : 960 GB
+Root Disk : 500 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 1,538,110
+VM – 1 x L40S Dedicated
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 1 x Nvidia L40S (48 GB)
+vCPU : 28
+RAM : 240 GB
+Root Disk : 500 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 178,120
+VM – 2 x L40S Dedicated
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 2 x Nvidia L40S (96 GB)
+vCPU : 56
+RAM : 480 GB
+Root Disk : 500 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 348,210
+*Unit Rate: Per Month, Per Compute.
+Product Name
+Product Description
+*Price
+VM – 1 x H100 On Demand
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 1 x Nvidia H100 SXM (80 GB)
+vCPU : 24
+RAM : 240 GB
+Root Disk : 100 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 596
+VM – 2 x H100 On Demand
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 2 x Nvidia H100 SXM (160 GB)
+GPU Interconnect : NVLink
+vCPU : 52
+RAM : 480 GB
+Root Disk : 100 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 1175
+VM – 4 x H100 On Demand
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 4 x Nvidia H100 SXM (320 GB)
+GPU Interconnect : NVLink
+vCPU : 102
+RAM : 960 GB
+Root Disk : 100 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 2,340
+VM – 1 x L40S On Demand
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 1 x Nvidia L40S (48 GB)
+vCPU : 28
+RAM : 240 GB
+Root Disk : 100 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 302
+VM – 2 x L40S On Demand
+Shakti Cloud AI Workspace – Virtual Machine
+GPU : 2 x Nvidia L40S (96 GB)
+vCPU : 56
+RAM : 480 GB
+Root Disk : 100 GB High Speed Storage
+Unlimited Data Ingress & Egress
+₹ 593
+*Unit Rate: Per Hour, Per Compute.
+Bare Metal
+Choose from our powerful, dedicated Bare Metal servers, optimized for performance-intensive workloads and tailored to meet your AI training needs.
+Monthly Price
+6 Month Price
+1 Year Price
+2 Years Price
+3 Years Price
+4 Years Price
+5 Years Price
+GPU Type
+vCPUs
+Dedicated RAM
+Data Drive
+Interconnect
+Networking
+*Price
+8 x HGX H100 (640 GB GPU Memory)
+224
+2 TB
+61.44 TB
+NVLink, NVSwitch
+InfiniBand
+₹ 428
+4 x L40S (192 GB GPU Memory)
+128
+1 TB
+7.68 TB
+PCIe
+Ethernet
+₹ 238
+8 x HGX B200
+224
+2 TB
+30.4 TB
+NVLink, NVSwitch
+InfiniBand
+₹473
+8 x HGX B300
+256
+2 TB
+30.72 TB
+NVLink, NVSwitch
+InfiniBand
+* Unit Rate: Per GPU, per Hour
+Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Cloud InfiniBand Interconnect is charged separately. Refer to AI Support Services page for more details
+Cluster
+Run and scale demanding AI, ML, and HPC workloads with precision using our SLURM-managed infrastructure.
+SLURM Cluster
+Kubernetes Cluster
+Monthly Price
+6 Months Price
+1 Year Price
+2 Years Price
+Monthly Price
+Cluster Configuration
+*Price
+SLURM Cluster Pricing for HGX H100 SXM5
+8 x HGX H100 SXM5 (640 GB) GPUs
+₹ 386
+SLURM Cluster Pricing for L40S
+4 x L40S (192 GB) GPUs
+₹ 217
+* Unit Rate: Per GPU, per Hour
+Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Master Nodes
+Monthly Price
+K8s Non-HA Control Plane Instance
+Starting at ₹ 12951
+K8s HA Control Plane Instance
+Starting at ₹ 38853
+Please note: Data transfer (ingress and egress) charges are included in the listed price.
+The cost also includes the NVIDIA BlueField-3 DPU.
+Shakti Studio
+Select the right endpoint for your project and enjoy transparent, token-based pricing designed to meet your unique AI needs.
+AI Endpoint Pricing
+Serverless GPUs Pricing
+1 M Input Token
+1 M Output Token
+Spot (Per Minute
+Flex (Per Month)
+Model Name
+Description
+Price
+Llama 3.1 70B
+High – parameter base model for language understanding tasks.
+₹75
+Llama 4 Scout 17B 16E Instruct
+High – performance language model.
+₹17
+Llama 4 Maverick
+High – performance language model.
+₹25
+DeepSeek R1 Distill Llama 8B
+High – performance language model.
+₹8
+DeepSeek R1 Distill Llama 70B
+High – performance language model.
+₹138
+Mistral Large 2
+High – performance language model.
+₹183
+Mixtral 8x7B
+Mixture of Experts model for scalable multitask inference.
+₹53
+Gemma 3 (4B)
+Compact model from Google for lightweight NLP tasks.
+₹4
+Gemma 3 (12B)
+High – performance language model.
+₹9
+Gemma 3 (27B)
+High – performance language model.
+₹22
+Qwen3 30B
+High – performance language model.
+₹24
+Qwen3 14B
+High – performance language model.
+₹36
+Qwen3 235B
+High – performance language model.
+₹63
+Qwen3 32B
+High – performance language model.
+₹63
+Qwen2.5 VL 72B Instruct AWQ
+High – performance language model.
+₹106
+Qwen QWQ 32B
+High – performance language model.
+₹107
+DeepSeek R1 (INT 4)
+High – performance language model.
+₹484
+DeepSeek V3 (INT 4)
+High – performance language model.
+₹299
+Mistral Nemo Inferor 12B
+High – performance language model.
+₹15
+Minimax M1
+High – speed general model optimized for API – first use cases.
+₹41
+OpenAI OSS 120B
+High – performance language model
+₹23.50
+Product Name
+Product Description
+1 x 80 GB H100 Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: H100
+GPU Memory Per Card: 80GB
+Total Number of Card: 1
+Total GPU Memory: 80GB
+Unlimited ingress and egress.
+₹ 7.13
+2 x 80 GB H100 Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: H100
+GPU Memory Per Card: 80GB
+Total Number of Cards: 2
+Total GPU Memory: 160GB
+Unlimited ingress and egress.
+₹ 14.25
+4 x 80 GB H100 Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: H100
+GPU Memory Per Card: 80GB
+Total Number of Cards: 4
+Total GPU Memory: 320GB
+Unlimited ingress and egress.
+₹ 28.50
+8 x 80 GB H100 Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: H100
+GPU Memory Per Card: 80GB
+Total Number of Cards: 8
+Total GPU Memory: 640GB
+Unlimited ingress and egress.
+₹ 57.00
+1 x 48 GB L40S Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: L40S
+GPU Memory Per Card: 48GB
+Total Number of Cards: 1
+Total GPU Memory: 48GB
+Unlimited ingress and egress.
+₹ 3.17
+2 x 48 GB L40S Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: L40S
+GPU Memory Per Card: 48GB
+Total Number of Cards: 2
+Total GPU Memory: 96GB
+Unlimited ingress and egress.
+₹ 6.33
+4 x 48 GB L40S Shakti Studio – Serverless
+Shakti Studio Serverless Dedicated Instance with
+GPU Type: L40S
+GPU Memory Per Card: 48GB
+Total Number of Cards: 4
+Total GPU Memory: 192GB
+Unlimited ingress and egress.
+₹ 12.67
+AI Support Services
+Fully Managed AI Support Services designed for Scale, Performance, and Reliability.
+GPU
+CPU
+Storage
+Network
+Database
+Security
+Backup
+Others
+*Price
+Product Name
+Description
+*Price
+Shakti Cloud Kubernetes Management Platform fee - Includes Control Plane (Non - HA) + Support 1
+Shakti Cloud Kubernetes Management Platform fee includes the Kubernetes Control Plane nodes (Head node/Login node in Non-HA Configuration). This is offered as a Managed Platform and is billed per-cluster.
+₹ 6,75,000
+Shakti Cloud Kubernetes Management Platform fee - Includes Control Plane (HA) + Support 2
+Shakti Cloud Kubernetes Management Platform includes the Kubernetes Control Plane nodes (Head node/Login node in High Availability Configuration). This is offered as a Managed Platform and is billed per-cluster.
+₹ 11,25,000
+Shakti Cloud SLURM Management Platform fee - Includes Control Plane (non - HA) + Support 3
+Shakti Cloud SLURM Management Platform includes the BCM/Head node & Login node. This is offered as a Managed Platform and is billed per-cluster.
+₹ 4,50,000
+Shakti Cloud SLURM Management Platform fee - Includes Control Plane (HA) + Support 4
+Shakti Cloud SLURM Management Platform includes the BCM/Head node & Login node in High Availability configuration. This is offered as a Managed Platform and is billed per-cluster.
+₹ 6,75,000
+Shakti Cloud NVAIE Enterprise Support 5
+Shakti Cloud NVIDIA AI Enterprise (NVAIE) Support is a full-stack, cloud-native AI platform for data science and generative AI. This includes licensing and support for the below NVIDIA stack:
+BCM – Cluster & workload management
+Lepton – Lightweight AI runtime
+NVCF – AI container framework
+NIMs – Installation & management services
+NeMo – Generative AI models
+TAO – Transfer learning & model tuning
+RAPIDS – GPU-accelerated data analytics
+NGC – Model catalog & container registry
+CUDA-X AI – GPU libraries for AI workloads
+TensorRT – High-performance inference
+NVIDIA AI Foundations – Pretrained foundational models
+₹ 7,300 /GPU
+Shakti Cloud InfiniBand Interconnect 6
+Shakti Cloud InfiniBand Interconnect offers a 3.2 Tb/s Interconnect speed with ultra-low latency, high-bandwidth fabric designed for demanding AI and HPC clusters.
+₹ 16,060/GPU
+Shakti Studio Serverless Platform Fee + Support 7
+Shakti Studio Serverless Platform provides capabilities to run, fine-tune, test, and deploy open-source AI models with zero infrastructure overhead. It offers dedicated GPU endpoints, a multi-modal playground, one-click API deployment, automatic GPU scaling, custom/OSS model support, full finetuning and LoRA workflows, enterprise-grade security, and complete observability for usage, latency, and cost.
+₹ 1,47,844 / GPU
+Shakti Cloud AI Lab Platform Fee + Support 8
+Effortless Container Management: Deploy pre-configured ML/DL environments instantly
+Flexible GPU Profiles: Slice GPUs for multiple users or combine them for high-performance tasks
+Built-in IDEs: Work seamlessly with Jupyter Notebook
+Unlimited Data Transfer: No limits on ingress or egress
+User Access: The subscribed Shakti Cloud AI Lab Platform license permits the creation of up to 10 development user accounts and 2 administrative accounts for lab management per license. In the event that the number of development users exceeds 10, additional licenses must be procured accordingly.
+Concurrent usage shall be governed by the subscribed infrastructure configuration and the applicable usage schedule. The concurrency is directly proportional to the number of workstations.
+The platform fee and support charges apply on a per-workstation basis and cover configurations scaling up to a single full GPU card. In the event a workstation is provisioned with multiple GPU cards, the applicable platform fee and support charges shall be multiplied by the total number of GPU cards allocated to that workstation.
+₹ 70,000
+* Unit Rate: Per Month
+Shakti Cloud offers 2 procurement models, providing customers the flexibility to either purchase Standard Product or adopt a Bare Metal first approach with
+optional add-ons.
+A. Standard Product Purchase
+Customers may directly procure services by navigating to the relevant product sections; AI Lab, AI Workspace VM, Clusters, & Shakti Studio. These purchases include the core service along with the required infrastructure and orchestration layers. Customers may further enhance their setup by adding ancillary services such as connectivity, storage, and security layers.
+B. Bare Metal First Procurement
+Alternatively, customers may choose to procure Bare Metal Nodes as a standalone purchase. They can select and enable the required services from the AI Support Services section such as AI Lab, Clusters, & Shakti Studio. Additional options such as connectivity, ancillary services, and security layers can also be added on top of the provisioned infrastructure.
+Please note: The below combinations need to be procured together based on the GPU type:
+H100:
+- 1 & 5 & 6
+- 2 & 5 & 6
+- 3 & 5 & 6
+- 4 & 5 & 6
+L40S:
+- 1 & 5
+- 2 & 5
+- 3 & 5
+- 4 & 5
+Product Name
+Description
+*Price
+**Virtual Machine - g4.amd.Large
+2 vCPU ,8 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 3,010
+**Virtual Machine - g4.amd.1X-Large
+4 vCPU ,16 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 6,000
+**Virtual Machine - g4.amd.2X-Large
+8 vCPU ,32 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 11,990
+**Virtual Machine - g4.amd.3X-Large
+12 vCPU ,48 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 18,015
+**Virtual Machine - g4.amd.4X-Large
+16 vCPU ,64 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 23,970
+**Virtual Machine - g4.amd.6X-Large
+24 vCPU ,96 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 35,380
+**Virtual Machine - g4.amd.8X-Large
+32 vCPU ,128 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 48,000
+**Virtual Machine - g4.amd.9X-Large
+36 vCPU ,144 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 54,350
+**Virtual Machine - g4.amd.12X-Large
+48 vCPU ,192 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 71,980
+**Virtual Machine - g4.amd.16X-Large
+64 vCPU ,256 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 95,970
+**Virtual Machine - g4.amd.18X-Large
+72 vCPU ,288 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,08,050
+**Virtual Machine - g4.amd.24X-Large
+96 vCPU ,384 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,43,930
+**Virtual Machine - g4.amd.32X-Large
+128 vCPU ,512 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,91,930
+**Virtual Machine - c4.amd.Large
+2 vCPU ,4 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 2,540
+**Virtual Machine - c4.amd.1X-Large
+4 vCPU ,8 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 5,080
+**Virtual Machine - c4.amd.2X-Large
+8 vCPU ,16 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 10,150
+**Virtual Machine - c4.amd.3X-Large
+12 vCPU ,24 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 15,205
+**Virtual Machine - c4.amd.4X-Large
+16 vCPU ,32 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 20,300
+**Virtual Machine - c4.amd.6X-Large
+24 vCPU ,48 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 29,759
+**Virtual Machine - c4.amd.8X-Large
+32 vCPU ,64 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 40,380
+**Virtual Machine - c4.amd.9X-Large
+36 vCPU ,72 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 45,799
+**Virtual Machine - c4.amd.12X-Large
+48 vCPU ,96 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 60,570
+**Virtual Machine - ci4.16X-Large
+64 vCPU , 128 GB RAM , 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 80,760
+**Virtual Machine - c4.amd.18X-Large
+72 vCPU ,144 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 90,948
+**Virtual Machine - c4.amd.24X-Large
+96 vCPU ,192 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,21,140
+**Virtual Machine - c4.amd.32X-Large
+128 vCPU ,256 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,61,520
+**Virtual Machine - m4.amd.Large
+2 vCPU ,16 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 3,890
+**Virtual Machine - m4.amd.1X-Large
+4 vCPU ,32 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 7,720
+**Virtual Machine - m4.amd.2X-Large
+8 vCPU ,64 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 15,440
+**Virtual Machine - m4.amd.3X-Large
+12 vCPU ,96 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 23,186
+**Virtual Machine - m4.amd.4X-Large
+16 vCPU ,128 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 30,880
+**Virtual Machine - m4.amd.6X-Large
+24 vCPU ,192 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 45,722
+**Virtual Machine - m4.amd.8X-Large
+32 vCPU ,256 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 61,760
+**Virtual Machine - m4.amd.9X-Large
+36 vCPU ,288 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 58,779
+**Virtual Machine - m4.amd.12X-Large
+48 vCPU ,384 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 92,640
+**Virtual Machine - m4.amd.16X-Large
+64 vCPU ,512 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,23,520
+**Virtual Machine - m4.amd.18X-Large
+72 vCPU ,576 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,16,907
+**Virtual Machine - m4.amd.24X-Large
+96 vCPU ,768 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 1,85,280
+**Virtual Machine - m4.amd.48X-Large
+192 vCPU ,1024 GB RAM 50 GB Root Disk, 50 GB Data Disk, 1 Nos. Public IPv4, Upto 25G vNIC
+₹ 2,47,030
+**Virtual Machine - ci4.3X-Large
+12 vCPU ,24 GB RAM
+₹ 12,020
+Virtual Network
+Virtual Network (Vnet / VPC)
+₹ 300 Per Unit
+Managed Kubernetes Service
+Management service for orchestrating, scaling, and securing Kubernetes clusters and is billed per-cluster.
+₹ 6,100
+Shakti Cloud - Bare Metal CPU Node
+Processors: 2 x Intel Xeon Gold 6448Y @ 2.1GHz, 32 Cores / 64 Threads
+Memory: DDR5-4800, 16 x 64GB RDIMM (Total: 1024 GB)
+System Drive: 1 x 960GB NVMe (Data Center Grade)
+Data Drives: 2 x 3.84TB NVMe
+DPU: 1 x NVIDIA BlueField-3 B3220
+₹ 2,25,000
+*Unit Rate: Per Month, Per Unit
+**Selection option available for Guest OS, AV etc. All Add-On service like Egress DT, block volume and IP are available for subscription and charged as per usage.
+Note: Horizontal Auto-Scaling is available. Selecting this option activates dynamic scaling capabilities. Based on your configured policies, the system will automatically provision additional VMs as needed. These charges are aligned with your existing VM subscription charges.
+Product Name
+Description
+*Price
+Shakti Cloud High-Speed Storage
+Parallel file system designed for ultra-fast data read/write performance.
+Minimum Subscription:500 GB (base pack)
+Scalability: Expandable in increments of 100 GB
+₹ 9.9
+Shakti Cloud Object Storage
+S3-compatible storage for scalable and secure access to unstructured data.
+Minimum Subscription: 100 GB (base pack)
+Scalability: Expandable in increments of 50 GB
+₹ 3.6
+Root Volume Disk - Add-On**
+Provides root volume storage on a per-GB basis, attachable to virtual machines as the primary disk.
+₹ 3.00
+Object Storage - Performance Tier**
+Performance Tier - OBJECT Storage Volume available over public internet- accessible via HTTP using REST API and S3 compatible.
+High Speed storage on SSD drives optimized for real-time access to unstructured data, ideal for workloads requiring low latency and high throughput.
+Minimum Pack of 100 GB and available in multiples units of 100GB Pack.
+₹ 3.50
+Object Storage - Standard Tier**
+Standard Tier - OBJECT Storage Volume available over public internet- accessible via HTTP using REST API and S3 compatible.
+General purpose storage on NL SAS drives to any type of unstructured data, typically used for infrequently accessed data with a balance of cost and performance.
+Minimum Pack of 100 GB and available in multiples units of 100GB Pack.
+₹ 2.50
+Cloud Block Storage - Tier 1**
+Block Storage volume offering more than 6 IOPS per GB.
+₹ 9.50
+Cloud Block Storage - Tier 2**
+Block Storage volume offering sustained performance of 6 IOPS per GB.
+₹ 7.00
+Cloud Block Storage - Tier 3**
+Block Storage volume offering sustained performance of 1.5 IOPS per GB.
+₹ 4.00
+File Storage**
+SSD based SMB and NFS File Storage for Windows and Linux.
+Minimum Pack of 100 GB and available in multiples units of 100GB Pack.
+₹ 8.00
+* Unit Rate: Per GB, per Month
+* Unit Rate: Per GB, per Month
+**For CPU component only
+Product Name
+Description
+*Price
+Public IP
+Public IP for Connectivity
+₹ 528
+C2S VPN
+Client to Site VPN
+MRC: ₹300 | OTC: ₹200
+S2S VPN
+Site to Site VPN
+MRC: ₹660 | OTC: ₹300
+Internet Bandwidth
+Internet Bandwidth
+₹ 530 /Mbps
+Content Delivery Network
+Globally distributed network for fast, secure content delivery, reducing latency and load times for websites, apps, and media.
+₹ 14 /GB
+Network Load Balancer – Layer 4
+Distribute traffic efficiently across your backend resources with our high-performance Layer 4 Load Balancer. Ensure low latency, high availability, and seamless scalability for your applications.
+₹ 1,090 /Mbps
+Yotta Xpress Fiber Connect
+Network Access Fiber Port will be provided for Extension of private connectivity.
+₹ 3,240 /Unit
+Global CloudKonnect - 50 Mbps
+Global CloudKonnect 50 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 15,000 Unit/CSP/ Port
+Global CloudKonnect - 100 Mbps
+Global CloudKonnect 100 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 20,000 Unit/CSP/ Port
+Global CloudKonnect - 200 Mbps
+Global CloudKonnect 200 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 28,400 Unit/CSP/ Port
+Global CloudKonnect - 300 Mbps
+Global CloudKonnect 300 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 36,700 Unit/CSP/ Port
+Global CloudKonnect - 400 Mbps
+Global CloudKonnect 300 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 45,000 Unit/CSP/ Port
+Global CloudKonnect - 500 Mbps
+Global CloudKonnect 500 Mbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 50,000 Unit/CSP/ Port
+Global CloudKonnect - 1 Gbps
+Global CloudKonnect 1Gbps - Secure Direct Connectivity to Leading Cloud Service Providers like AWS, AZURE, GOOGLE, Oracle.
+₹ 85,000 Unit/CSP/ Port
+Cloud IPv4 Public Address (Add-On)
+Optional add-on providing a static, routable IPv4 address that can be attached to virtual instances.
+Billed per IP provisioned and usable for internet-facing workloads.
+₹ 300 /Unit
+Ingress (Inbound Data Transfer)
+Enables inbound data transfer into Shakti Cloud with no performance throttling. Enables seamless ingestion of training data, checkpoints, and datasets from on-prem or public clouds.
+₹ 5.99 /GB
+Egress (Outbound Data Transfer)
+Enables outbound data transfer from Shakti Cloud to on-prem systems or public clouds. Supports hybrid and multi-cloud workflows with predictable costs.
+₹ 5.99 /GB
+Dedicated (MPLS) Network
+Dedicated MPLS connectivity providing secure, low-latency, and guaranteed bandwidth. Ideal for enterprises requiring consistent performance, secure data transfer, and seamless integration between on-premises data centers and Shakti Cloud infrastructure.
+₹ 260000 /GB
+* Unit Rate: Per Month
+* Unit Rate: Per Month
+Product Name
+Description
+*Price
+Cloud Database for MySQL Community
+Managed MySQL DB with Community subscription. Built on open-source binaries. Supports monitoring, patching, and backup. VM Infra to be subscribed seperately.
+₹ 2,312.50
+Cloud Database for MySQL Enterprise
+Managed MySQL DB with enterprise subscription(Enterpise Edition 2 core license, minimum subscription is 4 core). Includes enterprise binaries, updates, backup, and monitoring. VM Infra to be subscribed seperately.
+₹ 167,000
+Cloud Database for PostgreSQL Community
+Managed PostgreSQL DB with open-source community edition license. Includes binaries, support for backup, patching, and configuration. VM Infra to be subscribed seperately.
+₹ 3,625
+Cloud Database for PostgreSQL Enterprise
+Fully managed PostgreSQL DB with enterprise subscription (min 4 cores for 3 years or 8 cores for 1 year). Includes binaries, licensing, maintenance, patching, and backup. VM Infra to be subscribed seperately.
+₹ 4,20,000
+SQL Database Standard
+Managed MS SQL Enterprise edition DB (licensed in 2-core packs, min 4 cores). Includes license and updates. VM Infra to be subscribed seperately
+₹ 80,000
+SQL Database Enterprise
+Managed MS SQL Enterprise edition DB (licensed in 2-core packs, min 4 cores). Includes license and updates. VM Infra to be subscribed seperately
+₹ 2,54,000
+Managed DBaaS-MongoDB Opensource
+Managed Database as a Service – MongoDB
+Fully managed, OPENSOURCE NoSQL document database optimized for unstructured data and real-time analytics with community support. Includes free to use open-source license (SSPL),subject to minimum 3 nodes for HA with support cost per GB RAM.
+Infrastructure is separate and chargeble extra. One additional license required for every per GB per node.
+₹ 912.50 /GB
+Managed DB-MongoDB Enterprise
+"Managed Database Service – MongoDB
+Fully managed, ENTERPRISE NoSQL document database optimized for unstructured data and real-time analytics with enterprise-grade support. Includes per GB RAM Enteprise license (256GB RAM per each node, with minimum 3 nodes to be subscribed) with support cost.
+Infrastructure is separate and chargeble extra. One additional license required for every per GB per node (256GB RAM per each node)
+₹ 1,825 /GB
+Redis Enterprise
+Fully managed, enterprise-grade Redis service offering in-memory performance with high availability, clustering, and persistence. Ideal for caching, real-time analytics, and low-latency workloads. VM Infra to be subscribed seperately.
+₹ 19,600
+Redis Community
+Managed Redis instance (in-memory key-value store) with community support. Suitable for caching, session state, and analytics. VM Infra to be subscribed seperately.
+₹ 1,246.84
+* Unit Rate: Per Month, per Unit
+* Unit Rate: Per Month, per Unit
+Product Name
+Description
+*Price
+Cloud DDOS Protection
+ALWAYS on DDOS Protection against DDoSAttacks - Upto Clean Traffic per Mbps
+₹ 1,656
+Managed Virtual - FW /UTM
+Virtual Firewall with UTP Subscription, including (2 VCPU, 4 GB RAM, 100 GB SSD, 24x7x365 Managed FW Service, VM Image backup), Includes passive cabling and Managed access port for (YEC / VMware) Private Cloud, colo or on-prem customers, /29 Public IP Pool
+₹ 48,400
+Firewall as a Service
+Managed Firewall Service
+₹ 191,361
+End point protection with Palo alto cortex
+Security posture management and threat protection service that helps detect vulnerabilities and attacks in cloud environments.
+₹ 22.33 /Endpoints
+Cloud WAAP Enterprise - 100 Mbps - 1 Application
+Cloud WAAP Enterprise - 100 Mbps - 1 Application
+₹ 2,56,670
+Microsoft Defender for Cloud
+Security posture management and threat protection service that helps detect vulnerabilities and attacks in cloud environments.
+₹ 16,304
+* Unit Rate: Per Month, per Unit
+* Unit Rate: Per Month, per Unit
+Product Name
+Description
+*Price
+Backup, Recovery and Archival Service
+Safe and Secure Backup Recovery of Virtual Machine
+Disk Backup with Unlimited Data transfer Per Instance
+If multiple VM backup required then need to subscribe in multiple units or instances.
+Default Backup Policy implemented DIWF, 14 Days Retention Period,But customer can customise as per his organisational policy.
+Restoration on the same server is included, If other than same server then the resource and efforts are charged separately.
+Includes Snapshot, File System, and Database backups in VMs.
+Disk Space for backup needs to be subscribed separately as per consumption requirement.
+₹ 1,200 /Instance
+Cloud Backup and Recovery
+Storage Volume for BACKUP or RETENTION Purpose
+₹ 2.10 /GB
+Shakti Cloud Remote Backup Service
+Shakti Cloud Remote Backup Service:
+Designed for Snapshot Backup or Data Retention using Object Storage.
+A complete HSS snapshot (entire volume) can be stored in Object Storage for disaster recovery.
+Available only within the limits of the subscribed HSS Storage Plan.
+₹ 3.6/GB
+Cloud SnapShot
+Point-in-time copies of your valuable data. Cloud Snapshot backups are stored on secondary storage. Therefore note that subscriptions for secondary storage will be enabled by default, and usage is billed on a GB/Month basis.
+₹ 3.7 /GB
+* Unit Rate: Per Month
+* Unit Rate: Per Month
+Product Name
+Description
+*Price
+Application Gateway
+Distributes incoming traffic across targets like web traffic (HTTP/HTTPS)- Layer 7
+₹ 4,991 /GB
+Cloud App Service
+Platform for deploying and managing web apps with infrastructure abstraction.
+₹ 5,284 /Unit
+Cloud DNS
+DNS Service (per 1 million DNS Queries)
+₹ 40 /Unit
+Container Registry
+Managed Registry offering centralized storage and distribution of container images used by native resources.
+Supports versioning, tagging, and seamless integration with Kubernetes environments. Provides global accessibility for containerized applications.
+₹ 17.44 /GB
+Insight and Analytics
+Platform providing analytics and insights into log and telemetry data collected from resources.
+₹ 7,555 /GB
+Key Vault
+Securely manage up to 10 encryption keys with our Key Vault Service.
+KMS protects your data, controls access, and simplifies compliance from a centralized interface.
+₹ 996 /Unit
+Log Analytics
+Collects, analyzes, and visualizes logs and telemetry information.
+₹ 21,055.81 /GB
+NAT Gateway
+NAT Gateway.
+₹ 1,750 /Unit
+RabbitMQ
+Messageing Service - RabbitMQ
+Fully managed, OPEN SOURCE RabbitMQ for reliable message delivery, pub-sub, and queuing across distributed applications. Ideal for lightweight messaging, microservices, and IoT integrations. Includes community support, patching, monitoring, and lifecycle management.
+Includes free to use open-source license (Mozilla Public License 2.0, with minimum 3 nodes to be subscribed) with support cost for per-node.
+Infrastructure is separate and chargeble extra. One additional unit required for each extra node.
+₹ 42,000 /Unit
+MS Win Remote Desktop Services SAL ALng LSA SAL
+MS SPLA - Servers - Microsoft Win Remote Desktop, Services Subscriber Access License, Subscriber Access License
+A Subscriber Access License (SAL) is required for each unique individual user or device that is authorized to access or otherwise use the licensed products. With the SAL option, a separate Server License is not needed.
+₹ 1,380.01 /Unit
+Windows Server Standard – 2 License
+Microsoft Windows Server Standard Edition core-based license. Licensing is based on VM virtual core count; each 2-core license covers a VM with up to 2 virtual cores.
+₹ 574 /Core
+Automation
+Cloud-based solution for automating workflows, infrastructure management, and repetitive tasks across environments.
+₹ 7,300 /Unit
+Cloud Bastion
+Managed service that enables secure RDP/SSH access to Azure VMs via a web browser, eliminating public IP exposure.
+₹ 12,096 /Unit
+Cloud Data Factory
+Fully managed ETL (Extract, Transform, Load) service for integrating data from multiple sources into cloud storage or databases.
+₹ 145,273 /GB
+Cloud Databricks
+Scalable data engineering and analytics service built for real-time processing and collaboration.
+₹ 40,551.20 /Unit
+Cloud Front Door Service
+Global application delivery network providing traffic acceleration, security, and load balancing for web applications.
+₹ 4,945 /Unit
+Cognitive Services
+A set of pre-built AI models that enable applications to perform intelligent tasks without deep AI expertise.
+₹ 1,570 /Unit
+Email
+Scalable email delivery service for transactional and marketing emails with built-in security and compliance features.
+₹ 174 /Unit
+Logic Apps
+Cloud-based workflow automation service that connects multiple applications and services for streamlined business processes.
+₹ 1,910 /Unit
+Service Bus
+Reliable Kafka cloud messaging service for decoupling applications and enabling asynchronous communication.
+₹ 618 /Unit
+Migration Assist - Cloud or Infrastructure
+CLOUD or INFRASTRUCTURE MIGRATION delivers full-scope migration services covering physical, virtual, and cloud-native infrastructures. This service ensures smooth, secure, and scalable movement of compute, storage, networking, and associated resources either, From on-premises physical to virtual or virtual to virtual or data centres to hosted cloud or private cloud, or public cloud. > Pricing includes efforts-based on estimated man-hours or man-days based on scope of work, with additional costs of tools and integrations.
+₹ 12,000 /ManHour
+Monitoring and Notifications Service
+ADAVANCE MONITORING and NOTIFICATIONS, consists of Custom Metrics, Detailed Monitoring Metrics, and Traces, provides visibility and proactive insights. Customers need to subscribe to specific advanced monitoring modules for their cloud resources and workloads, such as compute, storage, network, applications, and security, etc.
+Basic Monitoring Metrics (Metrics sent by default to the cloud portal)
+Notification service through Email, SMS, API Calls, and further classified alerts will be provided
+Charged based on per workload or resource (any component that gets monitored using this service will be considered as workload )
+₹ 300/Unit
+Operations and Management - Priority
+The PRIORITY plan is the most advanced managed service tier specifically designed for mission-critical operations, offering 24/7 multilingual support with a dedicated Technical Account Manager (TAM) who serves as a strategic advisor and single point of contact. The plan delivers stringent SLA backed by service commitments and includes quarterly operational health reviews to ensure continuous improvement, risk mitigation, and performance optimization. With a focus on deep technical engagement, compliance, and proactive support, the priority plan is intended for organizations that demand the highest operational excellence, responsiveness, and control.
+20% of the monthly cloud spend will be charged and applicable as per tiers agreed on overall monthly cloud spend, which is available on the CSP portal or OEM report. The applicable percentage varies with spend brackets: Spends between ₹1 Cr. and ₹5 Cr.: 17%, Spends exceeding ₹5 Cr.: 15%"
+Optional value-added services and NewEdge managed service are available for an additional fee. For detailed inclusions and deliverables across each plan, please refer to the corresponding product datasheets.
+As per Plan Description
+Operations and Management - NewEdge
+The NewEdge Plans is built to support critical and advanced cloud services that require specialised skills, as well as the highest operational excellence, responsiveness, and control. It provides consistent, scalable, and service-specific governance for selected advanced services such as: Containers, Serverless, various DB platforms (SQL, NoSQL, Big Data, etc.), Network and Security services, AI Service, and Media services etc.
+This service can be subscribed to standalone or on top of the Prime and Priority Plan. 7% of the monthly service spend will be charged and applicable as per the overall monthly service spend, which is available on the CSP portal or OEM report.
+Optional value-added services and NewEdge managed service are available for an additional fee. For detailed inclusions and deliverables across each plan, please refer to the corresponding product datasheets.
+As per Plan Description
+SSL Certificate Wildcard
+A wildcard SSL certificate secures one base domain along with all sub-domains associated with the main domain
+₹ 4700 /Certificate
+* Unit Rate: Per Month
+* Unit Rate: Per Month
+Partner AI Services
+Microsoft Azure AI Services
+Yotta - Microsoft AI Services
+Azure Public Cloud AI Services
+Price (Starting from)
+Product Name
+Service
+Price
+Shakti Cloud Azure ML studio
+Azure ML Studio running on Shakti Cloud with H100 GPUs.
+₹ 264 / GPU / Hr
+Know More
+Shakti Cloud Azure Database Services
+SQL Managed Instance I General Purpose (PaaS)
+₹ 23.54 / Core / Hr
+Know More
+SQL Managed Instance I Business Critical (PaaS)
+₹ 62.48 / Core / Hr
+Know More
+PostgreSQL (preview) (General Purpose)
+₹ 11.08 / Core / Hr
+Know More
+PostgreSQL (preview) (Business Critical)
+₹ 12.6 / Core / Hr
+Know More
+Azure Arc-enabled SQL Server (Standard Edition)
+₹ 8.8 / Core / Hr *(VMs + Licensing cost will be additional)
+Know More
+Azure Arc-enabled SQL Server (Enterprise Edition)
+₹ 33 / Core / Hr *(VMs + Licensing cost will be additional)
+Know More
+Services
+Price
+Azure Open AI
+₹ 13.2 / million inputs token ₹ 6.6 / million output token
+Know More
+Relational Database
+₹ 11 / Core / Hour
+Know More
+Azure Open Datasets
+₹9.68 / GB (Egress Pricing may apply, Datasets are Free to use)
+Know More
+Internet of Things
+₹ 1232 / Hub Unit (400,000 messages /day of 4 KB size)
+Know More
+Open-Source Relational Database
+₹ 11 / Core / Hr
+Know More
+Azure Analytics
+₹ 12.68 / vCore /Hr
+Know More
+Integration
+₹ 52.8 / Million Operations
+Know More
+Azure Web Services
+₹ 792 / app /month
+Know More
+Yotta Sarvam AI Services
+Sarvam Agent
+Sarvam Conversational AI
+Sarvam Analytics Services
+Sarvam Experts
+Price/ Min
+Name
+Price
+Sarvam Agents
+₹ 7.00
+Name
+Price
+Speech- to-text : Saarika
+₹ 30.00 / hour of audio
+Text-to-speech: Bulbul
+₹ 15.00 / 10,000 character
+ASR-Translate: Saaras
+₹ 30.00 /hour of audio
+Mayura
+₹ 20.00 /10,000 characters
+Name
+Price
+Parsing
+₹ 10.00 /Page
+Call Analytics
+₹ 2.50 /Minutes
+Name
+Price
+Legal Research
+₹ 100.00 /Query
+Doc Ops
+₹ 3.00 /Page
+Document Chat
+₹ 10.00 /Query
+Data Analyst
+₹ 100.00 /Query
+Yotta Data Services is India’s sovereign cloud and AI infrastructure provider, operating hyperscale data centers in Navi Mumbai and Greater Noida. With Yntraa Cloud (MeitY-empanelled) and Shakti Cloud (AI services with NVIDIA partnership), Yotta delivers secure cloud, AI, connectivity, and managed IT services to enterprises and governments.
+Social Media
+We’re here to answer your questions
+marketing@yotta.com
+Terms of Use
+Terms of Use
+Terms of Use
+Terms of Use
+-->
+Privacy Policy
+Cookie Policy
+Grievance Officer Details
+Yotta Policy Statements
+Acceptable Use of Products & Services
+Products
+AI Lab
+AI Workspace VM
+Bare Metal
+Cluster
+AI Endpoints
+Serverless GPUs
+Fine-Tune
+AI Inference Platform
+Shakti Studio
+About
+AI factory
+About Shakti Cloud
+News & Resources
+Blogs
+Case Studies
+-->
+Company
+About Yotta
+Investor Relations
+Press & Media
+Contact Us
+Events
+Leadership Team
+Social Responsibility
+Our Partners
+Company
+About Yotta
+Investor Relations
+Press & Media
+Contact Us
+Events
+Leadership Team
+Social Responsibility
+Our Partners
+-->
+Office address
+BG House, Lake Blvd Rd, Hiranandani Gardens, MHADA Colony 19, Powai,
+Mumbai, Maharashtra 400076
+2026 Yotta. All rights reserved.
+Back TOP ↑

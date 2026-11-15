@@ -1,0 +1,459 @@
+URL: https://servercore.com/services/
+FINAL: https://servercore.com/services/
+STATUS: 200
+TITLE: Products - servercore.com
+FETCHED: 2026-11-15T15:58:01.720Z
+
+Products - servercore.com
+VRAM Calculator
+New HighFreq Servers
+Select the Optimal GPU for Running an LLM
+Estimate
+AL73-NVMe-10GE and AL26-NVMe-10GE for Large-Scale Projects
+Order
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Search
+All services available
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Sign up
+Sign in
+Popular
+Computing
+Data Storage and Processing
+Network Services
+Security
+Looking Glass
+Status panel
+API
+Cloud Servers
+Flexible virtual machines
+Dedicated Servers
+Strong physical resources
+GPU Cloud Servers
+New
+High-performance computing for AI and ML
+Managed Cloud Databases
+Scalable data storage
+Object Storage
+Unlimited data and multimedia storage
+Cloud Backup Solutions
+Automatic backup of network drives
+Managed Kubernetes
+Automation and container management for efficient development
+Cloud Servers
+Flexibility and scalability for any task
+GPU Cloud Servers
+High-performance computing for AI and ML
+Dedicated Servers
+Complete resource and permormance control
+Managed Kubernetes
+Automation and container management for efficient development
+VMware Cloud
+Enterprise virtualization solution
+Managed Cloud Databases
+For all types available in Servercore
+PostgreSQL
+Relational database for complex queries and analytics
+MySQL
+Fast database for web applications and data storage
+Redis
+Caching and session management for high-performance applications
+Kafka
+Real-time data processing for streaming applications
+TimescaleDB
+Time series and analysis for monitoring and IoT
+ClickHouse
+Analytics and DWH/DLH deployment
+PGVector
+New
+Managed PostgreSQL with support for vector data types
+Object Storage
+Unlimited data and multimedia storage
+File Storage
+User-friendly file management and sharing
+Cloud Backup Solutions
+Automatic backup of network drives
+Secrets Manager
+Free
+Confidential information storage
+DNS-hosting
+Free
+Quick and reliable domain setup
+Private DNS Server
+New
+Isolated DNS server and resolver for private networks
+Anti-DDoS Solutions
+Real-time automated DDoS protection
+Global Router (L3VPN)
+Free
+Secure global data routing
+Mail Service
+Solution to send transaction emails from the Servercore cloud
+Direct Connect
+A secure channel without Internet access
+Search...
+Administration
+By industry
+Free Migration to Servercore
+Turnkey migration service
+Service Administration
+IT service management and support
+Hybrid Cloud Infrastructure
+Combine on-premises infrastructure with Servercore cloud
+AI and ML
+New
+Infrastructure for neural networks, LLMs, and machine learning
+FinTech
+Financial project solutions
+E-commerce
+E-commerce infrastructure
+Healthcare
+Healthcare cloud hosting
+About the Company
+Case Studies
+For Customers
+Legal Information
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Kenya
+M-PAYA Energy
+Metering solutions
+Unlocking Cloud Speed and Reliability with Servercore
+Uzapoint
+Software development
+How to Reduce Cloud Costs by 60% and Latency by 100x: The Nairobi Servers Advantage
+GoDeliveries
+Food delivery
+How to Cut Cloud Costs by 43% and Enhance Incident Response Times
+Case studies from Kenya
+Kazakhstan
+PayLink
+Fintech
+Migration to Servers in Kazakhstan: How to Increase System Response by 6 Times
+Provizor
+Pharmaceuticals
+How to Ensure Fault Tolerance of a Procurement Platform for 3,000 Pharmacies
+Case studies from Kazakhstan
+Uzbekistan
+Uzum Nasiya
+Fintech
+Seamless migration and custom cloud solution tailored to business objectives
+Alif Tech
+Fintech
+How to Reduce Service Downtime by 80%
+Bosch
+Retail
+How Bosch Accelerated Customer Engagement Fivefold and Automated Cloud-Based Business Processes
+CyberNet AI
+AI
+How to Deploy AI Solutions on Custom Servers and Accelerate System Response Time by 80%
+Case studies from Uzbekistan
+Servercore on Techcabal
+Servercore Enables Kenya-Based Food Delivery Service GoDeliveries Cut Cloud Costs by 43%
+All publications about us
+Demo
+Product Video Guide by Servercore CTO
+Servercore Solutions Security
+We ensure IT systems and data protection at five levels
+Network Infrastructure
+Types of our networks and their structure
+Affiliate Program
+Help us find new clients and earn up to 15%
+Грант 1 млн тенге на миграцию в Servercore
+Казахстан
+Legal Information
+Legal documents, bank details, etc.
+Sign up
+Sign in
+Sign up
+/
+Sign in
+Sign up
+/
+Sign in
+All services available
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Popular
+Cloud Servers
+Dedicated Servers
+GPU Cloud Servers
+New
+Managed Cloud Databases
+Object Storage
+Cloud Backup Solutions
+Managed Kubernetes
+Computing
+Cloud Servers
+GPU Cloud Servers
+Dedicated Servers
+Managed Kubernetes
+VMware Cloud
+Data Storage and Processing
+Managed Cloud Databases
+PostgreSQL
+MySQL
+Redis
+Kafka
+TimescaleDB
+ClickHouse
+PGVector
+New
+Object Storage
+File Storage
+Cloud Backup Solutions
+Secrets Manager
+Free
+Network Services
+DNS-hosting
+Free
+Private DNS Server
+New
+Anti-DDoS Solutions
+Global Router (L3VPN)
+Free
+Mail Service
+Direct Connect
+Security
+Looking Glass
+Status panel
+API
+Administration
+Free Migration to Servercore
+Service Administration
+Hybrid Cloud Infrastructure
+By industry
+AI and ML
+New
+FinTech
+E-commerce
+Healthcare
+About the Company
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Case Studies
+M-PAYA Energy
+Metering solutions
+Uzapoint
+Software development
+GoDeliveries
+Food delivery
+PayLink
+Fintech
+Provizor
+Pharmaceuticals
+Uzum Nasiya
+Fintech
+Alif Tech
+Fintech
+Bosch
+Retail
+CyberNet AI
+AI
+For Customers
+Demo
+Servercore Solutions Security
+Network Infrastructure
+Affiliate Program
+Legal Information
+Legal Information
+Home
+Services
+Servercore Products
+IT infrastructure in Kenya, Uzbekistan, and Kazakhstan for projects with different workloads and budgets &mdash; from startups to large corporations
+Go to control panel
+Search products
+Computing 5
+Data Storage and Processing 12
+Network Services 6
+Computing
+SLA 99.98%
+Cloud Servers
+Flexibility and scalability for any task
+GPU
+SLA 99.98%
+Cloud-Based GPU Servers
+High-performance computing for AI and ML
+SLA up to 100%
+Dedicated Servers
+Complete resource and performance control
+SLA 99.98%
+Shared vCPU Cloud Servers
+Guaranteed CPU share for workloads below full vCPU utilization
+SLA 99.98%
+Managed Kubernetes
+Automation and container management for efficient development
+Data Storage and Processing
+SLA 99.99%
+S3 Cloud Object Storage
+Unlimited data and multimedia storage
+Cloud-Based File Storage
+User-friendly file management and sharing
+Cloud Backup Solutions
+Automatic backup of network drives
+SLA 99.95%
+Managed Cloud Databases
+For all data types available in Servercore
+SLA 99.95%
+MySQL Cloud Databases
+Fast database for web applications and data storage
+SLA 99.95%
+PGVector Cloud Database
+Managed PostgreSQL with support for vector data types and semantic search
+SLA 99.95%
+PostgreSQL Cloud Databases
+Relational database for complex queries and analytics
+SLA 99.95%
+Redis Cloud Databases
+Caching and session management for high-performance applications
+SLA 99.95%
+Kafka Cloud Databases
+Real-time data processing for streaming applications
+SLA 99.95%
+ClickHouse Cloud Databases
+A ready-to-use columnar DBMS clusters for analytics and building DWH/DLH
+SLA 99.95%
+TimescaleDB Cloud Databases
+Time series storage and analysis for monitoring and IoT
+Secrets Manager
+Confidential information storage
+Network Services
+SLA 99.98%
+Global Router (L3VPN)
+Secure global data routing
+Anti-DDoS Solutions
+Real-time automated DDoS protection
+SLA 99.98%
+Private DNS Server
+Isolated DNS server and resolver for private networks
+Free DNS Hosting Service
+Quick and reliable domain setup
+Direct Connect
+A secure channel without Internet access
+SLA 99.99%
+Servercore Mail Service
+Solution to send transaction emails from the Servercore cloud
+contact us
+Have a custom use case?
+Send us a request at hello@servercore.com , and our engineers will prepare a tailored solution for you.
+Submit a request
+Servercore News
+Subscribe
+Products
+Dedicated Servers
+Cloud Servers
+Managed Kubernetes
+Cloud Databases
+S3 Object Storage
+All products
+Company
+About Us
+Client Cases
+Network Infrastructure
+Security & Certificates
+Careers
+Kazakhstan site
+Clients & Partners
+Demo
+Pricing
+Partnership Program
+For Client Requests
+hello@servercore.com
+Need help with our services?
+Submit a support ticket , and our team will assist you.
+Services
+Cloud Migration
+IT Administration Services
+All services
+Resources
+Documentation
+Blog
+Status Panel
+Looking Glass
+API
+Legal
+User Agreement
+Privacy Notice
+Personal Data Processing Policy
+Legal Details
+PR Department
+pr@servercore.com
+© PE LLC «Servercore CIS»
+© LLP «SSR»
+© Servercore Africa Ltd
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+We use cookies
+Please find more detailed information in our cookie policy.
+Functional cookies
+This type of cookies is required for the stable functioning of the website; therefore, you cannot disable these cookies unless your browser settings specify otherwise.
+Analytical cookies
+Analytical cookies help us better understand site visitor behaviour and product usage patterns. Specifically, we leverage these cookies to gain insights into how visitors navigate the platform, using this data to enhance your experience.
+Remarketing cookies
+We leverage remarketing services to feature advertisements on third‑party platforms following your visit to our website. Our third‑party vendors and we employ cookies to inform, optimize, and serve advertisements based on your historical visits to our platform.
+Accept
+Reject
+Subscribe to Servercore News
+We share updates about product launches, current events, and special offers.
+I agree to receive the newsletter in accordance with the
+Privacy Policy .
+Subscribe
+Couldn't find the right service or configuration?
+Tell us about your project requirements. Our engineers will reach out to discuss custom terms or build a tailored
+solution specifically for your business.
+Company size 1–10 employees 11–50 employees 51–250 employees 251–1,000 employees 1,000+ employees
+What resources were you looking for? Cloud servers Cloud servers with GPUs Dedicated servers S3 Databases Network services and security Other
+Next
+1/2
+I agree to the processing of my personal data in accordance with the
+Privacy Policy .
+Back
+Submit request
+2/2

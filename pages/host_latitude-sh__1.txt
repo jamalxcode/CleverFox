@@ -1,0 +1,471 @@
+URL: https://www.latitude.sh/pricing
+FINAL: https://www.latitude.sh/pricing
+STATUS: 200
+TITLE: Pricing overview - Latitude.sh
+FETCHED: 2026-11-15T15:58:39.998Z
+
+Pricing overview - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+ls /pricing
+Pricing that scales with you
+Compute
+View
+Metal / GPUs / VMs Storage
+View
+Block / File / Object Networking
+View
+Bandwidth / IPs / Public Network / Firewall
+Metal GPU
+Dedicated GPU clusters for AI
+Hourly Monthly Paid yearly
+Plan
+GPU
+VRAM
+Storage
+Network
+20 TB free out / ∞ in
+Locations
+Starting At
+Plan
+g4.b300.large
+GPU
+8 x NVIDIA HGX B300
+800Gbps Dual Plane RoCE
+VRAM
+2304 GB VRAM
+288 GB per GPU
+Storage
+2 x 960 GB NVME
+4 x 7.6 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
+Starting At
+$64/hr
+$46,720/mo
+Plan
+g4.rtx6kpro.large
+GPU
+8 x NVIDIA RTX PRO 6000
+VRAM
+768 GB VRAM
+96 GB per GPU
+Storage
+4 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
+Starting At
+$24/hr
+$17,520/mo
+Plan
+g3.h100.small
+GPU
+1 x NVIDIA H100 80GB
+VRAM
+80 GB VRAM
+80 GB per GPU
+Storage
+2 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
+Starting At
+$1.68/hr
+$1,230/mo
+LSH GPU Wishlist
+Tell us what you need, where you need, and our team will reach out
+Metal
+Global, fully automated bare metal servers
+Hourly Monthly Paid yearly
+Gen 4
+DDR5 RAM Ultra fast NVMe SVE-compatible Up to 200 Gbps network
+Plan
+CPU
+RAM
+Storage
+Network
+20 TB free out / ∞ in
+Locations
+Starting At
+Plan
+rs4.metal.xlarge
+CPU
+AMD 9554P
+SEV 64 Cores @ 3.1 GHz
+RAM
+1536 GB
+Storage
+2 x 480 GB NVME
+4 x 8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
++ 2
+Starting At
+$5.44/hr
+$3,971/mo
+Plan
+m4.metal.xlarge
+CPU
+AMD 9455P
+SEV 48 Cores @ 3.15 GHz
+RAM
+768 GB
+Storage
+2 x 480 GB NVME
+2 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 2
+Starting At
+$4.76/hr
+$3,475/mo
+Plan
+c4.metal.large
+CPU
+AMD 9655P
+SEV 96 Cores @ 2.6 GHz
+RAM
+384 GB
+Storage
+2 x 960 GB NVME
+2 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
++ 3
+Starting At
+$4/hr
+$2,920/mo
+Plan
+rs4.metal.large
+CPU
+AMD 9354P
+SEV 32 Cores @ 3.25 GHz
+RAM
+768 GB
+Storage
+2 x 480 GB NVME
+2 x 8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
++ 4
+Starting At
+$3.22/hr
+$2,351/mo
+Plan
+f4.metal.large
+CPU
+AMD 9275F
+SEV 24 Cores @ 4.1 GHz
+RAM
+768 GB
+Storage
+2 x 480 GB NVME
+2 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 100 Gbps
+Locations
++ 2
+Starting At
+$2.62/hr
+$1,916/mo
+Plan
+m4.metal.large
+CPU
+AMD 9254
+SEV 24 Cores @ 2.9 GHz
+RAM
+384 GB
+Storage
+2 x 480 GB NVME
+2 x 3.8 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 5
+Starting At
+$2.03/hr
+$1,482/mo
+Plan
+f4.metal.medium
+CPU
+AMD 4564P
+16 Cores @ 4.5 GHz
+RAM
+128 GB
+Storage
+2 x 480 NVME
+2 x 1.9 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 5
+Starting At
+$0.76/hr
+$555/mo
+Plan
+m4.metal.medium
+CPU
+AMD 9124
+SEV 16 Cores @ 3 GHz
+RAM
+128 GB
+Storage
+2 x 480 GB NVME
+2 x 1.9 TB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 5
+Starting At
+$0.62/hr
+$456/mo
+Plan
+f4.metal.small
+CPU
+AMD 4484PX
+12 Cores @ 4.4 GHz
+RAM
+96 GB
+Storage
+2 x 960 GB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 6
+Starting At
+$0.55/hr
+$398/mo
+Plan
+m4.metal.small
+CPU
+AMD 4244P
+6 Cores @ 3.8 GHz
+RAM
+48 GB
+Storage
+2 x 960 GB NVME
+Network
+20 TB free out / ∞ in
+2 x 10 Gbps
+Locations
++ 7
+Starting At
+$0.41/hr
+$296/mo
+Virtual machines
+General-purpose virtual machines
+Hourly Monthly Paid yearly
+Plan
+vCPU
+Memory
+Storage
+Network
+20 TB free out / ∞ in
+Locations
+Starting At
+Plan
+vm.xlarge
+vCPU
+32 vCPUs
+Memory
+128 GB RAM
+Storage
+1280 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.51/hr
+$372/mo
+Plan
+vm.large
+vCPU
+16 vCPUs
+Memory
+64 GB RAM
+Storage
+640 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.32/hr
+$237/mo
+Plan
+vm.medium
+vCPU
+8 vCPUs
+Memory
+32 GB RAM
+Storage
+320 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.18/hr
+$128/mo
+Plan
+vm.small
+vCPU
+4 vCPUs
+Memory
+16 GB RAM
+Storage
+160 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.09/hr
+$69/mo
+Plan
+vm.mini
+vCPU
+2 vCPUs
+Memory
+8 GB RAM
+Storage
+80 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.05/hr
+$37/mo
+Plan
+vm.micro
+vCPU
+1 vCPUs
+Memory
+4 GB RAM
+Storage
+40 GB
+Local
+Network
+20 TB free out / ∞ in
+10 Gbps
+Locations
+Starting At
+$0.02/hr
+$18/mo
+Reduce costs on your compute usage
+Explore ways to reduce your compute costs on Latitude.sh
+Reserved instances
+Learn more
+Pay upfront for monthly or yearly instances and get reduced rates.
+Paid yearly
+65% cheaper than hourly
+Monthly
+50% cheaper than hourly
+Learn more
+Frequently asked questions
+How long does it take to create a server?
+Are taxes included on my invoices?
+Can I customize servers?
+How does technical support work?
+What forms of payment are accepted?
+What&#x27;s the difference between On Demand and Reserved?
+How does Latitude.sh calculate bandwidth usage?
+What are your bandwidth fees?
+Does Latitude.sh have a SOC 2 Type 2 attestation?
+bespoke bare metal
+Deploy one or a thousand fully automated bare metal servers specific to your needs.
+Latitude for Enterprise
+Get started on your terms
+Start now
+Contact sales
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////
+Start a quote

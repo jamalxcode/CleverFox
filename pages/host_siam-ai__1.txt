@@ -1,0 +1,376 @@
+URL: https://siam.ai/nvidia-hseries/
+FINAL: https://siam.ai/nvidia-hseries/
+STATUS: 200
+TITLE: NVIDIA H200 &amp; H100 – SIAM.AI CLOUD
+FETCHED: 2026-11-15T15:58:35.505Z
+
+NVIDIA H200 & H100 – SIAM.AI CLOUD
+SEARCH
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+On-demand pricing is available from
+H200 at $2.99/Hour & H100 at $2.69/Hour
+NVIDIA H200 & H100
+SIAM.AI CLOUD
+On-demand pricing is available from
+H200 at $2.99/Hour & H100 at $2.69/Hour
+NVIDIA H200 & H100
+SIAM.AI CLOUD
+NVIDIA H200&H100
+The NVIDIA H200 & H100 alongside supercomputer instances now available in the cloud.
+Looking for the most potent supercomputer for AI and Machine Learning? You've landed in the perfect spot.
+Introduce New The Most Powerful GPU
+NVIDIA H200
+The GPU for Generative AI and HPC
+Experience Next-Level Performance
+The NVIDIA H200 Tensor Core GPU supercharges generative AI and high-performance computing (HPC) workloads with game-changing performance and memory capabilities. As the first GPU with HBM3e, the H200’s larger and faster memory fuels the acceleration of generative AI and large language models (LLMs) while advancing scientific computing for HPC workloads.
+1.9X
+Llama2 70B Inference
+*Compare to H100
+1.6X
+GPT-3 175B Inference
+*Compare to H100
+1.5X
+141GB GPU Memory capacity
+*Compare to H100 at 94GB
+1.2X
+4.8TB/s GPU Memory Bandwidth
+*Compare to H100 at 3.9TB/s
+The NVIDIA H200&H100 is tailored for handling extensive HPC and AI workloads.
+Experience a 7x increase in efficiency for high-performance computing tasks, achieve up to 9x faster AI training with the largest models.
+Optimize performance with our flexible infrastructure.
+SIAM.AI CLOUD is a distinct cloud platform built on Kubernetes and Slurm, ensuring you enjoy bare-metal advantages without the complexity of managing infrastructure. We take care of all the complex tasks, such as handling dependencies, managing drivers, and scaling the control plane, allowing your workloads to seamlessly function without any intervention.
+networking architecture powered by NVIDIA InfiniBand technology.
+Our distributed training clusters featuring the H100s are designed with rail optimization and utilize NVIDIA Quantum-2 InfiniBand networking. This configuration supports in-network computing with NVIDIA SHARP, delivering a staggering 3.2Tbps of GPUDirect bandwidth per node.
+Migrate your workloads seamlessly.
+Specifically tailored for NVIDIA GPU-accelerated workloads, providing seamless compatibility to run your current workloads with minimal adjustments or none at all. Whether your operations are SLURM-based or focused on containerization, our straightforward deployment solutions empower you to achieve more with less effort.
+What’s inside a SIAM.AI CLOUD Instance?
+8X
+NVIDIA H100 80GB SXM5 Accelerators
+2TB
+DDR5 System RAM
+3200
+Gbps of GPUDirect InfiniBand Networking (8x 400 Gbps InfiniBand NDR Adapters)
+200
+Gbps Ethernet Networking
+HERE TO HELP
+H200&H100 FOR MODEL TRAINING
+Harness the power of our cutting-edge distributed training clusters, designed for large-scale operations.
+SIAM.AI CLOUD’s NVidia Slurm integrated H200 & H100 infrastructure boasts scalability massive amount GPUs, all interconnected through an advanced InfiniBand Fat-Tree Non-Blocking fabric. This setup grants unparalleled access to a vast array of cutting-edge model training accelerators, ensuring optimal performance and support.
+Our infrastructure stands as a tailored solution crafted to tackle the most formidable AI/ML and HPC obstacles. By leveraging our bare-metal Kubernetes framework alongside our robust data center network designs and high-performance storage solutions, you not only achieve superior performance but also realize significant cost efficiencies.
+H200&H100 NETWORK PERFORMANCE
+Prevent inconsistent training performance by leveraging SIAM.AI CLOUD's GPUDirect fabrics, engineered with NVIDIA InfiniBand technology for seamless data flow.
+NVIDIA H200 & H100 supercomputer clusters are designed with NVIDIA InfiniBand NDR networking in a rail-optimized configuration, enabling support for NVIDIA SHARP within network groupings.
+AI model training comes at a significant cost, prompting thorough scrutiny of our designs to ensure your training endeavors harness top-tier technologies for optimal compute efficiency per dollar spent.
+HERE TO HELP
+HERE TO HELP
+H200&H100 DEPLOYMENT SUPPORT
+Feeling perplexed about on-premises deployments? Unsure about optimizing your training configuration? Overwhelmed by the array of choices from different cloud providers?
+Provides a comprehensive solution for running scalable distributed training right from the start, incorporating top-notch tools like Determined.AI and SLURM.
+Require assistance in problem-solving? Take advantage of SIAM.AI CLOUD’s team of ML engineers at no additional charge.
+H200&H100 FOR INFERENCE
+Compute configuration highly customizable with dynamic auto-scaling capabilities.
+Every model has unique compute needs, just like every business has its own requirements. SIAM.AI CLOUD offers tailor-made configurations, allowing you to match inference workloads precisely while benefiting from scalable economics
+HERE TO HELP
+HERE TO HELP
+H200&H100 STORAGE SOLUTIONS
+Storage solutions that are adaptable, coupled with no charges for data entering or exiting.
+Storage is handled independently from computing resources. We offer a range of storage options including NVMe, HDD and Object Storage to cater to your workload requirements.
+Experience superior IOPS per Volume with our All NVMe Shared File System tier, or utilize our NVMe-accelerated Object Storage service to supply data to all your computing instances from a single storage location.
+Ready to request capacity for NVIDIA H200 & H100?
+Contact Us
+Contact Us
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200&H100
+CPU Compute
+GPU Compute
+GPU Calculator
+Virtual Server
+Storage
+Networking
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+Company
+News & Events
+About Us
+Contact Us
+Contact
+1252/1 True Tower 2 (Building 2, 7th floor), Pattanakarn Road, Suan Luang, Suan Luang, Bangkok 10250
+support@siam.ai
+(+66) 2-041-1899
+Facebook-square
+Instagram
+Tiktok
+Lemon
+© All Copyright 2026 by SIAM.AI CLOUD
+Terms & Condition
+Privacy Policy
+Privacy Policy
+We use cookies to enhance performance and improve your experience on our website. You can learn more details in the Privacy Policy and manage your own privacy settings by clicking on Settings
+Allow
+Privacy Preferences
+You can choose cookie settings by enabling/disabling cookies for each type as needed, except for necessary cookies.
+Allow All
+Manage Consent Preferences
+Always Active
+Save
+ปิดโหมดสีเทา

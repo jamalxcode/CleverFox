@@ -1,0 +1,159 @@
+URL: https://docs.cloud.olakrutrim.com/basics/ai-studio/ai-jobs/inferencing
+FINAL: https://docs.cloud.olakrutrim.com/basics/ai-studio/ai-jobs/inferencing
+STATUS: 200
+TITLE: Inferencing | Krutrim Cloud Documentation
+FETCHED: 2026-11-15T15:58:08.342Z
+
+Inferencing | Krutrim Cloud Documentation
+Skip to content
+⌘ Ctrl k
+Welcome
+Getting Started
+Quickstart
+Managing your Krutrim Cloud Account
+Basics
+Core Infrastructure
+Krutrim Pages
+AI Studio Model Catalogue
+AI Jobs Inferencing
+Fine-tuning
+Evaluation
+Deployment
+Billing for AI Studio
+Certificate Manager
+Key Management System
+Cloud Billing
+Identity Access Management
+Pricing
+MCP
+Overview
+Hosted MCP
+Local MCP (stdio)
+Connect Claude Code & Desktop
+Connect Codex
+Connect Cursor
+Connect VS Code
+Connect Hermes
+Connect OpenCode
+Troubleshooting
+Developer Tools
+KrutrimConnect
+SDK Guide
+Core Infra SDK
+AI Studio SDK
+Load Balancer SDK
+Krutrim Kubernetes System SDK
+Key Certificate Manager SDK
+Auto Scaling Group SDK
+Terraform Provider Krutrim
+Powered by GitBook
+On this page
+For the complete documentation index, see llms.txt . This page is also available as Markdown .
+Copy
+On this page
+Basics
+AI Studio
+AI Jobs
+Inferencing
+Inferencing
+Once you&#x27;ve identified a model from the Catalog, you can run inference either directly through the Playground or by integrating via API. Inference allows you to generate outputs using prompts, uploaded files, or other input types depending on the model&#x27;s modality.
+1. How to Run Inference
+Option 1: Playground (No Code)
+Every model in the Catalog includes a Playground tab. This UI lets you:
+Enter prompts (for text models)
+Upload files (for speech/image models)
+Adjust generation parameters ( temperature , top_p , max_tokens , etc.)
+View results inline
+This is the fastest way to test a model before moving to production.
+Option 2: API via Starter Code
+Use the Starter Code tab to copy cURL or Python code that calls the Krutrim API directly. The code includes:
+Proper API endpoint
+Pre-filled model identifier
+Default prompt structure
+Optional generation parameters
+You only need to plug in your API key and input data.
+2. Integration Options
+Krutrim inference APIs are OpenAI-compatible , making integration seamless with many open-source tools and SDKs.
+OpenAI SDK (Python)
+Krutrim supports the openai Python SDK for text models:
+Langchain Integration
+Krutrim models can also be used in Langchain through OpenAI-compatible wrappers.
+This enables integration with Langchain chains, memory, tools, and agents.
+3. Supported Parameters
+You can control generation behavior using the following parameters:
+Parameter
+Description
+temperature
+Controls randomness (lower = deterministic, higher = more creative)
+top_p
+Controls nucleus sampling probability mass
+max_tokens
+Maximum number of tokens to generate
+frequency_penalty
+Penalizes repeating tokens
+presence_penalty
+Encourages introducing new topics
+logit_bias
+Biases probability of specific tokens
+stop
+Token(s) at which generation should stop
+stream
+Enables token-by-token streaming
+Defaults vary by model and can be overridden via Playground or API.
+4. Tokenization and Output
+Each model uses its own tokenizer, which is applied automatically.
+You are charged per input + output tokens , based on the model&#x27;s pricing.
+Refer to the Billing page for detailed rates and token limits.
+5. Troubleshooting Inference
+Symptom
+Likely Cause
+Solution
+Output is cut off
+max_tokens is too low
+Increase the max_tokens value
+Output is repetitive
+Low temperature or no penalties
+Raise temperature or apply frequency_penalty
+High latency
+Large model or long prompt
+Use a smaller model or reduce prompt size
+Invalid model error
+Incorrect model name
+Copy exact model string from the Model Card
+Authentication failed
+Missing or expired API key
+Regenerate your API key in the Krutrim Console
+6. Next Steps
+Fine-Tune a model for improved domain alignment
+Evaluate model quality and latency metrics
+Deploy a model as a persistent, production-ready endpoint
+For API endpoint details and parameters, visit the API Reference .
+Last updated 1 year ago
+Inferencing
+1. How to Run Inference
+2. Integration Options
+3. Supported Parameters
+4. Tokenization and Output
+5. Troubleshooting Inference
+6. Next Steps
+Copy
+from openai import OpenAI
+client = OpenAI(
+api_key="your_krutrim_key",
+base_url="https://cloud.olakrutrim.com/v1"
+)
+response = client.chat.completions.create(
+model="krutrim-1",
+messages=[
+{"role": "user", "content": "Explain quantum entanglement simply."}
+]
+)
+print(response.choices[0].message.content)
+Copy
+/from langchain.chat_models import ChatOpenAI
+llm = ChatOpenAI(
+openai_api_key="your_krutrim_key",
+openai_api_base="https://cloud.olakrutrim.com/v1",
+model_name="krutrim-1"
+)
+llm.predict("What are some use cases of LLMs in finance?")

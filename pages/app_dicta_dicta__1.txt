@@ -1,0 +1,9 @@
+URL: https://nakdan.dicta.org.il/
+FINAL: https://nakdan.dicta.org.il/
+STATUS: 200
+TITLE: הנקדן המהיר
+FETCHED: 2026-11-15T15:56:07.778Z
+
+הנקדן המהיר
+מבית דיקטה
+איך זה עובד

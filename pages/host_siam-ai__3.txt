@@ -1,0 +1,364 @@
+URL: https://siam.ai/nvidia-b200/
+FINAL: https://siam.ai/nvidia-b200/
+STATUS: 200
+TITLE: NVIDIA B200 – SIAM.AI CLOUD
+FETCHED: 2026-11-15T15:58:36.043Z
+
+NVIDIA B200 – SIAM.AI CLOUD
+SEARCH
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+NVIDIA B200
+SIAM.AI CLOUD
+NVIDIA B200
+SIAM.AI CLOUD
+Unmatched End-to-End Accelerated Computing Platform
+NVIDIA HGX Blackwell B200
+The NVIDIA HGX B200 integrate NVIDIA Blackwell Tensor Core GPUs with high-speed interconnects to propel the data center into a new era of accelerating computing and generative AI. As a premier accelerated scale-up platform with up to 15X more inference performance than the previous generation, Blackwell-based HGX systems are designed for the most demanding generative AI, data analytics, and HPC workloads.
+The NVIDIA B200 is Revolutionary Performance Backed by Evolutionary Innovation
+B200 delivers leading-edge performance, offering 3X the training performance and 15X the inference performance of previous generations. Leveraging the NVIDIA Blackwell GPU architecture,
+Optimize performance with our flexible infrastructure.
+SIAM.AI CLOUD is a distinct cloud platform built on Kubernetes and Slurm, ensuring you enjoy bare-metal advantages without the complexity of managing infrastructure. We take care of all the complex tasks, such as handling dependencies, managing drivers, and scaling the control plane, allowing your workloads to seamlessly function without any intervention.
+networking architecture powered by NVIDIA InfiniBand technology.
+Our distributed training clusters featuring the B200 are designed with rail optimization and utilize NVIDIA Quantum InfiniBand networking. This configuration supports in-network computing with NVIDIA SHARP, delivering a staggering 3.2Tbps of GPUDirect bandwidth per node.
+Migrate your workloads seamlessly.
+Specifically tailored for NVIDIA GPU-accelerated workloads, providing seamless compatibility to run your current workloads with minimal adjustments or none at all. Whether your operations are SLURM-based or focused on containerization, our straightforward deployment solutions empower you to achieve more with less effort.
+What’s inside a SIAM.AI CLOUD's DGX B200
+8X
+NVIDIA HGX B200 Blackwell GPUs
+144
+peta FLOPS inference
+72
+peta FLOPS training
+112
+Cores total of Intel® Xeon® Platinum 8570 Processors
+1440GB
+GPU Memory
+4TB
+System RAM
+3200
+Gbps of GPUDirect InfiniBand Networking (8x 400 Gbps InfiniBand NDR Adapters)
+200
+Gbps Ethernet Networking (10Gb/s onboard NIC with RJ45 or 100Gb/s dual-port ethernet NIC)
+HERE TO HELP
+DGX B200
+Proven Infrastructure Standard
+The DGX B200 is a fully integrated hardware and software solution, featuring the complete NVIDIA AI software stack. This includes NVIDIA Base Command, NVIDIA AI Enterprise software, an extensive ecosystem of third-party support, and access to expert guidance from NVIDIA professional services.
+DGX B200 Performance
+Next-Generation Performance Powered
+Real-Time Large Language Model Inference
+Performance metrics are subject to change. Token-to-token latency (TTL) is measured at 50ms in real-time, with a first token latency (FTL) of 5 seconds. Testing involved an input sequence length of 32,768 and an output sequence length of 1,028, comparing 8x eight-way DGX H100 GPUs (air-cooled) to a single eight-way DGX B200 (air-cooled) in terms of per-GPU performance.
+Enhanced AI Training Performance
+Performance figures are subject to adjustment. Tests were conducted using a 32,768 GPU configuration with a 4,096-node eight-way DGX H100 air-cooled cluster connected via a 400G IB network. For comparison, a 4,096-node eight-way DGX B200 air-cooled cluster using the same 400G IB network was also evaluated.
+HERE TO HELP
+HERE TO HELP
+B200 Architecture
+NVIDIA Blackwell Architecture
+Blackwell-architecture GPUs integrate an impressive 208 billion transistors and are produced using a specialized TSMC 4NP process. Each Blackwell GPU consists of two reticle-limited dies, seamlessly connected via a 10 terabytes per second (TB/s) chip-to-chip interconnect, forming a unified single GPU.
+Second-Generation Transformer Engine
+The second-generation Transformer Engine combines custom Blackwell Tensor Core technology with innovations from NVIDIA® TensorRT™-LLM and the NeMo™ Framework. This design significantly accelerates the inference and training of large language models (LLMs) and Mixture-of-Experts (MoE) models.
+To optimize MoE model inference, Blackwell Tensor Cores introduce new precisions, including community-defined microscaling formats. These formats deliver high accuracy while simplifying the transition from larger precisions. The Blackwell Transformer Engine leverages fine-grain techniques, such as micro-tensor scaling, to enhance both performance and precision, supporting 4-bit floating point (FP4) AI. This approach effectively doubles the performance and capacity of next-generation models, all while preserving exceptional accuracy.
+Learn More
+Download B200 Specsheet
+Download B200 Specsheet
+References & Learn More
+NVIDIA DGX B200
+NVIDIA Blackwell Architecture
+NVIDIA HGX AI Supercomputer
+Ready to request capacity for NVIDIA B200 ?
+Contact Us
+Contact Us
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200&H100
+CPU Compute
+GPU Compute
+GPU Calculator
+Virtual Server
+Storage
+Networking
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+Company
+News & Events
+About Us
+Contact Us
+Contact
+1252/1 True Tower 2 (Building 2, 7th floor), Pattanakarn Road, Suan Luang, Suan Luang, Bangkok 10250
+support@siam.ai
+(+66) 2-041-1899
+Facebook-square
+Instagram
+Tiktok
+Lemon
+© All Copyright 2026 by SIAM.AI CLOUD
+Terms & Condition
+Privacy Policy
+Privacy Policy
+We use cookies to enhance performance and improve your experience on our website. You can learn more details in the Privacy Policy and manage your own privacy settings by clicking on Settings
+Allow
+Privacy Preferences
+You can choose cookie settings by enabling/disabling cookies for each type as needed, except for necessary cookies.
+Allow All
+Manage Consent Preferences
+Always Active
+Save
+ปิดโหมดสีเทา

@@ -1,0 +1,12 @@
+URL: https://chat.z.ai/plans
+FINAL: https://chat.z.ai/plans
+STATUS: 200
+TITLE: Z.ai - Advanced AI Chatbot &amp; Agent powered by GLM-5.3-Flash
+FETCHED: 2026-11-15T15:57:03.396Z
+
+Z.ai - Advanced AI Chatbot & Agent powered by GLM-5.3-Flash
+由 vite.config.ts 的 html-env
+按 REGION 注入，见 docs/features/seo.md。
+仍未搬：控制台 ASCII logo、外链 jquery。
+不搬：全局 resizeIframe（PPT 组件用的是自己 throttle 出的同名局部函数）、
+.animate-pulse-fast 内联样式（两棵树 src/ 里 0 处引用，死 CSS）。 -->

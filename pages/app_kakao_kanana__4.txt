@@ -1,0 +1,99 @@
+URL: https://www.kakaocorp.com/page/detail/11809?lang=ENG
+FINAL: https://www.kakaocorp.com/page/detail/11809?lang=ENG
+STATUS: 200
+TITLE: 카카오, AI 에이전트 앱 서비스 ‘카나나(Kanana)’ 웹 버전 출시 | 카카오
+FETCHED: 2026-11-15T15:57:19.636Z
+
+카카오, AI 에이전트 앱 서비스 ‘카나나(Kanana)’ 웹 버전 출시 | 카카오 본문 바로가기 메뉴 바로가기
+KaKao
+메인메뉴
+About
+Kakao Culture
+KakaoGroup
+Milestones
+AI
+Kakao AI
+Tech & Service
+Kakao Tech
+Kakao Service
+All Services kakaoTalk download
+Sustainability
+Kakao ESG
+News
+Press Kit
+Press Release
+Mediakit
+Partners
+Partner with us
+IR
+Open a new window
+Open the Search box open menu
+KaKao
+Change to Dark mode
+View in Korean 메인 메뉴 닫기
+메인메뉴
+About Kakao Culture
+KakaoGroup
+Milestones
+AI Kakao AI
+Tech & Service Kakao Tech
+Kakao Service
+All Services kakaoTalk download
+Sustainability Kakao ESG
+News Press Kit
+Press Release
+Mediakit
+Partners
+Partner with us
+IR (Open a new window)
+Careers
+Open a new window
+Support Kakao Customer Center (Open a new window)
+Daum Customer Center (Open a new window)
+Commerce Customer Center (Open a new window)
+Detail page main text
+보도자료
+November 12, 2025
+카카오, AI 에이전트 앱 서비스 ‘카나나(Kanana)’ 웹 버전 출시
+Share
+- 모바일 앱에서 사용 환경 확장, 개인 메이트 ‘나나’ 및 스페셜 AI 메이트 중심으로 초기 출시
+- 다양한 대화 주제와 활용 방법 안내 메뉴도 제공, 향후 그룹방 등 단계적으로 기능 추가 계획
+[2025-11-12] 카카오(대표이사 정신아)가 AI 에이전트 앱 서비스 ‘카나나(Kanana)’의 웹(Web) 버전을 출시했다고 12일 밝혔다. 이용자들은 모바일 앱 뿐 아니라 PC 환경에서도 카나나의 다양한 기능을 경험할 수 있게 됐다.
+웹 버전의 카나나는 URL( mate.kanana.ai/home )을 통해 이용 가능하다. 기존 모바일 앱 이용자의 경우 동일한 계정을 통해 로그인 한 뒤 사용할 수 있으며, 신규 가입 시에는 카카오 계정으로 가입할 수 있다.
+카카오는 웹 버전 카나나 출시 초 개인 메이트 중심의 기능을 제공하며, 그룹방 기능 등은 단계적인 업데이트를 거쳐 지원할 예정이다.
+첫 화면에서는 개인 AI 메이트 ‘나나’를 만나 다양한 대화를 주고 받을 수 있으며, 화면 왼쪽의 리스트에서 만날 수 있는 스페셜 AI 메이트들도 선택해 이용할 수 있다. 카카오는 지난달 모바일 앱 카나나를 새롭게 업데이트 하며 ▲타로 ▲사주 ▲챌린지 ▲스터디 코칭 ▲보험 상담 등의 스페셜 AI 메이트 총 5종을 신설, AI와 인터랙션하는 이용자 경험의 폭을 한층 확장하고자 했다.
+또한 이번 웹 버전에는 카나나의 다양한 대화 주제들을 발견하고, 활용 방법을 안내하기 위해 ‘카나나 더 알아보기’ 메뉴를 추가했다. 주제별 메이트를 자세히 소개하고, 카나나의 다양한 기능과 새로운 소식 등을 전달하는 공간이다.
+향후 모바일 앱 카나나에서 지원하는 다양한 기능들을 웹 버전에도 순차적으로 추가할 계획이다.
+카카오 김종한 카나나 성과리더는 "더 많은 이용자들이 카나나 서비스를 경험할 수 있도록 플랫폼을 확장했다”며 "순차적으로 기능 추가함으로써 모바일 중심의 AI 에이전트 서비스를 더 넓은 환경으로 지속적으로 확대해 나갈 것”이라고 말했다. (끝)
+#카카오 #카나나 #AI에이전트서비스
+Share
+list view
+Recommended Contents 보도자료 카카오, AI 트렌드와 사업 노하우 나누는 ‘카카오 비즈니스 페어 2026’ 개최…소상공인·소규모 파트너 성장 돕는다 #카카오 #카카오비즈니스 #카카오비즈니스페어
+공유하기
+보도자료 카카오, 에이전트의 판단과 선택 돕는 모델 ‘Kanana-2-v-decide’ 오픈소스 공개 #카카오 #자체개발AI모델 #의사결정모델 #카나나
+공유하기
+보도자료 카카오, ‘2026 대한민국 소상공인대회’ 참가…
+소상공인·지역 상생 사업 알린다 #상생 #소상공인 #지속가능경영 #카카오프로젝트단골
+공유하기
+Go to top
+하단 메뉴
+서비스 이용정보
+Terms of Service Open a new window
+Location Terms of Service Open a new window
+Privacy Policy
+corporate website Open a new window
+kakao service Open a new window
+Operation Policy Open a new window
+Accessibility Information Open a new window
+Brand Protection Policy Open a new window
+Notice Open a new window
+Contact Us Open a new window
+Family Site Go to the
+Kakao Privacy
+Go to the
+Kakao Developers
+Go to the
+Daum Portal Site
+Go to the
+Jeju with kakao
+© Kakao Corp. All rights reserved.

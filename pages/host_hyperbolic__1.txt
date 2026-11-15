@@ -1,0 +1,194 @@
+URL: https://www.hyperbolic.ai/
+FINAL: https://www.hyperbolic.ai/
+STATUS: 200
+TITLE: Hyperbolic — Making Global AI Compute Liquid
+FETCHED: 2026-11-15T15:58:05.811Z
+
+Hyperbolic — Making Global AI Compute Liquid
+GPUs GPU instances Managed Kubernetes
+Inference Resources About Hyperbolic Careers Blog
+Partner With Us Docs
+Log In
+Schedule a Call Schedule a Call
+Get Started Get Started
+Products
+GPUs H100, H200, B200 on demand or reserved Managed Kubernetes GPU clusters with a hosted control plane Inference Leading models through one API
+Resources
+About Careers Blog Partner With Us Docs
+Get Started Get Started
+Log In Log In
+Schedule a Call →
+M a k i n g G l o b a l A I C o m p u t e L i q u i d
+Turn heterogeneous GPU compute into productive AI infrastructure. Access global capacity, manage clusters, and run inference on one unified platform. Trusted by 250,000+ builders.
+Deploy GPU Clusters Deploy GPU Clusters
+Schedule a Call Schedule a Call
+Trusted by leading AI teams
+Hyperbolic makes it simple to buy, sell, resell, manage, and orchestrate compute
+01 On-Demand GPU Compute 02 Inference 03 Managed Kubernetes 04 Private Cloud
+GPU Compute
+On-Demand GPU Compute
+Access NVIDIA H100, H200, and B200 GPUs for AI training, fine-tuning, and inference. Launch on-demand GPU instances in minutes or reserve dedicated GPU clusters for sustained workloads.
+Launch GPUs Launch GPUs
+See pricing
+01 On-Demand GPU Compute
+Access NVIDIA H100, H200, and B200 GPUs for AI training, fine-tuning, and inference. Launch on-demand GPU instances in minutes or reserve dedicated GPU clusters for sustained workloads.
+Launch GPUs See pricing
+02 Inference
+Build AI applications with leading models through an OpenAI-compatible inference API. Stream responses and pay by token, without provisioning GPUs or managing model-serving infrastructure.
+Start building Explore Inference
+03 Managed Kubernetes
+Deploy AI workloads on managed Kubernetes clusters with GPU worker nodes. Configure your cluster from the Hyperbolic console, manage add-ons, and monitor cluster health.
+Get started Explore Managed Kubernetes
+04 Private Cloud
+Access dedicated GPU infrastructure through Hyperbolic’s supplier network. Plan long-term capacity for large-scale AI training and production workloads with infrastructure tailored to your requirements.
+Talk to sales
+On-Demand GPUs On-Demand GPU Clusters, Without the Complexity
+Provision H100, H200, and B200 capacity in minutes. Across providers, clusters vary in hardware, networking, setup requirements, and service-level commitments. Hyperbolic makes it easy to find and deploy the capacity that fits your workload through one platform without heavy upfront payment, lengthy procurement cycles, unnecessary sales calls, complicated negotiation, and benchmarking.
+Scale from experimentation to training, fine-tuning, and inference with flexible, on-demand capacity.
+Launch GPU Instance Launch GPU Instance
+Learn More Learn More
+Inference Run Leading AI Models
+Build AI applications with leading models through an OpenAI-compatible API. Start generating without provisioning GPUs or managing model deployments, with token-based billing through your Hyperbolic account.
+Launch Inference Launch Inference
+Learn More Learn More
+Who it&#x27;s for For AI builders moving fast and pushing boundaries. For providers making every GPU count.
+AI Startups & Application Builders Spend more time building AI. Less time managing compute.
+Rent GPUs for experimentation, fine-tuning, inference, and production through one platform. Start with on-demand GPU capacity and move to reserved or dedicated infrastructure as your needs grow, without navigating a separate procurement and operating process for every provider.
+Start Building Start Building
+Researchers & Model Labs Move from idea to experiment faster.
+Find the hardware and cluster configuration your research needs without lengthy procurement cycles. Access H100, H200, and B200 GPU rental options, provision capacity when experiments are ready, and scale for larger runs—keeping your team focused on research instead of infrastructure setup.
+Start an Experiment Start an Experiment
+Enterprise AI & Platform Teams Bring more compute options into one operating environment.
+Source GPU cloud capacity across providers, hardware configurations, and regions through a single platform. Match AI infrastructure to workload requirements while simplifying provisioning, access controls, and monitoring. Support experimentation and production with the flexibility to choose on-demand, reserved, or dedicated capacity.
+Discuss Your Infrastructure Needs Discuss Your Infrastructure Needs
+Neoclouds & GPU Cloud Providers Make every GPU more productive. Build a more durable cloud business.
+Turn heterogeneous clusters into a consistent cloud experience with provisioning, virtualization, networking, and orchestration. Launch services faster, simplify operations, and serve more workloads across your fleet. Connect with AI demand and put idle capacity to work—improving utilization and revenue per GPU-hour while reducing dependence on any single customer or workload.
+Grow Your GPU Cloud Grow Your GPU Cloud
+AI Infrastructure & Developer Platforms Expand the compute behind your platform without multiplying complexity.
+Connect your product to a broader network of cloud GPU capacity through a common infrastructure layer. Support customers across different hardware, clusters, and regions while reducing the work of integrating and operating each provider separately.
+Explore a Partnership Explore a Partnership
+High-Performance Infrastructure.
+Deploy GPUs Deploy GPUs
+01 250K+ Engineers
+leveraging Hyperbolic’s AI infrastructure
+02 Minutes, Not Weeks
+to deploy a cluster
+03 Zero Quota Limit
+for GPU rentals
+04 No Long-Term Lock-In
+scale up, scale down, or reserve capacity when you’re ready
+testimonials Hear from the humans
+using Hyperbolic
+After adding additional models to the platform, we needed H100 capacity quickly for production inference. Hyperbolic was able to get us the capacity fast, on demand, gradually building up to the total volume we needed. Once things stabilized, they converted us to a reserved contract at a rate that was 35% cheaper than on-demand and 20% cheaper than anything else we were seeing in the market.
+Sanjar Junisbai
+Business Development Manager at Higgsfield
+Access to compute remains one of the biggest bottlenecks for democratizing AI. Hyperbolic Labs is revolutionizing the AI landscape by making compute more accessible than ever.
+Reynold Xin
+Co-Founder of Databricks and Advisor to Hyperbolic
+Hyperbolic’s speed in delivering the latest open-source models and strong commitment to the AI developer community is amazing. With their API live on Hugging Face, developers worldwide can build faster than ever.
+Clém Delangue
+CEO & Co-Founder of Hugging Face
+Hyperbolic&#x27;s computing platform has provided robust and reliable support for our Chatbot Arena. We run our FastChat and SGLang applications on this platform to serve state-of-the-art open vision-language models. We are thrilled to leverage their solutions to deliver exceptional user experiences.
+Lianmin Zheng
+Member of Technical Staff, xAI
+We’ve used Hyperbolic to develop several of our internal models, including our TTS model, that are now being deployed in production. The platform has been straightforward to use, and the pricing has been competitive with other options we evaluated.
+Weixiao Xia
+AI Research Engineer, HappyRobot
+As demand for Daytona’s GPU sandboxes grows, we need compute capacity that can grow with us. Hyperbolic makes it easy to access GPUs, even on short notice. We use their API in our operations, and their responsive team helps us get new capacity up and running so we can scale the compute available to our customers.
+Ivan Burazin
+Co-Founder & CEO at Daytona
+Hyperbolic has helped us quickly scale our GPU fleet to support our customers’ burst workloads. They’ve provided capacity on short notice, and their engineers work closely with our team to bring it online for customer inference workloads.
+Kai Huang
+Head of Product, Parasail
+Finding a host for the particular model we&#x27;ve been looking to use wasn&#x27;t easy — Hyperbolic was the only platform that had it ready to go. Not only has the performance been outstanding, but their pricing absolutely crushes the major competitors.
+Taesung Park
+Co-Founder of Reve AI
+We needed an H200 cluster quickly, and Hyperbolic made the process simple. We spun up the capacity on demand through the platform, without a sales call or quota approval, and our team could start working right away.
+Xiaohan Fu
+Member of Technical Staff, Gray Swan AI
+The difference with Hyperbolic is the team. They understand the urgency, they understand the infrastructure, and they work with you like a partner, not just a provider.
+Ryan Hanrui Wang
+CEO & Co-Founder of Eigen AI
+We started with Hyperbolic because they solved the hardest problem on day one: actual compute supply, at the right price, without a long procurement cycle. That combination is incredibly rare today.
+Adam Yala
+CEO & Co-Founder of Voio
+We used Hyperbolic to train NM Gen-ET, our model for generating synthetic robotics training data. We could get GPUs when we needed them, without waiting around for capacity, and the pricing was straightforward and more affordable than the big clouds, which matters for an early-stage team like ours. The training runs were reliable, so we could spend our time improving the model instead of dealing with infrastructure.
+Aurora
+Founder & CEO, Neural Motion
+Hyperbolic has been a valuable compute partner for our research on Cross-Entropy Games and Frost Training, helping us run the experiments behind this work. We’re excited to continue working with them as we scale.
+Arthur Renard
+Founding Engineer, Xent Labs
+Hyperbolic Labs is at the forefront of democratizing AI through open-source innovation, bridging the gap between advanced research and global accessibility. Their work is pivotal in shaping a future where AI resources are as universal as information on the web.
+Prof. Yi Ma
+Head of CS & Chair Professor in AI at HKU; Advisor to Hyperbolic
+Hyperbolic Labs has been a game changer for our research at UC San Diego. Their dedication to providing high-performance GPUs enables us to push forward on multiple fronts, and enhances our capacity for innovation, making advanced computing tools readily available for our diverse research needs.
+Xiaolong Wang
+Associate Professor, of C.S. and E.C.E. at UCSD
+Use Cases What teams build on Hyperbolic.
+01 Foundation-model training
+Reserved multi-node H100, H200, and B200 clusters with high-performance interconnects for long, uninterrupted training runs.
+02 Fine-tuning & LoRA
+Bare-metal single-node and small multi-node capacity for fast iteration on open-source checkpoints and custom models.
+03 Batch compute jobs
+On-demand GPU capacity for experiments, evaluations, data processing, and other compute-heavy AI workloads.
+04 Long-running training jobs
+Run extended training workloads on dedicated GPU capacity with predictable availability, stable performance, and fewer interruptions.
+05 Agent automation
+Programmatically launch and manage GPU resources for agent workflows, evaluation pipelines, and other compute-heavy automation.
+06 Private infrastructure
+Private Cloud environments with dedicated hardware, isolated networking, and deployment support for teams ready to scale long term.
+How it&#x27;s going Latest updates
+GPU Rental Indices Challenges: Let Me Count the Ways
+Nov 2, 2026
+Introducing Rental Operator: Rent Hyperbolic GPUs from Your Kubernetes Cluster, Now in Beta
+Nov 2, 2026
+From the CEO: Our $30M Round and the Next Chapter of Hyperbolic
+Oct 28, 2026
+Announcing Hyperbolic’s $30M Series A1 Funding
+Oct 27, 2026
+GPUs are financed for years. AI workloads run for weeks
+Oct 26, 2026
+Introducing Flux: Next-Generation Inference Powered by Multi-Cloud Orchestration
+Oct 21, 2026
+Introducing Managed Kubernetes for GPU Workloads on Hyperbolic, Now in Beta
+Oct 13, 2026
+How Much Compute Do You Actually Need?
+Aug 10, 2026
+NVIDIA H200 Price in 2026
+Jul 23, 2026
+FAQs The basics, answered.
+What is Hyperbolic? Hyperbolic is making global AI compute liquid for teams that need fast, flexible access to GPU compute. The platform gives startups, researchers, AI labs, and enterprises one place to launch on-demand GPUs, reserve dedicated capacity, or deploy private GPU infrastructure for training, fine-tuning, inference, and production AI workloads.
+Instead of waiting on legacy cloud quotas, long procurement cycles, or rigid contracts, teams can start with self-serve GPU instances and scale into reserved or private infrastructure as their workload requirements grow.
+How quickly can I start? You can launch an on-demand GPU instance in minutes. Create an account, add a payment method, choose your GPU configuration, and connect over SSH.
+Hyperbolic supports workloads ranging from single-GPU experimentation to larger multi-GPU and multi-node deployments. For teams that need guaranteed access to specific GPUs such as H100s, H200s, or B200s, Reserved and Private Cloud options are available.
+Do I need a long-term contract? No. On-demand GPU instances are pay-as-you-go, so you only pay for the compute you run. There are no long-term commitments required to get started.
+For teams running persistent training, fine-tuning, inference, or production workloads, Reserved capacity provides dedicated GPU access at discounted rates. This gives you more predictable availability and pricing without forcing you into the multi-year commitments often required by legacy cloud providers.
+How does GPU pricing work? Hyperbolic pricing depends on the compute model you choose.
+On-demand GPUs are usage-based and billed by the hour, making them a good fit for experimentation, burst workloads, short training runs, evaluation jobs, and flexible inference needs.
+Reserved GPUs are priced at discounted prepaid rates for teams that need dedicated, always-on capacity. This is usually the better fit when your workload is predictable, production-critical, or capacity-sensitive.
+Private Cloud pricing is customized based on GPU type, cluster size, networking, isolation, compliance, and operational requirements.
+What is the difference between On-Demand, Reserved, and Private Cloud? Hyperbolic offers three ways to access GPU capacity.
+On-Demand is best when you need GPUs right away with no commitment. It is the most flexible option and is billed based on usage.
+Reserved is best for steady production workloads that need dedicated capacity at a discounted rate. It requires a shorter-term commitment, usually under one year.
+Private Cloud is best for teams scaling long term. It provides dedicated infrastructure, more control, and the lowest pricing through longer-term agreements.
+Is my data and workload isolated? Yes. Hyperbolic is built for secure GPU workloads, with isolation controls that vary by infrastructure tier.
+On-Demand GPU instances run on secure multi-tenant infrastructure designed for fast, flexible access. Workloads are isolated from other users, with network isolation and instance cleanup between sessions.
+Reserved capacity gives your team dedicated GPU resources for more predictable performance and stronger workload control. Depending on the configuration, this can include bare-metal access, direct SSH, and dedicated infrastructure for your workloads.
+Private Cloud provides the strongest isolation model for teams with stricter security, compliance, or enterprise requirements. It can include single-tenant infrastructure, isolated networking, SSO, audit logging, and compliance support.
+For sensitive workloads involving proprietary models, regulated data, or strict internal security requirements, Reserved or Private Cloud is usually the better fit.
+socials X
+LinkedIn
+YouTube
+GitHub
+Contact
+pages GPUs
+Managed Kubernetes
+Serverless Inference
+Partner With Us
+resources Docs
+About Us
+Careers
+Media Kit
+newsletter Email Address
+Privacy Policy Privacy FAQ Terms of Use Trust Center Cookie Settings
+© Hyperbolic 2026

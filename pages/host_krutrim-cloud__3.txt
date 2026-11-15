@@ -1,0 +1,105 @@
+URL: https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio
+FINAL: https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio
+STATUS: 200
+TITLE: Billing for AI Studio | Krutrim Cloud Documentation
+FETCHED: 2026-11-15T15:58:08.091Z
+
+Billing for AI Studio | Krutrim Cloud Documentation
+Skip to content
+⌘ Ctrl k
+Welcome
+Getting Started
+Quickstart
+Managing your Krutrim Cloud Account
+Basics
+Core Infrastructure
+Krutrim Pages
+AI Studio Model Catalogue
+AI Jobs
+Billing for AI Studio
+Certificate Manager
+Key Management System
+Cloud Billing
+Identity Access Management
+Pricing
+MCP
+Overview
+Hosted MCP
+Local MCP (stdio)
+Connect Claude Code & Desktop
+Connect Codex
+Connect Cursor
+Connect VS Code
+Connect Hermes
+Connect OpenCode
+Troubleshooting
+Developer Tools
+KrutrimConnect
+SDK Guide
+Core Infra SDK
+AI Studio SDK
+Load Balancer SDK
+Krutrim Kubernetes System SDK
+Key Certificate Manager SDK
+Auto Scaling Group SDK
+Terraform Provider Krutrim
+Powered by GitBook
+On this page
+For the complete documentation index, see llms.txt . This page is also available as Markdown .
+Copy
+On this page
+Basics
+AI Studio
+Billing for AI Studio
+Krutrim Cloud&#x27;s AI Studio offers access to a diverse catalogue of open-source and in-house AI models for text generation, embeddings, speech, and multimodal use cases. All models are billed based on usage , with costs varying depending on the type of input/output and the model in use.
+Model catalog billing
+Each model in AI Studio defines:
+Billing mode (Input tokens, Output tokens, Audio minutes, etc.)
+Unit of pricing (Per 1M tokens, Per minute, Per hour, etc.)
+Rate (in ₹)
+You are billed only for what you use . Charges are calculated based on usage metrics collected during API calls or console interactions with the models.
+Model Catalog Pricing
+For the latest list of available models and their current pricing, visit the Krutrim Cloud console .
+Additional Notes
+Tokenization logic varies by model and is handled automatically using the model’s default tokenizer.
+Speech models are priced per minute/hour of audio , based on the type (TTS or STT).
+Multimodal models may count both text and vision tokens.
+Evaluation Billing
+The cost of running Model Evaluations and Performance Evaluations on the Krutrim platform is the same as inference — based on the number of tokens processed.
+Token-Based Pricing
+You are billed per token used during evaluation.
+There are no additional fees for launching or running evaluation jobs.
+Low Balance Handling
+If your account balance drops below a certain threshold, the platform will automatically pause evaluation services until funds are added.
+Fine-Tuning Billing
+Krutrim offers transparent and flexible pricing for both fine-tuning and deployment of custom models. Below is a detailed breakdown of the billing model:
+Fine-Tuning Pricing
+Fine-tuning costs are calculated per 1 million tokens , and pricing varies based on the model used.
+Note: This is token-based pricing , ensuring you pay only for the compute resources used during fine-tuning.
+Deployment Pricing
+Once your model is fine-tuned, you can deploy it on an NVIDIA H100 GPU .
+Deployment pricing includes inference usage — you are charged only for the active duration of your deployment.
+Cost Management Best Practices
+Optimize Your Dataset : High-quality, concise datasets reduce token usage and improve training efficiency.
+Monitor Active Deployments : Shut down unused deployments to avoid incurring extra GPU charges.
+Use Checkpoints : Save checkpoints during training to avoid repeating the entire process in case of interruptions.
+Low Balance Handling
+If your account balance falls below a defined threshold:
+Fine-tuning and deployment services will be automatically paused.
+Resume once sufficient balance is added to the account.
+Where to See This in Console
+To see real-time usage and billing:
+Go to Administration → Cloud Billing → Usage → AI Studio
+Select the relevant sub-tab:
+Model Catalogue
+Fine Tuning
+Deployment
+Use the date filter to narrow your view
+If you have any questions or need assistance, please contact our support team at cloudsupport@olakrutrim.com .
+Last updated 3 days ago
+Model catalog billing
+Model Catalog Pricing
+Additional Notes
+Evaluation Billing
+Fine-Tuning Billing
+Where to See This in Console

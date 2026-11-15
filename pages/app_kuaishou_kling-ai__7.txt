@@ -1,0 +1,45 @@
+URL: https://app.klingai.com/pricing
+FINAL: https://kling.ai/app
+STATUS: 200
+TITLE: Kling AI: Create Videos, Images & More
+FETCHED: 2026-11-15T15:56:59.585Z
+
+Create Videos, Images and More in One Workspace
+Home
+Generate
+Canvas
+Assets
+Sign In
+Plans from
+$6.99
+Skills
+All
+Ads
+Film
+Design
+General
+Video Generation
+Pro Visuals, Great Stories
+Image Generation
+Multi-Ref & Native 4K
+AI Portraits
+Artistic Portraits, Many Styles
+Motion Control
+Precise Action & Pose
+Avatar
+Realistic Talking Avatar
+Creative Effects
+Viral Effects in One Tap
+Video to Audio
+Generate Sounds from Video
+Image Enhancing
+Restore HD Details
+Lip Sync
+Precise Audio-Driven Lip Sync
+Restyle
+Transform Visual Styles
+Recommended
+Follows
+Events
+Plugin
+Publish

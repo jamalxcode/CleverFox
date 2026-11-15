@@ -1,0 +1,669 @@
+URL: https://servercore.com/
+FINAL: https://servercore.com/
+STATUS: 200
+TITLE: IT infrastructure for your business in Kenya – local provider Servercore
+FETCHED: 2026-11-15T15:58:01.009Z
+
+IT infrastructure for your business in Kenya – local provider Servercore
+VRAM Calculator
+New HighFreq Servers
+Select the Optimal GPU for Running an LLM
+Estimate
+AL73-NVMe-10GE and AL26-NVMe-10GE for Large-Scale Projects
+Order
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Search
+All services available
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Sign up
+Sign in
+Popular
+Computing
+Data Storage and Processing
+Network Services
+Security
+Looking Glass
+Status panel
+API
+Cloud Servers
+Flexible virtual machines
+Dedicated Servers
+Strong physical resources
+GPU Cloud Servers
+New
+High-performance computing for AI and ML
+Managed Cloud Databases
+Scalable data storage
+Object Storage
+Unlimited data and multimedia storage
+Cloud Backup Solutions
+Automatic backup of network drives
+Managed Kubernetes
+Automation and container management for efficient development
+Cloud Servers
+Flexibility and scalability for any task
+GPU Cloud Servers
+High-performance computing for AI and ML
+Dedicated Servers
+Complete resource and permormance control
+Managed Kubernetes
+Automation and container management for efficient development
+VMware Cloud
+Enterprise virtualization solution
+Managed Cloud Databases
+For all types available in Servercore
+PostgreSQL
+Relational database for complex queries and analytics
+MySQL
+Fast database for web applications and data storage
+Redis
+Caching and session management for high-performance applications
+Kafka
+Real-time data processing for streaming applications
+TimescaleDB
+Time series and analysis for monitoring and IoT
+ClickHouse
+Analytics and DWH/DLH deployment
+PGVector
+New
+Managed PostgreSQL with support for vector data types
+Object Storage
+Unlimited data and multimedia storage
+File Storage
+User-friendly file management and sharing
+Cloud Backup Solutions
+Automatic backup of network drives
+Secrets Manager
+Free
+Confidential information storage
+DNS-hosting
+Free
+Quick and reliable domain setup
+Private DNS Server
+New
+Isolated DNS server and resolver for private networks
+Anti-DDoS Solutions
+Real-time automated DDoS protection
+Global Router (L3VPN)
+Free
+Secure global data routing
+Mail Service
+Solution to send transaction emails from the Servercore cloud
+Direct Connect
+A secure channel without Internet access
+Search...
+Administration
+By industry
+Free Migration to Servercore
+Turnkey migration service
+Service Administration
+IT service management and support
+Hybrid Cloud Infrastructure
+Combine on-premises infrastructure with Servercore cloud
+AI and ML
+New
+Infrastructure for neural networks, LLMs, and machine learning
+FinTech
+Financial project solutions
+E-commerce
+E-commerce infrastructure
+Healthcare
+Healthcare cloud hosting
+About the Company
+Case Studies
+For Customers
+Legal Information
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Kenya
+M-PAYA Energy
+Metering solutions
+Unlocking Cloud Speed and Reliability with Servercore
+Uzapoint
+Software development
+How to Reduce Cloud Costs by 60% and Latency by 100x: The Nairobi Servers Advantage
+GoDeliveries
+Food delivery
+How to Cut Cloud Costs by 43% and Enhance Incident Response Times
+Case studies from Kenya
+Kazakhstan
+PayLink
+Fintech
+Migration to Servers in Kazakhstan: How to Increase System Response by 6 Times
+Provizor
+Pharmaceuticals
+How to Ensure Fault Tolerance of a Procurement Platform for 3,000 Pharmacies
+Case studies from Kazakhstan
+Uzbekistan
+Uzum Nasiya
+Fintech
+Seamless migration and custom cloud solution tailored to business objectives
+Alif Tech
+Fintech
+How to Reduce Service Downtime by 80%
+Bosch
+Retail
+How Bosch Accelerated Customer Engagement Fivefold and Automated Cloud-Based Business Processes
+CyberNet AI
+AI
+How to Deploy AI Solutions on Custom Servers and Accelerate System Response Time by 80%
+Case studies from Uzbekistan
+Servercore on Techcabal
+Servercore Enables Kenya-Based Food Delivery Service GoDeliveries Cut Cloud Costs by 43%
+All publications about us
+Demo
+Product Video Guide by Servercore CTO
+Servercore Solutions Security
+We ensure IT systems and data protection at five levels
+Network Infrastructure
+Types of our networks and their structure
+Affiliate Program
+Help us find new clients and earn up to 15%
+Грант 1 млн тенге на миграцию в Servercore
+Казахстан
+Legal Information
+Legal documents, bank details, etc.
+Sign up
+Sign in
+Sign up
+/
+Sign in
+Sign up
+/
+Sign in
+All services available
+Products
+Services
+Pricing
+Documentation
+Servercore
+Blog
+Sales Department
+hello@servercore.com
+Sign up
+Sign in
+English, Kenya
+English, Kenya
+Russian, Central Asia
+EUR
+EUR
+USD
+KZT
+KES
+UZS
+Popular
+Cloud Servers
+Dedicated Servers
+GPU Cloud Servers
+New
+Managed Cloud Databases
+Object Storage
+Cloud Backup Solutions
+Managed Kubernetes
+Computing
+Cloud Servers
+GPU Cloud Servers
+Dedicated Servers
+Managed Kubernetes
+VMware Cloud
+Data Storage and Processing
+Managed Cloud Databases
+PostgreSQL
+MySQL
+Redis
+Kafka
+TimescaleDB
+ClickHouse
+PGVector
+New
+Object Storage
+File Storage
+Cloud Backup Solutions
+Secrets Manager
+Free
+Network Services
+DNS-hosting
+Free
+Private DNS Server
+New
+Anti-DDoS Solutions
+Global Router (L3VPN)
+Free
+Mail Service
+Direct Connect
+Security
+Looking Glass
+Status panel
+API
+Administration
+Free Migration to Servercore
+Service Administration
+Hybrid Cloud Infrastructure
+By industry
+AI and ML
+New
+FinTech
+E-commerce
+Healthcare
+About the Company
+About us
+News
+Careers
+For customer inquiries
+hello@servercore.com
+PR Department
+pr@servercore.com
+Technical Support
+support@servercore.com
+Case Studies
+M-PAYA Energy
+Metering solutions
+Uzapoint
+Software development
+GoDeliveries
+Food delivery
+PayLink
+Fintech
+Provizor
+Pharmaceuticals
+Uzum Nasiya
+Fintech
+Alif Tech
+Fintech
+Bosch
+Retail
+CyberNet AI
+AI
+For Customers
+Demo
+Servercore Solutions Security
+Network Infrastructure
+Affiliate Program
+Legal Information
+Legal Information
+Local Cloud in Nairobi Built for Kenya’s DPA 2019
+Cloud Servers
+Dedicated Servers
+Cloud GPU Servers
+Managed Kubernetes
+Cloud Databases
+Backups
+S3
+Access the Panel
+Discuss Your Project
+Tier III certified data center in Nairobi
+15+ years of proven global technical expertise in delivering complex projects
+Special project team to solve non-standard tasks
+Trusted by Industry Leaders
+Our transition to Servercore coincided with the deployment of a new utility billing and energy management system. The self-service capability they offered gave us the confidence and support needed for a seamless transition, ensuring uninterrupted service for our partners and end-users.
+Mwai Mworia
+CEO of M-PAYA Energy
+Before migrating to Servercore, we struggled with high costs and inefficiencies in scaling our resources, leading to frequent downtimes. Now, we benefit from cost-effective solutions like tailored servers and managed databases, allowing us to efficiently manage and scale our traffic.
+Caleb Chege
+CTO of Uzapoint
+Servercore solutions were crucial to our company launch. Our initial server costs were significantly high. With Servercore, we achieved savings of up to 43% on server expenses. Their exceptional customer support and efficiency give us confidence to approach the market knowing we have solid backing. Additionally, their local support ensures prompt assistance, minimizing downtime.
+Kalvin Omollo
+CEO of GoDeliveries
+While automating our business processes, w e sought a reliable provider with affordable server prices and were recommended Servercore. We are pleased with the service quality, payment terms, and prompt technical support through their ticketing system.
+Mansur Sharapov
+Head of the IT Department at Bosch in Uzbekistan
+Servercore&rsquo;s staff actively assisted us with the migration, enabling us to move to the cloud within a month without any difficulties. After the successful IT infrastructure testing, we gradually started transferring all our cloud servers from the previous provider to Servercore. Currently, all servers are successfully running in Servercore&rsquo;s cloud and assisting us in scaling our business.
+Sardorbek Bayakhmedov
+Project Office Head at Uzum Nasiya
+More case studies
+Choosing Infrastructure for Your Business Needs
+At Servercore, you can easily deploy public, private, or hybrid clouds on OpenStack, fully tailored to your specific needs.
+All Products
+GPU
+SLA 99,98%
+Cloud Servers
+Test your software faster, with little IT budget, and save more
+Easily set up Virtual Desktop Infrastructure (VDI) environments
+Validate heavy data-processing ideas
+Easily handle GPU-intensive tasks
+from 2.66 EUR /month
+from 2.85 USD /month
+from 1 384 KZT /month
+from 395 KES /month
+from 36 081 UZS /month
+SLA 100%
+Bare Metal Servers
+Speed up time-to-market without buying hardware
+Achieve maximum data security & protection
+Set up high-capacity disk storage
+from 281 EUR /month
+from 310 USD /month
+from 146 200 KZT /month
+from 41 900 KES /month
+from 3 793 000 UZS /month
+SLA 99,98%
+Managed Kubernetes
+Stress-free cluster deployment and maintenance &mdash; focus on your business goals, leave the IT to us
+Create flexible cloud-ready infrastructure across any OS
+Save time with automatic node updates
+from 22 EUR /month
+from 23 USD /month
+from 10 424 KZT /month
+from 4 139 KES /month
+from 290 754 UZS /month
+SLA 99,95%
+Managed Cloud Databases
+Launch ready-to-use databases at the click of a button: MySQL, PostgreSQL, Redis, Kafka, TimescaleDB
+Delegate database administration &mdash; we handle it for you
+from 156 EUR /month
+from 167 USD /month
+from 70 445 KZT /month
+from 23 113 KES /month
+from 1 832 069 UZS /month
+SLA 99,99%
+Cloud S3 Storage
+Store media content, datasets, and backups securely in Nairobi &mdash; No limitations
+Smart savings for rarely accessed data with affordable cold storage plans
+from 0.021 EUR /GB
+from 0.022 USD /GB
+from 13.6 KZT /GB
+from 3.8 KES /GB
+from 324 UZS /GB
+Calculate Costs
+Prices
+Take Control: Manage Your Infrastructure Your Way
+In the Control Panel
+IAM service — easily manage user permissions and access levels
+Transparent billing with easily trackable reports
+Flexible pay-as-you-go model for cloud resource payments
+One-click resource scaling in Kenya — No delays
+Access the Panel
+Via API
+Interact directly with services and automate routine tasks to reduce errors
+Read Documentation
+Through Terraform Provider
+Easily manage infrastructure and experiment quickly using Infrastructure as Code (IaC)
+Read Documentation
+Registration in the control panel takes just a few minutes.
+Already have an account?
+Log in
+Cut Costs. Save Time. Grow Faster.
+By 26%
+Reduce cloud costs with shared core rental
+Rent servers from the Shared Line range &mdash; with 10%, 20%, or 50% of a full core. Ideal for development environments and microservices, optimising your budget.
+Up to 32%
+Benefit with Kubernetes autoscaling
+Seamless cluster scaling during traffic spikes or drops without manual intervention.
+Up to 64%
+Save by freezing virtual machines
+Pause your server when not in use to avoid paying for vCPU, RAM, or GPU resources.
+Up to 50%
+Cut resource costs with Bare Metal servers
+Use dedicated servers for legacy projects without cloud dependency and save on storage costs.
+Access the Panel
+Your Data Safety is Our Top Priority
+Triple Data Replication
+We don&rsquo;t just store your data, we safeguard it. We maintain 3 copies of your data on separate servers across different racks, ensuring high availability.
+Rent Server
+N+1 Network Redundancy
+Each internal node in our network has a backup, avoiding single points of failure.
+Learn more
+Enhanced DDoS Protection at L7
+Our partner solution from Qrator upgrades your DDoS protection from L3-L4 to L7, protecting against sophisticated attacks.
+Learn more
+Client Security Guide
+Empower your business with tools, best practices, and step-by-step instructions to boost project security even further.
+More about security
+Choose the Region Where You Want to Deploy Your Service
+Nairobi
+Almaty
+Tashkent
+1 availability zone
+TIER III Design
+TIER III
+ISO27001
+PCI DSS
+Nairobi
+Kenya
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+1 availability zone
+TIER III Design
+TIER III Facility
+ISO14001
+ISO20000
+ISO9001
+ISO27001
+ISO45000
+Almaty
+Kazakhstan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+1 availability zone
+2 availability zone
+3 availability zone
+Reliability level — N+1
+TIER II
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+TIER III
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+S3
+Managed Kubernetes
+Tashkent
+Uzbekistan
+Dedicated Servers
+Cloud Servers
+Cloud Databases
+Managed Kubernetes
+Tier III data center in Nairobi
+Tier III infrastructure, ISO 27001 and PCI DSS certified. Keep personal data in-country and stay audit-ready under the Data Protection Act 2019. Fault tolerance level of at least 99.982% (no more than 95 minutes of downtime per year).
+Compliance with global and local security standards
+The data centers hosting Servercore products comply with DPA 2019 and GDPR standards and are PCI DSS 4.0.1 certified.
+Five levels of client data protection
+We ensure security of projects at all levels, from data centers to apps, through a range of measures, including 24/7 video surveillance, 2FA, encryption, and more.
+Go to control panel
+Customs Solutions &mdash; Specific to Your Business Needs
+Customs Solutions
+Solving Advanced Infrastructure Challenges
+Our IT engineers will design a unique solution for your project needs.
+Discuss Your Project
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+We set up Direct Connect to your on‑premise infrastructure
+Ismoiljon Iminokhunov
+Project Manager
+We provide a banking-grade access scheme to the equipment
+Sergey Bobko
+Business Development Director for Kazakhstan
+We build a private cloud tailored to your needs
+Yuriy Kapelko
+Chief Operating Officer
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+We set up Direct Connect to your on‑premise infrastructure
+Ismoiljon Iminokhunov
+Project Manager
+We provide a banking-grade access scheme to the equipment
+Sergey Bobko
+Business Development Director for Kazakhstan
+We build a private cloud tailored to your needs
+Yuriy Kapelko
+Chief Operating Officer
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+We set up Direct Connect to your on‑premise infrastructure
+Ismoiljon Iminokhunov
+Project Manager
+We provide a banking-grade access scheme to the equipment
+Sergey Bobko
+Business Development Director for Kazakhstan
+We build a private cloud tailored to your needs
+Yuriy Kapelko
+Chief Operating Officer
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+We set up Direct Connect to your on‑premise infrastructure
+Ismoiljon Iminokhunov
+Project Manager
+We provide a banking-grade access scheme to the equipment
+Sergey Bobko
+Business Development Director for Kazakhstan
+We build a private cloud tailored to your needs
+Yuriy Kapelko
+Chief Operating Officer
+We manage dedicated racks with separate access control systems
+Vadim Eryshev
+Business Development Director
+We deliver a custom video surveillance system
+Sunnat Shamuratov
+Sales Director
+Migration
+Managed Migration Services
+We will carefully migrate your IT infrastructure to Servercore for free. Completing a short questionnaire and briefing in just 2 hours is all it takes — we’ll handle the rest.
+Request a Consultation
+Still Have Questions?
+Reach out to technical support or browse the documentation.
+24/7 Technical Support
+Our experienced real engineers (not bots) are ready to assist you any time, free of charge. Simply create a ticket.
+15-minute response time
+Free tech support in English
+Free for all accounts
+Tasks handled by expert engineers
+Ask a Question
+Detailed Documentation
+Find continuously up-to-date documentation for all Servercore products and services to keep it clear and helpful.
+Account Setup
+Billing
+Availability Matrix
+Affiliate Partner Programme
+Other Sections
+Start Using Servercore Products Now
+I want to receive news about products and services.
+I agree to the processing of personal data, as well as the policy .
+Sign up
+Already have an account? Sign in.
+Servercore News
+Subscribe
+Products
+Dedicated Servers
+Cloud Servers
+Managed Kubernetes
+Cloud Databases
+S3 Object Storage
+All products
+Company
+About Us
+Client Cases
+Network Infrastructure
+Security & Certificates
+Careers
+Kazakhstan site
+Clients & Partners
+Demo
+Pricing
+Partnership Program
+For Client Requests
+hello@servercore.com
+Need help with our services?
+Submit a support ticket , and our team will assist you.
+Services
+Cloud Migration
+IT Administration Services
+All services
+Resources
+Documentation
+Blog
+Status Panel
+Looking Glass
+API
+Legal
+User Agreement
+Privacy Notice
+Personal Data Processing Policy
+Legal Details
+PR Department
+pr@servercore.com
+© PE LLC «Servercore CIS»
+© LLP «SSR»
+© Servercore Africa Ltd
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+We use cookies
+Please find more detailed information in our cookie policy.
+Functional cookies
+This type of cookies is required for the stable functioning of the website; therefore, you cannot disable these cookies unless your browser settings specify otherwise.
+Analytical cookies
+Analytical cookies help us better understand site visitor behaviour and product usage patterns. Specifically, we leverage these cookies to gain insights into how visitors navigate the platform, using this data to enhance your experience.
+Remarketing cookies
+We leverage remarketing services to feature advertisements on third‑party platforms following your visit to our website. Our third‑party vendors and we employ cookies to inform, optimize, and serve advertisements based on your historical visits to our platform.
+Accept
+Reject
+Subscribe to Servercore News
+We share updates about product launches, current events, and special offers.
+I agree to receive the newsletter in accordance with the
+Privacy Policy .
+Subscribe
+Couldn't find the right service or configuration?
+Tell us about your project requirements. Our engineers will reach out to discuss custom terms or build a tailored
+solution specifically for your business.
+Company size 1–10 employees 11–50 employees 51–250 employees 251–1,000 employees 1,000+ employees
+What resources were you looking for? Cloud servers Cloud servers with GPUs Dedicated servers S3 Databases Network services and security Other
+Next
+1/2
+I agree to the processing of my personal data in accordance with the
+Privacy Policy .
+Back
+Submit request
+2/2

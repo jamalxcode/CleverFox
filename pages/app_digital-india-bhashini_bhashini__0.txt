@@ -1,0 +1,438 @@
+URL: https://bhashini.gov.in/
+FINAL: https://bhashini.gov.in/
+STATUS: 200
+TITLE: Bhashini
+FETCHED: 2026-11-15T15:57:33.194Z
+
+Government of India
+Skip to main content
+A-
+A
+A+
+English
+Notifications
+National Language Translation Mission
+Harnessing technology to transcend language barriers
+Home
+About
+About BHASHINI
+CEO & Our Team
+Vision & Mission
+Our Objectives
+Our Impacts
+BHASHINI Ecosystem
+BHASHINI At Work
+Arpan
+Our Services
+Talent Samudaye
+Service Leaderboard
+Our Products
+Gyan Kosh
+Notifications & Tenders/EOIs
+Sanchalak | Operation Management
+Blogs & Stories
+Sahyogi
+About Sahyogi
+Udyami
+Sanchalan/SEVA
+BHASHINI Samudaye
+BHASHINI Rajyam
+BHASHINI Projects
+Udbhav
+Hackathons
+Prayog
+Parikshan Application [BETA]
+Abhiyantrikee Prayogshala
+Model & Data Vatika
+Avinya Prayogshala
+Pravakta
+About Pravakta
+Leadership Bytes
+CEO Insights
+Awareness & Engagement Programs
+Impact & Recognition
+BHASHINI Utsav
+BHASHINI in News
+BHASHINI Samanvay
+BHASHINI Drishtikon
+BHASHINI Pravaah
+BHASHINI Connect
+BhashaDaan
+Login/SignUp
+BHASHINI Mobile App
+BHASHINI Mobile App
+Home
+About
+Arpan
+Sahyogi
+Prayog
+Pravakta
+BhashaDaan
+BHASHINI Mobile App
+Login/SignUp
+One Registration.
+Get Access to BHASHINI Solutions
+Register your organization once to securely access BHASHINI's AI products, language services, applications, APIs and resources — all in one place.
+Register here
+Learn More
+Secure & Trusted
+One-time Registration
+Collaborate & Innovate
+Dedicated Support
+Real-time | Multilingual | AI-powered
+SANSAD BHASHINI INITIATIVE
+AI-powered multilingual translation, transcription & summarisation for Parliament
+Know More
+Innovate | Solve | Transform.
+LEAP HACKATHON
+LAW ENFORCEMENT AND POLICING
+Join the BHASHINI - LEAP Hackathon and build AI-driven multilingual solutions for India's law enforcement agencies.
+LATEST UPDATES
+VYOMA Innovation Challenge 2026 – Winners Announced.
+At Kashi-Tamil Sangamam, I was addressing in Hindi, but through AI tool BHASHINI, people of Tamil Nadu were listening to my address in Tamil simultaneously.
+Hon'ble PM Shri Narendra Modi | Mann Ki Baat (31st December 2023)
+The day is not far when an address will be delivered in one language, and the public will listen in their own language in real time.
+Hon'ble PM Shri Narendra Modi | Mann Ki Baat (31st December 2023)
+Today, my speech is being translated into English in real-time with the help of AI, and some of you are listening to it through BHASHINI. There may be some initial challenges, but this demonstrates the wonders technology can achieve.
+Hon'ble PM Shri Narendra Modi | Diamond Jubilee Celebrations, Supreme Court of India - 2024
+The impact of this technology will be monumental in schools, hospitals, and courts.
+Hon'ble PM Shri Narendra Modi | Mann Ki Baat (31st December 2023)
+More and more people should learn Marathi. To achieve this, initiatives like BHASHINI can be promoted on online platforms.
+Hon'ble PM Shri Narendra Modi | 98th Akhil Bharatiya Marathi Sahitya Sammelan
+No matter what the world does with AI, it'll remain incomplete without India
+Hon'ble PM Shri Narendra Modi on Lex Fridman Podcast
+Start Your BHASHINI Journey
+Get Access to BHASHINI APIs,
+Language Services & Solutions
+Register your organization once to securely access BHASHINI's APIs, AI models, language services, datasets, glossaries, documentation, developer tools, and enterprise support—all in one place.
+Register Now
+View Detailed Process
+Step 1
+Create Account
+Sign up with your email and basic details.
+Step 2
+Verify Email
+Verify your email to secure your account.
+Step 3
+Complete Profile
+Provide organization details and required information.
+Step 4
+Review & Approval
+Our team reviews your details and approves your access.
+Step 5
+Access Dashboard
+Get access to APIs, products, services, and tools.
+Who can join BHASHINI?
+Built for everyone who wants to build in Indian languages.
+Explore More
+Central Government
+State Governments
+HEIs | Institutes
+Startups
+Private Corporate Sectors
+Language Experts
+NGOs , PSUs
+Developers
+Judiciary
+BFSI (Banking, Financial Services, and Insurance)
+BHASHINI's Milestones at a Glance
++
+Languages Supported
++
+Language Services
++
+Total AI Models
+1.4 Million+
+Mobile App Downloads
+Billion+
+Total Inferencing
+Crore+
+Indians Impacted
++
+Total Usecases
+Explore Real-Time Service Leaderboard
+Experience the Power of BHASHINI-Sangrahah
+Bridging the Digital Divide with BHASHINI's Multilingual Apps, Website, and Portals.
+Anuvaad
+An innovative technology that seamlessly converts text & voice from one language to another language.
+Mobile Application
+Onboarding Portal
+Your Gateway to BHASHINI: Seamlessly Access Services, Udyat API, Parikshan Application, and More.
+Lekhaanuvaad | Document Translation
+Document translation and digitization across various Bhartiya languages, ensuring clear and accurate communication.
+Anuvaad
+An innovative technology that seamlessly converts text & voice from one language to another language.
+Mobile Application
+Onboarding Portal
+Your Gateway to BHASHINI: Seamlessly Access Services, Udyat API, Parikshan Application, and More.
+Lekhaanuvaad | Document Translation
+Document translation and digitization across various Bhartiya languages, ensuring clear and accurate communication.
+Pillars of BHASHINI Sahyogi
+Reimagining the User’s Journey using Multilingual Voice as a medium
+BHASHINI Sahyogi
+Largest “AI co-creation, collaboration and Partnership”
+Explore more
+How we’re making an impact
+Reimagining the User’s Journey using Multilingual Voice as a medium across various sectors
+E-Governance
+4+ Solutions
+Health
+4+ Solutions
+Agriculture
+4+ Solutions
+Citizen Services
+4+ Solutions
+Development Sector
+4+ Solutions
+Justice System
+4+ Solutions
+Outreach
+4+ Solutions
+Fin-tech
+3+ Solutions
+Education
+7+ Solutions
+View All Sectors →
+Our Services
+BHASHINI offers a range of services to make digital content accessible to all.
+Explore Services
+Transliteration
+Transliteration
+Transliteration is a process where text is convert...
+View More Details
+TTS
+Text to Speech
+Text-to-Speech (TTS) is a technology that converts...
+View More Details
+NMT
+Neural Machine Translation
+Neural Machine Translation (NMT) is an advanced AI...
+View More Details
+ASR
+Automatic Speech Recognition
+Automatic Speech Recognition is a powerful technol...
+View More Details
+VC
+Voice Cloning
+Voice Cloning enables the creation of synthetic sp...
+View More Details
+KWS
+Keyword Spotting
+Keyword Spotting allows systems to detect specific...
+View More Details
+LipSync
+Lip Sync
+Lip Sync is an AI-driven technology that aligns li...
+View More Details
+Language Diarization
+Language Diarization
+Language diarization is the process of automatical...
+View More Details
+Speaker Diarization
+Speaker Diarization
+Speaker diarization is the process of automaticall...
+View More Details
+Speaker Verification
+Speaker Verification
+Speaker verification is a technology that confirms...
+View More Details
+Glossary
+Glossary
+Glossary service specializes in replacing domain-s...
+View More Details
+TN
+Text Normalization
+Text Normalization converts text from written from...
+View More Details
+GC
+Audio Gender Classification
+Identify the gender of individuals within audio co...
+View More Details
+NER
+Name Entity Recognition
+Identifies entities such as person, location, and ...
+View More Details
+Denoiser
+Denoiser
+Reduce background noise in audio.
+View More Details
+PF
+Profanity Filter
+Profanity filter within Bhashini is an extremely c...
+View More Details
+VAD
+Voice Activity Detection
+Detects voice activity in audio signals.
+View More Details
+Punctuation
+Punctuation
+Inserts periods, commas, and other punctuation mar...
+View More Details
+ITN
+Inverse Text Normalization
+ITN plays a crucial role in making ASR outputs mor...
+View More Details
+ALD
+Audio Language Detection
+Audio Language Detection is a technology that auto...
+View More Details
+TLD
+Text Language Detection
+Text Language Detection is a technology that autom...
+View More Details
+ILD
+Image Language Detection
+Image Language Detection (ILD) is an AI-powered ca...
+View More Details
+OCR
+Optical Character Recognition
+Optical Character Recognition (OCR) is a technolog...
+View More Details
+Transliteration
+Transliteration
+Transliteration is a process where text is convert...
+View More Details
+TTS
+Text to Speech
+Text-to-Speech (TTS) is a technology that converts...
+View More Details
+NMT
+Neural Machine Translation
+Neural Machine Translation (NMT) is an advanced AI...
+View More Details
+ASR
+Automatic Speech Recognition
+Automatic Speech Recognition is a powerful technol...
+View More Details
+VC
+Voice Cloning
+Voice Cloning enables the creation of synthetic sp...
+View More Details
+KWS
+Keyword Spotting
+Keyword Spotting allows systems to detect specific...
+View More Details
+LipSync
+Lip Sync
+Lip Sync is an AI-driven technology that aligns li...
+View More Details
+Language Diarization
+Language Diarization
+Language diarization is the process of automatical...
+View More Details
+Speaker Diarization
+Speaker Diarization
+Speaker diarization is the process of automaticall...
+View More Details
+Speaker Verification
+Speaker Verification
+Speaker verification is a technology that confirms...
+View More Details
+Glossary
+Glossary
+Glossary service specializes in replacing domain-s...
+View More Details
+TN
+Text Normalization
+Text Normalization converts text from written from...
+View More Details
+GC
+Audio Gender Classification
+Identify the gender of individuals within audio co...
+View More Details
+NER
+Name Entity Recognition
+Identifies entities such as person, location, and ...
+View More Details
+Denoiser
+Denoiser
+Reduce background noise in audio.
+View More Details
+PF
+Profanity Filter
+Profanity filter within Bhashini is an extremely c...
+View More Details
+VAD
+Voice Activity Detection
+Detects voice activity in audio signals.
+View More Details
+Punctuation
+Punctuation
+Inserts periods, commas, and other punctuation mar...
+View More Details
+ITN
+Inverse Text Normalization
+ITN plays a crucial role in making ASR outputs mor...
+View More Details
+ALD
+Audio Language Detection
+Audio Language Detection is a technology that auto...
+View More Details
+TLD
+Text Language Detection
+Text Language Detection is a technology that autom...
+View More Details
+ILD
+Image Language Detection
+Image Language Detection (ILD) is an AI-powered ca...
+View More Details
+OCR
+Optical Character Recognition
+Optical Character Recognition (OCR) is a technolog...
+View More Details
+Transliteration
+Transliteration
+Transliteration is a process where text is convert...
+View More Details
+TTS
+Text to Speech
+Text-to-Speech (TTS) is a technology that converts...
+View More Details
+NMT
+Neural Machine Translation
+Neural Machine Translation (NMT) is an advanced AI...
+View More Details
+ASR
+Automatic Speech Recognition
+Automatic Speech Recognition is a powerful technol...
+View More Details
+BhashaDaan: One platform, Multiple crowdsourcing initiatives
+Contribute & be a Language Hero!
+Contribute Now
+Breaking Language Barrier Across India
+Speak Your Language, All of India Understands!
+Download the BHASHINI App
+Ready to Get Started?
+Make Your Website Multilingual!
+Break language barriers and reach a wider audience effortlessly. Translate your website into 22+ Bhartiya languages with ease.
+GET STARTED WITH BHASHINI’S TRANSLATION PLUGIN
+Digital India BHASHINI Division
+Independent Division under Digital India Corporation
+Electronics Niketan, 6-CGO Complex, New Delhi - 110003
+ceo-dibd[at]digitalindia[dot]gov[dot]in
+011-2430 1361
+Home
+About
+Arpan
+Our Products
+Talent Samudaye
+Bhashadaan
+Sahyogi
+Rajyam
+Sanchalan/SEVA
+Udbhav | Startups
+Pravakta
+Gyan Kosh
+Parikshan App
+Model And Data Vatika
+Abhiyantrikee
+Avinya Prayogshala
+Get The BHASHINI App
+Join Us
+© 2026 - Copyright All rights reserved.
+Sitemap
+Terms of Use
+Privacy Policy
+Copyright Policy
+Contact Us
+Notifications

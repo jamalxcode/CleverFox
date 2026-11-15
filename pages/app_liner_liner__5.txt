@@ -1,0 +1,140 @@
+URL: https://liner.com/news/liner-interview-zdnet
+FINAL: https://liner.com/news/liner-interview-zdnet
+STATUS: 200
+TITLE: Liner Expands to B2B with AI Search &amp; Orchestration Tech
+FETCHED: 2026-11-15T15:57:17.595Z
+
+Liner Expands to B2B with AI Search & Orchestration Tech
+Products
+API/MCP
+Pricing
+Resources
+Company
+Get started
+Get started
+[Interview] Liner pivots beyond consumer search to license core tech for enterprise clients
+[Interview] Liner pivots beyond consumer search to license core tech for enterprise clients
+Liner
+Sep 14, 2026
+● Liner Scholar weekly active users surge 2.2x year-over-year
+● Credit buyers grow nearly 5x over the past quarter
+Artificial intelligence search startup Liner is turning Business-to-Business (B2B) capabilities into its next main growth engine this year. Moving beyond providing consumer-facing AI search, research, and drafting tools, the company has started licensing its underlying search infrastructure and model orchestration technology to enterprise clients.
+Liner CEO Jinu Kim shared the company&#x27;s shifting vision during a recent interview with ZDNet Korea at the company&#x27;s Seoul headquarters. He noted that while Liner was historically viewed purely as a consumer platform, the team now feels confident in commercializing its entire technical stack, adding that companies across North America, the Middle East, and South Korea are already integrating Liner&#x27;s core tech.
+Founded in 2015 as a web highlighting tool that allowed users to save and mark key sentences across web pages, Liner built its early foundation on user-curated data to optimize search ranking results. Following the advent of generative AI, the platform elevated its retrieval precision by pairing Retrieval-Augmented Generation (RAG) with proprietary ranking algorithms, anchoring every generated sentence to verified source citations.
+Specialized agents drive B2C momentum
+Liner overhauled its product portfolio and monetization strategy earlier this year. In January, the team launched "Liner Scholar" as a standalone platform tailored for academic research, followed by "Liner Lite" in February to streamline workplace documentation. These launches marked a strategic shift from general search toward purpose-built AI agents.
+According to internal company metrics, Liner Scholar saw its weekly active user count jump 2.2 times between September of last year and September of this year. Meanwhile, Liner Lite usage exploded 13-fold over the past three months, while user purchases of Liner credits surged 4.9 times during the same window.
+These figures highlight the traction behind specialized AI agent workflows. Rather than simply adding peripheral feature updates, Liner built both Scholar and Lite with distinct targets in mind, specifically deep academic research and professional document creation.
+Kim emphasized that both platforms have cultivated highly engaged, recurring users, noting that some heavy power users now spend thousands of dollars monthly purchasing additional usage credits.
+Consumer monetization channels are diversifying alongside user growth. Beyond standard subscription plans, Liner introduced flexible credit packages for high-frequency users and launched ad-supported tiers in select regions like India and Southeast Asia. As a result, the company’s global revenue mix is becoming increasingly distributed across the U.S., South Korea, India, and Southeast Asia.
+Expanding revenue streams through enterprise deals
+In the B2B market, Liner aims to go beyond selling enterprise software licenses by directly commercializing the core infrastructure built while operating its consumer platform. Technologies such as source-anchored search engines and contextual model orchestration pipelines are being custom-tailored for enterprise environments.
+This strategic evolution proved pivotal during recent fundraising rounds. Liner closed a 500 billion KRW (approximately $37 million) Series C round last month. Kim explained that investors praised how credit sales and corporate licensing deals added fresh revenue streams on top of predictable subscription income. Prominent enterprise contracts and validated technical capabilities served as key proof points for investors.
+To accelerate this push, Liner established a dedicated "AX (AI Transformation) Division" last month aimed at corporate, public sector, and academic clients. The company has already logged several notable enterprise wins: following a strategic partnership with Saudi Arabian national AI entity Humane last year, Liner signed a memorandum of understanding with Samsung C&T&#x27;s engineering and construction group in late July to collaborate on agentic AI-powered smart building initiatives.
+Kim pointed out that enterprise clients typically run side-by-side comparative evaluations across multiple AI providers before making a purchasing decision. In these benchmark tests, Liner frequently wins deals based on superior search accuracy and practical usability in real work environments.
+He added that Liner&#x27;s B2B initiatives span multiple maturation stages, with some enterprise projects currently operating as Proofs of Concept (PoCs) while other integrations have already reached commercial deployment.
+Embedding technology via APIs and MCPs
+Liner isn&#x27;t restricting its enterprise footprint to standalone software offerings. By opening up its search and retrieval systems through Application Programming Interfaces (APIs) and Model Context Protocol (MCP) integrations, the company is positioning itself as a foundational technology provider that third-party platforms and external AI agents can tap into.
+This approach aligns with Liner&#x27;s goal of complementing major AI platforms rather than competing head-to-head with general-purpose chatbots from tech giants like OpenAI or Google.
+Kim explained that instead of directly rivaling ChatGPT or Claude, Liner focuses on filling specific operational gaps that larger tech giants overlook. Making search capabilities accessible to external agents via APIs and MCPs represents a central pillar of this strategy.
+Liner identifies search precision as its primary competitive moat in the enterprise segment. The platform handles queries by breaking complex prompts into multi-step sub-queries, selecting optimal sources, and generating grounded responses. Throughout the generation process, internal algorithms actively audit for potential hallucinations and resolve conflicting data points by executing additional real-time web searches as needed.
+Looking ahead, Kim mentioned that following the launches of Liner Scholar, Liner Lite, and the recently introduced Liner Finance, the immediate roadmap centers on refining existing product experiences while allocating significantly more resources toward B2B expansion throughout the second half of the year.
+Reflecting on Liner&#x27;s long-term vision, Kim shared his ambition to make Liner the premier destination whenever users or AI agents need to discover, synthesize, and apply complex information.
+Read More
+Copy link
+Liner
+Liner. Search Without Doubt.
+We’re building AI tools for better research and trustworthy knowledge.
+Related articles
+Liner Actions MCP gives AI agents access to more than 1,100 verified apps through a single connection
+Overcoming High-Cost AI Limits: Liner Cuts LLM Expenses by 50% While Maintaining Top Performance
+[Interview] Liner CEO: "We Aren&#x27;t Competing With ChatGPT—We Want to Be the Google for AI”
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+Products
+Liner
+Liner Scholar
+Liner Write
+Pricing
+API/MCP
+Liner API
+Liner Router API
+Liner Actions API
+API pricing
+Search MCP
+Scholar MCP
+API/MCP blog
+Agents
+AI research with Agents
+Hypothesis Generator
+Hypothesis Evaluator
+Citation Recommender
+Literature
+Review
+Research Tracer
+Survey Generator
+Survey Simulator
+Survey Peer Review
+Resources
+Paper reviews
+Learn
+Press
+Support
+Download
+For iOS
+For Android
+For Mac
+For Windows
+For Chrome
+For Edge
+Company
+About us
+Careers
+Privacy Policy
+Terms of Service
+Usage Policy
+Safety
+© 2026 Liner. All Rights Reserved.
+Do not sell or share my personal information
+Select language, en

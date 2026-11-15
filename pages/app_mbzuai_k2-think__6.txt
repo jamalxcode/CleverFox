@@ -1,0 +1,20 @@
+URL: https://www.k2think.ai/plans
+FINAL: https://www.k2think.ai/auth?redirect=%2Fplans
+STATUS: 200
+TITLE: K2 Horizon - MBZUAI
+FETCHED: 2026-11-15T15:56:14.955Z
+
+Continue as Guest
+Email
+Password
+Forgot your password?
+Login
+Are you a new user? Sign up
+or
+Sign in with Google
+Continue with Apple
+Cookie Usage Notice
+We use cookies to improve your experience. By using K2 Horizon, you agree to our cookie policy. Learn more
+Decline
+Accept
+K2 Horizon - MBZUAI

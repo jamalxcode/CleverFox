@@ -1,0 +1,103 @@
+URL: https://www.latitude.sh/blog/latitudesh-megaport-acquisition
+FINAL: https://www.latitude.sh/blog/latitudesh-megaport-acquisition
+STATUS: 200
+TITLE: Latitude.sh to join Megaport to create a first-of-its-kind global compute and NaaS platform - Latitude.sh
+FETCHED: 2026-11-15T15:58:40.204Z
+
+Latitude.sh to join Megaport to create a first-of-its-kind global compute and NaaS platform - Latitude.sh
+Latitude.sh
+Products
+Solutions
+Developers
+Customers
+Pricing
+Log in Contact
+Get started
+Latitude.sh
+Blog / Company
+Latitude.sh to join Megaport to create a first-of-its-kind global compute and NaaS platform
+Guilherme Soubihe • November 10, 2025
+TLDR: Latitude.sh has entered into an agreement for acquisition by Megaport, the global leader in Network-as-a-Service. The transaction is expected to close by 31 December 2025. Everything our customers rely on today will continue exactly as it is now. Under Megaport, Latitude.sh will double down on innovation, expansion, and inventory .
+—
+Latitude.sh has agreed to be acquired by Megaport (ASX:MP1), a publicly traded Network-as-a-Service company.
+When my brother and I founded Latitude.sh, we set out to redefine what digital infrastructure feels like. We wanted an alternative to the public cloud. Something that provided the same flexibility without its opacity, overhead, or hidden trade-offs. Our goal was to make bare metal programmable, global, and instantly accessible to workloads that care about performance, control, and cost.
+Over the years, we started making that vision a reality: our customers have deployed tens of thousands of servers across the globe to power mission-critical workloads, trained and run AI models across continents, and scaled latency-sensitive applications while keeping complexity low and costs in check. All on the infrastructure we built from the ground up.
+But the future is what excites me the most. Together with Megaport, our combined product will create a first-of-its-kind global compute and NaaS platform.
+Megaport has built the world&#x27;s most advanced Network-as-a-Service company with private, on-demand networks linking 1,000+ data centers and cloud on-ramps.
+At Latitude.sh, we spent the last several years blurring the lines between virtualized and dedicated compute, building automation for physical hardware that works and feels like the clouds developers already use, but with more compute power, less complexity, and considerably lower cost.
+What this means for our customers
+Everything you rely on today continues to work exactly as it does.
+Your resources, API keys, billing, and support channels won’t change.
+The team you talk to —the engineers, account managers, and support specialists who know your workloads —remains the same.
+What’s changing is what we can start building once the transaction is complete:
+Improved availability: With Megaport’s scale, we’ll have deeper access to supply chains and logistics networks, reducing lead times for procuring current configurations and brand new instances, including GPUs.
+Increased reach: Megaport’s global footprint opens dozens of new interconnection points for our compute platform to expand into, bringing us even closer to where users and data live.
+Private connectivity: Integration of the Latitude.sh network backbone with Megaport opens up an ocean of opportunities for our global customers
+Accelerated product roadmap: With Megaport’s added engineering and financial resources, we’ll be able to release new features and products faster than ever before.
+In short, you’ll continue benefiting from everything you love about Latitude.sh and gain everything we couldn’t build before.
+Our values aren’t changing
+We’ve aggressively automated our infrastructure to allow for a delightful self-service experience and instant, global access to powerful compute, all powered by an easy-to-use portal and developer tools.
+These values aren’t just surviving the acquisition; they’re what led Megaport to acquire us in the first place.
+Megaport will be amplifying what we’ve proven works, so we’ll continue to operate under the same brand, leadership, and with the same focus: building infrastructure that feels like an extension of your engineering team.
+Our roadmap will remain developer-centric, and we’ll keep listening to the community of software developers, SREs, and platform engineers who helped us get to where we are today.
+With Megaport, we’ll be at the forefront of digital infrastructure innovation, giving you the tools to deploy faster, more deterministic, and globally available workloads on your terms.
+To our customers, thank you for trusting us with your business. It means the world to us!
+Completion of the Latitude.sh acquisition is subject to customary closing conditions, including standard business waivers and consents, and there being no material adverse change to Latitude.sh. No regulatory approvals are required. Completion is expected to occur by 31 December 2025.
+Footer
+Stay updated with our latest news and updates
+Loading...
+Platform
+Locations
+Network
+Pricing
+Products
+Metal
+Metal GPU
+Kubernetes (LKS)
+Virtual machines
+Storage
+Cloud Gateway
+Global Gateway
+Private Networks
+Firewall
+DDoS Protection
+Solutions
+AI
+Web3 & Crypto
+Solana
+Confidential Compute
+Ethereum
+AdTech
+Gaming
+Cloud Migration
+Video Streaming
+Build
+Partners
+Developers
+Docs
+API reference
+SDKs
+CLI
+Terraform
+Examples
+Blog
+Changelog
+Service status
+Looking glass
+Company
+Customers
+About us
+Careers
+Contact sales
+Contact support
+Brand assets
+Legal
+DPA
+Terms of Service
+Privacy Policy
+Fair Usage Policy
+Security
+Trust Center
+Manage cookies
+© Latitude.sh
+////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,1252 @@
+URL: https://docs.jarvislabs.ai/cli/
+FINAL: https://docs.jarvislabs.ai/cli/
+STATUS: 200
+TITLE: CLI | Jarvislabs.ai Docs
+FETCHED: 2026-11-15T15:58:27.156Z
+
+CLI | Jarvislabs.ai Docs
+Skip to main content
+Jarvislabs Docs Tutorials Blog
+Get started
+Overview
+Getting Started
+Templates
+Host an AI Model on a VM
+SSH
+Compute
+VM
+Slurm
+Serverless
+Environments
+Networking
+VPC
+Reserved IP
+Security Groups
+Storage & data
+Disks
+Shared Filesystems
+Object Storage
+Download Data
+Developer tools
+CLI
+Python SDK
+dstack
+Apps & deployment
+ComfyUI
+Automatic1111
+Deploy
+Account
+Settings
+Teams
+Help
+Legacy
+Developer tools
+CLI
+Copy page
+On this page
+JarvisLabs CLI
+New CLI — Part of the jarvislabs package
+The jl CLI is part of the new jarvislabs package, replacing the deprecated jlclient . If you&#x27;re still using jlclient , see the migration note .
+The jl command-line tool lets you manage GPU instances, run training scripts, transfer files, monitor experiments, and call pay-per-token models on JarvisLabs.ai — all from your terminal. It&#x27;s built to work seamlessly with AI coding agents like Claude Code , Codex , Cursor , and OpenCode , so your agent can spin up GPUs, run experiments, and monitor results autonomously.
+Package: jarvislabs | CLI command: jl | Version: 0.2.x | Python: 3.10+
+Platform Support
+Linux and macOS are fully supported. Windows is experimental and not fully tested — if you run into issues, please report them.
+Jump to the Examples section for end-to-end workflows covering training runs, agent automation, filesystem management, and more.
+Installation ​
+Install with uv (recommended) or pip.
+As a CLI tool (recommended) ​
+uv tool install jarvislabs
+To upgrade, run jl update . It works the same way for uv, pipx, and pip installs, and it also refreshes your agent skills:
+jl update
+jl update was added in 0.2.19. If your jl says No such command &#x27;update&#x27; , upgrade once by hand, then use jl update from then on:
+uv tool install jarvislabs@latest # if you installed with uv tool
+pip install --upgrade jarvislabs # if you installed with pip
+With pip ​
+pip install jarvislabs
+After installation, the jl command is available in your terminal.
+What does jl setup do? Run it once after installing. It walks you through:
+Authentication — prompts for your API token (get one from jarvislabs.ai/settings/api-keys ) and saves it locally
+Account status — shows your current balance and active instances
+Agent skill installation — asks which AI coding agents you use ( Claude Code , Codex , Cursor , OpenCode ) and installs skill files for them with your approval, so your agent knows how to use jl out of the box
+Exploring the CLI with --help : Every command supports --help . It&#x27;s the quickest way to see what&#x27;s available, what flags a command takes, and what they do.
+jl --help # top-level commands
+jl run --help # run options, targets, lifecycle flags
+jl create --help # every flag for creating an instance
+Update notifications
+When a newer version is released on PyPI, jl prints a one-line banner after the command finishes (once per day). The banner shows the current and latest versions and tells you to run jl update . jl --version and jl status also mention a newer version when there is one.
+Checks are silent and skipped automatically in CI ( CI=1 ), when stderr isn&#x27;t a TTY, in --json mode, and for dev builds. Set JL_NO_UPDATE_CHECK=1 to disable the check entirely.
+Quick Start ​
+There are two main ways to use the CLI, depending on how much control you need.
+Path 1: Run a script directly on a fresh GPU ​
+The fastest way to get started. This creates a GPU instance, uploads your code, installs dependencies, runs the script, and pauses the instance when done — all in one command.
+# One-time setup
+jl setup
+# Check your balance and make sure you&#x27;re good to go
+jl status
+# See which GPUs are currently available and their pricing
+jl gpus
+# Run a single training script on a fresh L4
+# Creates instance, uploads train.py, installs requirements, runs it, pauses when done
+jl run train.py --gpu L4 --requirements requirements.txt -- --epochs 50
+# Or if you have a project directory, sync the whole thing
+# This uploads your directory, creates a venv, installs deps, and runs the entrypoint
+jl run . --script train.py --gpu A100 --requirements requirements.txt
+# You can also run a setup command before your main command
+jl run . --script train.py --gpu A100 \
+--requirements requirements.txt \
+--setup "pip install flash-attn"
+# The CLI streams logs by default. Once the run finishes, the instance is auto-paused.
+# If you detached (Ctrl+C) or used --no-follow, you can check logs anytime:
+jl run logs < run_id > --tail 50
+# Check the final status of your run
+jl run status < run_id >
+Path 2: Manage instances yourself ​
+If you want more control — SSH access, reusing machines across runs, attaching filesystems, or interactive debugging — create and manage instances directly.
+# One-time setup
+jl setup
+# See available GPUs and pricing
+jl gpus
+# Create a GPU instance with 100 GB storage
+jl create --gpu A100 --storage 100 --name "my-experiment"
+# List your instances to get the machine ID
+jl list
+# SSH into your instance for interactive work
+jl ssh < machine_id >
+# Or upload and run a script on it
+jl run train.py --on < machine_id >
+# Check logs while the run is going
+jl run logs < run_id > --tail 50
+# Upload additional files to the instance
+jl upload < machine_id > ./data /home/data
+# Download results when you&#x27;re done
+jl download < machine_id > /home/results ./results -r
+# Pause when you&#x27;re done - stops compute billing, keeps your data
+jl pause < machine_id >
+# Later, resume with the same or a different GPU
+jl resume < machine_id > --gpu L4
+# When you&#x27;re completely done, destroy to stop all billing (including storage)
+jl destroy < machine_id >
+Authentication ​
+Get your API token from jarvislabs.ai/settings/api-keys .
+Interactive setup ​
+jl setup
+This authenticates, optionally installs agent skills, shows your account status, and displays a getting-started guide.
+Non-interactive setup ​
+jl setup --token YOUR_TOKEN --yes
+tip
+Without --yes , jl setup will still prompt for agent-skill installation even when --token is provided. Use --agents all or --yes to make setup fully non-interactive.
+Environment variable ​
+export JL_API_KEY = "YOUR_TOKEN"
+Token precedence ​
+Both the CLI and SDK use the same resolution chain:
+Priority
+Method
+Used by
+1
+Client(api_key="...") argument
+SDK only
+2
+JL_API_KEY environment variable
+CLI + SDK
+3
+Config file (saved by jl setup )
+CLI + SDK
+See Config file location below for config paths. See the SDK Authentication docs for more details.
+Config file location ​
+The config file is stored via platformdirs :
+Linux: ~/.config/jl/config.toml
+macOS: ~/Library/Application Support/jl/config.toml
+Removing saved credentials ​
+jl logout
+Global Flags ​
+These flags are available on most commands (exceptions noted below):
+Flag
+Description
+--json
+Output as machine-readable JSON (to stdout). Human-readable output goes to stderr.
+--yes / -y
+Skip all confirmation prompts.
+--version
+Print version and exit (root-level: jl --version ).
+info
+--json and --yes are command-level options, not root-level — so jl list --json works correctly. Most commands support --json . --yes is only available on commands that have confirmation prompts (create, pause, resume, destroy, rename, run start, etc.). jl setup supports --yes but not --json . Read-only commands like jl gpus and jl run logs do not accept --yes .
+Account Commands ​
+jl setup ​
+Set up the JarvisLabs CLI: authenticate and install agent skills.
+Option
+Short
+Description
+--token
+-t
+API token (skips interactive prompt)
+--agents
+Comma-separated. Accepts claude-code , all , or universal (universal-only). The universal path is always installed regardless of this flag.
+--yes
+-y
+Skip confirmation prompts; auto-selects all additional agent paths
+# Interactive setup
+jl setup
+# Non-interactive, all skill paths (universal + Claude Code)
+jl setup --token YOUR_TOKEN --agents all --yes
+# Non-interactive, universal path only (skip Claude Code)
+jl setup --token YOUR_TOKEN --agents universal
+If already authenticated, jl setup shows your current login and asks to re-authenticate. Skill files are written to the paths below:
+Path
+Agents covered
+~/.agents/skills/jarvislabs/SKILL.md
+Always installed. Read by Codex, Cursor, OpenCode, Amp, Cline, Gemini CLI, GitHub Copilot, Kimi Code CLI, and Warp.
+~/.claude/skills/jarvislabs/SKILL.md
+Claude Code. Installed when you pick it in the interactive prompt, pass --agents claude-code , pass --agents all , or pass --yes (which selects every additional path).
+jl update ​
+Update jl to the latest version on PyPI, then refresh the agent skill files you already have installed.
+jl update
+jl update upgrades with the tool you installed it with:
+Installed with
+jl update runs
+uv tool
+uv tool install jarvislabs@latest
+pipx
+pipx upgrade jarvislabs
+uv pip
+uv pip install --upgrade jarvislabs
+pip
+python -m pip install --upgrade jarvislabs
+Agent skills: after the upgrade, jl update rewrites any installed SKILL.md that is out of date (see jl setup for the paths). It never adds a skill to a new path. If you&#x27;re already on the latest version, it still refreshes the skills.
+Windows: jl can&#x27;t replace itself while it&#x27;s running, so jl update prints the upgrade command for you to run.
+Source installs: if you installed jarvislabs in editable mode from a git checkout, update it with git pull .
+jl logout ​
+Remove the saved API token from the config file. Supports --json for scripted usage.
+jl logout
+jl status ​
+Show account info: name, user ID, balance, grants, and running/paused instance counts.
+jl status
+jl status --json
+info
+JSON output includes additional fields not shown in the human-readable table: running VMs, paused VMs, active deployments, filesystems, and billing currency.
+It also includes a cli object: version , latest , update_available , and skill_current . skill_current is false when an installed agent skill is out of date, and null when no agent skill is installed. When something is out of date, jl status prints a line telling you to run jl update .
+jl gpus ​
+Show GPU types with availability, region, VRAM, RAM, CPUs, and hourly pricing. Available GPUs are marked with a green dot, unavailable with a dim circle.
+Output is split into two tables — Containers and VMs — because GPU availability differs by workload type. A GPU may have free devices for containers but not VMs (or vice versa), and pricing can differ too. When using --json , each entry includes a workload_type field ( "container" or "vm" ) so you can filter accordingly.
+jl gpus
+jl gpus --json
+# Only container GPUs with free capacity
+jl gpus --json | jq &#x27;[.[] | select(.workload_type == "container" and .num_free_devices > 0)]&#x27;
+jl templates ​
+List available framework templates that can be used with --template when creating instances (e.g. pytorch , tensorflow , jax ) or create VMs with --vm ).
+jl templates
+jl templates --json
+Regions & GPUs ​
+JarvisLabs has two regions. When creating an instance, the CLI auto-selects the best region based on your chosen GPU — or you can pin a specific region with --region .
+Region
+Available GPUs (for new creates)
+IN1
+RTX-PRO6000
+IN2
+L4, A100, A100-80GB, A30, H100, H200
+EU1 is deprecated
+The EU1 region no longer accepts new instances. Instances that already live there can still be paused, resumed and destroyed, and keep their EU1 region code.
+Run jl gpus to see real-time availability and pricing for each GPU type.
+Auto-routing. When --region is not specified, the CLI picks a region based on current GPU availability for the GPU type you requested. GPUs that are only offered in one active region (for example, RTX-PRO6000 is IN1-only) are routed there automatically.
+Storage & Template Constraints
+VM instances ( --vm ): 100 GB minimum storage (auto-bumped if you specify less)
+VM instances require at least one SSH key registered. Use jl gpus to see current VM GPU availability by region.
+Instance Commands ​
+Manage the full lifecycle of GPU instances — from creation to teardown. Instances come in two types: containers (pre-configured with PyTorch, Jupyter, IDE — the default) and VMs (bare-metal SSH access, created with --vm ).
+jl list ​
+List all your instances with their ID, name, status, GPU type, GPU count, storage, region, cost, and template. The Cost column shows session cost for running instances and the ongoing storage cost for paused ones (in your account currency).
+jl list
+jl list --json
+jl get <machine_id> ​
+Show full details of a specific instance including SSH command, notebook URL, HTTP ports, and endpoint URLs.
+The cost row is labelled Session cost for running instances and Storage cost for paused ones. For running VM instances, an additional Public IP row is shown (VMs only — containers are reached via the SSH command or service URLs).
+jl get 12345
+jl get 12345 --json
+jl create ​
+Create a new GPU instance. The command blocks until the instance reaches Running status, so when it returns, your instance is ready to use.
+Option
+Short
+Default
+Description
+--gpu
+-g
+GPU type for GPU instances (run jl gpus to see options)
+--vm
+Create a VM instance (SSH-only, no container)
+--cpu
+Create a CPU VM (requires --vm )
+--vcpus
+CPU VM vCPU count
+--ram
+CPU VM RAM in GB
+--template
+-t
+pytorch
+Framework template for containers (not used with --vm )
+--storage
+-s
+40
+Storage in GB
+--name
+-n
+"Name me"
+Instance name (max 40 chars, letters/numbers/spaces/hyphens/underscores only)
+--num-gpus
+1
+Number of GPUs
+--region
+Region pin: IN1 or IN2 .
+--http-ports
+Comma-separated HTTP ports to expose (e.g. 7860,8080 )
+--script-id
+Startup script ID to run on launch
+--script-args
+Arguments passed to the startup script
+--fs-id
+Filesystem ID to attach
+--vpc-id
+VPC to place the VM in
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+# Basic instance
+jl create --gpu L4
+# H100 with more storage and a name
+jl create --gpu H100 --storage 200 --name "training-box"
+# With a startup script and filesystem
+jl create --gpu A100 --script-id 42 --fs-id 10
+# Pin to a region
+jl create --gpu H100 --region IN2
+# Expose HTTP ports
+jl create --gpu L4 --http-ports "7860,8080"
+# VM instance (requires SSH key - add one first with jl ssh-key add)
+jl create --gpu A100-80GB --vm --name "my-vm"
+# Non-interactive
+jl create --gpu L4 --yes --json
+Prompts for confirmation unless --yes is passed. See Regions & GPUs for which GPUs are available in each region and storage constraints.
+jl pause <machine_id> ​
+Pause a running instance. Compute billing stops; a small storage cost continues.
+Option
+Short
+Description
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl pause 12345
+jl pause 12345 --yes --json
+jl resume <machine_id> ​
+Resume a paused instance. You can also use this opportunity to change the GPU type, expand storage, rename the instance, or attach a different startup script or filesystem. The command blocks until the instance is running again.
+Option
+Short
+Description
+--gpu
+-g
+Resume with a different GPU type
+--num-gpus
+Change number of GPUs
+--storage
+-s
+Expand storage in GB (can only increase, never shrink)
+--name
+-n
+Rename instance on resume
+--http-ports
+Change exposed HTTP ports (e.g. 7860,8080 )
+--script-id
+Startup script ID to run on resume
+--script-args
+Arguments for the startup script
+--fs-id
+Filesystem ID to attach
+--vpc-id
+Move the VM to this VPC; omit to keep its current VPC
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+# Resume with defaults
+jl resume 12345
+# Resume with a bigger GPU
+jl resume 12345 --gpu H100
+# Resume with more storage and a new name
+jl resume 12345 --storage 200 --name "upgraded"
+Region Lock & ID Changes
+Resume is region-locked — an instance always resumes in its original region. If you request a GPU type not available in that region, the API returns an error.
+Resume may also assign a new machine ID . The CLI warns you when this happens. Always use the returned ID for subsequent operations.
+jl destroy <machine_id> ​
+Permanently delete an instance and all its data.
+warning
+This action is irreversible. All data on the instance is lost. If you need to keep data across instances, use a filesystem .
+Option
+Short
+Description
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl destroy 12345
+jl destroy 12345 --yes --json
+jl rename <machine_id> ​
+Rename an instance.
+Option
+Short
+Description
+--name
+-n
+New instance name (required, max 40 characters)
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl rename 12345 --name "experiment-v2"
+SSH, Exec & File Transfer ​
+These commands let you interact directly with running instances — open a shell, run commands remotely, or transfer files back and forth.
+jl ssh <machine_id> ​
+SSH into a running instance. This opens an interactive shell session.
+Option
+Short
+Description
+--print-command
+-p
+Print the raw SSH command to stdout instead of connecting
+--json
+Output the SSH command as JSON
+# Interactive session
+jl ssh 12345
+# Get the SSH command for use in scripts
+jl ssh 12345 --print-command
+The instance must be in Running status. If paused, you&#x27;ll be told to resume it first.
+tip
+--print-command and --json output the stored SSH command regardless of instance status — useful for scripting and automation.
+jl exec <machine_id> -- <command> ​
+Run a command on a running instance and stream the output back to your terminal. The -- separator is required so jl can distinguish your remote command from its own flags.
+Option
+Short
+Description
+--json
+Capture output as JSON with stdout , stderr , and exit_code fields
+# Check GPU
+jl exec 12345 -- nvidia-smi
+# Run Python
+jl exec 12345 -- python -c "import torch; print(torch.cuda.device_count())"
+# List files
+jl exec 12345 -- ls -la /home
+# Use shell features (pipes, redirection) - wrap in sh -lc
+jl exec 12345 -- sh -lc &#x27;grep "loss" /home/output.log | tail -5&#x27;
+# Structured output for scripting
+jl exec 12345 --json -- nvidia-smi
+The exit code of the remote command is propagated as the exit code of jl exec .
+tip
+If your remote command uses pipes, redirection, or other shell features, wrap it in sh -lc &#x27;...&#x27; as shown above. Without the wrapper, each argument is treated as a separate command argument rather than shell syntax.
+jl upload <machine_id> <source> [dest] ​
+Upload a local file or directory to a running instance. If no remote destination is given, it uploads to the instance&#x27;s home directory ( /home/ for containers, /home/<user>/ for VMs).
+Directories are uploaded recursively automatically.
+Option
+Short
+Description
+--json
+Output upload result as JSON
+# Upload a file (lands at /home/data.csv)
+jl upload 12345 ./data.csv
+# Upload a directory (lands at /home/my-project/)
+jl upload 12345 ./my-project
+# Upload to a specific remote path
+jl upload 12345 ./config.yaml /home/config.yaml
+jl download <machine_id> <source> [dest] [-r] ​
+Download a file or directory from a running instance. If no local destination is given, it saves to ./<filename> in the current directory.
+Option
+Short
+Description
+--recursive
+-r
+Download directories recursively
+--json
+Output download result as JSON
+# Download a file (saves to ./results.csv)
+jl download 12345 /home/results.csv
+# Download to a specific local path
+jl download 12345 /home/results.csv ./my-results.csv
+# Download a directory
+jl download 12345 /home/outputs ./local-outputs -r
+Managed Runs ​
+Managed runs are the fastest way to run scripts on GPU instances. A single jl run command handles uploading your code, setting up a Python virtual environment (via uv ), installing dependencies (auto-detected from your project or specified with --requirements ), running your command in the background, and tracking logs.
+Runs persist in the background even if you disconnect or close your terminal. Logs, status, and lifecycle are tracked locally in ~/.jl/runs/ .
+Run Targets ​
+Target
+What happens
+train.py
+Uploads the single file, runs python3 train.py
+run.sh
+Uploads the single file, runs bash run.sh
+. or ./my-project
+Syncs the directory via rsync (excludes .venv/ , .git/ , __pycache__/ ), runs --script inside it (requires rsync locally)
+(no target)
+Runs the command given after -- directly on the instance
+Only .py and .sh file targets are supported directly. For other file types, use a directory target or jl upload + jl exec .
+Starting a Run on an Existing Instance ​
+jl run < target > --on < machine_id > [ options ] [ -- extra args ]
+# Run a Python file
+jl run train.py --on 12345
+# Upload a directory and run a script inside it
+jl run . --script train.py --on 12345
+# Pass arguments to your script
+jl run train.py --on 12345 -- --epochs 50 --lr 0.001
+# Run an arbitrary remote command (no upload)
+jl run --on 12345 -- python -c "print(&#x27;hello from GPU&#x27;)"
+Starting a Run on a Fresh Instance ​
+jl run < target > --gpu < gpu_type > [ options ] [ -- extra args ]
+This creates a new instance, uploads your code, runs the command, and handles instance lifecycle when done.
+# Run on a fresh L4
+jl run train.py --gpu L4
+# With requirements
+jl run . --script train.py --gpu A100 --requirements requirements.txt
+# Destroy instance after run (no leftover costs)
+jl run train.py --gpu L4 --destroy
+# Keep instance running after run (for debugging)
+jl run train.py --gpu L4 --keep
+You must use either --on or --gpu , not both.
+All Start Options ​
+Option
+Short
+Default
+Description
+--on
+Run on an existing instance (machine ID)
+--gpu
+-g
+Create a fresh instance with this GPU type
+--vm
+Create a VM instead of a container (fresh instances only)
+--script
+Entrypoint script path inside a directory target
+--template
+-t
+pytorch
+Framework template for containers (not used with --vm )
+--storage
+-s
+40
+Storage in GB (fresh instances only)
+--name
+-n
+jl-run
+Instance name (fresh instances only)
+--num-gpus
+1
+Number of GPUs (fresh instances only)
+--region
+Region pin: IN1 or IN2 (fresh instances only).
+--http-ports
+Comma-separated HTTP ports to expose (fresh instances only)
+--requirements
+Override auto-detection: upload and install this file instead
+--setup
+Shell command to run before the main command
+--follow / --no-follow
+--follow
+Stream logs after starting the run
+--pause
+Pause fresh instance after the run (default for fresh)
+--destroy
+Destroy fresh instance after the run
+--keep
+Leave fresh instance running after the run
+--yes
+-y
+Skip confirmation prompts
+--json
+Output as JSON
+Environment & Dependency Management ​
+For file and directory targets, jl run automatically creates and manages a Python virtual environment on the remote instance using uv . The environment is designed to work seamlessly with JarvisLabs templates — you get both template packages (like PyTorch and CUDA) and your project&#x27;s dependencies without extra configuration.
+How it works ​
+Where the venv lives depends on the target:
+Directory targets ( jl run . --script train.py ... ) get a project-local .venv inside the uploaded project directory on the remote machine. Each project directory has its own venv.
+File targets ( jl run train.py ... ) use a shared instance-level venv at $HOME/.venv . This is created on first use and reused by subsequent file-target runs on the same instance.
+Command-mode runs (no target, raw command after -- ) do not create a venv. If $HOME/.venv already exists from a previous file-target run, it is prepended to PATH so your command picks up its packages; otherwise the command runs against the instance&#x27;s system Python.
+Both venv types:
+Inherit template packages. If you chose the pytorch template, import torch works immediately — no need to install it yourself. The same applies to any package pre-installed by the template (CUDA libraries, numpy, etc.).
+Have pip and uv available. Both pip install and uv pip install work inside the venv and install packages into the venv, not the system Python.
+Persist across runs. Venvs live under /home (or /home/<user> on VMs), so they survive pause/resume cycles. Previously installed packages are still there, and re-runs on the same target are fast.
+Auto-detection of dependencies ​
+For directory targets , the CLI checks your local directory before uploading and automatically installs dependencies:
+If pyproject.toml exists with a [project] table → installs from [project].dependencies
+Otherwise, if requirements.txt exists → installs from it
+If neither exists → no packages installed; template packages are enough
+This means for most projects, you don&#x27;t need to pass any flags — just make sure your requirements.txt or pyproject.toml is in the directory, and jl run handles the rest. Other dependency formats ( uv.lock , poetry.lock , Pipfile ) are not auto-detected — use --requirements with a requirements.txt for those projects.
+For single file targets (e.g., jl run train.py ), there is no directory to scan, so auto-detection does not apply. Use --requirements to specify a requirements file if needed.
+For command-mode runs (no target, raw command after -- ), no venv is created. If a shared $HOME/.venv already exists from a previous file-target run on this instance, it is prepended to PATH so your command picks up its packages; otherwise the command runs against the instance&#x27;s system Python with template packages available. --setup still works as a pre-command hook, but --requirements is not available.
+The --requirements flag ​
+Use --requirements to override auto-detection. When provided, the specified file is uploaded to the remote and installed instead of any auto-detected file. This is useful when:
+You want to use a different requirements file than the one in your project directory
+You&#x27;re running a single file target and need extra packages
+Your pyproject.toml has a [project] table but you&#x27;d rather install from a separate requirements file
+# Auto-detect (recommended for most projects)
+jl run . --script train.py --gpu L4
+# Override with a custom file
+jl run . --script train.py --gpu L4 --requirements custom-reqs.txt
+# Single file with requirements
+jl run train.py --gpu L4 --requirements requirements.txt
+The --setup flag ​
+Use --setup to run a shell command after dependency installation but before your script. This is the escape hatch for anything that isn&#x27;t a Python package — system libraries, compiled extensions, environment variables, or quick one-off installs.
+# Install a system library (containers run as root; use sudo on VMs)
+jl run . --script train.py --on 12345 --setup "apt-get update && apt-get install -y libsndfile1"
+# Install a package that needs special flags
+jl run . --script train.py --on 12345 --setup "pip install flash-attn --no-build-isolation"
+# Set environment variables
+jl run . --script train.py --on 12345 --setup "export CUDA_VISIBLE_DEVICES=0"
+For recurring system-level setup (things you need on every instance boot), consider using startup scripts instead of --setup . Startup scripts run automatically when an instance is created or resumed, so you don&#x27;t have to repeat the setup on every run.
+The full setup chain ​
+When you start a managed run with a file or directory target, the CLI executes these steps in order on the remote machine (chained with && , so any failure stops the chain):
+uv installed if missing
+venv created if it doesn&#x27;t exist (with template package visibility and pip) — .venv inside the project directory for directory targets, or $HOME/.venv for file targets
+venv activated
+Dependencies installed — from auto-detected pyproject.toml or requirements.txt , or from --requirements if provided
+--setup command executed (if provided)
+Your script runs
+The run logs show which dependency file was detected:
+[jl] Installing from requirements.txt # auto-detected
+[jl] Installing from pyproject.toml # auto-detected
+[jl] Installing from custom-reqs.txt # --requirements override
+[jl] No dependency file detected, using template packages # nothing found
+Template packages and torch
+Template packages (like PyTorch) are available in the venv without installing them. However, if your requirements.txt or pyproject.toml lists torch as a dependency, uv will re-download and install it into the venv — this is because uv does not check system packages during dependency resolution. This is harmless (the correct version is installed) but wastes bandwidth on the first run. To avoid this, omit template packages from your dependency files and let the template provide them.
+Recommended workflow
+For most projects: Put your extra dependencies in requirements.txt or pyproject.toml . Don&#x27;t include packages that the template already provides (torch, CUDA, numpy). Run jl run . --script train.py --gpu L4 and let auto-detection handle the rest.
+For quick experiments: A single Python file with no dependencies works out of the box on a pytorch template — import torch just works.
+For system-level setup: Use --setup for one-off commands, or startup scripts for recurring setup.
+For AI coding agents: Agents should use --json --yes and monitor via jl run logs . The auto-detection, echo logging, and --requirements override all work identically in agent workflows.
+Lifecycle Flags (Fresh Instances Only) ​
+When creating a fresh instance with --gpu , these flags control what happens after the run completes:
+Flag
+Behavior
+--pause
+Pause the instance after the run ( default for fresh instances)
+--destroy
+Destroy the instance — no leftover costs
+--keep
+Leave the instance running (for debugging or follow-up work)
+Only one lifecycle flag can be used at a time. These flags cannot be used with --on (existing instances are not touched after the run).
+Detaching from fresh instances
+--no-follow for fresh instances requires --keep . Since --pause and --destroy need the CLI to be connected when the run ends to perform the lifecycle action, they are incompatible with --no-follow . If you detach (Ctrl+C or --no-follow ), the automatic lifecycle action will not happen — the instance stays running and billing continues. Manage it manually with jl pause or jl destroy .
+Follow vs No-Follow ​
+By default, jl run streams logs after starting ( --follow ). Press Ctrl+C to detach — the run keeps going in the background. Without --tail , --follow initially shows the last 20 lines before streaming new output.
+# Default: stream logs, auto-pause when done
+jl run train.py --gpu L4
+# Detached: start and return immediately (requires --keep for fresh instances)
+jl run train.py --gpu L4 --keep --no-follow
+# Detached on existing instance (no lifecycle flag needed)
+jl run train.py --on 12345 --no-follow
+jl run logs <run_id> ​
+View logs from a managed run.
+Option
+Short
+Description
+--follow
+-f
+Stream logs in real time (press Ctrl+C to stop)
+--tail
+-n
+Show only the last N lines (minimum: 1)
+--json
+Output as JSON with content and run_exit_code fields
+# Full log output
+jl run logs r_abc123
+# Last 50 lines
+jl run logs r_abc123 --tail 50
+# Stream logs live
+jl run logs r_abc123 --follow
+# Stream with initial context
+jl run logs r_abc123 --follow --tail 100
+# JSON output with exit code (for scripting/agents)
+jl run logs r_abc123 --tail 50 --json
+JSON output fields:
+Field
+Description
+run_id
+The run identifier
+machine_id
+Instance the run is on
+remote_log
+Path to the log file on the remote instance
+content
+The log text (last N lines if --tail used, full log otherwise)
+run_exit_code
+null = still running, 0 = succeeded, non-zero = failed
+info
+--json is not supported with --follow . Without --tail , the entire log file is returned — this can be very large for long-running jobs.
+Non-JSON output shows raw logs with a header and footer indicating run state:
+--- run r_abc123 | machine 12345 | running ---
+step=100 loss=2.31
+step=200 loss=2.11
+--- still running | log: /home/jl-runs/r_abc123/output.log ---
+jl run status <run_id> ​
+Show the current state of a run. Also prints the instance cost alongside the state — labelled Instance cost when the instance is running, Storage cost when it&#x27;s paused.
+Option
+Short
+Description
+--json
+Output as JSON
+Possible states: running , succeeded , failed , instance-paused , instance-pausing , instance-missing , instance-creating , instance-resuming , instance-destroying , instance-failed , unknown .
+jl run status r_abc123
+jl run status r_abc123 --json
+jl run stop <run_id> ​
+Stop a managed run by sending TERM to its process group. The instance itself is not affected.
+Option
+Short
+Description
+--json
+Output as JSON
+jl run stop r_abc123
+jl run stop r_abc123 --json
+If the process doesn&#x27;t exit after TERM, it escalates to SIGKILL. If the run has already finished, it reports the final state without error.
+jl run list ​
+List all locally tracked managed runs (most recent first).
+Option
+Short
+Description
+--refresh
+Check live status for each run by querying the instance (slower)
+--machine
+-m
+Filter by instance ID
+--limit
+-l
+Show only the N most recent runs
+--status
+-s
+Filter by state (e.g. running , succeeded , failed ). Implies --refresh .
+--json
+Output as JSON
+# All runs (shows "saved" state without live check)
+jl run list
+# With live status refresh
+jl run list --refresh
+# Filter by instance
+jl run list --machine 12345
+# Most recent 5 runs
+jl run list --limit 5
+# Only running jobs
+jl run list --status running
+# For scripting
+jl run list --refresh --json
+Without --refresh , the state column shows saved (from the local record). Use --refresh or --status to query each instance for live state. Using --status automatically implies --refresh .
+Implicit start Subcommand ​
+jl run <target> is shorthand for jl run start <target> . The start subcommand is implied when the first argument isn&#x27;t a known subcommand ( list , status , logs , stop ).
+# These are equivalent:
+jl run train.py --gpu L4
+jl run start train.py --gpu L4
+Run Tracking is Local ​
+info
+All run management commands ( jl run logs , jl run status , jl run stop , jl run list ) depend on local records stored under ~/.jl/runs/ . You need to start and monitor runs from the same machine. If the local record is missing, the run_id alone is not enough to interact with the run.
+Each run record is a JSON file at ~/.jl/runs/<run_id>.json containing the machine ID, remote log path, PID file path, exit code path, and launch command.
+SSH Key Commands ​
+SSH keys are required if you want to create VM instances ( --vm ) (bare-metal SSH access without a pre-configured container). You can manage your keys with jl ssh-key .
+jl ssh-key list ​
+List all SSH keys (ID, name, and truncated key).
+jl ssh-key list
+jl ssh-key list --json
+jl ssh-key add <pubkey_file> ​
+Add an SSH public key.
+Option
+Short
+Description
+--name
+-n
+Name for this key (required)
+--json
+Output as JSON
+jl ssh-key add ~/.ssh/id_ed25519.pub --name "my-laptop"
+jl ssh-key remove <key_id> ​
+Remove an SSH key.
+Option
+Short
+Description
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl ssh-key remove abc123
+Startup Script Commands ​
+Startup scripts are shell scripts that run automatically whenever an instance launches or resumes — useful for installing dependencies, pulling data, or setting up your environment. You can manage them with jl scripts .
+jl scripts list ​
+List startup scripts (ID and name).
+jl scripts list
+jl scripts list --json
+jl scripts add <script_file> ​
+Add a startup script.
+Option
+Short
+Description
+--name
+-n
+Script name (defaults to filename without extension)
+--json
+Output as JSON
+jl scripts add ./setup.sh --name "install-deps"
+jl scripts update <script_id> <script_file> ​
+Replace the contents of an existing startup script.
+Option
+Short
+Description
+--json
+Output as JSON
+jl scripts update 42 ./setup-v2.sh
+jl scripts remove <script_id> ​
+Remove a startup script.
+Option
+Short
+Description
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl scripts remove 42
+Filesystem Commands ​
+Filesystems are persistent storage volumes that survive instance pause, resume, and even destroy cycles. They&#x27;re ideal for datasets, model checkpoints, or any data you want to reuse across multiple instances. You can manage them with jl filesystem .
+Filesystems are region-bound
+Each filesystem is tied to the region where it was created. A filesystem is only visible to instances in the same region — attaching it to an instance in a different region fails client-side. Use jl filesystem list to see each filesystem&#x27;s region. You can pin a region at creation time with --region on jl filesystem create ; jl filesystem edit and jl filesystem remove auto-detect the region from the filesystem&#x27;s ID, so no flag is needed.
+New filesystems can be created in IN1 or IN2 .
+jl filesystem list ​
+List filesystems (ID, name, storage, region).
+jl filesystem list
+jl filesystem list --json
+jl filesystem create ​
+Create a new filesystem.
+Option
+Short
+Description
+--name
+-n
+Filesystem name (required, max 30 characters)
+--storage
+-s
+Storage in GB (required, 50–10,240)
+--region
+Region pin: IN1 or IN2 ; defaults to IN2 if omitted.
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+# Defaults to IN2
+jl filesystem create --name "datasets" --storage 200
+# Explicit region pin
+jl filesystem create --name "datasets" --storage 200 --region IN2
+jl filesystem edit <fs_id> ​
+Expand filesystem storage. Can only increase, never shrink.
+Option
+Short
+Description
+--storage
+-s
+New storage size in GB (required)
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl filesystem edit 10 --storage 500
+info
+edit may return a new filesystem ID. Always use the returned value for subsequent operations.
+jl filesystem remove <fs_id> ​
+Delete a filesystem.
+Option
+Short
+Description
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl filesystem remove 10
+VPC Commands ​
+A Virtual Private Cloud (VPC) is a private network for your VMs. VMs in the same VPC can reach each other using private IP addresses, while each VM still has a public IP for SSH and internet access. VPCs work with CPU and GPU VMs, not containers.
+See the VPC guide for a fuller explanation of private networking.
+jl vpc list ​
+List your default and custom VPCs across all regions.
+jl vpc list
+jl vpc list --json
+jl vpc create <name> ​
+Create a custom VPC with a private IP range. VPCs are available in IN1 and IN2 .
+Option
+Short
+Description
+--cidr
+Private IPv4 CIDR block (required)
+--region
+VPC region: IN1 or IN2 (required)
+--yes
+-y
+Skip confirmation
+--json
+Output as JSON
+jl vpc create training-network \
+--cidr 10.50 .0.0/24 \
+--region IN2
+The CIDR defines the private addresses available inside the VPC. For example, 10.50.0.0/24 gives your VMs addresses such as 10.50.0.2 and 10.50.0.3 . Use a private IPv4 range between /16 and /28 that does not overlap another VPC in the same region. See the VPC guide for CIDR details.
+Launch a VM in a VPC ​
+Pass --vpc-id when creating a CPU or GPU VM:
+# GPU VM
+jl create --gpu L4 --vm --vpc-id < vpc_id >
+# CPU VM
+jl create --vm --cpu --vpc-id < vpc_id >
+The VM and VPC must be in the same region. If you omit --region , the CLI uses the VPC&#x27;s region. If you omit --vpc-id , the VM joins the region&#x27;s default VPC.
+jl vpc get <vpc_id> ​
+Show a VPC&#x27;s name, region, CIDR, gateway, and status.
+jl vpc get < vpc_id >
+jl vpc get < vpc_id > --json
+jl vpc ips <vpc_id> ​
+List the private IP addresses in a VPC and the machines using them.
+jl vpc ips < vpc_id >
+jl vpc ips < vpc_id > --json
+Use these private IPs for traffic between VMs in the same VPC.
+Move a VM to another VPC ​
+Pause the VM, then resume it with the target VPC ID:
+jl pause < machine_id >
+jl resume < machine_id > --vpc-id < new_vpc_id >
+The target VPC must be in the VM&#x27;s region. Omitting --vpc-id on resume keeps the VM in its current VPC. Its private IP stays the same when it resumes in the same VPC and changes when you move it to another VPC. Resume may return a new machine ID, so use the ID returned by the command.
+jl vpc delete <vpc_id> ​
+Delete an empty custom VPC. Move or destroy its VMs first. Default VPCs cannot be deleted.
+jl vpc delete < vpc_id >
+Token Factory: Model Commands ​
+jl models calls the pay-per-token models on Token Factory . There&#x27;s nothing to deploy and no GPU to manage: pick a model, send a prompt, and pay only for the tokens you use. The CLI uses the same API key as every other jl command.
+Token Factory is OpenAI-compatible, with the base URL https://models.jarvislabs.net/v1 . Use jl models get to get ready-to-run curl and Python code for any model.
+jl models list ​
+List the models you can call, with context length and price per 1M tokens (input, cached input, and output).
+jl models list
+jl models list --json
+jl models get <model_id> ​
+Show a model&#x27;s details (context length, pricing, input types such as text or images, and thinking options), followed by curl and Python code that calls it. Omit model_id to pick a model from a list.
+jl models get deepseek-v4.1-flash-1017
+jl models get deepseek-v4.1-flash-1017 --json # includes base_url
+jl models chat <model_id> [prompt] ​
+Send a prompt and get one reply, or omit the prompt to start an interactive chat. Model IDs come from jl models list .
+jl models chat deepseek-v4.1-flash-1017 "Explain KV cache in two lines"
+The reply streams to stdout. Thinking and token usage go to stderr, so > reply.txt saves only the answer. Every reply ends with a usage line that shows what it cost:
+11,452 in · 151 out · $0.000876
+Option
+Description
+--system
+System prompt
+--max-tokens
+Maximum output tokens, thinking included (default: 32768)
+--thinking / --no-thinking
+Turn thinking on or off, for models that support it
+--effort
+Thinking effort, such as low or high . The allowed values depend on the model
+--image
+An image to send with the prompt: a local file or an http(s) URL. Repeatable
+--json
+Return the full OpenAI-style response as JSON instead of streaming
+jl models get <model_id> shows which thinking options and input types a model supports. If you pass a thinking option or an image that the model doesn&#x27;t support, jl exits with an error that tells you so.
+Piping input ​
+Piped or redirected input is added to the prompt, after a blank line. This makes jl models chat easy to use in shell pipelines:
+# Draft a commit message from your staged changes
+git diff --staged | jl models chat deepseek-v4.1-flash-1017 "Write a commit message for this diff" --no-thinking
+# Summarize the recent errors in a log
+tail -n 200 train.log | jl models chat deepseek-v4.1-flash-1017 "What went wrong?"
+# The piped text can be the whole prompt
+jl models chat deepseek-v4.1-flash-1017 < question.txt
+Images ​
+Pass --image with a local file or a URL, for models that accept images. Local files are sent inline; URLs are fetched by the model server.
+jl models chat nemotron-3.5-super-vl-120b-a12b-nvfp4 "Write alt text for this image" --image card.png
+Interactive chat ​
+Run jl models chat without a prompt to chat turn by turn. The conversation history is kept until you quit. Without a model ID, you pick one from a list first.
+jl models chat # pick a model, then chat
+jl models chat deepseek-v4.1-flash-1017 # chat with this model
+In an interactive chat, Ctrl-C stops the current reply, and Ctrl-D or /exit quits. Interactive chat needs a terminal. In scripts and agent workflows, always pass both the model ID and a prompt.
+Short tasks
+Thinking tokens count toward --max-tokens . With a small limit, a thinking model can use it all before it answers. If that happens, jl warns that the reply was cut off and exits with code 1. For short tasks, pass --no-thinking or raise --max-tokens .
+Compare models ​
+Send the same prompt to every model and compare the replies and their costs:
+for m in $( jl models list --json | jq -r &#x27;.[].id&#x27; ) ; do
+echo "== $m "
+jl models chat " $m " "Explain what a KV cache is in two sentences."
+done
+JSON Mode for Scripting ​
+Most commands support --json for machine-readable output. JSON goes to stdout; human-readable status messages go to stderr.
+# Instance list as JSON
+jl list --json
+# Create and capture the machine ID
+RESULT = $( jl create --gpu L4 --yes --json )
+MACHINE_ID = $( echo " $RESULT " | jq .machine_id )
+# GPU availability pipeline
+jl gpus --json | jq &#x27;.[] | select(.num_free_devices > 0) | .gpu_type&#x27;
+# Run status in scripts
+jl run status r_abc123 --json | jq .state
+# Check if a run is still going
+EXIT_CODE = $( jl run logs r_abc123 --tail 1 --json | jq .run_exit_code )
+When --json is active:
+Spinners and progress indicators are suppressed
+Errors from jl itself (bad arguments, auth failures, etc.) are emitted as {"error": "..."} to stdout. Commands like jl exec --json return their own structured payload (with exit_code , stdout , stderr ) even on non-zero exit
+Exit codes are still set appropriately
+For jl run start , --json returns immediately after the run is started (before log streaming), so lifecycle flags ( --pause , --destroy ) will not execute — use --keep when combining --json with fresh instances
+tip
+--json does not suppress confirmation prompts. Always use --yes alongside --json in scripts and agent workflows.
+Shell Completion ​
+Enable tab completion for your shell:
+jl --install-completion
+Supports bash, zsh, and fish.
+Using with AI Coding Agents ​
+One of the primary use cases for the jl CLI is letting AI coding agents manage GPU infrastructure on your behalf. Instead of manually creating instances, uploading code, and monitoring runs, you can let your agent handle the entire workflow — from provisioning a GPU to downloading results.
+The CLI ships skill files for Claude Code , Codex , Cursor , OpenCode , Amp, Cline, Gemini CLI, GitHub Copilot, Kimi Code CLI, and Warp. During jl setup , a universal skill is installed to ~/.agents/skills/jarvislabs/SKILL.md (read by most agents), and Claude Code gets its own path at ~/.claude/skills/jarvislabs/SKILL.md .
+Agent Setup ​
+# Interactive: authenticates and asks whether to add the Claude Code path
+jl setup
+# Non-interactive: universal path + Claude Code path
+jl setup --token YOUR_TOKEN --agents all --yes
+# Non-interactive: universal path only (skip Claude Code)
+jl setup --token YOUR_TOKEN --agents universal
+The universal path ( ~/.agents/skills/jarvislabs/SKILL.md ) is always installed. Claude Code gets an additional path when you pick it interactively, pass --agents claude-code , pass --agents all , or pass --yes (which selects every additional path).
+tip
+Once skills are installed, your coding agent already knows how to use jl . Try asking it: "Spin up an A100, run my training script, and download the results when it&#x27;s done."
+Mental Model ​
+Concept
+CLI
+Purpose
+Instance
+jl create/list/pause/...
+A machine — create, pause, resume, destroy, SSH into
+Run
+jl run
+A managed job with log file + PID tracking
+Exec
+jl exec
+Quick one-off commands for system checks and debugging
+Model
+jl models chat
+Send a prompt to a pay-per-token model and get one reply
+Core Rules for Agent Workflows ​
+Always use --yes on commands with confirmation prompts (create, pause, resume, destroy, run start) — agents can&#x27;t answer interactive prompts
+Use --json for structured data — use it on commands where the agent needs to parse output (create, gpus, run start, instance list). For jl run logs , the default output is designed for agents — the header/footer shows run ID, machine ID, and state in a readable format
+Always use --json when starting runs — it returns immediately. Without --json , the CLI streams logs and blocks
+Always use --tail N when reading logs — full logs can be enormous
+Do an early failure check — wait 15s after starting a run and check logs once. This catches fast failures (import errors, missing files, pip issues) before committing to a long polling loop
+Then poll at steady intervals — 60-120s for short jobs, 180-600s for long training runs
+The Agent Monitoring Loop ​
+This is the primary pattern for running and monitoring GPU jobs:
+# 1. Start a detached run
+jl run train.py --on < machine_id > --yes --json
+# returns {"run_id": "r_abc123", ...}
+# 2. Early failure check - catches import errors, bad paths, pip failures fast
+sleep 15 && jl run logs r_abc123 --tail 30
+# 3. If still running, poll at steady intervals
+sleep 120 && jl run logs r_abc123 --tail 50
+# The log output shows a header and footer with run state:
+# --- run r_abc123 | machine 12345 | running ---
+# <log output>
+# --- still running | log: /home/jl-runs/r_abc123/output.log ---
+#
+# When done:
+# --- run r_abc123 | machine 12345 | succeeded (exit 0) ---
+# <log output>
+# --- succeeded | exit code: 0 | log: /home/jl-runs/r_abc123/output.log ---
+#
+# On failure:
+# --- run r_abc123 | machine 12345 | failed (exit 1) ---
+# <log output>
+# --- failed | exit code: 1 | log: /home/jl-runs/r_abc123/output.log ---
+The log output is the primary monitoring primitive — the header gives you the run ID and machine ID, and the footer tells you whether the run is still going or finished (with exit code).
+Agent Workflow Example (End-to-End) ​
+# 1. Check GPU availability
+jl gpus --json
+# 2. Create an instance
+jl create --gpu L4 --storage 50 --yes --json
+# returns {"machine_id": 12345, ...}
+# 3. Start a detached run
+jl run . --script train.py --on 12345 --requirements requirements.txt --yes --json
+# returns {"run_id": "r_abc123", ...}
+# 4. Early failure check - catches crashes fast
+sleep 15 && jl run logs r_abc123 --tail 30
+# 5. If still running, poll at steady intervals (repeat until footer shows exit code)
+sleep 120 && jl run logs r_abc123 --tail 50
+# 6. Download results
+jl download 12345 /home/results ./results -r
+# 7. Clean up
+jl pause 12345 --yes --json
+Starting Runs on Fresh Instances (Agent Mode) ​
+When the agent needs to create a fresh instance inline:
+jl run . --script train.py --gpu L4 --keep --json --yes
+Key points:
+--keep is required with --no-follow for fresh instances (the CLI will error without it)
+The agent must manually pause or destroy the instance after the run completes
+Additional fresh-instance flags: --template , --storage , --num-gpus , --region , --http-ports
+Use separate jl create when you need to inspect GPU availability first, reuse machines across runs, or attach filesystems/scripts beforehand.
+Quick System Checks with Exec ​
+jl exec < id > --json -- nvidia-smi
+jl exec < id > --json -- ps -ef
+jl exec < id > --json -- df -h
+For pipes or shell syntax, wrap in sh -lc :
+jl exec < id > --json -- sh -lc &#x27;grep "loss" /path/to/log | tail -5&#x27;
+Skill files handle this for you
+All of the patterns above — the monitoring loop, early failure checks, polling intervals, --tail , and more — are included in the skill files that jl setup installs for your agent. Once skills are installed, your agent already knows how to use jl correctly. You don&#x27;t need to teach it these patterns yourself.
+File Persistence Rules ​
+The remote home directory (typically /home/ on containers, /home/<user>/ on VMs) persists across pause/resume cycles. Everything else is ephemeral.
+Persists across pause/resume:
+Files in the home directory ( /home/ or /home/<user>/ )
+Uploaded directories: <home>/<directory_name>/
+Uploaded files (via jl upload ): <home>/<filename>
+Run metadata: <home>/jl-runs/<run_id>/
+Project-local .venv (directory targets) and shared $HOME/.venv (file targets)
+Attached filesystems
+Lost on pause:
+System-level installs ( apt-get , global pip packages)
+Files outside the home directory ( /tmp , /root , etc.)
+Use --setup or --requirements to reinstall dependencies on each run, or use startup scripts for recurring setup.
+Anti-Patterns ​
+Don&#x27;t
+Why
+Start runs without --json
+Without --json , the CLI streams logs and blocks the agent
+Use jl run logs --follow
+Blocks forever; --json is also incompatible with --follow
+Read full logs (omit --tail N )
+Can return megabytes of output, overwhelming context
+Poll every few seconds
+Wasteful and noisy; use 60–600s intervals
+Use lifecycle flags with --on
+--keep , --pause , --destroy only apply to fresh instances
+Forget to pause/destroy instances
+They cost money while running
+Examples ​
+Train on a fresh GPU, auto-pause when done ​
+The simplest workflow — run a training script on a fresh GPU with dependencies. The instance is automatically paused when the script finishes, so you only pay for compute time.
+jl run train.py --gpu L4 --requirements requirements.txt -- --epochs 100
+# Instance created > code uploaded > deps installed > training runs > instance paused
+Run a project directory with setup ​
+When your project has multiple files, sync the entire directory and specify the entrypoint with --script . The CLI uses rsync under the hood, so only changed files are transferred on subsequent runs — making re-runs on the same instance fast even with large projects. You can also run custom setup commands before training starts.
+jl run . --script train.py --gpu A100 \
+--requirements requirements.txt \
+--setup "pip install flash-attn" \
+-- --batch-size 32 --lr 1e-4
+Multi-GPU training ​
+For large-scale training, you can request multiple GPUs on a single instance. Check Regions & GPUs for available GPU counts per region.
+# 8x H100 in IN2 for distributed training
+jl create --gpu H100 --num-gpus 8 --region IN2 --storage 500 --name "distributed-training"
+# Upload your project and run with torchrun for multi-GPU
+jl run . --script train.py --on < machine_id > \
+--requirements requirements.txt \
+--setup "pip install flash-attn" \
+-- --num_gpus 8
+Long-running job with manual control ​
+For jobs where you want full control — create an instance, start a detached run, monitor at your own pace, and clean up when done.
+# Create an instance
+jl create --gpu A100 --storage 200 --name "research"
+# Sync project and start a background run (--no-follow detaches from logs)
+jl run ./my-project --script train.py --on < machine_id > --no-follow
+# Monitor later
+jl run status < run_id >
+jl run logs < run_id > --tail 100
+jl run logs < run_id > --follow
+# Pause when done
+jl pause < machine_id >
+Detached run on existing instance ​
+Start a run and come back to check on it later — the run continues in the background even if you close your terminal.
+# Start without following
+jl run train.py --on < machine_id > --no-follow
+# Check on it later
+jl run logs < run_id > --tail 50
+# Stop it if needed
+jl run stop < run_id >
+Persistent data with filesystems ​
+Filesystems let you keep datasets and model checkpoints across instances. Create a filesystem once, attach it to any instance in the same region, and your data is always available — even after destroying the instance. Note that filesystems are region-bound — an IN2 filesystem is only accessible from IN2 instances.
+# Create a filesystem for datasets
+jl filesystem create --name "datasets" --storage 500
+# Create an instance with the filesystem attached
+jl create --gpu A100 --fs-id < fs_id > --name "training"
+# Run your training - the filesystem is attached and accessible on the instance
+jl run train.py --on < machine_id >
+# Done with training? Destroy the instance - data is safe in the filesystem
+jl destroy < machine_id >
+# Spin up a cheaper GPU for inference, same data
+jl create --gpu L4 --fs-id < fs_id > --name "inference"
+VM workflow (bare metal SSH access) ​
+VM instances give you a clean Linux machine with SSH access instead of a pre-configured container. You&#x27;ll need to register an SSH key first.
+# Add your SSH key
+jl ssh-key add ~/.ssh/id_ed25519.pub --name "my-key"
+# Create a VM instance; the CLI picks an available region unless you pass --region
+jl create --gpu A100-80GB --vm --name "my-vm"
+# SSH in
+jl ssh < machine_id >
+Scripting with JSON and jq ​
+Most commands support --json output (except jl setup ), making it easy to build automation pipelines with jq .
+# Get IDs of all running instances
+jl list --json | jq &#x27;[.[] | select(.status == "Running") | .machine_id]&#x27;
+# Find cheapest available GPU
+jl gpus --json | jq &#x27;[.[] | select(.num_free_devices > 0)] | sort_by(.price_per_hour) | .[0].gpu_type&#x27;
+# Pause all running instances
+for id in $( jl list --json | jq -r &#x27;.[] | select(.status == "Running") | .machine_id&#x27; ) ; do
+jl pause " $id " --yes --json
+done
+# Check if a run is still going
+jl run logs < run_id > --tail 1 --json | jq .run_exit_code
+Autonomous research with coding agents ​
+One of the most powerful patterns is letting a coding agent drive the entire research loop autonomously. Andrej Karpathy&#x27;s autoresearch is a great example of this — an AI agent autonomously edits training code, runs experiments, checks metrics, and iterates, accumulating only improvements. In Karpathy&#x27;s own run, the agent evaluated ~700 experimental changes over 2 days, found ~20 additive improvements, and achieved an 11% reduction in Time-to-GPT-2.
+The core loop works like this:
+Agent modifies train.py with an experimental idea and commits the change
+Agent runs the experiment on a GPU (via jl run )
+Agent reads the results from logs (via jl run logs ) and extracts the target metric
+Agent logs the result — appends the commit hash, metric value, and a description to a results.tsv file so every experiment (successes and failures) is tracked
+If metrics improved — keep the commit, the branch advances
+If metrics got worse or it crashed — git reset to revert, try a different idea
+The key insight is that the git branch only contains improvements (each commit is guaranteed better than the last), while results.tsv records the full history of all experiments including dead ends. This gives you a clean chain of improvements you can review, plus a complete log for analysis.
+This pattern works for any ML problem — not just GPT training. You can apply it to hyperparameter sweeps, architecture search, data augmentation experiments, or any iterative research workflow.
+Here&#x27;s how to replicate this with jl :
+# 1. Create a dedicated instance for experiments
+jl create --gpu A100 --storage 200 --name "auto-research" --yes
+# 2. Create a branch for this research session
+git checkout -b autoresearch/session-1
+# 3. Run baseline to establish initial metric
+jl run . --script train.py --on < machine_id > \
+--requirements requirements.txt --json --yes
+# 4. Wait for it, then check results
+sleep 15 && jl run logs < run_id > --tail 50
+# The agent then loops autonomously:
+# 5. Edit train.py with an idea, commit, and run
+jl run . --script train.py --on < machine_id > \
+--requirements requirements.txt --json --yes
+# 6. Check results
+sleep 15 && jl run logs < run_id > --tail 30
+# ... then steady polling
+sleep 120 && jl run logs < run_id > --tail 50
+# 7. Extract metric from logs and append to results.tsv
+# Format: commit | val_metric | memory_gb | status | description
+# e.g.: a1b2c3d | 1.432 | 12.5 | keep | increased hidden dim to 512
+# 8. If improved: keep the commit, loop back to step 5
+# If worse: git reset to revert, loop back to step 5
+# If crashed: log as crash, fix or try something else
+# 9. When done, pause the instance
+jl pause < machine_id >
+With 5-minute experiments, the agent can run ~12 experiments per hour — roughly 100 experiments in an overnight session. Check results.tsv and git log the next morning to see what your agent discovered.
+tip
+To get started, install agent skills with jl setup --agents all , then ask your agent something like: "Run a hyperparameter sweep comparing learning rates 1e-3, 1e-4, and 1e-5 on an A100 using my training script." The agent will handle the rest.
+Previous
+Download Data
+Next
+Python SDK
+Installation
+Quick Start
+Authentication
+Global Flags
+Account Commands
+Regions & GPUs
+Instance Commands
+SSH, Exec & File Transfer
+Managed Runs
+SSH Key Commands
+Startup Script Commands
+Filesystem Commands
+VPC Commands
+Token Factory: Model Commands
+JSON Mode for Scripting
+Shell Completion
+Using with AI Coding Agents
+Examples

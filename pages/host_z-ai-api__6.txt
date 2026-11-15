@@ -1,0 +1,143 @@
+URL: https://z.ai/pricing
+FINAL: https://z.ai/pricing
+STATUS: 200
+TITLE: Pricing | Z.ai
+FETCHED: 2026-11-15T15:58:11.275Z
+
+Chat
+API
+Coding Plan
+Pricing
+Contact
+Docs
+English
+Login
+Simple, Flexible Pricing
+Explore Pricing
+Contact Sales
+Coding Plan
+Individual
+Team
+Lite
+10,000 Credits / week
+Monthly
+$18/mo
+Quarterly · 20% off
+$14.4/mo
+Yearly · 30% off
+$12.6/mo
+Pro
+6 × Lite usage
+Monthly
+$80/mo
+Quarterly · 20% off
+$64/mo
+Yearly · 30% off
+$56/mo
+Max
+14 × Lite usage
+Monthly
+$168/mo
+Quarterly · 20% off
+$134.4/mo
+Yearly · 30% off
+$117.6/mo
+Subscribe Now
+Flagship Models
+GLM-5.3
+New
+Z.ai’s latest flagship model delivers significantly stronger coding, agentic task handling, and cybersecurity capabilities, achieving a 50% performance gain on Z.ai Code Bench.
+Context
+1M
+Input
+$1.4 / M
+Output
+$4.4 / M
+Cached Input
+$0.26 / M
+Cache Store
+Limited-time Free
+Input Modality
+Text
+GLM-5.3-Flash
+It is the first native multimodal model in the GLM-5 series, delivering stronger intelligence than GLM-5.2 while maintaining an exceptionally cost-efficient architecture.
+Context
+1M
+Input
+$0.15 / M
+Output
+$0.5 / M
+Cached Input
+$0.03 / M
+Cache Store
+Limited-time Free
+Input Modality
+Image | Video | File | Text
+Buy Usage Bundles
+Other Models & Services
+Models
+Agents
+GLM-5.2
+Reasoning Model
+Input
+$1.4 / M
+Output
+$4.4 / M
+Cached Input
+$0.26 / M
+Cache Store
+Limited-time Free
+GLM-4.6V
+Vison Model
+Input
+$0.3 / M
+Output
+$0.9 / M
+Cached Input
+$0.05 / M
+Cache Store
+Limited-time Free
+GLM-OCR
+Vison Model
+Input
+$0.03 / M
+Output
+$0.03 / M
+Cached Input
+-
+Cache Store
+-
+Explore Pricing
+FAQ
+How is the Z.AI platform API billed?
+What are the prices of the latest models on the Z.AI international platform?
+Which models are free on the Z.AI international platform?
+What are the prices of vision models on the Z.AI international platform?
+How are tools and generation services charged on the Z.AI international platform?
+Z.ai
+Product
+Language Models
+Vision Models
+Video Gen Models
+Agent
+Documents
+Quick Start
+Overview
+API Reference
+Coding Plan
+Contact
+Contact Sales
+X.com
+Discord
+More
+Others
+API Keys
+Billing
+Transparency
+Terms & Policy
+Value Subscription
+Powered by Z.ai's new flagship Models
+Compatible with 20+ popular AI coding tools such as Claude Code
+From only $18/mo, enjoy high quotas
+Learn More
+Join Now

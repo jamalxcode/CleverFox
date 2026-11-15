@@ -1,0 +1,320 @@
+URL: https://jarvislabs.ai/pricing
+FINAL: https://jarvislabs.ai/pricing
+STATUS: 200
+TITLE: Pricing: GPUs, CPU VMs and Token Factory | Jarvislabs
+FETCHED: 2026-11-15T15:58:27.417Z
+
+Pricing: GPUs, CPU VMs and Token Factory | Jarvislabs
+Inference Models Compute CLI Pricing Resources
+Contact Sales
+Pricing
+Open models by the token, GPUs and CPU VMs by the second. No commitments.
+Read the docs
+Show in ₹ INR $ USD
+Token Factory
+GPUs
+CPU VMs
+GPU Clusters
+Storage
+Managed Endpoints
+Serverless
+Model APIs
+Token Factory
+Compute
+GPUs
+CPU VMs
+GPU Clusters
+Storage
+Deploy
+Managed Endpoints
+Serverless
+Need help choosing?
+Tell us about your workload and we&#x27;ll suggest a setup.
+Contact us
+Model APIs
+Token Factory
+Call hosted open models through an OpenAI-compatible API. Pay per million tokens.
+Model Context Input Cached input Output
+DeepSeek V4.1 Flash DeepSeek · 1M context
+1M $0.07 $0.003 $0.49
+DeepSeek V4.1 Flash Cyber DeepSeek · 1M context
+1M $0.30 $0.006 $1.00
+Gemma 4 26B A4B IT Google · 256K context
+256K $0.11 $0.05 $0.37
+Gemma 4 31B IT Google · 256K context
+256K $0.14 $0.05 $0.40
+GLM-5.3 Z.ai · 230K context
+230K $0.70 $0.13 $2.20
+GLM-5.3 Flash Z.ai · 1M context
+1M $0.075 $0.015 $0.25
+Nemotron 3.5 Super VL 120B A12B NVFP4 NVIDIA · 1M context
+1M $0.15 $0.02 $0.50
+Qwen 3.8 27B FP8 Alibaba · 256K context
+256K $0.30 $0.08 $2.35
+DeepSeek V4.1 Flash DeepSeek · 1M context Input
+$0.07
+Cached
+$0.003
+Output
+$0.49
+DeepSeek V4.1 Flash Cyber DeepSeek · 1M context Input
+$0.30
+Cached
+$0.006
+Output
+$1.00
+Gemma 4 26B A4B IT Google · 256K context Input
+$0.11
+Cached
+$0.05
+Output
+$0.37
+Gemma 4 31B IT Google · 256K context Input
+$0.14
+Cached
+$0.05
+Output
+$0.40
+GLM-5.3 Z.ai · 230K context Input
+$0.70
+Cached
+$0.13
+Output
+$2.20
+GLM-5.3 Flash Z.ai · 1M context Input
+$0.075
+Cached
+$0.015
+Output
+$0.25
+Nemotron 3.5 Super VL 120B A12B NVFP4 NVIDIA · 1M context Input
+$0.15
+Cached
+$0.02
+Output
+$0.50
+Qwen 3.8 27B FP8 Alibaba · 256K context Input
+$0.30
+Cached
+$0.08
+Output
+$2.35
+Rates in USD per 1 million tokens. Input is the context you send; output is what the model generates. Cached input rates apply to verified cache hits. Sign in to see prices in your billing currency. Learn more about Token Factory →
+Compute
+GPUs
+NVIDIA H200, H100, RTX Pro 6000 Blackwell, A100, A30 and L4. Pick 1, 2, 4 or 8 GPUs to price an instance.
+GPUs per instance 1 × 2 × 4 × 8 ×
+GPU VRAM vCPUs RAM On-demand / hr Spot / hr
+NVIDIA H200 SXM
+141 GB
+28
+300 GB
+$4.59 − 50 % $2.29
+NVIDIA H100 SXM
+80 GB
+16
+200 GB
+$3.49 − 56 % $1.54
+NVIDIA RTX Pro 6000 Blackwell
+96 GB
+28
+160 GB
+$2.19 − 47 % $1.15
+NVIDIA A100 80GB
+80 GB
+16
+112 GB
+$1.49 − 40 % $0.89
+NVIDIA A100 40GB
+40 GB
+16
+112 GB
+$0.89 − 11 % $0.79
+NVIDIA A30
+24 GB
+16
+112 GB
+$0.41 − 29 % $0.29
+NVIDIA L4
+24 GB
+32
+124 GB
+$0.44 − 34 % $0.29
+NVIDIA H200 SXM
+141 GB VRAM · 28 vCPU · 300 GB RAM
+On-demand / hr
+$4.59
+Spot / hr
+$2.29 − 50 %
+NVIDIA H100 SXM
+80 GB VRAM · 16 vCPU · 200 GB RAM
+On-demand / hr
+$3.49
+Spot / hr
+$1.54 − 56 %
+NVIDIA RTX Pro 6000 Blackwell
+96 GB VRAM · 28 vCPU · 160 GB RAM
+On-demand / hr
+$2.19
+Spot / hr
+$1.15 − 47 %
+NVIDIA A100 80GB
+80 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+$1.49
+Spot / hr
+$0.89 − 40 %
+NVIDIA A100 40GB
+40 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+$0.89
+Spot / hr
+$0.79 − 11 %
+NVIDIA A30
+24 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+$0.41
+Spot / hr
+$0.29 − 29 %
+NVIDIA L4
+24 GB VRAM · 32 vCPU · 124 GB RAM
+On-demand / hr
+$0.44
+Spot / hr
+$0.29 − 34 %
+On-demand instances are billed per second; pause and resume any time. Spot instances cost less but can be interrupted when the capacity is needed, so save your work often. Customers outside India are billed in USD. Switch at the top right to see our India rates. Committing to a month or more? Talk to sales about a savings plan →
+CPU VMs
+General-purpose VMs with 4 GB of RAM per vCPU. On-demand only.
+CPU Tier vCPUs RAM Price
+2 vCPU · 8 GB
+2
+8 GB
+$0.05
+On-demand · /hr
+4 vCPU · 16 GB
+4
+16 GB
+$0.10
+On-demand · /hr
+8 vCPU · 32 GB
+8
+32 GB
+$0.20
+On-demand · /hr
+16 vCPU · 64 GB
+16
+64 GB
+$0.40
+On-demand · /hr
+32 vCPU · 128 GB
+32
+128 GB
+$0.79
+On-demand · /hr
+2 vCPU · 8 GB RAM
+$0.05
+On-demand · /hr
+4 vCPU · 16 GB RAM
+$0.10
+On-demand · /hr
+8 vCPU · 32 GB RAM
+$0.20
+On-demand · /hr
+16 vCPU · 64 GB RAM
+$0.40
+On-demand · /hr
+32 vCPU · 128 GB RAM
+$0.79
+On-demand · /hr
+CPU VMs are priced as $0.012 / vCPU + $0.0032 / GB RAM per hour. Available in the India (Noida) region.
+GPU Clusters
+Multi-node training over InfiniBand.
+Instant Clusters
+NVIDIA H200 SXM nodes, eight GPUs each, over InfiniBand. Create one yourself from the dashboard.
+Per second
+rates shown before you launch
+Learn more →
+Reserved Clusters
+128 to 1,024+ GPUs for a planned project. We confirm the configuration, dates and pricing with you.
+Custom quote
+Talk to sales →
+Storage
+One rate for instance disks and filesystems.
+Disks & filesystems
+Instance disks and network filesystems, billed by the hour on provisioned capacity.
+$0.10
+/GB · month ($0.00014 /GB · hr)
+Learn more →
+Egress
+Moving data out of your instances within the region.
+Free
+in-region
+Deploy
+Deploy your own model
+Run a model on dedicated GPU workers. Billed by the second of worker runtime.
+Managed Endpoints
+Deploy a catalog model on a serving stack we maintain. Warm workers are billed even when idle.
+Per GPU-second
+of worker runtime
+Learn more →
+Serverless
+Deploy your own model and serving stack. Workers scale with traffic; set minimum workers to zero to stop when idle.
+Per second
+of worker runtime
+Learn more →
+The GPU rate for a deployment is shown in the dashboard before you deploy. Each worker also has a 50 GB root disk, and any filesystem holding model weights is billed at the storage rate above.
+Need 25+ GPUs or a savings plan?
+Discounted rates for one-month and longer commitments, reserved capacity, NVIDIA H200 InfiniBand clusters and custom quotes. Talk to us about a plan that fits your workload.
+Contact Sales
+Trusted by 27,000+ AI developers · 50M+ GPU hours served
+Per-second billing Free in-region egress India regions
+Frequently asked questions
+Testimonials What builders say
+“ “ I published a paper with the results from exps i did on your gpus when @googlecloud turned me down. Thanks a lot for the great product/service. Not to mention super competitive prices... ”
+Cagri Demir
+@adnancagri
+“ “ After waiting for 3 days on AWS to provide capacity so I can continue on @fastdotai course, I switched to @jarvislabsai and it literally took me less than 5 min. Good stuff @vishnuvig ”
+Hadi Curtay
+@hadicurtay
+“ “ JarvisLabs.ai has always been my go to for renting GPU for personal projects/Kaggle competitions. Trust me, it made my life easier. Kudos Vishnu for your dedication, and good luck for the future! ”
+Anshuman Mishra
+Anshuman Mishra
+“ “ I have had a great experience using the Jarvislabs platform. Within a couple of minutes you can have a machine up with multiple connection/interaction options like Jupyter, VS Code, and normal SSH ”
+Vatsal Saglani
+@saglanivatsal
+Jarvislabs makes it simple and affordable to rent GPUs for AI, ML, and deep learning tasks, delivered with top-notch support.
+Products
+Token Factory
+VMs
+Clusters
+Slurm Clusters
+Templates
+Serverless
+Managed Endpoints
+CLI
+Filesystems
+Pricing
+Company
+GPU Cloud India
+Universities
+Customer Stories
+Compare Providers
+Careers
+Brand
+Contact Sales
+Contact Us
+Terms & Conditions
+Supported Countries
+Sanctioned Country Policy
+GPUs
+H200 GPUs
+H100 GPUs
+A100 80GB GPUs
+A100 40GB GPUs
+L4 GPUs
+B200 Specs
+RTX 6000 Pro
+Resources
+AI FAQs
+Updates
+© 2026 Jarvislabs | All Rights Reserved | Made with ❤️ in India

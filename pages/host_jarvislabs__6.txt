@@ -1,0 +1,166 @@
+URL: https://jarvislabs.ai/careers
+FINAL: https://jarvislabs.ai/careers
+STATUS: 200
+TITLE: Careers | Jarvislabs
+FETCHED: 2026-11-15T15:58:27.399Z
+
+Careers | Jarvislabs
+Inference Models Compute CLI Pricing Resources
+Contact Sales
+Careers · open
+Build the cloud
+AI runs on.
+Jarvislabs serves builders in 65+ countries and has spent 6+ years making GPU compute simple, fast, and reliable. We’re building models as an API, model deployment products, and infrastructure for GPU workloads. We are hiring serious builders for inference, training, forward-deployed engineering, and AI-native GTM.
+See open roles Write to build@jarvislabs.ai
+65+
+countries served
+~1.8s
+container launch
+H100
+available now
+jarvis-labs / careers.manifest
+utf-8
+builder.note /tmp/apply
+01 $ write build@jarvislabs.ai 02 03 why_jarvis = "the cloud AI runs on" 04 proof = [ "oss" , "systems" , "research" ] 05 cv_only = false 06 send →
+live · open · 65+ countries
+jarvislabs.ai
+// 01 — WHAT WE BUILD
+The platform behind serious AI workloads.
+This is not just a GPU rental interface. The work is making hard compute feel simple, reliable, and useful for people building across the world.
+0 1
+GPU containers and VMs
+Fast compute that stays simple — from first launch to repeated production.
+0 2
+Models as an API and deployment
+Help developers call models through an API and deploy custom models, with attention to reliability, latency, and cost.
+0 3
+Training clusters
+Kubernetes, Slurm, Ray, multi-node workloads, observability, scheduling, and reliability.
+0 4
+Forward-deployed engineering
+Stay close to real users, debug what breaks, and turn repeated pain into product direction.
+0 5
+AI-native GTM systems
+Use AI tools, code, and customer insight to ship campaigns and demos, with an early focus on adoption of models as an API.
+// 02 — WHO WE WANT
+Evidence > Pedigree.
+We care less about years of experience and more about proof that you have taken on hard work and made it real.
+If you have built production systems, contributed deeply to open source, published useful research, solved hard ML problems, debugged difficult product issues, or built something impressive independently — we want to hear from you.
+Relevant open source Research papers or technical writing Shipped systems, benchmarks, demos, or products
+// 03 — HOW WE WORK
+Small team. Flat hierarchy. Real ownership.
+A short charter — what we expect of ourselves and what we expect of teammates.
+01 Own hard problems end to end.
+02 Use AI tools hands-on. Own the accuracy, usefulness, and quality of what you ship.
+03 Reliability, docs, and observability are part of the product.
+04 Customer reality beats internal assumptions.
+05 Build products that serve serious users around the world.
+// 04 — OPEN ROLES
+Pick the problem you want to own.
+The titles matter less than the ownership. If the exact title is not right but the work is, use the open track.
+Jump to: Inference Training GTM Systems Open Track
+Group
+Inference
+2 open · roles
+platform Senior Inference Platform Engineer
+Build and evolve Jarvislabs inference-as-a-service for open and custom AI models. Own performance, reliability, runtime integrations, benchmarks, APIs, and production behavior.
+Read role forward-deployed Inference Forward Deployed AI Engineer
+Work with customers deploying real inference workloads. Help them choose runtimes, GPUs, precision, quantization, scaling patterns, and production deployment paths.
+Read role
+Group
+Training
+2 open · roles
+platform Senior Training Platform Engineer
+Build the platform layer for serious training workloads: Kubernetes, Slurm, Ray, multi-node jobs, observability, scheduling, reliability, and customer workflows.
+Read role forward-deployed Training Forward Deployed AI Engineer
+Help customers run distributed training workloads successfully. Understand their models, data, clusters, failure modes, and turn repeated problems into better product direction.
+Read role
+Group
+GTM Systems
+3 open · roles
+systems GTM Systems Engineer
+Build Jarvislabs&#x27; AI-native go-to-market system. Use code, data, automation, AI tools, and customer understanding to create leverage without becoming a spam engine.
+Read role growth & marketing Growth & Product Marketing Lead
+Help developers adopt JarvisLabs, with an early focus on models as an API. Own positioning, launches and growth experiments through repeat use.
+Read role developer advocacy Developer Advocate — AI & GPU Workflows
+Help developers build with JarvisLabs models as an API, GPU compute and model deployment. Ship tested examples, tutorials and demos.
+Read role
+Group
+Open Track
+1 open · role
+open track Serious builders
+If there is no exact matching role, but you believe your work belongs here, write to us. Tell us why.
+Read role
+// 05 — HOW TO APPLY
+Do not send only a CV.
+Write to build@jarvislabs.ai. We read personal notes and proof of work. CV-only applications are not reviewed.
+~/build
+zsh
+$ mail build@jarvislabs.ai < your-note.md
+# include in your-note.md:
+01 Why Jarvislabs?
+02 Which problem area interests you?
+03 What can you contribute in the first 90 days?
+04 2 to 3 proof links.
+05 Attach a CV if useful — but never CV-only.
+06 If there is a better way to show your work, use that.
+Send note
+// 06 — PROCESS
+High-signal, respectful of your time.
+Four steps. No leetcode. No surprise panels. Real conversation about real work.
+0 1
+Personal note review
+We read every personal note. Not every CV.
+0 2
+Technical conversation
+Trade-offs, signal, scope. Real questions, real answers.
+0 3
+Problem deep dive
+Working session on a real problem. Show how you think.
+0 4
+Founder + team conversation
+Mutual fit, in both directions.
+// 07 — WHERE WE WORK
+Mostly in person. Sometimes remote.
+We prefer people who can spend meaningful time with the team, but we are open to remote for exceptional candidates.
+Delhi Bangalore Remote for exceptional fits
+// 08 — ORIGIN
+Built by staying close to hard problems.
+Jarvislabs started from a simple pain: serious GPU access was harder than it should have been, especially for builders outside the usual centers of cloud power.
+Read Vishnu&#x27;s note on how Jarvislabs began Jarvislabs is an E2E Networks company.
+Jarvislabs makes it simple and affordable to rent GPUs for AI, ML, and deep learning tasks, delivered with top-notch support.
+Products
+Token Factory
+VMs
+Clusters
+Slurm Clusters
+Templates
+Serverless
+Managed Endpoints
+CLI
+Filesystems
+Pricing
+Company
+GPU Cloud India
+Universities
+Customer Stories
+Compare Providers
+Careers
+Brand
+Contact Sales
+Contact Us
+Terms & Conditions
+Supported Countries
+Sanctioned Country Policy
+GPUs
+H200 GPUs
+H100 GPUs
+A100 80GB GPUs
+A100 40GB GPUs
+L4 GPUs
+B200 Specs
+RTX 6000 Pro
+Resources
+AI FAQs
+Updates
+© 2026 Jarvislabs | All Rights Reserved | Made with ❤️ in India

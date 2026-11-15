@@ -1,0 +1,138 @@
+URL: https://docs.jarvislabs.ai/faqs/
+FINAL: https://docs.jarvislabs.ai/faqs/
+STATUS: 200
+TITLE: FAQs | Jarvislabs.ai Docs
+FETCHED: 2026-11-15T15:58:27.128Z
+
+FAQs | Jarvislabs.ai Docs
+Skip to main content
+Jarvislabs Docs Tutorials Blog
+Get started
+Overview
+Getting Started
+Templates
+Host an AI Model on a VM
+SSH
+Compute
+VM
+Slurm
+Serverless
+Environments
+Networking
+VPC
+Reserved IP
+Security Groups
+Storage & data
+Disks
+Shared Filesystems
+Object Storage
+Download Data
+Developer tools
+CLI
+Python SDK
+dstack
+Apps & deployment
+ComfyUI
+Automatic1111
+Deploy
+Account
+Settings
+Teams
+Help
+Troubleshooting
+FAQs
+Legacy
+Help
+FAQs
+Copy page
+On this page
+Frequently Asked Questions
+Quick Links
+Getting Started
+Technical Support
+Billing & Payments
+Contact & Support
+What is JarvisLabs.ai? ​
+Jarvislabs.ai is a cutting-edge cloud computing platform that offers instant access to powerful GPUs and customizable environments. Whether you&#x27;re
+training machine learning models, developing AI applications, or conducting research, our platform provides enterprise-grade infrastructure with pay-as-you-go flexibility and zero setup complexity.
+How much time does it take to launch an instance? ​
+Vanilla templates like PyTorch, Tensorflow, FastAI, etc. take less than a minute to launch. However, if you are using a custom framework, it might take
+a little longer as we need to build the docker image, load weights for you.
+Access & Setup ​
+How to access the machines? ​
+The machines can be accessed through:
+🔧 JupyterLab
+💻 VSCode
+🔒 SSH
+Note: Specialized templates may only have API endpoints to access them.
+JupyterLab, VS Code and a template&#x27;s web UI ask for your instance password .
+How to generate an SSH key? ​
+Checkout our SSH guide for more details.
+How to copy data to the machine? ​
+Checkout our guide for more details.
+Availability ​
+Once you pause or delete an instance, the resources are released and can be used by other users. We do not guarantee any availability of the instance once it is released.
+GPU is not available? ​
+If you see the GPU is not available, it means that all the GPUs are currently being used by other users. You can try again after some time.
+CPU is not available? ​
+If you see the CPU is not available, it means that all the CPUs are currently being used by other users. You can try again after some time.
+Discounts ​
+Being a bootstrapped startup, we are not able to offer any discounts. However, if you have a genuine requirement, please contact us at support@jarvislabs.ai we will try our best to help you.
+Download speed ​
+All the servers are connected to a high speed internet, and the bandwidth is shared among all the users. So the internet speed may vary depending on the load on our servers,
+remote servers and several other factors. If the download speed is too low, you can try canceling the current download and restarting it, which helps often.
+Billing & Security ​
+How secure is my payment? ​
+🔒 We use Stripe to handle our payments. All card information is handled by Stripe, a global leader in payment processing. We don&#x27;t store any card information on our servers.
+Do you offer alternative payment methods? ​
+We accept all major credit/debit cards through Stripe. We do not accept paypal, UPI, or any other payment methods.
+How are the instances charged? ​
+💰 Instances are billed per-second. You are only charged for the total number of seconds used.
+What happens when an instance is paused? ​
+Your data is safely stored at a rate of $0.00014 per GB per hour.
+For example, 50 GB = $5.04/month
+Data is retained as long as you have balance
+If your balance goes negative, all data is permanently deleted and cannot be recovered.
+info
+💡 To avoid losing your data, make sure your wallet has enough credits.
+What happens when balance runs out? ​
+Instances automatically pause when balance reaches zero.
+Data is permanently deleted and cannot be recovered.
+info
+⚠️ Please note: If your Jarvislabs wallet runs out of funds, all resources—including GPUs, CPUs, and storage—will be immediately released for use by other users. Jarvislabs will not be able to recover any lost data.
+Jarvislabs is primarily designed for GPU processing and is not intended to function as a long-term cloud storage system. We recommend not using Jarvislabs as your primary data storage.
+We strongly advise you to regularly back up important data to your local machine or a dedicated cloud storage service to avoid data loss.
+To prevent permanent data loss, please ensure your wallet is recharged before your credits run out.
+Technical Support ​
+Disk is not getting freed up? ​
+Clear the Trash folder with:
+rm -rf ~/.local/share/Trash/*
+Can I use Docker in templates? ​
+❌ Templates are container-based, so Docker cannot run inside them. Use virtual machines (VMs) for Docker operations.
+Learn more about VMs here .
+Where are the servers located? ​
+🏢 All servers are located in India. Servers are based out of tier3 and tier4 data centers. We do not use any shared/consumer grade data centers.
+Policies ​
+Is cryptocurrency mining allowed? ​
+❌ JarvisLabs.ai is designed for AI applications only. Cryptocurrency mining is not permitted.
+Do you offer refunds? ​
+JarvisLabs.ai doesn&#x27;t provide refunds on purchases. If you have any genuine concerns, please contact support@jarvislabs.ai , we are happy to help!
+Do you offer free credits? ​
+If you aren&#x27;t sure if Jarvislabs.ai is for you, please email us at support@jarvislabs.ai . We are happy to answer all your queries.
+You can load as little as $5 into your account to try things out. We don&#x27;t currently offer free credits.
+Can I withdraw my unused balance? ​
+No, Jarvislabs does not offer the option to withdraw unused funds after they have been deposited into your account.
+Once you add funds to your Jarvislabs account, the credits are non-refundable and can only be used for Jarvislabs services.
+Best way to reach us? ​
+📧 Email: support@jarvislabs.ai
+Previous
+Troubleshooting
+Next
+API (Deprecated — JLClient)
+Access & Setup
+Availability
+Discounts
+Download speed
+Billing & Security
+Technical Support
+Policies

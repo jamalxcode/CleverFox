@@ -1,0 +1,7 @@
+URL: https://www.humain.com/en/news/humain-chat-launch.html
+FINAL: https://www.humain.com/en/news/humain-chat-launch
+STATUS: 200
+TITLE: HUMAIN Launches HUMAIN Chat, Powered by ALLAM 34B
+FETCHED: 2026-11-15T15:57:51.430Z
+
+HUMAIN Launches HUMAIN Chat, Powered by ALLAM 34B

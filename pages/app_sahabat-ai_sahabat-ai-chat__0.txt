@@ -1,0 +1,72 @@
+URL: https://sahabat-ai.com/
+FINAL: https://sahabat-ai.com/
+STATUS: 200
+TITLE: Sahabat-AI | Open-Source LLMs for Bahasa Indonesia
+FETCHED: 2026-11-15T15:57:57.020Z
+
+Tentang
+Untuk Developers
+Untuk Peneliti
+🌐
+ID
+▾
+Large Language Model (LLM)
+Open-Source Indonesia
+untuk Semua
+Dikembangkan untuk memajukan kedaulatan digital dan inovasi AI Tanah Air.
+Unduh, instal, dan gunakan secara gratis!
+Tentang Sahabat-AI
+Sahabat-AI adalah sebuah koleksi Large Language Models (LLMs) open-source yang dirancang khusus untuk Bahasa Indonesia dan bahasa daerah.
+Sebuah inovasi dari Indosat, Sahabat-AI menjadi bukti nyata komitmen Indonesia terhadap kedaulatan AI dan menjembatani kesenjangan digital, memberdayakan setiap orang Indonesia untuk memanfaatkan potensi teknologi canggih.
+Open-Source & Gratis
+Unduh, instal, dan gunakan Sahabat-AI secara gratis. Personalisasi dan telusuri sesuai kebutuhanmu.
+Memiliki Konteks Budaya
+'Sahabat' sejati Anda yang fasih berbahasa Indonesia, Sunda, Jawa, Bali, dan Batak.
+Ringan
+Dengan 70 miliar parameter, Sahabat-AI dirancang untuk beroperasi pada hardware yang dapat diakses oleh bisnis lokal, akademisi, dan perseorangan.
+Data yang Disimpan Secara Lokal
+Semua data Anda tetap berada di Indonesia, menjamin keamanan & privasi data sensitif Anda serta kepatuhan terhadap peraturan setempat.
+Unduh Sahabat-AI Large Language Model
+Kami berkomitmen pada penggunaan AI yang etis dan aman. Ikuti pedoman berikut untuk membantu memastikan Sahabat-AI digunakan secara bertanggung jawab.
+Sahabat-AI 70B
+Model Bahasa Besar untuk Bahasa Indonesia
+Parameter
+70 Miliar
+Bahasa
+5+
+Lisensi
+Open-Source
+HuggingFace
+Pelajari selengkapnya
+Bergabunglah dengan kami untuk membangun masa depan AI!
+Kami mengundang para peneliti, developers, dan penggemar bahasa untuk bergabung dengan kami dalam mengembangkan Sahabat-AI. Kontribusikan keahlian Anda untuk membuat model-model ini lebih mudah diakses dan lebih akurat.
+Mengidentifikasi masalah teknis
+Bantu kami menemukan dan memperbaiki bug
+Berbagi data pre-training
+Kontribusikan dataset untuk melatih model
+Mengusulkan tugas dan metrik evaluasi
+Bantu meningkatkan kualitas model
+Meningkatkan kemudahan penggunaan
+Perbaiki dokumentasi dan user experience
+Hubungi kami!
+Mulai Berkontribusi
+Tentang GPU Merdeka
+GPU Merdeka adalah layanan cloud AI berdaulat yang didukung oleh NVIDIA, dirancang untuk menyediakan kemampuan superkomputasi canggih di Indonesia. Diluncurkan pada Agustus 2024, GPU Merdeka menawarkan infrastruktur GPU-as-a-Service (GPUaaS).
+Memungkinkan bisnis dan peneliti mengakses sumber daya komputasi berkinerja tinggi untuk aplikasi seperti generative AI, machine learning, rendering, dan computer-aided design (CAD).
+Dengan hosting dalam negeri dan dikelola oleh profesional TI Indonesia yang terampil, GPU Merdeka mendukung pertumbuhan industri dan ekosistem nasional. Layanan ini memastikan kedaulatan data dan sejalan dengan visi Indonesia dalam memperkuat ekosistem digital serta daya saing di tingkat global.
+NVIDIA Powered
+Didukung oleh teknologi NVIDIA accelerated computing terkini
+Kedaulatan Data
+Data tetap di Indonesia, dikelola oleh profesional lokal
+High Performance
+Superkomputasi untuk AI, ML, rendering, dan CAD
+Kupon Kredit GPU Merdeka
+Bagi universitas, peneliti laboratorium, startup, atau perusahaan yang tertarik untuk mengeksplorasi GPU Merdeka, kirim proposal Anda dan dapatkan kupon kreditnya sekarang.
+Daftar Sekarang
+Dipersembahkan oleh
+Indosat Ooredoo Hutchison (Indosat, IDX: ISAT) memiliki visi untuk menjadi perusahaan telekomunikasi digital yang paling dipilih di Indonesia. Bersama anak usaha dan afiliasinya, Indosat menghadirkan layanan seluler, solusi TIK, data center, Fiber to the Home (FTTH), layanan pembayaran elektronik, layanan finansial dan layanan digital lainnya.
+Indosat memiliki tujuan yang lebih besar yaitu memberdayakan Indonesia, dan dengan semangat gotong royong, Indosat ingin menjadi kolaborator utama dalam mewujudkannya serta menciptakan perubahan yang berarti.
+Baca Selengkapnya
+Chat
+Dipersembahkan oleh
+Pemberitahuan Cookie

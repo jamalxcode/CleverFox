@@ -1,0 +1,68 @@
+URL: https://docs.vultr.com/support/platform/billing/what-payment-methods-do-you-accept
+FINAL: https://docs.vultr.com/support/platform/billing/what-payment-methods-do-you-accept
+STATUS: 200
+TITLE: Vultr Accepts Cards, Crypto via BitPay, PayPal, and Alipay | Vultr Docs
+FETCHED: 2026-11-15T15:58:16.173Z
+
+Over 80,000,000 Cloud Servers Launched
+Over 80,000,000 Cloud Servers Launched
+Products Cloud Compute Cloud GPU Bare Metal File System Object Storage Block Storage Managed Databases CDN Serverless Kubernetes Container Registry Direct Connect Load Balancers
+Features Regions Advanced Network Control Panel Operating Systems Upload ISO
+Solutions Industry Cloud One-Click Deployment Use Cases
+Marketplace Browse Apps Become a Vendor
+Resources FAQ Developers / APIs Vultr Docs Server Status Bug Bounty Promotions Solution Partners Start-Up Programs
+Company Our Team News Brand Assets Referral Program Creator Program Careers SLA Legal Vultr Trust Center Contact Your Privacy Choices Subprocessors Accessibility
+Contact Sales Sign Up
+© Vultr 2026 | VULTR is a registered trademark of The Constant Company, LLC.
+Terms of Service AUP DMCA Privacy Policy Cookie Policy
+Products
+Features
+Marketplace
+Pricing
+Partners
+Company
+Dashboard Contact Sales
+⌘K
+Blogs
+Discover
+Docs
+Community
+Agent Beta
+Menu
+Overview
+Platform API
+Authentication
+Billing Apple/Google Pay Acceptance Billing for Stopped Instances Tax Location Changes Stopped Server Charges Snapshot Charges VAT & Sales Tax Local Currency Invoicing Server Billing Bandwidth Cap Calculation GPU Billing Differences Load Balancer Pricing Add Promo Code Claim Tax Exemption Increase Account Limits Payment Methods Add Authorized Billing User Payment via ACH or Wire Bandwidth Calculation Tax Location Determination Object Storage Billing DDoS Protection Costs Automatic Backup Costs View Account Credit Windows License Inclusion Pricing Across Data Centers Tax Exemption Documents Server Upgrade Process Payment Issues Invoice Formats Bandwidth Overage Rate Refund Policy Payment Methods Vultr Invoice Time Zone Vultr Pricing PayPal Payment Issues Payment Method Requirements Unexpected Invoice Charges Credit Card Small Charge Card Declined Reasons
+Compliance
+Preferences
+Profile
+SSH Keys
+Sub Accounts
+Users
+IAM
+Products
+Vultr Accepts Cards, Crypto via BitPay, PayPal, and Alipay | Vultr Docs
+Docs
+More
+Support
+Platform
+Billing
+Payment Methods
+What Payment Methods Do You Accept?
+1 min read Updated 26 October 2026
+0 comments
+Check which payment methods Vultr accepts: major cards, BitPay crypto, PayPal, Alipay, and UnionPay.
+Vultr supports a wide range of global payment methods to ensure flexibility and accessibility for users worldwide. To learn how to fund your account and keep services active, see the Make Account Payments guide . The following payment options are currently accepted:
+Credit and Debit Cards : Visa, Mastercard, American Express, Discover, and JCB.
+Digital Currencies via BitPay : Bitcoin (BTC), Bitcoin Cash (BCH), Ethereum (ETH), Dogecoin (DOGE), Paxos (PAX), Binance USD (BUSD), Litecoin (LTC), USD Coin (USDC), and Gemini Dollar (GUSD).
+Third-party Payment Platforms : PayPal, Alipay, and UnionPay.
+PayPal may also support additional local payment networks depending on your region, such as Giropay and bank transfers.
+Note
+To manage or update your payment method, visit the Billing section in the Vultr Console .
+0 Comments
+Newest First Post Comment
+Start the conversation
+Be the first to comment and share your perspective with the community.
+Post Comment
+Share
+Docs Menu

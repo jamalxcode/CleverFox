@@ -1,0 +1,467 @@
+URL: https://www.latitude.sh/docs/api-reference/get-plans
+FINAL: https://www.latitude.sh/docs/api-reference/get-plans
+STATUS: 200
+TITLE: List plans - Latitude.sh Docs
+FETCHED: 2026-11-15T15:58:40.202Z
+
+List plans - Latitude.sh Docs
+Documentation Index
+Fetch the complete documentation index at: /docs/llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Latitude.sh Docs home page
+Search...
+⌘ K
+Website
+Support
+Dashboard
+Sign up
+Sign up
+Search...
+Navigation
+Plans
+List plans
+Docs
+Guides
+API reference
+Developer resources
+Introduction
+Summary
+Authentication
+Rate Limits
+Versioning
+Instance Metadata Service New
+Common structures
+Errors
+Endpoints
+API keys
+Inference
+Baselines (Preview)
+Billing
+Events
+Firewalls
+Elastic Ips
+IP Addresses
+Team members
+Operating Systems
+Kubernetes Clusters
+LKS
+Plans
+GET
+Get plans
+GET
+Get plan
+GET
+Get bandwidth plans
+POST
+Update plans bandwidth
+GET
+Get storage plans
+GET
+Get lks plans
+GET
+Get vm plans
+GET
+Get managed database plans
+Public Networks
+Projects
+SSH Keys
+Object Storage
+User data
+Clusters
+Regions
+Roles
+Sandboxes (Preview)
+Servers
+Filesystem Storage
+Block Storage
+Tags
+Teams
+Traffic
+User profile
+Marketplace apps
+Virtual machines
+Virtual machine backups
+Virtual machine restores
+Private Networks
+Managed Databases
+close Typescript (SDK)
+TypeScript
+import { Latitudesh } from "latitudesh-typescript-sdk" ;
+const latitudesh = new Latitudesh ({
+bearer: process . env [ "LATITUDESH_BEARER" ] ?? "" ,
+});
+async function run () {
+const result = await latitudesh . plans . list ();
+console . log ( result );
+}
+run ();
+from latitudesh_python_sdk import Latitudesh
+import os
+with Latitudesh(
+bearer=os.getenv("LATITUDESH_BEARER", ""),
+) as latitudesh:
+res = latitudesh.plans.list()
+# Handle response
+print(res)
+package main
+import(
+"context"
+"os"
+latitudeshgosdk "github.com/latitudesh/latitudesh-go-sdk"
+"github.com/latitudesh/latitudesh-go-sdk/models/operations"
+"log"
+)
+func main() {
+ctx := context.Background()
+s := latitudeshgosdk.New(
+latitudeshgosdk.WithSecurity(os.Getenv("LATITUDESH_BEARER")),
+)
+res, err := s.Plans.List(ctx, operations.GetPlansRequest{})
+if err != nil {
+log.Fatal(err)
+}
+if res.Object != nil {
+// handle response
+}
+}
+curl --request GET \
+--url https://api.latitude.sh/plans \
+--header &#x27;Authorization: <api-key>&#x27;
+const options = {method: &#x27;GET&#x27;, headers: {Authorization: &#x27;<api-key>&#x27;}};
+fetch(&#x27;https://api.latitude.sh/plans&#x27;, options)
+.then(res => res.json())
+.then(res => console.log(res))
+.catch(err => console.error(err));
+<?php
+$curl = curl_init();
+curl_setopt_array($curl, [
+CURLOPT_URL => "https://api.latitude.sh/plans",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => "",
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "GET",
+CURLOPT_HTTPHEADER => [
+"Authorization: <api-key>"
+],
+]);
+$response = curl_exec($curl);
+$err = curl_error($curl);
+curl_close($curl);
+if ($err) {
+echo "cURL Error #:" . $err;
+} else {
+echo $response;
+}
+HttpResponse<String> response = Unirest.get("https://api.latitude.sh/plans")
+.header("Authorization", "<api-key>")
+.asString();
+require &#x27;uri&#x27;
+require &#x27;net/http&#x27;
+url = URI("https://api.latitude.sh/plans")
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+request = Net::HTTP::Get.new(url)
+request["Authorization"] = &#x27;<api-key>&#x27;
+response = http.request(request)
+puts response.read_body
+200
+{
+"data" : [
+{
+"id" : "plan_g1mbDw8BOLv5B" ,
+"type" : "plans" ,
+"attributes" : {
+"slug" : "m4-metal-small-42" ,
+"name" : "m4.metal.small-42" ,
+"features" : [],
+"specs" : {
+"cpu" : {
+"type" : "E-2276G" ,
+"clock" : 3.8 ,
+"cores" : 6 ,
+"count" : 1
+},
+"memory" : {
+"total" : 32
+},
+"drives" : [
+{
+"count" : 1 ,
+"size" : "3.8TB" ,
+"type" : "SSD"
+}
+],
+"nics" : [
+{
+"count" : 1 ,
+"type" : "10 Gbps"
+}
+],
+"gpu" : {
+"count" : 4 ,
+"type" : "NVIDIA H100" ,
+"vram_per_gpu" : null ,
+"interconnect" : null
+}
+},
+"regions" : [
+{
+"name" : "Brazil" ,
+"deploys_instantly" : [],
+"locations" : {
+"available" : [
+"SAO"
+],
+"in_stock" : [
+"SAO"
+],
+"in_stock_count" : {
+"SAO" : 5
+}
+},
+"stock_level" : "medium" ,
+"pricing" : {
+"USD" : {
+"hour" : 10 ,
+"month" : 50 ,
+"year" : 100
+},
+"BRL" : {
+"hour" : 53 ,
+"month" : 108.5 ,
+"year" : 205
+}
+}
+}
+]
+}
+}
+],
+"meta" : {}
+}
+Plans
+List plans
+Copy page Copy page
+Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.
+Copy page Copy page
+GET
+https://api.latitude.sh http://api.latitude.sh
+/
+plans
+Try it
+Typescript (SDK)
+TypeScript
+import { Latitudesh } from "latitudesh-typescript-sdk" ;
+const latitudesh = new Latitudesh ({
+bearer: process . env [ "LATITUDESH_BEARER" ] ?? "" ,
+});
+async function run () {
+const result = await latitudesh . plans . list ();
+console . log ( result );
+}
+run ();
+from latitudesh_python_sdk import Latitudesh
+import os
+with Latitudesh(
+bearer=os.getenv("LATITUDESH_BEARER", ""),
+) as latitudesh:
+res = latitudesh.plans.list()
+# Handle response
+print(res)
+package main
+import(
+"context"
+"os"
+latitudeshgosdk "github.com/latitudesh/latitudesh-go-sdk"
+"github.com/latitudesh/latitudesh-go-sdk/models/operations"
+"log"
+)
+func main() {
+ctx := context.Background()
+s := latitudeshgosdk.New(
+latitudeshgosdk.WithSecurity(os.Getenv("LATITUDESH_BEARER")),
+)
+res, err := s.Plans.List(ctx, operations.GetPlansRequest{})
+if err != nil {
+log.Fatal(err)
+}
+if res.Object != nil {
+// handle response
+}
+}
+curl --request GET \
+--url https://api.latitude.sh/plans \
+--header &#x27;Authorization: <api-key>&#x27;
+const options = {method: &#x27;GET&#x27;, headers: {Authorization: &#x27;<api-key>&#x27;}};
+fetch(&#x27;https://api.latitude.sh/plans&#x27;, options)
+.then(res => res.json())
+.then(res => console.log(res))
+.catch(err => console.error(err));
+<?php
+$curl = curl_init();
+curl_setopt_array($curl, [
+CURLOPT_URL => "https://api.latitude.sh/plans",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => "",
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "GET",
+CURLOPT_HTTPHEADER => [
+"Authorization: <api-key>"
+],
+]);
+$response = curl_exec($curl);
+$err = curl_error($curl);
+curl_close($curl);
+if ($err) {
+echo "cURL Error #:" . $err;
+} else {
+echo $response;
+}
+HttpResponse<String> response = Unirest.get("https://api.latitude.sh/plans")
+.header("Authorization", "<api-key>")
+.asString();
+require &#x27;uri&#x27;
+require &#x27;net/http&#x27;
+url = URI("https://api.latitude.sh/plans")
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+request = Net::HTTP::Get.new(url)
+request["Authorization"] = &#x27;<api-key>&#x27;
+response = http.request(request)
+puts response.read_body
+200
+{
+"data" : [
+{
+"id" : "plan_g1mbDw8BOLv5B" ,
+"type" : "plans" ,
+"attributes" : {
+"slug" : "m4-metal-small-42" ,
+"name" : "m4.metal.small-42" ,
+"features" : [],
+"specs" : {
+"cpu" : {
+"type" : "E-2276G" ,
+"clock" : 3.8 ,
+"cores" : 6 ,
+"count" : 1
+},
+"memory" : {
+"total" : 32
+},
+"drives" : [
+{
+"count" : 1 ,
+"size" : "3.8TB" ,
+"type" : "SSD"
+}
+],
+"nics" : [
+{
+"count" : 1 ,
+"type" : "10 Gbps"
+}
+],
+"gpu" : {
+"count" : 4 ,
+"type" : "NVIDIA H100" ,
+"vram_per_gpu" : null ,
+"interconnect" : null
+}
+},
+"regions" : [
+{
+"name" : "Brazil" ,
+"deploys_instantly" : [],
+"locations" : {
+"available" : [
+"SAO"
+],
+"in_stock" : [
+"SAO"
+],
+"in_stock_count" : {
+"SAO" : 5
+}
+},
+"stock_level" : "medium" ,
+"pricing" : {
+"USD" : {
+"hour" : 10 ,
+"month" : 50 ,
+"year" : 100
+},
+"BRL" : {
+"hour" : 53 ,
+"month" : 108.5 ,
+"year" : 205
+}
+}
+}
+]
+}
+}
+],
+"meta" : {}
+}
+Authorizations
+Authorization
+string
+header
+required
+Query Parameters
+filter[name]
+string
+The plan name to filter by
+filter[slug]
+string
+The plan slug to filter by
+filter[location]
+string
+The location of the site to filter by
+filter[stock_level]
+enum<string>
+The stock level at the site to filter by
+Available options : unavailable ,
+low ,
+medium ,
+high ,
+unique
+filter[in_stock]
+boolean
+The stock available at the site to filter by
+filter[gpu]
+boolean
+Filter by the existence of an associated GPU
+filter[ram]
+integer
+The ram size in Gigabytes to filter by, should be used with the following options:
+[eql] to filter for values equal to the provided value.
+[gte] to filter for values greater or equal to the provided value.
+[lte] to filter by values lower or equal to the provided value.
+filter[disk]
+integer
+The disk size in Gigabytes to filter by, should be used with the following options:
+[eql] to filter for values equal to the provided value.
+[gte] to filter for values greater or equal to the provided value.
+[lte] to filter by values lower or equal to the provided value.
+Response
+200 - application/vnd.api+json
+Success
+data
+object[]
+Show child attributes
+Was this page helpful?
+Yes No
+List servers that can join an allocated node pool
+Previous
+Retrieve plan
+Next
+x github linkedin
+Powered by This documentation is built and hosted on Mintlify, a developer documentation platform
+{"docsConfig":{"theme":"palm","$schema":"https://mintlify.com/schema.json","name":"Latitude.sh Docs","colors":{"primary":"#000000","light":"#e0fe56","dark":"#8261fb"},"logo":{"light":"https://mintcdn.com/latitudesh/U3ne8BNzQ-V8A9Uc/logo/dark.svg?fit=max\u0026auto=format\u0026n=U3ne8BNzQ-V8A9Uc\u0026q=85\u0026s=efad591085db2784ff1a0d7ca22dbefc","dark":"https://mintcdn.com/latitudesh/U3ne8BNzQ-V8A9Uc/logo/light.svg?fit=max\u0026auto=format\u0026n=U3ne8BNzQ-V8A9Uc\u0026q=85\u0026s=1d247b0f651e131bd726c634f9a4d660"},"favicon":"https://mintcdn.com/latitudesh/KzTkFJVWSgSPbFJV/favicon.svg?fit=max\u0026auto=format\u0026n=KzTkFJVWSgSPbFJV\u0026q=85\u0026s=249c436c1846ba5317605b5a466366ce","navbar":{"links":[{"href":"https://www.latitude.sh","label":"Website"},{"href":"https://www.latitude.sh/support","label":"Support"},{"href":"https://www.latitude.sh/dashboard","label":"Dashboard"}],"primary":{"type":"button","label":"Sign up","href":"https://www.latitude.sh/dashboard/signup"}},"footer":{"socials":{"x":"https://www.x.com/latitudesh","github":"https://www.github.com/latitudesh","linkedin":"https://www.linkedin.com/company/latitude-sh"}},"integrations":{"segment":{"key":"pjB7iV7pTtTltAsCkmZ0qhBDJTqYi8Ob"}},"contextual":{"options":["copy","view","chatgpt","claude","perplexity","mcp","cursor","vscode"],"display":"header"},"styling":{"latex":false},"navigation":{"pages":[]}},"deployment":{"deploymentMetadataValue":{"subdomain":"latitudesh","hasAudioNarration":false,"actualSubdomain":"latitudesh","customDomains":["www.latitude.sh"],"gitSource":{"type":"github","owner":"latitudesh","repo":"latitude.sh","deployBranch":"main","contentDirectory":"apps/docs","isPrivate":true,"mountPath":"","label":""},"feedback":{"thumbs":true},"entitlements":{"AI_CHAT":{"status":"ENABLED"},"WEB_MCP":{"status":"ENABLED"},"NARRATION":{"status":"ENABLED"}},"buildId":"6af7d3631edb1dfbf3694beb","clientVersion":"0.0.4143","searchFilterCounts":[{"language":"default","tag":"API reference","count":233},{"language":"default","tag":"Endpoints","count":216},{"language":"default","tag":"Docs","count":82},{"language":"default","tag":"Compute","count":32},{"language":"default","tag":"LKS","count":25},{"language":"default","tag":"Bare metal","count":19},{"language":"default","tag":"Servers","count":18},{"language":"default","tag":"Introduction","count":17},{"language":"default","tag":"Guides","count":16},{"language":"default","tag":"Object Storage","count":15}]},"assistantConfig":{},"basePath":"/docs","hasChatPermissions":false,"hasWebMcpPermissions":true,"toggles":[{"name":"kill-isr","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"custom-rbac-roles","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"agent-mintlify-slack","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"agent-integrations-settings","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"rbac-expansion","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automations-pr-grouping","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"custom-prefix","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"analytics-v7","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"user-flows-analytics","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"no-publish-flow","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-onboarding","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"snapshot-serving-live","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"stripTemperatureMiddleware","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"support-platform-pylon-zendesk","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"snapshot-serving","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"instant-rollback","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"granular-notifications-server","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"granular-notifications","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automations-fable","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"fixed-ai-action-pricing","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"automation-resolve-merge-conflict","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"scoped-publishing","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"mintql","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"page-level-analytics","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"editor-version-history-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"billing-page-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"full-page-search","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workspace-projects","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"assistant-v5","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"fork-pr-previews","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"revalidation-jwt","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-sso-scim","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"hobby-abuse-scan","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"dashboard-inbox","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-signup","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"turbopuffer-dual-write","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"workos-enabled","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"approve-review-flow","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"editor-metadata","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"sso-setup-deadline-banner","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"turbopuffer-serve","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"live-agents","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false},{"name":"llms-txt-v2","enabled":true,"variant":{"name":"disabled","enabled":false,"feature_enabled":true},"impressionData":false}],"googleFontsInlined":false},"customCss":[{"filePath":"style.css","content":".navbar-link>a{text-decoration:underline}::selection{background-color:rgba(224, 254, 86, 0.75)}.dark ::selection{color:#000;background-color:rgb(235, 255, 141, 0.9)}.dark .prose :where(a):not(:where([class~=\"not-prose\"],[class~=\"not-prose\"] *)){border-bottom-color:#fff}.nav-logo{max-height:26px}.card.block{border-radius:0;border:1px solid rgba(0, 0, 0, 0.08);background-color:rgb(234, 240, 241);color:rgb(2, 8, 23)}.card.block h2{color:hsl(222.2, 84%, 4.9%);font-weight:500}.dark .card.block{border-radius:0;background-color:rgb(18, 20, 0)}.dark .card.block h2{color:#fff;font-weight:500}.prose [data-rmiz-content=\"found\"],.prose [data-ramka-trigger],.prose .image-frame{margin-top:2em;margin-bottom:2em;border-radius:6px;display:block;padding:2px;background:rgb(190, 190, 190)}.prose [data-rmiz-content=\"found\"],.prose [data-ramka-trigger]{width:fit-content;max-width:100%;margin-inline:auto}.prose [data-ramka-trigger] img{border-radius:4px}.dark .prose [data-rmiz-content=\"found\"],.dark .prose [data-ramka-trigger],.dark .prose .image-frame{background:rgb(82, 82, 82)}.arcade-embed{position:relative;width:100%;height:0;padding-bottom:calc(36.0417% + 41px);border-radius:4px;overflow:hidden}.arcade-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;color-scheme:light}.prose :where(img):not(:where([class~=\"not-prose\"],[class~=\"not-prose\"] *)){margin:0}.callout{border-radius:0!important}"}],"page":{"pagePath":"api-reference/get-plans","slug":"/api-reference/get-plans","pageMetadata":{"title":"List plans","description":"Lists all plans. Availability by region is included in `attributes.regions.locations.available[*]` node for a given plan.\n","deprecated":null,"version":null,"sidebarTitle":"Get plans","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /plans","href":"/api-reference/get-plans","autogeneratedByOpenApi":true},"description":{"compiledSource":"\"use strict\";\nconst {jsx: _jsx, jsxs: _jsxs} = arguments[0];\nconst {useMDXComponents: _provideComponents} = arguments[0];\nfunction _createMdxContent(props) {\n const _components = {\n code: \"code\",\n p: \"p\",\n ..._provideComponents(),\n ...props.components\n };\n return _jsxs(_components.p, {\n children: [\"Lists all plans. Availability by region is included in \", _jsx(_components.code, {\n children: \"attributes.regions.locations.available[*]\"\n }), \" node for a given plan.\"]\n });\n}\nfunction MDXContent(props = {}) {\n const {wrapper: MDXLayout} = {\n ..._provideComponents(),\n ...props.components\n };\n return MDXLayout ? _jsx(MDXLayout, {\n ...props,\n children: _jsx(_createMdxContent, {\n ...props\n })\n }) : _createMdxContent(props);\n}\nreturn {\n default: MDXContent\n};\n","frontmatter":{},"scope":{}},"pageType":"default","mdx":{"mdxSource":{"compiledSource":"\"use strict\";const{Fragment:_Fragment,jsx:_jsx}=arguments[0];const{useMDXComponents:_provideComponents}=arguments[0];function _createMdxContent(props){return _jsx(_Fragment,{})}function MDXContent(props={}){const{wrapper:MDXLayout}={..._provideComponents(),...props.components};return MDXLayout?_jsx(MDXLayout,{...props,children:_jsx(_createMdxContent,{...props})}):_createMdxContent(props)}return{default:MDXContent}","frontmatter":{},"scope":{"config":{},"pageMetadata":{"title":"List plans","description":"Lists all plans. Availability by region is included in `attributes.regions.locations.available[*]` node for a given plan.\n","deprecated":null,"version":null,"sidebarTitle":"Get plans","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /plans","href":"/api-reference/get-plans","autogeneratedByOpenApi":true}}},"mdxSourceWithNoJs":null},"mdxExtracts":{"tableOfContents":[],"codeExamples":{}},"jsLinks":[],"openApiReferenceData":{"operation":{"summary":"List plans","operationId":"get-plans","tags":["Plans"],"security":["7bde6e56-5427-4146-b1a8-49493e57598e"],"parameters":["5eb9b007-e39a-4e1a-95f3-fc534f0075ba","0823fc6e-1b6f-40b2-8b47-bd1743643789","9f26daed-e462-4cdd-b7d2-9b5ce501f657","7954faa9-4c1a-475b-b250-fadc2c864169","a17fff99-6cae-41e7-a132-ddfbfc309d27","dbec80bf-5f45-4c92-b6e3-c4429ef20d71","e380f439-750b-4b49-9660-2339c12b0b07","e03479f8-babf-4e5c-a3f6-23081028a266"],"description":"Lists all plans. Availability by region is included in `attributes.regions.locations.available[*]` node for a given plan.\n","x-mint":{"href":"/api-reference/get-plans"},"responses":{"200":"7e81cd98-82ef-4de8-bec2-c48c03c13685"},"x-speakeasy-name-override":"list","x-codeSamples":[{"lang":"typescript","label":"Typescript (SDK)","source":"import { Latitudesh } from \"latitudesh-typescript-sdk\";\n\nconst latitudesh = new Latitudesh({\n bearer: process.env[\"LATITUDESH_BEARER\"] ?? \"\",\n});\n\nasync function run() {\n const result = await latitudesh.plans.list();\n\n console.log(result);\n}\n\nrun();"},{"lang":"python","label":"Python (SDK)","source":"from latitudesh_python_sdk import Latitudesh\nimport os\n\n\nwith Latitudesh(\n bearer=os.getenv(\"LATITUDESH_BEARER\", \"\"),\n) as latitudesh:\n\n res = latitudesh.plans.list()\n\n # Handle response\n print(res)"},{"lang":"go","label":"Go (SDK)","source":"package main\n\nimport(\n\t\"context\"\n\t\"os\"\n\tlatitudeshgosdk \"github.com/latitudesh/latitudesh-go-sdk\"\n\t\"github.com/latitudesh/latitudesh-go-sdk/models/operations\"\n\t\"log\"\n)\n\nfunc main() {\n ctx := context.Background()\n\n s := latitudeshgosdk.New(\n latitudeshgosdk.WithSecurity(os.Getenv(\"LATITUDESH_BEARER\")),\n )\n\n res, err := s.Plans.List(ctx, operations.GetPlansRequest{})\n if err != nil {\n log.Fatal(err)\n }\n if res.Object != nil {\n // handle response\n }\n}"}],"method":"get","type":"path","servers":["119dc629-316b-473b-928d-b3d712c4026b","60417bd2-aec6-44dd-b646-2de288c3513a"],"path":"/plans","baseUrlOptions":["https://api.latitude.sh","http://api.latitude.sh"],"title":"List plans","codeSamples":[{"label":"Typescript (SDK)","lang":"typescript","source":"import { Latitudesh } from \"latitudesh-typescript-sdk\";\n\nconst latitudesh = new Latitudesh({\n bearer: process.env[\"LATITUDESH_BEARER\"] ?? \"\",\n});\n\nasync function run() {\n const result = await latitudesh.plans.list();\n\n console.log(result);\n}\n\nrun();"},{"label":"Python (SDK)","lang":"python","source":"from latitudesh_python_sdk import Latitudesh\nimport os\n\n\nwith Latitudesh(\n bearer=os.getenv(\"LATITUDESH_BEARER\", \"\"),\n) as latitudesh:\n\n res = latitudesh.plans.list()\n\n # Handle response\n print(res)"},{"label":"Go (SDK)","lang":"go","source":"package main\n\nimport(\n\t\"context\"\n\t\"os\"\n\tlatitudeshgosdk \"github.com/latitudesh/latitudesh-go-sdk\"\n\t\"github.com/latitudesh/latitudesh-go-sdk/models/operations\"\n\t\"log\"\n)\n\nfunc main() {\n ctx := context.Background()\n\n s := latitudeshgosdk.New(\n latitudeshgosdk.WithSecurity(os.Getenv(\"LATITUDESH_BEARER\")),\n )\n\n res, err := s.Plans.List(ctx, operations.GetPlansRequest{})\n if err != nil {\n log.Fatal(err)\n }\n if res.Object != nil {\n // handle response\n }\n}"}],"requiredOnlyExamples":false,"requestExampleType":"codeSamples","responseExampleType":"generated"},"dependencies":{"parameters":{"5eb9b007-e39a-4e1a-95f3-fc534f0075ba":{"name":"filter[name]","in":"query","required":false,"description":"The plan name to filter by","schema":{"type":"string","isRequired":false,"description":"The plan name to filter by","uniqueKey":"","typeLabel":"string"}},"0823fc6e-1b6f-40b2-8b47-bd1743643789":{"name":"filter[slug]","in":"query","required":false,"description":"The plan slug to filter by","schema":{"type":"string","isRequired":false,"description":"The plan slug to filter by","uniqueKey":"","typeLabel":"string"}},"9f26daed-e462-4cdd-b7d2-9b5ce501f657":{"name":"filter[location]","in":"query","required":false,"description":"The location of the site to filter by","schema":{"type":"string","isRequired":false,"description":"The location of the site to filter by","uniqueKey":"","typeLabel":"string"}},"7954faa9-4c1a-475b-b250-fadc2c864169":{"name":"filter[stock_level]","in":"query","schema":{"type":"string","enum":["unavailable","low","medium","high","unique"],"isRequired":false,"description":"The stock level at the site to filter by","uniqueKey":"","typeLabel":"enum\u003cstring>"},"required":false,"description":"The stock level at the site to filter by"},"a17fff99-6cae-41e7-a132-ddfbfc309d27":{"name":"filter[in_stock]","in":"query","required":false,"description":"The stock available at the site to filter by","schema":{"type":"boolean","isRequired":false,"description":"The stock available at the site to filter by","uniqueKey":"","typeLabel":"boolean"}},"dbec80bf-5f45-4c92-b6e3-c4429ef20d71":{"name":"filter[gpu]","in":"query","required":false,"description":"Filter by the existence of an associated GPU","schema":{"type":"boolean","isRequired":false,"description":"Filter by the existence of an associated GPU","uniqueKey":"","typeLabel":"boolean"}},"e380f439-750b-4b49-9660-2339c12b0b07":{"name":"filter[ram]","in":"query","required":false,"description":"The ram size in Gigabytes to filter by, should be used with the following options:\n [eql] to filter for values equal to the provided value.\n [gte] to filter for values greater or equal to the provided value.\n [lte] to filter by values lower or equal to the provided value.","schema":{"type":"integer","isRequired":false,"description":"The ram size in Gigabytes to filter by, should be used with the following options:\n [eql] to filter for values equal to the provided value.\n [gte] to filter for values greater or equal to the provided value.\n [lte] to filter by values lower or equal to the provided value.","uniqueKey":"","typeLabel":"integer"}},"e03479f8-babf-4e5c-a3f6-23081028a266":{"name":"filter[disk]","in":"query","required":false,"description":"The disk size in Gigabytes to filter by, should be used with the following options:\n [eql] to filter for values equal to the provided value.\n [gte] to filter for values greater or equal to the provided value.\n [lte] to filter by values lower or equal to the provided value.","schema":{"type":"integer","isRequired":false,"description":"The disk size in Gigabytes to filter by, should be used with the following options:\n [eql] to filter for values equal to the provided value.\n [gte] to filter for values greater or equal to the provided value.\n [lte] to filter by values lower or equal to the provided value.","uniqueKey":"","typeLabel":"integer"}}},"responses":{"7e81cd98-82ef-4de8-bec2-c48c03c13685":{"description":"Success","content":{"application/vnd.api+json":{"examples":{"Success":{"title":"Success","value":{"data":[{"id":"plan_g1mbDw8BOLv5B","type":"plans","attributes":{"slug":"m4-metal-small-42","name":"m4.metal.small-42","features":[],"specs":{"cpu":{"type":"E-2276G","clock":3.8,"cores":6,"count":1},"memory":{"total":32},"drives":[{"count":1,"size":"3.8TB","type":"SSD"}],"nics":[{"count":1,"type":"10 Gbps"}],"gpu":{"count":4,"type":"NVIDIA H100","vram_per_gpu":null,"interconnect":null}},"regions":[{"name":"Brazil","deploys_instantly":[],"locations":{"available":["SAO"],"in_stock":["SAO"],"in_stock_count":{"SAO":5}},"stock_level":"medium","pricing":{"USD":{"hour":10,"month":50,"year":100},"BRL":{"hour":53,"month":108.5,"year":205}}}]}}],"meta":{}}}},"schema":{"type":"object","properties":{"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","uniqueKey":"data.items.[INDEX].id","typeLabel":"string"},"type":{"type":"string","enum":["plans"],"uniqueKey":"data.items.[INDEX].type","typeLabel":"enum\u003cstring>"},"attributes":{"type":"object","properties":{"slug":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.slug","typeLabel":"string"},"name":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.name","typeLabel":"string"},"features":{"type":"array","items":{"type":"string","enum":["ssh","raid","user_data","sev"],"uniqueKey":"data.items.[INDEX].attributes.features.items.[INDEX]","typeLabel":"enum\u003cstring>"},"description":"List of available features for the plan","uniqueKey":"data.items.[INDEX].attributes.features","typeLabel":"enum\u003cstring>[]"},"specs":{"type":"object","properties":{"cpu":{"type":"object","properties":{"type":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.specs.cpu.type","typeLabel":"string"},"clock":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.cpu.clock","typeLabel":"number"},"cores":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.cpu.cores","typeLabel":"number"},"count":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.cpu.count","typeLabel":"number"}},"uniqueKey":"data.items.[INDEX].attributes.specs.cpu","typeLabel":"object"},"memory":{"type":"object","properties":{"total":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.memory.total","typeLabel":"number"}},"uniqueKey":"data.items.[INDEX].attributes.specs.memory","typeLabel":"object"},"drives":{"type":"array","items":{"type":"object","properties":{"count":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.drives.items.[INDEX].count","typeLabel":"number"},"size":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.specs.drives.items.[INDEX].size","typeLabel":"string"},"type":{"type":"string","enum":["SSD","HDD","NVME"],"uniqueKey":"data.items.[INDEX].attributes.specs.drives.items.[INDEX].type","typeLabel":"enum\u003cstring>"}},"uniqueKey":"data.items.[INDEX].attributes.specs.drives.items.[INDEX]","typeLabel":"object"},"uniqueKey":"data.items.[INDEX].attributes.specs.drives","typeLabel":"object[]"},"nics":{"type":"array","items":{"type":"object","properties":{"count":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.nics.items.[INDEX].count","typeLabel":"number"},"type":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.specs.nics.items.[INDEX].type","typeLabel":"string"}},"uniqueKey":"data.items.[INDEX].attributes.specs.nics.items.[INDEX]","typeLabel":"object"},"uniqueKey":"data.items.[INDEX].attributes.specs.nics","typeLabel":"object[]"},"gpu":{"type":"object","properties":{"count":{"type":"number","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.count","typeLabel":"number"},"type":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.type","typeLabel":"string"},"vram_per_gpu":{"oneOf":[{"type":"number","description":"VRAM per GPU in GB","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.vram_per_gpu.oneOf.0","typeLabel":"number"},{"type":"null","description":"VRAM per GPU in GB","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.vram_per_gpu.oneOf.1","typeLabel":"null"}],"uniqueKey":"data.items.[INDEX].attributes.specs.gpu.vram_per_gpu","typeLabel":"number | null"},"interconnect":{"oneOf":[{"type":"string","description":"GPU interconnection type (e.g., NVLink, PCIe)","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.interconnect.oneOf.0","typeLabel":"string"},{"type":"null","description":"GPU interconnection type (e.g., NVLink, PCIe)","uniqueKey":"data.items.[INDEX].attributes.specs.gpu.interconnect.oneOf.1","typeLabel":"null"}],"uniqueKey":"data.items.[INDEX].attributes.specs.gpu.interconnect","typeLabel":"string | null"}},"uniqueKey":"data.items.[INDEX].attributes.specs.gpu","typeLabel":"object"}},"uniqueKey":"data.items.[INDEX].attributes.specs","typeLabel":"object"},"regions":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].name","typeLabel":"string"},"deploys_instantly":{"type":"array","items":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].deploys_instantly.items.[INDEX]","typeLabel":"string"},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].deploys_instantly","typeLabel":"string[]"},"locations":{"type":"object","properties":{"available":{"type":"array","items":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.available.items.[INDEX]","typeLabel":"string"},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.available","typeLabel":"string[]"},"in_stock":{"type":"array","items":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.in_stock.items.[INDEX]","typeLabel":"string"},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.in_stock","typeLabel":"string[]"},"in_stock_count":{"type":"object","description":"Servers in stock keyed by site slug. Only sites with stock are present.","additionalProperties":{"type":"integer","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.in_stock_count.additionalProperties","typeLabel":"integer"},"example":{"SAO":5},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations.in_stock_count","typeLabel":"object"}},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].locations","typeLabel":"object"},"stock_level":{"type":"string","enum":["unavailable","low","medium","high"],"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].stock_level","typeLabel":"enum\u003cstring>"},"pricing":{"type":"object","description":"Prices keyed by ISO 4217 currency code (e.g. USD, BRL).","additionalProperties":{"type":"object","properties":{"hour":{"oneOf":[{"type":"number","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.hour.oneOf.0","typeLabel":"number"},{"type":"null","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.hour.oneOf.1","typeLabel":"null"}],"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.hour","typeLabel":"number | null"},"month":{"oneOf":[{"type":"number","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.month.oneOf.0","typeLabel":"number"},{"type":"null","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.month.oneOf.1","typeLabel":"null"}],"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.month","typeLabel":"number | null"},"year":{"oneOf":[{"type":"number","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.year.oneOf.0","typeLabel":"number"},{"type":"null","uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.year.oneOf.1","typeLabel":"null"}],"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties.year","typeLabel":"number | null"}},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing.additionalProperties","typeLabel":"object"},"example":{"USD":{"hour":2.18,"month":796,"year":6686},"BRL":{"hour":11.99,"month":4376,"year":36758}},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX].pricing","typeLabel":"object"}},"uniqueKey":"data.items.[INDEX].attributes.regions.items.[INDEX]","typeLabel":"object"},"uniqueKey":"data.items.[INDEX].attributes.regions","typeLabel":"object[]"},"available_operating_systems":{"type":"array","items":{"type":"string","uniqueKey":"data.items.[INDEX].attributes.available_operating_systems.items.[INDEX]","typeLabel":"string"},"uniqueKey":"data.items.[INDEX].attributes.available_operating_systems","typeLabel":"string[]"}},"uniqueKey":"data.items.[INDEX].attributes","typeLabel":"object"}},"uniqueKey":"data.items.[INDEX]","typeLabel":"object"},"uniqueKey":"data","typeLabel":"object[]"}},"uniqueKey":"","typeLabel":"object"},"exampleType":"examples"}},"exampleType":"examples"}},"security":{"7bde6e56-5427-4146-b1a8-49493e57598e":{"Bearer":{"type":"apiKey","name":"Authorization","in":"header","scopes":[],"schemeName":"Bearer"}}},"servers":{"119dc629-316b-473b-928d-b3d712c4026b":{"url":"https://api.latitude.sh","variables":{"latitude_api_key":{"default":"\u003cinsert your api key here>"}}},"60417bd2-aec6-44dd-b646-2de288c3513a":{"url":"http://api.latitude.sh","variables":{"latitude_api_key":{"default":"\u003cinsert your api key here>"}}}},"processedSecurityOptions":[{"schemes":[{"scheme":{"type":"apiKey","name":"Authorization","in":"header","scopes":[],"schemeName":"Bearer"},"schema":{"title":"Authorization","type":"string","isRequired":true,"typeLabel":"string","deprecated":false},"schemeName":"Bearer","name":"Authorization"}],"title":"Bearer"}]},"originalFileLocation":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples"},"subdomain":"latitudesh","siteName":"Latitude.sh Docs","title":"List plans - Latitude.sh Docs","navMaps":{"firstHrefInVersion":{},"firstHrefInLanguage":{}},"lastModified":"2026-11-12T20:01:09.797Z","originalFileLocation":"api-reference/get-plans.mdx"},"headHtml":"\u003cscript data-mint-head>(function(){var d=document.documentElement,p=null;if(!p){try{p=localStorage.getItem(\"isDarkMode\")}catch(e){}if(p==='true')p='dark';else if(p==='false')p='light';if(p!=='light'\u0026\u0026p!=='dark'\u0026\u0026p!=='system')p=\"system\"}var r=p==='system'?(matchMedia(\"(prefers-color-scheme: dark)\").matches?'dark':'light'):p;d.classList.remove(r==='dark'?'light':'dark');d.classList.add(r);d.setAttribute(\"data-theme-preference\",p)})();\u003c/script>\u003cmeta data-mint-head name=\"description\" content=\"Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.\">\u003cmeta data-mint-head name=\"application-name\" content=\"Latitude.sh Docs\">\u003cmeta data-mint-head name=\"generator\" content=\"Mintlify\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/android-chrome-192x192.png\" media=\"(prefers-color-scheme: light)\">\u003clink data-mint-head rel=\"apple-touch-icon\" type=\"image/png\" sizes=\"180x180\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/apple-touch-icon.png\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/favicon-16x16.png\" media=\"(prefers-color-scheme: light)\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/favicon-32x32.png\" media=\"(prefers-color-scheme: light)\">\u003clink data-mint-head rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/favicon.ico\" media=\"(prefers-color-scheme: light)\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon-dark/android-chrome-192x192.png\" media=\"(prefers-color-scheme: dark)\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon-dark/favicon-16x16.png\" media=\"(prefers-color-scheme: dark)\">\u003clink data-mint-head rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon-dark/favicon-32x32.png\" media=\"(prefers-color-scheme: dark)\">\u003clink data-mint-head rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon-dark/favicon.ico\" media=\"(prefers-color-scheme: dark)\">\u003cmeta data-mint-head property=\"og:title\" content=\"List plans - Latitude.sh Docs\">\u003cmeta data-mint-head property=\"og:description\" content=\"Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.\">\u003cmeta data-mint-head property=\"og:site_name\" content=\"Latitude.sh Docs\">\u003cmeta data-mint-head property=\"og:url\" content=\"https://www.latitude.sh/docs/api-reference/get-plans\">\u003cmeta data-mint-head property=\"og:type\" content=\"website\">\u003cmeta data-mint-head property=\"og:image\" content=\"https://latitudesh.mintlify.site/docs/_mintlify/api/og/v2?division=Plans\u0026amp;title=List+plans\u0026amp;description=Lists+all+plans.+Availability+by+region+is+included+in+%60attributes.regions.locations.available%5B*%5D%60+node+for+a+given+plan.%0A\u0026amp;theme=6998b74c84b38c790d48dab7\u0026amp;signature=848c64d97f695addc788c6301c827f3e7e07d275009f6049b0434271724e5794\">\u003cmeta data-mint-head property=\"og:image:width\" content=\"1200\">\u003cmeta data-mint-head property=\"og:image:height\" content=\"630\">\u003cmeta data-mint-head name=\"twitter:card\" content=\"summary_large_image\">\u003cmeta data-mint-head name=\"twitter:title\" content=\"List plans - Latitude.sh Docs\">\u003cmeta data-mint-head name=\"twitter:description\" content=\"Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.\">\u003cmeta data-mint-head name=\"twitter:image\" content=\"https://latitudesh.mintlify.site/docs/_mintlify/api/og/v2?division=Plans\u0026amp;title=List+plans\u0026amp;description=Lists+all+plans.+Availability+by+region+is+included+in+%60attributes.regions.locations.available%5B*%5D%60+node+for+a+given+plan.%0A\u0026amp;theme=6998b74c84b38c790d48dab7\u0026amp;signature=848c64d97f695addc788c6301c827f3e7e07d275009f6049b0434271724e5794\">\u003cmeta data-mint-head name=\"twitter:image:width\" content=\"1200\">\u003cmeta data-mint-head name=\"twitter:image:height\" content=\"630\">\u003cmeta data-mint-head name=\"msapplication-config\" content=\"/docs/mintlify-assets/_mintlify/favicons/latitudesh/J7qiBRPWQKp1VF7E/_generated/favicon/browserconfig.xml\">\u003cmeta data-mint-head name=\"apple-mobile-web-app-title\" content=\"Latitude.sh Docs\">\u003cmeta data-mint-head name=\"msapplication-TileColor\" content=\"#000000\">\u003clink data-mint-head rel=\"canonical\" href=\"https://www.latitude.sh/docs/api-reference/get-plans\">\u003clink data-mint-head rel=\"alternate\" type=\"application/xml\" href=\"/docs/sitemap.xml\">\u003clink data-mint-head rel=\"alternate\" type=\"text/markdown\" href=\"/docs/api-reference/get-plans.md\">\u003cscript data-mint-head type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.latitude.sh/#organization\",\"name\":\"Latitude.sh Docs\",\"url\":\"https://www.latitude.sh\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://mintcdn.com/latitudesh/U3ne8BNzQ-V8A9Uc/logo/dark.svg?fit=max\u0026auto=format\u0026n=U3ne8BNzQ-V8A9Uc\u0026q=85\u0026s=efad591085db2784ff1a0d7ca22dbefc\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.latitude.sh/docs#website\",\"name\":\"Latitude.sh Docs\",\"url\":\"https://www.latitude.sh/docs\",\"publisher\":{\"@id\":\"https://www.latitude.sh/#organization\"}},{\"@type\":\"WebPage\",\"@id\":\"https://www.latitude.sh/docs/api-reference/get-plans#webpage\",\"url\":\"https://www.latitude.sh/docs/api-reference/get-plans\",\"name\":\"List plans\",\"description\":\"Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.\",\"dateModified\":\"2026-11-12T20:01:09.797Z\",\"isPartOf\":{\"@id\":\"https://www.latitude.sh/docs#website\"},\"breadcrumb\":{\"@id\":\"https://www.latitude.sh/docs/api-reference/get-plans#breadcrumb\"}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.latitude.sh/docs/api-reference/get-plans#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Endpoints\",\"item\":\"https://www.latitude.sh/docs/api-reference/get-api-keys\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"List plans\",\"item\":\"https://www.latitude.sh/docs/api-reference/get-plans\"}]},{\"@type\":[\"TechArticle\",\"APIReference\"],\"@id\":\"https://www.latitude.sh/docs/api-reference/get-plans#apireference\",\"headline\":\"List plans\",\"name\":\"List plans\",\"description\":\"Lists all plans. Availability by region is included in attributes.regions.locations.available[*] node for a given plan.\",\"url\":\"https://www.latitude.sh/docs/api-reference/get-plans\",\"mainEntityOfPage\":{\"@id\":\"https://www.latitude.sh/docs/api-reference/get-plans#webpage\"},\"dateModified\":\"2026-11-12T20:01:09.797Z\",\"publisher\":{\"@id\":\"https://www.latitude.sh/#organization\"},\"isPartOf\":{\"@id\":\"https://www.latitude.sh/docs#website\"}}]}\u003c/script>\u003cscript data-mint-head type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Latitude.sh Docs\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Latitude.sh Docs\"},\"provider\":{\"@type\":\"Organization\",\"name\":\"Mintlify\",\"url\":\"https://mintlify.com\"}}\u003c/script>","agentPointerHref":"/docs/api-reference/get-plans.md","siteName":"Latitude.sh Docs","nav":{"global":null,"tabs":[{"tab":"Docs","pages":[{"title":"Docs","href":""}]},{"tab":"Guides","pages":[{"title":"Guides","href":"/guides"}]},{"tab":"API reference","groups":[{"group":"Introduction","pages":[{"title":"Summary","mode":"wide","href":"/api-reference/summary"},{"title":"Authentication","mode":"wide","href":"/api-reference/authentication"},{"title":"Rate Limits","mode":"wide","href":"/api-reference/rate-limits"},{"title":"Versioning","mode":"wide","href":"/api-reference/versioning"},{"title":"Instance Metadata Service","mode":"wide","tag":"New","href":"/api-reference/metadata-service"},{"group":"Common structures","pages":[{"title":"Object Model","mode":"wide","href":"/api-reference/object-model"},{"title":"Encoding","mode":"wide","href":"/api-reference/encoding"},{"title":"Identifiers and URLs","mode":"wide","href":"/api-reference/identifiers-and-urls"},{"title":"Use of HTTP","mode":"wide","href":"/api-reference/use-of-http"},{"title":"Pagination","mode":"wide","href":"/api-reference/pagination"},{"title":"Statistics","mode":"wide","href":"/api-reference/statistics"},{"title":"Sorting","mode":"wide","href":"/api-reference/sorting"},{"title":"Filtering","mode":"wide","href":"/api-reference/filtering"},{"title":"Sparse Fieldsets","mode":"wide","href":"/api-reference/sparse-fieldsets"}]},{"group":"Errors","pages":[{"title":"Error Objects","mode":"wide","href":"/api-reference/error-objects"},{"title":"Error Codes","mode":"wide","href":"/api-reference/error-codes"},{"title":"HTTP Responses","mode":"wide","href":"/api-reference/http-responses"}]}]},{"group":"Endpoints","pages":[{"group":"API keys","pages":[{"title":"List API keys","deprecated":null,"version":null,"sidebarTitle":"Get api keys","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /auth/api_keys","href":"/api-reference/get-api-keys"},{"title":"Create API key","deprecated":null,"version":null,"sidebarTitle":"Post api key","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /auth/api_keys","href":"/api-reference/post-api-key"},{"title":"Rotate API key","deprecated":null,"version":null,"sidebarTitle":"Rotate api key","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples put /auth/api_keys/{api_key_id}","href":"/api-reference/rotate-api-key"},{"title":"Delete API key","deprecated":null,"version":null,"sidebarTitle":"Delete api key","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /auth/api_keys/{api_key_id}","href":"/api-reference/delete-api-key"},{"title":"Update API key settings","deprecated":null,"version":null,"sidebarTitle":"Update api key","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples patch /auth/api_keys/{api_key_id}","href":"/api-reference/update-api-key"}]},{"group":"Inference","pages":[{"title":"List available inference models","deprecated":null,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /inference/models","href":"/api-reference/inference/list-available-inference-models"},{"title":"List inference API keys","deprecated":null,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /inference/api_keys","href":"/api-reference/inference/list-inference-api-keys"},{"title":"Create an inference API key","deprecated":null,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /inference/api_keys","href":"/api-reference/inference/create-an-inference-api-key"},{"title":"Revoke an inference API key","deprecated":null,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /inference/api_keys/{api_key_id}","href":"/api-reference/inference/revoke-an-inference-api-key"},{"title":"Get inference usage for a project","deprecated":null,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /inference/usage","href":"/api-reference/inference/get-inference-usage-for-a-project"}]},{"group":"Baselines (Preview)","pages":[{"title":"List baselines","deprecated":null,"version":null,"sidebarTitle":"Get baselines","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /baselines","href":"/api-reference/get-baselines"},{"title":"Create baseline","deprecated":null,"version":null,"sidebarTitle":"Create baseline","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /baselines","href":"/api-reference/create-baseline"},{"title":"Retrieve baseline","deprecated":null,"version":null,"sidebarTitle":"Get baseline","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /baselines/{baseline_id}","href":"/api-reference/get-baseline"},{"title":"Delete baseline","deprecated":null,"version":null,"sidebarTitle":"Destroy baseline","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /baselines/{baseline_id}","href":"/api-reference/destroy-baseline"}]},{"group":"Billing","pages":[{"title":"Retrieve billing usage","deprecated":null,"version":null,"sidebarTitle":"Get billing usage","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /billing/usage","href":"/api-reference/get-billing-usage"}]},{"group":"Events","pages":[{"title":"List events","deprecated":null,"version":null,"sidebarTitle":"Get events","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /events","href":"/api-reference/get-events"}]},{"group":"Firewalls","pages":[{"title":"List firewall assignments","deprecated":null,"version":null,"sidebarTitle":"Get all firewall assignments","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /firewalls/assignments","href":"/api-reference/get-all-firewall-assignments"},{"title":"List firewalls","deprecated":null,"version":null,"sidebarTitle":"List firewalls","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /firewalls","href":"/api-reference/list-firewalls"},{"title":"Create firewall","deprecated":null,"version":null,"sidebarTitle":"Create firewall","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /firewalls","href":"/api-reference/create-firewall"},{"title":"Retrieve firewall","deprecated":null,"version":null,"sidebarTitle":"Get firewall","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /firewalls/{firewall_id}","href":"/api-reference/get-firewall"},{"title":"Delete firewall","deprecated":null,"version":null,"sidebarTitle":"Delete firewall","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /firewalls/{firewall_id}","href":"/api-reference/delete-firewall"},{"title":"Update firewall","deprecated":null,"version":null,"sidebarTitle":"Update firewall","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples patch /firewalls/{firewall_id}","href":"/api-reference/update-firewall"},{"title":"Firewall assignments","deprecated":null,"version":null,"sidebarTitle":"Get firewall assignments","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /firewalls/{firewall_id}/assignments","href":"/api-reference/get-firewall-assignments"},{"title":"Assign server to firewall","deprecated":null,"version":null,"sidebarTitle":"Create firewall assignment","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /firewalls/{firewall_id}/assignments","href":"/api-reference/create-firewall-assignment"},{"title":"Delete assignment","deprecated":null,"version":null,"sidebarTitle":"Delete firewall assignment","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /firewalls/{firewall_id}/assignments/{assignment_id}","href":"/api-reference/delete-firewall-assignment"}]},{"group":"Elastic Ips","pages":[{"title":"List Elastic IPs","deprecated":null,"version":null,"sidebarTitle":"List elastic ips","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /elastic_ips","href":"/api-reference/list-elastic-ips"},{"title":"Create an Elastic IP","deprecated":null,"version":null,"sidebarTitle":"Create elastic ip","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /elastic_ips","href":"/api-reference/create-elastic-ip"},{"title":"Retrieve an Elastic IP","deprecated":null,"version":null,"sidebarTitle":"Get elastic ip","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /elastic_ips/{elastic_ip_id}","href":"/api-reference/get-elastic-ip"},{"title":"Release an Elastic IP","deprecated":null,"version":null,"sidebarTitle":"Delete elastic ip","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /elastic_ips/{elastic_ip_id}","href":"/api-reference/delete-elastic-ip"},{"title":"Move an Elastic IP","deprecated":null,"version":null,"sidebarTitle":"Update elastic ip","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples patch /elastic_ips/{elastic_ip_id}","href":"/api-reference/update-elastic-ip"},{"title":"List BGP sessions","deprecated":null,"version":null,"sidebarTitle":"List elastic ip bgp sessions","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /elastic_ips/{elastic_ip_id}/bgp_sessions","href":"/api-reference/list-elastic-ip-bgp-sessions"},{"title":"Create a BGP session","deprecated":null,"version":null,"sidebarTitle":"Create elastic ip bgp session","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /elastic_ips/{elastic_ip_id}/bgp_sessions","href":"/api-reference/create-elastic-ip-bgp-session"},{"title":"Retrieve a BGP session","deprecated":null,"version":null,"sidebarTitle":"Get elastic ip bgp session","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /elastic_ips/{elastic_ip_id}/bgp_sessions/{id}","href":"/api-reference/get-elastic-ip-bgp-session"},{"title":"Delete a BGP session","deprecated":null,"version":null,"sidebarTitle":"Delete elastic ip bgp session","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /elastic_ips/{elastic_ip_id}/bgp_sessions/{id}","href":"/api-reference/delete-elastic-ip-bgp-session"}]},{"group":"IP Addresses","pages":[{"title":"List IPs","deprecated":null,"version":null,"sidebarTitle":"Get ips","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /ips","href":"/api-reference/get-ips"},{"title":"Retrieve an IP","deprecated":null,"version":null,"sidebarTitle":"Get ip","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /ips/{ip_id}","href":"/api-reference/get-ip"}]},{"group":"Team members","pages":[{"title":"List members","deprecated":null,"version":null,"sidebarTitle":"Get team members","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /team/members","href":"/api-reference/get-team-members"},{"title":"Create member","deprecated":null,"version":null,"sidebarTitle":"Post team members","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /team/members","href":"/api-reference/post-team-members"},{"title":"Remove a member","deprecated":null,"version":null,"sidebarTitle":"Destroy team member","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples delete /team/members/{user_id}","href":"/api-reference/destroy-team-member"}]},{"group":"Operating Systems","pages":[{"title":"List operating systems","deprecated":null,"version":null,"sidebarTitle":"Get plans operating system","openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /plans/operating_systems","href":"/api-reference/get-plans-operating-system"}]},{"group":"Kubernetes Clusters","pages":[{"title":"List Kubernetes Clusters","deprecated":true,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /kubernetes_clusters","href":"/api-reference/kubernetes-clusters/list-kubernetes-clusters"},{"title":"Create a Kubernetes Cluster","deprecated":true,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples post /kubernetes_clusters","href":"/api-reference/kubernetes-clusters/create-a-kubernetes-cluster"},{"title":"List Available Kubernetes Versions","deprecated":true,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /kubernetes_clusters/available_versions","href":"/api-reference/kubernetes-clusters/list-available-kubernetes-versions"},{"title":"Get a Kubernetes Cluster","deprecated":true,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/latitude-sh-api-with-code-samples get /kubernetes_clusters/{kubernetes_cluster_id}","href":"/api-reference/kubernetes-clusters/get-a-kubernetes-cluster"},{"title":"Delete a Kubernetes Cluster","deprecated":true,"version":null,"openapi":"https://spec.speakeasy.com/latitude/latitude/l

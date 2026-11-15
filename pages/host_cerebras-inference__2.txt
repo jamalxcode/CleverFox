@@ -1,0 +1,68 @@
+URL: https://inference-docs.cerebras.ai/support/pricing
+FINAL: https://www.cerebras.ai/pricing
+STATUS: 200
+TITLE: Cerebras Inference Pricing | API and Enterprise Plans
+FETCHED: 2026-11-15T15:58:04.991Z
+
+Cerebras Inference Pricing | API and Enterprise Plans
+Skip to main content
+Products
+Customers
+Partners
+Developers
+Resources
+Pricing
+Company
+Contact us Get Started
+Cerebras Systems Delivers Record Revenue in Third Quarter 2026 >>
+Cerebras Inference Pricing
+Cerebras Inference Tier Pricing
+Features, models, capacity, and performance are subject to availability and applicable terms. Performance varies by model and configuration.
+* For development, evaluation, and experimentation; not intended for production use.
+** Available by agreement.
+*** Add a valid payment method to receive a one-time $5 promotional credit. The credit expires 30 days after activation. You will not be charged or automatically enrolled in paid usage. API and Playground access will pause when the credit expires or is exhausted unless you separately purchase PayGo credits. Promotional credits are non-transferable, have no cash value, and may be withheld or revoked in cases of fraud, abuse, or duplicate accounts.
+Developer Tier Pricing
+Full list of supported models can be found here .
+Partners
+Get access to Cerebras Inference through our partner APIs
+AWS Marketplace
+Get started in minutes, test workloads with low latency, scale to real time applications, and move to production easily with simple controls and flexible pricing.
+Buy with AWS
+OpenRouter
+Connect to Cerebras inference through OpenRouter and run models seamlessly via an intuitive, unified API.
+learn more
+HuggingFace
+Access Cerebras-powered models directly from the Hugging Face Hub for high-performance inference and easy integration.
+learn more
+Vercel
+Deploy and scale Cerebras inference endpoints effortlessly on Vercel with low latency and simple developer workflows.
+learn more
+Follow
+Get Updates
+Newsletter Signup
+Company
+About Us
+Careers
+Contact Us
+Investor Relations
+Website Terms of Use
+Privacy Policy
+Cookie Policy
+Other Terms & Policies
+Service Status
+Trust Center
+News
+Newsroom
+In the News
+Press kit
+Insights
+Customer Spotlight
+Blog
+Publications
+Whitepapers
+Performance comparisons are based on third-party benchmarking or internal testing. Observed inference speed improvements versus GPU-based systems may vary depending on workload, configuration, date and models being tested.
+info@cerebras.ai Your Privacy Choices
+1237 E. Arques Ave
+Sunnyvale, CA 94085
+© 2026 Cerebras.
+All rights reserved.

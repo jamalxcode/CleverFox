@@ -1,0 +1,397 @@
+URL: https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/
+FINAL: https://ecorpit.com/india-gpu-cloud-rental-pricing-h100-b200-2026/
+STATUS: 200
+TITLE: GPU cloud pricing in India 2026: H100 to B200 rates
+FETCHED: 2026-11-15T15:58:41.620Z
+
+GPU cloud pricing in India 2026: H100 to B200 rates Skip to main content
+Services AI & ML AI agents, RAG, computer vision, voice, and ML Ops. Application Development Mobile, web, SaaS, and custom business software. Cloud Computing AWS / Azure / GCP migration, DevOps, FinOps, SRE. Cybersecurity 24×7 SOC, zero-trust, pentest, compliance. Data & Analytics Pipelines, BI, predictive, real-time, NL analytics. Digital Transformation Strategy, modernization, intelligent automation. Enterprise Solutions Custom ERP, CRM, iPaaS, workflow engines. Network Solutions LAN, Wi-Fi 6, SD-WAN, ZTNA, 24×7 NOC. Data Center Networking Spine-leaf, hybrid-cloud, DR, colocation, NOC. Performance Marketing PPC, paid social, CRO, AI-driven attribution.
+View all services
+Case studies
+About About us
+Meet the team
+Blog
+Learn
+Contact
+Newsroom Press Releases Coming soon Official announcements, partnerships, and company news.
+News Alerts Coming soon Time-sensitive updates and engagement notices.
+Media Kit Coming soon Brand assets, logos, leadership headshots, fact sheet.
+Search ⌘K
+Get Estimate
+Company Profile
+Menu
+Services 10 AI & ML AI agents, RAG, computer vision, voice, and ML Ops. Application Development Mobile, web, SaaS, and custom business software. Cloud Computing AWS / Azure / GCP migration, DevOps, FinOps, SRE. Cybersecurity 24×7 SOC, zero-trust, pentest, compliance. Data & Analytics Pipelines, BI, predictive, real-time, NL analytics. Digital Transformation Strategy, modernization, intelligent automation. Enterprise Solutions Custom ERP, CRM, iPaaS, workflow engines. Network Solutions LAN, Wi-Fi 6, SD-WAN, ZTNA, 24×7 NOC. Data Center Networking Spine-leaf, hybrid-cloud, DR, colocation, NOC. Performance Marketing PPC, paid social, CRO, AI-driven attribution.
+View all services
+Case studies
+About About us
+Meet the team
+Blog
+Learn
+Contact
+Newsroom 3 Press Releases Official announcements, partnerships, and company news. Coming soon
+News Alerts Time-sensitive updates and engagement notices. Coming soon
+Media Kit Brand assets, logos, leadership headshots, fact sheet. Coming soon
+Contact us Company Profile Get free estimate
+¶
+§
+⌥
+∴
++
+·
++
+·
++
+eCorpIT /
+AI & Cloud Infrastructure /
+GPU cloud pricing in India 2026: H100, H200 and B200 rates compared
+AI & Cloud Infrastructure
+GPU cloud pricing in India 2026: H100, H200 and B200 rates compared
+H100 rentals in India start near ₹217/hour in 2026; IndiaAI compute runs about ₹67-92/GPU-hour. Indian providers, neoclouds and hyperscalers compared.
+Read time
+16 min
+Word count
+2.7K
+Sections
+11
+FAQs
+8
+By Manu Shukla Founder & Director · July 23, 2026 · Updated Nov 7, 2026
+Share
+GPU cloud pricing in India in 2026, from H100 to B200.
+On this page
+What Indian teams actually pay for a GPU-hour in 2026
+On-demand rental: Indian providers compared
+H200 and B200: what Blackwell costs and where to get it
+Hyperscalers in India: why AWS, Azure and GCP cost 3-5x
+The IndiaAI Mission: subsidised compute at ₹67-92/GPU-hour
+Rent vs reserve vs buy: the real maths
+India-specific considerations: GST, RBI, DPDP and domestic supply
+How to choose: a short decision guide
+FAQ
+How eCorpIT can help
+References
+Share
+Reading
+Time 16 min
+Words 2,748
+Sections 11
+On this page · 11 sections What Indian teams actually pay for a GPU-hour in 2026
+On-demand rental: Indian providers compared
+H200 and B200: what Blackwell costs and where to get it
+Hyperscalers in India: why AWS, Azure and GCP cost 3-5x
+The IndiaAI Mission: subsidised compute at ₹67-92/GPU-hour
+Rent vs reserve vs buy: the real maths
+India-specific considerations: GST, RBI, DPDP and domestic supply
+How to choose: a short decision guide
+FAQ
+How eCorpIT can help
+References
+About this article. General information only —
+not professional, legal, financial or medical advice . eCorpIT may appear in
+its own articles; no one pays for placement .
+Please verify details before acting. Where eCorpIT or its services are mentioned, the same
+criteria apply to every company named. Researched with AI assistance and reviewed by our
+editorial team; current as of the date above.
+Full Editorial Policy & Disclaimer →
+Summary. Renting an NVIDIA H100 in India starts near ₹217/hour on JarvisLabs and about ₹329/hour on-demand on Cyfuture AI as of July 2026, while the government-backed IndiaAI Mission puts H100-class compute at roughly ₹92/hour after subsidy and ₹67/GPU-hour for standard GPUs. Buying the same card outright costs ₹30-50 lakh before power, cooling and networking. This guide compares H100, H200 and B200 cloud rates across Indian providers (E2E Networks, Yotta, Cyfuture, AceCloud), global neoclouds (Spheron, RunPod, Lambda Labs, Vast.ai) and the Mumbai regions of AWS, Azure and Google Cloud, then works through the rent-versus-reserve-versus-buy maths for an Indian engineering team.
+The number that matters has changed. Two years ago the question was whether you could get an H100 in India at all. In 2026 the supply exists, the billing is in rupees, and the spread between the cheapest and most expensive way to run the same GPU is close to 100x. A single H100-hour costs about ₹67 through the IndiaAI subsidy, ₹217-400 on a domestic cloud, and roughly ₹1,000 per GPU once you split an eight-way hyperscaler instance in the Mumbai region. Picking the wrong lane is now the biggest controllable line item in an AI budget.
+This is a pricing and decision guide, not a vendor pitch. Every rate below is dated and sourced, and rates move with GPU supply, so treat the figures as a July 2026 snapshot and re-check the provider portal before you commit spend.
+What Indian teams actually pay for a GPU-hour in 2026
+Three markets sit side by side, and they price the same silicon very differently.
+The first is the domestic cloud market: E2E Networks, JarvisLabs, Cyfuture AI, AceCloud and Yotta, all billing in INR with GST invoices. The second is the global neocloud market: Spheron, RunPod, Lambda Labs, Vast.ai and CoreWeave, billing in US dollars but accepting Indian cards. The third is the hyperscaler market: AWS, Azure and Google Cloud, which list H100 instances in their India regions only in eight-GPU blocks at a heavy premium. Layered under all of it is the IndiaAI Mission, a subsidised compute pool that undercuts every commercial option for teams that qualify.
+Access route
+Example provider
+H100 rate (2026)
+Billing
+Best for
+IndiaAI subsidy
+Empanelled (Jio, Tata, Yotta, E2E)
+~₹67-92/GPU-hour after subsidy
+INR, approval-gated
+Recognised startups, research, foundational models
+Domestic on-demand
+JarvisLabs, Cyfuture AI
+₹217-400/hour
+INR, per-minute
+Fine-tuning, inference, India-resident data
+Domestic spot
+E2E Networks
+₹120-180/hour
+INR, interruptible
+Checkpointed batch training
+Global neocloud
+Spheron, RunPod, Vast.ai
+$1.55-3.84/GPU-hour
+USD (card)
+Multi-GPU training, spot-friendly jobs
+Hyperscaler (India region)
+AWS P5, Azure ND, GCP A3
+~$83-98/hour for 8 GPUs
+USD/INR
+Enterprises already on that cloud
+Currency conversions in this guide use the sources' own rates, roughly ₹84-95 per US dollar during 2026; the exact figure shifts daily, so price in the provider's native currency where you can.
+The pattern is consistent. Domestic clouds beat the hyperscalers on single-GPU work by a wide margin, global neoclouds win on raw spot price, and the IndiaAI Mission beats everything if your project is eligible. The rest of this guide breaks down each lane with real SKUs.
+On-demand rental: Indian providers compared
+For most teams that need one to eight H100s without a procurement cycle, a domestic cloud is the practical default. You pay in rupees, you get a GST invoice you can claim as input credit, and the data stays inside India, which matters for regulated workloads under the DPDP Act.
+E2E Networks is the anchor. It is India's only publicly listed pure-play GPU cloud, with data centres in Delhi NCR, Mumbai and Bengaluru, and it is empanelled on MeitY's GI Cloud. Its published H100 80GB SXM5 rate is ₹350-400/hour on-demand, with spot instances at ₹120-180/hour and a monthly commitment near ₹2,50,000-2,80,000 for continuous use. A four-way HGX H100 with NVLink runs ₹1,400-1,600/hour.
+JarvisLabs lists a single H100 at ₹217.89/hour with per-minute billing and no minimum commitment, which is among the lowest transparent on-demand rates in the India region. Cyfuture AI quotes ₹329/hour on-demand, dropping to ₹219/hour on a 12-month reserved plan, with per-second billing and DPDP, SOC 2 and ISO-focused positioning. AceCloud prices differently, selling the H100 HGX as a monthly block from ₹1,80,000/month, falling to an effective ₹1,62,000/month on a 12-month term, which suits teams that run a card continuously rather than in bursts.
+Yotta Data Services and Tata Communications sit at the enterprise end. Yotta Shakti runs on a Tier IV+ campus in Navi Mumbai and publishes rupee rates: on 7 November 2026 its Shakti Cloud pricing page listed an H100 virtual machine at ₹356/hour on demand, H100 bare metal in eight-GPU servers at ₹428 per GPU-hour on a monthly term (₹352 on a one-year term) and B200 bare metal at ₹473 per GPU-hour. Tata Communications offers H100 and A100 through its Vayu AI Cloud, bundled with private MPLS connectivity for hybrid deployments. ESDS in Nashik serves the SME segment but largely on older V100 and T4 hardware, with limited H100 supply.
+Indian provider
+H100 on-demand
+Reserved / spot
+Billing
+Notable
+JarvisLabs
+₹217.89/hour
+Per-minute
+INR
+Lowest transparent on-demand, India region
+Cyfuture AI
+₹329/hour
+₹219/hour (12-month)
+INR, per-second
+DPDP/SOC 2/ISO positioning
+E2E Networks
+₹350-400/hour
+₹120-180/hour spot
+INR, per-minute
+Listed, MeitY-empanelled, H200/B200 too
+AceCloud
+From ₹1,80,000/month
+₹1,62,000/month (12-month)
+INR, monthly
+Predictable block for continuous jobs
+Yotta Shakti
+₹356/hour (VM)
+₹352/GPU-hour (8x bare metal, 1-year)
+INR
+Tier IV+, government and BFSI
+The takeaway for a startup: JarvisLabs or E2E spot for experiments, Cyfuture reserved or AceCloud monthly for a card you keep busy, and Yotta or Tata only when an India-resident enterprise SLA is contractual. Teams weighing this against renting inference capacity by the token should also read our breakdown of H100 inference cost per million tokens .
+H200 and B200: what Blackwell costs and where to get it
+H100 supply is now healthy in India. H200 and B200 (Blackwell) supply is not, and where you find it changes the price sharply.
+Domestic self-serve B200 capacity is thin. E2E Networks lists H200 and B200 alongside H100 on its portal, with catalog "from" rates that Spheron's May 2026 comparison put near $2.20/GPU-hour for H200 and $4.90/GPU-hour for B200, but availability fluctuates with demand. Yotta lists no H200, but its Shakti Cloud pricing page now shows B200 bare metal in eight-GPU servers at ₹473 per GPU-hour on terms from one month to two years, and B300 from ₹1,056 per GPU-hour on a one-year term to ₹380 on a five-year term, while it builds one of Asia's largest Blackwell clusters (more on that below). For guaranteed Blackwell access today, global neoclouds are usually faster.
+Spheron, an aggregator that pools bare-metal capacity, lists H100 SXM5 at $3.84/hour on-demand and $1.63 spot, H200 at $4.56/$1.89, and B200 SXM6 at $7.16 on-demand but only $1.71 spot, which is below its own on-demand H100 rate when supply is loose. RunPod's Community tier lists H100 PCIe at $1.99, H200 near $3.59 and B200 at $5.98. Lambda Labs, aimed at multi-node training with InfiniBand, runs H100 at $3.99-4.29, H200 at $4.99+ and B200 SXM6 at $6.69-6.99. Vast.ai's marketplace produces the lowest floor, with H100 at roughly $1.55-2.50 and A100 as low as $0.67, at the cost of variable host reliability and no SLA.
+Provider
+H100 (USD/GPU-hr)
+H200 (USD/GPU-hr)
+B200 (USD/GPU-hr)
+India access
+Spheron
+$3.84 / $1.63 spot
+$4.56 / $1.89 spot
+$7.16 / $1.71 spot
+Card, APAC nodes
+RunPod
+$1.99 (Community)
+~$3.59
+$5.98
+Card / PayPal
+Lambda Labs
+$3.99-4.29
+$4.99+
+$6.69-6.99
+Card, USD
+Vast.ai
+~$1.55-2.50
+~$3.00
+Emerging
+Card, USD
+E2E Networks
+₹350-400/hr
+Listed (INR)
+Listed, limited
+INR, India DC
+Two practical notes. First, spot B200 can be cheaper than on-demand H100 on aggregators when Blackwell supply outruns demand, so a checkpointed training job may finish faster and cheaper on spot B200 than on-demand H100. Second, latency from Mumbai to US and EU nodes runs 120-200ms, which is fine for training throughput but poor for latency-sensitive inference, where an India-resident node wins. If you are still choosing between generations on a cost-per-token basis, our B200 versus H100 inference cost analysis has the per-token maths.
+Hyperscalers in India: why AWS, Azure and GCP cost 3-5x
+The large clouds do offer H100 in their India regions, but the packaging makes them expensive for anything under a full node. As compiled by E2E Networks, AWS P5 (p5.48xlarge, eight H100s) in Mumbai lists at about $98/hour, Azure's Standard_ND96isr_H100_v5 (eight H100s) at about $83/hour, and Google Cloud's a3-highgpu-8g (eight H100s) at about $85/hour. All three sell eight GPUs at a time, with no single-GPU H100 option.
+Split those rates per GPU and you land around $10-12/GPU-hour, roughly ₹850-1,050, which is three to five times a domestic on-demand H100 and more than ten times an IndiaAI-subsidised hour. Committed-use discounts on the hyperscalers require one-to-three-year terms, and licensing is more involved.
+That does not make them the wrong choice for everyone. If your data, identity and pipeline already live on AWS, Azure or GCP, keeping GPU training on the same cloud avoids cross-cloud egress and integration work, and egress is a real cost that we break down in our note on cloud egress fees on AI inference bills . The rule of thumb: use a hyperscaler when the workload is glued to that cloud's other services, and a domestic cloud or neocloud when the GPU job is standalone.
+The IndiaAI Mission: subsidised compute at ₹67-92/GPU-hour
+The cheapest legitimate GPU in India is not on any commercial price list. It is the IndiaAI Mission, a ₹10,300 crore (about $1.25 billion) government programme to build sovereign AI infrastructure, and its subsidised compute portal is the single biggest lever on cost for an eligible team.
+By mid-2026 the mission had empanelled more than 38,000 GPUs, well past its original 10,000-chip target, with roughly 15,000 of them H100 or H200-class. The GPUs are owned by private partners (Jio, Tata Communications, Yotta and E2E Networks among 14 providers) and the government subsidises the per-hour rate to end users. The lowest winning bids came in at ₹115.85/GPU-hour for standard GPUs and ₹150/GPU-hour for high-end H100-class GPUs; eligible users then receive up to a 40% subsidy, which brings effective rates to about ₹67/GPU-hour for standard cards and ₹92/hour for an H100.
+Union IT minister Ashwini Vaishnaw has framed this as deliberate industrial policy, saying India would "provide the cheapest compute facilities in the world which is ₹67/GPU hour." For a narrow set of teams the price falls to zero: the government has offered a 100% compute subsidy for approved foundational-model builders, and Sarvam AI received 4,096 H100 SXM GPUs backed by a ₹98.68 crore subsidy to build 70B-parameter Indic models, with Gnani.ai, Soket AI Labs and GAN.ai also cleared.
+The catch is access, not price. You apply through the IndiaAI Compute Portal, approval is discretionary and prioritises projects of national importance, and H100 availability can tighten during peak demand. For a recognised Indian AI startup or research group, though, the maths is decisive: ₹67-92/GPU-hour undercuts every commercial route below. We cover the policy context and its data-residency implications in our piece on India's sovereign AI push and the IndiaAI Mission , and the company that anchored the 100% subsidy in our profile of Sarvam AI's rise to sovereign-AI unicorn .
+Rent vs reserve vs buy: the real maths
+The instinct to buy hardware rarely survives contact with the total cost of ownership. NVIDIA does not sell the H100 at retail in India; you go through channel partners such as Dell, HP, Lenovo or Supermicro, and import duties of 18-28% plus GST push the landed price of an H100 PCIe to ₹30-40 lakh and an SXM to ₹40-50 lakh. An eight-GPU HGX server lands at ₹3.5-5 crore.
+Then the hidden costs start. Each H100 draws 700W, so an eight-GPU node needs dedicated power that can cost ₹50 lakh to provision, liquid or immersion cooling from ₹15 lakh to ₹1 crore, and InfiniBand networking from ₹50 lakh. A functional owned cluster in India is a ₹2-5 crore commitment before the first training run, plus scarce GPU-infrastructure engineers to keep it alive.
+Run the comparison for a ten-person team that uses GPUs 20-30% of the time, roughly five to seven hours a day.
+Option
+Monthly cost
+What you get
+Buy 1 H100 PCIe
+₹33 lakh upfront + ~₹80,000/month ops
+You own it, 24/7 availability, obsolescence risk
+Rent on-demand (JarvisLabs)
+₹32,000-45,000/month
+Flexible, no infrastructure to run
+Rent spot (E2E Networks)
+₹10,500-15,000/month
+~72% cheaper, interruptible
+IndiaAI subsidy
+₹13,000-20,000/month
+Cheapest, requires approval
+At that utilisation the break-even for buying versus renting is roughly 42 months, and that ignores the crore-scale infrastructure bill. The plain version: buy only if you will run the GPUs close to 24/7 for 18 months or more and already have the team to operate on-premise hardware. Everyone else rents, and picks the lane by workload. The same lesson shows up in enterprise GPU budgeting for the next generation in our note on the NVIDIA Rubin buildout and cloud budgets , and GPU spend now tops most FinOps teams' worry list, as we cover in why GPU spend is the top FinOps concern of 2026 .
+India-specific considerations: GST, RBI, DPDP and domestic supply
+Four India-specific factors change the decision beyond the sticker rate.
+Tax and input credit. When you pay a foreign GPU cloud, 18% IGST applies under the reverse-charge mechanism, and a GST-registered business can reclaim it as input tax credit. On ₹1.5 lakh a month of foreign GPU spend, that is roughly ₹27,000 recoverable, so the real gap between a domestic INR invoice and a USD one is smaller than the headline once credits are filed.
+Cross-border payments. Payments to foreign providers fall under the RBI's Liberalised Remittance Scheme. International cards issued by Indian banks process them automatically, and no special RBI approval is needed below $250,000 per year, so a startup can pay Spheron or RunPod by card without friction.
+Data residency. The Digital Personal Data Protection Act 2023 does not currently force India-located compute for training on public or synthetic data, or for inference that touches no personal data. It becomes decisive for regulated fintech and health pipelines processing Indian citizens' personal data at scale, and for government contracts with residency clauses. The clean pattern is to keep the regulated inference layer on E2E Networks or Yotta and run non-regulated training on the cheapest neocloud. Our DPDP engineering playbook for Indian startups covers how to draw that line.
+Domestic supply is arriving fast. Yotta raised $150 million in July 2026 at a ₹37,000 crore (about $4.4 billion) valuation and is deploying 20,736 liquid-cooled NVIDIA Blackwell Ultra GPUs in a supercluster worth more than $2 billion, expected live by August 2026, on the way to about 85,000 GPUs by the end of the financial year. Reliance is running Blackwell GPUs in a 1GW data centre in Gujarat. Sunil Gupta, co-founder, MD and CEO of Yotta Data Services, put the ambition plainly: "India's AI ambition requires sustained, high-performance compute at scale. By combining Blackwell Ultra infrastructure with open models like NVIDIA Nemotron and the full NVIDIA AI stack, we are enabling developers to build sovereign, globally competitive AI applications from India." For buyers, more domestic Blackwell supply through 2026 should ease H200 and B200 availability and put mild downward pressure on rates.
+How to choose: a short decision guide
+Match the lane to the job. For a recognised Indian AI startup or research group building something of national relevance, apply to the IndiaAI Mission first, because ₹67-92/GPU-hour is unbeatable and the approval wait is worth it. For fine-tuning, inference and anything that must keep Indian personal data in India, use a domestic on-demand cloud such as JarvisLabs, Cyfuture AI or E2E Networks, and move steady workloads onto a reserved or monthly plan. For multi-GPU training that can tolerate interruption, use global neocloud spot capacity on Spheron, Vast.ai or RunPod and checkpoint aggressively. For Blackwell today, go to a global neocloud on-demand, E2E's limited catalog or Yotta's B200 bare metal. And stay on a hyperscaler only when the GPU job is welded to services you already run on AWS, Azure or GCP. When training is bursty and inference is steady, the cheapest answer is usually two providers, not one, and teams weighing self-hosting against buying tokens should read our comparison of self-hosting a large model versus API cost .
+FAQ
+How eCorpIT can help
+eCorpIT helps Indian and global teams cost, provision and run GPU workloads without overpaying for compute or over-committing to hardware. We benchmark your training and inference profile against domestic clouds, neoclouds, hyperscalers and IndiaAI eligibility, then design a placement that keeps regulated data India-resident while pushing bursty jobs to the cheapest spot capacity. If you want a private, cost-controlled deployment, our senior engineering team can build and operate it end to end, as described in our private LLM deployment service . To model your own GPU spend or plan an IndiaAI application, contact us for a working session.
+References
+E2E Networks, H100 GPU pricing in India (2026).
+Spheron, GPU cloud providers in India 2026: H100, H200 and B200 availability with INR billing (23 May 2026).
+Daya Shankar, NVIDIA H100 price in India 2026: buy, rent, or get it for 70% less through the government? , Hugging Face (28 April 2026).
+IndiaAI Mission, IndiaAI Compute Capacity portal (2026).
+Analytics India Magazine, India will provide the cheapest compute facilities in the world at ₹67 per GPU hour: IT minister Ashwini Vaishnaw (2026).
+DD News, Transforming India with AI: ₹10,300 crore mission, 38,000 GPUs (2026).
+Business Standard, Yotta raises $150 mn at ₹37,000 crore valuation to fund AI expansion (5 July 2026).
+NVIDIA Blog, Yotta CEO Sunil Gupta on supercharging India's fast-growing AI market (2026).
+Outlook Business, Govt offers 100% compute subsidy for foundational AI model development (2026).
+HPCwire, Yotta plans $2B NVIDIA Blackwell Ultra supercluster deployment in India (2026).
+AceCloud, NVIDIA H100 HGX pricing (2026).
+Inc42, Govt to offer 100% compute subsidy to Sarvam, others for foundational models (2026).
+Yotta Shakti Cloud, Plans and pricing (checked 7 November 2026).
+Ministry of Electronics and Information Technology, Digital Personal Data Protection Rules, 2025, G.S.R. 846(E) (13 November 2025).
+Last updated: 7 November 2026.
+#GPU cloud
+#NVIDIA H100
+#India AI infrastructure
+#cloud cost
+#indiaai mission
+Ready to ship something like this?
+Hear from a senior architect within 24 working hours.
+NDA before any technical conversation. Free 30-min discovery. You leave with a recommended approach, indicative cost, and timeline.
+Get a free estimate
+Browse our 10 practices
+Weekly engineering notes
+Get our best playbooks by email.
+One article each week — AI agents, mobile apps, cloud, security, marketing. No spam, no fluff. Unsubscribe in one click.
+Website
+Work email
+Subscribe
+Services in this space
+From writing to shipping.
+Performance Marketing Performance Marketing
+Application Development Software Development
+AI & Machine Learning AI Development
+Cybersecurity Cybersecurity Services
+See all 10 practices
+Build it with us
+What would this cost to build?
+A personalised app-build estimate in 90 seconds — no email wall.
+Open the cost calculator
+Keep reading
+More from AI & Cloud Infrastructure.
+NVIDIA earnings 17 Nov 2026 under interim CEO Kress: what GPU buyers watch Nov 15, 2026 · 12 min
+AI model retirements, 19 to 30 November 2026: Azure o3, Agent Builder, Sonnet 4.5 Nov 15, 2026 · 18 min
+Microsoft 365 outage November 2026: the 24-hour incident and AI-agent fix list Nov 15, 2026 · 20 min
+Frequently asked
+Quick answers.
+01 How much does it cost to rent an NVIDIA H100 in India in 2026? On-demand H100 rentals start near ₹217/hour on JarvisLabs and about ₹329/hour on Cyfuture AI, with E2E Networks at ₹350-400/hour and spot instances from ₹120-180/hour. Through the IndiaAI Mission subsidy, eligible teams pay roughly ₹92/hour for an H100, far below any commercial rate.
+02 What is the cheapest way to get GPU compute in India? The IndiaAI Mission is cheapest at about ₹67/GPU-hour for standard GPUs and ₹92/hour for H100-class cards after a 40% subsidy, and zero for approved foundational-model builders. It is approval-gated. Outside it, global neocloud spot instances and E2E Networks spot at ₹120-180/hour are the lowest commercial options.
+03 Should an Indian startup buy or rent H100 GPUs? Rent, in almost every case. Buying an H100 costs ₹30-50 lakh per card, and a working cluster runs ₹2-5 crore once power, cooling and networking are added. Break-even against renting is about 42 months at typical utilisation, so ownership only pays off above roughly 18 months of near-continuous use.
+04 Why do AWS, Azure and Google Cloud cost more for H100 in India? The hyperscalers sell H100 only in eight-GPU instances in their India regions, at about $83-98/hour, which works out near $10-12 per GPU-hour, or roughly ₹850-1,050. That is three to five times a domestic on-demand H100. They make sense when your workload already depends on that cloud's other services.
+05 Can I rent H200 and B200 GPUs in India yet? Yes, but supply is limited. E2E Networks lists H200 and B200 in INR, Yotta lists B200 bare metal at ₹473 per GPU-hour, and global neoclouds sell them for dollars: Spheron at $4.56 for H200 and $7.16 for B200 on-demand, RunPod at $5.98 for B200. Yotta said in February 2026 it would deploy 20,736 Blackwell Ultra GPUs by August 2026, which should widen domestic supply.
+06 Does the DPDP Act require GPUs located in India? Not for most workloads today. Training on public or synthetic data and inference that touches no personal data can run anywhere. India-located compute matters for regulated fintech and health pipelines handling Indian citizens' personal data at scale, and for government contracts with residency clauses. The DPDP Rules, 2025 were notified on 13 November 2025, and most of their duties apply 18 months later, from about 13 May 2027.
+07 How do Indian teams pay US-based GPU clouds like Spheron or RunPod? International Visa or Mastercard cards issued by Indian banks work at checkout, and wire transfers cover larger commitments. Payments fall under the RBI's Liberalised Remittance Scheme and need no special approval below $250,000 per year. An 18% IGST applies under reverse charge and is reclaimable as input tax credit.
+08 What GPU should I use for Hindi or Indic LLM fine-tuning? For LoRA or QLoRA fine-tuning up to 13B parameters, a single A100 80GB or H100 PCIe is enough. Full fine-tuning or RLHF on 30B-70B Indic models needs an eight-GPU H100 SXM cluster. Teams building Indic models at production scale, like Sarvam AI, typically run on H100 or H200 SXM configurations.
+About the author
+Manu Shukla
+Founder & Director
+Founder of eCorpIT. Hands-on engineer leading senior-only delivery for AI apps, custom software, and cloud systems for global clients.
+More articles by Manu L T G I H D C
+Related reading
+More from AI & Cloud Infrastructure.
+AI & Cloud Infrastructure Nov 15, 2026
+NVIDIA earnings 17 Nov 2026 under interim CEO Kress: what GPU buyers watch
+NVIDIA reports Q3 FY2027 on 17 November 2026 against a $108.0B guide and no China compute revenue. Timings, the Q2 baseline, Rubin signals and what buyers should do.
+AI & Cloud Infrastructure Nov 15, 2026
+AI model retirements, 19 to 30 November 2026: Azure o3, Agent Builder, Sonnet 4.5
+Seven Azure OpenAI reasoning models retire on 19 November 2026. OpenAI Agent Builder, Evals and /v1/prompts, plus Claude Sonnet 4.5 on four platforms, follow on 30 November.
+AI & Cloud Infrastructure Nov 15, 2026
+Microsoft 365 outage November 2026: the 24-hour incident and AI-agent fix list
+Exchange Online, Copilot, Graph and Purview failed from 12 to 13 November 2026. Microsoft's timeline and preliminary cause, the SLA credit maths and a retry and fallback fix list.
+Subscribe
+One engineering note a week.
+No fluff, no spam.
+Senior-architect playbooks on AI agents, mobile apps, cloud, security, data, and marketing — delivered every Wednesday.
+Website
+Work email
+Subscribe
+Past the reading
+Read enough.
+Let's build something.
+A senior architect responds in 24 working hours with scope, indicative cost,
+and a timeline. NDA before any technical conversation.
+Talk to an architect
+Browse the 10 practices
+Follow us for the latest updates
+LinkedIn eCorpIT
+X eCorpIT
+Instagram eCorpIT
+Facebook eCorpIT
+YouTube eCorpIT
+DEV ecorpit
+eCorpIT builds AI-powered mobile apps, SaaS platforms, AI agents, RAG systems, and cloud-ready products for global businesses. 100% IP yours. Free estimate.
+Services
+AI & Machine Learning
+Application Development
+Cloud Computing
+Cybersecurity
+Data & Analytics
+Digital Transformation
+Enterprise Solutions
+Performance Marketing
+Network Solutions
+Data Center & Cloud Networking
+AI Mobile App Development
+HR Tech & HRMS
+Solutions
+Healthcare apps
+Fintech apps
+AI Internal Tools
+Employee Monitoring Software
+Company
+About
+Case studies
+Blog
+Learn Academy
+Contact
+Privacy policy
+Terms of service
+Cookie policy
+Editorial policy
+Get in touch
+contact@ecorpit.com
++919810940524 (IN)
++1 (781) 712-9557 (US)
+1120, 11th Floor, SVH 83 Metro Street, Sector 83 Gurugram, Haryana 122012 India
+Mon–Fri, 08:00 – 19:30 IST
+D&B D-U-N-S ® Verified #854367803
+CMMI Level 5
+MSME Certified
+ISO 9001:2015
+ISO/IEC 27001:2022
+ISO/IEC 20000-1:2018
+ISO 45001:2018
+GDPR Compliant
+DPIIT Recognized
+Find us on
+Our verified profiles on the leading B2B directories
+Clutch View profile
+View profile
+Crunchbase View profile
+© 2026 eCorpIT. All rights reserved.
+HQ Gurugram , Haryana · IN
+Sitemap XML Sitemap RSS Feed
+Cookie Preferences
+eCorpIT™ and the eCorpIT logo are trademarks of eCorp Information Technologies Private Limited, in use since 2021.
+WhatsApp +919810940524 Email contact@ecorpit.com Get a project estimate In 24 working hours
+esc
+Loading search…
+Browse all guides ↑ ↓ move ↵ open esc close

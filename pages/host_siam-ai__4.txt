@@ -1,0 +1,325 @@
+URL: https://siam.ai/about-us/
+FINAL: https://siam.ai/about-us/
+STATUS: 200
+TITLE: About Us – SIAM.AI CLOUD
+FETCHED: 2026-11-15T15:58:36.461Z
+
+About Us – SIAM.AI CLOUD
+SEARCH
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Phone (+66) 2-041-1899
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+Home
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200 & H100
+CPU Compute
+GPU Compute
+GPU-Model Calculator
+Virtual Server
+Storage
+Networking
+Service Level Agreement (SLA)
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+News and Events
+About Us
+Contact
+Contact Info
+Submit Ticket
+SIAM.AI CLOUD
+SIAM.AI CLOUD
+SIAM.AI CLOUD specializes in providing cloud services tailored specifically for enterprise-scale GPU-accelerated workloads
+Our infrastructure optimized for compute-intensive tasks such as machine learning, VFX rendering and batch processing. It's up to 35 times faster and 80% more cost-effective than traditional cloud providers. Additionally, NVIDIA Slurm integration enhances resource management and workload scheduling, further improving efficiency and performance.
+Our infrastructure
+Multiple data centers located across Southeast Asia
+High-End NVIDIA GPU SKUs
+High-quality networking and storage solutions
+Industry-leading cost-effectiveness
+Collaboration with the global leader in AI computing.
+SIAM.AI partners with NVIDIA to deliver optimal AI experiences through combined accelerated computing power and AI solutions."
+Experience high-performance computing at its fastest and most flexible with our cutting-edge infrastructure.
+Designed to optimize performance for all types of workloads. Our infrastructure is anchored by the industry's most extensive selection of top-tier NVIDIA GPUs, yet it's not just about hardware. Our Kubernetes-native cloud platform and our advanced networking and server architecture consistently outperform conventional cloud providers.
+Encouraging scalability rather than hindering it, we are a cloud solutions provider focused on fostering growth and expansion.
+At the heart of our distinctive features is the autonomy and capability we provide our clients to swiftly scale up or down as needed. Gone are the days of rigid resource limits and lengthy waits for GPUs to initialize; we're equipped to respond to demand instantaneously. When we promise access to thousands of GPUs within seconds, we deliver on that commitment.
+The most competitive economics in the industry.
+Our pricing for compute is set at the right level, allowing you the flexibility to tailor your instances to suit your deployment needs. Utilizing resource-based pricing means you pay only for what you use, precisely when you use it. Our infrastructure, support system, and range of computing options are all crafted with meticulous attention to help you achieve optimal cost efficiency in your operations.
+Offering professional support
+Our clients often consider SIAM.AI CLOUD's Support Engineers as an integral part of their teams, leveraging our expertise in DevOps and Infrastructure to swiftly and effectively set up deployments and scale workloads. Our commitment to empowering cutting-edge technology drives us, with our clients' success being our topmost priority.
+What defines a cloud provider with a specialized focus?
+From the inception of SIAM.AI CLOUD, our mission has been clear: to provide top-tier cloud infrastructure tailored for high-performance computing tasks. Our focus isn't on simply hosting WordPress sites; rather, we've developed a cutting-edge cloud platform that enables visionaries and entrepreneurs to expand their ventures.
+Products
+SiamGPT
+NVIDIA B200
+NVIDIA H200&H100
+CPU Compute
+GPU Compute
+GPU Calculator
+Virtual Server
+Storage
+Networking
+Solutions
+Rendering
+Machine Learning & AI
+Inference Service
+Company
+News & Events
+About Us
+Contact Us
+Contact
+1252/1 True Tower 2 (Building 2, 7th floor), Pattanakarn Road, Suan Luang, Suan Luang, Bangkok 10250
+support@siam.ai
+(+66) 2-041-1899
+Facebook-square
+Instagram
+Tiktok
+Lemon
+© All Copyright 2026 by SIAM.AI CLOUD
+Terms & Condition
+Privacy Policy
+Privacy Policy
+We use cookies to enhance performance and improve your experience on our website. You can learn more details in the Privacy Policy and manage your own privacy settings by clicking on Settings
+Allow
+Privacy Preferences
+You can choose cookie settings by enabling/disabling cookies for each type as needed, except for necessary cookies.
+Allow All
+Manage Consent Preferences
+Always Active
+Save
+ปิดโหมดสีเทา

@@ -1,0 +1,22 @@
+URL: https://www.jaischat.ai/terms
+FINAL: https://www.jaischat.ai/terms
+STATUS: 200
+TITLE: Copyright Terms & Privacy Policy - JAIS 3 - MBZUAI
+FETCHED: 2026-11-15T15:58:01.500Z
+
+Copyright Terms & Privacy Policy
+Last updated: 11/15/2026
+Copyright Terms
+Copyright Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI).
+License Notice
+JAIS 3 ("Jais") is made available under the Apache License, Version 2.0 (the "License"). You shall not use JAIS except in compliance with the License. You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0.
+Unless required by applicable law or agreed to in writing, JAIS is distributed on an "AS IS" basis, without warranties or conditions of any kind, either express or implied. Please see the terms of the License for the specific language permissions and limitations under the License.
+Disclaimer
+By using Jais, you acknowledge and accept that, as with any large language model, it may generate incorrect, misleading and/or offensive information or content. The information is not intended as advice and should not be relied upon in any way, nor are we responsible for any of the content or consequences resulting from its use. We are continuously working to develop models with greater capabilities, and as such, welcome any feedback on the model.
+Privacy Policy
+This privacy notice ("Notice") for MBZUAI can be found at Privacy policy - MBZUAI ("MBZUAI," "we," "us," or "our"), describes how and why we might collect, generate, process, store, use, and/or transfer ("process") certain personal information ("Personal Information") about you that you voluntarily provide to us when you express an interest in obtaining information about us or our products and services ("Services") through our contact form or if you create an account to use our Services such as when you: Visit our website, Use our applications, Engage with us in other related ways, including any sales, marketing, or events. It also tells you about your privacy rights and how the law protects you.
+Back to Login
+إشعار استخدام ملفات تعريف الارتباط
+نستخدم ملفات تعريف الارتباط لتحسين تجربتك. باستخدام جيس 3 v2، فإنك توافق على سياسة ملفات تعريف الارتباط الخاصة بنا. اعرف المزيد
+رفض
+قبول

@@ -1,0 +1,185 @@
+URL: https://jarvislabs.ai/
+FINAL: https://jarvislabs.ai/
+STATUS: 200
+TITLE: Rent GPUs | H200 $4.59/hr, H100 $3.49/hr | Jarvislabs
+FETCHED: 2026-11-15T15:58:26.844Z
+
+Rent GPUs | H200 $4.59/hr, H100 $3.49/hr | Jarvislabs
+Inference Models Compute CLI Pricing Resources
+Contact Sales
+The AI Cloud.
+From GPU VMs and clusters to model deployments and models as APIs. Build at any layer, on one platform.
+Contact Sales
+New: Run open models through our API →
+Jarvislabs makes it simple and affordable to rent GPUs for AI, ML, and deep learning tasks, delivered with top-notch support.
+Products
+Token Factory
+VMs
+Clusters
+Slurm Clusters
+Templates
+Serverless
+Managed Endpoints
+CLI
+Filesystems
+Pricing
+Company
+GPU Cloud India
+Universities
+Customer Stories
+Compare Providers
+Careers
+Brand
+Contact Sales
+Contact Us
+Terms & Conditions
+Supported Countries
+Sanctioned Country Policy
+GPUs
+H200 GPUs
+H100 GPUs
+A100 80GB GPUs
+A100 40GB GPUs
+L4 GPUs
+B200 Specs
+RTX 6000 Pro
+Resources
+AI FAQs
+Updates
+© 2026 Jarvislabs | All Rights Reserved | Made with ❤️ in India
+Trusted worldwide
+27,000+ AI developers
+50M+ GPU hours served
+<90s Instance launch
+Trusted by companies including: Hugging Face, Zoho, upGrad, Smallest AI, Zerodha, Physics Wallah, Partex
+upGrad
+Zerodha
+Physics Wallah
+Partex
+upGrad
+Zerodha
+Physics Wallah
+Partex
+upGrad
+Zerodha
+Physics Wallah
+Partex
+Products One platform, from a GPU to an endpoint.
+Same GPUs underneath. Pick how much of the stack you want to own.
+Compute
+Root-access VMs, ready-to-run Templates, and clusters up to thousands of GPUs.
+GPU VMs
+Full root access
+Dedicated GPU VMs with root SSH from minute one. Run your own Docker or Kubernetes, custom kernels and drivers, up to 8 GPUs per VM.
+Learn more
+Templates
+Ready-to-run environments
+PyTorch, ComfyUI and more, pre-built and live in 1.8 seconds. Work over JupyterLab, VS Code or SSH, with storage that persists across stop and start.
+Learn more
+GPU Clusters
+Multi-node training
+Launch an Instant Cluster from the dashboard, or reserve 128 to 1,024+ GPUs on InfiniBand with capacity confirmed by our team.
+Learn more
+Shared Filesystems
+Storage across instances
+Network storage that mounts on any number of your instances, so datasets and checkpoints outlive any single machine.
+Learn more
+Inference
+Deploy models as API endpoints, on our managed stack or your own.
+Token Factory
+DeepSeek, Qwen, GLM. One API.
+Use hosted models through an OpenAI-compatible API. Pay for the tokens you use.
+Learn more
+Managed Endpoints
+Deploy open models
+Choose a model from the catalog and get an API endpoint. We maintain the GPU configuration, serving image, precision and kernels.
+Learn more
+Serverless
+Bring your own serving stack
+Deploy your own model on vLLM, SGLang or Ollama. Workers scale to zero, with logs, metrics and usage built in. Pay per second of worker runtime.
+Learn more
+Compare Templates and VMs
+Security Isolate what you run.
+Private networks, firewall rules and reserved addresses for your instances, isolated from every other tenant.
+Private networking Put your instances inside your own VPC, on IP ranges you choose, isolated from every other tenant.
+Security groups Firewall rules for your VMs, inbound and outbound. Open SSH to your IP only, keep everything else closed.
+Reserved IPs Hold a public IP and launch VMs on it. Pause and resume as often as you like; the address your clients point at stays the same.
+CLI & SDK Your GPUs, from the terminal.
+Templates, VMs, filesystems and serverless deployments from one CLI or Python, with skills for Claude Code built in.
+Explore the CLI
+~/project CLI demo
+$ pip install jarvislabs
+$ jl create --gpu H100
+✓ Instance ready in 38s
+$ jl run train.py --gpu H100
+⠋ Uploading code and starting training...
+jl create --gpu H100 --vm Launch a Template or a root-access VM. Multi-GPU and VPC placement are flags.
+jl run train.py --gpu L4 Upload your project, run it on a fresh GPU and stream the logs back.
+jl ssh <id> SSH in, execute a command, or upload and download files without leaving the terminal.
+jl deploy create Create a serverless deployment and follow its logs live.
+jl filesystem · jl vpc Manage filesystems and private networks alongside your instances.
+jl setup Authenticate once and install agent skills, so Claude Code or Codex can drive your GPUs.
+Testimonials Loved by AI practitioners.
+Thousands of researchers, engineers, and teams trust Jarvislabs for their GPU workloads.
+“ “ The cheapest would probably be Jarvis Labs. They&#x27;re very popular in our community. https://jarvislabs.ai ”
+Jeremy Howard
+Founder, fast.ai
+“ “ Looking to run a bigger model on GPU at a cheaper price, give @jarvislabsai a try and thank me later 😀 Got my machine up and running in a few mins 🔥 Thank you @vishnuvig! ”
+SRK
+@sudalairajkumar
+“ “ If you haven&#x27;t tried http://jarvislabs.ai you should. Fast start times, well priced, simple UI, easy billing. I have always chosen between config crap, expensive price, or long launch times. This is the first platform that I&#x27;ve seen that I think gets all of these items right! ”
+Isaac Flath
+@isaac_flath
+“ “ The incredible https://jarvislabs.ai by @vishnuvig IMO offers one of the best pricing for renting compute 💰 TIL that they are completely bootstrapped & operate out of India! 🙏 It&#x27;s really fulfilling to hear one of the best startups from @fastdotai classroom is from the country! ”
+Sanyam Bhutani
+@bhutanisanyam1
+“ “ @jarvislabsai is the best GPU cloud provider for DL practitioners out there, period. More than once I had a question and support helped me in minutes, not only fast but so so friendly... ”
+Lucas Vazquez
+@vzzqzzz
+“ “ Addict to @jarvislabsai. Less branded than others on the surface but super simple. Great GPUs (training on 8 x A100s is amazing). This beats Paperspace premium accounts, Colab with custom VMs... I loved RunwayML as well ... ”
+Laurent Thevenet
+@thelau
+Show all testimonials
+Customer stories Built for production workloads.
+See how AI teams use Jarvislabs from the first training run to always-on, demand-driven inference.
+ZYNG AI E-commerce image operations
+How ZYNG AI edits 5 million images a month on Jarvislabs
+One GPU cloud for model training, always-on inference, and automated capacity that follows demand.
+Read the customer story
+5M+ images edited every month
+3 production compute modes
+~10% higher throughput reported
+Pricing Pay as you go.
+Pay by the second with no minimum commitment, and only for storage while paused.
+Explore Pricing Token Factory pricing
+Hourly Pricing
+GPUs NVIDIA H200 SXM $4.59 /hour
+NVIDIA H100 SXM $3.49 /hour
+NVIDIA RTX Pro 6000 $2.19 /hour
+NVIDIA A100-80GB $1.49 /hour
+Storage Instance Storage $0.00014 /GB/hour
+FAQ Frequently asked questions
+Can&#x27;t find what you&#x27;re looking for? Reach out to our support team .
+How do I rent a GPU from Jarvislabs? Sign up, top-up your credits, select your preferred GPU (e.g., A100, H100), and launch your instance. Within minutes, you’ll have a fully configured environment ready for AI training or any GPU-accelerated workload.
+Do you offer a free trial? We don’t offer a free trial. The minimum credit purchase is $25 for international customers and ₹500 for customers billed in India. Our pay-as-you-go model ensures you only pay when you rent a GPU and use it.
+How am I charged for GPU usage? You’re charged only for the time your rented GPU instance is running. When paused, you pay solely for storage. Our per-second billing means no hidden fees or commitments.
+What is a template? A template is a pre-built container with a primary framework (e.g., PyTorch, TensorFlow). After you rent a GPU, you can install custom packages via apt or pip to suit your project.
+What is the difference between a Template and a VM? A template is a managed container — we handle the OS, drivers, CUDA, and the runtime, and you bring your code. A VM is a full machine with root access from minute one, so you can run your own Docker or Kubernetes, load custom kernels and drivers, and install anything a container can’t host. Both use the same GPUs at the same hourly rate.
+Can I get root access on a GPU instance? Yes — launch a VM. You get root SSH immediately and full control of the operating system, including custom kernel modules, your own container runtime, and your own monitoring or security agents.
+Can I use models without renting a GPU? Yes. Token Factory gives you access to hosted open models through an OpenAI-compatible API. Choose a model in the dashboard, try it in the playground and pay for input and output tokens.
+Do you offer serverless GPU inference? Yes. Bring your own model on vLLM, SGLang, or Ollama and get an endpoint URL backed by an autoscaling worker pool that scales to zero, with logs, metrics, and usage built in. You pay per second of worker runtime, and you can deploy one from the dashboard after signing up.
+What are Managed Endpoints, and how do they differ from Serverless? Managed Endpoints are open models from our catalog that you deploy as an API endpoint. We select and maintain the GPU configuration, serving image, precision, and kernels; you choose the model and how it scales. Serverless is the same autoscaling worker pool with your own serving stack, for when you need control over the framework and model. Both bill per second of worker runtime.
+Can I get a multi-node GPU cluster? Yes. Launch an Instant Cluster from the dashboard, with NVIDIA H200 available today and more GPU options being added. For 128, 256, 1,024 GPUs and beyond, reserve a cluster built on NVIDIA reference architecture with InfiniBand; our sales team confirms capacity and delivery dates.
+Can I run my GPUs on a private network? Yes. You can create a VPC with your own private IP ranges and run your instances inside it, isolated from other tenants’ traffic. VPCs are currently available in our India regions.
+How quickly can I start using my GPU? Once you rent a GPU, instances typically launch in seconds. Start coding immediately via JupyterLab, VS Code Web, or SSH.
+How is my data protected? Your rented GPU instances run in isolated environments with private networking, ensuring proper data isolation and security.
+What happens when I pause my instance? Pausing stops GPU usage charges. You pay only for storage while it’s paused. Resume anytime to continue working where you left off.
+What happens when I delete/destroy my instance? Deletion is permanent, and data cannot be recovered. After deletion, no further charges apply.
+What regions do you support for renting GPUs? We currently offer GPU rentals in India, with more regions coming soon.
+What kind of support is included? We provide technical support related to the entire lifecycle of your rented GPU instance. While we do our best to address framework-specific queries, we can’t guarantee support for all open-source tools.
+How are payments handled? We use Stripe for secure payments. Pay with credit/debit cards or net banking, ensuring a smooth transaction process.
+Do you support UPI, Paypal, etc? Not currently. We support Stripe transactions at this time.
+What is the refund policy? We don’t offer refunds. If you have a valid reason, email us at engineering@jarvislabs.ai, and we’ll review your request.
+Get started Start building on The AI Cloud.
+From your first GPU to production inference. Find your starting point.
+Contact Sales

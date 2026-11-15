@@ -1,0 +1,330 @@
+URL: https://jarvislabs.ai/in
+FINAL: https://jarvislabs.ai/in
+STATUS: 200
+TITLE: GPU Cloud India: Rent NVIDIA GPUs from ₹38.88/hr | Jarvislabs
+FETCHED: 2026-11-15T15:58:26.986Z
+
+GPU Cloud India: Rent NVIDIA GPUs from ₹38.88/hr | Jarvislabs
+Inference Models Compute CLI Pricing Resources
+Contact Sales
+India’s AI Cloud.
+Rent GPU VMs and containers, scale training on InfiniBand clusters, and deploy managed inference. Pay in INR, billed by the second.
+Contact Sales
+Launch a Template ~1.8s Launch a VM <90s
+H200 ₹434.97 · H100 ₹330.48 · RTX Pro 6000 ₹207.36 /hr
+~/project
+$ █
+Explore the CLI
+Trusted by Indian AI teams and institutions
+Trusted by companies including: Media.net, upGrad, Smallest AI, Rasen, rumik.ai, DPDzero, Plivo, 100x Engineers, Proactai, Maya Research, Saama, Lossfunk
+upGrad
+Maya Research
+Saama
+upGrad
+Maya Research
+Saama
+upGrad
+Maya Research
+Saama
+Products One platform, from a GPU to an endpoint.
+Same GPUs underneath. Pick how much of the stack you want to own.
+Compute
+Root-access VMs, ready-to-run Templates, and clusters up to thousands of GPUs.
+GPU VMs Full root access
+Dedicated GPU VMs with root SSH from minute one. Run your own Docker or Kubernetes, custom kernels and drivers, up to 8 GPUs per VM.
+Learn more
+Templates Ready-to-run environments
+PyTorch, ComfyUI and more, pre-built and live in 1.8 seconds. Work over JupyterLab, VS Code or SSH, with storage that persists across stop and start.
+Learn more
+GPU Clusters Multi-node training
+Launch an Instant Cluster from the dashboard, or reserve 128 to 1,024+ GPUs on InfiniBand with capacity confirmed by our team.
+Learn more
+Shared Filesystems Storage across instances
+Network storage that mounts on any number of your instances, so datasets and checkpoints outlive any single machine.
+Learn more
+Inference
+Deploy models as API endpoints, on our managed stack or your own.
+Token Factory DeepSeek, Qwen, GLM. One API.
+Use hosted models through an OpenAI-compatible API. Pay for the tokens you use.
+Learn more
+Managed Endpoints Deploy open models
+Choose a model from the catalog and get an API endpoint. We maintain the GPU configuration, serving image, precision and kernels.
+Learn more
+Serverless Bring your own serving stack
+Deploy your own model on vLLM, SGLang or Ollama. Workers scale to zero, with logs, metrics and usage built in. Pay per second of worker runtime.
+Learn more
+Compare Templates and VMs
+GPU rental Rent a GPU in India, sized for your workload.
+Choose H100, H200 or RTX PRO 6000 Blackwell, then launch a Template with a preconfigured container or a VM with full root access.
+NVIDIA H100 SXM
+80 GB GPU memory
+Train, fine-tune and serve models with 80 GB of GPU memory.
+₹330.48 /GPU/hr
+On demand · billed per second
+Explore H100 →
+NVIDIA H200 SXM
+141 GB GPU memory
+Keep larger model working sets in memory, or scale training across an H200 cluster.
+₹434.97 /GPU/hr
+On demand · billed per second
+Explore H200 →
+NVIDIA RTX Pro 6000 Blackwell
+96 GB GPU memory
+Run inference, fine-tuning and image generation on Blackwell with 96 GB of GPU memory.
+₹207.36 /GPU/hr
+On demand · billed per second
+Explore RTX PRO 6000 →
+Storage is billed separately, including while paused. Check the dashboard for current India-region availability before launching.
+Compare all GPU and spot rates ↓
+Platform The layer underneath.
+Pay by card through Stripe, and get a GST tax invoice for every top-up. No wire transfers to a US bank to get GPUs running. Private networking and network file storage underneath it.
+Talk to sales
+your workload
+▼
+Compute & network Dedicated GPUs · Private networking · Security groups · Reserved IPs · Network file storage
+Every GPU you rent is yours alone. No fractional GPUs, no time-slicing, and on VMs you own the kernel and drivers too. Put your instances inside your own VPC, on IP ranges you choose, isolated from every other tenant. Available in the India regions. Firewall rules for your VMs, inbound and outbound. Open SSH to your IP only, keep everything else closed. Available in the India regions. Hold a public IP and launch VMs on it. Pause and resume as often as you like; the address your clients point at stays the same. Available in the India regions. Mount one filesystem on as many of your own instances as you like. Datasets and checkpoints outlive any single machine.
+Team & billing Teams and billing · GST tax invoices · Support in IST
+One balance for the whole team. Admins invite members, allocate credits, and see who is spending what. GST-registered? Our invoices carry your GSTIN, so your finance team can process input credit per your tax position. When you write to support, the people who run the GPUs answer, during Indian working hours, in IST.
+Where it runs India
+Pick the region your data lives in. India today, more regions coming soon.
+How it works Launch AI templates
+in minutes.
+Sign up, add credits, then go from template to production in five steps.
+01 Choose Template
+Pick a pre-configured framework and pair it with the right GPU for your ML workload.
+PyTorch TensorFlow ComfyUI Automatic1111
+02 Configure Resources
+Select GPU type, count, and storage. Scale from a single GPU to a multi-GPU cluster.
+NVIDIA H200 SXM 141 GB ₹434.97 /hr
+NVIDIA H100 SXM 80 GB ₹330.48 /hr
+NVIDIA RTX Pro 6000 Blackwell 96 GB ₹207.36 /hr
+1 to 8 GPUs · 40 GB to 10 TB storage
+03 Launch Instance
+One click and your fully configured environment is live and reachable.
+~1.8s
+Template
+<90s
+VM
+04 Development Tools
+Multiple access methods to work your way. Install anything you need.
+Jupyter https://<your-instance>.jarvislabs.ai
+SSH ssh ubuntu@<your-instance>.jarvislabs.ai
+VS Code Web, or connect from your own IDE
+05 Deploy Apps
+Ship APIs, web apps, and ML models to production.
+https://<your-app>.jarvislabs.ai
+Gradio Streamlit FastAPI Custom endpoints
+Use cases GPU cloud for every AI workload.
+LLM training and fine-tuning
+Recommended: H100 / H200
+Train and fine-tune large language models like Llama, Mistral, and Gemma. Use LoRA or QLoRA for efficient adaptation on a single GPU, or scale to 8x H100s for a full fine-tune.
+AI inference and deployment
+Recommended: RTX Pro 6000 / H200
+Pick a catalog model on Managed Endpoints, or bring your own on Serverless with vLLM, SGLang, or Ollama. Configure workers to scale with traffic; warm workers are billed even while idle.
+Computer vision and image generation
+Recommended: RTX Pro 6000 / H100
+Run Stable Diffusion, ComfyUI, or your own vision models. Train detection, segmentation, and classification models on high-VRAM GPUs with CUDA and cuDNN already installed.
+Research and experimentation
+Recommended: A30 / L4
+Prototype against pre-built PyTorch, TensorFlow, and JAX environments. Per-second billing means an afternoon of experiments costs what an afternoon should. Pause anytime, resume later.
+CLI & SDK Your GPUs, from the terminal.
+Templates, VMs, filesystems and serverless deployments from one CLI or Python, with skills for Claude Code built in.
+Explore the CLI
+~/project CLI demo
+$ pip install jarvislabs
+$ jl create --gpu H100
+✓ Instance ready in 38s
+$ jl run train.py --gpu H100
+⠋ Uploading code and starting training...
+jl create --gpu H100 --vm Launch a Template or a root-access VM. Multi-GPU and VPC placement are flags.
+jl run train.py --gpu L4 Upload your project, run it on a fresh GPU and stream the logs back.
+jl ssh <id> SSH in, execute a command, or upload and download files without leaving the terminal.
+jl deploy create Create a serverless deployment and follow its logs live.
+jl filesystem · jl vpc Manage filesystems and private networks alongside your instances.
+jl setup Authenticate once and install agent skills, so Claude Code or Codex can drive your GPUs.
+Testimonials Loved by AI practitioners.
+Thousands of researchers, engineers, and teams trust Jarvislabs for their GPU workloads.
+“ paying for H100s in ₹ rather than $, and that too to a provider with a decent DX and CLI capabilities ! @vishnuvig from @jarvislabsai has pulled of a terrific job ! im a fan ”
+Alok Bishoyi
+IIT Bombay alum · @ alokbishoyi97 · Jun 2026
+“ “ The cheapest would probably be Jarvis Labs. They&#x27;re very popular in our community. https://jarvislabs.ai ”
+Jeremy Howard
+Founder, fast.ai
+“ “ Looking to run a bigger model on GPU at a cheaper price, give @jarvislabsai a try and thank me later 😀 Got my machine up and running in a few mins 🔥 Thank you @vishnuvig! ”
+SRK
+@sudalairajkumar
+“ “ If you haven&#x27;t tried http://jarvislabs.ai you should. Fast start times, well priced, simple UI, easy billing. I have always chosen between config crap, expensive price, or long launch times. This is the first platform that I&#x27;ve seen that I think gets all of these items right! ”
+Isaac Flath
+@isaac_flath
+“ “ The incredible https://jarvislabs.ai by @vishnuvig IMO offers one of the best pricing for renting compute 💰 TIL that they are completely bootstrapped & operate out of India! 🙏 It&#x27;s really fulfilling to hear one of the best startups from @fastdotai classroom is from the country! ”
+Sanyam Bhutani
+@bhutanisanyam1
+“ “ @jarvislabsai is the best GPU cloud provider for DL practitioners out there, period. More than once I had a question and support helped me in minutes, not only fast but so so friendly... ”
+Lucas Vazquez
+@vzzqzzz
+“ “ Addict to @jarvislabsai. Less branded than others on the surface but super simple. Great GPUs (training on 8 x A100s is amazing). This beats Paperspace premium accounts, Colab with custom VMs... I loved RunwayML as well ... ”
+Laurent Thevenet
+@thelau
+Show all testimonials
+Pricing GPU cloud pricing in India.
+Transparent pricing in INR. No hidden fees, no setup cost, no minimum commitment, and per-second billing on every GPU.
+GPUs per instance 1 × 2 × 4 × 8 ×
+GPU VRAM vCPUs RAM On-demand / hr Spot / hr
+NVIDIA H200 SXM
+141 GB
+28
+300 GB
+₹434.97 − 50 % ₹217.08
+NVIDIA H100 SXM
+80 GB
+16
+200 GB
+₹330.48 − 56 % ₹145.80
+NVIDIA RTX Pro 6000 Blackwell
+96 GB
+28
+160 GB
+₹207.36 − 47 % ₹109.35
+NVIDIA A100 80GB
+80 GB
+16
+112 GB
+₹140.94 − 40 % ₹84.24
+NVIDIA A100 40GB
+40 GB
+16
+112 GB
+₹84.24 − 12 % ₹74.52
+NVIDIA A30
+24 GB
+16
+112 GB
+₹38.88 − 29 % ₹27.54
+NVIDIA L4
+24 GB
+32
+124 GB
+₹41.31 − 33 % ₹27.54
+NVIDIA H200 SXM
+141 GB VRAM · 28 vCPU · 300 GB RAM
+On-demand / hr
+₹434.97
+Spot / hr
+₹217.08 − 50 %
+NVIDIA H100 SXM
+80 GB VRAM · 16 vCPU · 200 GB RAM
+On-demand / hr
+₹330.48
+Spot / hr
+₹145.80 − 56 %
+NVIDIA RTX Pro 6000 Blackwell
+96 GB VRAM · 28 vCPU · 160 GB RAM
+On-demand / hr
+₹207.36
+Spot / hr
+₹109.35 − 47 %
+NVIDIA A100 80GB
+80 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+₹140.94
+Spot / hr
+₹84.24 − 40 %
+NVIDIA A100 40GB
+40 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+₹84.24
+Spot / hr
+₹74.52 − 12 %
+NVIDIA A30
+24 GB VRAM · 16 vCPU · 112 GB RAM
+On-demand / hr
+₹38.88
+Spot / hr
+₹27.54 − 29 %
+NVIDIA L4
+24 GB VRAM · 32 vCPU · 124 GB RAM
+On-demand / hr
+₹41.31
+Spot / hr
+₹27.54 − 33 %
+Spot pricing
+Spot instances run on spare capacity at a steep discount and can be preempted when that capacity is needed back. An H200 drops from ₹ 435 /hr to ₹ 217 /hr. Best for checkpointed training and batch work you can restart.
+Instance storage ₹ 0.0130 /GB/hr
+Paused instances are charged for storage only.
+Get started View full pricing
+Comparison Jarvislabs vs AWS, Azure and GCP.
+Why AI developers in India pick Jarvislabs over hyperscaler GPU offerings.
+Feature
+Jarvislabs
+Hyperscalers
+GPU pricing
+Transparent INR pricing
+2 to 3.5x higher on H100 and A100
+Time to first GPU
+No quota request, launch immediately
+GPU quota starts at zero, reviewed by hand
+Capacity
+Launch on demand
+Capacity errors common; AWS sells reserved Capacity Blocks
+GPU range
+H200, H100, RTX Pro 6000, A100, A30, L4
+Newest GPUs in only a few zones
+Support
+Direct, from the people running the GPUs
+Free tier opens no technical cases
+India FAQ GPU cloud in India, answered.
+Can&#x27;t find what you&#x27;re looking for? Reach out to our support team .
+Does Jarvislabs offer more than GPU rental in India? Yes. Launch GPU VMs with root access or Templates with preconfigured containers, use GPU clusters for distributed training, and deploy models through Managed Endpoints or Serverless. Managed Endpoints maintain the serving stack for catalog models; Serverless lets you bring your own. Check the dashboard for current GPU, model and region availability.
+Can I rent an InfiniBand GPU cluster? H200 Instant Clusters are available through the dashboard, subject to capacity. For larger deployments, contact sales to confirm an H100 or H200 cluster with InfiniBand, GPU count, region, pricing and delivery date. RTX Pro 6000 bulk configurations use a different network and do not offer InfiniBand.
+What is the price of NVIDIA GPUs in India for cloud rental? Jarvislabs rents NVIDIA GPUs at hourly rates quoted in INR: H200 SXM at ₹435/hr (141 GB VRAM), H100 SXM at ₹330/hr (80 GB), RTX Pro 6000 Blackwell at ₹207/hr (96 GB), A100 80GB at ₹141/hr, A100 40GB at ₹84/hr, L4 at ₹41/hr (24 GB), and A30 at ₹39/hr (24 GB). Billing is per second with no minimum commitment.
+Which is the best GPU for AI and deep learning in India? Choose by memory requirements and measured runtime. H100 SXM has 80 GB for training, fine-tuning and inference. H200 SXM provides 141 GB for larger model working sets and longer contexts. RTX Pro 6000 Blackwell provides 96 GB for inference, fine-tuning and image generation. Model precision, batch size and context length affect what fits. Compare the hourly rates above, then measure the cost of your own workload. Choose a Template for a preconfigured environment or a VM for full root access.
+Do you still offer the A6000, RTX 6000 Ada, or A5000? No. The A6000, RTX 6000 Ada, and A5000 are no longer part of the Jarvislabs lineup and cannot be launched in any region. The closest replacements are the RTX Pro 6000 Blackwell at ₹207/hr, which carries 96 GB of VRAM against the A6000&#x27;s 48 GB, and the A30 at ₹39/hr or L4 at ₹41/hr for the lighter training and inference work that used to run on an A5000.
+Do you offer spot GPUs in India, and how much cheaper are they? Yes. Spot instances run on spare capacity at a steep discount and can be preempted when that capacity is needed back. In India, an H200 is ₹217/hr on spot against ₹435/hr on demand, and an H100 is ₹146/hr against ₹330/hr. Spot suits checkpointed training runs, batch inference, and anything you can restart. Save your work often, because a preemption can arrive at any time.
+Is Jarvislabs cheaper than AWS, Azure, and GCP for GPU cloud in India? On training GPUs, yes. An H100 is ₹330/hr here against roughly ₹557/hr on AWS and ₹896 to ₹995/hr on GCP and Azure, so 2 to 3.5 times cheaper for the same hardware. An A100 40GB is ₹84/hr here against roughly ₹222/hr on AWS. The gap narrows on smaller inference GPUs, so we would not claim it across the board. The larger practical difference is access rather than rate: hyperscaler GPU quota starts at zero and is reviewed by hand, and large GPU instances frequently return capacity errors, while here you launch as soon as you have credits.
+How does GPU-as-a-Service work on Jarvislabs? GPU-as-a-Service means on-demand access to NVIDIA GPUs without owning hardware. On Jarvislabs you sign up, add credits from ₹500, pick a GPU and a pre-built template (PyTorch, TensorFlow, JAX, ComfyUI, and others), and the instance is live in under 90 seconds. You get full access through JupyterLab, VS Code Web, or SSH. Pause when idle to stop GPU charges and resume later; your data and environment persist across sessions.
+Can I rent a GPU for just a few hours in India? Yes. Billing is per second and there is no minimum rental period. You can take an H100 for a 30-minute training run, pause it, and come back to it next week. That suits intermittent work: fine-tuning runs, image generation, and weekend research projects.
+Can I pay in INR? Do you support UPI or net banking? Payments go through Stripe with supported Indian credit and debit cards, and every top-up comes with a GST tax invoice. If you’re GST-registered, your GSTIN appears on the invoice so your finance team can process input credit per your tax position.
+Is there a free GPU cloud option for students in India? There is no free tier, but ₹500 is enough to start, and at ₹39/hr on an A30 that is at least 12 hours of GPU time. In practice that beats free-tier options like Google Colab, which come with session limits, queue times, and disconnections mid-run. Several IITs and other universities use Jarvislabs for ML coursework and research for exactly that reason.
+What is the cost of a GPU server in India? An H100 GPU rental is ₹330/hr per GPU on demand. Eight H100 GPUs running for eight hours a day over 30 days use 1,920 GPU-hours, costing approximately ₹6,34,522 for GPU compute. Storage and any applicable taxes are additional. Your cost depends on GPU type, count and runtime; pausing stops GPU compute charges while retained storage remains billable.
+Can I train large AI models with multiple GPUs? Yes. Instances go up to 8 GPUs for distributed training, available on H200, H100, RTX Pro 6000, A100, A30, and L4. That is what you need for training large language models, running DeepSpeed or FSDP, and working through large datasets. H100 and H200 instances use NVLink interconnects for maximum throughput.
+Where is my data stored? Is there a datacenter in India? Yes. Choose an India region when launching to keep your instance and its storage in India; check GPU availability per region in the dashboard. You can also create a VPC with your own private IP ranges and run instances inside it, isolated from other tenants; VPCs are available in the India regions today. Each instance has persistent storage that survives pauses and restarts, so your code, datasets, and checkpoints are kept until you delete the instance.
+How do I get started with GPU rental in India? Three steps. Sign up at jarvislabs.ai. Add credits from ₹500 by card. Then pick a GPU and a pre-built template and launch. The instance is ready in under 90 seconds with JupyterLab, VS Code Web, and SSH, and the whole path from signup to a running training job takes under five minutes.
+What happens when I pause or delete my instance? Pausing stops GPU charges immediately. While paused you pay only for storage, at ₹0.0130/GB/hour, and your environment, packages, datasets, and checkpoints are all kept. Resume to pick up where you left off. Deleting is permanent: the data goes and no further charges apply, so download anything you need first.
+Get started Start building on The AI Cloud.
+Contact Sales
+Jarvislabs makes it simple and affordable to rent GPUs for AI, ML, and deep learning tasks, delivered with top-notch support.
+Products
+Token Factory
+VMs
+Clusters
+Slurm Clusters
+Templates
+Serverless
+Managed Endpoints
+CLI
+Filesystems
+Pricing
+Company
+GPU Cloud India
+Universities
+Customer Stories
+Compare Providers
+Careers
+Brand
+Contact Sales
+Contact Us
+Terms & Conditions
+Supported Countries
+Sanctioned Country Policy
+GPUs
+H200 GPUs
+H100 GPUs
+A100 80GB GPUs
+A100 40GB GPUs
+L4 GPUs
+B200 Specs
+RTX 6000 Pro
+Resources
+AI FAQs
+Updates
+© 2026 Jarvislabs | All Rights Reserved | Made with ❤️ in India

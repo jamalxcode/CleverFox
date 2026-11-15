@@ -1,0 +1,84 @@
+URL: https://docs.vultr.com/platform/billing/make-account-payments
+FINAL: https://docs.vultr.com/platform/billing/make-account-payments
+STATUS: 200
+TITLE: Make Vultr Account Payments by Card, PayPal, Crypto, or Wire | Vultr Docs
+FETCHED: 2026-11-15T15:58:15.900Z
+
+Over 80,000,000 Cloud Servers Launched
+Over 80,000,000 Cloud Servers Launched
+Products Cloud Compute Cloud GPU Bare Metal File System Object Storage Block Storage Managed Databases CDN Serverless Kubernetes Container Registry Direct Connect Load Balancers
+Features Regions Advanced Network Control Panel Operating Systems Upload ISO
+Solutions Industry Cloud One-Click Deployment Use Cases
+Marketplace Browse Apps Become a Vendor
+Resources FAQ Developers / APIs Vultr Docs Server Status Bug Bounty Promotions Solution Partners Start-Up Programs
+Company Our Team News Brand Assets Referral Program Creator Program Careers SLA Legal Vultr Trust Center Contact Your Privacy Choices Subprocessors Accessibility
+Contact Sales Sign Up
+© Vultr 2026 | VULTR is a registered trademark of The Constant Company, LLC.
+Terms of Service AUP DMCA Privacy Policy Cookie Policy
+Products
+Features
+Marketplace
+Pricing
+Partners
+Company
+Dashboard Contact Sales
+⌘K
+Blogs
+Discover
+Docs
+Community
+Agent Beta
+Menu
+Platform
+General
+Billing Make Account Payments Manage Account Limits View Bandwidth Usage View Payment History FAQ
+Other
+Customer Advisory
+Security Best Practices
+IAM
+Trust & Compliance
+Logs
+Marketplace Vendor
+Reserved Hardware
+Make Vultr Account Payments by Card, PayPal, Crypto, or Wire | Vultr Docs
+Docs
+More
+Platform
+Billing
+Make Account Payments
+How to Make Vultr Account Payments
+1 min read Updated 23 October 2026
+1 comment
+Fund your Vultr account by credit card, PayPal, crypto, Alipay, wire transfer, or gift code to keep services running.
+Vultr supports several payment methods including Credit Card, PayPal, Crypto, Alipay, Wire Transfer, and Gift Code. You should fund your Vultr account to keep your services running, avoid potential data loss, and prevent overdue bills.
+Follow this guide to make payments using the Vultr Console.
+Pay with Credit Card
+Navigate to Account and select Make a Payment under BILLING .
+Select Credit Card , enter your name, and the billing address.
+Enter the credit card details, choose the amount, and click Pay with Credit Card .
+Pay with PayPal
+Select PayPal , choose an amount, or click Other to enter a custom amount.
+Log in to your PayPal account and complete the payment.
+Pay with Crypto
+Select Crypto , choose an amount, or click Other to enter a custom amount.
+Login to your Crypto account to complete the payment.
+Pay with Alipay
+Select Alipay , choose an amount, or click Other to enter a custom amount.
+Log in to your Alipay account to complete the payment.
+Pay with Wire Transfer
+Select Wire Transfer and make a payment to the respective account.
+Note your Wire Transfer confirmation number for future reference.
+Pay with Gift Code
+Select Gift Code and enter the code.
+Ensure you get a confirmation that the Gift Code is valid for your account.
+1 Comment
+Newest First Post Comment
+R R Rodolfo Cortez 0 3 weeks ago
+If my payment failed today. What is the exact grace period (in hours or days) before my instances and account are suspended?
+Quote
+Share
+In this Article
+Pay with Credit Card Pay with PayPal Pay with Crypto Pay with Alipay Pay with Wire Transfer Pay with Gift Code
+Docs Menu
+In this Article
+Pay with Credit Card Pay with PayPal Pay with Crypto Pay with Alipay Pay with Wire Transfer Pay with Gift Code

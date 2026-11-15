@@ -1,0 +1,143 @@
+URL: https://docs.vultr.com/products/compute/instances/bare-metal/explore-gpu-variants
+FINAL: https://docs.vultr.com/products/compute/instances/bare-metal/explore-gpu-variants
+STATUS: 200
+TITLE: Compare NVIDIA and AMD GPU Variants on Vultr Bare Metal | Vultr Docs
+FETCHED: 2026-11-15T15:58:16.479Z
+
+Over 80,000,000 Cloud Servers Launched
+Over 80,000,000 Cloud Servers Launched
+Products Cloud Compute Cloud GPU Bare Metal File System Object Storage Block Storage Managed Databases CDN Serverless Kubernetes Container Registry Direct Connect Load Balancers
+Features Regions Advanced Network Control Panel Operating Systems Upload ISO
+Solutions Industry Cloud One-Click Deployment Use Cases
+Marketplace Browse Apps Become a Vendor
+Resources FAQ Developers / APIs Vultr Docs Server Status Bug Bounty Promotions Solution Partners Start-Up Programs
+Company Our Team News Brand Assets Referral Program Creator Program Careers SLA Legal Vultr Trust Center Contact Your Privacy Choices Subprocessors Accessibility
+Contact Sales Sign Up
+© Vultr 2026 | VULTR is a registered trademark of The Constant Company, LLC.
+Terms of Service AUP DMCA Privacy Policy Cookie Policy
+Products
+Features
+Marketplace
+Pricing
+Partners
+Company
+Dashboard Contact Sales
+⌘K
+Blogs
+Discover
+Docs
+Community
+Agent Beta
+Menu
+Products
+Compute Instances Cloud Compute
+Optimized Cloud Compute
+Cloud GPU
+Bare Metal Provisioning Explore GPU Variants GPU Enabled Images Management
+Features Networking
+Connection
+FAQ
+VX1 Cloud Compute
+Clusters
+Kubernetes
+Serverless Inference
+Storage
+Network
+Orchestration
+Compare NVIDIA and AMD GPU Variants on Vultr Bare Metal | Vultr Docs
+Docs
+More
+Products
+Compute
+Instances
+Bare Metal
+Explore GPU Variants
+Explore GPU Variants for Vultr Bare Metal
+4 min read Updated 4 November 2026
+0 comments
+Compare A100, L40S, H100, GH200, B200, MI300X, and MI355X on Vultr Bare Metal by GPU memory and throughput.
+Vultr offers multiple Bare Metal GPU options for different workloads. These GPUs handle tasks such as machine learning, artificial intelligence, 3D rendering, and complex simulations. Vultr Bare Metal gives you direct access to dedicated hardware, which provides performance and control when you build and deploy applications.
+This guide compares the Vultr Bare Metal GPU variants: NVIDIA A100 Tensor Core (PCIe and SXM), NVIDIA L40S, NVIDIA H100 Tensor Core, NVIDIA GH200 Superchip, NVIDIA HGX B200, AMD Instinct™ MI300X, and AMD Instinct™ MI355X. Use the differences between these variants to choose a GPU for your workload.
+GPU Specifications and Performance Overview
+This section compares the GPUs based on their Compute Unified Device Architecture (CUDA) cores or stream processors, TFLOPS performance, and parallel processing capabilities.
+The following table compares the Bare Metal GPUs that Vultr offers:
+Variant
+CUDA cores/stream processors
+Tensor/matrix cores
+FP8 / FP16 (dense)
+GPU memory
+Architecture type
+NVIDIA A100 Tensor Core GPU - PCIe
+6912
+432
+312 TFLOPS (FP16)
+80 GB
+NVIDIA Ampere
+NVIDIA A100 Tensor Core GPU - SXM
+6912
+432
+312 TFLOPS (FP16)
+80 GB
+NVIDIA Ampere
+NVIDIA L40S GPU
+18716
+568
+366 TFLOPS (FP16)
+48 GB
+NVIDIA Ada Lovelace
+NVIDIA H100 GPU
+18432
+640
+1979 TFLOPS (FP8)
+80 GB
+NVIDIA Hopper
+NVIDIA GH200 Superchip
+18432
+640
+1979 TFLOPS (FP8)
+80 GB
+NVIDIA Hopper
+AMD Instinct™ MI300X GPU
+19456
+1216
+1.6 PFLOPS (FP8)
+192 GB
+AMD CDNA 3
+NVIDIA HGX B200 (per GPU)
+18432
+576
+4.5 PFLOPS (FP8)
+192 GB
+NVIDIA Blackwell
+AMD Instinct™ MI355X GPU
+16384
+1024
+5.0 PFLOPS (FP8)
+288 GB
+AMD CDNA 4
+Key Terms
+CUDA Cores : Processing units in NVIDIA GPUs that work with the NVIDIA CUDA programming model. CUDA cores handle parallel processing and accelerate computing tasks focused on graphics rendering. They often use a Single Instruction, Multiple Data (SIMD) architecture that executes a single instruction on multiple data elements simultaneously, which results in high throughput for parallel computing.
+Stream Processors : Core computational units in AMD GPUs that handle parallel processing tasks such as graphics rendering, general-purpose computation, and AI workloads. Stream processors also use a SIMD architecture that executes a single instruction across multiple data points simultaneously.
+Tensor Cores : Specialized hardware components in NVIDIA GPUs that accelerate the matrix-based computations common in deep learning and artificial intelligence workloads. Tensor Cores use mixed-precision computing for neural network training and inference. They perform some parts of a calculation at higher precision and the rest at half precision, and they use error correction and accumulation to keep the results accurate.
+Matrix Cores : Specialized hardware units in AMD Instinct™ GPUs that accelerate the matrix-based computations central to artificial intelligence (AI) and high-performance computing (HPC). Matrix Cores use mixed-precision arithmetic and data types such as FP16, BF16, and INT8 to accelerate matrix multiplication and similar operations.
+TFLOPS : Tera floating-point operations per second (TeraFLOPS), a unit that measures system performance. A floating-point operation is a mathematical calculation that uses numbers with decimal points. TFLOPS is a useful indicator for comparing the capabilities of different hardware components, and HPC applications such as simulations rely heavily on it.
+GPU Briefs
+NVIDIA A100 Tensor Core - PCIe : Vultr Bare Metal GPU, powered by the NVIDIA A100 Tensor Core in PCIe format, suits tasks such as AI training and deep learning. This version connects through the PCIe interface, which makes it compatible with many server setups. Its processing capabilities and high memory bandwidth help you manage large datasets and complex models on scalable infrastructure. Learn more about Vultr Bare Metal GPU NVIDIA A100 .
+NVIDIA A100 Tensor Core - SXM : Vultr Bare Metal GPU, powered by the NVIDIA A100 Tensor Core in SXM format, is designed for AI and data science workloads. This configuration provides better power delivery and thermal management, which improves performance. Use it to train large neural networks and run extensive computational tasks. Learn more about Vultr Bare Metal GPU NVIDIA A100 .
+NVIDIA L40S : Vultr Bare Metal GPU, powered by the NVIDIA L40S, is built for graphics and AI applications such as 3D rendering, AI inference, and video processing. Its high memory capacity and efficient processing help you render detailed graphics and handle complex data tasks. Learn more about Vultr Bare Metal GPU NVIDIA L40S .
+NVIDIA H100 Tensor Core : Vultr Bare Metal GPU, powered by the NVIDIA H100, is designed for AI workloads, including large language model (LLM) training and inference. Its architecture and Tensor Cores provide higher performance and efficiency for demanding applications. Use it for research and complex tasks that require significant computational resources. Learn more about Vultr Bare Metal GPU NVIDIA H100 .
+NVIDIA GH200 Superchip : Vultr Bare Metal GPU, powered by the NVIDIA GH200 Superchip, combines multiple GPU components for AI and HPC workloads. This design improves scalability and efficiency for complex tasks that demand substantial computing power, such as large-scale AI deployments, scientific simulations, and data analytics. Learn more about Vultr Bare Metal GPU NVIDIA GH200 Superchip .
+AMD Instinct™ MI300X : Vultr Bare Metal GPU, powered by the AMD Instinct™ MI300X, is designed for AI and HPC applications. Its memory bandwidth and support for large-scale models suit training and inference for AI and deep learning tasks. Use it for scalable complex data processing and scientific simulations. Learn more about Vultr Bare Metal GPU AMD Instinct™ MI300X .
+AMD Instinct™ MI355X : Vultr Bare Metal GPU, powered by the AMD Instinct™ MI355X, is built for AI, deep learning, and HPC workloads. It uses the CDNA 4 architecture and provides 288 GB of High Bandwidth Memory 3e (HBM3e) per GPU, with FP8 and FP4 compute for training and inference of very large models. Its design emphasizes memory bandwidth and compute efficiency for generative AI, LLMs, and large-scale scientific simulations. Learn more about Vultr Bare Metal GPU AMD Instinct™ MI355X .
+NVIDIA HGX B200 : Vultr Bare Metal GPU, powered by the NVIDIA HGX B200, uses the NVIDIA Blackwell architecture for AI acceleration. The B200 is designed for large-scale AI workloads, including generative AI, LLM training, and scientific computing, and supports FP8 and FP4 precision. With up to 192 GB of HBM3e memory per GPU and high memory bandwidth, it supports training and deployment of large models. Its NVLink architecture supports multi-GPU scaling for enterprise AI workloads. Use it for research, AI inference at scale, and data-intensive computing. Learn more about Vultr Bare Metal GPU NVIDIA HGX B200 .
+0 Comments
+Newest First Post Comment
+Start the conversation
+Be the first to comment and share your perspective with the community.
+Post Comment
+Share
+In this Article
+GPU Specifications and Performance Overview
+Docs Menu
+In this Article
+GPU Specifications and Performance Overview

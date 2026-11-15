@@ -1,0 +1,66 @@
+URL: https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits
+FINAL: https://docs.cloud.olakrutrim.com/basics/cloud-billing/adding-credits
+STATUS: 200
+TITLE: Adding Credits | Krutrim Cloud Documentation
+FETCHED: 2026-11-15T15:58:08.450Z
+
+Adding Credits | Krutrim Cloud Documentation
+Skip to content
+⌘ Ctrl k
+Welcome
+Getting Started
+Quickstart
+Managing your Krutrim Cloud Account
+Basics
+Core Infrastructure
+Krutrim Pages
+AI Studio
+Certificate Manager
+Key Management System
+Cloud Billing Usage
+Transactions
+Add Credits
+Auto Credits
+Identity Access Management
+Pricing
+MCP
+Overview
+Hosted MCP
+Local MCP (stdio)
+Connect Claude Code & Desktop
+Connect Codex
+Connect Cursor
+Connect VS Code
+Connect Hermes
+Connect OpenCode
+Troubleshooting
+Developer Tools
+KrutrimConnect
+SDK Guide
+Core Infra SDK
+AI Studio SDK
+Load Balancer SDK
+Krutrim Kubernetes System SDK
+Key Certificate Manager SDK
+Auto Scaling Group SDK
+Terraform Provider Krutrim
+Powered by GitBook
+On this page
+For the complete documentation index, see llms.txt . This page is also available as Markdown .
+Copy
+On this page
+Basics
+Cloud Billing
+Adding Credits
+To use Krutrim Cloud services, you need to maintain a credit balance in your account. Credits are consumed as you use infrastructure, AI models, or managed solutions. You can top up your balance at any time using the Add Credits option from the console.
+How to Add Credits
+Click on your balance at the top-right corner of the console.
+Select “Add Credits.”
+Enter the amount you wish to add (in ₹).
+The system will show the total bill including GST (18%) .
+Complete the payment via card or UPI (processed through Razorpay).
+Notes
+1 INR = 1 Credit
+Credits are added instantly upon successful payment.
+Billing follows Indian tax norms with 18% GST added to the base amount.
+Last updated 9 months ago
