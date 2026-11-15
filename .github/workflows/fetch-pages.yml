@@ -1,0 +1,25 @@
+name: Fetch pages for verification
+# Started by hand. Downloads the official pages behind unverified apps and hosts (readable text only) to the
+# `pages-cache` branch, so a review session can compare each listing's facts with its own pages.
+on:
+  workflow_dispatch:
+    inputs:
+      all: { description: 'Also fetch pages for listings that are already verified', type: boolean, default: false }
+permissions: { contents: write }
+concurrency: { group: fetch-pages, cancel-in-progress: true }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Fetch the pages
+        run: node tools/fetch-pages.mjs ${{ inputs.all && '--all' || '' }}
+      - name: Save to the pages-cache branch (one commit, overwritten)
+        run: |
+          header="$(git config --get http.https://github.com/.extraheader || true)"
+          cd pages-cache && git init -q -b pages-cache && git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Pages for verification ($(date -u +%F))"
+          git -c http.https://github.com/.extraheader="$header" push -q -f "https://github.com/${GITHUB_REPOSITORY}.git" pages-cache
