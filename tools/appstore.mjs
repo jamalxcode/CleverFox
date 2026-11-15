@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'data', 'imported', 'appstore.json');
-export const RULES = { countriesPerRun: 50, brandsPerRun: 10, delayMs: 3000, lookalikeLimit: 50 };
+export const RULES = { countriesPerRun: 50, brandsPerRun: 10, delayMs: 3000, lookalikeLimit: 50, budgetMs: 6 * 60000, maxLimited: 2 };
 // Apple storefront country codes.
 export const STOREFRONTS = ('AE AF AG AI AL AM AO AR AT AU AZ BA BB BD BE BF BG BH BJ BM BN BO BR BS BT BW BY BZ CA CD CG CH CI CL CM CN CO CR CV CY CZ DE DK DM DO DZ EC EE EG ES FI FJ FM FR GA GB GD GE GH GM GR GT GW GY HK HN HR HU ID IE IL IN IQ IS IT JM JO JP KE KG KH KN KR KW KY KZ LA LB LC LK LR LT LU LV LY MA MD ME MG MK ML MM MN MO MR MS MT MU MV MW MX MY MZ NA NE NG NI NL NO NP NR NZ OM PA PE PG PH PK PL PS PT PW PY QA RO RS RU RW SA SB SC SE SG SI SK SL SN SR ST SV SZ TC TD TH TJ TM TN TO TR TT TW TZ UA UG US UY UZ VC VE VG VN VU XK YE ZA ZM ZW').split(' ');
 
@@ -42,11 +42,16 @@ function candidates() {
 
 export async function run({ apps = candidates(), prev = {}, fetchImpl = fetch, now = new Date().toISOString().replace(/\.\d+Z$/, 'Z'), sleep = (ms) => new Promise((r) => setTimeout(r, ms)), log = console.log } = {}) {
   const out = { checked_at: now, cursor: { ...(prev.cursor || { country: 0, brand: 0 }) }, apps: JSON.parse(JSON.stringify(prev.apps || {})) };
+  // Stop early when Apple rate-limits repeatedly or the time budget runs out; what's done so far is kept.
+  const started = Date.now(); let limited = 0;
+  const stopped = () => limited >= RULES.maxLimited || Date.now() - started > RULES.budgetMs;
   const get = async (url) => {
+    if (stopped()) return null;
     for (let i = 0; i < 2; i++) {
       try {
         const res = await fetchImpl(url, { headers: { 'user-agent': 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)' } });
-        if (res.status === 429 || res.status === 403) { await sleep(60000); continue; }
+        if (res.status === 429 || res.status === 403) { if (++limited >= RULES.maxLimited) return null; await sleep(30000); continue; }
+        limited = 0;
         if (!res.ok) return null;
         return await res.json();
       } catch { await sleep(5000); }
@@ -85,7 +90,7 @@ export async function run({ apps = candidates(), prev = {}, fetchImpl = fetch, n
       const have = new Set((data.results || []).map((x) => +x.trackId));
       for (const a of ok) { const e = out.apps[a.id]; (e.countries ||= {})[cc] = have.has(a.apple_id); e.countries_checked_at = now; }
     }
-    out.cursor.country = (out.cursor.country + RULES.countriesPerRun) % STOREFRONTS.length;
+    if (!stopped()) out.cursor.country = (out.cursor.country + RULES.countriesPerRun) % STOREFRONTS.length;
   }
   // 3. Look-alikes for a rotating batch of brands (US store).
   for (let n = 0; n < Math.min(RULES.brandsPerRun, ok.length); n++) {
@@ -97,6 +102,7 @@ export async function run({ apps = candidates(), prev = {}, fetchImpl = fetch, n
     const like = (data.results || []).filter((x) => +x.trackId !== a.apple_id && String(x.trackName || '').toLowerCase().includes(brand.toLowerCase()) && !sellerMatches(x.sellerName, [official, ...a.expected]));
     out.apps[a.id].lookalikes = { count: like.length, examples: like.slice(0, 3).map((x) => ({ name: x.trackName, seller: x.sellerName })), brand, checked_at: now };
   }
+  if (stopped()) log(`App Store: stopped early (${limited >= RULES.maxLimited ? 'rate-limited' : 'time budget'}); kept what was checked`);
   if (ok.length) out.cursor.brand = (out.cursor.brand + RULES.brandsPerRun) % ok.length;
   return out;
 }

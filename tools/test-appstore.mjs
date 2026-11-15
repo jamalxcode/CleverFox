@@ -37,4 +37,9 @@ assert.deepEqual(out.apps['cf:app:openai/chatgpt'].countries, { AE: true, AF: tr
 assert.equal(out.apps['cf:app:x/fake'].countries, undefined, 'unconfirmed apps are never checked further');
 assert.equal(out.cursor.country, 3);
 assert.equal(out.apps['cf:app:openai/chatgpt'].lookalikes.count, 1);
+// Rate-limited: stops early instead of waiting for ever, and keeps earlier data.
+let calls = 0;
+const limitedOut = await run({ apps, fetchImpl: async () => { calls++; return { ok: false, status: 429 }; }, sleep: async () => {}, log: () => {}, now: 'T2', prev: out });
+assert.ok(calls <= 3, `stopped after ${calls} calls`);
+assert.equal(limitedOut.apps['cf:app:openai/chatgpt'].apple.confirmed, true, 'earlier confirmation kept');
 console.log('All App Store tests passed.');
