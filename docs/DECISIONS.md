@@ -336,7 +336,7 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 - always identifies itself as CleverFox's checker; pages that refuse automated visitors (401, 403, 429) stay refused;
 - stops starting new pages after 35 minutes and saves what it has, so a slow run never loses everything. Rendering waits for the page to load plus 2.5 seconds, at most 20 seconds.
 
-**Why:** 40 listings stayed unverified after the first review, mostly because their pages need JavaScript or block bots. A first version pretended to be a normal Chrome browser, and the session's safety check refused it as getting around access controls. That was right: CleverFox respects sites that block automated visitors, and those listings stay unverified rather than being read by other means. The first run with rendering hit the 50-minute limit and saved nothing, hence the time budget.
+**Why:** 40 listings stayed unverified after the first review, mostly because their pages need JavaScript or block bots. A first version pretended to be a normal Chrome browser, and the session's safety check refused it as getting around access controls. That was right: CleverFox respects sites that block automated visitors, and those listings stay unverified rather than being read by other means. Two runs with rendering hit the 50-minute limit and saved nothing, because some pages never finish loading. So each page also has a hard stop at 45 seconds, and the run saves what it has and exits at 38 minutes. The third run fetched 395 pages for the 40 listings (256 readable, 83 rendered).
 
 ## Open decisions
 

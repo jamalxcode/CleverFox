@@ -51,7 +51,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
   - llm-releases.com layout and robots.txt;
   - GitHub releases with the workflow token;
   - Hugging Face new releases.
-- [ ] Make "Fetch pages for verification" finish reliably. It hit the 50-minute limit twice; now it has hard stops at 45 seconds per page and 38 minutes overall. Then review the remaining 40 listings.
+- [x] Make "Fetch pages for verification" finish reliably: hard stops at 45 seconds per page and 38 minutes overall. The 16 November run finished, with 395 pages for the remaining 40.
+- [ ] Review the remaining 40 listings against those pages (under way).
 - [ ] Freshness: add discovery (Hugging Face new, llm-releases, GitHub) to the footer's "Last refreshed" line.
 - [ ] Decide whether quick scans should run more often than 3 times a day (each run rebuilds the site; X reads stay within the same daily share).
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.

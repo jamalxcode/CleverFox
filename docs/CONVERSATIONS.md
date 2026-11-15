@@ -18,7 +18,10 @@ Entry format:
 **Outcome so far (decision 69):**
 - **The fetch now also reads** store listings and common pricing, plans, FAQ and terms pages, and renders JavaScript-only pages in a headless browser.
 - **A first version was refused.** It disguised itself as Chrome, and the session's safety check rejected it as getting around access controls. The tool now always identifies itself, and sites that refuse automated visitors stay unverified.
-- **The first rendering run hit the 50-minute limit** and saved nothing. Rendering is now faster and has a 35-minute budget. The re-run is going on GitHub; the review of the 40 follows, with the same quote check (decision 67).
+- **Two rendering runs hit the 50-minute limit** and saved nothing: some pages hang without ever finishing. Now each page has a hard stop at 45 seconds, and the run saves and exits at 38 minutes.
+- **The third run succeeded:** 395 pages for the 40 listings, 256 readable, 83 of them rendered. Only Karnak Chat and BelMasry have no readable page.
+- **Review under way:** three reviewers cover the other 38. Rules: generic "credit card" counts; facts the readable pages clearly don't state may be set to unknown; already-unknown facts don't block verification. Quotes will be checked by `tools/apply-verification.mjs`.
+- **New TODO section** at the owner's request: scheduled fetching (cron), with how it's done, every source by run type, and what's left.
 
 **Open:** listings whose sites block bots (for example ChatGPT, Vultr, HUMAIN) will stay unverified unless their facts can be confirmed on their store listings.
 
