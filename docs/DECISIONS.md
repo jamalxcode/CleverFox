@@ -266,6 +266,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** the per-listing X search adds the model's short name (cut at size and variant tags, versions kept) to the full name and Hugging Face address. Derivatives, fine-tunes and bare brand names get no short name. Listings that found nothing before are retried first with the new query.
 **Why:** the first live run (18 listings, 123 reads) found nothing for 8 well-known models, such as "Llama 4 Scout 17B-16E Instruct", because people write "Llama 4 Scout". The owner approved the fix. Keeping versions and refusing derivatives stops posts about one model being credited to another.
 
+### 58. Slim list files; full records on demand
+**Decision:** `data/<type>s.json` holds only what the list needs. Each listing's full record is written next to its page (`record.json`) and fetched when its card opens. Apps and hosts stay whole (they're small).
+**Why:** the Models tab loaded 3.1 MB, against the spec's 200 KB first-load budget, on the slow and costly connections the site is meant for. Now about 70 KB compressed.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

@@ -323,7 +323,9 @@ if (!checkOnly) {
   // The page loads meta.json first, then only the listing type the visitor opens (page weight).
   // catalog.json holds everything, for anyone who wants the whole data set.
   writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
-  for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t)));
+  // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
+  // fetches the listing's full record from its page folder (l/.../record.json).
+  for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
   writeListingPages(published, countries);
@@ -412,8 +414,41 @@ ${GOATCOUNTER}
 `;
     mkdirSync(join(outRoot, path.slice(2)), { recursive: true });
     writeFileSync(join(outRoot, path.slice(2), 'index.html'), html);
+    writeFileSync(join(outRoot, path.slice(2), 'record.json'), JSON.stringify(r));
   }
   writeFileSync(join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${R.esc(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
   writeFileSync(join(root, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
   console.log(`Wrote ${records.length} listing pages under l/, sitemap.xml and robots.txt`);
 }
+
+// ---- slim list records (page weight; spec: first load under 200 KB) ----
+function slimClaim(c) { return c && typeof c === 'object' && !Array.isArray(c) && 'value' in c ? { value: c.value } : c; }
+function slimAccess(a) {
+  if (!a) return a;
+  return {
+    countries_available: slimClaim(a.countries_available), countries_unavailable: slimClaim(a.countries_unavailable),
+    free: slimClaim(a.free), no_card_needed: a.no_card_needed,
+    payment_methods: Array.isArray(a.payment_methods?.value) ? { value: a.payment_methods.value.map((m) => ({ method: m.method })) } : slimClaim(a.payment_methods),
+  };
+}
+export function slim(r) {
+  if (r.type === 'app' || r.type === 'host') { const { research_notes, evidence_urls, ...rest } = r; return { ...rest, access: slimAccess(r.access) }; }
+  const pop = r.popularity || [];
+  const o = {
+    id: r.id, type: r.type, name: r.name, publisher: r.publisher, publisher_name: r.publisher_name, family: r.family,
+    description: r.description, tasks: r.tasks, warning: r.warning, verification_status: r.verification_status,
+    languages: slimClaim(r.languages), publisher_region: slimClaim(r.publisher_region), availability: slimClaim(r.availability),
+    license: slimClaim(r.license), parameters: slimClaim(r.parameters), local_ready: r.local_ready, size_category: r.size_category,
+    answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised,
+      uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free },
+    hardware: r.hardware && { min_memory_gb: r.hardware.min_memory_gb, recommended_gb: r.hardware.recommended_gb },
+    platforms: r.platforms && Object.fromEntries(Object.keys(r.platforms).map((k) => [k, []])),
+    popularity: pop.length ? [{ downloads_30d: pop.reduce((n, p) => n + (p.downloads_30d || 0) + pullsN(p.pulls), 0), likes: pop.reduce((n, p) => n + (p.likes || 0), 0) }] : undefined,
+    independent_benchmarks: (r.independent_benchmarks || []).filter((x) => ['epoch_eci', 'aa_intelligence'].includes(x.id)).map((x) => ({ id: x.id, display: x.display })),
+    distributions: (r.distributions || []).filter((d) => d.access || d.availability === 'downloadable').slice(0, 3).map((d) => ({ source: d.source, availability: d.availability, access: slimAccess(d.access) })),
+    paper_urls: r.paper_urls?.length ? [r.paper_urls[0]] : undefined,
+    variants: r.variants?.length ? r.variants.length : undefined,
+  };
+  return JSON.parse(JSON.stringify(o));
+}
+function pullsN(s) { const m = String(s || '').match(/^([\d.]+)([KMB]?)$/); return m ? +m[1] * ({ K: 1e3, M: 1e6, B: 1e9 }[m[2]] || 1) : 0; }

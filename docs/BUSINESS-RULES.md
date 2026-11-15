@@ -198,6 +198,8 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
+- **Page weight:** list files are slim (claim values without sources, a popularity total, hardware minimum and recommendation only, platform names, headline benchmarks, up to 3 distributions). Full records are fetched per listing when a card opens. Models list: about 0.9 MB raw, about 70 KB compressed (was 3.1 MB).
+
 - **Built around the questions people ask:**
   - good for;
   - runs locally;

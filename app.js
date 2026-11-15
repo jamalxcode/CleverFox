@@ -1,5 +1,5 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
-import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits } from './render.js?v=__BUILD__';
+import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -173,8 +173,20 @@ $('#list').addEventListener('toggle', (e) => {
   const slot = e.target.querySelector?.('.detail-slot');
   if (!e.target.open || !slot || slot.childElementCount) return;
   const rec = recordsOf(state.type).find((r) => r.id === slot.dataset.id);
-  if (rec) { slot.innerHTML = detail(rec); if (navigator.share) slot.querySelectorAll('[data-act="share"]').forEach((b) => { b.hidden = false; }); }
+  if (!rec) return;
+  slot.innerHTML = '<p class="muted loading">Loading details…</p>';
+  fullRecord(rec).then((full) => {
+    slot.innerHTML = detail(full);
+    if (navigator.share) slot.querySelectorAll('[data-act="share"]').forEach((b) => { b.hidden = false; });
+  });
 }, true);
+// The list holds slim records; the full one (sources, links, hardware table) sits next to the listing's page.
+const fullCache = new Map();
+async function fullRecord(rec) {
+  if (rec.type === 'app' || rec.type === 'host') return rec;
+  if (!fullCache.has(rec.id)) fullCache.set(rec.id, fetch(`${listingPath(rec)}record.json`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(() => rec));
+  return fullCache.get(rec.id);
+}
 $('#filters').addEventListener('change', (e) => {
   const k = e.target.dataset.key;
   if (!k) return;
