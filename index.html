@@ -39,6 +39,16 @@
 </header>
 
 <main class="wrap">
+  <section class="start-here" aria-labelledby="start-h">
+    <h2 id="start-h">🦊 Find what to use</h2>
+    <p class="start-q">
+      <label>I want to <select id="s-task" aria-label="What you want to do"></select></label>
+      <label>on <select id="s-device" aria-label="Where you'll use it"><option value="computer">my computer</option><option value="phone">my phone</option><option value="online">the web (no download)</option></select></label>
+      <button id="s-go" class="go-btn" type="button">Show my picks</button>
+    </p>
+    <p class="muted start-note">Uses your device memory and country from the pickers above. Picks come from stated facts: memory fit, independent benchmarks, popularity, praise on X, free options, country and ways to pay.</p>
+    <div id="picks" aria-live="polite"></div>
+  </section>
   <nav class="tabs" role="tablist" aria-label="Listing type">
     <button role="tab" id="tab-model" data-type="model" aria-selected="true">Models <span class="count"></span></button>
     <button role="tab" id="tab-dataset" data-type="dataset" aria-selected="false">Datasets <span class="count"></span></button>

@@ -195,6 +195,16 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10f. Find what to use (top picks, `picks.js`)
+
+"I want to <task> on <my computer | my phone | the web>", with memory and country from the pickers. Up to 3 picks per column, at most one per model family; every pick shows its reasons. Uncensored models and listings with a warning are never picked.
+- **💻 Run it yourself** (computer): local models good for the task that need at most 80% of the visitor's memory (8 GB assumed if none chosen). Score: independent benchmark (ECI or AA index above 100, ×1.5 per 8 points), log of downloads and pulls, +2 praised on X, +2 × share of memory used (bigger fitting models rank higher), +0.5 verified.
+- **📱 Offline on your phone** (phone): on-device apps. Score: free +3, free tier +2, good for the task +2, verified +1, open source +0.5.
+- **📲 Apps**: apps good for the task and not unavailable in the visitor's country (on phone: with a store link or on-device). Score: available there +3, made there +2, free +2.5, free tier +2, pay without a card +1.5, App Store rating ÷ 2.5, on-device on phone +1.5, praised on X +1, verified +0.5, log of App Store ratings × 0.3.
+- **☁️ Use it online**: models good for the task with API providers. Score: benchmark as above, log of popularity × 0.6, free online +2, a provider that takes payment without a card +1.5, providers (up to 6) × 0.3.
+- **Text tasks** (writing, translation, reasoning, math, analytics, search, coding) also accept general chat models that have an independent benchmark score.
+- **Sharing:** the choice is kept in the link (`#start=<task>,<device>,<memory>,<country>`); opening it shows the same picks.
+
 ## 10e. App Store check (`tools/appstore.mjs`)
 
 - **Candidates:** researched store ids in `data/app-stores.json` and apps.apple.com links in seed records.

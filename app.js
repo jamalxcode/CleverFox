@@ -1,4 +1,5 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
+import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart } from './picks.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -229,5 +230,36 @@ $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option val
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
+// ---- find what to use: top picks ----
+$('#s-task').innerHTML = TASKS.map((t) => `<option value="${t}">${esc(CAPS[t].replace(/^\S+\s/, '').toLowerCase())}</option>`).join('');
+async function showPicks(share = true) {
+  const s = { task: $('#s-task').value, device: $('#s-device').value, mem: state.mem, country: state.country };
+  $('#picks').innerHTML = '<p class="muted">Finding picks…</p>';
+  await Promise.all([ensureLoaded('model'), ensureLoaded('app')]);
+  const models = loaded.model || []; const apps = loaded.app || [];
+  const cols = [];
+  if (s.device === 'computer') cols.push(['💻 Run it yourself', pickModelsLocal(models, s), s.mem ? `Free, private, works offline. Sized for your ${s.mem} GB.` : 'Choose your device memory above for picks that fit; showing ones that fit 8 GB.']);
+  if (s.device === 'phone') cols.push(['📱 Offline on your phone', pickOffline(apps, s), 'Runs on the phone itself once a model is downloaded.']);
+  cols.push(['📲 Apps', pickApps(apps, s), s.country ? `Not shown if unavailable in ${countryName(s.country)}.` : 'Choose your country above to see what works there.']);
+  cols.push(['☁️ Use it online', pickModelsOnline(models, s), 'No GPU needed: pay per use through an API provider.']);
+  const item = (p) => `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`;
+  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : '<p class="muted">Nothing matches yet. Try another task or device.</p>'}</div>`).join('')}</div>
+    <p class="share pick-share"><button class="share-btn" type="button" id="s-share">🔗 Share these picks</button></p>`;
+  if (share) history.replaceState(null, '', encodeStart(s));
+  $('#s-share').addEventListener('click', async () => {
+    const url = location.href;
+    try { if (navigator.share) await navigator.share({ title: 'My CleverFox picks', url }); else { await navigator.clipboard.writeText(url); $('#s-share').textContent = '✓ Link copied'; } } catch { /* cancelled */ }
+  });
+  try { window.goatcounter?.count?.({ path: `picks/${s.task}/${s.device}`, event: true }); } catch {}
+}
+$('#s-go').addEventListener('click', () => showPicks());
+const started = decodeStart(location.hash);
+if (started) {
+  $('#s-task').value = started.task; $('#s-device').value = started.device;
+  if (started.mem && !state.mem) { state.mem = started.mem; $('#mem').value = String(started.mem); }
+  if (started.country && !state.country) { state.country = started.country; $('#country').value = started.country; }
+  syncView();
+  showPicks(false);
+}
 const hashType = location.hash.match(/^#(model|dataset|app|host)$/)?.[1];
 await setType(hashType || state.type);
