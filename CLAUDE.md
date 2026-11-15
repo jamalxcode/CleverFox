@@ -14,7 +14,7 @@ Read `docs/SPECIFICATION.md` (the spec, including user journeys and competitors)
 
 ## Current state
 
-A **seed prototype** (hand-researched apps, hosting and some models) plus a daily **bulk importer** (Hugging Face models and datasets, Ollama library), **independent benchmarks** (Epoch AI) and **Wikidata publisher countries** feed a static site: four tabs (models, datasets, apps, hosting), country and device pickers, filters, answers to what people ask (good for, local, platforms, hardware, free, payments, benchmarks, barriers, uncensored), and a shareable page per listing. About 1,100 listings; a dated snapshot is in `data/snapshots/`. X monitoring is built and waits for the `X_BEARER_TOKEN` secret (spec section 9). Open items are in spec section 19. Don't present them as decided.
+A **seed prototype** (researched apps, hosting and API providers, about 45 apps and 38 hosts, plus some models) plus a daily **bulk importer** (Hugging Face models and datasets, Ollama library), **independent benchmarks** (Epoch AI) and **Wikidata publisher countries** feed a static site: four tabs (models, datasets, apps, hosting), country and device pickers, filters, answers to what people ask (good for, local, platforms, hardware, free, payments, benchmarks, barriers, uncensored), and a shareable page per listing. About 1,100 listings; a dated snapshot is in `data/snapshots/`. X monitoring runs daily (spec section 9); access source pages are re-checked daily; the build curates the catalog (corrections file, dataset quality bar, re-uploads grouped). Open items are in spec section 19. Don't present them as decided.
 
 ## Commands
 

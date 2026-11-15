@@ -1,0 +1,1070 @@
+[
+ {
+  "schema_version": 1,
+  "id": "cf:app:algorine-research/khaya",
+  "type": "app",
+  "name": "Khaya",
+  "description": "Translation and speech app for Ghanaian and other African languages (Twi, Ewe, Ga, Fante, Dagbani, Yoruba, Kikuyu, Luo and more), free with an ad-free premium tier.",
+  "publisher": "Algorine Research (with Ghana NLP)",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.khaya.ai/",
+   "https://ghananlp.org/project/translator-webapp/"
+  ],
+  "documentation_urls": [
+   "https://www.khaya.ai/terms-and-conditions"
+  ],
+  "evidence_urls": [
+   "https://www.khaya.ai/terms-and-conditions",
+   "https://apps.apple.com/us/app/khaya/id1549294522",
+   "https://play.google.com/store/apps/details?id=com.nlpghana.khaya",
+   "https://ghananlp.org/project/khaya-android/",
+   "https://ghananlp.org/project/khaya-ios/"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status from the khaya.ai terms snippet; prices and premium features from App Store (US, NZ, RO) and Google Play snippets. Language list from App Store snippets; text translation pairs English <-> Twi, Ewe, Fante, Ga, Yoruba, Dagbani, Gurene, Kikuyu, Kimeru, Luo; speech recognition for Twi, Ewe, Yoruba, Ga, Dagbani. Publisher region left unknown: no page found stating where Algorine Research is registered (Ghana NLP is a Ghana-focused open-source group; the company may be registered elsewhere). Interface languages not found. Country availability not found.",
+  "url": "https://www.khaya.ai/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/khaya/id1549294522",
+   "https://play.google.com/store/apps/details?id=com.nlpghana.khaya"
+  ],
+  "categories": [
+   "translation",
+   "audio"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://www.khaya.ai/terms-and-conditions",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Terms: free for all users, with an optional subscription for premium unlimited ad-free use. Premium also unlocks text-to-speech (Twi, Ewe, Kikuyu) per store listings. US App Store snapshot: $0.99/month or $9.99/year; prices vary by storefront.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "Monthly or yearly premium as an in-app purchase (App Store; Google Play listing also describes premium)"
+     }
+    ],
+    "source_url": "https://apps.apple.com/us/app/khaya/id1549294522",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:addis-ai/addis-ai",
+  "type": "app",
+  "name": "Addis AI",
+  "description": "Ethiopian voice and chat assistant that speaks and writes Amharic and Afan Oromo, with translation and document summaries; free daily use with in-app premium.",
+  "publisher": "Addis AI Technologies PLC",
+  "publisher_region": {
+   "value": "ET",
+   "source_url": "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://addisassistant.com/"
+  ],
+  "documentation_urls": [
+   "https://addisassistant.com/pricing",
+   "https://platform.addisassistant.com/docs"
+  ],
+  "evidence_urls": [
+   "http://addisassistant.com/en/blogs/addis-ai-the-smart-voice-assistant-for-amharic-afan-oromo-how-it-works/",
+   "https://apps.apple.com/us/app/addis-ai/id6748835704",
+   "https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat",
+   "https://addisassistant.com/pricing",
+   "https://shega.co/news/ethiopian-trio-build-multilingual-ai-assistant-to-bridge-the-language-gap"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App features and languages (Amharic, Afan Oromo) from App Store and Google Play snippets; App Store developer shows as Omer Saeday with copyright Addis AI Technologies PLC. Free limit from the publisher blog snippet (old). Premium is bought in the app per the blog, but no source names the payment route (store billing vs Telebirr etc.), so payment_methods left unknown. The separate developer API (addisassistant.com/pricing: pay-as-you-go, free signup credit, no card required) is not covered by this record. Publisher region ET from Shega (Ethiopian tech news) describing an Ethiopian founding team; PLC is an Ethiopian company form. Watch for look-alike apps (e.g. \"Amharic AI\" by another developer).",
+  "url": "https://addisassistant.com/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/addis-ai/id6748835704",
+   "https://play.google.com/store/apps/details?id=com.danob.addisai.addis_assistnat"
+  ],
+  "categories": [
+   "chat",
+   "audio",
+   "translation"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "http://addisassistant.com/en/blogs/addis-ai-the-smart-voice-assistant-for-amharic-afan-oromo-how-it-works/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Publisher blog (about 16 months old) says the free version allows roughly 20 interactions a day, with premium subscriptions in the app for unlimited use. Current cap and premium price not confirmed.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:sartify/pawa-chat",
+  "type": "app",
+  "name": "Pawa Chat",
+  "description": "Tanzanian AI assistant from Pawa AI (Sartify) that understands and replies in Swahili, Kikuyu, Luo, Hausa, Yoruba, Zulu and English, with a free plan.",
+  "publisher": "Sartify Co. Ltd (Pawa AI)",
+  "publisher_region": {
+   "value": "TZ",
+   "source_url": "https://thecitizen.co.tz/tanzania/news/national/firm-introduces-ai-swahili-assistant-4827708",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://chat.pawa-ai.com/",
+   "https://pawa-ai.com/"
+  ],
+  "documentation_urls": [
+   "https://chat.pawa-ai.com/pricing",
+   "https://docs.pawa-ai.com/learn-more/pricing"
+  ],
+  "evidence_urls": [
+   "https://chat.pawa-ai.com/pricing",
+   "https://pawa-ai.com/",
+   "https://www.sartify.com/",
+   "https://thecitizen.co.tz/tanzania/news/national/firm-introduces-ai-swahili-assistant-4827708"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Plans and prices from the chat.pawa-ai.com pricing page snippet (prices in USD). Languages from the pawa-ai.com homepage snippet (these are languages the assistant understands, not confirmed interface languages). Link between Pawa AI and Sartify from search summary of sartify.com listing Pawa AI products; The Citizen (Tanzania) reported Sartify launching a Pawa pre-version in 2024. Payment methods for PRO not found (docs mention Pesa Pay mobile-money integration for developers, not for paying the subscription), so left unknown. Site says mobile apps exist for Android and iOS, but store URLs not confirmed.",
+  "url": "https://chat.pawa-ai.com/",
+  "app_store_urls": [],
+  "categories": [
+   "chat",
+   "search"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://chat.pawa-ai.com/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free plan ($0/month): text answers, web search, document uploads, chat history and voice dictation. PRO $5/month (adds a payments agent in supported countries), SCALE $7/month.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:mobobi/abena-ai",
+  "type": "app",
+  "name": "Abena AI",
+  "description": "Ghanaian voice assistant for Android that works offline and speaks Akan Twi, Ghanaian English and Pidgin: calls, reminders, news, music and messaging by voice.",
+  "publisher": "Mobobi LLC",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://abena.mobobi.com/",
+   "https://mobobi.com/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://play.google.com/store/apps/details?id=com.mobobi.abena",
+   "https://abena.mobobi.com/",
+   "https://abena.mobobi.com/playground/tts/",
+   "https://www.myjoyonline.com/preserving-ghanaian-culture-and-empowering-communities-the-story-of-abena-ai/"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Features and languages (Akan Twi, Ghanaian English, Pidgin English) from Google Play listing snippet; Pidgin has no ISO 639-1 code so it is only noted here. Mobobi site snippet reports 500K+ Android installs. Price of the app and any premium tier not found, so free and payment left unknown. The web text-to-speech playground (Twi, Ghana Pidgin, Yoruba, Swahili, Hausa, Ewe) is free with limited usage per its page, but that is a demo, not the app. Publisher region left unknown: founder Nana Ghartey is Ghanaian (MyJoyOnline), but where Mobobi LLC is registered was not found.",
+  "url": "https://abena.mobobi.com/",
+  "app_store_urls": [
+   "https://play.google.com/store/apps/details?id=com.mobobi.abena"
+  ],
+  "categories": [
+   "audio",
+   "chat"
+  ],
+  "interface_languages": {
+   "value": [
+    "tw",
+    "en"
+   ],
+   "source_url": "https://play.google.com/store/apps/details?id=com.mobobi.abena",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Not found.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:ulesson/ulesson",
+  "type": "app",
+  "name": "uLesson",
+  "description": "Nigerian learning app for secondary-school students with video lessons, tests and AI homework help, priced in naira and payable by bank transfer.",
+  "publisher": "uLesson Education Limited",
+  "publisher_region": {
+   "value": "NG",
+   "source_url": "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://ulesson.com/"
+  ],
+  "documentation_urls": [
+   "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
+   "https://ulesson.com/terms"
+  ],
+  "evidence_urls": [
+   "https://ulesson.com/subscription",
+   "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
+   "https://ulesson.com/terms",
+   "https://play.google.com/store/apps/details?id=com.ulesson"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). AI angle: Play listing describes instant personalised homework help; terms say the \"Ask by uLesson\" chat uses GPT. Category set to chat because there is no education category in the vocabulary. Prices from the ulesson.com/subscription snippet; payment methods from the FAQ snippet, which is several years old and may be outdated. Older pages also mention Flutterwave (card or USSD) and scratch cards: not confirmed as current, so not listed. Publisher region NG inferred from the FAQ (Nigerian bank accounts and +234 support line), not from a stated registered address. Free status unknown (no free plan or trial confirmed).",
+  "url": "https://ulesson.com/",
+  "app_store_urls": [
+   "https://play.google.com/store/apps/details?id=com.ulesson"
+  ],
+  "categories": [
+   "chat"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "No free tier found. Subscription page lists naira plans (e.g. 3 months NGN 12,000, 12 months NGN 25,000, plus 2- and 3-year plans); older FAQ gives Ghana cedi and Kenya shilling prices.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "bank_transfer",
+      "note": "Nigeria residents (FAQ; also mentions Ghana); subscription activates once the transfer clears"
+     },
+     {
+      "method": "card_local",
+      "note": "Debit or credit card on the website or in the Google Play app; whether foreign cards work is not stated"
+     }
+    ],
+    "source_url": "https://ulesson.com/blog/ulesson-frequently-asked-questions/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://ulesson.com/subscription",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:dicta/dicta",
+  "type": "app",
+  "name": "Dicta",
+  "description": "Free Hebrew AI tools from the non-profit Dicta: automatic nikud (vowel marking) with Nakdan, text analysis, and Rav Dicta, an AI chat on rabbinic literature.",
+  "publisher": "Dicta",
+  "publisher_region": {
+   "value": "IL",
+   "source_url": "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://dicta.org.il/",
+   "https://nakdan.dicta.org.il/",
+   "https://rav.dicta.org.il/"
+  ],
+  "documentation_urls": [
+   "https://dicta.org.il/tools?lang=en"
+  ],
+  "evidence_urls": [
+   "https://dicta.org.il/?lang=en",
+   "https://dicta.org.il/tools?lang=en",
+   "https://nakdanpro.dicta.org.il/",
+   "https://nakdan.dicta.org.il/",
+   "https://rav.dicta.org.il/",
+   "https://dicta.org.il/publications/DictaLM_3_0___Techincal_Report.pdf"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status and non-profit description from the dicta.org.il English homepage snippet; Nakdan versions (fast, professional, simple) and Rav Dicta from their own pages. Interface languages: site has Hebrew pages and an English version (?lang=en). No Hebrew-English translation product was found. Publisher region IL: inferred from the DictaLM 3.0 report describing \"Hebrew sovereign LLMs\" and the .org.il domain, not from a stated address. Whether an account is needed was not found.",
+  "url": "https://dicta.org.il/",
+  "app_store_urls": [],
+  "categories": [
+   "writing",
+   "chat"
+  ],
+  "interface_languages": {
+   "value": [
+    "he",
+    "en"
+   ],
+   "source_url": "https://dicta.org.il/tools?lang=en",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://dicta.org.il/?lang=en",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Site says Dicta provides its products at no charge; Nakdan pages describe the tools as free. No limits stated.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:mbzuai/k2-think",
+  "type": "app",
+  "name": "K2 Think",
+  "description": "Free reasoning chat app from Abu Dhabi university MBZUAI, running its open K2 Think models, on the web and iPhone (App Store now names it K2 Horizon).",
+  "publisher": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+  "publisher_region": {
+   "value": "AE",
+   "source_url": "https://mbzuai.ac.ae/news-events/news/mbzuai-g42-launch-k2-think-leading-open-source-system-advanced-ai-reasoning",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.k2think.ai/"
+  ],
+  "documentation_urls": [
+   "https://mbzuai.ac.ae/news/k2-think-v2-a-fully-sovereign-reasoning-model/"
+  ],
+  "evidence_urls": [
+   "https://apps.apple.com/us/app/k2-think/id6744862356",
+   "https://apps.apple.com/us/app/k2-horizon/id6744862356",
+   "https://mbzuai.ac.ae/news/k2-think-v2-a-fully-sovereign-reasoning-model/",
+   "https://mbzuai.ac.ae/news-events/news/mbzuai-g42-launch-k2-think-leading-open-source-system-advanced-ai-reasoning"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). App details from the App Store listing snippet (developer MBZUAI). The same App Store ID now appears as \"K2 Horizon\"; an unrelated older \"K2 Think\" app (id6695742843, 18+, by another developer) exists, so check the developer. Web chat at k2think.ai per MBZUAI news snippet. Publisher region AE: MBZUAI is the Abu Dhabi AI university (launch release with G42). Not a local-language app as such; included as a MENA-built free assistant. Arabic support of the app not confirmed.",
+  "url": "https://www.k2think.ai/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/k2-think/id6744862356"
+  ],
+  "categories": [
+   "chat",
+   "research"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://apps.apple.com/us/app/k2-think/id6744862356",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "App Store listing shows the app as free with no in-app purchases. Web limits not found.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Account required to sync chats: own account, or Apple or Google sign-in (App Store listing)",
+    "source_url": "https://apps.apple.com/us/app/k2-think/id6744862356",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:tii/falcon-chat",
+  "type": "app",
+  "name": "Falcon Chat",
+  "description": "Free public chat from Abu Dhabi's Technology Innovation Institute for trying its Falcon models, including Falcon-H1 Arabic, trained on Arabic dialects.",
+  "publisher": "Technology Innovation Institute (TII)",
+  "publisher_region": {
+   "value": "AE",
+   "source_url": "https://www.tii.ae/news/abu-dhabis-tii-launches-falcon-h1-arabic-establishing-worlds-leading-arabic-ai-model",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://chat.falconllm.tii.ae/",
+   "https://falconllm.tii.ae/"
+  ],
+  "documentation_urls": [
+   "https://falconllm.tii.ae/falcon-h1-arabic.html"
+  ],
+  "evidence_urls": [
+   "https://www.tii.ae/news/abu-dhabis-tii-launches-falcon-h1-arabic-establishing-worlds-leading-arabic-ai-model",
+   "https://www.tii.ae/insights/uae-built-arabic-ai-model-outperforms-systems-twice-its-size",
+   "https://falconllm.tii.ae/falcon-h1-arabic.html",
+   "https://www.tii.ae/insights/tii-launches-falcon-emirati-alongside-new-arabic-ai-models-speech-and-visual-text"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status and address from TII news and insights snippets (\"freely available at chat.falconllm.tii.ae\", \"TII's public interface\"). Falcon-H1 Arabic sizes 3B/7B/34B per TII. Falcon-Emirati (Emirati dialect) announced for Falcon Chat; not confirmed live. Sign-in requirement, interface languages and country availability not found.",
+  "url": "https://chat.falconllm.tii.ae/",
+  "app_store_urls": [],
+  "categories": [
+   "chat"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://www.tii.ae/insights/uae-built-arabic-ai-model-outperforms-systems-twice-its-size",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "TII describes the chat as freely available; usage limits not found.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:cntxt/munsit",
+  "type": "app",
+  "name": "Munsit",
+  "description": "Arabic speech-to-text and voice app from UAE-based CNTXT AI, covering 25+ Arabic dialects, with free starter credits and paid plans.",
+  "publisher": "CNTXT AI",
+  "publisher_region": {
+   "value": "AE",
+   "source_url": "https://www.entrepreneur.com/en-ae/technology/uae-based-cntxt-ai-unveils-a-new-arabic-speech-recognition/490779",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.munsit.com/",
+   "https://app.munsit.com/en/home"
+  ],
+  "documentation_urls": [
+   "https://www.munsit.com/blog/introducing-munsit-the-first-arabic-speech-to-text-app-built-for-you"
+  ],
+  "evidence_urls": [
+   "https://www.munsit.com/",
+   "https://apps.apple.com/us/app/munsitai/id6749622996",
+   "https://apps.apple.com/ae/app/munsitai/id6749622996",
+   "https://www.entrepreneur.com/en-ae/technology/uae-based-cntxt-ai-unveils-a-new-arabic-speech-recognition/490779"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free credits and Basic price from the munsit.com homepage snippet; blog pricing conflicts ($8 Pro, \"about 30 minutes\" free). In-app purchases from the App Store (US, AE) listing snippets. Web payment methods not found. Publisher region AE from Entrepreneur Middle East (\"UAE-based CNTXT AI\"). 25+ dialects per the app listing. Interface languages not found.",
+  "url": "https://www.munsit.com/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/munsitai/id6749622996"
+  ],
+  "categories": [
+   "audio"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://www.munsit.com/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Site offers 10,000 free credits with no card required; homepage says 1,000 credits is about 1 minute of transcription (so about 10 minutes). Basic plan $10/month on the homepage; blog posts give other figures.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "Creator tiers and top-up packs as in-app purchases (UAE App Store lists them in AED)"
+     }
+    ],
+    "source_url": "https://apps.apple.com/ae/app/munsitai/id6749622996",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:vira/vira",
+  "type": "app",
+  "name": "Vira",
+  "description": "Persian AI assistant for Iranian users on web and Android: free chat and limited image generation, with toman subscriptions and a wallet for ChatGPT, Gemini and video.",
+  "publisher": "Vira (ivira.ai)",
+  "publisher_region": {
+   "value": "IR",
+   "source_url": "https://api.ivira.ai/partai/avanegar",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://ivira.ai/",
+   "https://web.ivira.ai/"
+  ],
+  "documentation_urls": [
+   "https://ivira.ai/blog/vira-web-service-guide/",
+   "https://web.ivira.ai/billing/subscription"
+  ],
+  "evidence_urls": [
+   "https://ivira.ai/",
+   "https://ivira.ai/chatbot/",
+   "https://ivira.ai/text-to-image/",
+   "https://ivira.ai/blog/vira-web-service-guide/",
+   "https://web.ivira.ai/billing/subscription",
+   "https://api.ivira.ai/partai/avanegar",
+   "https://cafebazaar.ir/app/ai.ivira.app"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). All from ivira.ai snippets (Persian). The web guide says buying a subscription or topping up the wallet sends you to a bank gateway (dargah-e banki), which in Iran takes local Shetab bank cards; listed as card_local. Whether Cafe Bazaar in-app billing is offered in the Android app was not confirmed. Local-currency pricing from the Avanegar speech-to-text page (prices in toman); subscription amounts were blank in the snippet. Publisher region IR inferred from toman pricing, the Iranian bank gateway and the \"no VPN needed\" pitch to Iranian users, not from a stated address; company legal name not found.",
+  "url": "https://ivira.ai/",
+  "app_store_urls": [
+   "https://cafebazaar.ir/app/ai.ivira.app"
+  ],
+  "categories": [
+   "chat",
+   "image",
+   "audio"
+  ],
+  "interface_languages": {
+   "value": [
+    "fa"
+   ],
+   "source_url": "https://ivira.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://ivira.ai/chatbot/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Basic chat with Vira's own model is free; image generation free with a daily limit. Bronze, Silver and Gold subscriptions (1 or 3 months) lift limits; external models (ChatGPT, Gemini), image and video models draw on a prepaid wallet.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_local",
+      "note": "Iranian bank card through an online bank payment gateway, for subscriptions and wallet top-ups"
+     }
+    ],
+    "source_url": "https://ivira.ai/blog/vira-web-service-guide/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://api.ivira.ai/partai/avanegar",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:aic-egypt/karnak-chat",
+  "type": "app",
+  "name": "Karnak Chat",
+  "description": "Egyptian government AI assistant built on the national Karnak model, understanding Modern Standard Arabic and Egyptian colloquial Arabic; pilot on web and Android.",
+  "publisher": "Applied Innovation Center (AIC), Ministry of Communications and Information Technology, Egypt",
+  "publisher_region": {
+   "value": "EG",
+   "source_url": "https://mcit.gov.eg/en/Media_Center/Latest_News/News/117415",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://karnak.aic.gov.eg/",
+   "https://www.aic.gov.eg/news/43/"
+  ],
+  "documentation_urls": [
+   "https://www.aic.gov.eg/projects/38/"
+  ],
+  "evidence_urls": [
+   "https://mcit.gov.eg/en/Media_Center/Latest_News/News/117415",
+   "https://www.aic.gov.eg/news/43/",
+   "https://www.aic.gov.eg/projects/38/",
+   "https://english.ahram.org.eg/NewsContent/1/2/576301/Egypt/Society/Egypt-launches-Karnak-Chat,-Loghat-AI-apps-to-supp.aspx"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Pilot launch (23 Aug 2026), web address and Google Play availability from MCIT and AIC news snippets. Official sources call the Karnak model free on Hugging Face but do not say the chat itself is free, so free left unknown (some coverage says it is free to try). Google Play package appears as com.aic.karnak on a third-party store tracker; not confirmed on Google Play, so no store URL listed. No iOS listing confirmed. Country availability not found.",
+  "url": "https://karnak.aic.gov.eg/",
+  "app_store_urls": [],
+  "categories": [
+   "chat"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Not found.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Registration on the website (pilot launched August 2026); Android app on Google Play",
+    "source_url": "https://www.aic.gov.eg/news/43/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:aic-egypt/belmasry",
+  "type": "app",
+  "name": "BelMasry",
+  "description": "Free Egyptian government platform for Egyptian Arabic speech: transcription of dialects and MSA, text-to-speech, and translation between Arabic and 50 languages (beta).",
+  "publisher": "Applied Innovation Center (AIC), Ministry of Communications and Information Technology, Egypt",
+  "publisher_region": {
+   "value": "EG",
+   "source_url": "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://belmasry.aic.gov.eg/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://belmasry.aic.gov.eg/login",
+   "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every host except a few, so no publisher page could be fetched (curl and WebFetch both refused); all facts come from WebSearch results, mostly restricted to the publisher's own domains and app-store listings, cited to the result URL. Marked candidate for that reason; re-verify by fetching. App-store listings are treated as official (text supplied by the publisher). Free status, engines (speech-to-text, translation with 50 languages, text-to-speech) and August 2026 pilot from Ahram Online, which reports the ministry's announcement; no MCIT page stating it was found, so source_type third_party. Login page snippet shows \"beta\" and speech-to-speech translation, with MCIT and AIC logos. Interface languages and country availability not found.",
+  "url": "https://belmasry.aic.gov.eg/",
+  "app_store_urls": [],
+  "categories": [
+   "audio",
+   "translation"
+  ],
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx",
+    "source_type": "third_party",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Reported free for individuals, institutions and developers during the public pilot (August 2026). Limits not found.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Account login (site labelled beta)",
+    "source_url": "https://belmasry.aic.gov.eg/login",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ }
+]

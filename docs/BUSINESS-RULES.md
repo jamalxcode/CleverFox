@@ -183,6 +183,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - sign-up requirements;
   - local-currency pricing.
 - **Country limits go in the method's note**, shown with `*` and on hover (e.g. "India only").
+- **What counts as paying without a card:** a payment processor (Stripe and the like), a cloud marketplace billed to an existing cloud account, or a wallet funded by a card (Google Pay, Apple Pay) is not a non-card method on its own. Methods that apply only to another version of a product (a China-only edition) aren't listed on the global listing. App-store listings written by the publisher count as `official` sources.
 - **Only official payment routes**, plus clearly labeled authorized API aggregators:
   - no account resellers, gray-market top-ups, or guides to getting around country restrictions or sanctions.
 - **Public feedback (planned, X first):**

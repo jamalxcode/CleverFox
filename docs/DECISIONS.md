@@ -278,6 +278,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 **Decision:** a daily step fingerprints the visible text of each access fact's source page. A change after the facts were observed puts a "pricing page changed" warning on the listing; a page that's gone (404/410 twice) is flagged; facts older than 180 days are marked old. Nothing is rewritten automatically.
 **Why:** payment and country facts were hand-researched and nothing re-checked them, so they would go stale silently. Detecting change is cheap and reliable; reading the new facts correctly isn't, and the rule is never to invent metadata. Bot walls are ignored so big help centers don't produce false alarms.
 
+### 61. Growing the access side: researched regional apps, API providers and GPU hosts
+**Decision:** added 27 regional apps (Africa, Middle East, South and Southeast Asia, East Asia, Latin America), 14 API providers and aggregators (as hosts of kind `inference_endpoint`) and 13 regional GPU hosts, researched from publishers' own pages with a source per fact. Most are `candidate`, because this session's network blocked the official sites, and the facts come from search results on the publishers' domains. In review, card checkouts (Stripe, cloud marketplaces, card-funded wallets) and China-only methods on global listings were removed, and a generic wrapper app was dropped. Country lists stay unknown where no official page states them, so those apps aren't highlighted for a country yet.
+**Why:** the access side, which is what sets CleverFox apart, had 18 apps and 11 hosts against 874 models. The daily re-check (decision 60) now watches these listings' source pages.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for the current list.

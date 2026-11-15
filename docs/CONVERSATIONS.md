@@ -12,6 +12,15 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: critique and the three fixes
+**Where:** Claude Code session.
+**Asked:** critique CleverFox; then do the top three fixes: make the site light, clean up the catalog, grow the access side.
+**Outcome:**
+- **Light:** list files are slim and full records load when a card opens; the Models list went from 3.1 MB to about 70 KB compressed (decision 58).
+- **Clean:** a corrections file (`hide`, `merge`, `keep`), a dataset quality bar and re-uploads grouped under their original; first run grouped 18 and hid 59 junk datasets (decision 59).
+- **Access:** a daily re-check of access source pages that warns when a pricing or payment page changes or disappears (decision 60); 27 regional apps, 14 API providers and 13 regional GPU hosts added, from 18 apps and 11 hosts to 45 and 38 (decision 61).
+- Other critique points kept for later: X coverage at a small read budget, benchmark coverage, automated checks before deploy, a freshness page, a guided start, compare, "new this week", click-to-load X embeds, more interface languages, the custom domain.
+
 ## 2026-11-15: X scanning switched on; short-name search
 **Where:** Claude Code session.
 **Asked:** step-by-step setup of the X token (a separate "CleverFox" app in the X developer portal, the `X_BEARER_TOKEN` secret, `X_MONTHLY_READS` = 2000); check it works; then fix the searches that found nothing.

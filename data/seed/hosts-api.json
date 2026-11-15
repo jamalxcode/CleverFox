@@ -1,0 +1,1584 @@
+[
+ {
+  "schema_version": 1,
+  "id": "cf:host:openrouter",
+  "type": "host",
+  "name": "OpenRouter",
+  "description": "US API aggregator: one OpenAI-compatible key for hundreds of models from many providers, prepaid credits payable by card, Alipay or USDC crypto, plus rate-limited free models.",
+  "publisher": "OpenRouter, Inc.",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://sacra.com/c/openrouter/",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://openrouter.ai/",
+   "https://openrouter.ai/pricing"
+  ],
+  "documentation_urls": [
+   "https://openrouter.ai/docs/faq",
+   "https://openrouter.ai/docs/api/reference/limits"
+  ],
+  "evidence_urls": [
+   "https://openrouter.ai/pricing",
+   "https://openrouter.ai/docs/faq",
+   "https://openrouter.ai/docs/api/reference/limits",
+   "https://openrouter.ai/blog/announcements/simplifying-our-platform-fee/",
+   "https://openrouter.ai/terms"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). openrouter.ai was blocked (curl and WebFetch); every fact is from snippets of openrouter.ai pages. Payment methods and fees: pricing page snippet (cards, AliPay, USDC crypto; Enterprise invoicing); crypto 5% flat from the platform-fee blog post snippet, while the FAQ snippet also says 5%. Free-model limits: limits page snippet gives FREE_MODEL_RATE_LIMIT_RPM 20, 50 RPD without credits, 1000 RPD with 10+ credits; a Zendesk article agrees. Terms section 5.7: providers may restrict models by country; no OpenRouter-wide sanctioned-country list was found, so countries_unavailable is unknown. HQ New York from third-party company profiles (sacra.com and others; CB Insights says San Francisco); still US either way. EU in-region endpoint eu.openrouter.ai exists for Business per the guardrails docs snippet. Bank transfer mapped from Enterprise invoicing; not for ordinary accounts.",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://sacra.com/c/openrouter/",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://openrouter.ai/",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://openrouter.ai/docs/api/reference/limits",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free model variants (\":free\"): 20 requests per minute; 50 requests per day, or 1,000 per day once at least 10 USD of credits has been bought. A negative balance blocks free models too.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Credit or debit card; 5.5% fee on credit purchases (minimum 0.80 USD), 8% on Business accounts"
+     },
+     {
+      "method": "alipay",
+      "note": "Standard and Business accounts"
+     },
+     {
+      "method": "crypto",
+      "note": "USDC; 5% flat fee, no minimum; crypto purchases are not refundable"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "Enterprise accounts only: invoicing and purchase orders through sales"
+     }
+    ],
+    "source_url": "https://openrouter.ai/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Account with prepaid credits for paid models; model providers can bar users in some countries from their models, and OpenRouter passes the country of origin to them",
+    "source_url": "https://openrouter.ai/terms",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:deepseek-api",
+  "type": "host",
+  "name": "DeepSeek API",
+  "description": "Chinese lab DeepSeek's own prepaid API for its V4 models, OpenAI- and Anthropic-compatible, with half-price off-peak hours; top up by card, PayPal, Alipay or WeChat Pay.",
+  "publisher": "Hangzhou DeepSeek Artificial Intelligence Co., Ltd.",
+  "publisher_region": {
+   "value": "CN",
+   "source_url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://platform.deepseek.com/",
+   "https://api-docs.deepseek.com/quick_start/pricing"
+  ],
+  "documentation_urls": [
+   "https://api-docs.deepseek.com/",
+   "https://api-docs.deepseek.com/faq"
+  ],
+  "evidence_urls": [
+   "https://api-docs.deepseek.com/quick_start/pricing",
+   "https://api-docs.deepseek.com/faq",
+   "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). Fetched api-docs.deepseek.com/quick_start/pricing: models deepseek-flash (DeepSeek-V4.1-Flash-1017) and deepseek-v4-pro, prices in USD per 1M tokens, off-peak half price (peak 01:00-04:00 and 06:00-10:00 UTC weekdays), fees deducted from topped-up or granted balance; copyright DeepSeek, Inc. Payment methods from a snippet of the official FAQ (api-docs.deepseek.com/faq redirects to static.deepseek.com, which was blocked): PayPal, bank card, Alipay, WeChat Pay on the Top Up page. The note about PayPal not being in every country and Russian cards failing comes from third-party guides only. Terms (cdn.deepseek.com, blocked; snippet): no use in or for countries under comprehensive sanctions, no promise of availability in every jurisdiction; no named country list, so countries_unavailable is unknown. Publisher name and Hangzhou location from the terms snippet (older version names Hangzhou DeepSeek Artificial Intelligence Co., Ltd.). No free tier is stated (granted balances exist but terms not found), so free is unknown. Record kept as candidate because the payment facts were not fetched.",
+  "provider_region": {
+   "value": "CN",
+   "source_url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://platform.deepseek.com/",
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Bank card on the Top Up page; third-party reports say some countries' cards (for example Russian) are declined"
+     },
+     {
+      "method": "paypal",
+      "note": "Not available in every country"
+     },
+     {
+      "method": "alipay",
+      "note": ""
+     },
+     {
+      "method": "wechat_pay",
+      "note": ""
+     }
+    ],
+    "source_url": "https://api-docs.deepseek.com/faq",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Prepaid: usage is deducted from a topped-up balance or a granted balance (granted first); top-up balances do not expire",
+    "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:hugging-face-inference-providers",
+  "type": "host",
+  "name": "Hugging Face Inference Providers",
+  "description": "Hugging Face routes API calls to partner providers (Cerebras, Groq, Together, Novita, Z.ai and others) under one key and bill; pay-as-you-go credits, card payment.",
+  "publisher": "Hugging Face, Inc.",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://huggingface.co/terms-of-service",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://huggingface.co/docs/inference-providers/index",
+   "https://huggingface.co/docs/inference-providers/pricing"
+  ],
+  "documentation_urls": [
+   "https://huggingface.co/docs/inference-providers/pricing",
+   "https://huggingface.co/docs/hub/billing"
+  ],
+  "evidence_urls": [
+   "https://huggingface.co/docs/inference-providers/index",
+   "https://huggingface.co/docs/inference-providers/pricing",
+   "https://huggingface.co/docs/hub/billing",
+   "https://huggingface.co/terms-of-service"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). Fetched huggingface.co/docs/inference-providers/pricing: Free users have no monthly credits (\"credits purchase required\"), PRO 2.00 USD, Team/Enterprise 2.00 USD per seat; routed billing vs. custom provider key. Fetched index page: partner list Baseten, Cerebras, Cohere, DeepInfra, Fal AI, Featherless AI, Fireworks, Groq, HF Inference, Novita, Nscale, OVHcloud AI Endpoints, Public AI, Replicate, Scaleway, Together, WaveSpeedAI, Z.ai. Fetched hub/billing: compute services paid by credit card via Stripe; organizations can instead link AWS or Google Cloud Marketplace. Fetched terms of service: Hugging Face, Inc., a Delaware corporation. Data centers and country limits not found (they depend on the routed provider). Merge review (2026-11-15): removed other (Organizations only: billing through AWS Marketplace or Google Cloud Marketplace, approved by Hugging Face), because these are card checkouts or apply only to another version of the product.",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://huggingface.co/terms-of-service",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://huggingface.co/inference/models",
+  "access": {
+   "free": {
+    "value": "paid_only",
+    "source_url": "https://huggingface.co/docs/inference-providers/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free accounts get no monthly credits and must buy credits; PRO users and Team/Enterprise seats get 2 USD of general compute credits per month.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Credit card via Stripe"
+     }
+    ],
+    "source_url": "https://huggingface.co/docs/hub/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Hugging Face account with purchased credits; or set your own provider key and be billed by that provider directly",
+    "source_url": "https://huggingface.co/docs/inference-providers/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:alibaba-model-studio",
+  "type": "host",
+  "name": "Alibaba Cloud Model Studio",
+  "description": "Alibaba Cloud's model API (DashScope) for Qwen and other models, with endpoints in Singapore, Virginia, Frankfurt, Tokyo, Hong Kong and Beijing and a 90-day free quota.",
+  "publisher": "Alibaba Cloud",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.alibabacloud.com/en/product/modelstudio",
+   "https://modelstudio.console.alibabacloud.com/"
+  ],
+  "documentation_urls": [
+   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+   "https://www.alibabacloud.com/help/en/model-studio/regions/",
+   "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer"
+  ],
+  "evidence_urls": [
+   "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+   "https://www.alibabacloud.com/help/en/model-studio/regions/",
+   "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). Distinct product from the existing Alibaba Cloud host record (cf:host:alibaba-cloud, GPU instances): this is the Model Studio / DashScope model API, with its own console domain. Fetched new-free-quota page (last updated Nov 15, 2026): free quota on first activation, Singapore region International scope only, valid 90 days, typically 1M tokens per model, real-time inference only, account information required, Free Quota Only switch. Fetched regions page: regions China (Beijing), Singapore, US (Virginia), Germany (Frankfurt), Japan (Tokyo), China (Hong Kong); region codes only read for Beijing, Singapore and Frankfurt (others null); deployment scopes Global/US/EU. Payment methods copied from the existing Alibaba Cloud record (account-wide payment-methods page, fetched 2026-11-14 by the earlier session; not re-fetched); they depend on the contracting entity set by residence. Publisher region left unknown, as in the existing Alibaba Cloud record (international business contracts through several entities).",
+  "provider_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": [
+    {
+     "country": "SG",
+     "city_or_region": "Singapore",
+     "provider_region_code": "ap-southeast-1"
+    },
+    {
+     "country": "US",
+     "city_or_region": "Virginia",
+     "provider_region_code": null
+    },
+    {
+     "country": "DE",
+     "city_or_region": "Frankfurt",
+     "provider_region_code": "eu-central-1"
+    },
+    {
+     "country": "JP",
+     "city_or_region": "Tokyo",
+     "provider_region_code": null
+    },
+    {
+     "country": "HK",
+     "city_or_region": "Hong Kong",
+     "provider_region_code": null
+    },
+    {
+     "country": "CN",
+     "city_or_region": "Beijing",
+     "provider_region_code": "cn-beijing"
+    }
+   ],
+   "source_url": "https://www.alibabacloud.com/help/en/model-studio/regions/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "Each region has service deployment scopes that set where inference runs: Global, or a bounded scope such as US (Virginia region) or EU (Frankfurt region) for data-compliance needs.",
+   "source_url": "https://www.alibabacloud.com/help/en/model-studio/regions/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://modelstudio.console.alibabacloud.com/",
+  "access": {
+   "free": {
+    "value": "trial",
+    "source_url": "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "New users: a free quota per model (typically 1,000,000 tokens each) for real-time inference, valid 90 days from activation; Singapore region with International scope only; then pay-as-you-go unless \"Free Quota Only\" is switched on.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Visa and Mastercard for all entities; American Express except Malaysia; UnionPay, Discover, Diners Club (Singapore, US entities); JCB (Singapore entity)"
+     },
+     {
+      "method": "alipay",
+      "note": "Alipay CN personal accounts (not Malaysia entity); Alipay HK (Singapore entity)"
+     },
+     {
+      "method": "paypal",
+      "note": "Singapore, US, UK entities; not PayPal accounts registered in mainland China"
+     },
+     {
+      "method": "other",
+      "note": "Apple Pay and Google Pay (not Malaysia entity); DANA and PayNow (Singapore entity); iDEAL (Netherlands entity)"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "ACH direct debit (US entity); bank transfer for credit-control/enterprise customers"
+     },
+     {
+      "method": "crypto",
+      "note": "Stablecoin via TripleA (Singapore entity)"
+     }
+    ],
+    "source_url": "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Alibaba Cloud international account; account information must be completed before activating Model Studio and receiving the free quota; one free quota per account",
+    "source_url": "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:groq",
+  "type": "host",
+  "name": "GroqCloud",
+  "description": "US chip maker Groq's fast inference API for open models such as GPT-OSS and Whisper; free plan with rate limits, Developer plan billed monthly.",
+  "publisher": "Groq, Inc.",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://www.cbinsights.com/company/groq",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://groq.com/",
+   "https://console.groq.com/"
+  ],
+  "documentation_urls": [
+   "https://console.groq.com/docs/rate-limits",
+   "https://console.groq.com/docs/billing-faqs"
+  ],
+  "evidence_urls": [
+   "https://console.groq.com/docs/rate-limits",
+   "https://console.groq.com/docs/billing-faqs",
+   "https://console.groq.com/settings/billing",
+   "https://console.groq.com/docs/legal/services-agreement"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). console.groq.com and groq.com blocked; all facts from snippets of console.groq.com pages. Billing FAQ snippet: cards (Visa, MasterCard, Amex, Discover), US bank accounts, SEPA debit; progressive billing thresholds incl. India schedule. Billing page snippet: Free tier to build and test, community support; rate limits page points to account limits page. Exact free-tier numbers conflict across third-party sites, so none recorded. HQ: third-party sources differ (Mountain View, San Jose; a D Magazine item reports a possible move to Dallas); US in every case. A Saudi Arabia terms-of-sale page exists (console.groq.com/docs/terms-of-sale-ksa), suggesting a KSA offering; not researched. Data centers not recorded (news reports of a European data center not confirmed on official pages here).",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://www.cbinsights.com/company/groq",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://console.groq.com/",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://console.groq.com/settings/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free plan for building and testing with per-model rate limits (exact figures are shown on the account's limits page and change over time); community support.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Visa, Mastercard, American Express, Discover; needed to upgrade to the Developer plan"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "United States bank accounts and SEPA direct debit accounts"
+     }
+    ],
+    "source_url": "https://console.groq.com/docs/billing-faqs",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Upgrading from Free to Developer needs a payment method; usage is billed at thresholds (1, 10, 100, 500, 1,000 USD; India billing addresses 1, 10, then 100 recurring) and monthly",
+    "source_url": "https://console.groq.com/docs/billing-faqs",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:cerebras-inference",
+  "type": "host",
+  "name": "Cerebras Inference",
+  "description": "Cerebras serves open models such as GLM, Qwen and Llama on its wafer-scale chips through a fast pay-as-you-go API, with a small free trial credit.",
+  "publisher": "Cerebras Systems Inc.",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://www.cerebras.ai/company",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.cerebras.ai/inference",
+   "https://cloud.cerebras.ai/"
+  ],
+  "documentation_urls": [
+   "https://inference-docs.cerebras.ai/support/pricing",
+   "https://inference-docs.cerebras.ai/console/account-billing",
+   "https://inference-docs.cerebras.ai/support/rate-limits"
+  ],
+  "evidence_urls": [
+   "https://inference-docs.cerebras.ai/support/pricing",
+   "https://inference-docs.cerebras.ai/console/account-billing",
+   "https://inference-docs.cerebras.ai/support/rate-limits",
+   "https://inference-docs.cerebras.ai/integrations/aws-marketplace",
+   "https://www.cerebras.ai/company"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). cerebras.ai and inference-docs.cerebras.ai blocked; facts from snippets of official pages. Pricing page snippet: no permanently free tier now; 5 USD trial credits after adding a verified payment method, expire in 30 days; free tier context 8,192 tokens. Older blog posts mentioning 1M free tokens per day are superseded. Account & Billing snippet: Add Credits / Pay as you go tab; auto-recharge off by default. AWS Marketplace integration page snippet. Card type is inferred from \"add a credit card\"; no list of accepted cards found. Coding plans (Code Pro 50 USD/month, Code Max 200 USD/month) exist per snippet. HQ Sunnyvale from company page snippet and third-party profiles. Data centers not recorded. Merge review (2026-11-15): removed other (Billing through AWS Marketplace with an existing AWS payment method), because these are card checkouts or apply only to another version of the product.",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://www.cerebras.ai/company",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://cloud.cerebras.ai/",
+  "access": {
+   "free": {
+    "value": "trial",
+    "source_url": "https://inference-docs.cerebras.ai/support/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "5 USD of free credits for new accounts after adding a verified payment method, expiring 30 days after they are granted; trial accounts have lower limits (8,192-token context). No renewing free tier.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Prepaid credits bought from the Billing tab (Pay as You Go)"
+     }
+    ],
+    "source_url": "https://inference-docs.cerebras.ai/console/account-billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "A verified payment method is needed even for the free trial credits",
+    "source_url": "https://inference-docs.cerebras.ai/support/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:hyperbolic",
+  "type": "host",
+  "name": "Hyperbolic",
+  "description": "San Francisco GPU and serverless inference platform for open models; prepaid credits from 5 USD that never expire, payable by card or USDC, USDT and DAI on Base.",
+  "publisher": "Hyperbolic Labs",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://builtin.com/company/hyperbolic",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.hyperbolic.ai/inference",
+   "https://www.hyperbolic.ai/"
+  ],
+  "documentation_urls": [
+   "https://www.hyperbolic.ai/docs/general/billing-payments",
+   "https://www.hyperbolic.ai/docs/overview/quickstart"
+  ],
+  "evidence_urls": [
+   "https://www.hyperbolic.ai/docs/general/billing-payments",
+   "https://www.hyperbolic.ai/blog/pay-for-gpu-and-ai-inference-models-with-crypto",
+   "https://www.hyperbolic.ai/docs/overview/quickstart",
+   "https://www.hyperbolic.ai/docs/general/account-management"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). hyperbolic.ai blocked; facts from snippets of official pages. Billing docs snippet: credits any time, 5 USD minimum, never expire, per-token deduction; separate one-time 5 USD deposit makes a personal account Pro (needed for GPU instances, not inference). Crypto from a blog post snippet (about 675 days old): USDC/USDT/DAI on Base; still offered per a later x402 launch-partner post snippet, but re-check the Billing page. Card via Stripe from quickstart snippet. Free tier not confirmed (free is unknown). HQ San Francisco from third-party profiles (Built In). The launch URL app.hyperbolic.ai is assumed from the product pages and not confirmed.",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://builtin.com/company/hyperbolic",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://app.hyperbolic.ai/",
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Card via Stripe; credits appear instantly"
+     },
+     {
+      "method": "crypto",
+      "note": "USDC, USDT or DAI on the Base network, sent to a Hyperbolic wallet address from the Billing page; per-call USDC payments via the x402 protocol"
+     }
+    ],
+    "source_url": "https://www.hyperbolic.ai/blog/pay-for-gpu-and-ai-inference-models-with-crypto",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Prepaid credits, minimum purchase 5 USD, 1:1 with dollars, never expire; inference billed per token from the balance",
+    "source_url": "https://www.hyperbolic.ai/docs/general/billing-payments",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:siliconflow",
+  "type": "host",
+  "name": "SiliconFlow",
+  "description": "Beijing inference platform serving Qwen, DeepSeek, GLM and other open models by API, with a set of free small models after identity verification.",
+  "publisher": "Beijing Siliconflow Technology Co., Ltd.",
+  "publisher_region": {
+   "value": "CN",
+   "source_url": "https://docs.siliconflow.com/quickstart/models",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.siliconflow.com/",
+   "https://www.siliconflow.com/pricing"
+  ],
+  "documentation_urls": [
+   "https://docs.siliconflow.com/en/userguide/quickstart",
+   "https://docs.siliconflow.com/en/userguide/rate-limits/rate-limit-and-upgradation",
+   "https://docs.siliconflow.com/en/legals/recharge-policy"
+  ],
+  "evidence_urls": [
+   "https://www.siliconflow.com/pricing",
+   "https://docs.siliconflow.com/quickstart/models",
+   "https://docs.siliconflow.com/en/userguide/rate-limits/rate-limit-and-upgradation",
+   "https://docs.siliconflow.cn/docs/legals/recharge-policy",
+   "https://docs.siliconflow.cn/en/faqs/misc_finance",
+   "https://docs.siliconflow.com/en/legals/privacy-policy"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). siliconflow.com and docs.siliconflow.com blocked; facts from snippets. Payment: the recharge agreement (docs.siliconflow.cn, China site) names Alipay and WeChat Pay; older .com copies name the same or only WeChat Pay. The international privacy policy names Stripe as a payment partner, which suggests card payment on siliconflow.com, but no page states accepted methods for international users, so card is not listed. Free models after identity verification from the finance FAQ snippet; 1 USD free credits from the pricing page snippet. Publisher name from the model list snippet (Beijing Siliconflow Technology Co., Ltd. reserves the right to interpret the free-model policy). Whether the international site has a non-China entity was not confirmed. Launch URL cloud.siliconflow.com assumed, not confirmed.",
+  "provider_region": {
+   "value": "CN",
+   "source_url": "https://docs.siliconflow.com/quickstart/models",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://cloud.siliconflow.com/",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://docs.siliconflow.cn/en/faqs/misc_finance",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free models (small models such as DeepSeek-R1-Distill-Qwen-1.5B and Hunyuan-MT-7B on the pricing page) with fixed rate limits after identity verification; the pricing page also mentions 1 USD of free credits to start.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "alipay",
+      "note": "Named in the recharge agreement (China site)"
+     },
+     {
+      "method": "wechat_pay",
+      "note": "Named in the recharge agreement (China site)"
+     }
+    ],
+    "source_url": "https://docs.siliconflow.cn/docs/legals/recharge-policy",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Real-name (identity) verification before recharging and before using free models",
+    "source_url": "https://docs.siliconflow.cn/en/faqs/misc_finance",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:kimi-api-platform",
+  "type": "host",
+  "name": "Kimi API Platform",
+  "description": "Moonshot AI's own API for its Kimi models, with an overseas endpoint; prepaid recharge from 1 USD, online top-up by WeChat Pay or Alipay QR code.",
+  "publisher": "Moonshot AI",
+  "publisher_region": {
+   "value": "CN",
+   "source_url": "https://www.technologyreview.com/2025/02/04/1110942/four-chinese-ai-startups-deepseek/amp/",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://platform.kimi.ai/",
+   "https://platform.kimi.ai/docs/pricing/limits"
+  ],
+  "documentation_urls": [
+   "https://platform.kimi.ai/docs/guide/account-and-payments",
+   "https://platform.kimi.ai/docs/pricing/limits",
+   "https://platform.kimi.ai/docs/agreement/modeluse"
+  ],
+  "evidence_urls": [
+   "https://platform.kimi.ai/docs/guide/account-and-payments",
+   "https://platform.kimi.ai/docs/pricing/limits",
+   "https://platform.kimi.ai/docs/agreement/modeluse"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). platform.kimi.ai blocked; facts from snippets. Account and Billing doc snippet: individual online top-up by WeChat Pay and Alipay QR codes; business users contact sales, online payment or bank transfer by region. The Terms of Service snippet also lists bank cards and credit cards as allowed payment accounts, but which cards work overseas is unconfirmed, so cards are not listed. Limits page snippet: 1 USD minimum recharge, 5 USD voucher at 5 USD cumulative. Overseas base URL api.moonshot.ai vs. mainland api.moonshot.cn. HQ Beijing from third-party press (MIT Technology Review and others).",
+  "provider_region": {
+   "value": "CN",
+   "source_url": "https://www.technologyreview.com/2025/02/04/1110942/four-chinese-ai-startups-deepseek/amp/",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://platform.kimi.ai/",
+  "access": {
+   "free": {
+    "value": "paid_only",
+    "source_url": "https://platform.kimi.ai/docs/pricing/limits",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "No free tier found: a recharge of at least 1 USD is needed to start; a 5 USD voucher is given once cumulative recharges reach 5 USD.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "wechat_pay",
+      "note": "QR-code online top-up for individual accounts"
+     },
+     {
+      "method": "alipay",
+      "note": "QR-code online top-up for individual accounts"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "Business accounts, depending on account region and billing setup (contact sales)"
+     }
+    ],
+    "source_url": "https://platform.kimi.ai/docs/guide/account-and-payments",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Prepaid: minimum recharge of 1 USD; account tier and rate limits depend on cumulative recharge",
+    "source_url": "https://platform.kimi.ai/docs/pricing/limits",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:z-ai-api",
+  "type": "host",
+  "name": "Z.ai API Platform",
+  "description": "Zhipu AI's international API for its GLM models, with free GLM Flash models and paid models billed to a card or PayPal.",
+  "publisher": "Z.ai (Zhipu AI)",
+  "publisher_region": {
+   "value": "CN",
+   "source_url": "https://qz.com/china-six-tigers-ai-startup-zhipu-moonshot-minimax-01ai-1851768509",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://z.ai/model-api",
+   "https://docs.z.ai/guides/overview/pricing"
+  ],
+  "documentation_urls": [
+   "https://docs.z.ai/guides/overview/quick-start",
+   "https://docs.z.ai/guides/overview/pricing",
+   "https://docs.z.ai/help/faq",
+   "https://docs.z.ai/devpack/faq"
+  ],
+  "evidence_urls": [
+   "https://docs.z.ai/guides/overview/pricing",
+   "https://docs.z.ai/guides/overview/quick-start",
+   "https://docs.z.ai/help/faq",
+   "https://docs.z.ai/devpack/faq"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). z.ai and docs.z.ai blocked; facts from snippets. Pricing page snippet: GLM-4.7-Flash, GLM-4.5-Flash, GLM-4.6V-Flash listed Free; GLM-5.3-Flash 0.15/0.50 USD per 1M tokens. FAQ snippet: no 3DS support for card recharge; Devpack FAQ snippet: remaining amount charged to linked bank card or PayPal. Free-model rate limits not found. HQ Beijing from third-party press. The launch URL z.ai/model-api is assumed, not confirmed; the billing page is z.ai/manage-apikey/billing per the FAQ snippet. Mainland China users have the separate bigmodel.cn platform (not researched).",
+  "provider_region": {
+   "value": "CN",
+   "source_url": "https://qz.com/china-six-tigers-ai-startup-zhipu-moonshot-minimax-01ai-1851768509",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://z.ai/model-api",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://docs.z.ai/guides/overview/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "GLM-4.7-Flash, GLM-4.5-Flash and GLM-4.6V-Flash are free for input and output; newer models such as GLM-5.3-Flash are paid.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Cards that require 3-D Secure verification are not supported"
+     },
+     {
+      "method": "paypal",
+      "note": ""
+     }
+    ],
+    "source_url": "https://docs.z.ai/help/faq",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Account; top up on the Billing page, then create an API key",
+    "source_url": "https://docs.z.ai/guides/overview/quick-start",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:sarvam-api",
+  "type": "host",
+  "name": "Sarvam API",
+  "description": "Bengaluru lab Sarvam AI's APIs for Indian languages: chat models, speech-to-text, text-to-speech, translation and document parsing, priced in rupees with 100 rupees of free credits.",
+  "publisher": "Sarvam AI (Axonwise Private Limited)",
+  "publisher_region": {
+   "value": "IN",
+   "source_url": "https://www.cbinsights.com/company/sarvam-ai",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.sarvam.ai/api-pricing",
+   "https://dashboard.sarvam.ai/"
+  ],
+  "documentation_urls": [
+   "https://docs.sarvam.ai/api/getting-started/pricing",
+   "https://docs.sarvam.ai/api/platform/billing"
+  ],
+  "evidence_urls": [
+   "https://www.sarvam.ai/api-pricing",
+   "https://docs.sarvam.ai/api/getting-started/pricing",
+   "https://docs.sarvam.ai/api/getting-started/changelog",
+   "https://docs.sarvam.ai/api/platform/billing"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). sarvam.ai and docs.sarvam.ai blocked; facts from snippets. Pricing snippets: 100 INR free credits (changelog: previously 1,000), plans Pay as you go, Pro 9,999 INR/month, Growth 49,999 INR/month, Business 1,99,999 INR/month, prices excl. GST. Billing doc snippet mentions a QR step and a card step in checkout, which suggests UPI QR and card, but no page names the methods, so payment_methods is unknown. Publisher legal name Axonwise Private Limited from a World Economic Forum organisation page; HQ Bengaluru from third-party profiles.",
+  "provider_region": {
+   "value": "IN",
+   "source_url": "https://www.cbinsights.com/company/sarvam-ai",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://dashboard.sarvam.ai/",
+  "access": {
+   "free": {
+    "value": "trial",
+    "source_url": "https://docs.sarvam.ai/api/getting-started/pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "100 rupees of free credits for new verified users, usable across all APIs and not expiring (cut from 1,000 rupees in May 2026).",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Verified account; credits are bought per organisation from Settings, Billing, Add Credits; calls fail with error 402 when the balance runs out",
+    "source_url": "https://docs.sarvam.ai/api/platform/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://www.sarvam.ai/api-pricing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:krutrim-cloud",
+  "type": "host",
+  "name": "Krutrim Cloud AI Studio",
+  "description": "Indian AI cloud from Ola's Krutrim: OpenAI-compatible APIs for DeepSeek, Llama, Krutrim and Indic speech models, prepaid in rupees by card or UPI.",
+  "publisher": "Krutrim",
+  "publisher_region": {
+   "value": "IN",
+   "source_url": "https://yourstory.com/ai-story/krutrim-announces-strategic-pivot-to-ai-cloud-services",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.olakrutrim.com/ai-studio",
+   "https://www.olakrutrim.com/pricing"
+  ],
+  "documentation_urls": [
+   "https://docs.cloud.olakrutrim.com/basics/ai-studio",
+   "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio",
+   "https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits"
+  ],
+  "evidence_urls": [
+   "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio",
+   "https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits",
+   "https://docs.cloud.olakrutrim.com/basics/ai-studio/ai-jobs/inferencing",
+   "https://www.olakrutrim.com/ai-studio"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). olakrutrim.com and docs.cloud.olakrutrim.com blocked; facts from snippets. Adding Credits snippet: card or UPI via Razorpay, 1 INR = 1 credit, 18% GST. Billing for AI Studio snippet: per-model INR prices (e.g. DeepSeek-R1 11/16 INR per 1M input/output tokens); docs page about 464 days old. Card recorded as card_local because Razorpay is an Indian gateway; whether foreign cards work is unconfirmed. Status: 2026 press says Krutrim pivoted to AI cloud services (May 2026) after layoffs and removing its Kruti app; no 2026 source names AI Studio, so check it is still offered. Free tier unknown (a 2024 promotion made it free until Diwali; expired).",
+  "provider_region": {
+   "value": "IN",
+   "source_url": "https://yourstory.com/ai-story/krutrim-announces-strategic-pivot-to-ai-cloud-services",
+   "source_type": "third_party",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://cloud.olakrutrim.com/",
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": [
+     {
+      "method": "card_local",
+      "note": "Card via Razorpay; 18% GST added"
+     },
+     {
+      "method": "upi",
+      "note": "Via Razorpay; 1 INR = 1 credit, credited instantly"
+     }
+    ],
+    "source_url": "https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Prepaid credits added from the console balance menu; usage billed per model in rupees",
+    "source_url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": true,
+    "source_url": "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:gemini-api",
+  "type": "host",
+  "name": "Gemini API (Google AI Studio)",
+  "description": "Google's developer API for Gemini models through Google AI Studio, with a free tier on Flash and Flash-Lite models in supported countries; paid tiers use Cloud Billing.",
+  "publisher": "Google",
+  "publisher_region": {
+   "value": "US",
+   "source_url": "https://ai.google.dev/gemini-api/terms",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://ai.google.dev/gemini-api/docs",
+   "https://aistudio.google.com/"
+  ],
+  "documentation_urls": [
+   "https://ai.google.dev/gemini-api/docs/pricing",
+   "https://ai.google.dev/gemini-api/docs/billing",
+   "https://ai.google.dev/gemini-api/docs/available-regions",
+   "https://ai.google.dev/gemini-api/docs/rate-limits"
+  ],
+  "evidence_urls": [
+   "https://ai.google.dev/gemini-api/docs/pricing",
+   "https://ai.google.dev/gemini-api/docs/billing",
+   "https://ai.google.dev/gemini-api/docs/available-regions",
+   "https://ai.google.dev/gemini-api/terms"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). ai.google.dev and aistudio.google.com blocked; facts from snippets of official pages. Billing snippet: new accounts start on Free tier; Tier 1 by linking billing, 250 USD cap. Pricing snippet: Gemini 2.5 Flash and Flash-Lite free on standard tier; Gemini 3.1 Pro Preview not available free; Batch no free tier; Search grounding 500 RPD free. Terms snippet: only Paid Services for API clients offered to users in the EEA, Switzerland or UK. The available-regions page lists supported countries, but the list could not be read, so countries_available is unknown (needed: fetch and convert to ISO codes). Payment methods depend on Google Cloud Billing per country; docs.cloud.google.com blocked, so unknown. Free-tier quota figures vary across forum reports; none recorded. Publisher region US is general knowledge (Google LLC, Mountain View); the cited terms page was not read for it.",
+  "provider_region": {
+   "value": "US",
+   "source_url": "https://ai.google.dev/gemini-api/terms",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://aistudio.google.com/",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://ai.google.dev/gemini-api/docs/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free tier on some models (e.g. Gemini 2.5 Flash and Flash-Lite; not Pro previews, not Batch), per-model rate limits that Google has cut before; 500 free Google Search grounding requests a day. AI Studio itself is free in supported regions. Apps serving users in the EEA, Switzerland or UK must use paid services.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Google account in a supported country or territory; linking a Cloud Billing account moves a project to Tier 1 (250 USD monthly spend cap)",
+    "source_url": "https://ai.google.dev/gemini-api/docs/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:host:lelapa-vulavula",
+  "type": "host",
+  "name": "Vulavula (Lelapa AI)",
+  "description": "Lelapa AI's language API for African languages: transcription, translation and language ID in isiZulu, Sesotho, Afrikaans and South African English; free plan without a card.",
+  "publisher": "Lelapa AI",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://lelapa.ai/vulavula",
+   "https://vulavula.lelapa.ai/"
+  ],
+  "documentation_urls": [
+   "https://docs.lelapa.ai/",
+   "https://docs.lelapa.ai/overview/plans",
+   "https://docs.lelapa.ai/overview/language-support"
+  ],
+  "evidence_urls": [
+   "https://docs.lelapa.ai/overview/plans",
+   "https://docs.lelapa.ai/overview/introduction",
+   "https://docs.lelapa.ai/overview/language-support"
+  ],
+  "verification_status": "candidate",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Fetched means downloaded with curl on 2026-11-15 and read directly. Snippet means read only in web-search results from the cited page, because the host was blocked by this session's network (re-fetch before relying on it). Not tried with curl (sibling hosts blocked); facts from snippets of docs.lelapa.ai. Plans page snippet: free 100 calls/month, no card; Dev Pass 9.99 USD, SMME Pass 49 USD. The live billing page snippet describes the 9.99 USD plan as up to 1,000 calls/month; an older pricing page (2025 offer) is stale. Languages from the introduction and language-support snippets: isiZulu (code-switched), Sesotho, Afrikaans, South African English, African French; translation English to/from zul, afr, nso, sot. This is a language API (speech and translation), not a general LLM host. Payment methods not found. Publisher region left unknown: no source in the results confirmed Lelapa AI's country (commonly described as South African; unverified here). AWS Marketplace listings also exist.",
+  "provider_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "kinds": [
+   "inference_endpoint"
+  ],
+  "data_centers": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "gpu_types": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "data_residency": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "launch_url": "https://vulavula.lelapa.ai/",
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://docs.lelapa.ai/overview/plans",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free plan: 100 API calls per month, no card required; API keys expire every 90 days. Paid: Dev Pass 9.99 USD/month, SMME Pass 49 USD/month, Enterprise on request.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Sign up at vulavula.lelapa.ai and create an API key; no card required for the free plan",
+    "source_url": "https://docs.lelapa.ai/overview/plans",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ }
+]
