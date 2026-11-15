@@ -19,7 +19,9 @@ export function watchUrls(r) {
   const accs = r.access ? [r.access] : (r.distributions || []).map((d) => d.access).filter(Boolean);
   const urls = [];
   for (const a of accs) for (const f of ACCESS_FIELDS) { const u = a[f]?.source_url; if (u && /^https?:\/\//.test(u)) urls.push(u); }
-  return [...new Set(urls)].slice(0, RULES.perListing);
+  // The app's or provider's own homepage too: if it's gone, the listing may be discontinued.
+  if (r.url && /^https?:\/\//.test(r.url)) urls.unshift(r.url);
+  return [...new Set(urls)].slice(0, RULES.perListing + 1);
 }
 
 // Words that show a fact is stated on a page, per payment method and for "free". Many languages.

@@ -43,7 +43,7 @@ export function pickModelsOnline(models, { task, ulang }) {
 }
 
 export function pickApps(apps, { task, device, country, ulang }) {
-  const c = apps.filter((r) => r.warning === 'none' && (r.answers?.good_for || []).includes(task) && availableIn(r.access, country) !== 'no' && (device !== 'phone' || r.on_device || (r.app_store_urls || []).length || r.official_store));
+  const c = apps.filter((r) => r.warning === 'none' && !r.possibly_discontinued && (r.answers?.good_for || []).includes(task) && availableIn(r.access, country) !== 'no' && (device !== 'phone' || r.on_device || (r.app_store_urls || []).length || r.official_store));
   return top(c.map((r) => {
     const here = country ? availableIn(r.access, country) : 'unknown';
     const local = country && r.publisher_region?.value === country;
@@ -57,7 +57,7 @@ export function pickApps(apps, { task, device, country, ulang }) {
 }
 
 export function pickOffline(apps, { task, country }) {
-  const c = apps.filter((r) => r.on_device && r.warning === 'none' && availableIn(r.access, country) !== 'no' && ((r.answers?.good_for || []).includes(task) || task === 'chat' || task === 'writing'));
+  const c = apps.filter((r) => r.on_device && r.warning === 'none' && !r.possibly_discontinued && availableIn(r.access, country) !== 'no' && ((r.answers?.good_for || []).includes(task) || task === 'chat' || task === 'writing'));
   return top(c.map((r) => {
     const free = r.answers?.free;
     const reasons = ['📱 runs offline on your phone', free === 'free' ? '🆓 free' : free === 'free_tier' ? '🆓 free tier' : free === 'paid_only' ? 'paid' : null, /github\.com/.test((r.official_urls || []).join(' ')) && '🔓 open source', r.verification_status === 'verified' && '✅ checked at the official source'].filter(Boolean);

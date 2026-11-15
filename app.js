@@ -136,6 +136,12 @@ function matches(r) {
   return true;
 }
 
+// What people look for but don't find: counted as GoatCounter events (the search words only, nothing about the person).
+let emptyTimer = null;
+function trackEmpty(path) {
+  clearTimeout(emptyTimer);
+  emptyTimer = setTimeout(() => { try { window.goatcounter?.count?.({ path, title: 'No results', event: true }); } catch {} }, 2000);
+}
 function render() {
   for (const t of TYPES) {
     const tab = $(`#tab-${t}`);
@@ -149,6 +155,7 @@ function render() {
   recs.sort((a, b) => suits(a) - suits(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
   $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
+  if (!recs.length && state.q) trackEmpty(`search-empty/${state.type}/${state.q.toLowerCase().slice(0, 40)}`);
   $('#more-btn').hidden = recs.length <= state.limit;
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
   $('#summary').textContent = `${recs.length} of ${all.length} ${TYPE_WORDS[state.type]}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
@@ -304,6 +311,7 @@ async function showPicks(share = true) {
   cols.push([t('appsCol'), pickApps(apps, s), t('appsNote')]);
   cols.push([t('online'), pickModelsOnline(models, s), t('onlineNote')]);
   const item = (p) => `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`;
+  for (const [h, list] of cols) if (!list.length) try { window.goatcounter?.count?.({ path: `picks-empty/${h.replace(/^\S+\s/, '')}/${s.task}/${s.device}/${s.country || 'any'}/${s.ulang || 'any'}`, title: 'No picks', event: true }); } catch {}
   $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p>`}</div>`).join('')}</div>
     <p class="share pick-share"><button class="share-btn" type="button" id="s-share">${esc(t('share'))}</button></p>`;
   if (share) history.replaceState(null, '', encodeStart(s));

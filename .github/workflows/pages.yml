@@ -47,10 +47,10 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html style.css app.js render.js picks.js i18n.js .nojekyll sitemap.xml robots.txt _site/
-          cp -r l new _site/ && cp feed.xml _site/
+          cp -r l new glossary _site/ && cp feed.xml _site/
           cp -r img _site/ && rm -rf _site/img/source
           cp data/*.json _site/data/
-          sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html _site/app.js _site/picks.js
+          sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html _site/app.js _site/picks.js _site/glossary/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }

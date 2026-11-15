@@ -72,9 +72,9 @@ export async function run({ apps = candidates(), prev = {}, fetchImpl = fetch, n
       for (const a of batch) {
         const hit = (data.results || []).find((x) => +x.trackId === a.apple_id);
         const e = out.apps[a.id] ||= {};
-        if (!hit) { e.apple = { ...(e.apple || {}), id: a.apple_id, found: false, checked_at: now }; continue; }
+        if (!hit) { e.apple = { ...(e.apple || {}), id: a.apple_id, found: false, missing: (e.apple?.missing || 0) + 1, checked_at: now }; continue; }
         const ok = sellerMatches(hit.sellerName, a.expected) || sellerMatches(hit.artistName, a.expected);
-        e.apple = { id: a.apple_id, found: true, confirmed: ok, seller: hit.sellerName || hit.artistName, name: hit.trackName, url: (hit.trackViewUrl || '').split('?')[0],
+        e.apple = { id: a.apple_id, found: true, confirmed: ok, ever_confirmed: ok || !!e.apple?.ever_confirmed, missing: 0, seller: hit.sellerName || hit.artistName, name: hit.trackName, url: (hit.trackViewUrl || '').split('?')[0],
           rating: hit.averageUserRating ? +hit.averageUserRating.toFixed(1) : null, ratings: hit.userRatingCount || 0, price: hit.formattedPrice || null, languages: (hit.languageCodesISO2A || []).map((l) => String(l).toLowerCase()), store, checked_at: now };
         ok ? confirmed++ : rejected++;
       }

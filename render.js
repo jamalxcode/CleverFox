@@ -103,6 +103,7 @@ export function cardBadges(r) {
   if (eci) b.push(`<span class="badge b-ok" title="Epoch Capabilities Index (Epoch AI)">🧠 ECI ${esc(eci.display)}</span>`);
   if (aai) b.push(`<span class="badge b-ok" title="Artificial Analysis Intelligence Index">🧠 AA ${esc(aai.display)}</span>`);
   if (a.benchmarks && !eci && !aai) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
+  if (r.possibly_discontinued) b.push(`<span class="badge b-warn" title="${esc(r.possibly_discontinued.reason)}">⚠️ Possibly discontinued</span>`);
   if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
   else if (r.warning === 'reported') b.push(badge('⚠️ Reported', 'b-warn'));
   b.push(countryBadge(r));
@@ -284,6 +285,7 @@ export function detail(r) {
     h += priceLine(r.access);
   }
   h += accessCheckLine(r);
+  if (r.possibly_discontinued) h += `<p class="ln warn-ln">⚠️ Possibly discontinued: ${esc(r.possibly_discontinued.reason)}. Check the official site before using or paying.</p>`;
   const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
   const mid = (t, n = 52) => t.length <= n ? t : `${t.slice(0, Math.ceil(n * 0.45))}…${t.slice(-Math.floor(n * 0.5))}`;
   const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(u)}">${esc(mid(short(u)))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
@@ -425,7 +427,7 @@ export function onlineLine(r) {
   };
   const shown = list.slice(0, 5).map(one).join('<span class="sep"> · </span>');
   const src = list[0].source_url ? ` <a class="src-i" href="${esc(list[0].source_url)}" rel="noopener" target="_blank" title="Provider list from ${esc(list[0].source_url.includes('openrouter') ? 'OpenRouter' : 'Hugging Face')}, ${esc(fmtDate(list[0].observed_at))}">ⓘ</a>` : '';
-  return `<p class="ln">☁️ <strong>Use it online</strong> <span class="muted">(no GPU needed; $ per million tokens in / out)</span>: ${shown}${list.length > 5 ? ` <span class="muted">+${list.length - 5} more</span>` : ''}${src}</p>`;
+  return `<p class="ln">☁️ <strong>Use it online</strong> <span class="muted">(no GPU needed; $ per million tokens in / out, <a href="${esc(view.base)}glossary/#tokens">what's a token?</a>)</span>: ${shown}${list.length > 5 ? ` <span class="muted">+${list.length - 5} more</span>` : ''}${src}</p>`;
 }
 
 // ---- how to start: one step, for the visitor's device ----

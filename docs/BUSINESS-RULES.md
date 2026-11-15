@@ -197,6 +197,12 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
   - ☠️ `dont_touch`: strong evidence such as a security advisory;
   - flagged listings stay visible with the warning.
 
+## 10j. Gaps, discontinued listings, glossary
+
+- **What people can't find:** a search with no results (after 2 seconds of no typing) and an empty picks column are counted as GoatCounter events (`search-empty/<tab>/<words>`, `picks-empty/<column>/<task>/<device>/<country>/<language>`). Only the search words and choices, nothing about the person. These show which data to research next.
+- **Possibly discontinued:** an app whose App Store listing was confirmed before and is missing on 2 checks in a row, or an app or provider whose homepage answers 404/410 on 2 checks, shows "⚠️ Possibly discontinued" with the reason, and is left out of picks. It isn't removed.
+- **Glossary** (`glossary/`): plain explanations of model, local, memory, 4-bit, parameters, tokens, API, GGUF, Ollama, open weights and licenses, benchmarks, free tiers, paying without a card, uncensored, verified. The "Use it online" line links to "what's a token?".
+
 ## 10i. Your language
 
 - **App languages from the App Store:** a confirmed App Store listing's languages fill an app's `interface_languages` when it's unknown (source: Apple's lookup, official).

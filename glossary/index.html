@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary · CleverFox</title>
+<meta name="description" content="Plain explanations of the AI words used on CleverFox: tokens, 4-bit, memory, GGUF, open weights, benchmarks, API and more.">
+<link rel="canonical" href="https://jamalxcode.github.io/CleverFox/glossary/">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=__BUILD__">
+<link rel="stylesheet" href="../style.css?v=__BUILD__">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="../">← All listings</a></p></div></header>
+<main class="wrap listing glossary">
+<h1>📖 Glossary</h1>
+<p class="muted">The words CleverFox uses, in plain language.</p>
+
+<h2 id="model">Model</h2>
+<p>The "brain" behind an AI app: a large file trained to write, talk, code, see or make pictures. Apps like ChatGPT use models behind the scenes. Some models can be downloaded and run on your own computer or phone.</p>
+
+<h2 id="local">Runs locally / offline</h2>
+<p>The model runs on your own device. Nothing you type leaves it, it works without internet once downloaded, and it's free to use. It needs enough memory (see below).</p>
+
+<h2 id="memory">Memory (RAM or graphics card memory)</h2>
+<p>How much the device can hold at once. A model must fit in memory to run. On Windows and Linux, check RAM, or the graphics card's memory (VRAM) if you have one. On a Mac, the memory is shared, so the full amount counts. CleverFox's "needs ~X GB" is an estimate from the file size or the model's size; "recommended" leaves room for the rest of your computer.</p>
+
+<h2 id="bit">4-bit, 8-bit, 16-bit (quantization)</h2>
+<p>Ways of shrinking a model. A 4-bit copy is about a quarter of the size of the full 16-bit one and runs on smaller devices, with a small loss in quality. Most people running models at home use 4-bit.</p>
+
+<h2 id="params">Parameters (7B, 30B…)</h2>
+<p>The size of a model, in billions of numbers ("B"). Bigger usually means smarter but needs more memory. Size isn't the same as memory needed: a 7B model at 4-bit needs about 5 GB.</p>
+
+<h2 id="tokens">Tokens</h2>
+<p>The pieces of text AI services count and charge for. One token is about three quarters of an English word, so <strong>1 million tokens is roughly 750,000 words</strong>, several long books. Online prices are "per million tokens", usually one price for what you send (input) and another for what the AI writes (output).</p>
+
+<h2 id="api">API and API provider</h2>
+<p>A way for programs and developer tools to use a model over the internet, paying per use. An API provider runs models on its own servers so you don't need a powerful computer. "Use it online" on CleverFox lists them.</p>
+
+<h2 id="gguf">GGUF, MLX, ONNX</h2>
+<p>File formats for running models on your own device. GGUF works with Ollama, LM Studio, Jan and llama.cpp on Windows, Mac and Linux. MLX is for Apple Silicon Macs. ONNX runs in many apps and on phones.</p>
+
+<h2 id="ollama">Ollama, LM Studio, Jan</h2>
+<p>Free programs that download and run models on your computer. Ollama uses one command (CleverFox shows it on each model); LM Studio and Jan are point and click.</p>
+
+<h2 id="open-weights">Open weights, open source, license</h2>
+<p>"Open weights" means you can download the model; it doesn't always mean you can use it for anything. The license says what's allowed, for example whether commercial use is permitted. Open source usually means the code and training details are open too.</p>
+
+<h2 id="benchmark">Benchmarks (ECI, AA index)</h2>
+<p>Tests of how capable a model is. CleverFox shows independent ones: the Epoch Capabilities Index (ECI) from Epoch AI and the Artificial Analysis index. Higher is better. A company's own scores are labeled "self-reported" because no one else checked them.</p>
+
+<h2 id="free-tier">Free, free tier, trial</h2>
+<p><strong>Free:</strong> no payment for normal use. <strong>Free tier:</strong> a free plan with limits, and paid plans for more. <strong>Trial:</strong> free for a short time, then paid.</p>
+
+<h2 id="no-card">Pay without a card</h2>
+<p>Ways to pay that don't need a Visa or Mastercard: mobile money (such as M-Pesa), UPI, Pix, PayPal, bank transfer, crypto, app store billing, gift cards or your phone bill. CleverFox lists only official payment routes.</p>
+
+<h2 id="uncensored">Uncensored / abliterated</h2>
+<p>Copies of models changed by someone other than the maker to refuse fewer requests. They can produce harmful or false content; use them with care.</p>
+
+<h2 id="verified">Verified, not yet verified</h2>
+<p><strong>Verified</strong> means the facts were read on the official page, by hand or by CleverFox's automatic page check. <strong>Not yet verified</strong> means they came from search results and still need checking. Every fact links to where it came from.</p>
+</main>
+<footer class="wrap foot"><p><a href="../">CleverFox</a></p></footer>
+<!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
+<script>
+  (function () {
+    if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
+    window.goatcounter = { endpoint: 'https://salacompany.goatcounter.com/count', path: function (p) { return location.host + p; } };
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://salacompany.goatcounter.com/count');
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>

@@ -432,6 +432,22 @@ for (const r of published) {
 }
 if (APPSTORE) console.log(`App Store: ${storeConfirmed} apps with a confirmed official listing`);
 
+// ---- possibly discontinued: a confirmed App Store app missing twice, or a homepage that's gone ----
+{
+  const RC = existsSync(join(importDir, 'recheck.json')) ? JSON.parse(readFileSync(join(importDir, 'recheck.json'), 'utf8')) : null;
+  let n = 0;
+  for (const r of published) {
+    if (r.type !== 'app' && r.type !== 'host') continue;
+    const e = APPSTORE?.apps?.[r.id]?.apple;
+    const home = r.url && RC?.urls?.[r.url];
+    let reason = null;
+    if (e?.ever_confirmed && e.missing >= 2) reason = `no longer found in the App Store (checked ${e.checked_at.slice(0, 10)})`;
+    else if (home && home.fails >= 2 && [404, 410].includes(home.status)) reason = `its homepage answers "page not found" (since ${String(home.ok_at || home.checked_at).slice(0, 10)})`;
+    if (reason) { r.possibly_discontinued = { reason }; n++; }
+  }
+  if (n) console.log(`Possibly discontinued: ${n} listings`);
+}
+
 // ---- re-check of access source pages (tools/recheck.mjs) and the age of access facts ----
 const { accessCheck } = await import('./recheck.mjs');
 const RECHECK = existsSync(join(importDir, 'recheck.json')) ? JSON.parse(readFileSync(join(importDir, 'recheck.json'), 'utf8')) : null;
