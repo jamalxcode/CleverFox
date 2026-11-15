@@ -12,7 +12,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const OUT = join(root, arg('--out', 'pages-cache'));
 const ALL = process.argv.includes('--all');
-export const RULES = { perListing: 18, maxChars: 60000, timeoutMs: 25000, concurrency: 4, renderBelowChars: 800 };
+export const RULES = { perListing: 18, maxChars: 60000, timeoutMs: 25000, concurrency: 6, renderBelowChars: 800, budgetMs: 35 * 60000 };
 // Common official pages that often hold pricing and payment facts.
 const EXTRA_PATHS = ['/pricing', '/plans', '/faq', '/terms'];
 
@@ -36,9 +36,9 @@ async function render(url) {
     if (!browser) { const { chromium } = await import('playwright'); browser = await chromium.launch(); }
     const page = await browser.newPage({ userAgent: 'CleverFox-verify/1.0 (+https://jamalxcode.github.io/CleverFox/)' });
     try {
-      const res = await page.goto(url, { waitUntil: 'networkidle', timeout: 40000 }).catch(() => null);
+      const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => null);
       if (!res || res.status() !== 200) return { status: res?.status() || 0, error: 'not rendered (no 200 answer)' };
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(2500);
       const title = await page.title().catch(() => '');
       const text = (await page.evaluate(() => document.body?.innerText || '').catch(() => '')).split('\n').map((l) => l.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n');
       return { status: 200, final_url: page.url(), title, chars: text.length, text: text.slice(0, RULES.maxChars), rendered: true };
@@ -75,9 +75,11 @@ async function main() {
   const list = seed.filter((r) => (r.type === 'app' || r.type === 'host') && (ALL || r.verification_status !== 'verified'));
   rmSync(OUT, { recursive: true, force: true }); mkdirSync(join(OUT, 'pages'), { recursive: true });
   const jobs = list.flatMap((r) => urlsOf(r).map((u, i) => ({ id: r.id, file: r._file, url: u, n: i })));
-  const index = {}; let next = 0; let ok = 0;
+  const index = {}; let next = 0; let ok = 0; const started = Date.now(); let skipped = 0;
   await Promise.all(Array.from({ length: RULES.concurrency }, async () => {
     while (next < jobs.length) {
+      // Time budget: stop starting pages and save what was fetched (the rest is listed as skipped).
+      if (Date.now() - started > RULES.budgetMs) { const j = jobs[next++]; skipped++; (index[j.id] ||= { file: j.file, pages: [] }).pages.push({ url: j.url, file: null, status: 0, chars: 0, error: 'skipped: time budget' }); continue; }
       const j = jobs[next++];
       let res = await fetchPage(j.url);
       // Only pages that answered 200 with almost no text (built by JavaScript) are rendered; refusals stay refusals.
@@ -89,7 +91,7 @@ async function main() {
   }));
   writeFileSync(join(OUT, 'index.json'), JSON.stringify({ fetched_at: new Date().toISOString(), listings: list.length, pages: jobs.length, readable: ok, index }, null, 1) + '\n');
   if (browser) await browser.close();
-  console.log(`Fetched ${jobs.length} pages for ${list.length} listings; ${ok} readable.`);
+  console.log(`Fetched ${jobs.length - skipped} of ${jobs.length} pages for ${list.length} listings; ${ok} readable${skipped ? `; ${skipped} skipped for time` : ''}.`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main();
