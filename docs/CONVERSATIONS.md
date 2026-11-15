@@ -12,6 +12,38 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-15: third critique, "do it all", and X caching
+**Where:** Claude Code session.
+**Asked:**
+- Critique again how to make CleverFox more useful, then "do it all".
+- Mid-way: "when X is pulled for someone, keep it cached for the next user, only refresh daily if needed".
+
+**Critique (numbers):**
+- 17 of 93 apps and hosts verified.
+- 1 listing with mobile money.
+- 4 of 55 apps with known interface languages.
+- 2 hosts with African data centers.
+- 52 of 858 models with an independent benchmark.
+
+**Outcome (all published to `main`):**
+- **Pay through Google Play:** payment methods per country for 72 countries, read from Google Play Help, shown on apps sold through Google Play; they count as payable without a card (decision 64). Apple's table is held back: its page couldn't be read directly. Google Play in Kenya names Airtel Money, not M-Pesa.
+- **Automatic fact checking:** the daily re-check looks for each payment method's and "free"'s words on the source page. Candidates whose facts are all found become verified ("automatic page check").
+- **Your language:** a picker, app languages from the App Store listing, 🗣️ badges, and language-aware picks.
+- **Picks:** they say "no independent score yet" where a model has none.
+- **Gaps and discontinued listings:**
+  - empty searches and empty pick columns are counted in GoatCounter;
+  - a "possibly discontinued" mark appears when a confirmed App Store app goes missing or a homepage is gone;
+  - a new glossary page.
+- **Guides and posting:** 10 guide pages built from the catalog, and a weekly X post that is off until `X_POST_ENABLED` and the posting keys are set.
+- **X reads:** visitors never cause X reads; the daily run's results serve everyone. Now one day's read share per calendar day, the announcement search once a day, and no listing re-read within 24 hours, so extra runs on the same day cost nothing.
+
+**Open:**
+- the App Store payments table needs Apple's page read directly;
+- Artificial Analysis needs the free `AA_API_KEY` secret;
+- the custom domain needs DNS;
+- translations need native review;
+- the weekly X post needs posting keys.
+
 ## 2026-11-15: second critique, "make it more useful"
 **Where:** Claude Code session.
 **Asked:** critique how CleverFox can be more useful; then "do it all"; and update the repo with design decisions, the conversation, what we're aiming for, business rules and the workflow process.
