@@ -96,7 +96,7 @@ export function linksIn(urls) {
 export class XClient {
   constructor(token, { budget, fetchImpl = fetch, log = console.log } = {}) { this.token = token; this.budget = budget; this.reads = 0; this.fetch = fetchImpl; this.log = log; }
   async search(query, max) {
-    if (this.reads + max > this.budget) return null;
+    if (this.reads + Math.max(10, Math.min(100, max)) > this.budget) return null; // X returns at least 10 posts per search
     const params = new URLSearchParams({ query, max_results: String(Math.max(10, Math.min(100, max))), sort_order: 'relevancy', 'tweet.fields': 'created_at,public_metrics,author_id,lang,entities,referenced_tweets', expansions: 'author_id', 'user.fields': 'username' });
     for (let attempt = 0; attempt < 4; attempt++) {
       let res;
