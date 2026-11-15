@@ -315,6 +315,10 @@ Downloadable models can also run on a rented cloud server; API models and web ap
 
 **Why:** the parts that make CleverFox different (country, payment, verified, what to use) were the ones most likely to overstate a fact. Hiding the doubtful ones, and saying what we don't know, matters more than looking complete. Fewer apps in picks and guides is the honest result of only 17 being verified.
 
+### 67. Verification reviews: official pages fetched by GitHub, facts compared with quotes
+**Decision:** a manual workflow ("Fetch pages for verification") downloads the readable text of each unverified listing's official pages to the `pages-cache` branch, because this session's network reaches only a few of those sites. A review session compares every stated fact with that text. Each confirmation or correction quotes the page exactly, and `tools/apply-verification.mjs` applies a listing only if every quote is found on its pages. A listing is verified when every stated fact is confirmed or corrected. Generic "credit card" counts as card payment; a processor like Stripe isn't a payment method. Decision 66's "a person" now means this review, which reads the pages; a keyword match still never verifies.
+**Why:** the owner asked to verify the 76 unverified apps and hosts. Quotes checked by a program keep the review honest: nothing can be "confirmed" from memory. First run (16 November): 79 listings, 472 pages fetched, 39 verified, 154 corrections, 0 quotes rejected. Verified apps and hosts went from 17 to 56 of 96.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

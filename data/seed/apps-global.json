@@ -213,7 +213,7 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. A direct re-check was attempted later the same day: help.openai.com and openai.com returned HTTP 403 (bot block), so nothing could be confirmed. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. A direct re-check was attempted later the same day: help.openai.com and openai.com returned HTTP 403 (bot block), so nothing could be confirmed. OpenAI publishes a supported countries and territories list (article 7947663) but its full contents were not retrievable; it warns that access outside listed countries may lead to blocking, and Ukraine is listed 'with certain exceptions'. The payment article reportedly also names GoPay, GCash and MoMo for specific countries; these were left out because the countries and exact wording were not visible. Multi-currency billing is supported per the same article (also titled 'multi-currency billing'); app-store purchases are charged in local currency. Phone-only signup is available to eligible new users depending on country (article 10193193); whether a phone number is mandatory was not confirmed, so signup_requirements left unknown. Free tier limits from search snippets of article 9275245 and may change. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations; not found on the pages: access.payment_methods (all 7 methods), access.free_limits, access.local_currency_pricing, description (voice, file analysis), categories (writing). All four help.openai.com pages returned 403; only the chatgpt.com shell was readable, which shows a free sign-up and paid plans but nothing on payment methods or local pricing.",
   "url": "https://chatgpt.com",
   "app_store_urls": [],
   "categories": [
@@ -498,12 +498,12 @@
    "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce",
    "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Microsoft support page says the Copilot app is available in over 170 markets, excluding China (Hong Kong is not excluded) and 'embargoed markets'; the embargoed markets are not named, so countries_unavailable lists only CN and is incomplete. Microsoft's consumer page says Copilot has a free baseline experience and Microsoft 365 Premium unlocks more AI features; specific free limits and payment methods were not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Microsoft support page says the Copilot app is available in over 170 markets, excluding China (Hong Kong is not excluded) and 'embargoed markets'; the embargoed markets are not named, so countries_unavailable lists only CN and is incomplete. Microsoft's consumer page says Copilot has a free baseline experience and Microsoft 365 Premium unlocks more AI features; specific free limits and payment methods were not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 11 quoted confirmations, corrected or added: access.free, access.signup_requirements. All stated facts confirmed; free tier source moved to the Copilot homepage, which states it directly, and sign-in with a Microsoft account added. Paid route is Microsoft 365 plans (US$ prices on the plans page); payment methods not stated.",
   "url": "https://copilot.microsoft.com",
   "app_store_urls": [],
   "categories": [
@@ -520,9 +520,9 @@
   "access": {
    "free": {
     "value": "free_tier",
-    "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+    "source_url": "https://copilot.microsoft.com",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "free_limits": null,
    "payment_methods": {
@@ -546,10 +546,10 @@
     "observed_at": "2026-11-14T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": "Microsoft account (free tier needs signing in)",
+    "source_url": "https://copilot.microsoft.com",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
     "value": "unknown",
@@ -557,7 +557,8 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -717,7 +718,7 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Payment methods from a search snippet of Perplexity's own help article on Stripe billing (cards, Cash App, Google and Apple Pay, ACH, PayPal). A free plan clearly exists per third-party sources (limited Pro searches per day, figures conflict: 3 vs 5) but the official plan article's text was not visible, so free left unknown. No official country list found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Payment methods from a search snippet of Perplexity's own help article on Stripe billing (cards, Cash App, Google and Apple Pay, ACH, PayPal). A free plan clearly exists per third-party sources (limited Pro searches per day, figures conflict: 3 vs 5) but the official plan article's text was not visible, so free left unknown. No official country list found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 4 quoted confirmations, corrected or added: access.free, access.free_limits; not found on the pages: access.payment_methods (Stripe billing article returned 404; the plan article only says a credit or debit card is needed for trials, no brands, PayPal, Cash App or ACH), description: searches the web and replies with cited sources (home page is a JavaScript shell), categories: chat. Free Standard tier confirmed from the official plan article and corrected from unknown; the cited Stripe billing article is gone (404), so the payment methods stay unconfirmed. The plan article also mentions App Store and Google Play subscriptions.",
   "url": "https://www.perplexity.ai",
   "app_store_urls": [],
   "categories": [
@@ -733,12 +734,12 @@
   "models_used": [],
   "access": {
    "free": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": "free_tier",
+    "source_url": "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": null,
+   "free_limits": "Free (Standard) plan: practically unlimited basic searches; very limited Pro Searches (3 a day) and 1 Research query a month.",
    "payment_methods": {
     "value": [
      {
@@ -813,12 +814,12 @@
    "https://elevenlabs.io/docs/overview/administration/billing",
    "https://elevenlabs.io/docs/help-center/account/payment-billing"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Free tier figure from a search snippet of the official API pricing page (Polish-locale URL seen: elevenlabs.io/pl/pricing/api); non-commercial-with-attribution rule from billing docs. Billing docs also say pay-as-you-go credit purchases are capped at $100/month on Free, Starter and Creator plans unless 2FA is enabled. The help-center 'What kind of payment is accepted?' answer was not visible, so payment methods unknown. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Free tier figure from a search snippet of the official API pricing page (Polish-locale URL seen: elevenlabs.io/pl/pricing/api); non-commercial-with-attribution rule from billing docs. Billing docs also say pay-as-you-go credit purchases are capped at $100/month on Free, Starter and Creator plans unless 2FA is enabled. The help-center 'What kind of payment is accepted?' answer was not visible, so payment methods unknown. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 12 quoted confirmations, corrected or added: access.free_limits, access.payment_methods, access.local_currency_pricing. Free tier, payment methods (credit card, Apple/Google Pay, UPI in India) and INR pricing in India all stated in the official billing docs; the 10,000 figure on the API pricing page is characters of TTS on the Free plan (\"10,000 ~10 min\"), not credits, so free_limits was reworded.",
   "url": "https://elevenlabs.io",
   "app_store_urls": [],
   "categories": [
@@ -838,12 +839,21 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    },
-   "free_limits": "10,000 credits per month at $0; free-plan output usable non-commercially with attribution.",
+   "free_limits": "Free plan: 10,000 characters of text to speech included (about 10 minutes); three custom voice slots for Voice Design, no voice cloning (Starter and above); output usable non-commercially with attribution.",
    "payment_methods": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": [
+     {
+      "method": "card_international",
+      "note": "Credit card; Apple Pay and Google Pay also accepted in certain countries; prepaid cards not directly supported"
+     },
+     {
+      "method": "upi",
+      "note": "India only"
+     }
+    ],
+    "source_url": "https://elevenlabs.io/docs/overview/administration/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -864,12 +874,13 @@
     "observed_at": "2026-11-14T00:00:00Z"
    },
    "local_currency_pricing": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": true,
+    "source_url": "https://elevenlabs.io/docs/overview/administration/billing",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -893,12 +904,12 @@
   "evidence_urls": [
    "https://help.suno.com/en/articles/2421185"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Official help article 'What types of payments are accepted?' only partly visible in search: it lists accepted currencies (USD, EUR, GBP, JPY, INR and others) and 'other available methods: Korean Card, UPI, KakaoPay, NaverPay'. Card networks via Stripe, PayPal-only-through-app-stores, and stablecoin/Apple Pay/Google Pay claims come from third-party blogs and are NOT included; card_international and app_store_billing are therefore not listed though likely. Free plan (reportedly 50 credits/day, non-commercial) from third-party sites only, so free left unknown. Publisher HQ not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched.",
+  "research_notes": "Session network blocked nearly every host except www.anthropic.com and claude.com, so facts below come from search-result snippets of the cited official pages, not from fetching them; record kept as candidate. Official help article 'What types of payments are accepted?' only partly visible in search: it lists accepted currencies (USD, EUR, GBP, JPY, INR and others) and 'other available methods: Korean Card, UPI, KakaoPay, NaverPay'. Card networks via Stripe, PayPal-only-through-app-stores, and stablecoin/Apple Pay/Google Pay claims come from third-party blogs and are NOT included; card_international and app_store_billing are therefore not listed though likely. Free plan (reportedly 50 credits/day, non-commercial) from third-party sites only, so free left unknown. Publisher HQ not found. publisher_region left unknown: a search suggested HQ locations but no attributable source page could be fetched. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 12 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods. Help page names cards (Visa/Mastercard/Amex), stablecoin in some regions, and app-store billing as extra routes; homepage states a free plan of 10 songs a day. Google Pay/Apple Pay/Cash App Pay left out as card-funded wallets; UPI is listed directly (not implied).",
   "url": "https://suno.com",
   "app_store_urls": [],
   "categories": [
@@ -914,30 +925,42 @@
   "models_used": [],
   "access": {
    "free": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
-    "observed_at": "2026-11-14T00:00:00Z"
+    "value": "free_tier",
+    "source_url": "https://suno.com",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": null,
+   "free_limits": "Free: up to 10 songs a day, no credit card required. Pro plan: 500 songs a month with commercial rights; Premier: 2,000 songs a month.",
    "payment_methods": {
     "value": [
+     {
+      "method": "card_international",
+      "note": "Visa, Mastercard and American Express credit and debit cards"
+     },
      {
       "method": "card_local",
       "note": "Korean cards (South Korea)"
      },
      {
       "method": "upi",
-      "note": "India (implied by the local-method list)"
+      "note": "India"
      },
      {
       "method": "other",
       "note": "KakaoPay and NaverPay (South Korea)"
+     },
+     {
+      "method": "crypto",
+      "note": "Stablecoin, in some regions only"
+     },
+     {
+      "method": "app_store_billing",
+      "note": "Google Play or App Store subscription in the mobile app (store payment methods such as PayPal apply); the plan also covers the web version"
      }
     ],
     "source_url": "https://help.suno.com/en/articles/2421185",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -963,6 +986,7 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  }
 ]

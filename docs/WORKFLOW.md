@@ -74,6 +74,13 @@ Work happens in Claude Code sessions and is pushed straight to `main`, which dep
    Note each removal in the record's `research_notes`.
 3. Records are `verified` only when the official page was actually read; otherwise they're `candidate`. The daily re-check then watches their source pages.
 
+**Verifying listings** (decision 67):
+1. Start **Fetch pages for verification** in GitHub Actions (tick "all" to include verified listings for a re-check). It saves each listing's official pages as readable text to the `pages-cache` branch.
+2. Bring them into the session: `git fetch origin pages-cache` and `git archive FETCH_HEAD | tar -x -C <dir>`.
+3. Review in groups, comparing every stated fact with the pages and quoting each confirmation or correction exactly.
+4. Apply with `node tools/apply-verification.mjs --pages <dir> --date <YYYY-MM-DD> <review files>`, which rejects any listing with a quote that isn't on its page.
+5. Run `npm test`, which includes the 30-word description limit, then commit.
+
 **Fixing or removing a listing:** add an entry with a reason to `data/corrections.json`:
 - `hide` to remove a listing;
 - `merge` to list it as another version of another listing;

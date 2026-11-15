@@ -34,7 +34,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Region list: the Cloud GPU page snippet names the US, European and Asia-Pacific cities plus Mumbai, Mexico City, São Paulo and Tel Aviv among its 32-34 regions; Bangalore, Johannesburg and Santiago appear on the A100 and A16 GPU product pages and the machine-learning solutions page (evidence_urls). Vultr does not say which GPU model is in stock in which region, so per-model availability varies; check the console. GPU lineup from vultr.com product and datasheet snippets. Payment methods from docs.vultr.com billing snippets (crypto, Alipay, wire in the billing guide; cards, PayPal, UnionPay, BitPay in the FAQ). An undated Vultr blog post announces WeChat Pay; it is not in the current billing docs, so left out. Prices are in USD; local-currency pricing not stated. Country restrictions not found. HQ: West Palm Beach address on the contact page and partner terms.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Region list: the Cloud GPU page snippet names the US, European and Asia-Pacific cities plus Mumbai, Mexico City, São Paulo and Tel Aviv among its 32-34 regions; Bangalore, Johannesburg and Santiago appear on the A100 and A16 GPU product pages and the machine-learning solutions page (evidence_urls). Vultr does not say which GPU model is in stock in which region, so per-model availability varies; check the console. GPU lineup from vultr.com product and datasheet snippets. Payment methods from docs.vultr.com billing snippets (crypto, Alipay, wire in the billing guide; cards, PayPal, UnionPay, BitPay in the FAQ). An undated Vultr blog post announces WeChat Pay; it is not in the current billing docs, so left out. Prices are in USD; local-currency pricing not stated. Country restrictions not found. HQ: West Palm Beach address on the contact page and partner terms. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 14 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods; not found on the pages: publisher_region / provider_region (contact page 403), data_centers (cloud GPU page 403), gpu_types: GB300 NVL72, HGX B300, A40, A16, MI325X, kinds: gpu_cloud/vm, description (regions list), wire note: USD, email memo, 3-5 days, free_limits amounts ($50 to $300). All vultr.com marketing pages returned 403, so regions and the wider GPU list stay unconfirmed. Payments and sign-up are confirmed from docs.vultr.com. Corrections: the PayPal backup-funding and wire-transfer details aren't on the current pages, a gift-code method was added, and the trial now cites the account docs.",
   "provider_region": {
    "value": "US",
    "source_url": "https://www.vultr.com/company/contact/",
@@ -162,20 +162,20 @@
   "access": {
    "free": {
     "value": "trial",
-    "source_url": "https://www.vultr.com/coupons/",
+    "source_url": "https://docs.vultr.com/platform/create-an-account",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Promotional credit from promo codes (amounts vary, e.g. $50 to $300), select products only, valid up to 30 days",
+   "free_limits": "Free credits for up to 30 days to try the services, through promotional codes (amounts per current promotion).",
    "payment_methods": {
     "value": [
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, American Express, Discover, JCB, UnionPay"
+      "note": "Visa, Mastercard, American Express, Discover, JCB; UnionPay listed among third-party platforms"
      },
      {
       "method": "paypal",
-      "note": "PayPal may need a backup funding source for billing agreements"
+      "note": "PayPal may also offer local networks such as Giropay and bank transfers, depending on region"
      },
      {
       "method": "alipay",
@@ -183,11 +183,15 @@
      },
      {
       "method": "crypto",
-      "note": "Through BitPay (e.g. BTC, ETH, LTC, DOGE, USDC)"
+      "note": "Through BitPay (e.g. BTC, BCH, ETH, DOGE, LTC, USDC)"
      },
      {
       "method": "bank_transfer",
-      "note": "International wire in USD; account email in the memo; 3-5 business days"
+      "note": "Wire transfer"
+     },
+     {
+      "method": "prepaid_or_gift_card",
+      "note": "Vultr gift code"
      }
     ],
     "source_url": "https://docs.vultr.com/platform/billing/make-account-payments",
@@ -252,7 +256,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU regions from the techdocs GPU Linodes availability table snippet: RTX 4000 Ada in Chicago, Frankfurt 2, Osaka, Paris, Seattle, Singapore; Mumbai, Chennai and Jakarta only for Quadro RTX 6000 / RTX PRO 6000 Blackwell marked limited deployment. An older Akamai blog said RTX 4000 Ada was coming to Mumbai; the docs do not list it. Smallest RTX 4000 Ada plan about $0.52/h (Asia-Pacific pricing page). Payment methods and \"USD only\" from the payment-methods guide snippet; the billing FAQ lists fewer card brands. Free trial, country limits and sign-up rules not confirmed. Merge review (2026-11-15): removed other (Google Pay (funded by a card or PayPal only)), because these are card checkouts or apply only to another version of the product.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU regions from the techdocs GPU Linodes availability table snippet: RTX 4000 Ada in Chicago, Frankfurt 2, Osaka, Paris, Seattle, Singapore; Mumbai, Chennai and Jakarta only for Quadro RTX 6000 / RTX PRO 6000 Blackwell marked limited deployment. An older Akamai blog said RTX 4000 Ada was coming to Mumbai; the docs do not list it. Smallest RTX 4000 Ada plan about $0.52/h (Asia-Pacific pricing page). Payment methods and \"USD only\" from the payment-methods guide snippet; the billing FAQ lists fewer card brands. Free trial, country limits and sign-up rules not confirmed. Merge review (2026-11-15): removed other (Google Pay (funded by a card or PayPal only)), because these are card checkouts or apply only to another version of the product. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 8 quoted confirmations, corrected or added: data_centers, access.payment_methods, access.local_currency_pricing; not found on the pages: publisher_region / provider_region US (akamai.com locations page returned 403), access.free (not stated). GPU region table is much wider than recorded: RTX PRO 6000 Blackwell (limited) runs in 20 regions, RTX 4000 Ada in 6, Quadro RTX 6000 in 5, so data_centers was replaced. Card note corrected (no US-eligibility wording); USD-only now cites the billing FAQ. HQ page blocked.",
   "provider_region": {
    "value": "US",
    "source_url": "https://www.akamai.com/company/locations",
@@ -267,12 +271,12 @@
    "value": [
     {
      "country": "US",
-     "city_or_region": "Chicago (RTX 4000 Ada)",
+     "city_or_region": "Chicago (RTX 4000 Ada; RTX PRO 6000 Blackwell, limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "US",
-     "city_or_region": "Seattle (RTX 4000 Ada)",
+     "city_or_region": "Seattle (RTX 4000 Ada; RTX PRO 6000 Blackwell, limited deployment)",
      "provider_region_code": null
     },
     {
@@ -281,33 +285,98 @@
      "provider_region_code": null
     },
     {
+     "country": "DE",
+     "city_or_region": "Frankfurt (RTX PRO 6000 Blackwell, Quadro RTX 6000; limited deployment)",
+     "provider_region_code": null
+    },
+    {
      "country": "FR",
-     "city_or_region": "Paris (RTX 4000 Ada)",
+     "city_or_region": "Paris (RTX 4000 Ada; RTX PRO 6000 Blackwell, limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "JP",
-     "city_or_region": "Osaka (RTX 4000 Ada)",
+     "city_or_region": "Osaka (RTX 4000 Ada; RTX PRO 6000 Blackwell, limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "SG",
-     "city_or_region": "Singapore (RTX 4000 Ada)",
+     "city_or_region": "Singapore (RTX 4000 Ada; RTX PRO 6000 Blackwell and Quadro RTX 6000, limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "IN",
-     "city_or_region": "Mumbai (Quadro RTX 6000, RTX PRO 6000 Blackwell; limited deployment)",
+     "city_or_region": "Mumbai (RTX PRO 6000 Blackwell, Quadro RTX 6000; limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "IN",
-     "city_or_region": "Chennai (RTX PRO 6000 Blackwell; limited deployment)",
+     "city_or_region": "Chennai (RTX PRO 6000 Blackwell, limited deployment)",
      "provider_region_code": null
     },
     {
      "country": "ID",
-     "city_or_region": "Jakarta (RTX PRO 6000 Blackwell; limited deployment)",
+     "city_or_region": "Jakarta (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "NL",
+     "city_or_region": "Amsterdam (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "GB",
+     "city_or_region": "London (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "US",
+     "city_or_region": "Los Angeles (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "ES",
+     "city_or_region": "Madrid (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "US",
+     "city_or_region": "Miami (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "IT",
+     "city_or_region": "Milan (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "US",
+     "city_or_region": "Newark (RTX PRO 6000 Blackwell, Quadro RTX 6000; limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "SE",
+     "city_or_region": "Stockholm (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "JP",
+     "city_or_region": "Tokyo (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "CA",
+     "city_or_region": "Toronto (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "US",
+     "city_or_region": "Washington, DC (RTX PRO 6000 Blackwell, limited deployment)",
+     "provider_region_code": null
+    },
+    {
+     "country": "US",
+     "city_or_region": "Atlanta (Quadro RTX 6000, limited deployment)",
      "provider_region_code": null
     }
    ],
@@ -344,7 +413,7 @@
     "value": [
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, Discover, American Express, UnionPay; debit and prepaid cards on these networks if eligible for US transactions"
+      "note": "Visa, Mastercard, Discover, American Express, UnionPay (credit and debit)"
      },
      {
       "method": "paypal",
@@ -352,7 +421,7 @@
      },
      {
       "method": "bank_transfer",
-      "note": "Check, ACH or wire after a support ticket sets the account up"
+      "note": "Check, ACH or wire after contacting support"
      }
     ],
     "source_url": "https://www.linode.com/docs/products/platform/billing/guides/payment-methods/",
@@ -379,7 +448,7 @@
    },
    "local_currency_pricing": {
     "value": false,
-    "source_url": "https://www.linode.com/docs/products/platform/billing/guides/payment-methods/",
+    "source_url": "https://www.linode.com/docs/products/platform/billing/faqs/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
@@ -410,12 +479,12 @@
    "https://www.tencentcloud.com/document/product/213/6091",
    "https://www.tencentcloud.com/products/gpu"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU regions from the GPU Cloud Computing \"Computing Instance\" doc snippet: GN7 (T4) in Singapore, Bangkok, Jakarta, Seoul, Tokyo, Frankfurt, Silicon Valley, Virginia, São Paulo; GN10Xp (V100) in Singapore and Bangkok among others; A10/A100 families (PNV4, GT4) only in mainland China. Riyadh is a Tencent region but no GPU listing was found there, so it is left out. Page age varies; newer GPU families may exist. Payment page says PayPal is no longer supported. HQ: Tencent is headquartered in Shenzhen (tencent.com); the international cloud's own contracting entity was not confirmed. Free trial and country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU regions from the GPU Cloud Computing \"Computing Instance\" doc snippet: GN7 (T4) in Singapore, Bangkok, Jakarta, Seoul, Tokyo, Frankfurt, Silicon Valley, Virginia, São Paulo; GN10Xp (V100) in Singapore and Bangkok among others; A10/A100 families (PNV4, GT4) only in mainland China. Riyadh is a Tencent region but no GPU listing was found there, so it is left out. Page age varies; newer GPU families may exist. Payment page says PayPal is no longer supported. HQ: Tencent is headquartered in Shenzhen (tencent.com); the international cloud's own contracting entity was not confirmed. Free trial and country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 15 quoted confirmations, corrected or added: data_centers, access.payment_methods, access.local_currency_pricing. GPU regions, card brands, bank transfer and WeChat Pay (Tencent Cloud International Pte. Ltd. accounts only) confirmed; the V100 (GN10Xp) family is also offered in Seoul, Tokyo, Frankfurt and Silicon Valley, Hong Kong was added, Korean domestic cards via NICEPAY were added, and international accounts are billed in USD only. PayPal is no longer supported.",
   "provider_region": {
    "value": "CN",
    "source_url": "https://www.tencent.com/en-us/about.html",
@@ -445,32 +514,37 @@
     },
     {
      "country": "BR",
-     "city_or_region": "São Paulo (GN7 T4)",
+     "city_or_region": "Sao Paulo (GN7 T4)",
      "provider_region_code": null
     },
     {
      "country": "KR",
-     "city_or_region": "Seoul (GN7 T4)",
+     "city_or_region": "Seoul (GN7 T4, GN10Xp V100)",
      "provider_region_code": null
     },
     {
      "country": "JP",
-     "city_or_region": "Tokyo (GN7 T4)",
+     "city_or_region": "Tokyo (GN7 T4, GN10Xp V100)",
      "provider_region_code": null
     },
     {
      "country": "DE",
-     "city_or_region": "Frankfurt (GN7 T4)",
+     "city_or_region": "Frankfurt (GN7 T4, GN10Xp V100)",
      "provider_region_code": null
     },
     {
      "country": "US",
-     "city_or_region": "Silicon Valley and Virginia (GN7 T4)",
+     "city_or_region": "Silicon Valley (GN7 T4, GN10Xp V100) and Virginia (GN7 T4)",
+     "provider_region_code": null
+    },
+    {
+     "country": "HK",
+     "city_or_region": "Hong Kong (GN7 T4)",
      "provider_region_code": null
     },
     {
      "country": "CN",
-     "city_or_region": "Chinese mainland regions (A10, A100 families)",
+     "city_or_region": "Chinese mainland regions (A10, A100, T4, V100 families)",
      "provider_region_code": null
     }
    ],
@@ -508,15 +582,19 @@
     "value": [
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, JCB, Discover, Amex, UnionPay; virtual, gift and corporate cards not supported"
+      "note": "Visa, Mastercard, JCB, Discover, Amex, UnionPay credit or debit cards; prepaid, virtual and gift cards not supported; 1 USD pre-authorisation"
+     },
+     {
+      "method": "card_local",
+      "note": "South Korea: Korean domestic cards (BC, KB Kookmin, Samsung, Shinhan, Hyundai and others) via NICEPAY"
      },
      {
       "method": "bank_transfer",
-      "note": "Transfer in USD to Tencent Cloud's account with the account ID, then claim by ticket; 3-5 business days"
+      "note": "Top-up by remittance in USD to Tencent Cloud's beneficiary account, claimed by ticket; 3-5 business days"
      },
      {
       "method": "wechat_pay",
-      "note": "Some accounts only, rolling out gradually"
+      "note": "Only for accounts contracted with Tencent Cloud International Pte. Ltd., rolling out to other entities; about 4,000 USD limit"
      }
     ],
     "source_url": "https://www.tencentcloud.com/document/product/555/7425",
@@ -542,12 +620,13 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": false,
+    "source_url": "https://www.tencentcloud.com/document/product/555/11319",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -580,12 +659,12 @@
    "https://factory.fpt.ai/gpu-virtual-machine",
    "https://factory.fpt.ai/gpu-container"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Regions from the GPU VM FAQ snippet (Hanoi 2, Vietnam and Tokyo, Japan); quick-start snippet says Hanoi 2 has H100 SXM and B300, Tokyo has H200 SXM. A 2025 FPT brief names a Chiba site for Japan and Ho Chi Minh zones for Vietnam (not GPU-specific). GPU VM page also lists RTX PRO 6000 from $2.19/GPU-hour; H100 quoted at $2.54-$2.99/h on different FPT pages. Top-up guide: VNPay, PayPal (both Vietnam region only) and Stripe cards; billing currency VND, USD or JPY, fixed at first top-up; purchases non-refundable. Older FPT pages mention bank transfer to TPBank; not in the current AI Factory guide, so left out. HQ source is third-party (OpenInfra blog); FPT is a Vietnamese group. Country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Regions from the GPU VM FAQ snippet (Hanoi 2, Vietnam and Tokyo, Japan); quick-start snippet says Hanoi 2 has H100 SXM and B300, Tokyo has H200 SXM. A 2025 FPT brief names a Chiba site for Japan and Ho Chi Minh zones for Vietnam (not GPU-specific). GPU VM page also lists RTX PRO 6000 from $2.19/GPU-hour; H100 quoted at $2.54-$2.99/h on different FPT pages. Top-up guide: VNPay, PayPal (both Vietnam region only) and Stripe cards; billing currency VND, USD or JPY, fixed at first top-up; purchases non-refundable. Older FPT pages mention bank transfer to TPBank; not in the current AI Factory guide, so left out. HQ source is third-party (OpenInfra blog); FPT is a Vietnamese group. Country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (6 pages); 17 quoted confirmations, corrected or added: access.payment_methods, access.free_limits. Visa/Mastercard aren't named on the top-up page (only a Stripe card form), so the card note was made generic. Trial credit is limited to H200 per the campaign page.",
   "provider_region": {
    "value": "VN",
    "source_url": "https://openinfra.org/blog/openinfra-member-fpt-smart-cloud/",
@@ -637,12 +716,12 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "$100 sign-up credit after a $1 verification top-up, split into per-service vouchers (e.g. $10 for GPU Container, $10 for GPU VM), valid 30 days",
+   "free_limits": "$100 sign-up credit after a $1 verification top-up, split into per-service vouchers ($10 GPU Container, $10 GPU VM, $10 AI Notebook, $70 AI Inference & AI Studio), valid 30 days; the campaign says it applies only to NVIDIA H200 and vouchers are limited.",
    "payment_methods": {
     "value": [
      {
       "method": "card_international",
-      "note": "Visa/Mastercard through Stripe"
+      "note": "Card entered in a Stripe checkout; card brands not named"
      },
      {
       "method": "other",
@@ -681,7 +760,8 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -711,12 +791,12 @@
    "https://viettelidc.com.vn/",
    "https://www.viettelcloud.vn/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU lineup from a recent (about a month old) Viettel IDC article: T4, A30 and L40S available for Viettel Cloud GPU, RTX PRO 6000 and H200 on the roadmap (not listed). Viettel Cloud separately runs H200 for its own model service. Data-center cities not stated for the GPU service. Payment page snippet: about 30 domestic and international card/account types, ATM cards, Visa/Master/JCB/UnionPay, mobile banking, bank transfer; prepaid account balance in VND (used as the local-currency evidence). Viettel Pay comes from the top-up guide and MoMo from a hosting article, both older. GPU prices not found. Publisher legal entity named on the payment page: Công ty TNHH Viettel - CHT.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU lineup from a recent (about a month old) Viettel IDC article: T4, A30 and L40S available for Viettel Cloud GPU, RTX PRO 6000 and H200 on the roadmap (not listed). Viettel Cloud separately runs H200 for its own model service. Data-center cities not stated for the GPU service. Payment page snippet: about 30 domestic and international card/account types, ATM cards, Visa/Master/JCB/UnionPay, mobile banking, bank transfer; prepaid account balance in VND (used as the local-currency evidence). Viettel Pay comes from the top-up guide and MoMo from a hosting article, both older. GPU prices not found. Publisher legal entity named on the payment page: Công ty TNHH Viettel - CHT. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 16 quoted confirmations, corrected or added: access.payment_methods, access.local_currency_pricing. The cited payment-methods page held only navigation text, so payments and local pricing are re-sourced to the official top-up guide, which confirms all four methods. The 'other' note is corrected: QR payment through banking apps and e-wallets such as Viettel Pay (MoMo isn't listed).",
   "provider_region": {
    "value": "VN",
    "source_url": "https://viettelidc.com.vn/tin-tuc/idc-la-gi",
@@ -768,22 +848,22 @@
     "value": [
      {
       "method": "card_local",
-      "note": "Vietnamese domestic ATM cards and internet banking"
+      "note": "Vietnamese domestic ATM cards and internet banking (25+ banks)"
      },
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, JCB, UnionPay"
+      "note": "Visa, Mastercard, JCB, UnionPay (debit, prepaid or credit)"
      },
      {
       "method": "bank_transfer",
-      "note": "Transfer to Viettel - CHT's bank account, then email the receipt; fees paid by the customer"
+      "note": "Transfer to Viettel IDC's bank account, then email the receipt"
      },
      {
       "method": "other",
-      "note": "Mobile banking apps; older guides also list e-wallets such as Viettel Pay and MoMo"
+      "note": "VNPay QR from Vietnamese banking apps and e-wallets such as VNPT Pay, Viettel Pay, VinID"
      }
     ],
-    "source_url": "https://viettelidc.com.vn/tin-tuc/cac-hinh-thuc-thanh-toan-tai-viettel-idc",
+    "source_url": "https://viettelidc.com.vn/tin-tuc/huong-dan-nap-tien-vao-so-du-tai-khoan-tai-website-viettel-idc",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
@@ -807,18 +887,19 @@
    },
    "local_currency_pricing": {
     "value": true,
-    "source_url": "https://viettelidc.com.vn/tin-tuc/cac-hinh-thuc-thanh-toan-tai-viettel-idc",
+    "source_url": "https://viettelidc.com.vn/tin-tuc/huong-dan-nap-tien-vao-so-du-tai-khoan-tai-website-viettel-idc",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:host:nxtgen",
   "type": "host",
   "name": "NxtGen SpeedCloud",
-  "description": "Indian sovereign cloud provider renting GPU instances (NVIDIA L40S, AMD MI325X, Intel Gaudi 3, H200) from its data centres in India.",
+  "description": "Indian sovereign cloud provider renting GPU instances (NVIDIA L40S, Intel Gaudi 3; AMD MI325X, NVIDIA H100/H200 and Gaudi 2 listed as sold out) from its data centres in India.",
   "publisher": "NxtGen Datacenter & Cloud Technologies",
   "publisher_region": {
    "value": "IN",
@@ -844,7 +925,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU lineup from the SpeedCloud page snippet (L40S, MI325X, Gaudi 3; H200 instances H3-Glacier and H4-Titan marked sold out, also sold out on the GPU-as-a-Service page). SpeedCloud Supreme (private cloud) lists H200 NVL and RTX PRO 6000 Blackwell and a 4,000+ Blackwell GPU AI factory. NxtGen says it runs five data centres in India with a campus at Bidadi, Bengaluru, but no page ties GPUs to a city. Terms page is about two years old. International customers get USD pricing (global page); Indian payment methods and INR rates not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU lineup from the SpeedCloud page snippet (L40S, MI325X, Gaudi 3; H200 instances H3-Glacier and H4-Titan marked sold out, also sold out on the GPU-as-a-Service page). SpeedCloud Supreme (private cloud) lists H200 NVL and RTX PRO 6000 Blackwell and a 4,000+ Blackwell GPU AI factory. NxtGen says it runs five data centres in India with a campus at Bidadi, Bengaluru, but no page ties GPUs to a city. Terms page is about two years old. International customers get USD pricing (global page); Indian payment methods and INR rates not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 14 quoted confirmations, corrected or added: gpu_types, data_centers, data_residency, description; not found on the pages: access.free (unknown; registering is free but no services run until paid), data_residency: MeitY empanelment (sp-supreme page is a shell). The SpeedCloud page also lists H100 and Gaudi 2 instances, and shows the MI325X, H100 and H200 tiers as sold out; the GPU list was corrected. The Bengaluru campus and MeitY claims come from nxtgen.com pages that are JavaScript shells. The operating entity in the terms is NXTGEN CLOUD TECHNOLOGIES PRIVATE LIMITED, Bangalore.",
   "provider_region": {
    "value": "IN",
    "source_url": "https://nxtgen.com/",
@@ -858,28 +939,30 @@
    "value": [
     {
      "country": "IN",
-     "city_or_region": "India (city not stated; NxtGen lists a Bengaluru campus)",
+     "city_or_region": "India (city not stated)",
      "provider_region_code": null
     }
    ],
-   "source_url": "https://nxtgen.com/sp-supreme",
+   "source_url": "https://speedcloud.nxtgen.com/global.html",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "gpu_types": {
    "value": [
     "NVIDIA L40S",
-    "AMD Instinct MI325X",
+    "AMD Instinct MI325X (sold out)",
     "Intel Gaudi 3",
-    "NVIDIA H200 (sold out)"
+    "NVIDIA H100 (sold out)",
+    "NVIDIA H200 (sold out)",
+    "Intel Gaudi 2 (sold out)"
    ],
    "source_url": "https://speedcloud.nxtgen.com/",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
-   "value": "NxtGen describes itself as a sovereign Indian cloud with MeitY, CERT-In and IndiaAI empanelment.",
-   "source_url": "https://nxtgen.com/sp-supreme",
+   "value": "NxtGen calls SpeedCloud India's sovereign cloud, with data, infrastructure and operations free from external jurisdiction; CERT-In empanelled and part of the IndiaAI Mission.",
+   "source_url": "https://speedcloud.nxtgen.com/",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
@@ -956,7 +1039,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Prices on jarvislabs.ai/in in INR per GPU-hour (e.g. H100 ₹330.48 + GST, H200 ₹434.97, A30 ₹38.88), billed per second, no minimum commitment. CLI docs: IN1 has RTX PRO 6000 only, IN2 has L4, A100, A100-80GB, A30, H100, H200; the dstack guide and blog name india-noida-01 (Noida). The India page has a UPI/net-banking FAQ but the answer was cut from the snippet; an old homepage FAQ said UPI was not supported. So UPI is not listed. Whether the card must be international or domestic is not stated. The careers page says Jarvislabs is an E2E Networks company (E2E Networks is already listed separately); kept as its own listing because it has its own site, pricing and sign-up. Contact page lists offices in New Delhi and Coimbatore.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Prices on jarvislabs.ai/in in INR per GPU-hour (e.g. H100 ₹330.48 + GST, H200 ₹434.97, A30 ₹38.88), billed per second, no minimum commitment. CLI docs: IN1 has RTX PRO 6000 only, IN2 has L4, A100, A100-80GB, A30, H100, H200; the dstack guide and blog name india-noida-01 (Noida). The India page has a UPI/net-banking FAQ but the answer was cut from the snippet; an old homepage FAQ said UPI was not supported. So UPI is not listed. Whether the card must be international or domestic is not stated. The careers page says Jarvislabs is an E2E Networks company (E2E Networks is already listed separately); kept as its own listing because it has its own site, pricing and sign-up. Contact page lists offices in New Delhi and Coimbatore. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 12 quoted confirmations, corrected or added: access.free; not found on the pages: access.payment_methods card_international (pages say \"credit/debit cards\" through Stripe; no brands named. The home page FAQ also says net banking, while the docs FAQ says no other methods are accepted). Free set to paid_only (no free trial or free credits). Prices in INR, India regions and GPU list confirmed. Card brands are not named, and the pages conflict on net banking and on the minimum top-up ($25 vs $5 in the docs FAQ).",
   "provider_region": {
    "value": "IN",
    "source_url": "https://jarvislabs.ai/contactus",
@@ -1001,9 +1084,9 @@
   "launch_url": "https://jarvislabs.ai/",
   "access": {
    "free": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "paid_only",
+    "source_url": "https://jarvislabs.ai/",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "free_limits": null,
@@ -1049,7 +1132,7 @@
   "id": "cf:host:lintasarta-deka-gpu",
   "type": "host",
   "name": "Lintasarta Deka GPU",
-  "description": "Indonesian NVIDIA Cloud Partner (Indosat group) renting NVIDIA H100 GPUs, whole or MIG slices, from Indonesia, priced in rupiah and payable by virtual account.",
+  "description": "Indonesian cloud (Indosat group) renting NVIDIA H100 (whole or MIG slices) and L40S GPUs by the hour, 10-day minimum, priced in rupiah, payable by virtual account.",
   "publisher": "Lintasarta (Cloudeka)",
   "publisher_region": {
    "value": "ID",
@@ -1076,7 +1159,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Prices on the Lintasarta Deka GPU page in IDR: Deka GPU M (20GB MIG H100) Rp24,500/h, Deka GPU XL (full 80GB H100) Rp79,000/h, minimum 10-day commitment; the Cloudeka product page shows the same prices with inconsistent tier labels. Lintasarta calls itself the only NVIDIA Cloud Partner in Indonesia; GPU Merdeka (8x H100 SXM servers) launched August 2024. Payment methods are from general Cloudeka billing docs, not a Deka GPU-specific page: the balance doc lists ATM/virtual account via BNI, Mandiri, Maybank, Permata and credit card; another part of the docs lists e-wallets OVO and LinkAja and a minimum prepaid deposit of IDR 50,000, but the snippets disagree, so e-wallets are not listed. Data-center city not stated. Country limits and trial not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Prices on the Lintasarta Deka GPU page in IDR: Deka GPU M (20GB MIG H100) Rp24,500/h, Deka GPU XL (full 80GB H100) Rp79,000/h, minimum 10-day commitment; the Cloudeka product page shows the same prices with inconsistent tier labels. Lintasarta calls itself the only NVIDIA Cloud Partner in Indonesia; GPU Merdeka (8x H100 SXM servers) launched August 2024. Payment methods are from general Cloudeka billing docs, not a Deka GPU-specific page: the balance doc lists ATM/virtual account via BNI, Mandiri, Maybank, Permata and credit card; another part of the docs lists e-wallets OVO and LinkAja and a minimum prepaid deposit of IDR 50,000, but the snippets disagree, so e-wallets are not listed. Data-center city not stated. Country limits and trial not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: description, gpu_types; not found on the pages: url / launch_url (cloudeka.id product page returned 404). Lintasarta's Deka GPU page confirms H100 (20GB MIG and 80GB) plus L40S tiers (24GB vGPU, 48GB) in rupiah with a 10-day minimum; the Cloudeka billing doc confirms ATM/virtual account and credit card (no brands named). The official and launch URL https://www.cloudeka.id/en/products/deka-gpu-en/ now answers 404, so it should be replaced with https://www.lintasarta.net/en/deka-gpu.",
   "provider_region": {
    "value": "ID",
    "source_url": "https://www.lintasarta.net/en/deka-gpu",
@@ -1100,7 +1183,8 @@
   },
   "gpu_types": {
    "value": [
-    "NVIDIA H100 (80GB, or 20GB MIG slice)"
+    "NVIDIA H100 (80GB, or 20GB MIG slice)",
+    "NVIDIA L40S (48GB, or 24GB vGPU)"
    ],
    "source_url": "https://www.lintasarta.net/en/deka-gpu",
    "source_type": "official",
@@ -1167,7 +1251,7 @@
   "id": "cf:host:biznet-gio",
   "type": "host",
   "name": "Biznet Gio NEO GPU",
-  "description": "Indonesian cloud renting NVIDIA H200 GPU servers (1 to 8 GPUs) by the hour from Indonesian data centers, priced in rupiah, with bank transfer, e-wallet and QRIS top-ups.",
+  "description": "Indonesian cloud renting NVIDIA H200 GPU servers (1 to 8 GPUs) by the hour from Indonesia, priced in rupiah, with card, Permata, Mandiri or XL Tunai top-ups.",
   "publisher": "PT Biznet Gio Nusantara",
   "publisher_region": {
    "value": "ID",
@@ -1188,12 +1272,12 @@
    "https://www.biznetgio.com/product/vps-gpu-indonesia",
    "https://www.biznetgio.com/en/product/neo-gpu"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Product page snippet: H200 from Rp119,000/h (1 GPU) to Rp959,000/h (8 GPUs), hourly pay-as-you-go, self-service portal, Indonesian data center; older KB and press release quote Rp74,000/h, apparently superseded. Payment methods from the NEO Cloud payment-methods KB snippet (Indonesian). Which e-wallets is not stated. HQ: legal page names the Indonesian company (legal entity from the KB). Data-center city, trial, country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Product page snippet: H200 from Rp119,000/h (1 GPU) to Rp959,000/h (8 GPUs), hourly pay-as-you-go, self-service portal, Indonesian data center; older KB and press release quote Rp74,000/h, apparently superseded. Payment methods from the NEO Cloud payment-methods KB snippet (Indonesian). Which e-wallets is not stated. HQ: legal page names the Indonesian company (legal entity from the KB). Data-center city, trial, country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 12 quoted confirmations, corrected or added: description, access.payment_methods. The payment page names Permata ATM/Internet Banking, Mandiri Clickpay and XL Tunai, not 'e-wallets and QRIS'; QRIS removed and the wallet recorded as XL Tunai.",
   "provider_region": {
    "value": "ID",
    "source_url": "https://www.biznetgio.com/legal",
@@ -1243,15 +1327,15 @@
     "value": [
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, JCB through Midtrans; Rp25,000 charged on card registration and added to NEO Balance"
+      "note": "Visa, MasterCard, JCB through Midtrans; Rp25,000 charged on card registration and added to NEO Balance"
      },
      {
       "method": "bank_transfer",
-      "note": "NEO Balance top-up, minimum Rp100,000"
+      "note": "Permata ATM, Permata Internet Banking or Mandiri Clickpay for NEO Balance top-up, minimum Rp100,000"
      },
      {
-      "method": "other",
-      "note": "Indonesian e-wallets and QRIS for NEO Balance top-up, minimum Rp100,000"
+      "method": "mobile_money",
+      "note": "XL Tunai (XL Axiata wallet) for NEO Balance top-up, minimum Rp100,000"
      }
     ],
     "source_url": "https://kb.biznetgio.com/id_ID/billing/metode-pembayaran-neo-cloud",
@@ -1282,7 +1366,8 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -1307,12 +1392,12 @@
    "https://www.ytlaicloud.com/",
    "https://www.ytlaicloud.com/gsc-pricing/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Pricing page snippet: NVIDIA GB200 (192GB HBM3e) on demand at RM 68.80 per hour; committed-use discounts available (no figures). About page: Phase 1 campus in Johor scaling to 500MW with a large GB200 cluster. No H100/B200 public pricing. Sign-up process, payment methods, trial and country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Pricing page snippet: NVIDIA GB200 (192GB HBM3e) on demand at RM 68.80 per hour; committed-use discounts available (no figures). About page: Phase 1 campus in Johor scaling to 500MW with a large GB200 cluster. No H100/B200 public pricing. Sign-up process, payment methods, trial and country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 10 quoted confirmations, corrected or added: access.prices. Every stated fact is confirmed on YTL's own pages. Free status and payment methods aren't stated anywhere (committed-use subscriptions go through appointed managed service providers). The on-demand GB200 price is added.",
   "provider_region": {
    "value": "MY",
    "source_url": "https://www.ytlaicloud.com/about-us/",
@@ -1386,15 +1471,28 @@
     "source_url": "https://www.ytlaicloud.com/gsc-pricing/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
-   }
-  }
+   },
+   "prices": [
+    {
+     "plan": "NVIDIA GB200 on demand",
+     "amount": 68.8,
+     "currency": "MYR",
+     "period": "hour",
+     "country": "MY",
+     "source_url": "https://www.ytlaicloud.com/gsc-pricing/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:host:siam-ai",
   "type": "host",
   "name": "Siam.AI Cloud",
-  "description": "Bangkok-based NVIDIA Cloud Partner renting NVIDIA H100 and H200 GPU servers from a data center in Thailand, plus an inference service.",
+  "description": "Bangkok-based AI cloud renting NVIDIA H100, H200 and B200 GPU servers from a Tier 4 data center in Thailand, plus an inference service.",
   "publisher": "SIAM AI Corporation Co., Ltd.",
   "publisher_region": {
    "value": "TH",
@@ -1421,7 +1519,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. H200 & H100 page snippet: on demand from H200 $2.99/h and H100 $2.69/h (page about two years old), 8x H100 SXM5 instances with InfiniBand. Homepage snippet: Bangkok office (Suan Luang), Tier 4 data center in Thailand, B200 also listed (separate B200 page, not added to gpu_types). Third-party reports place a node at STT GDC Bangkok 1. Payment methods, sign-up, trial and country limits not found. Context: in May 2026 Bloomberg linked a former supplier (OBON) to Nvidia server shipments to China; Siam AI publicly denied any involvement (statement on siam.ai). This is an export-control allegation, not a customer scam or safety report, so warning stays \"none\"; re-check before publishing.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. H200 & H100 page snippet: on demand from H200 $2.99/h and H100 $2.69/h (page about two years old), 8x H100 SXM5 instances with InfiniBand. Homepage snippet: Bangkok office (Suan Luang), Tier 4 data center in Thailand, B200 also listed (separate B200 page, not added to gpu_types). Third-party reports place a node at STT GDC Bangkok 1. Payment methods, sign-up, trial and country limits not found. Context: in May 2026 Bloomberg linked a former supplier (OBON) to Nvidia server shipments to China; Siam AI publicly denied any involvement (statement on siam.ai). This is an export-control allegation, not a customer scam or safety report, so warning stays \"none\"; re-check before publishing. Verification review 2026-11-16: compared with the official pages fetched that day (6 pages); 10 quoted confirmations, corrected or added: gpu_types, description, access.prices; not found on the pages: access.free (unknown), 'NVIDIA Cloud Partner' (not stated on the pages). 'NVIDIA Cloud Partner' isn't stated, so it was dropped from the description. B200 and the H200/H100 hourly prices were added. Notable: siam.ai has a notice answering a Bloomberg report of May 8, 2026, saying SiamAI never exported AI servers to China; no warning set (no advisory). The About page says 'Multiple data centers located across Southeast Asia'.",
   "provider_region": {
    "value": "TH",
    "source_url": "https://siam.ai/",
@@ -1447,9 +1545,10 @@
   "gpu_types": {
    "value": [
     "NVIDIA H100 80GB SXM5",
-    "NVIDIA H200"
+    "NVIDIA H200",
+    "NVIDIA HGX B200"
    ],
-   "source_url": "https://siam.ai/nvidia-hseries/",
+   "source_url": "https://siam.ai/nvidia-b200/",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
@@ -1497,7 +1596,27 @@
     "source_url": null,
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "NVIDIA H200 GPU",
+     "amount": 2.99,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://siam.ai/nvidia-hseries/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "NVIDIA H100 GPU",
+     "amount": 2.69,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://siam.ai/nvidia-hseries/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -1536,7 +1655,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU locations: an official blog post says the H100 plan deploys in Chicago, São Paulo and Singapore; a changelog adds Metal GPU in Sydney and Tokyo; the plans API docs show São Paulo (SAO) in stock for a 4x H100 plan. The GPU VM beta was Dallas only. Latitude.sh also runs sites in Buenos Aires and Mexico City, but no page ties GPUs there, so they are left out. L40S (changelog) and RTX PRO 6000 (instances page) are offered too but not added to gpu_types because their source pages differ. H100 g3.h100.small quoted between $2.41 and $2.67/h on different pages. HQ: archived terms give a Delaware LLC address; the company (formerly Maxihost; Brazilian roots suggested by a Latitude.sh S.A. entity in the privacy policy, not confirmed) agreed to be acquired by Megaport (Australia). Payment methods from the docs payment-methods page snippet. Trial and country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. GPU locations: an official blog post says the H100 plan deploys in Chicago, São Paulo and Singapore; a changelog adds Metal GPU in Sydney and Tokyo; the plans API docs show São Paulo (SAO) in stock for a 4x H100 plan. The GPU VM beta was Dallas only. Latitude.sh also runs sites in Buenos Aires and Mexico City, but no page ties GPUs there, so they are left out. L40S (changelog) and RTX PRO 6000 (instances page) are offered too but not added to gpu_types because their source pages differ. H100 g3.h100.small quoted between $2.41 and $2.67/h on different pages. HQ: archived terms give a Delaware LLC address; the company (formerly Maxihost; Brazilian roots suggested by a Latitude.sh S.A. entity in the privacy policy, not confirmed) agreed to be acquired by Megaport (Australia). Payment methods from the docs payment-methods page snippet. Trial and country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (8 pages); 16 quoted confirmations, corrected or added: access.payment_methods, gpu_types; not found on the pages: access.payment_methods card_international (table says \"Credit card / All\" without naming brands), access.free (not stated), data_centers provider_region_code SAO (plans API page not checked for the code). The payment-methods page lists many more methods than recorded: PIX and Boleto (Brazil), Alipay and WeChat Pay (China), ACH (US) and European bank methods; payment_methods expanded. RTX PRO 6000 added to gpu_types from the pricing page. Card brands not named and free status not stated.",
   "provider_region": {
    "value": "US",
    "source_url": "https://www.latitude.sh/legal/terms-archival",
@@ -1581,7 +1700,8 @@
   },
   "gpu_types": {
    "value": [
-    "NVIDIA H100 80GB"
+    "NVIDIA H100 80GB",
+    "NVIDIA RTX PRO 6000"
    ],
    "source_url": "https://www.latitude.sh/pricing",
    "source_type": "official",
@@ -1615,6 +1735,30 @@
      {
       "method": "crypto",
       "note": "USDC on Solana or Ethereum, buys account credit; only for teams billed in USD"
+     },
+     {
+      "method": "pix",
+      "note": "Brazil only"
+     },
+     {
+      "method": "other",
+      "note": "Boleto Bancário (Brazil only)"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "ACH (United States only)"
+     },
+     {
+      "method": "alipay",
+      "note": "China only"
+     },
+     {
+      "method": "wechat_pay",
+      "note": "China only"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "Bancontact (Belgium), EPS (Austria), Giropay (Germany), iDEAL (Netherlands), Przelewy24 (Poland), Sofort (Germany, Austria, Switzerland)"
      }
     ],
     "source_url": "https://docs.latitude.sh/docs/payment-methods",
@@ -1652,7 +1796,7 @@
   "id": "cf:host:cloud4u",
   "type": "host",
   "name": "Cloud4U GPU Cloud",
-  "description": "Cloud provider headquartered in Turkey renting NVIDIA V100, A100 and L40S GPU servers from an Istanbul data center, payable by invoice in any currency.",
+  "description": "Turkish cloud renting NVIDIA GPU virtual and dedicated servers (H200, B200, RTX 4090, RTX 6000 Blackwell and more) from Istanbul, hourly or monthly, by invoice or card.",
   "publisher": "Cloud4U",
   "publisher_region": {
    "value": "TR",
@@ -1673,12 +1817,12 @@
    "https://www.cloud4u.com/news/cloud4u-ai-infrastructure-turkey/",
    "https://www.cloud4u.com/cloud-hosting/gpu/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Turkey data-center news snippet: TIER III, ISO 27001 Istanbul site opened in 2022; customers can rent cloud servers and virtual GPUs there. A June 2026 Cloud4U announcement describes a GPU cloud from the Turkey data center with L40S and H100 configurations, hourly pricing billed per minute and KVKK compliance; H100 is not in gpu_types because other Cloud4U pages do not list it. GPU list and payment terms come from Cloud4U's own ranking blog post (self-published, sales-oriented). About page says HQ in Turkey, founded 2009; the infrastructure page also lists Germany, the Netherlands and a Moscow data center (GPU availability there not checked). Prices exclude VAT. Trial and country limits not found.",
+  "research_notes": "All facts come from web-search snippets of the provider's own pages (search on 2026-11-15); the provider sites were blocked for direct fetching in this session (proxy refused the connection), so nothing was read in full and every claim should be re-fetched before it is relied on. Turkey data-center news snippet: TIER III, ISO 27001 Istanbul site opened in 2022; customers can rent cloud servers and virtual GPUs there. A June 2026 Cloud4U announcement describes a GPU cloud from the Turkey data center with L40S and H100 configurations, hourly pricing billed per minute and KVKK compliance; H100 is not in gpu_types because other Cloud4U pages do not list it. GPU list and payment terms come from Cloud4U's own ranking blog post (self-published, sales-oriented). About page says HQ in Turkey, founded 2009; the infrastructure page also lists Germany, the Netherlands and a Moscow data center (GPU availability there not checked). Prices exclude VAT. Trial and country limits not found. Verification review 2026-11-16: compared with the official pages fetched that day (7 pages); 15 quoted confirmations, corrected or added: description, gpu_types, access.payment_methods, access.free, access.free_limits. The GPU page now lists H200, B200, RTX 6000 Blackwell, RTX 4090, V100, P100 and M40 (EUR/USD prices excl. VAT), and the June 2026 Turkey GPU cloud adds L40S and H100, so gpu_types and the description were widened; the 45-day payment deferral wasn't found. The GPU page offers a free trial ('Try for free'), terms unstated.",
   "provider_region": {
    "value": "TR",
    "source_url": "https://www.cloud4u.com/about/",
@@ -1703,11 +1847,18 @@
   },
   "gpu_types": {
    "value": [
-    "NVIDIA V100",
-    "NVIDIA A100",
-    "NVIDIA L40S"
+    "NVIDIA H200 141GB",
+    "NVIDIA B200 180GB",
+    "NVIDIA RTX 6000 Blackwell 96GB",
+    "NVIDIA RTX 4090",
+    "NVIDIA Tesla V100",
+    "NVIDIA Tesla P100",
+    "NVIDIA Tesla M40",
+    "NVIDIA L40S (Turkey GPU cloud)",
+    "NVIDIA H100 (Turkey GPU cloud)",
+    "NVIDIA A100"
    ],
-   "source_url": "https://www.cloud4u.com/blog/ai-ml-providers-ranking/",
+   "source_url": "https://www.cloud4u.com/cloud-hosting/gpu/",
    "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
@@ -1720,24 +1871,24 @@
   "launch_url": "https://www.cloud4u.com/cloud-hosting/gpu/",
   "access": {
    "free": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "trial",
+    "source_url": "https://www.cloud4u.com/cloud-hosting/gpu/",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": null,
+   "free_limits": "Free trial offered ('Try for free' on the GPU page); length and limits not stated. GPU prices exclude VAT; hourly billing available.",
    "payment_methods": {
     "value": [
      {
       "method": "bank_transfer",
-      "note": "By invoice, in any currency; monthly payment can be deferred up to 45 days after the service act is signed"
+      "note": "By invoice, in any currency"
      },
      {
       "method": "card_international",
-      "note": "Bank card"
+      "note": "Bank card, any currency; card brands not named"
      }
     ],
-    "source_url": "https://www.cloud4u.com/blog/ai-ml-providers-ranking/",
+    "source_url": "https://www.cloud4u.com/news/cloud4u-launches-data-center-in-turkey/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
@@ -1765,6 +1916,7 @@
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  }
 ]

@@ -1,861 +1,893 @@
 [
-  {
-    "schema_version": 1,
-    "id": "cf:app:a-ghorbani/pocketpal-ai",
-    "type": "app",
-    "name": "PocketPal AI",
-    "description": "Open-source assistant that runs language models on the phone itself, offline after a model download, with on-device voice input and text-to-speech. Android and iPhone.",
-    "publisher": "Asghar Ghorbani",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://pocketpal.dev/",
-      "https://github.com/a-ghorbani/pocketpal-ai"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/a-ghorbani/pocketpal-ai",
-      "https://pocketpal.dev/"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. All facts from the official GitHub README (shallow git clone, last commit 2026-11-13): MIT license, 'runs entirely on your phone', 'download a model once' and works offline with no account, GGUF models (Gemma, Qwen, Phi, Llama), Whisper voice input, App Store and Google Play links in the README badges. README: chat, models, voices and tools are free; store builds offer an optional one-time 'PocketPal Plus' purchase (hands-free voice); payment route for Plus not stated, so payment_methods left unknown. Optional online features (web search, remote server) exist. Store listings themselves not fetched; countries unknown.",
-    "url": "https://pocketpal.dev/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/pocketpal-ai/id6502579498",
-      "https://play.google.com/store/apps/details?id=com.pocketpalai"
-    ],
-    "categories": [
-      "chat",
-      "audio"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free",
-        "source_url": "https://github.com/a-ghorbani/pocketpal-ai",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "Chat, models, voices and tools free with no account; optional one-time PocketPal Plus purchase in store builds for hands-free voice (included in builds from source).",
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "No account needed (README)",
-        "source_url": "https://github.com/a-ghorbani/pocketpal-ai",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
+ {
+  "schema_version": 1,
+  "id": "cf:app:a-ghorbani/pocketpal-ai",
+  "type": "app",
+  "name": "PocketPal AI",
+  "description": "Open-source assistant that runs language models on the phone itself, offline after a model download, with on-device voice input and text-to-speech. Android and iPhone.",
+  "publisher": "Asghar Ghorbani",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
   },
-  {
-    "schema_version": 1,
-    "id": "cf:app:google/ai-edge-gallery",
-    "type": "app",
-    "name": "Google AI Edge Gallery",
-    "description": "Google's open-source app for running open models such as Gemma on the phone, fully offline once downloaded: chat, image questions, audio transcription. Android and iPhone.",
-    "publisher": "Google",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://ai.google.dev/edge",
-      "https://github.com/google-ai-edge/gallery"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/google-ai-edge/gallery",
-      "https://ai.google.dev/edge",
-      "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (google-ai-edge/gallery, shallow clone, last commit 2026-11-12): Apache-2.0, runs LLMs 'directly on your hardware - fully offline', features (AI Chat with on-device ASR/TTS, Ask Image, Audio Scribe, Prompt Lab, Agent Skills), Google Play and App Store links, APK on GitHub releases 'for users without Google Play access', macOS build. Free status from a third-party article (getcoai) calling it a free open-source app; Hugging Face login for (gated) model downloads from third-party guides found by WebSearch, not confirmed officially. Agent Skills can use online tools such as Wikipedia. Publisher region not recorded without a cited source.",
-    "url": "https://ai.google.dev/edge",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/google-ai-edge-gallery/id6749645337",
-      "https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery"
-    ],
-    "categories": [
-      "chat",
-      "image",
-      "audio"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free",
-        "source_url": "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai",
-        "source_type": "third_party",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": null,
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "Some models need a Hugging Face account login and accepted terms before download (third-party guides; unconfirmed officially)",
-        "source_url": "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai",
-        "source_type": "third_party",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
+  "official_urls": [
+   "https://pocketpal.dev/",
+   "https://github.com/a-ghorbani/pocketpal-ai"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/a-ghorbani/pocketpal-ai",
+   "https://pocketpal.dev/"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. All facts from the official GitHub README (shallow git clone, last commit 2026-11-13): MIT license, 'runs entirely on your phone', 'download a model once' and works offline with no account, GGUF models (Gemma, Qwen, Phi, Llama), Whisper voice input, App Store and Google Play links in the README badges. README: chat, models, voices and tools are free; store builds offer an optional one-time 'PocketPal Plus' purchase (hands-free voice); payment route for Plus not stated, so payment_methods left unknown. Optional online features (web search, remote server) exist. Store listings themselves not fetched; countries unknown.",
+  "url": "https://pocketpal.dev/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/pocketpal-ai/id6502579498",
+   "https://play.google.com/store/apps/details?id=com.pocketpalai"
+  ],
+  "categories": [
+   "chat",
+   "audio"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
   },
-  {
-    "schema_version": 1,
-    "id": "cf:app:wednesday-solutions/off-grid",
-    "type": "app",
-    "name": "Off Grid",
-    "description": "Open-source suite that runs AI on the phone, offline: text chat, image generation, vision and Whisper speech-to-text with downloaded models. Android and iPhone; optional paid Pro.",
-    "publisher": "Wednesday Solutions",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://getoffgridai.co/",
-      "https://github.com/off-grid-ai/OGAM"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/off-grid-ai/OGAM",
-      "https://getoffgridai.co/pro/#buy",
-      "https://www.gigazine.net/gsc_news/en/20260401-off-grid-mobile-ai"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (cloned alichherawalla/off-grid-mobile-ai, which now presents itself as off-grid-ai/OGAM; last commit 2026-11-11): MIT license, 'All on your phone or Mac. All offline', features (text, image generation, vision, Whisper voice input, tools, documents), Google Play (ai.offgridmobile) and App Store (id6759299882) badges, 'BUILT BY Wednesday Solutions'. Pro tier per README: $119 lifetime or $7.99/month, bought via getoffgridai.co/pro; payment processor not stated, so payment_methods unknown. Anonymous stats are opt-in per README. Store listings not fetched.",
-    "url": "https://getoffgridai.co/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/off-grid-local-ai/id6759299882",
-      "https://play.google.com/store/apps/details?id=ai.offgridmobile"
-    ],
-    "categories": [
-      "chat",
-      "image",
-      "audio"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free_tier",
-        "source_url": "https://github.com/off-grid-ai/OGAM",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "Core offline app free; Pro (voice replies, personas, actions) costs US$119 once or US$7.99/month per the README.",
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:alibaba/mnn-chat",
-    "type": "app",
-    "name": "MNN Chat",
-    "description": "Alibaba's open-source app running language, vision, audio and image-generation models on the phone with its MNN engine; fully offline after model download. Android, plus iPhone.",
-    "publisher": "Alibaba (MNN team)",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "http://www.mnn.zone",
-      "https://github.com/alibaba/MNN",
-      "https://github.com/alibaba/MNN/blob/master/apps/Android/MnnLlmChat/README.md"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/alibaba/MNN/blob/master/apps/Android/MnnLlmChat/README.md",
-      "https://github.com/alibaba/MNN/blob/master/apps/iOS/MNNLLMChat/README.md",
-      "https://apps.apple.com/kr/app/mnn-chat/id6748348797"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official READMEs in alibaba/MNN (sparse clone, last commit 2026-11-13): Apache-2.0; Android app README says it 'runs entirely on-device' (text, image-to-text, audio-to-text, text-to-image), links Google Play (com.alibaba.mnnllm.android.release) and APK releases, warns it was tested only on OnePlus 13 and Xiaomi 14 Ultra and low-spec phones may fail; iOS README says it 'operates fully offline' once models are downloaded, with Hugging Face, ModelScope or Modelers download sources. MNN homepage mnn.zone from the root README. An App Store listing named 'MNN Chat' (id6748348797) appeared in WebSearch under an individual developer name, not Alibaba, and is not linked from the official README: left out of app_store_urls until its publisher is confirmed. Free status not stated officially: unknown.",
-    "url": "http://www.mnn.zone",
-    "app_store_urls": [
-      "https://play.google.com/store/apps/details?id=com.alibaba.mnnllm.android.release"
-    ],
-    "categories": [
-      "chat",
-      "image",
-      "audio"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": null,
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:layla-network/layla",
-    "type": "app",
-    "name": "Layla",
-    "description": "Paid assistant that runs language and Stable Diffusion image models on the phone itself, no internet needed after downloading a model. Android and iPhone.",
-    "publisher": "Layla Network",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://www.layla-network.ai/"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://apps.apple.com/us/app/id6456886656",
-      "https://play.google.com/store/apps/details?id=com.layla",
-      "https://www.promptquorum.com/power-local-llm/layla-review",
-      "https://alternativeto.net/software/layla/about"
-    ],
-    "verification_status": "candidate",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch result snippets of the US App Store listing (id6456886656): runs LLMs and Stable Diffusion models on device with no need for internet, USD 19.99 with in-app purchases, downloads a 4GB model on first start. Google Play package com.layla appeared directly as a play.google.com search result; price there not confirmed. A free 'Layla Lite' (com.laylalite) is mentioned only by third parties (AlternativeTo, APKPure), so not listed. Official site layla-network.ai from search results/Product Hunt; publisher name 'Layla Network' taken from the site name, unconfirmed. A separate 'Layla (Cloud)' App Store app exists and is not this listing. Re-verify by fetching store pages.",
-    "url": "https://www.layla-network.ai/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/layla/id6456886656",
-      "https://play.google.com/store/apps/details?id=com.layla"
-    ],
-    "categories": [
-      "chat",
-      "image"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "paid_only",
-        "source_url": "https://apps.apple.com/us/app/id6456886656",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "No free tier confirmed on the App Store; US price USD 19.99 (regional prices differ), plus optional in-app purchases.",
-      "payment_methods": {
-        "value": [
-          {
-            "method": "app_store_billing",
-            "note": "Paid App Store app (US$19.99 in the US store); Google Play price not confirmed"
-          }
-        ],
-        "source_url": "https://apps.apple.com/us/app/id6456886656",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:numen-technologies/private-llm",
-    "type": "app",
-    "name": "Private LLM",
-    "description": "One-time-purchase iPhone, iPad and Mac app that runs open language models on the device itself, offline, with no data collected. Apple devices only.",
-    "publisher": "Numen Technologies Limited",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://privatellm.app/"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://apps.apple.com/app/private-llm/id6448106860",
-      "https://privatellm.app/faq",
-      "https://www.promptquorum.com/power-local-llm/private-llm-review"
-    ],
-    "verification_status": "candidate",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6448106860, seller Numen Technologies Limited, US$9.99, Family Sharing, privacy label 'Data Not Collected') and of privatellm.app/faq (one-time App Store purchase usable on all the buyer's Apple devices; distributed only through the App Store). A third-party review said US$4.99 and AppFollow showed A$7.99 in Australia, so price varies by store and over time. No Android version found. Support email domain numen.ie suggests Ireland, but publisher region left unknown without a cited statement.",
-    "url": "https://privatellm.app/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/private-llm/id6448106860"
-    ],
-    "categories": [
-      "chat"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "paid_only",
-        "source_url": "https://apps.apple.com/app/private-llm/id6448106860",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "Paid app (US$9.99 in the US App Store at time of search); one purchase covers the buyer's Apple devices.",
-      "payment_methods": {
-        "value": [
-          {
-            "method": "app_store_billing",
-            "note": "One-time App Store purchase; App Store only"
-          }
-        ],
-        "source_url": "https://privatellm.app/faq",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:piotr-gorzelany/enclave",
-    "type": "app",
-    "name": "Enclave",
-    "description": "Free iPhone, iPad and Mac assistant that runs open-source language models on the device, offline, with no account; optional paid Pro adds cloud models.",
-    "publisher": "Piotr Gorzelany",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://enclaveai.app/"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://apps.apple.com/app/id6476614556",
-      "https://apppricinglab.com/app/apple/6476614556",
-      "https://applevis.com/apps/ios/utilities/enclave-local-ai-assistant-anonymous-offline-private-ai"
-    ],
-    "verification_status": "candidate",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6476614556): try hundreds of open-source models and chat offline, no account, no cloud, no data collection; free with in-app purchases; 'Pro $9.99' (US) adds cloud models from Anthropic, OpenAI, Google, xAI; independent developer. Developer name and website enclaveai.app come from third parties (AppFollow, App Pricing Lab), not fetched. Whether Pro is a subscription or one-time is inconsistent across sources. iOS/macOS only.",
-    "url": "https://enclaveai.app/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/enclave-local-ai-assistant/id6476614556"
-    ],
-    "categories": [
-      "chat"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free_tier",
-        "source_url": "https://apps.apple.com/app/id6476614556",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "Offline local models free; Pro (US$9.99 in the US store; billing period unclear) adds cloud models.",
-      "payment_methods": {
-        "value": [
-          {
-            "method": "app_store_billing",
-            "note": "Pro is an App Store in-app purchase"
-          }
-        ],
-        "source_url": "https://apps.apple.com/app/id6476614556",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "No account needed (App Store listing)",
-        "source_url": "https://apps.apple.com/app/id6476614556",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:adrien-grondin/locally-ai",
-    "type": "app",
-    "name": "Locally AI",
-    "description": "Free iPhone, iPad and Mac app running open models such as Llama, Gemma and Qwen on the device with Apple's MLX, offline, without login.",
-    "publisher": "Adrien Grondin",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://locallyai.app/"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
-      "https://www.scriptbyai.com/offline-ai-chat-iphone-locally",
-      "https://www.apfeltalk.de/magazin/news/locally-ai-ki-offline-auf-iphone-und-ipad-nutzen/"
-    ],
-    "verification_status": "candidate",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6741426692): runs Llama, Gemma, Qwen and more on iPhone and iPad, 'No login. No data collection', seller Adrien Grondin, links locallyai.app for privacy policy; also supports Apple's on-device Foundation model on iOS 26 (per update notes in search results). Works fully offline after download per apfeltalk.de. Free with no subscription from third-party listings (scriptbyai), not confirmed on the store page. One directory attributed it to Element Labs (LM Studio); unconfirmed, publisher kept as the App Store seller. Apple devices only.",
-    "url": "https://locallyai.app/",
-    "app_store_urls": [
-      "https://apps.apple.com/us/app/locally-ai-local-ai-chat/id6741426692"
-    ],
-    "categories": [
-      "chat"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free",
-        "source_url": "https://www.scriptbyai.com/offline-ai-chat-iphone-locally",
-        "source_type": "third_party",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": null,
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "No login (App Store listing)",
-        "source_url": "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:shubham0204/smolchat",
-    "type": "app",
-    "name": "SmolChat",
-    "description": "Open-source Android app that runs small language models (any GGUF file) on the phone with llama.cpp, offline and on-device.",
-    "publisher": "Shubham Panchal",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://github.com/shubham0204/SmolChat-Android"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/shubham0204/SmolChat-Android",
-      "https://itsfoss.com/android-on-device-ai/"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (shallow clone, last commit 2026-11-15): 'On-Device Inference of SLMs in Android', Apache-2.0, Google Play link (io.shubham0204.smollmandroid) and APKs on GitHub Releases. Offline/on-device and GGUF/llama.cpp also described by itsfoss.com. Price on Google Play not confirmed (open source, APKs free on GitHub, but store price not seen): free left unknown. Site URL set to the Play listing because the validator allows one app per domain and github.com is used by RTranslator. Android only.",
-    "url": "https://play.google.com/store/apps/details?id=io.shubham0204.smollmandroid",
-    "app_store_urls": [
-      "https://play.google.com/store/apps/details?id=io.shubham0204.smollmandroid"
-    ],
-    "categories": [
-      "chat"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": null,
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
-  },
-  {
-    "schema_version": 1,
-    "id": "cf:app:niedev/rtranslator",
-    "type": "app",
-    "name": "RTranslator",
-    "description": "Free, open-source Android translator running speech recognition and translation models on the phone, offline: text, walkie-talkie and two-phone conversation modes. APK from GitHub.",
-    "publisher": "niedev",
-    "publisher_region": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "official_urls": [
-      "https://github.com/niedev/RTranslator"
-    ],
-    "documentation_urls": [],
-    "evidence_urls": [
-      "https://github.com/niedev/RTranslator",
-      "https://github.com/niedev/RTranslator/releases"
-    ],
-    "verification_status": "verified",
-    "warning": "none",
-    "first_seen_at": "2026-11-15T00:00:00Z",
-    "last_content_change_at": "2026-11-15T00:00:00Z",
-    "relations": [],
-    "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (shallow clone, last commit 2026-10-25): '(almost) open-source, free, and offline real-time translation app for Android'; v2 uses Meta NLLB and OpenAI Whisper run directly on the phone; first launch downloads 1.2GB of models from GitHub (sideloading guide for regions where GitHub is slow); install via APK from GitHub Releases, not in Google Play yet (README says the final 3.0 will be released on Play Store and F-Droid; 3.0 beta2 out). License file Apache-2.0. No store links, so app_store_urls empty. Language count (31, up to 70 with low-quality ones) from third-party summaries, not recorded. Category is translation, not chat.",
-    "url": "https://github.com/niedev/RTranslator",
-    "app_store_urls": [],
-    "categories": [
-      "translation",
-      "audio"
-    ],
-    "on_device": true,
-    "interface_languages": {
-      "value": "unknown",
-      "source_url": null,
-      "source_type": null,
-      "observed_at": "2026-11-15T00:00:00Z"
-    },
-    "models_used": [],
-    "access": {
-      "free": {
-        "value": "free",
-        "source_url": "https://github.com/niedev/RTranslator",
-        "source_type": "official",
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "free_limits": "Free; first launch downloads about 1.2GB of models.",
-      "payment_methods": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_available": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "countries_unavailable": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "signup_requirements": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      },
-      "local_currency_pricing": {
-        "value": "unknown",
-        "source_url": null,
-        "source_type": null,
-        "observed_at": "2026-11-15T00:00:00Z"
-      }
-    }
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://github.com/a-ghorbani/pocketpal-ai",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Chat, models, voices and tools free with no account; optional one-time PocketPal Plus purchase in store builds for hands-free voice (included in builds from source).",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "No account needed (README)",
+    "source_url": "https://github.com/a-ghorbani/pocketpal-ai",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
   }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:google/ai-edge-gallery",
+  "type": "app",
+  "name": "Google AI Edge Gallery",
+  "description": "Google's open-source app for running open models such as Gemma on the phone, fully offline once downloaded: chat, image questions, audio transcription. Android and iPhone.",
+  "publisher": "Google",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://ai.google.dev/edge",
+   "https://github.com/google-ai-edge/gallery"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/google-ai-edge/gallery",
+   "https://ai.google.dev/edge",
+   "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (google-ai-edge/gallery, shallow clone, last commit 2026-11-12): Apache-2.0, runs LLMs 'directly on your hardware - fully offline', features (AI Chat with on-device ASR/TTS, Ask Image, Audio Scribe, Prompt Lab, Agent Skills), Google Play and App Store links, APK on GitHub releases 'for users without Google Play access', macOS build. Free status from a third-party article (getcoai) calling it a free open-source app; Hugging Face login for (gated) model downloads from third-party guides found by WebSearch, not confirmed officially. Agent Skills can use online tools such as Wikipedia. Publisher region not recorded without a cited source.",
+  "url": "https://ai.google.dev/edge",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/google-ai-edge-gallery/id6749645337",
+   "https://play.google.com/store/apps/details?id=com.google.ai.edge.gallery"
+  ],
+  "categories": [
+   "chat",
+   "image",
+   "audio"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai",
+    "source_type": "third_party",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "Some models need a Hugging Face account login and accepted terms before download (third-party guides; unconfirmed officially)",
+    "source_url": "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai",
+    "source_type": "third_party",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:wednesday-solutions/off-grid",
+  "type": "app",
+  "name": "Off Grid",
+  "description": "Open-source suite that runs AI on the phone, offline: text chat, image generation, vision and Whisper speech-to-text with downloaded models. Android and iPhone; optional paid Pro.",
+  "publisher": "Wednesday Solutions",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://getoffgridai.co/",
+   "https://github.com/off-grid-ai/OGAM"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/off-grid-ai/OGAM",
+   "https://getoffgridai.co/pro/#buy",
+   "https://www.gigazine.net/gsc_news/en/20260401-off-grid-mobile-ai"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (cloned alichherawalla/off-grid-mobile-ai, which now presents itself as off-grid-ai/OGAM; last commit 2026-11-11): MIT license, 'All on your phone or Mac. All offline', features (text, image generation, vision, Whisper voice input, tools, documents), Google Play (ai.offgridmobile) and App Store (id6759299882) badges, 'BUILT BY Wednesday Solutions'. Pro tier per README: $119 lifetime or $7.99/month, bought via getoffgridai.co/pro; payment processor not stated, so payment_methods unknown. Anonymous stats are opt-in per README. Store listings not fetched.",
+  "url": "https://getoffgridai.co/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/off-grid-local-ai/id6759299882",
+   "https://play.google.com/store/apps/details?id=ai.offgridmobile"
+  ],
+  "categories": [
+   "chat",
+   "image",
+   "audio"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://github.com/off-grid-ai/OGAM",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Core offline app free; Pro (voice replies, personas, actions) costs US$119 once or US$7.99/month per the README.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:alibaba/mnn-chat",
+  "type": "app",
+  "name": "MNN Chat",
+  "description": "Alibaba's open-source app running language, vision, audio and image-generation models on the phone with its MNN engine; fully offline after model download. Android, plus iPhone.",
+  "publisher": "Alibaba (MNN team)",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "http://www.mnn.zone",
+   "https://github.com/alibaba/MNN",
+   "https://github.com/alibaba/MNN/blob/master/apps/Android/MnnLlmChat/README.md"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/alibaba/MNN/blob/master/apps/Android/MnnLlmChat/README.md",
+   "https://github.com/alibaba/MNN/blob/master/apps/iOS/MNNLLMChat/README.md",
+   "https://apps.apple.com/kr/app/mnn-chat/id6748348797"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official READMEs in alibaba/MNN (sparse clone, last commit 2026-11-13): Apache-2.0; Android app README says it 'runs entirely on-device' (text, image-to-text, audio-to-text, text-to-image), links Google Play (com.alibaba.mnnllm.android.release) and APK releases, warns it was tested only on OnePlus 13 and Xiaomi 14 Ultra and low-spec phones may fail; iOS README says it 'operates fully offline' once models are downloaded, with Hugging Face, ModelScope or Modelers download sources. MNN homepage mnn.zone from the root README. An App Store listing named 'MNN Chat' (id6748348797) appeared in WebSearch under an individual developer name, not Alibaba, and is not linked from the official README: left out of app_store_urls until its publisher is confirmed. Free status not stated officially: unknown.",
+  "url": "http://www.mnn.zone",
+  "app_store_urls": [
+   "https://play.google.com/store/apps/details?id=com.alibaba.mnnllm.android.release"
+  ],
+  "categories": [
+   "chat",
+   "image",
+   "audio"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:layla-network/layla",
+  "type": "app",
+  "name": "Layla",
+  "description": "Assistant running language and Stable Diffusion image models on the phone, offline after the model download; one-time purchase, with a limited free Android APK. Android and iPhone.",
+  "publisher": "Layla Network",
+  "publisher_region": {
+   "value": "AU",
+   "source_url": "https://play.google.com/store/apps/details?id=com.layla",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://www.layla-network.ai/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://apps.apple.com/us/app/id6456886656",
+   "https://play.google.com/store/apps/details?id=com.layla",
+   "https://www.promptquorum.com/power-local-llm/layla-review",
+   "https://alternativeto.net/software/layla/about"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch result snippets of the US App Store listing (id6456886656): runs LLMs and Stable Diffusion models on device with no need for internet, USD 19.99 with in-app purchases, downloads a 4GB model on first start. Google Play package com.layla appeared directly as a play.google.com search result; price there not confirmed. A free 'Layla Lite' (com.laylalite) is mentioned only by third parties (AlternativeTo, APKPure), so not listed. Official site layla-network.ai from search results/Product Hunt; publisher name 'Layla Network' taken from the site name, unconfirmed. A separate 'Layla (Cloud)' App Store app exists and is not this listing. Re-verify by fetching store pages. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods, publisher_region, interface_languages, description. Official site says there is a free limited version (direct APK) and the full app is a one-time purchase, so free status changes from paid_only to free_tier and 'Paid' is dropped from the description; Google Play price US$19.99 now confirmed; developer address in Australia.",
+  "url": "https://www.layla-network.ai/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/layla/id6456886656",
+   "https://play.google.com/store/apps/details?id=com.layla"
+  ],
+  "categories": [
+   "chat",
+   "image"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": [
+    "en"
+   ],
+   "source_url": "https://apps.apple.com/us/app/id6456886656",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://www.layla-network.ai/",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free version with limited features as a direct Android APK; the full app is a one-time purchase (US$19.99 on the App Store and Google Play in the US). Optional in-app plans (Monarch, Birdwing, Blue Morpho, from US$4.99) on the App Store, and Layla Cloud hosted models.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "Paid app on the App Store and Google Play (US$19.99 in the US stores), plus App Store in-app plans"
+     }
+    ],
+    "source_url": "https://apps.apple.com/us/app/id6456886656",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verified_by": "official pages read, 2026-11-16"
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:numen-technologies/private-llm",
+  "type": "app",
+  "name": "Private LLM",
+  "description": "One-time-purchase iPhone, iPad and Mac app running open language models on the device, offline, collecting no data. An early Android beta is a direct APK download.",
+  "publisher": "Numen Technologies Limited",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://privatellm.app/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://apps.apple.com/app/private-llm/id6448106860",
+   "https://privatellm.app/faq",
+   "https://www.promptquorum.com/power-local-llm/private-llm-review"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6448106860, seller Numen Technologies Limited, US$9.99, Family Sharing, privacy label 'Data Not Collected') and of privatellm.app/faq (one-time App Store purchase usable on all the buyer's Apple devices; distributed only through the App Store). A third-party review said US$4.99 and AppFollow showed A$7.99 in Australia, so price varies by store and over time. No Android version found. Support email domain numen.ie suggests Ireland, but publisher region left unknown without a cited statement. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 12 quoted confirmations, corrected or added: access.free_limits, description. Price is now US$4.99 (App Store page shows $4.99), not $9.99. The FAQ says an Android early beta exists as an APK, so 'Apple devices only' is no longer accurate. Footer says 'Made in the EU, Ireland · the Netherlands' (publisher_region left unknown).",
+  "url": "https://privatellm.app/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/private-llm/id6448106860"
+  ],
+  "categories": [
+   "chat"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "paid_only",
+    "source_url": "https://apps.apple.com/app/private-llm/id6448106860",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Paid app (US$4.99 one-time in the US App Store); one purchase covers the buyer's Apple devices and Family Sharing (up to six people).",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "One-time App Store purchase; App Store only"
+     }
+    ],
+    "source_url": "https://privatellm.app/faq",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verified_by": "official pages read, 2026-11-16"
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:piotr-gorzelany/enclave",
+  "type": "app",
+  "name": "Enclave",
+  "description": "Free iPhone, iPad and Mac assistant that runs open-source language models on the device, offline, with no account; optional paid Pro adds cloud models.",
+  "publisher": "Piotr Gorzelany",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://enclaveai.app/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://apps.apple.com/app/id6476614556",
+   "https://apppricinglab.com/app/apple/6476614556",
+   "https://applevis.com/apps/ios/utilities/enclave-local-ai-assistant-anonymous-offline-private-ai"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6476614556): try hundreds of open-source models and chat offline, no account, no cloud, no data collection; free with in-app purchases; 'Pro $9.99' (US) adds cloud models from Anthropic, OpenAI, Google, xAI; independent developer. Developer name and website enclaveai.app come from third parties (AppFollow, App Pricing Lab), not fetched. Whether Pro is a subscription or one-time is inconsistent across sources. iOS/macOS only. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 11 quoted confirmations, corrected or added: access.free_limits, interface_languages. All stated facts confirmed from the official site and the App Store listing (seller Piotr Gorzelany). Pro is a subscription, so free_limits drops \"billing period unclear\"; interface languages added from the App Store listing.",
+  "url": "https://enclaveai.app/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/enclave-local-ai-assistant/id6476614556"
+  ],
+  "categories": [
+   "chat"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": [
+    "en",
+    "fr",
+    "de",
+    "hi",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "pl",
+    "pt",
+    "zh",
+    "es",
+    "tr",
+    "uk"
+   ],
+   "source_url": "https://apps.apple.com/app/id6476614556",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free_tier",
+    "source_url": "https://apps.apple.com/app/id6476614556",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Local models are free; an optional Pro subscription (US$9.99 in the US App Store) adds cloud models with a monthly credit allowance.",
+   "payment_methods": {
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "Pro is an App Store in-app purchase"
+     }
+    ],
+    "source_url": "https://apps.apple.com/app/id6476614556",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "No account needed (App Store listing)",
+    "source_url": "https://apps.apple.com/app/id6476614556",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verified_by": "official pages read, 2026-11-16"
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:adrien-grondin/locally-ai",
+  "type": "app",
+  "name": "Locally AI",
+  "description": "Free iPhone, iPad and Mac app running open models such as Llama, Gemma and Qwen on the device with Apple's MLX, offline, without login.",
+  "publisher": "Adrien Grondin",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://locallyai.app/"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
+   "https://www.scriptbyai.com/offline-ai-chat-iphone-locally",
+   "https://www.apfeltalk.de/magazin/news/locally-ai-ki-offline-auf-iphone-und-ipad-nutzen/"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Closed source; no page could be fetched. Facts from WebSearch snippets of the App Store listing (id6741426692): runs Llama, Gemma, Qwen and more on iPhone and iPad, 'No login. No data collection', seller Adrien Grondin, links locallyai.app for privacy policy; also supports Apple's on-device Foundation model on iOS 26 (per update notes in search results). Works fully offline after download per apfeltalk.de. Free with no subscription from third-party listings (scriptbyai), not confirmed on the store page. One directory attributed it to Element Labs (LM Studio); unconfirmed, publisher kept as the App Store seller. Apple devices only. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 10 quoted confirmations, corrected or added: access.free, interface_languages. App Store lists it as free with no in-app purchases shown. Locally AI has joined LM Studio: the App Store name is now 'Locally AI by LM Studio' and the developer/seller is Element Labs Inc, not Adrien Grondin, so the publisher field should be reviewed.",
+  "url": "https://locallyai.app/",
+  "app_store_urls": [
+   "https://apps.apple.com/us/app/locally-ai-local-ai-chat/id6741426692"
+  ],
+  "categories": [
+   "chat"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": [
+    "en",
+    "fr",
+    "de",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "pt",
+    "zh",
+    "es"
+   ],
+   "source_url": "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "No login (App Store listing)",
+    "source_url": "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  },
+  "verified_by": "official pages read, 2026-11-16"
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:shubham0204/smolchat",
+  "type": "app",
+  "name": "SmolChat",
+  "description": "Open-source Android app that runs small language models (any GGUF file) on the phone with llama.cpp, offline and on-device.",
+  "publisher": "Shubham Panchal",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://github.com/shubham0204/SmolChat-Android"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/shubham0204/SmolChat-Android",
+   "https://itsfoss.com/android-on-device-ai/"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (shallow clone, last commit 2026-11-15): 'On-Device Inference of SLMs in Android', Apache-2.0, Google Play link (io.shubham0204.smollmandroid) and APKs on GitHub Releases. Offline/on-device and GGUF/llama.cpp also described by itsfoss.com. Price on Google Play not confirmed (open source, APKs free on GitHub, but store price not seen): free left unknown. Site URL set to the Play listing because the validator allows one app per domain and github.com is used by RTranslator. Android only.",
+  "url": "https://play.google.com/store/apps/details?id=io.shubham0204.smollmandroid",
+  "app_store_urls": [
+   "https://play.google.com/store/apps/details?id=io.shubham0204.smollmandroid"
+  ],
+  "categories": [
+   "chat"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": null,
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ },
+ {
+  "schema_version": 1,
+  "id": "cf:app:niedev/rtranslator",
+  "type": "app",
+  "name": "RTranslator",
+  "description": "Free, open-source Android translator running speech recognition and translation models on the phone, offline: text, walkie-talkie and two-phone conversation modes. APK from GitHub.",
+  "publisher": "niedev",
+  "publisher_region": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "official_urls": [
+   "https://github.com/niedev/RTranslator"
+  ],
+  "documentation_urls": [],
+  "evidence_urls": [
+   "https://github.com/niedev/RTranslator",
+   "https://github.com/niedev/RTranslator/releases"
+  ],
+  "verification_status": "verified",
+  "warning": "none",
+  "first_seen_at": "2026-11-15T00:00:00Z",
+  "last_content_change_at": "2026-11-15T00:00:00Z",
+  "relations": [],
+  "research_notes": "Network in this session blocked every web host (Play Store, App Store, project sites, WebFetch); only git access to public GitHub repos worked. Official GitHub README (shallow clone, last commit 2026-10-25): '(almost) open-source, free, and offline real-time translation app for Android'; v2 uses Meta NLLB and OpenAI Whisper run directly on the phone; first launch downloads 1.2GB of models from GitHub (sideloading guide for regions where GitHub is slow); install via APK from GitHub Releases, not in Google Play yet (README says the final 3.0 will be released on Play Store and F-Droid; 3.0 beta2 out). License file Apache-2.0. No store links, so app_store_urls empty. Language count (31, up to 70 with low-quality ones) from third-party summaries, not recorded. Category is translation, not chat.",
+  "url": "https://github.com/niedev/RTranslator",
+  "app_store_urls": [],
+  "categories": [
+   "translation",
+   "audio"
+  ],
+  "on_device": true,
+  "interface_languages": {
+   "value": "unknown",
+   "source_url": null,
+   "source_type": null,
+   "observed_at": "2026-11-15T00:00:00Z"
+  },
+  "models_used": [],
+  "access": {
+   "free": {
+    "value": "free",
+    "source_url": "https://github.com/niedev/RTranslator",
+    "source_type": "official",
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "free_limits": "Free; first launch downloads about 1.2GB of models.",
+   "payment_methods": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_available": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "countries_unavailable": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "signup_requirements": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "local_currency_pricing": {
+    "value": "unknown",
+    "source_url": null,
+    "source_type": null,
+    "observed_at": "2026-11-15T00:00:00Z"
+   }
+  }
+ }
 ]

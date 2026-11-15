@@ -12,6 +12,25 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: verifying the unverified apps and hosts
+**Where:** Claude Code session.
+**Asked:** verify the 76 unverified apps and hosts.
+**Outcome (decision 67):**
+- **Fetching:** this session reached only 3 of 102 official sites, so a new workflow fetches the official pages from GitHub's servers to a `pages-cache` branch. 472 pages for 79 listings, with readable text for 73 of them.
+- **Review:** five reviewers compared every fact with the page text, quoting each confirmation and correction. A program checked every quote against the pages: none were rejected.
+- **Result:** 39 newly verified and 154 corrections. Verified apps and hosts went from 17 to 56 of 96.
+- **Examples of corrections:**
+  - Biznet Gio takes Mandiri Clickpay and XL Tunai, not "e-wallets and QRIS";
+  - Latitude.sh adds Pix, Boleto, Alipay and ACH;
+  - Akamai's GPUs are in 20 regions;
+  - Private LLM costs $4.99 and has an Android beta;
+  - Layla has a free version;
+  - Jarvislabs has no free trial;
+  - uLesson adds Ghana mobile money;
+  - CloudAfrica's H200 servers are live.
+- Qwen Chat's Stripe "payment method" was removed.
+**Open:** 40 still unverified, mostly JavaScript-only or bot-blocked pages, listed in TODO.md with the listings that may have changed.
+
 ## 2026-11-15: outside review applied
 **Where:** Claude Code session.
 **Asked:** apply the attached review "CleverFox: how to make it better": 4 must-dos, 8 important items, 8 nice-to-haves.

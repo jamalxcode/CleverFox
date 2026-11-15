@@ -516,12 +516,12 @@
    "https://www.scaleway.com/en/docs/billing/quickstart/",
    "https://www.cbinsights.com/company/scaleway"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. www.scaleway.com returned HTTP 403 (bot challenge) to curl, so nothing here was fetched; all facts are from search snippets. Per-type zone mapping was ambiguous (table headers missing): H100/L40S seen in PAR2 and WAW2, L4 in PAR1/PAR2/WAW2. Amsterdam zones showed no GPU rows. Free tier/trial, data-residency statement and country list not found.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. www.scaleway.com returned HTTP 403 (bot challenge) to curl, so nothing here was fetched; all facts are from search snippets. Per-type zone mapping was ambiguous (table headers missing): H100/L40S seen in PAR2 and WAW2, L4 in PAR1/PAR2/WAW2. Amsterdam zones showed no GPU rows. Free tier/trial, data-residency statement and country list not found. Verification review 2026-11-16: compared with the official pages fetched that day (6 pages); 12 quoted confirmations, corrected or added: gpu_types, access.payment_methods. Added the B300-SXM GPU instance (Paris PAR-2 per the availability table). The 'SEPA-zone address' condition isn't on the billing pages, so it was dropped from the SEPA note.",
   "provider_region": {
    "value": "FR",
    "source_url": "https://www.cbinsights.com/company/scaleway",
@@ -558,11 +558,12 @@
    "value": [
     "NVIDIA H100",
     "NVIDIA L40S",
-    "NVIDIA L4"
+    "NVIDIA L4",
+    "NVIDIA B300-SXM"
    ],
    "source_url": "https://scaleway.com/en/docs/account/reference-content/products-availability",
    "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
    "value": "unknown",
@@ -591,12 +592,12 @@
      },
      {
       "method": "bank_transfer",
-      "note": "SEPA direct debit only; postal and bank address must be in the SEPA zone; KYC required"
+      "note": "SEPA direct debit mandate only; requires KYC verification and a credit card on the account"
      }
     ],
     "source_url": "https://www.scaleway.com/en/docs/billing/faq/",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -622,7 +623,8 @@
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -829,10 +831,10 @@
   "description": "Indian cloud provider renting NVIDIA GPU instances from data centers in Delhi NCR and Chennai, priced in rupees.",
   "publisher": "E2E Networks",
   "publisher_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "IN",
+   "source_url": "https://e2enetworks.com/ai-cloud-gpu",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "official_urls": [
    "https://e2enetworks.com/ai-cloud-gpu"
@@ -848,17 +850,17 @@
    "https://docs.e2enetworks.com/docs/myaccount/billing/payment_method/",
    "https://docs.e2enetworks.com/docs/myaccount/billing/prepaid-billing/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Some sources mention Mumbai/Bengaluru, and a third party says Mumbai was discontinued for some services; only the two regions on E2E's H100 page are listed. UPI and net banking confirmed for INR accounts via Razorpay; docs imply international users get Stripe cards only. B200 also announced on E2E's blog. HQ, free trial, residency statement and country list not found.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Some sources mention Mumbai/Bengaluru, and a third party says Mumbai was discontinued for some services; only the two regions on E2E's H100 page are listed. UPI and net banking confirmed for INR accounts via Razorpay; docs imply international users get Stripe cards only. B200 also announced on E2E's blog. HQ, free trial, residency statement and country list not found. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 15 quoted confirmations, corrected or added: access.payment_methods, gpu_types, publisher_region, provider_region. All payment methods are confirmed, and bank transfer (NEFT/RTGS/IMPS) is added. The B200 is added to the GPU list, and the region is set to India from the New Delhi address.",
   "provider_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "IN",
+   "source_url": "https://e2enetworks.com/ai-cloud-gpu",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "kinds": [
    "gpu_cloud",
@@ -883,6 +885,7 @@
   },
   "gpu_types": {
    "value": [
+    "NVIDIA B200",
     "NVIDIA H200",
     "NVIDIA H100",
     "NVIDIA A100",
@@ -891,7 +894,7 @@
    ],
    "source_url": "https://e2enetworks.com/ai-cloud-gpu",
    "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
    "value": "unknown",
@@ -912,7 +915,7 @@
     "value": [
      {
       "method": "card_local",
-      "note": "Credit/debit cards via Razorpay (INR accounts)"
+      "note": "Indian credit/debit cards via Razorpay (INR accounts)"
      },
      {
       "method": "upi",
@@ -920,16 +923,20 @@
      },
      {
       "method": "other",
-      "note": "Net banking and wallets via Razorpay (INR accounts)"
+      "note": "Net banking, e-wallets and bank EMI via Razorpay (INR accounts)"
+     },
+     {
+      "method": "bank_transfer",
+      "note": "NEFT, RTGS or IMPS"
      },
      {
       "method": "card_international",
-      "note": "Visa, Mastercard, American Express via Stripe for international users"
+      "note": "Visa, Mastercard, American Express (Razorpay for INR accounts, Stripe for USD accounts)"
      }
     ],
-    "source_url": "https://docs.e2enetworks.com/docs/tir/Billing_and_Usage/payNow/",
+    "source_url": "https://docs.e2enetworks.com/docs/myaccount/billing/payment_method/",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
+    "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
     "value": "unknown",
@@ -955,7 +962,8 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -965,10 +973,10 @@
   "description": "Indian GPU cloud from Yotta offering NVIDIA H100 and B200 clusters with rupee pricing.",
   "publisher": "Yotta Data Services",
   "publisher_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "IN",
+   "source_url": "https://shakticloud.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "official_urls": [
    "https://shakticloud.ai/"
@@ -984,12 +992,12 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Navi Mumbai (NM1) location comes from a third-party source. Third parties say capacity is sold via enterprise agreements, while NVIDIA's case study mentions a self-service portal, so self-serve access is unclear. Payment methods, trial, signup rules, residency statement and HQ not found. Weakest record; consider dropping if not re-verified.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Navi Mumbai (NM1) location comes from a third-party source. Third parties say capacity is sold via enterprise agreements, while NVIDIA's case study mentions a self-service portal, so self-serve access is unclear. Payment methods, trial, signup rules, residency statement and HQ not found. Weakest record; consider dropping if not re-verified. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 13 quoted confirmations, corrected or added: publisher_region, provider_region, gpu_types, access.local_currency_pricing, access.prices; not found on the pages: access.free (unknown), data_centers provider_region_code NM1. The earlier source (?p=2249) is now 404. The official bare-metal page lists rupee prices (on their own lines: '₹ 428.00', '₹ 238.00', '₹ 473' per GPU-hour, monthly term). They're now the official source for local pricing, and L40S was added. Region set to India from the official site; the company also lists a Greater Noida data center.",
   "provider_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "IN",
+   "source_url": "https://shakticloud.ai/",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "kinds": [
    "gpu_cloud",
@@ -1009,12 +1017,13 @@
   },
   "gpu_types": {
    "value": [
-    "NVIDIA H100",
+    "NVIDIA HGX H100",
+    "NVIDIA L40S",
     "NVIDIA HGX B200"
    ],
-   "source_url": "https://shakticloud.ai/?p=2249",
+   "source_url": "https://shakticloud.ai/shakti-bare-metal",
    "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
    "value": "unknown",
@@ -1057,10 +1066,42 @@
    },
    "local_currency_pricing": {
     "value": true,
-    "source_url": "https://shakticloud.ai/?p=2249",
+    "source_url": "https://shakticloud.ai/shakti-bare-metal",
     "source_type": "official",
-    "observed_at": "2026-11-14T00:00:00Z"
-   }
+    "observed_at": "2026-11-15T00:00:00Z"
+   },
+   "prices": [
+    {
+     "plan": "Bare metal 8x HGX H100, per GPU (monthly term)",
+     "amount": 428,
+     "currency": "INR",
+     "period": "hour",
+     "country": "IN",
+     "source_url": "https://shakticloud.ai/shakti-bare-metal",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Bare metal 4x L40S, per GPU (monthly term)",
+     "amount": 238,
+     "currency": "INR",
+     "period": "hour",
+     "country": "IN",
+     "source_url": "https://shakticloud.ai/shakti-bare-metal",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Bare metal 8x HGX B200, per GPU (monthly term)",
+     "amount": 473,
+     "currency": "INR",
+     "period": "hour",
+     "country": "IN",
+     "source_url": "https://shakticloud.ai/shakti-bare-metal",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -1091,7 +1132,7 @@
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Data center city and region codes not found; only 'UAE-based data centers' (joint e& offering). B200 price is 'on request'; on-demand hourly rates, payment methods, signup rules and country availability not found.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Data center city and region codes not found; only 'UAE-based data centers' (joint e& offering). B200 price is 'on request'; on-demand hourly rates, payment methods, signup rules and country availability not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 8 quoted confirmations, corrected or added: gpu_types, access.prices; not found on the pages: access.free (not stated). GPU list confirmed and extended (H100, GB300 added); \"from\" hourly USD prices added; UAE data residency confirmed. No free tier, payment methods, sign-up rules or HQ stated.",
   "provider_region": {
    "value": "unknown",
    "source_url": null,
@@ -1115,14 +1156,16 @@
   },
   "gpu_types": {
    "value": [
+    "NVIDIA H100",
     "NVIDIA H200",
     "NVIDIA B200",
+    "NVIDIA GB300",
     "AMD Instinct MI300X",
     "AMD Instinct MI355X"
    ],
    "source_url": "https://aicloud.core42.ai/",
    "source_type": "official",
-   "observed_at": "2026-11-14T00:00:00Z"
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "data_residency": {
    "value": "Offers in-country data residency with private endpoints and encryption; joint e& offering runs in UAE-based data centers.",
@@ -1168,7 +1211,45 @@
     "source_url": null,
     "source_type": null,
     "observed_at": "2026-11-14T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "NVIDIA H100 (from)",
+     "amount": 2.5,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://aicloud.core42.ai/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "NVIDIA H200 (from)",
+     "amount": 4,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://aicloud.core42.ai/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "AMD MI300X (from)",
+     "amount": 3.5,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://aicloud.core42.ai/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "NVIDIA B200 (from)",
+     "amount": 5,
+     "currency": "USD",
+     "period": "hour",
+     "source_url": "https://aicloud.core42.ai/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -1310,10 +1391,10 @@
   "description": "South African cloud provider offering NVIDIA H200 GPU compute from South African data centres, billed in rand.",
   "publisher": "CloudAfrica",
   "publisher_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "ZA",
+   "source_url": "https://cloudafrica.net/gpu",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "official_urls": [
    "https://cloudafrica.net/gpu"
@@ -1323,17 +1404,17 @@
    "https://cloudafrica.net/gpu",
    "https://liners.com/news/cloudafrica-h200-gpu-instances-waitlist"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-14T00:00:00Z",
   "last_content_change_at": "2026-11-14T00:00:00Z",
   "relations": [],
-  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Pricing is quote-only via an account manager; billing monthly in advance. An earlier third-party report described the H200 offer as a waitlist, so live availability is uncertain. City not stated. Payment methods, trial, signup rules and HQ not found. Only African provider found with its own GPU product page; Cassava (NVIDIA Cloud Partner) and Safari Cloud had no usable official pages.",
+  "research_notes": "Official pages marked as fetched were downloaded with curl on 2026-11-14 and read directly. Claims citing docs.hetzner.com, docs.nebius.com, docs.vast.ai, docs.e2enetworks.com, scaleway.com, core42.ai, shakticloud.ai, cloudafrica.net or intl.aliyun.com come from web-search snippets only, because those hosts were blocked or returned 403 for this session; re-fetch before relying on them. Not fetched (host not allowed); search snippets only. Pricing is quote-only via an account manager; billing monthly in advance. An earlier third-party report described the H200 offer as a waitlist, so live availability is uncertain. City not stated. Payment methods, trial, signup rules and HQ not found. Only African provider found with its own GPU product page; Cassava (NVIDIA Cloud Partner) and Safari Cloud had no usable official pages. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 10 quoted confirmations, corrected or added: publisher_region, provider_region. The H200 offer is live and self-service (no longer a waitlist): packages from R25,000/month (MIG 36 GB slice) to R145,000/month (2x H200), ex VAT, month-to-month or 12% off annual pre-pay. The page states CloudAfrica is SA-incorporated, so publisher and provider region are set to ZA; payment methods aren't stated.",
   "provider_region": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
-   "observed_at": "2026-11-14T00:00:00Z"
+   "value": "ZA",
+   "source_url": "https://cloudafrica.net/gpu",
+   "source_type": "official",
+   "observed_at": "2026-11-15T00:00:00Z"
   },
   "kinds": [
    "gpu_cloud"
@@ -1403,7 +1484,8 @@
     "source_type": "official",
     "observed_at": "2026-11-14T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,

@@ -265,5 +265,9 @@
   "expected_seller": "National e-Governance Division",
   "google_play": "https://play.google.com/store/apps/details?id=com.dibd.bhashini",
   "google_play_evidence": "web search: apps.apple.com listing names seller National e-Governance Division (MeitY); Play via AppGoblin (MeitY / Digital India Bhashini Division)"
+ },
+ "cf:app:adrien-grondin/locally-ai": {
+  "expected_seller": "Element Labs Inc",
+  "note": "App Store listing is \"Locally AI by LM Studio\", sold by Element Labs Inc (seen on the official listing fetched 2026-11-16)"
  }
 }

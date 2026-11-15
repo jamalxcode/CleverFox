@@ -28,7 +28,7 @@
    "https://www.zawya.com/en/press-release/companies-news/m-pesa-ethiopia-and-gebeya-launch-dala-ai-bundle-enabling-ai-tool-access-via-mobile-payments-rk5jet2l",
    "https://itweb.africa/article/m-pesa-gebeya-launch-dala-ai-bundle/Olx4zMkajenv56km"
   ],
-  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Payment list from the dala.gebeya.com homepage snippet: M-Pesa, Telebirr, CBE Birr, Awash Birr, Airtel Money, MTN MoMo, Chapa, Flutterwave, Paystack, ArifPay, Stripe or cards. Gateways (Chapa, Flutterwave, Paystack, ArifPay, Stripe) are not listed as methods on their own (BUSINESS-RULES 10); CBE Birr and Awash Birr are bank wallets, put under bank_transfer. Which wallet works in which country is not stated. Credits: one shared balance, no subscription required, one-off top-ups from about $1, offers priced in USD; teams page says pay-as-you-go in local currency with a minimum credit purchase. Docs (older) say beta with a freemium tier and no card needed to start, so free = free_tier from the docs. M-Pesa Ethiopia and Gebeya launched a \"Dala AI Bundle\" (Feb-Mar 2026, press release on Zawya, itweb) letting Ethiopians subscribe from the M-Pesa wallet; bundle prices not published. Categories: coding (app builder), image, video, music. Interface languages and publisher registration not found.",
+  "research_notes": "Network in this session blocked the publisher's site (curl and WebFetch both refused), so nothing here was read on the page itself: every fact comes from WebSearch result snippets of the publisher's own pages, cited to the result URL. Marked candidate for that reason; re-verify by fetching before marking verified. Payment list from the dala.gebeya.com homepage snippet: M-Pesa, Telebirr, CBE Birr, Awash Birr, Airtel Money, MTN MoMo, Chapa, Flutterwave, Paystack, ArifPay, Stripe or cards. Gateways (Chapa, Flutterwave, Paystack, ArifPay, Stripe) are not listed as methods on their own (BUSINESS-RULES 10); CBE Birr and Awash Birr are bank wallets, put under bank_transfer. Which wallet works in which country is not stated. Credits: one shared balance, no subscription required, one-off top-ups from about $1, offers priced in USD; teams page says pay-as-you-go in local currency with a minimum credit purchase. Docs (older) say beta with a freemium tier and no card needed to start, so free = free_tier from the docs. M-Pesa Ethiopia and Gebeya launched a \"Dala AI Bundle\" (Feb-Mar 2026, press release on Zawya, itweb) letting Ethiopians subscribe from the M-Pesa wallet; bundle prices not published. Categories: coding (app builder), image, video, music. Interface languages and publisher registration not found. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 15 quoted confirmations, corrected or added: access.free, access.free_limits, access.signup_requirements. The docs page cited for the free tier and 'no card needed' didn't load, so free status and sign-up now cite the live pages ('limited free credits', 'one account'). 'No card needed' is dropped as unconfirmed. Payment methods are all named on the homepage. The '(Ethiopia)' in the CBE/Awash note isn't stated there; Stripe, Chapa, Flutterwave, Paystack and ArifPay are processors and aren't listed.",
   "url": "https://dala.gebeya.com/",
   "app_store_urls": [],
   "categories": [
@@ -47,11 +47,11 @@
   "access": {
    "free": {
     "value": "free_tier",
-    "source_url": "https://docs-dala.gebeya.com/getting-started/getting-started/",
+    "source_url": "https://dala.gebeya.com/business",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Freemium tier during beta; usage metered in credits, no card needed to start (docs, may be outdated).",
+   "free_limits": "Limited free credits to try the tools (free and promotional credits expire); after that, prepaid pay-as-you-go credits from US$1, no subscription required.",
    "payment_methods": {
     "value": [
      {
@@ -84,8 +84,8 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "Account; no card needed to start",
-    "source_url": "https://docs-dala.gebeya.com/getting-started/getting-started/",
+    "value": "Account (sign up); one account and credit balance covers all modes",
+    "source_url": "https://dala.gebeya.com/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
@@ -96,10 +96,11 @@
     "observed_at": "2026-11-15T00:00:00Z"
    }
   },
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
-  "relations": []
+  "relations": [],
+  "verified_by": "official pages read, 2026-11-16"
  }
 ]

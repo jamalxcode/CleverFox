@@ -33,7 +33,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Global terms name Kling AI Pte. Ltd. (Singapore) and affiliates; privacy policy says data is stored in Singapore. The China product (Keling, klingai.com/docs, Chinese-language terms) names Beijing Kuaishou Technology Co., Ltd. for the API. Membership page (snippet) shows Basic at $0 with no monthly credits; Standard about $6.99 first month then ~$8.8/month (660 credits); Pro, Premier, Ultra prices differ between cached pages. Payments: global paid-service terms name Stripe as the auto-renewal channel and describe cancelling iOS and Google Play subscriptions in those stores; card brands not listed, so recorded as other (Stripe). Alipay, WeChat Pay and enterprise bank transfer come only from the Chinese-language terms of the China product (klingai.com/docs/payment-policy), noted as China version. Global terms have country sections for Indonesia, UAE, Mexico and India, suggesting availability there, but no country list was found, so countries are unknown. App store URLs not confirmed. Merge review (2026-11-15): removed other (Web payments via Stripe named in the paid-service terms; accepted cards not listed); alipay (China version (Keling) only, per Chinese-language terms); wechat_pay (China version (Keling) only, per Chinese-language terms); bank_transfer (Enterprise prepayment only, China version), because these are card checkouts or apply only to another version of the product.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Global terms name Kling AI Pte. Ltd. (Singapore) and affiliates; privacy policy says data is stored in Singapore. The China product (Keling, klingai.com/docs, Chinese-language terms) names Beijing Kuaishou Technology Co., Ltd. for the API. Membership page (snippet) shows Basic at $0 with no monthly credits; Standard about $6.99 first month then ~$8.8/month (660 credits); Pro, Premier, Ultra prices differ between cached pages. Payments: global paid-service terms name Stripe as the auto-renewal channel and describe cancelling iOS and Google Play subscriptions in those stores; card brands not listed, so recorded as other (Stripe). Alipay, WeChat Pay and enterprise bank transfer come only from the Chinese-language terms of the China product (klingai.com/docs/payment-policy), noted as China version. Global terms have country sections for Indonesia, UAE, Mexico and India, suggesting availability there, but no country list was found, so countries are unknown. App store URLs not confirmed. Merge review (2026-11-15): removed other (Web payments via Stripe named in the paid-service terms; accepted cards not listed); alipay (China version (Keling) only, per Chinese-language terms); wechat_pay (China version (Keling) only, per Chinese-language terms); bank_transfer (Enterprise prepayment only, China version), because these are card checkouts or apply only to another version of the product. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 5 quoted confirmations; not found on the pages: access.free, access.free_limits (Basic plan $0 with no monthly credits), access.payment_methods (app_store_billing), access.local_currency_pricing. The membership plan and home pages are JavaScript shells, so the $0 Basic plan, App Store / Google Play billing and USD-only pricing could not be read. The terms only name Stripe as a payment channel (a processor, not a method); Alipay and WeChat appear only in the China edition's terms.",
   "url": "https://app.klingai.com/global",
   "app_store_urls": [],
   "categories": [
@@ -117,12 +117,12 @@
    "https://hailuoai.video/doc/terms-of-service.html",
    "https://hailuoai.video/doc/payment-policy.html"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms say the site is operated by Nanonoble Pte. Ltd., 152 Beach Road, Singapore, under Singapore law; MiniMax is the parent (privacy contact on minimax.io). Subscription terms (possibly dated) list Standard $14.99 and Pro $54.99/month, while a newer blog post lists $9.99/$34.99/$79.99, so prices are not recorded. Free: terms describe a one-time welcome credit package for accounts created on or after 18 June 2025 that expires three days after it is granted, so recorded as trial; launch-week daily trial credits were temporary. Free downloads are watermarked. Payment: terms say invoices use your Stripe payment information; no list of methods found, so recorded as other (Stripe). App-store billing not confirmed. Terms disclaim availability in all jurisdictions; no country list found. Merge review (2026-11-15): removed other (Checkout through Stripe; accepted methods not listed), because these are card checkouts or apply only to another version of the product.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms say the site is operated by Nanonoble Pte. Ltd., 152 Beach Road, Singapore, under Singapore law; MiniMax is the parent (privacy contact on minimax.io). Subscription terms (possibly dated) list Standard $14.99 and Pro $54.99/month, while a newer blog post lists $9.99/$34.99/$79.99, so prices are not recorded. Free: terms describe a one-time welcome credit package for accounts created on or after 18 June 2025 that expires three days after it is granted, so recorded as trial; launch-week daily trial credits were temporary. Free downloads are watermarked. Payment: terms say invoices use your Stripe payment information; no list of methods found, so recorded as other (Stripe). App-store billing not confirmed. Terms disclaim availability in all jurisdictions; no country list found. Merge review (2026-11-15): removed other (Checkout through Stripe; accepted methods not listed), because these are card checkouts or apply only to another version of the product. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 10 quoted confirmations, corrected or added: access.signup_requirements, access.prices. Payment-policy terms (last updated 7/14/2025) confirm the one-time welcome credits, watermark and USD plan prices; Stripe is only mentioned for invoices, so payment methods stay unknown. Note the same page says free users have \"basic features\", so free_tier vs trial is a judgement call; kept as trial.",
   "url": "https://hailuoai.video/",
   "app_store_urls": [],
   "categories": [
@@ -163,9 +163,9 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "Account (log in) required; age 16 or older",
+    "source_url": "https://hailuoai.video/doc/terms-of-service.html",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
@@ -173,8 +173,38 @@
     "source_url": "https://hailuoai.video/doc/payment-policy.html",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
-   }
-  }
+   },
+   "prices": [
+    {
+     "plan": "Standard (1,000 credits a month)",
+     "amount": 14.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://hailuoai.video/doc/payment-policy.html",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Pro (4,500 credits a month)",
+     "amount": 54.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://hailuoai.video/doc/payment-policy.html",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Master (10,000 credits a month)",
+     "amount": 119.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://hailuoai.video/doc/payment-policy.html",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -206,7 +236,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Chat terms form an agreement with JINGSHENG HENGXING TECHNOLOGY PTE.LTD (Singapore); Zhipu link inferred from Z.ai/GLM branding and ZCode docs, not from the chat terms. Page titles on chat.z.ai call it 'Free AI Chatbot & Agent'; the default model differs between cached pages (GLM-4.6 to GLM-5.x). Paid offers found (GLM Coding Plan from $18/month, a credits-based plan from 30 July 2026) are developer plans in docs.z.ai, not a chat subscription, and no accepted payment methods were listed, so payment is unknown. Terms bar use for medical, legal, news, education and finance purposes. Sign-up method and countries not found.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Chat terms form an agreement with JINGSHENG HENGXING TECHNOLOGY PTE.LTD (Singapore); Zhipu link inferred from Z.ai/GLM branding and ZCode docs, not from the chat terms. Page titles on chat.z.ai call it 'Free AI Chatbot & Agent'; the default model differs between cached pages (GLM-4.6 to GLM-5.x). Paid offers found (GLM Coding Plan from $18/month, a credits-based plan from 30 July 2026) are developer plans in docs.z.ai, not a chat subscription, and no accepted payment methods were listed, so payment is unknown. Terms bar use for medical, legal, news, education and finance purposes. Sign-up method and countries not found. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 8 quoted confirmations, corrected or added: access.countries_available, access.countries_unavailable, access.signup_requirements; not found on the pages: access.free, access.free_limits, description (writing, slides, websites, data analysis), categories (writing, coding). chat.z.ai is a JavaScript shell whose title no longer says 'Free' ('Advanced AI Chatbot & Agent powered by GLM-5.3-Flash'), so free status is unconfirmed; the Singapore operator is confirmed. The terms' sanctions clause excludes Iran, North Korea and Cuba (plus Crimea, Donetsk, Zaporizhzhia, which have no ISO code); the subscription terms cover the GLM Coding Plan and name no payment methods.",
   "url": "https://chat.z.ai/",
   "app_store_urls": [],
   "categories": [
@@ -236,21 +266,25 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "all_except_listed",
+    "source_url": "https://chat.z.ai/legal-agreement/terms-of-service",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_unavailable": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": [
+     "IR",
+     "KP",
+     "CU"
+    ],
+    "source_url": "https://chat.z.ai/legal-agreement/terms-of-service",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "Account with email address and password, or sign-in with Google or GitHub where available; terms also bar users in Crimea, Donetsk and Zaporizhzhia",
+    "source_url": "https://docs.z.ai/legal-agreement/privacy-policy",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
@@ -289,7 +323,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Baidu news release (March 2025) says ERNIE 4.5 and X1 went live on the Wenxin Yiyan site free for users, with the Wenxiaoyan app to follow; Baidu Baike (third party) says the app was renamed Wenxiaoyan in Sept 2024 and the service became fully free on 1 April 2025. The yiyan.baidu.com notices list ERNIE 5.0 (Jan 2026) and 5.1, with no pricing. The 2023 membership (59.9 CNY/month) appears superseded; no current paid tier or payment methods found. Publisher region from the Baidu corporate news site (Beijing company). Sign-up likely needs a Baidu account, possibly a Chinese phone number, but not confirmed. Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Baidu news release (March 2025) says ERNIE 4.5 and X1 went live on the Wenxin Yiyan site free for users, with the Wenxiaoyan app to follow; Baidu Baike (third party) says the app was renamed Wenxiaoyan in Sept 2024 and the service became fully free on 1 April 2025. The yiyan.baidu.com notices list ERNIE 5.0 (Jan 2026) and 5.1, with no pricing. The 2023 membership (59.9 CNY/month) appears superseded; no current paid tier or payment methods found. Publisher region from the Baidu corporate news site (Beijing company). Sign-up likely needs a Baidu account, possibly a Chinese phone number, but not confirmed. Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 1 quoted confirmations; not found on the pages: description, publisher_region, categories, access.free_limits. Baidu's March 2025 news says ERNIE 4.5 and X1 are free on the Yiyan site (not the 'April 2025' date in the record). yiyan.baidu.com now redirects to wenxin.baidu.com titled 百度文心助手 (Wenxin Assistant), a possible rebrand; that page is a JS shell.",
   "url": "https://yiyan.baidu.com/",
   "app_store_urls": [],
   "categories": [
@@ -372,7 +406,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Download centre (official) lists macOS 11.3+, Windows 10+, iOS, Android, web and a Chrome extension, with developer Shenzhen Tencent Computer Systems Co., Ltd. Free status comes only from Tencent Cloud developer-community articles (early 2025, user-contributed, so third_party) saying Hunyuan and DeepSeek were free and unlimited in Yuanbao; no official current pricing found. Login page says sign-in is by QR scan (WeChat/QQ presumably) but this was not confirmed, so signup is unknown. No membership or payment terms found. Countries unknown; aimed at mainland China users.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Download centre (official) lists macOS 11.3+, Windows 10+, iOS, Android, web and a Chrome extension, with developer Shenzhen Tencent Computer Systems Co., Ltd. Free status comes only from Tencent Cloud developer-community articles (early 2025, user-contributed, so third_party) saying Hunyuan and DeepSeek were free and unlimited in Yuanbao; no official current pricing found. Login page says sign-in is by QR scan (WeChat/QQ presumably) but this was not confirmed, so signup is unknown. No membership or payment terms found. Countries unknown; aimed at mainland China users. Verification review 2026-11-16: compared with the official pages fetched that day (1 page); 6 quoted confirmations; not found on the pages: publisher_region, categories (image), url (yuanbao.tencent.com is a JavaScript shell), access.free (only a third-party 2025 article). Both official Yuanbao pages are JavaScript shells, so the only evidence is a February 2025 third-party repost on Tencent Cloud's developer community. It says DeepSeek R1 was free in Yuanbao; current terms and the publisher entity aren't on any readable official page.",
   "url": "https://yuanbao.tencent.com/",
   "app_store_urls": [],
   "categories": [
@@ -458,7 +492,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Company site wrtn.io (footer per search summary) gives a Seocho-gu, Seoul address; a Tokyo office also exists. Press releases say core features are free and unlimited (GPT-5 free from Aug 2025; 3.0 update says new core features are free); character chat has partial paid features. Recorded as free_tier because paid options exist. Terms say paid services can be paid with prepaid, debit and credit cards (Korean card payment), and subscriptions renew monthly on the registered method: recorded as card_local because the terms are Korean-language domestic terms; international cards not confirmed. KakaoPay was added only for auto-purchase on the separate Crack (character chat) service, so not listed here. Interface mainly Korean (not confirmed as a claim). Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Company site wrtn.io (footer per search summary) gives a Seocho-gu, Seoul address; a Tokyo office also exists. Press releases say core features are free and unlimited (GPT-5 free from Aug 2025; 3.0 update says new core features are free); character chat has partial paid features. Recorded as free_tier because paid options exist. Terms say paid services can be paid with prepaid, debit and credit cards (Korean card payment), and subscriptions renew monthly on the registered method: recorded as card_local because the terms are Korean-language domestic terms; international cards not confirmed. KakaoPay was added only for auto-purchase on the separate Crack (character chat) service, so not listed here. Interface mainly Korean (not confirmed as a claim). Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 7 quoted confirmations, corrected or added: access.free; not found on the pages: description (search, image tools, character chat), categories (search, image), access.free_limits (paid character-chat features). Free tier, Korean card payment and ads are confirmed from the terms; the free source page (2025-update.wrtn.ai) failed to fetch, so access.free is re-sourced to the terms. The wrtn.ai page shows chat, AI-detection defence, YouTube summary and recording tools, but not search or image tools.",
   "url": "https://wrtn.ai/",
   "app_store_urls": [],
   "categories": [
@@ -477,7 +511,7 @@
   "access": {
    "free": {
     "value": "free_tier",
-    "source_url": "https://2025-update.wrtn.ai/",
+    "source_url": "https://login.wrtn.ai/policy/service",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
@@ -552,7 +586,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms list principal place of business at 140 Yanghwa-ro, Mapo-gu, Seoul; API terms name Liner Corp. under Korean law. Pricing page (snippet) says free accounts get limited credits, one file upload per day, answers with ads; Pro $14.99/month billed annually. Pricing page says it accepts major credit cards; privacy policy lists PayPal, Stripe and Paddle (merchant of record) as payment agencies, so PayPal is listed from the privacy policy, not a checkout page. A Liner news post (ZDNet Korea interview) says ad-supported tiers launched in select regions like India and Southeast Asia. No Korean local methods found. Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms list principal place of business at 140 Yanghwa-ro, Mapo-gu, Seoul; API terms name Liner Corp. under Korean law. Pricing page (snippet) says free accounts get limited credits, one file upload per day, answers with ads; Pro $14.99/month billed annually. Pricing page says it accepts major credit cards; privacy policy lists PayPal, Stripe and Paddle (merchant of record) as payment agencies, so PayPal is listed from the privacy policy, not a checkout page. A Liner news post (ZDNet Korea interview) says ad-supported tiers launched in select regions like India and Southeast Asia. No Korean local methods found. Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 7 quoted confirmations, corrected or added: access.free_limits, access.prices; not found on the pages: access.payment_methods card_international (pricing FAQ says \"Liner accepts major credit cards\" without naming brands), access.payment_methods paypal (privacy policy lists PayPal only as a payment agency, not as a checkout option), categories: chat. Region, free plan and limits confirmed; free_limits updated and prices added. Payment methods stay unconfirmed: no card brands are named and PayPal appears only as a data processor in the privacy policy.",
   "url": "https://liner.com/",
   "app_store_urls": [],
   "categories": [
@@ -574,7 +608,7 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Limited credits, one file upload a day (up to 25 MB), answers with ads.",
+   "free_limits": "Limited credits; unlimited Advanced Search with access to image generation and Deep Research; 1 file upload a day (up to 25 MB); answers with ads.",
    "payment_methods": {
     "value": [
      {
@@ -613,7 +647,45 @@
     "source_url": null,
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
-   }
+   },
+   "prices": [
+    {
+     "plan": "Pro (billed monthly)",
+     "amount": 17.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://liner.com/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Pro (billed annually, per month)",
+     "amount": 14.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://liner.com/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Max (billed monthly)",
+     "amount": 35.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://liner.com/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Max (billed annually, per month)",
+     "amount": 29.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://liner.com/pricing",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
   }
  },
  {
@@ -647,7 +719,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Kakao press releases: closed beta from 8 May 2025, app redesign Oct 2025, web version at mate.kanana.ai announced Nov/Dec 2025. Official welcome page says it is free during the beta, chats may be capped, and a paid plan may come at full launch, never without consent. Latest source seen is from Dec 2025, so whether it is still beta in Nov 2026 is unconfirmed. Sign-up only with a Kakao account (welcome/FAQ). Interface Korean (not recorded as a claim). Countries unknown. Kanana in KakaoTalk (on-device) is a separate feature, not covered.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Kakao press releases: closed beta from 8 May 2025, app redesign Oct 2025, web version at mate.kanana.ai announced Nov/Dec 2025. Official welcome page says it is free during the beta, chats may be capped, and a paid plan may come at full launch, never without consent. Latest source seen is from Dec 2025, so whether it is still beta in Nov 2026 is unconfirmed. Sign-up only with a Kakao account (welcome/FAQ). Interface Korean (not recorded as a claim). Countries unknown. Kanana in KakaoTalk (on-device) is a separate feature, not covered. Verification review 2026-11-16: compared with the official pages fetched that day (2 pages); 5 quoted confirmations; not found on the pages: access.free, access.free_limits, publisher_region, description (free during beta). mate.kanana.ai/welcome and the policy URLs now all show the same 'Kanana in KakaoTalk' page (an on-device AI inside KakaoTalk for supported iPhones and Galaxy phones), with no mention of the standalone mate app, the beta or it being free; the standalone app may have been folded into KakaoTalk and should be re-checked. Press releases (May and Nov 2025) confirm group/1:1 chats, the web version and Kakao-account sign-up, but not the Korea address.",
   "url": "https://mate.kanana.ai/welcome",
   "app_store_urls": [],
   "categories": [
@@ -726,12 +798,12 @@
    "https://felo.ai/en/faq/felo-search-pro",
    "https://felo.ai/blog/pricing/"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. About page: founded July 2024 in Tokyo (Felo Kabushiki Kaisha). FAQ says Pro is sold through Stripe and only Visa, Mastercard and AMEX credit/debit cards are supported. Older blog lists Pro at 2,099 JPY or $14.99/month; a July 2025 post moved Pro to 15,000 credits per cycle. Daily Pro search limits differ between pages (100 vs 300). JPY price recorded as local_currency_pricing=true for Japan only. Countries unknown. App store URLs not confirmed.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. About page: founded July 2024 in Tokyo (Felo Kabushiki Kaisha). FAQ says Pro is sold through Stripe and only Visa, Mastercard and AMEX credit/debit cards are supported. Older blog lists Pro at 2,099 JPY or $14.99/month; a July 2025 post moved Pro to 15,000 credits per cycle. Daily Pro search limits differ between pages (100 vs 300). JPY price recorded as local_currency_pricing=true for Japan only. Countries unknown. App store URLs not confirmed. Verification review 2026-11-16: compared with the official pages fetched that day (5 pages); 9 quoted confirmations, corrected or added: access.free_limits, interface_languages. Free allowance found (5 professional searches a day); Felo's own pages disagree on the Pro allowance (100 vs 300 a day). Interface language list from the site's language picker.",
   "url": "https://felo.ai/",
   "app_store_urls": [],
   "categories": [
@@ -740,9 +812,27 @@
    "writing"
   ],
   "interface_languages": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
+   "value": [
+    "en",
+    "ja",
+    "ko",
+    "zh",
+    "ru",
+    "he",
+    "ar",
+    "fr",
+    "es",
+    "de",
+    "th",
+    "pt",
+    "pl",
+    "it",
+    "tr",
+    "vi",
+    "id"
+   ],
+   "source_url": "https://felo.ai/",
+   "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "models_used": [],
@@ -753,7 +843,7 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Free plan with limited Pro searches; exact current allowance not confirmed.",
+   "free_limits": "Free plan: unlimited quick searches and up to 5 professional searches a day. Pro: $14.99/month (¥2,099).",
    "payment_methods": {
     "value": [
      {
@@ -789,14 +879,15 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:app:brainlogic-ai/zapia",
   "type": "app",
   "name": "Zapia",
-  "description": "Free Spanish-language AI personal assistant for Latin America, with reminders, audio transcription, PDF reading and booking, in its own app.",
+  "description": "AI personal assistant from Uruguay for Latin America that handles reminders, voice-note transcription, email, calendar and bookings, in its own app and on the web; free plan with paid upgrades.",
   "publisher": "Brainlogic AI SAS",
   "publisher_region": {
    "value": "UY",
@@ -817,12 +908,12 @@
    "https://zapia.com/app",
    "https://zapia.com/blog/zapia-whatsapp-stopped-working-what-happened?lang=en"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms name Brainlogic AI SAS and consent to hosting data in the USA. Publisher region UY from CB Insights and F4 (third party; Montevideo HQ); not stated on zapia.com. Official pages say Zapia is free with 20+ free features. A Zapia blog post says it stopped answering inside WhatsApp in countries such as Mexico, Argentina and Colombia after a Meta policy change, and continues in its free app (Play Store and App Store). No paid plan or payment methods found. Third-party reports cite users in Argentina, Brazil, Colombia, Mexico, Peru and Uruguay, but no official country list, so countries are unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Terms name Brainlogic AI SAS and consent to hosting data in the USA. Publisher region UY from CB Insights and F4 (third party; Montevideo HQ); not stated on zapia.com. Official pages say Zapia is free with 20+ free features. A Zapia blog post says it stopped answering inside WhatsApp in countries such as Mexico, Argentina and Colombia after a Meta policy change, and continues in its free app (Play Store and App Store). No paid plan or payment methods found. Third-party reports cite users in Argentina, Brazil, Colombia, Mexico, Peru and Uruguay, but no official country list, so countries are unknown. Verification review 2026-11-16: compared with the official pages fetched that day (3 pages); 11 quoted confirmations, corrected or added: access.free, access.free_limits, access.payment_methods, description. Homepage now offers Free, Pro and Ultra plans, so 'free' becomes 'free_tier' and 'Free' is dropped from the description (a January 2026 blog still called the app 100% free). Terms add app-store billing.",
   "url": "https://zapia.com/",
   "app_store_urls": [],
   "categories": [
@@ -839,16 +930,21 @@
   "models_used": [],
   "access": {
    "free": {
-    "value": "free",
-    "source_url": "https://zapia.com/app",
+    "value": "free_tier",
+    "source_url": "https://zapia.com/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "No limits stated; company says more than 20 features are free.",
+   "free_limits": "Free plan (not a trial): connect your apps and schedule up to 20 tasks; paid plans (Pro, Ultra) add the best models and higher limits.",
    "payment_methods": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": [
+     {
+      "method": "app_store_billing",
+      "note": "Subscriptions through the App Store or Google Play; web payments through unnamed third-party platforms"
+     }
+    ],
+    "source_url": "https://zapia.com/es/terms",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "countries_available": {
@@ -875,14 +971,15 @@
     "source_type": null,
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
   "id": "cf:app:luzia/luzia",
   "type": "app",
   "name": "Luzia",
-  "description": "Spanish and Portuguese AI assistant used across Latin America via its app and WhatsApp, free for basic chat, with a Luzia+ subscription.",
+  "description": "AI assistant from Madrid-based Luzia, popular in Latin America, on web, iOS, Android, WhatsApp and Telegram; free with ads and limits, or Luzia+ with local prices.",
   "publisher": "Factoria Elcano, S.L. (Luzia)",
   "publisher_region": {
    "value": "ES",
@@ -904,12 +1001,12 @@
    "https://chat.luzia.com/en",
    "https://www.luzia.com/en/new/terms"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Privacy policy names FACTORIA ELCANO, S.L., domiciled in Madrid. Built in Spain but marketed heavily to Latin America (privacy policy says conversation content may be analysed for contextual ads). Terms list Luzia+ at 1.99 USD/week or 4.99 USD/month outside Colombia, Brazil and Mexico; 14,999 COP, 24.9 BRL and 99 MXN per month in those countries; 3-day free trial. Terms say payments are processed through Stripe and prices may differ by app-store platform; methods behind Stripe not listed (Pix not confirmed). Help centre says WhatsApp daily messages are limited and points users to the app. Countries unknown. Merge review (2026-11-15): removed other (Stripe named in the terms; accepted methods not listed), because these are card checkouts or apply only to another version of the product.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Privacy policy names FACTORIA ELCANO, S.L., domiciled in Madrid. Built in Spain but marketed heavily to Latin America (privacy policy says conversation content may be analysed for contextual ads). Terms list Luzia+ at 1.99 USD/week or 4.99 USD/month outside Colombia, Brazil and Mexico; 14,999 COP, 24.9 BRL and 99 MXN per month in those countries; 3-day free trial. Terms say payments are processed through Stripe and prices may differ by app-store platform; methods behind Stripe not listed (Pix not confirmed). Help centre says WhatsApp daily messages are limited and points users to the app. Countries unknown. Merge review (2026-11-15): removed other (Stripe named in the terms; accepted methods not listed), because these are card checkouts or apply only to another version of the product. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 17 quoted confirmations, corrected or added: description, access.free_limits, access.signup_requirements, access.prices. 'WhatsApp messages capped daily' and the 'Spanish and Portuguese' wording aren't on the pages, so the description and free limits were rewritten from the terms. The terms list reference Luzia+ prices (monthly: 14,999 COP, 24.9 BRL, 99 MXN, 4.99 USD elsewhere; annual 39.92 USD), now added. Stripe is named as the billing platform but isn't a payment method.",
   "url": "https://www.luzia.com/",
   "app_store_urls": [],
   "categories": [
@@ -932,7 +1029,7 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Basic chat, writing and translation free without subscription; WhatsApp messages capped daily. Luzia+ adds more images, longer chats, no ads.",
+   "free_limits": "Free with ads and usage limits; Luzia+ (3-day free trial) removes ads, doubles chat and tool limits, and adds a premium image model, image editing and an advanced reasoning model.",
    "payment_methods": {
     "value": [
      {
@@ -957,9 +1054,9 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "unknown",
-    "source_url": null,
-    "source_type": null,
+    "value": "None to start in the app; full features need an account with an email via Google or Apple. WhatsApp and Telegram users can start chatting directly",
+    "source_url": "https://www.luzia.com/en/new/terms",
+    "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "local_currency_pricing": {
@@ -967,8 +1064,59 @@
     "source_url": "https://www.luzia.com/en/new/terms",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
-   }
-  }
+   },
+   "prices": [
+    {
+     "plan": "Luzia+ monthly",
+     "amount": 14999,
+     "currency": "COP",
+     "period": "month",
+     "country": "CO",
+     "source_url": "https://www.luzia.com/en/new/terms",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Luzia+ monthly",
+     "amount": 24.9,
+     "currency": "BRL",
+     "period": "month",
+     "country": "BR",
+     "source_url": "https://www.luzia.com/en/new/terms",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Luzia+ monthly",
+     "amount": 99,
+     "currency": "MXN",
+     "period": "month",
+     "country": "MX",
+     "source_url": "https://www.luzia.com/en/new/terms",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Luzia+ monthly",
+     "amount": 4.99,
+     "currency": "USD",
+     "period": "month",
+     "source_url": "https://www.luzia.com/en/new/terms",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    },
+    {
+     "plan": "Luzia+ annual",
+     "amount": 39.92,
+     "currency": "USD",
+     "period": "year",
+     "source_url": "https://www.luzia.com/en/new/terms",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -996,12 +1144,12 @@
    "https://www.ilmu.ai/",
    "https://play.google.com/store/apps/details?id=com.ytlailabs.ilmu.chat"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. ilmu.ai lists Basic at RM 0/month (chat on web, iOS, Android, web search, memory; limited slides, code building, uploads) and Pro at RM 50/month. Malaysians aged 18-30 can get 3 months of Pro free via the AI Untuk Rakyat programme after training on Rakyat Digital; YES telco customers have a registration route. Terms only say subscriptions are charged to a 'Payment Method'; FPX, Touch 'n Go or other methods not found, so payment is unknown. Publisher region from App Store developer name (Sdn Bhd = Malaysian company) and the site's 'Malaysia's AI' branding. Languages from Play listing snippets (not recorded as an interface-language claim). Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. ilmu.ai lists Basic at RM 0/month (chat on web, iOS, Android, web search, memory; limited slides, code building, uploads) and Pro at RM 50/month. Malaysians aged 18-30 can get 3 months of Pro free via the AI Untuk Rakyat programme after training on Rakyat Digital; YES telco customers have a registration route. Terms only say subscriptions are charged to a 'Payment Method'; FPX, Touch 'n Go or other methods not found, so payment is unknown. Publisher region from App Store developer name (Sdn Bhd = Malaysian company) and the site's 'Malaysia's AI' branding. Languages from Play listing snippets (not recorded as an interface-language claim). Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (4 pages); 14 quoted confirmations, corrected or added: access.free, access.local_currency_pricing, interface_languages, access.prices. All stated facts confirmed; the Basic (RM 0) and Pro (RM 50) plans are on the ILMUchat page, not the home page, so free and local-price claims now cite it. Malaysians aged 18-30 can get 3 months of Pro free via AI Untuk Rakyat. Payment methods not stated.",
   "url": "https://www.ilmu.ai/",
   "app_store_urls": [
    "https://apps.apple.com/my/app/ilmuchat/id6748936268",
@@ -1014,16 +1162,20 @@
    "coding"
   ],
   "interface_languages": {
-   "value": "unknown",
-   "source_url": null,
-   "source_type": null,
+   "value": [
+    "en",
+    "ms",
+    "zh"
+   ],
+   "source_url": "https://apps.apple.com/my/app/ilmuchat/id6748936268",
+   "source_type": "official",
    "observed_at": "2026-11-15T00:00:00Z"
   },
   "models_used": [],
   "access": {
    "free": {
     "value": "free_tier",
-    "source_url": "https://www.ilmu.ai/",
+    "source_url": "https://www.ilmu.ai/ilmuchat/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
@@ -1054,11 +1206,23 @@
    },
    "local_currency_pricing": {
     "value": true,
-    "source_url": "https://www.ilmu.ai/",
+    "source_url": "https://www.ilmu.ai/ilmuchat/",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
-   }
-  }
+   },
+   "prices": [
+    {
+     "plan": "Pro",
+     "amount": 50,
+     "currency": "MYR",
+     "period": "month",
+     "source_url": "https://www.ilmu.ai/ilmuchat/",
+     "source_type": "official",
+     "observed_at": "2026-11-15T00:00:00Z"
+    }
+   ]
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -1088,12 +1252,12 @@
    "https://help.vbee.vn/huong-dan-su-dung/tai-khoan/giao-dien-may-tinh/dang-ky",
    "https://help.vbee.vn/docs/faq"
   ],
-  "verification_status": "candidate",
+  "verification_status": "verified",
   "warning": "none",
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Privacy policy names Cong ty Co phan Cong nghe Tri tue Nhan tao Vbee AITalk, Ngoc Khanh Plaza, Hanoi (another Vbee entity appears on vbee.ai terms). Payment policy lists MoMo wallet (QR) among online methods and bank transfer via Techcombank or Vietcombank (QR, auto-activation, minimum 2,000 VND); FAQ says auto-renewing monthly/yearly plans accept only credit/debit cards, so transfer and MoMo are for one-month or one-year plans. Card type (domestic vs international) not stated, so recorded as card_local with a note; re-check. Plans: Standard, Special, VIP, VIP+; a Vbee blog cites 169,000 VND/month starting price (not confirmed on the pricing page). Free: 3-day full trial then a free plan with 3,000 characters a day and standard voices (Vbee blog pages). Sign-up by email, Facebook, Google, Apple or a Mobifone number. Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Privacy policy names Cong ty Co phan Cong nghe Tri tue Nhan tao Vbee AITalk, Ngoc Khanh Plaza, Hanoi (another Vbee entity appears on vbee.ai terms). Payment policy lists MoMo wallet (QR) among online methods and bank transfer via Techcombank or Vietcombank (QR, auto-activation, minimum 2,000 VND); FAQ says auto-renewing monthly/yearly plans accept only credit/debit cards, so transfer and MoMo are for one-month or one-year plans. Card type (domestic vs international) not stated, so recorded as card_local with a note; re-check. Plans: Standard, Special, VIP, VIP+; a Vbee blog cites 169,000 VND/month starting price (not confirmed on the pricing page). Free: 3-day full trial then a free plan with 3,000 characters a day and standard voices (Vbee blog pages). Sign-up by email, Facebook, Google, Apple or a Mobifone number. Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (6 pages); 16 quoted confirmations, corrected or added: access.free_limits, access.payment_methods, access.signup_requirements. Payment policy lists bank transfer, credit/debit card, VNPay, MoMo, ZaloPay, Google Play and Apple billing; MoMo is an e-wallet, so recorded as 'other' rather than mobile_money, and the Techcombank/Vietcombank names and the 3-day trial weren't found. Sign-up page lists 4 ways (email, Facebook, Google, Apple), not a Mobifone number.",
   "url": "https://vbee.vn/",
   "app_store_urls": [],
   "categories": [
@@ -1113,20 +1277,28 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    },
-   "free_limits": "Free plan of 3,000 characters a day with standard voices, after a 3-day full trial.",
+   "free_limits": "Free plan of 3,000 characters a day (3,000 characters per conversion) with free previews of up to 2,000 characters; paid plans (Special, VIP, VIP+) raise limits and add international voices.",
    "payment_methods": {
     "value": [
      {
-      "method": "mobile_money",
-      "note": "MoMo e-wallet (Vietnam), QR payment; one-month or one-year plans"
-     },
-     {
       "method": "bank_transfer",
-      "note": "Vietnamese bank transfer (Techcombank, Vietcombank) by QR or account number"
+      "note": "Vietnamese bank transfer by QR; one-off plans (auto-renewing monthly/yearly plans take cards only); minimum 2,000 VND"
      },
      {
       "method": "card_local",
-      "note": "Credit or debit card; required for auto-renewing plans. Domestic vs international not stated"
+      "note": "Credit or debit card (via VNPay); required for auto-renewing plans; card brands not named"
+     },
+     {
+      "method": "other",
+      "note": "MoMo e-wallet (Vietnam)"
+     },
+     {
+      "method": "other",
+      "note": "ZaloPay e-wallet (Vietnam)"
+     },
+     {
+      "method": "app_store_billing",
+      "note": "Google Play and Apple App Store, in the mobile app"
      }
     ],
     "source_url": "https://policy.vbee.vn/chinh-sach-va-dieu-khoan/chinh-sach-thanh-toan",
@@ -1146,7 +1318,7 @@
     "observed_at": "2026-11-15T00:00:00Z"
    },
    "signup_requirements": {
-    "value": "Account by email, Facebook, Google, Apple or a Mobifone phone number",
+    "value": "Account by email (with an OTP code), Facebook, Google or Apple",
     "source_url": "https://help.vbee.vn/huong-dan-su-dung/tai-khoan/giao-dien-may-tinh/dang-ky",
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
@@ -1157,7 +1329,8 @@
     "source_type": "official",
     "observed_at": "2026-11-15T00:00:00Z"
    }
-  }
+  },
+  "verified_by": "official pages read, 2026-11-16"
  },
  {
   "schema_version": 1,
@@ -1191,7 +1364,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Botnoi Group describes itself as enterprise AI for Thailand (docs page); exact legal entity not confirmed (a Botnoi Consulting Co., Ltd. Bangkok address appears on an old page). Payment page says debit, credit and PromptPay are accepted. Prices shown both in THB (promo 345 baht for 48,000 points) and USD (Starter $15, Pro $30/month); card type not stated, recorded as card_international with a note. Homepage shows 3 free generations a day; creating and previewing V1/V2 voices is free, downloads cost points. Languages: Thai incl. Northern, Isan and Southern dialects plus ~20 others (voice output languages, not interface). Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Botnoi Group describes itself as enterprise AI for Thailand (docs page); exact legal entity not confirmed (a Botnoi Consulting Co., Ltd. Bangkok address appears on an old page). Payment page says debit, credit and PromptPay are accepted. Prices shown both in THB (promo 345 baht for 48,000 points) and USD (Starter $15, Pro $30/month); card type not stated, recorded as card_international with a note. Homepage shows 3 free generations a day; creating and previewing V1/V2 voices is free, downloads cost points. Languages: Thai incl. Northern, Isan and Southern dialects plus ~20 others (voice output languages, not interface). Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (0 pages); 0 quoted confirmations; not found on the pages: description, publisher_region, categories, access.free, access.free_limits, access.payment_methods, access.local_currency_pricing. All Botnoi pages are JavaScript shells with only a title ('Free Realistic Text To Speech online'), so nothing could be confirmed.",
   "url": "https://voice.botnoi.ai/",
   "app_store_urls": [],
   "categories": [
@@ -1283,7 +1456,7 @@
   "first_seen_at": "2026-11-15T00:00:00Z",
   "last_content_change_at": "2026-11-15T00:00:00Z",
   "relations": [],
-  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Run by the Digital India BHASHINI Division, an independent business division of Digital India Corporation under MeitY (PIB release). bhashini.gov.in has a 'Download the BHASHINI App' banner with Play Store and App Store links (URLs not exposed in snippets). Anuvaad web tool offers text translation, text-to-speech and language detection. No source found that states the app is free (government portal, likely free, but not confirmed), so free is unknown. No payments expected. Languages listed include Assamese, Bengali, Gujarati, Hindi, Kannada, Tamil, Telugu and more (content languages, not interface). Countries unknown.",
+  "research_notes": "Network in this session blocked every host except github.com (WebFetch and curl both failed), so no page was fetched; every fact comes from WebSearch result snippets restricted to the publisher's own domains (unless marked third_party), cited to the result URL. Marked candidate for that reason; re-verify by fetching. Run by the Digital India BHASHINI Division, an independent business division of Digital India Corporation under MeitY (PIB release). bhashini.gov.in has a 'Download the BHASHINI App' banner with Play Store and App Store links (URLs not exposed in snippets). Anuvaad web tool offers text translation, text-to-speech and language detection. No source found that states the app is free (government portal, likely free, but not confirmed), so free is unknown. No payments expected. Languages listed include Assamese, Bengali, Gujarati, Hindi, Kannada, Tamil, Telugu and more (content languages, not interface). Countries unknown. Verification review 2026-11-16: compared with the official pages fetched that day (0 pages); 0 quoted confirmations; not found on the pages: description, publisher_region, categories, access.free_limits. bhashini.gov.in, anuvaad.bhashini.gov.in and the about page are JavaScript shells (under 10 characters of text); the PIB release returned 403.",
   "url": "https://bhashini.gov.in/",
   "app_store_urls": [],
   "categories": [

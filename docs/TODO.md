@@ -32,7 +32,19 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
   - not found: Microsoft Copilot, uLesson, Hailuo AI, Qwen Chat, Kanana. Kanana was reported shut down in October 2026; confirm it and mark it withdrawn;
   - Qwen Chat's publisher ("Nth Power…") looks odd.
 - [ ] **Facts not found on their source pages:** the automatic page check lists 15 (7 partly found, 8 not found). Re-check them by hand.
-- [ ] **Unverified listings:** 76 of 93 apps and hosts are candidates now that the page check no longer verifies automatically (decision 66). They're kept out of picks and guides until a person reads their official page. This is the most valuable research task.
+- [ ] **Unverified listings:** 40 of 96 apps and hosts are still unverified after the 16 November review (decision 67). Reasons:
+  - **pages that only render with JavaScript, or block bots:** ChatGPT, Dicta, Botnoi, BHASHINI, Gemini API, Sahabat-AI, Yuanbao, Kling's plans, Qwen, Sarvam Indus, Vultr (403), HUMAIN (403), Karnak Chat, BelMasry;
+  - **free status or payment not stated** on the official pages;
+  - **card payment named without brands,** applied strictly by one group: Liner, Jarvislabs, Latitude.sh, Cerebras.
+
+  Next steps: a headless-browser fetch for the JavaScript pages, or read them in a session that can reach them; re-run the review for the card-brand cases under decision 67's rule.
+- [ ] **Listings that may have changed** (found in the review):
+  - Kanana seems folded into KakaoTalk;
+  - Locally AI is now "by LM Studio" (Element Labs), so the publisher needs updating;
+  - Jais Chat is run by Core42 per G42 (its site shows "Jais 3 - MBZUAI");
+  - Lintasarta's Deka GPU page moved to lintasarta.net;
+  - ERNIE Bot redirects to "Wenxin Assistant";
+  - OpenRouter's purchase by Stripe is pending.
 - [ ] **Country lists for apps:** many apps still show "unknown" outside the App Store check. Use official availability pages where they exist.
 - [ ] **Publisher countries:** extend `data/publisher-map.json` beyond the first 59 organisations.
 
