@@ -368,6 +368,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** every scan reads Replicate's public model list and collections, using a free account's API token. New models that are official or have 500+ runs become candidate listings, with tasks taken from Replicate's collections. Availability, license and size stay unknown. A model that is already listed gets Replicate under "Use it online" instead of a second listing.
 **Why:** the owner asked to catalog new models from Replicate. Its API needs a token even to read, so it's a repo secret (reading costs nothing). Replicate runs both makers' own models and copies of open models. So matching by name and owner keeps one record per model, and nothing that Replicate doesn't state is filled in. The 500-run bar keeps out the many personal test models. The first run is a baseline, so the back catalog isn't called new.
 
+### 76. Trace each model back to its original
+**Decision:** derived models (fine-tunes, adapters, merges, uncensored variants, quantized copies) are followed up the `base_model` chain on Hugging Face to the original. The listing links the original: its CleverFox listing if there is one, otherwise its Hugging Face page. A model with no `base_model` keeps its own Hugging Face link.
+**Why:** the owner asked to point listings to the original source where it can be found, and otherwise keep the Hugging Face link. Hugging Face's model tree (the uploader's `base_model` metadata) is the documented way to find it. Hugging Face is often the original host itself, so there's no separate site to look for. The first local run traced 229 derived models, 88 of them past their direct parent. Parents are cached so the daily refresh reads few pages.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

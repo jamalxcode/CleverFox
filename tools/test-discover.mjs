@@ -1,7 +1,7 @@
 // Offline tests for tools/discover.mjs.
 import assert from 'node:assert/strict';
 import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate } from './discover.mjs';
-import { replicateRecord, replicateMatch } from './import.mjs';
+import { replicateRecord, replicateMatch, parentsFromMeta, traceOrigin } from './import.mjs';
 
 assert.equal(robotsAllows('', '/'), true, 'no robots.txt: allowed');
 assert.equal(robotsAllows('User-agent: *\nDisallow: /', '/'), false);
@@ -76,4 +76,11 @@ assert.match(rec.description, /^Text-to-video model run by its maker on Replicat
 const hf = { id: 'x', distributions: [{ source: 'huggingface', native_id: 'Acme-AI/Acme-Video-2' }] };
 assert.equal(replicateMatch({ id: 'acme/acme-video-2', owner: 'acme', name: 'acme-video-2' }, [hf]), hf, 'same name, related owner');
 assert.equal(replicateMatch({ id: 'zed/acme-video-2', owner: 'zed', name: 'acme-video-2' }, [hf]), undefined, 'same name, unrelated owner');
+// Originals: base_model upstream, from tags first, then card metadata; chains stop at an original or an unreadable page.
+assert.deepEqual(parentsFromMeta({ id: 'me/q', tags: ['base_model:quantized:me/ft', 'base_model:me/ft'] }), [{ id: 'me/ft', relation: 'quantization_of' }]);
+assert.deepEqual(parentsFromMeta({ id: 'me/m', cardData: { base_model: ['a/x', 'b/y'] } }).map((p) => p.id), ['a/x', 'b/y'], 'a merge lists several parents');
+const tree = { 'me/ft': [{ id: 'org/base' }], 'org/base': [{ id: 'org/pretrained' }], 'org/pretrained': [] };
+assert.deepEqual(traceOrigin('me/ft', (id) => tree[id]), { original: 'org/pretrained', chain: ['me/ft', 'org/base', 'org/pretrained'], complete: true });
+assert.equal(traceOrigin('x/gone', () => undefined).complete, false, 'an unreadable page stops the chain');
+assert.equal(traceOrigin('a/a', (id) => [{ id: id === 'a/a' ? 'b/b' : 'a/a' }]).chain.length, 2, 'loops stop');
 console.log('All discovery tests passed.');

@@ -12,6 +12,15 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: originals of derived models
+**Where:** Claude Code session.
+**Asked:** for models pointing to Hugging Face copies, find the original through the model card (base model, model tree, `base_model` metadata). Link it if found, otherwise keep the Hugging Face link. The owner pasted notes: Hugging Face can be the original host itself, and merges list several parents.
+**Outcome (decision 76):**
+- `tools/import.mjs` follows `base_model` upstream, with a parent cache in `origins.json`.
+- Listings show "🌱 Original:", linked to the catalog listing or to Hugging Face. Direct parents in the catalog are now links too (they were plain text).
+- The local run traced 229 models, 88 past their direct parent (for example a quantized uncensored fine-tune back to Qwen/Qwen3.8-27B).
+- It reaches the live site with the next daily full refresh.
+
 ## 2026-11-16: new models from Replicate
 **Where:** Claude Code session.
 **Asked:** pull new releases from replicate.com for new AI models to catalog.

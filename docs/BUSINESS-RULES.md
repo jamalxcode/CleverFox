@@ -30,7 +30,13 @@ Last updated: 14 November 2026.
 - Types: `model`, `dataset`, `app`, `host`. IDs are stable and never reassigned: `cf:model:<publisher>/<name>`, `cf:dataset:…`, `cf:app:…`, `cf:host:<provider>`.
 - **One record per model across all sources:** a model's Hugging Face repo, Ollama tags and API are distributions of one record. No two public records may share a distribution URL or native ID (enforced by the build).
 - **Quantized copies are not separate models.** They're skipped, except abliterated or uncensored packages (section 4).
-- **Relations:** `variant_of`, `uncensored_variant_of`, `finetune_of`, `quantization_of`, `merge_of`, `adapter_of`, `successor_of`, from Hugging Face's `base_model` tags.
+- **Relations:** `variant_of`, `uncensored_variant_of`, `finetune_of`, `quantization_of`, `merge_of`, `adapter_of`, `successor_of`, from Hugging Face's `base_model` tags. A parent in the catalog links to its listing; otherwise to its Hugging Face page.
+- **Originals (decision 76):** for a fine-tune, adapter, merge, uncensored variant or quantized copy, `tools/import.mjs` follows `base_model` upstream on Hugging Face, one model card at a time, to the model with no `base_model`: the original.
+  - Each step uses the parent's `base_model` tags (finetune, adapter, merge, quantized), or its card's `base_model` field if there are no tags. A merge's first 3 parents are traced separately.
+  - Up to 6 steps; loops stop. The chain also stops at a page that can't be read (deleted, private), and then says so.
+  - Up to 400 model pages are read per full refresh (30 per new model in quick scans). Parents are cached in `data/imported/origins.json` and re-read after 30 days.
+  - Listings show "🌱 Original:" when the original is further up than the direct parent. It links to the original's CleverFox listing if there is one, otherwise to its Hugging Face page, with how many steps up it is.
+  - A model with no `base_model` keeps its own Hugging Face link: Hugging Face is often where the original is published. Its code, paper and project links come from its model card, as before. This depends on uploaders stating `base_model`.
 - **Hand-researched seed records win:** the importer skips anything a seed record covers. Seed research notes are never published.
 - **Records are never silently lost:** withdrawn or broken listings are marked, not dropped (planned for the pipeline). Imports keep last-known-good data (section 9).
 

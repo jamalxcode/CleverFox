@@ -65,6 +65,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Open a listing on the live site (for example ChatGPT) and confirm the "Videos on YouTube" button and the "On YouTube" line show; the 16 November session couldn't reach the site.
 - [ ] YouTube matches: only 6 listings matched on the first build. Watch the count in the build log ("YouTube: videos naming N listings") as scans collect more videos, and check that matches stay correct (no listing linked to a video about a different model).
 - [ ] Replicate's first run with the token: check `discover.json` → `replicate` (pages, seen, collections, models). Check whether the `sort_by` parameter worked (models newest first); without it, 10 pages may miss new models. Check that the collection slugs matched tasks, and that no listing duplicates one already listed from Hugging Face.
+- [ ] Originals (decision 76): after the next full refresh, check the log line "Originals: N models traced" and a few listings' "🌱 Original" links.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

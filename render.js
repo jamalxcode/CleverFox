@@ -277,7 +277,12 @@ export function detail(r) {
   if (r.type === 'host') facts.push(r.kinds?.length && item('🏷️', esc(r.kinds.map((k) => KIND_LABELS[k] || k).join(', '))), f('📍', 'data centers', r.data_centers, (v) => v.map((d) => `<span title="${esc(d.city_or_region || '')}">${flag(d.country)}</span>`).join(' ')), f('🎮', 'GPUs', r.gpu_types, (v) => Array.isArray(v) ? esc(v.join(', ')) : esc(v)), f('🔐', 'data residency', r.data_residency, (v) => esc(String(v).slice(0, 90))));
   if (r.type === 'model' && r.relations?.length) {
     const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
-    facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); return `${esc(REL[x.type] || x.type || 'related to')} ${/^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(t.replace('https://huggingface.co/', ''))}</a>` : esc(t.split('/').pop() || '?')}`; }).join('; ')));
+    const to = (x, label) => x.listing ? `<a href="${esc(view.base + x.listing)}">${esc(x.name || label)}</a>` : x.url ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label);
+    facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); const label = t.replace('https://huggingface.co/', '').split('/').slice(t.startsWith('cf:') ? -1 : 0).join('/') || '?'; return `${esc(REL[x.type] || x.type || 'related to')} ${x.listing || x.url ? to(x, label) : /^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label)}`; }).join('; ')));
+    // The original, traced upstream through base_model (shown when it's further up than the direct parent).
+    const direct = new Set((r.origin?.parents || []).map((p) => p.hf_id));
+    const up = (r.origin?.originals || []).filter((o) => !direct.has(o.hf_id));
+    if (up.length) facts.push(item('🌱', `<strong>Original:</strong> ${up.map((o) => `${to(o, o.hf_id)}${o.chain.length > 2 ? ` <span class="muted">(${o.chain.length - 1} steps up)</span>` : ''}`).join(', ')}`, `Traced through ${r.origin.source}${up.some((o) => !o.complete) ? '; the chain stops where a model page couldn\'t be read' : ''}`));
   }
   const dv = r.discovered_via;
   if (dv?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${dv.author}`));

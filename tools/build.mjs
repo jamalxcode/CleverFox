@@ -384,6 +384,26 @@ let xMatched = 0;
 for (const r of published) { const b = XDATA.buzz?.[r.id]; if (b) { r.x_buzz = b; xMatched++; } }
 if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
 
+// ---- Originals and relations: link to the listing when it's in the catalog, else to Hugging Face ----
+{
+  const { listingPath } = await import('../render.js');
+  const byHf = new Map(); const byId = new Map();
+  for (const r of published) { byId.set(r.id, r); for (const d of r.distributions || []) if (d.source === 'huggingface') byHf.set(String(d.native_id).toLowerCase(), r); }
+  const link = (hf) => { const r = byHf.get(String(hf).toLowerCase()); return r ? { listing: listingPath(r), name: r.name } : { url: `https://huggingface.co/${hf}` }; };
+  let n = 0;
+  for (const r of published) {
+    if (r.type !== 'model') continue;
+    for (const x of r.relations || []) {
+      const t = String(x.target || '');
+      if (x.target_hf && !x.target) Object.assign(x, link(x.target_hf), { target: `https://huggingface.co/${x.target_hf}` });
+      else if (t.startsWith('cf:') && byId.has(t)) Object.assign(x, { listing: listingPath(byId.get(t)), name: byId.get(t).name });
+      else if (t.startsWith('https://huggingface.co/')) Object.assign(x, link(t.replace('https://huggingface.co/', '')));
+    }
+    if (r.origin) { for (const o of r.origin.originals || []) Object.assign(o, link(o.hf_id)); n++; }
+  }
+  console.log(`Originals: ${n} models with a traced original`);
+}
+
 // ---- YouTube videos that name a listing (from tools/discover.mjs: official channels first, then keyword search) ----
 {
   const D = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};

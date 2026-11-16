@@ -478,6 +478,57 @@ function xAnnouncements(kind) {
   return out;
 }
 
+// ---- Originals: follow base_model upstream on Hugging Face (fine-tune -> base -> ... -> the original) ----
+// The uploader states base_model in the model card's metadata (Hugging Face shows it as the model tree). A model with
+// no base_model is treated as the original itself: Hugging Face is often where the original is published.
+// Each model's parents are cached in data/imported/origins.json (re-read after 30 days), so runs don't refetch them.
+const REL_TAGS = [['finetune', 'finetune_of'], ['adapter', 'adapter_of'], ['merge', 'merge_of'], ['quantized', 'quantization_of']];
+export function parentsFromMeta(m) {
+  const out = [];
+  for (const [rel, type] of REL_TAGS) for (const id of tagValues(m?.tags, `base_model:${rel}:`)) out.push({ id, relation: type });
+  if (!out.length) for (const id of asList(m?.cardData?.base_model)) out.push({ id, relation: 'derived_from' });
+  return out.filter((p, i, a) => p.id && p.id !== m?.id && a.findIndex((q) => q.id === p.id) === i);
+}
+// lookup(id) -> parents array, [] for an original, or undefined if unknown (not reachable): the chain stops there.
+export function traceOrigin(parentId, lookup, maxHops = 6) {
+  const chain = [parentId];
+  for (let i = 0; i < maxHops; i++) {
+    const ps = lookup(chain.at(-1));
+    if (!ps?.length) return { original: chain.at(-1), chain, complete: Array.isArray(ps) };
+    if (chain.includes(ps[0].id)) break;
+    chain.push(ps[0].id);
+  }
+  return { original: chain.at(-1), chain, complete: false };
+}
+const ORIGINS = join(outDir, 'origins.json');
+export async function resolveOrigins(records, known = new Map(), maxFetch = 400) {
+  const cache = existsSync(ORIGINS) ? JSON.parse(readFileSync(ORIGINS, 'utf8')) : {};
+  const fresh = (id) => cache[id] && (Date.now() - new Date(cache[id].at)) / 86400000 < 30;
+  for (const [id, m] of known) cache[id] = { parents: parentsFromMeta(m), at: TODAY };
+  const direct = (r) => (r.relations || []).filter((x) => x.target_hf).map((x) => ({ id: x.target_hf, relation: x.type === 'uncensored_variant_of' ? 'finetune_of' : x.type }));
+  let fetched = 0; let frontier = [...new Set(records.flatMap((r) => direct(r).map((p) => p.id)))];
+  for (let hop = 0; hop < 6 && frontier.length; hop++) {
+    const need = frontier.filter((id) => !fresh(id)).slice(0, Math.max(0, maxFetch - fetched));
+    fetched += need.length;
+    await pool(need, 6, async (id) => {
+      const m = await get(`${HF}/api/models/${id}?expand[]=cardData&expand[]=tags`, { headers: HF_HEADERS, tries: 2 }).catch(() => undefined);
+      cache[id] = m === null ? { parents: null, at: TODAY, gone: true } : m ? { parents: parentsFromMeta({ ...m, id }), at: TODAY } : cache[id] || { parents: null, at: '1970-01-01T00:00:00Z' };
+    });
+    frontier = [...new Set(frontier.flatMap((id) => (cache[id]?.parents || []).slice(0, 1).map((p) => p.id)))].filter((id) => !frontier.includes(id));
+  }
+  const lookup = (id) => (Array.isArray(cache[id]?.parents) ? cache[id].parents : undefined);
+  let n = 0;
+  for (const r of records) {
+    const ps = direct(r); if (!ps.length) continue;
+    const originals = [];
+    for (const p of ps.slice(0, 3)) { const t = traceOrigin(p.id, lookup); if (!originals.some((o) => o.hf_id === t.original)) originals.push({ hf_id: t.original, chain: t.chain, complete: t.complete }); }
+    r.origin = { parents: ps.slice(0, 3).map((p) => ({ hf_id: p.id, relation: p.relation })), originals, source: 'base_model in the model cards on Hugging Face (stated by each uploader)', observed_at: TODAY };
+    if (originals.some((o) => o.hf_id !== ps[0].id)) n++;
+  }
+  writeFileSync(ORIGINS, JSON.stringify(cache, null, 1) + '\n');
+  console.log(`Originals: ${records.filter((r) => r.origin).length} models traced (${n} past their direct parent), ${fetched} model pages read`);
+}
+
 // ---- Replicate (tools/discover.mjs): new models run on Replicate become candidate listings ----
 // Skipped when the same model is already listed (same name, related owner): the build then shows Replicate under
 // "Use it online" on that listing instead. Tasks come only from Replicate's collections; nothing else is guessed.
@@ -566,7 +617,7 @@ async function main() {
   const seed = seedKeys();
   const inSeed = (r) => seed.has(r.id) || r.distributions?.some((d) => seed.has(`${d.source}:${String(d.native_id).toLowerCase()}`) || seed.has(d.url.replace(/\/$/, '').toLowerCase()));
 
-  let models = null; let datasets = null; let ollama = [];
+  let models = null; let datasets = null; let ollama = []; let raw0 = [];
   try {
     const raw = await fetchModels();
     // Plain quantized copies are skipped; an abliterated / uncensored package is a different model, so it stays.
@@ -579,6 +630,7 @@ async function main() {
       if (m?.id && TASKS.includes(m.pipeline_tag) && !QUANTIZERS.test(m.author || '')) { m.discovered_via = post; raw.push(m); have.add(m.id); }
     }
     if (xAnn.size) console.log(`X announcements: ${xAnn.size} linked models checked`);
+    raw0 = raw;
     const kept = raw.filter((m) => !isQuantization(m) || isUncensored(m.id, m.tags));
     console.log(`Hugging Face models: ${raw.length} fetched, ${kept.length} after skipping quantized copies (${kept.filter((m) => isUncensored(m.id, m.tags)).length} uncensored)`);
     const readmes = await pool(kept.slice(0, RULES.readmes), 6, (m) => get(`${HF}/${m.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null));
@@ -600,7 +652,8 @@ async function main() {
   } catch (e) { console.warn(`Hugging Face datasets failed: ${e.message}`); }
 
   if (models) {
-    // Resolve relations to catalog ids where the base model is in the catalog.
+    // Trace each derived model back to its original (base_model upstream), then resolve relations to catalog ids.
+    try { await resolveOrigins(models, new Map(raw0.map((m) => [m.id, m]))); } catch (e) { console.warn(`Originals failed: ${e.message}`); }
     const idByHf = new Map(models.map((r) => [r.distributions[0].native_id, r.id]));
     for (const r of models) r.relations = r.relations.map((x) => ({ type: x.type, target: idByHf.get(x.target_hf) || `${HF}/${x.target_hf}` }));
     const { extra, standalone } = ollama.length ? await enrichOllama(models, ollama) : { extra: [], standalone: [] };
@@ -646,6 +699,7 @@ async function xOnly() {
     if (!m?.id || !TASKS.includes(m.pipeline_tag) || QUANTIZERS.test(m.author || '') || (isQuantization(m) && !isUncensored(m.id, m.tags))) continue;
     const readme = await get(`${HF}/${m.id}/raw/main/README.md`, { json: false, headers: HF_HEADERS, tries: 2 }).catch(() => null);
     const r = modelRecord(m, readme); r.discovered_via = post;
+    try { await resolveOrigins([r], new Map([[m.id, m]]), 30); } catch { /* keep going without the original */ }
     const idByHf = new Map(models.map((x) => [x.distributions?.[0]?.native_id, x.id]));
     r.relations = r.relations.map((x) => ({ type: x.type, target: idByHf.get(x.target_hf) || `${HF}/${x.target_hf}` }));
     r.capabilities = capabilitiesOf(r, r.tags_seen); r.highlights = highlightsOf(r); applyPublisher(r);
