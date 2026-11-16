@@ -262,6 +262,7 @@ export function detail(r) {
   h += glance(r);
   h += startBlock(r);
   h += onlineLine(r);
+  h += ytLine(r);
   // Facts: one or two lines; unknown fields gathered at the end.
   const unknown = [];
   const f = (emoji, label, c, fmt) => { if (c === undefined) return null; const v = claimVal(c, fmt); if (!v) { unknown.push(label); return null; } return item(emoji, v, label); };
@@ -347,6 +348,12 @@ export function xSearchUrl(r) {
   const q = name.length <= 3 ? `${name} ${r.publisher_name || r.publisher}` : /\s/.test(name) ? `"${name}"` : name;
   return `https://x.com/search?q=${encodeURIComponent(q)}&src=typed_query&f=live`;
 }
+// A live YouTube search for the listing, newest uploads first (like "Reactions on X"; no API quota used).
+export function ytSearchUrl(r) {
+  const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+  const q = name.length <= 3 ? `${name} ${r.publisher_name || r.publisher}` : `${/\s/.test(name) ? `"${name}"` : name}${r.type === 'host' ? ' GPU' : r.type === 'dataset' ? ' dataset' : ' AI'}`;
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}&sp=CAI%253D`;
+}
 export function shareRow(r) {
   const url = listingUrl(r);
   const text = `${r.name} on CleverFox: ${(r.answers?.good_for || []).slice(0, 3).map((c) => (CAPS[c] || c).replace(/^\S+\s/, '')).join(', ') || r.description}`;
@@ -357,6 +364,7 @@ export function shareRow(r) {
     <a class="share-btn" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">𝕏 Post</a>
     <a class="share-btn" href="https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}" target="_blank" rel="noopener">💬 WhatsApp</a>
     <a class="share-btn" href="${esc(xSearchUrl(r))}" target="_blank" rel="noopener">👀 Reactions on X</a>
+    <a class="share-btn" href="${esc(ytSearchUrl(r))}" target="_blank" rel="noopener">▶️ Videos on YouTube</a>
     <button type="button" class="share-btn compare-btn" data-compare="${esc(r.id)}" hidden>⚖️ Compare</button>
   </div>`;
 }
@@ -520,3 +528,10 @@ export function playLine(r) {
 }
 // A short name for a payment method: its label, or for "other" the first brand named in the note.
 export const shortPay = (x) => x.method === 'other' ? String(x.note || 'other').replace(/^e-wallets?:\s*/i, '').split(/[,;(]/)[0].trim() : (METHOD_LABELS[x.method] || x.method);
+
+// Videos CleverFox already collected (official channels, keyword search) that name this listing.
+export function ytLine(r) {
+  const v = r.yt_videos || [];
+  if (!v.length) return '';
+  return `<p class="ln">▶️ <strong>On YouTube:</strong> ${v.slice(0, 3).map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.title)}</a> <span class="muted">(${esc(x.channel)}${x.official ? ', official' : ''}, ${esc(fmtDate(x.published_at))})</span>`).join('<span class="sep"> · </span>')} <a class="muted" href="${esc(ytSearchUrl(r))}" rel="noopener" target="_blank">more ↗</a></p>`;
+}

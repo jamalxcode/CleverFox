@@ -12,6 +12,13 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: YouTube videos on listings
+**Where:** Claude Code session.
+**Asked:** like "Reactions on X", add related YouTube videos for each AI.
+**Outcome (decision 73):**
+- A "▶️ Videos on YouTube" button on every listing: a live YouTube search, newest first, with no quota used.
+- Already-collected videos that name the listing show under "▶️ On YouTube", official channels first; 6 listings matched on the first build.
+
 ## 2026-11-16: a Matrix / cyberpunk look
 **Where:** Claude Code session.
 **Asked:** give the website a less boring look, really functional but fun to read, in a Matrix cyberpunk style.

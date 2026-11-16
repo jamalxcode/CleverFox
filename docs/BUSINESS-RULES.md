@@ -305,6 +305,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
+- **YouTube on listings:** every listing has a "▶️ Videos on YouTube" button next to "Reactions on X": a live YouTube search for its name (with "AI", "GPU" for hosts or "dataset"), newest first, using no API quota. Videos CleverFox already collected (official channels first, then keyword search) whose titles name the listing show under "▶️ On YouTube", up to 3. Matching uses the full name or short name for models (5+ characters with a digit or space), and the name for apps and hosts.
 - **Look (decision 72):** dark "Matrix" by default (the browser's light/dark preference doesn't choose it); light "terminal paper" from the footer button, kept in the browser as `look: light` (the previous design's `theme` setting is ignored, so everyone starts on Matrix). Digital rain behind the header, decorative only: paused when the tab is hidden, off for reduced motion and in light mode. The page check tests contrast in both looks.
 
 - **List records:** apps and hosts keep their whole record in the list (sources, payment notes, prices, App Store countries); only internal notes and the evidence list are left out (`tools/slim.mjs`). Every card loads its full record (`record.json`) when opened. Models keep the slim list.

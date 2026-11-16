@@ -356,6 +356,10 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 A light "terminal paper" mode is available from the footer button (stored as `look: light`; the old `theme` setting from the previous design is ignored, because visitors who had chosen light before kept seeing light). The browser's light/dark preference no longer chooses the look; dark is the default.
 **Why:** the owner asked for a less boring, functional but fun look in a Matrix cyberpunk style. Readability comes first: the deploy's contrast check now tests both looks the way the site switches them (it caught the selected tab's count in light mode), and the rain is decorative only, so it's never needed to read anything.
 
+### 73. YouTube videos on each listing
+**Decision:** each listing gets a "▶️ Videos on YouTube" button beside "Reactions on X": a live search link that uses no quota. Up to 3 already-collected videos whose titles name the listing are also shown, official channels first.
+**Why:** the owner asked for YouTube videos about each AI, like the X reactions. A per-listing API search would cost 100 quota units each, far over the free daily allowance for about 1,240 listings. A search link plus matches from videos already collected give the same help for free. The first build matched 6 listings (ChatGPT, Gemini, Perplexity, DeepSeek, Gemma 4, LongCat-2.5).
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

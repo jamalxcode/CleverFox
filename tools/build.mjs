@@ -384,6 +384,28 @@ let xMatched = 0;
 for (const r of published) { const b = XDATA.buzz?.[r.id]; if (b) { r.x_buzz = b; xMatched++; } }
 if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
 
+// ---- YouTube videos that name a listing (from tools/discover.mjs: official channels first, then keyword search) ----
+{
+  const D = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
+  const vids = [...(D.youtube?.videos || []).map((v) => ({ ...v, official: true })), ...(D.youtube?.search || []).map((v) => ({ ...v, official: false }))];
+  if (vids.length) {
+    const { shortName } = await import('./x.mjs');
+    const norm = (t) => ' ' + String(t || '').toLowerCase().replace(/[^\p{L}\p{N}.]+/gu, ' ') + ' ';
+    const titles = vids.map((v) => [v, norm(v.title)]);
+    let n = 0;
+    for (const r of published) {
+      if (r.type === 'dataset') continue;
+      const names = [r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim(), shortName(r)].filter((x) => x && x.length >= 5 && /\d|\s/.test(x)).map(norm);
+      if (r.type !== 'model') names.push(norm(r.name)); // apps and hosts: their brand name (multi-word or distinctive)
+      const keys = [...new Set(names)].filter((k) => k.trim().length >= 4);
+      if (!keys.length) continue;
+      const hit = titles.filter(([, t]) => keys.some((k) => t.includes(k))).map(([v]) => ({ title: v.title, url: v.url, channel: v.channel, published_at: v.published_at, official: v.official }));
+      if (hit.length) { r.yt_videos = hit.sort((a, b) => (b.official - a.official) || String(b.published_at).localeCompare(String(a.published_at))).slice(0, 3); n++; }
+    }
+    console.log(`YouTube: videos naming ${n} listings`);
+  }
+}
+
 // ---- use it online: API providers serving each model (tools/providers.mjs) ----
 const PROV = existsSync(join(importDir, 'providers.json')) ? JSON.parse(readFileSync(join(importDir, 'providers.json'), 'utf8')) : null;
 if (PROV) {
