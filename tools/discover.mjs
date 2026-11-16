@@ -83,7 +83,10 @@ export async function llmReleases({ now = new Date(), fetchImpl = fetch } = {}) 
   if (!robotsAllows(robots, '/')) return { checked_at: now.toISOString(), allowed: false, hf_models: [], hf_datasets: [], announcements: [] };
   const res = await fetchImpl(site, { headers: { 'user-agent': UA, accept: 'text/html' } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return { checked_at: now.toISOString(), allowed: true, source_url: site, ...releasesFromHtml(await res.text(), site) };
+  const html = await res.text();
+  // Diagnostics: page size, link count and title, to see whether the page is built by JavaScript (no links in the HTML).
+  const diag = { html_chars: html.length, links_in_html: (html.match(/<a\b/gi) || []).length, title: (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').trim().slice(0, 120) };
+  return { checked_at: now.toISOString(), allowed: true, source_url: site, diag, ...releasesFromHtml(html, site) };
 }
 
 // 3. GitHub: new projects (search) and watchlist releases.
@@ -124,6 +127,7 @@ export function feedEntries(xml) {
     return { id: tag('yt:videoId'), title: unesc(tag('title')).slice(0, 160), url: e.match(/<link[^>]+href="([^"]+)"/)?.[1] || null, published_at: tag('published'), links: linksIn(description.match(/https?:\/\/[^\s)"'<>]+/g) || []) };
   }).filter((v) => v.id && v.url);
 }
+const unescHtml = (t) => String(t).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, key = process.env.YOUTUBE_API_KEY } = {}) {
   const file = join(root, 'data', 'youtube-channels.json');
   const channels = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).channels || [] : [];
@@ -139,13 +143,16 @@ export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, 
     } catch { skipped.push(`${c.handle} (page failed)`); }
   }
   const videos = new Map((prev.videos || []).filter((v) => daysAgo(v.published_at, now) <= RULES.videoDays).map((v) => [v.id, v]));
+  const feeds = {}; // per channel: HTTP status, entries in the feed, entries in the last videoDays (to see why a channel shows nothing)
   for (const c of channels) {
     const id = ids[c.handle]; if (!id) continue;
     try {
       const res = await fetchImpl(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`, { headers: { 'user-agent': UA } });
-      if (!res.ok) continue;
-      for (const v of feedEntries(await res.text())) if (daysAgo(v.published_at, now) <= RULES.videoDays) videos.set(v.id, { ...v, channel: c.name, handle: c.handle });
-    } catch { /* keep the last data for this channel */ }
+      if (!res.ok) { feeds[c.handle] = { status: res.status }; continue; }
+      const all = feedEntries(await res.text()); let recent = 0;
+      for (const v of all) if (daysAgo(v.published_at, now) <= RULES.videoDays) { recent++; videos.set(v.id, { ...v, channel: c.name, handle: c.handle }); }
+      feeds[c.handle] = { status: res.status, entries: all.length, recent, newest: all[0]?.published_at || null };
+    } catch (e) { feeds[c.handle] = { status: 0, error: String(e.message || e).slice(0, 80) }; }
   }
   let search = prev.search || [];
   if (key) {
@@ -154,13 +161,13 @@ export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, 
     for (const q of YOUTUBE_QUERIES) {
       try {
         const d = await getJson(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=15&publishedAfter=${encodeURIComponent(after)}&q=${encodeURIComponent(q)}&key=${encodeURIComponent(key)}`, {}, fetchImpl);
-        for (const it of d.items || []) if (it.id?.videoId) found.set(it.id.videoId, { id: it.id.videoId, title: (it.snippet?.title || '').slice(0, 160), url: `https://www.youtube.com/watch?v=${it.id.videoId}`, channel: it.snippet?.channelTitle || '', published_at: it.snippet?.publishedAt, query: q });
+        for (const it of d.items || []) if (it.id?.videoId) found.set(it.id.videoId, { id: it.id.videoId, title: unescHtml(it.snippet?.title || '').slice(0, 160), url: `https://www.youtube.com/watch?v=${it.id.videoId}`, channel: unescHtml(it.snippet?.channelTitle || ''), published_at: it.snippet?.publishedAt, query: q });
       } catch { /* quota or error: keep the last search */ }
     }
     if (found.size) search = [...found.values()];
   }
   const vids = [...videos.values()].sort((a, b) => b.published_at.localeCompare(a.published_at));
-  return { checked_at: now.toISOString(), channel_ids: ids, skipped, videos: vids, search, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
+  return { checked_at: now.toISOString(), channel_ids: ids, skipped, feeds, videos: vids, search, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
 }
 
 async function main() {
