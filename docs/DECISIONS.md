@@ -372,6 +372,20 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** derived models (fine-tunes, adapters, merges, uncensored variants, quantized copies) are followed up the `base_model` chain on Hugging Face to the original. The listing links the original: its CleverFox listing if there is one, otherwise its Hugging Face page. A model with no `base_model` keeps its own Hugging Face link.
 **Why:** the owner asked to point listings to the original source where it can be found, and otherwise keep the Hugging Face link. Hugging Face's model tree (the uploader's `base_model` metadata) is the documented way to find it. Hugging Face is often the original host itself, so there's no separate site to look for. The first local run traced 229 derived models, 88 of them past their direct parent. Parents are cached so the daily refresh reads few pages.
 
+### 77. Return visits: useful triggers, one next step, personal value kept in the browser
+**Decision:** six engagement principles, applied to CleverFox's purpose:
+- **Triggers:** an optional calendar reminder and a feed for your task.
+- **Effortless core action:** "Find what to use" remembers your question and shows your picks on return, and a setup line makes missing settings one tap.
+- **One next step:** "How to start with <top pick>".
+- **Useful rewards:** reasons for each pick, "new for you since your last visit" and setup progress. No badges or streaks.
+- **Continuation:** "Similar" listings, empty results that offer the filter to remove, and alternatives for empty pick columns. Show more stays a button.
+- **Accumulating value:** saved listings, recently viewed and resuming the last search. Kept only in the browser, with download, load and clear.
+
+**Why:** the owner asked for the principles, with genuine usefulness over time spent. People come back to CleverFox when something new fits their task, device and country, or to get back to what they found. So every piece serves that.
+- **No push notifications:** they need a server, accounts and a subscription store, and the site is a static directory with no accounts (spec rules). A calendar event and RSS give the same "remind me" under the visitor's control.
+- **Privacy:** personal data stays in localStorage, and GoatCounter still sees only page views and the existing anonymous events.
+- **Language:** the new text is English for now; adding it to `i18n.js` is in the TODO.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

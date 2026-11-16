@@ -1,6 +1,7 @@
 // CleverFox: loads the catalog one listing type at a time and renders it with filters.
 import { LANGS, t, pickLang, applyLang } from './i18n.js?v=__BUILD__';
 import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart, ORDERING } from './picks.js?v=__BUILD__';
+import * as you from './you.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -169,6 +170,48 @@ function render() {
   $('#more-btn').hidden = recs.length <= state.limit;
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
   $('#summary').textContent = `${recs.length} of ${all.length} ${TYPE_WORDS[state.type]}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+  if (activeFilters().length) $('#summary').insertAdjacentHTML('beforeend', ' · <button type="button" class="linkish" data-clear-all>clear filters</button>');
+  $('#empty-help').innerHTML = recs.length ? '' : emptyHelp();
+  rememberView();
+}
+// ---- continuation: the filters in use, and what each would show if removed (for empty results) ----
+function activeFilters() {
+  const f = state.f[state.type]; const defs = filterDefs(state.type); const out = [];
+  if (state.q) out.push({ key: 'q', label: `search “${state.q}”` });
+  if (state.cap && state.type !== 'host') out.push({ key: 'cap', label: CAPS[state.cap] || state.cap });
+  for (const d of defs) if (f[d.key]) out.push({ key: d.key, label: d.toggle || d.opts.find(([v]) => v === f[d.key])?.[1] || d.label });
+  return out;
+}
+function without(key, fn) {
+  const f = state.f[state.type]; const saved = { q: state.q, cap: state.cap, v: f[key] };
+  if (key === 'q') state.q = ''; else if (key === 'cap') state.cap = ''; else f[key] = key in f && typeof f[key] === 'boolean' ? false : '';
+  try { return fn(); } finally { state.q = saved.q; state.cap = saved.cap; if (key !== 'q' && key !== 'cap') f[key] = saved.v; }
+}
+function emptyHelp() {
+  const act = activeFilters(); const all = recordsOf(state.type);
+  const tries = act.map((a) => ({ ...a, n: without(a.key, () => all.filter(matches).length) })).filter((a) => a.n > 0).sort((a, b) => b.n - a.n);
+  const other = TYPES.filter((t) => t !== state.type && loaded[t] && state.q).map((t) => [t, loaded[t].filter((r) => { const c = state.cap; state.cap = ''; const ok = matchesText(r); state.cap = c; return ok; }).length]).filter(([, n]) => n);
+  return (tries.length ? `<p>Remove one filter: ${tries.slice(0, 4).map((a) => `<button type="button" class="share-btn" data-unfilter="${esc(a.key)}">✕ ${esc(a.label)} <span class="muted">(${a.n})</span></button>`).join(' ')}</p>` : '')
+    + (other.length ? `<p>Or look in ${other.map(([t, n]) => `<button type="button" class="share-btn" data-goto="${t}">${esc(TYPE_WORDS[t])} (${n})</button>`).join(' ')}</p>` : '')
+    + (act.length > 1 ? '<p><button type="button" class="linkish" data-clear-all>Clear all filters</button></p>' : '');
+}
+const matchesText = (r) => { const hay = [r.name, r.publisher, r.description, r.family].join(' ').toLowerCase(); return state.q.toLowerCase().split(/\s+/).every((w) => hay.includes(w)); };
+function clearFilters(key) {
+  if (!key || key === 'q') { state.q = ''; $('#q').value = ''; }
+  if (!key || key === 'cap') state.cap = '';
+  if (!key) state.f[state.type] = {}; else if (key !== 'q' && key !== 'cap') delete state.f[state.type][key];
+  state.limit = PAGE; renderFilters(); render();
+}
+document.addEventListener('click', (e) => {
+  const u = e.target.closest('[data-unfilter]'); if (u) return clearFilters(u.dataset.unfilter);
+  if (e.target.closest('[data-clear-all]')) return clearFilters();
+  const g = e.target.closest('[data-goto]'); if (g) setType(g.dataset.goto);
+});
+// ---- accumulating value: resume the last tab, search and filters ----
+let viewTimer = null;
+function rememberView() {
+  clearTimeout(viewTimer);
+  viewTimer = setTimeout(() => you.update((d) => { d.view = { type: state.type, q: state.q, cap: state.cap, f: state.f }; }), 600);
 }
 async function ensureLoaded(t) {
   if (loaded[t]) return;
@@ -198,8 +241,10 @@ $('#list').addEventListener('toggle', (e) => {
   const rec = recordsOf(state.type).find((r) => r.id === slot.dataset.id);
   if (!rec) return;
   slot.innerHTML = '<p class="muted loading">Loading details…</p>';
+  you.addRecent(rec, listingPath(rec)); renderYou();
   fullRecord(rec).then((full) => {
     slot.innerHTML = detail(full);
+    labelSaves(slot);
     if (navigator.share) slot.querySelectorAll('[data-act="share"]').forEach((b) => { b.hidden = false; });
   });
 }, true);
@@ -216,9 +261,9 @@ $('#filters').addEventListener('change', (e) => {
   state.limit = PAGE;
   render();
 });
-$('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncView(); store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); });
-$('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); if ($('#picks').childElementCount) showPicks(false); });
-$('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); });
+$('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncView(); store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); renderSetup(); });
+$('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
+$('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); renderSetup(); });
 
 // Two looks: "Matrix" (dark, the default) and light "terminal paper".
 function applyTheme(t) {
@@ -326,11 +371,18 @@ async function showPicks(share = true) {
   if (s.device === 'phone') cols.push([t('offline'), pickOffline(apps, s), t('offNote')]);
   cols.push([t('appsCol'), pickApps(apps, s), t('appsNote')]);
   cols.push([t('online'), pickModelsOnline(models, s), t('onlineNote')]);
-  const item = (p) => `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`;
+  you.update((d) => { d.picks = { task: s.task, device: s.device }; });
+  pickRecs.clear();
+  const item = (p) => { pickRecs.set(p.r.id, p.r); return `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span> <button type="button" class="save-mini" data-save="${esc(p.r.id)}" aria-pressed="false" aria-label="Save ${esc(p.r.name)}">☆</button><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`; };
+  // An empty column offers the nearest alternative instead of a dead end.
+  const alt = (h) => h === t('runself') ? `<button type="button" class="share-btn" data-alt-device="online">${esc(t('online'))}</button>${state.mem && state.mem < 128 ? ' <span class="muted">or choose more memory above</span>' : ''}` : h === t('offline') ? `<button type="button" class="share-btn" data-alt-device="computer">${esc(t('computer'))}</button>` : `<button type="button" class="share-btn" data-alt-task="chat">${esc(t('t_chat'))}</button>`;
   for (const [h, list] of cols) if (!list.length) try { window.goatcounter?.count?.({ path: `picks-empty/${h.replace(/^\S+\s/, '')}/${s.task}/${s.device}/${s.country || 'any'}/${s.ulang || 'any'}`, title: 'No picks', event: true }); } catch {}
-  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p>`}</div>`).join('')}</div>
+  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p><p>Try: ${alt(h)}</p>`}</div>`).join('')}</div>
+    ${nextSteps(cols)}
     <details class="pick-how"><summary>How picks are ordered</summary><ul>${[ORDERING.local, ORDERING.offline, ORDERING.apps, ORDERING.online, ORDERING.not].map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>
     <p class="share pick-share"><button class="share-btn" type="button" id="s-share">${esc(t('share'))}</button></p>`;
+  labelSaves($('#picks'));
+  $('#s-go').classList.add('go-quiet'); // the picks' own next step is now the one primary action
   if (share) history.replaceState(null, '', encodeStart(s));
   $('#s-share').addEventListener('click', async () => {
     const url = location.href;
@@ -338,10 +390,116 @@ async function showPicks(share = true) {
   });
   try { window.goatcounter?.count?.({ path: `picks/${s.task}/${s.device}`, event: true }); } catch {}
 }
+// ---- clear next steps after picks: one main suggestion, then quieter ones; a clear stopping point ----
+const pickRecs = new Map();
+function nextSteps(cols) {
+  const col = cols.find(([, list]) => list.length >= 2 && new Set(list.map((p) => p.r.type)).size === 1);
+  const first = cols.find(([, list]) => list.length)?.[1][0];
+  if (!first) return '';
+  return `<p class="next-step"><strong>Next:</strong> <a class="go-btn go-small" href="${esc(listingPath(first.r))}#start">How to start with ${esc(first.r.name)} →</a>${col ? ` <button type="button" class="share-btn" data-cmp-top="${esc(col[1].map((p) => p.r.id).join('|'))}">⚖️ Compare ${col[1].length}</button>` : ''} <span class="muted">· ☆ save the ones you like to find them later</span></p>`;
+}
+$('#picks').addEventListener('click', (e) => {
+  const c = e.target.closest('[data-cmp-top]'); if (c) { cmp.length = 0; cmp.push(...c.dataset.cmpTop.split('|')); renderCompareBar(); showCompare(cmp); return; }
+  const d = e.target.closest('[data-alt-device]'); if (d) { $('#s-device').value = d.dataset.altDevice; showPicks(); return; }
+  const k = e.target.closest('[data-alt-task]'); if (k) { $('#s-task').value = k.dataset.altTask; showPicks(); }
+});
+
+// ---- saving listings (☆ / ★) in the list, the details and the picks ----
+function labelSaves(root) {
+  root.querySelectorAll('[data-save]').forEach((b) => {
+    const on = you.isSaved(b.dataset.save); b.hidden = false; b.setAttribute('aria-pressed', String(on));
+    b.textContent = b.classList.contains('save-mini') ? (on ? '★' : '☆') : (on ? '★ Saved' : '☆ Save');
+  });
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-save]'); if (!b) return;
+  const id = b.dataset.save; const r = pickRecs.get(id) || recById(id) || you.load().saved.find((x) => x.id === id);
+  if (!r) return;
+  you.toggleSave(r, r.path || listingPath(r));
+  document.querySelectorAll(`[data-save="${CSS.escape(id)}"]`).forEach((x) => labelSaves(x.parentElement));
+  renderYou();
+});
+
+// ---- effortless start: what's set, what's missing, one tap to fix (country suggested from the browser's language) ----
+function renderSetup() {
+  const guess = (navigator.language || '').split('-')[1]?.toUpperCase();
+  const known2 = guess && catalog.countries.some(([c]) => c === guess) ? guess : null;
+  const part = (ok, label, fix) => `<span class="${ok ? 'ok' : 'todo'}">${ok ? '✓' : '○'} ${label}</span>${ok ? '' : ` ${fix}`}`;
+  const parts = [
+    part(state.mem, state.mem ? `device: ${state.mem} GB` : 'device memory', '<button type="button" class="linkish" data-focus="#mem">set it</button> <span class="muted">(models that fit come first)</span>'),
+    part(state.country, state.country ? `country: ${flag(state.country)} ${esc(countryName(state.country))}` : 'country', known2 ? `<button type="button" class="linkish" data-set-country="${known2}">${flag(known2)} ${esc(countryName(known2))}?</button> <button type="button" class="linkish" data-focus="#country">another</button>` : '<button type="button" class="linkish" data-focus="#country">set it</button> <span class="muted">(what works there and how to pay)</span>'),
+  ];
+  if (state.ulang) parts.push(part(true, `language: ${esc(langName(state.ulang))}`));
+  $('#setup').innerHTML = `Your setup: ${parts.join(' · ')}`;
+  $('#setup').hidden = false;
+  document.querySelector('.pick-hint')?.toggleAttribute('hidden', !!(state.mem && state.country));
+}
+$('#setup').addEventListener('click', (e) => {
+  const f = e.target.closest('[data-focus]'); if (f) { $(f.dataset.focus).focus(); return; }
+  const c = e.target.closest('[data-set-country]'); if (c) { $('#country').value = c.dataset.setCountry; $('#country').dispatchEvent(new Event('change')); if ($('#picks').childElementCount) showPicks(false); }
+});
+
+// ---- your CleverFox: new for you, saved, recently viewed, reminders, your data ----
+const prevVisit = you.markVisit();
+function newForYou() {
+  const d = you.load(); if (!prevVisit) return [];
+  const task = d.picks?.task;
+  const recs = [...(loaded.model || []), ...(loaded.app || [])].filter((r) => r.first_seen_at && r.first_seen_at > prevVisit && r.warning === 'none' && !r.answers?.uncensored);
+  const forTask = task ? recs.filter((r) => (r.answers?.good_for || []).includes(task)) : recs;
+  return (forTask.length ? forTask : recs).filter((r) => r.type !== 'model' || !state.mem || !r.hardware || r.hardware.min_memory_gb <= state.mem || r.answers?.online)
+    .filter((r) => r.type !== 'app' || !state.country || availableIn(r.access, state.country) !== 'no').sort((a, b) => popularity(b) - popularity(a));
+}
+function renderYou() {
+  const d = you.load(); const fresh = newForYou();
+  const box = $('#you');
+  box.hidden = !(d.saved.length || d.recent.length || fresh.length || prevVisit);
+  if (box.hidden) return;
+  const link = (x) => `<a href="${esc(x.path)}">${esc(x.name)}</a> <span class="muted">${esc(x.publisher || '')}</span>`;
+  $('#you-sum').textContent = [d.saved.length && `${d.saved.length} saved`, d.recent.length && `${d.recent.length} viewed`, fresh.length && `${fresh.length} new for you`].filter(Boolean).join(' · ');
+  $('#you-new').innerHTML = prevVisit ? `<h3>🆕 New for you since ${esc(fmtDate(prevVisit))}${d.picks?.task ? ` <span class="muted">(${esc(t('t_' + d.picks.task))})</span>` : ''}</h3>${fresh.length ? `<ul class="you-list">${fresh.slice(0, 6).map((r) => `<li>${link({ name: r.name, path: listingPath(r), publisher: r.publisher_name || r.publisher })}</li>`).join('')}</ul>${fresh.length > 6 ? `<p class="muted">+${fresh.length - 6} more · <a href="new/">everything new this week</a></p>` : ''}` : '<p class="muted">Nothing new for you since then. <a href="new/">Everything new this week</a></p>'}` : '';
+  $('#you-saved').innerHTML = `<h3>☆ Saved</h3>${d.saved.length ? `<ul class="you-list">${d.saved.map((x) => `<li>${link(x)} <button type="button" class="linkish" data-unsave="${esc(x.id)}" aria-label="Remove ${esc(x.name)}">remove</button></li>`).join('')}</ul>${d.saved.length >= 2 && new Set(d.saved.map((x) => x.type)).size === 1 ? `<p><button type="button" class="share-btn" data-cmp-saved>⚖️ Compare ${Math.min(3, d.saved.length)}</button></p>` : ''}` : '<p class="muted">Tap ☆ Save on any listing or pick to keep it here.</p>'}`;
+  $('#you-recent').innerHTML = d.recent.length ? `<h3>🕘 Pick up where you left off</h3><ul class="you-list">${d.recent.slice(0, 8).map((x) => `<li>${link(x)}</li>`).join('')}</ul>` : '';
+  $('#you-remind').value = d.remind || 'off';
+  $('#you-ics').hidden = $('#you-remind-note').hidden = (d.remind || 'off') === 'off';
+  const task = d.picks?.task;
+  $('#you-feed').href = task ? `feeds/${task}.xml` : 'feed.xml';
+  $('#you-feed').textContent = task ? `📰 RSS: new for ${t('t_' + task).toLowerCase()}` : '📰 RSS for new listings';
+  if (fresh.length && !box.dataset.opened) { $('#you-box').open = true; box.dataset.opened = '1'; }
+}
+$('#you').addEventListener('click', (e) => {
+  const u = e.target.closest('[data-unsave]');
+  if (u) { const x = you.load().saved.find((s) => s.id === u.dataset.unsave); if (x) you.toggleSave(x, x.path); renderYou(); labelSaves(document); return; }
+  if (e.target.closest('[data-cmp-saved]')) { const ids = you.load().saved.slice(0, 3).map((s) => s.id); cmp.length = 0; cmp.push(...ids); renderCompareBar(); showCompare(cmp); }
+});
+$('#you-remind').addEventListener('change', (e) => { you.update((d) => { d.remind = e.target.value; }); renderYou(); });
+$('#you-ics').addEventListener('click', () => you.reminderFile(you.load().remind, view.site));
+$('#you-export').addEventListener('click', () => you.exportFile());
+$('#you-import').addEventListener('change', async (e) => {
+  const f = e.target.files?.[0]; if (!f) return;
+  try { you.importText(await f.text()); renderYou(); labelSaves(document); alert('Your saved listings and history are loaded.'); } catch (err) { alert(err.message || 'That file could not be read.'); }
+  e.target.value = '';
+});
+$('#you-clear').addEventListener('click', () => { if (confirm('Clear your saved listings, history and reminder choice from this browser?')) { you.clearAll(); you.markVisit(); renderYou(); labelSaves(document); } });
+
 $('#s-go').addEventListener('click', () => showPicks());
+['#s-task', '#s-device'].forEach((s) => $(s).addEventListener('change', () => $('#s-go').classList.remove('go-quiet')));
 const cmpHash = location.hash.match(/^#compare=(.+)$/)?.[1];
 if (cmpHash) { cmp.push(...decodeURIComponent(cmpHash).split('|').slice(0, 3)); showCompare(cmp, false).then(renderCompareBar); }
 const started = decodeStart(location.hash);
+// Resume where the visitor left off (only when the link doesn't ask for something else).
+const youData = you.load();
+if (!location.hash && youData.view) {
+  const v = youData.view;
+  if (TYPES.includes(v.type)) state.type = v.type;
+  state.q = String(v.q || ''); $('#q').value = state.q; state.cap = String(v.cap || '');
+  for (const t of TYPES) if (v.f?.[t] && typeof v.f[t] === 'object') state.f[t] = v.f[t];
+}
+renderSetup();
+if (!started && !cmpHash && youData.picks && TASKS.includes(youData.picks.task)) {
+  // Returning visitors see their picks again, refreshed with today's catalog, without a tap.
+  $('#s-task').value = youData.picks.task; $('#s-device').value = youData.picks.device || 'computer';
+  showPicks(false);
+}
 if (started) {
   $('#s-task').value = started.task; $('#s-device').value = started.device;
   if (started.mem && !state.mem) { state.mem = started.mem; $('#mem').value = String(started.mem); }
@@ -351,3 +509,5 @@ if (started) {
 }
 const hashType = location.hash.match(/^#(model|dataset|app|host)$/)?.[1];
 await setType(hashType || state.type);
+if (prevVisit) await Promise.all([ensureLoaded('model'), ensureLoaded('app')]);
+renderYou();

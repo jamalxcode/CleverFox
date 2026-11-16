@@ -12,6 +12,17 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: engagement principles (return visits)
+**Where:** Claude Code session.
+**Asked:** apply six principles to the app's purpose: relevant triggers, effortless core action, clear next steps, varied meaningful rewards, relevant continuation, accumulating personal value. Genuine usefulness and voluntary return visits, not time spent, and no unrelated features.
+**Outcome (decision 77):**
+- `you.js` (saved, recently viewed, resume, visits, reminder, data download, load and clear), and a "Your CleverFox" panel with "New for you since…".
+- A setup line with a one-tap country suggestion, picks shown again on return, and one "Next" step after picks (the go button turns quiet).
+- Save buttons on cards, picks and listing pages, and "Similar" on every listing (1,095 listings).
+- Help for empty results, alternatives for empty pick columns, and RSS per capability (`feeds/`).
+- The page check now also covers a returning visitor's panel.
+- Not done, on purpose: push notifications (no backend or accounts), badges or streaks, endless scrolling.
+
 ## 2026-11-16: originals of derived models
 **Where:** Claude Code session.
 **Asked:** for models pointing to Hugging Face copies, find the original through the model card (base model, model tree, `base_model` metadata). Link it if found, otherwise keep the Hugging Face link. The owner pasted notes: Hugging Face can be the original host itself, and merges list several parents.

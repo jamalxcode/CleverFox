@@ -57,8 +57,23 @@
       <label><span data-i18n="on">on</span> <select id="s-device" aria-label="Where you'll use it"><option value="computer" data-i18n="computer">my computer</option><option value="phone" data-i18n="phone">my phone</option><option value="online" data-i18n="web">the web (no download)</option></select></label>
       <button id="s-go" class="go-btn" type="button" data-i18n="go">Show my picks</button>
     </p>
+    <p id="setup" class="setup muted" hidden></p>
     <p class="muted start-note" data-i18n="note">Uses your device memory and country from the pickers above. Picks come from stated facts: memory fit, independent benchmarks, popularity, free options, country and ways to pay. Only checked apps and hosts.</p>
     <div id="picks" aria-live="polite"></div>
+  </section>
+
+  <section id="you" class="you" hidden aria-labelledby="you-h">
+    <details id="you-box">
+      <summary><h2 id="you-h">⭐ Your CleverFox</h2> <span id="you-sum" class="muted"></span></summary>
+      <div id="you-new"></div>
+      <div id="you-saved"></div>
+      <div id="you-recent"></div>
+      <div class="you-tools">
+        <p><label>🔔 Remind me to check what's new: <select id="you-remind" aria-label="Reminder frequency"><option value="off">off</option><option value="weekly">weekly</option><option value="monthly">monthly</option></select></label> <button id="you-ics" class="share-btn" type="button" hidden>📅 Add to my calendar</button> <a id="you-feed" class="share-btn" href="feed.xml">📰 RSS for new listings</a></p>
+        <p id="you-remind-note" class="muted" hidden>The reminder goes into your own calendar; delete the event there to stop it. CleverFox never sends you anything.</p>
+        <p class="muted">Kept only in this browser: <button id="you-export" class="linkish" type="button">download my data</button> · <label class="linkish" for="you-import">load it on another device</label><input id="you-import" type="file" accept="application/json" hidden> · <button id="you-clear" class="linkish" type="button">clear it</button></p>
+      </div>
+    </details>
   </section>
   <nav class="tabs" role="tablist" aria-label="Listing type">
     <button role="tab" id="tab-model" data-type="model" aria-selected="true" data-i18n="models">Models <span class="count"></span></button>
@@ -75,7 +90,7 @@
 
   <p id="summary" class="summary" aria-live="polite"></p>
   <ul id="list" class="list"></ul>
-  <div id="empty" class="empty" hidden><img src="img/fox.webp?v=__BUILD__" alt="" width="96" height="110" loading="lazy"><p data-i18n="empty">Nothing matches these filters. Try removing one.</p></div>
+  <div id="empty" class="empty" hidden><img src="img/fox.webp?v=__BUILD__" alt="" width="96" height="110" loading="lazy"><p data-i18n="empty">Nothing matches these filters. Try removing one.</p><div id="empty-help" class="empty-help"></div></div>
   <div id="compare-bar" class="compare-bar" hidden><span id="compare-names"></span> <button id="compare-go" class="go-btn" type="button">⚖️ Compare</button> <button id="compare-clear" class="linkish" type="button">clear</button></div>
   <section id="compare" class="compare" hidden aria-labelledby="compare-h"><h2 id="compare-h">⚖️ Compare</h2><div id="compare-table"></div></section>
   <p class="more-wrap"><button id="more-btn" class="more-btn" type="button" hidden>Show more</button></p>

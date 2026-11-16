@@ -562,6 +562,7 @@ if (!checkOnly) {
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published, grouped: CURATED.folded, hidden: CURATED.hidden }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);
+  await addSimilar(published);
   writeListingPages(published, countries).then(() => writeMovedPages()).then(() => writeNewPages(published)).then(() => writeGuides(published));
 }
 
@@ -577,6 +578,31 @@ const GOATCOUNTER = `<!-- GoatCounter analytics (not loaded on localhost; paths 
     document.body.appendChild(s);
   })();
 </script>`;
+
+// ---- "Similar": up to 4 listings of the same type that share what it's good for (a next step after viewing one) ----
+// Same tasks or kinds first, then checked listings and popularity; near-duplicates of the same family, listings with
+// warnings and uncensored models (unless this one is) are left out. Shown in the full record and on listing pages.
+async function addSimilar(records) {
+  const { popularity, listingPath, CAPS } = await import('../render.js');
+  const traits = (r) => r.type === 'host' ? (r.kinds || []) : r.type === 'dataset' ? (r.tasks || []) : (r.answers?.good_for || []);
+  const fam = (r) => (r.family || r.name).toLowerCase().replace(/[-_\s.]+/g, ' ').split(' ').slice(0, 2).join(' ');
+  const byType = {};
+  for (const r of records) if (r.warning === 'none' || !r.warning) (byType[r.type] ||= []).push(r);
+  let n = 0;
+  for (const r of records) {
+    const mine = traits(r); if (!mine.length) continue;
+    const cands = [];
+    for (const o of byType[r.type] || []) {
+      if (o === r || fam(o) === fam(r) || (o.answers?.uncensored && !r.answers?.uncensored)) continue;
+      const shared = traits(o).filter((t) => mine.includes(t)); if (!shared.length) continue;
+      cands.push([shared.length * 3 + (traits(o)[0] === mine[0] ? 2 : 0) + (o.verification_status === 'verified' ? 1 : 0) + Math.log10(1 + popularity(o)) / 2, o, shared]);
+    }
+    cands.sort((a, b) => b[0] - a[0]);
+    r.similar = cands.slice(0, 4).map(([, o, shared]) => ({ name: o.name, path: listingPath(o), publisher: o.publisher_name || o.publisher, shared: shared.slice(0, 2).map((t) => (CAPS[t] || t).replace(/^\S+\s/, '').replace(/-/g, ' ')) }));
+    if (r.similar.length) n++;
+  }
+  console.log(`Similar: ${n} listings with suggestions`);
+}
 
 // ---- a static page for every listing (shareable, previewable, findable) ----
 async function writeListingPages(records, countryList) {
@@ -641,7 +667,7 @@ async function writeListingPages(records, countryList) {
 <footer class="wrap foot">
   <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${r.independent_benchmarks?.length ? ` · Benchmarks: ${[...new Set(r.independent_benchmarks.map((x) => x.source))].map((s) => s === 'Epoch AI' ? '<a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0)' : '<a href="https://artificialanalysis.ai/">Artificial Analysis</a>').join(', ')}` : ''} · <a href="${base}">CleverFox</a></p>
 </footer>
-<script type="module">import { wireShare } from '${base}render.js?v=${build}'; wireShare(document);</script>
+<script type="module">import { wireShare } from '${base}render.js?v=${build}'; import { wireListingPage } from '${base}you.js?v=${build}'; wireShare(document); wireListingPage(${JSON.stringify({ id: r.id, name: r.name, type: r.type, publisher: r.publisher_name || r.publisher }).replace(/</g, '\\u003c')}, '${path}');</script>
 ${r.x_buzz?.posts ? `<script>document.getElementById('x-load')?.addEventListener('click', function () { this.disabled = true; this.textContent = 'Loading posts from X…'; var s = document.createElement('script'); s.async = true; s.src = 'https://platform.twitter.com/widgets.js'; document.body.appendChild(s); });</script>` : ''}
 ${GOATCOUNTER}
 </body>
@@ -713,6 +739,13 @@ ${GOATCOUNTER}
   const xml = (t) => String(t ?? '').replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]);
   const items = fresh.slice(0, 50).map((r) => `<item><title>${xml(`${r.name} (${r.type})`)}</title><link>${SITE}${R.listingPath(r)}</link><guid isPermaLink="true">${SITE}${R.listingPath(r)}</guid><pubDate>${new Date(r.first_seen_at).toUTCString()}</pubDate><description>${xml(r.description)}</description></item>`);
   writeFileSync(join(root, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>CleverFox: new listings</title><link>${SITE}</link><description>New AI models, datasets, apps and hosting on CleverFox.</description><language>en</language>\n${items.join('\n')}\n</channel></rss>\n`);
+  // One feed per task ("what's new for coding"), for people who follow one need. Not one per filter combination.
+  mkdirSync(join(root, 'feeds'), { recursive: true });
+  for (const [cap, label] of Object.entries(R.CAPS)) {
+    const its = fresh.filter((r) => (r.answers?.good_for || []).includes(cap)).slice(0, 30).map((r) => `<item><title>${xml(`${r.name} (${r.type})`)}</title><link>${SITE}${R.listingPath(r)}</link><guid isPermaLink="true">${SITE}${R.listingPath(r)}</guid><pubDate>${new Date(r.first_seen_at).toUTCString()}</pubDate><description>${xml(r.description)}</description></item>`);
+    const name = label.replace(/^\S+\s/, '');
+    writeFileSync(join(root, 'feeds', `${cap}.xml`), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>CleverFox: new for ${xml(name.toLowerCase())}</title><link>${SITE}</link><description>New AI models and apps on CleverFox that are good for ${xml(name.toLowerCase())}.</description><language>en</language>\n${its.join('\n')}\n</channel></rss>\n`);
+  }
   console.log(`New this week: ${week.length} listings; feed has ${items.length}; ${spotted.length} app or hosting launches spotted on X`);
 }
 

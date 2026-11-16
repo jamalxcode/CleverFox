@@ -33,16 +33,23 @@ function serve() {
   const pages = ['', '#app', '#host', listing, 'guides/', 'guides/pay-without-a-card/', 'glossary/', 'new/'];
   const browser = await chromium.launch();
   const problems = [];
+  // A returning visitor's data, so "Your CleverFox" (saved, recently viewed, new for you, reminders) is checked too.
+  const youData = JSON.stringify({ v: 1, saved: [{ id: 'cf:app:x/y', name: 'A saved listing with a fairly long name to wrap', type: 'app', publisher: 'Someone', path: 'l/app/x/y/' }],
+    recent: [{ id: 'cf:model:x/z', name: 'Recently-viewed-model-name-without-spaces-1234567890', type: 'model', publisher: 'Someone', path: 'l/model/x/z/' }],
+    last_visit: '2026-01-01T00:00:00Z', prev_visit: null, picks: { task: 'chat', device: 'computer' }, remind: 'weekly', view: null });
+  const seedYou = (ctx) => ctx.addInitScript((d) => { try { if (!localStorage.getItem('cf_you')) localStorage.setItem('cf_you', d); } catch (e) {} }, youData);
   // 1. Phone widths: nothing wider than the screen.
   for (const width of [320, 375]) {
-    const page = await browser.newPage({ viewport: { width, height: 800 } });
+    const pctx = await browser.newContext({ viewport: { width, height: 800 } }); await seedYou(pctx);
+    const page = await pctx.newPage();
     for (const p of pages) {
       await page.goto(base + p, { waitUntil: 'networkidle' });
       await page.waitForTimeout(p.startsWith('#') || p === '' ? 1200 : 200);
+      if (p === '') { await page.click('#s-go').catch(() => {}); await page.waitForTimeout(1200); await page.evaluate(() => { const d = document.getElementById('you-box'); if (d) d.open = true; }); }
       const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       if (over > 0) problems.push(`${width}px ${p || '/'}: ${over}px sideways scrolling`);
     }
-    await page.close();
+    await pctx.close();
   }
   // 2. Contrast in light and dark (axe-core color-contrast, WCAG AA).
   if (!axePath) problems.push('axe-core not found: install it (npm i --no-save axe-core) or pass --axe');
@@ -50,13 +57,14 @@ function serve() {
     const axe = fs.readFileSync(axePath, 'utf8');
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, colorScheme: theme });
-      // The site's own switch: light mode is stored in localStorage ("theme"); the dark Matrix look is the default.
+      // The site's own switch: light mode is stored in localStorage ("look"); the dark Matrix look is the default.
       await ctx.addInitScript((t) => { try { localStorage.setItem('look', t === 'light' ? 'light' : ''); } catch (e) {} }, theme);
+      await seedYou(ctx);
       const page = await ctx.newPage();
       for (const p of pages) {
         await page.goto(base + p, { waitUntil: 'networkidle' });
         await page.waitForTimeout(p.startsWith('#') || p === '' ? 1200 : 200);
-        if (p === '') { await page.click('#s-go').catch(() => {}); await page.waitForTimeout(1200); }
+        if (p === '') { await page.click('#s-go').catch(() => {}); await page.waitForTimeout(1200); await page.evaluate(() => { const d = document.getElementById('you-box'); if (d) d.open = true; }); }
         await page.addScriptTag({ content: axe });
         const res = await page.evaluate(async () => (await window.axe.run(document, { runOnly: ['color-contrast'] })).violations);
         for (const v of res) for (const n of v.nodes.slice(0, 3)) problems.push(`${theme} ${p || '/'}: contrast ${n.any?.[0]?.message?.split('.')[0] || ''} at ${n.target.join(' ')}`);

@@ -312,3 +312,24 @@ a:hover { color: var(--cyan); }
   #cf-rain { display: none; }
 }
 .tabs button[aria-selected="true"] .count { opacity: 1; }
+
+/* ===== Your CleverFox, setup, next steps ===== */
+.setup { margin: 8px 0 0; font-size: .92rem; }
+.setup .ok { color: var(--ok); }
+.setup .todo { color: var(--text); }
+.next-step { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.go-small { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 14px; text-decoration: none; font-size: .9rem; }
+.save-mini { font: inherit; background: none; border: 0; color: var(--accent-text); cursor: pointer; padding: 2px 6px; min-width: 28px; min-height: 28px; }
+.save-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent-text); }
+.you { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 16px; margin: 12px 0 4px; }
+.you summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.you summary h2 { display: inline; font-size: 1.05rem; margin: 0; }
+.you h3 { font-size: .95rem; margin: 14px 0 6px; }
+.you-list { margin: 0; padding-left: 20px; }
+.you-list li { margin: 4px 0; overflow-wrap: anywhere; }
+.you-tools { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 6px; }
+.you-tools select { max-width: 100%; }
+.empty-help { margin-top: 10px; }
+.empty-help p { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; }
+.similar a { overflow-wrap: anywhere; }
+.start-here .go-btn.go-quiet, :root:not([data-theme="light"]) .start-here .go-btn.go-quiet { background: transparent; color: var(--accent-text); border: 1px solid var(--accent); box-shadow: none; }

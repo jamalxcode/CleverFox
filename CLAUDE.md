@@ -30,7 +30,8 @@ cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a ful
 - how to start, and use it online;
 - compare;
 - guides and a glossary;
-- New this week (with GitHub new projects and releases) and RSS;
+- New this week (with GitHub new projects and releases) and RSS (all new, plus one feed per capability under `feeds/`);
+- return visits: a setup line, picks remembered, one next step, saved and recently viewed, "new for you", similar listings, and help for empty results (decision 77);
 - a freshness line;
 - an interface in 6 languages.
 
@@ -54,6 +55,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 
 - `img/`: the fox mascot (`fox.webp`), logo (`fox-logo.webp`), favicons and link-preview image (`og.jpg`; its URL in `index.html` is absolute, so update it when the custom domain is set). `img/source/` keeps the original artwork and the transparent cut-out; it isn't deployed.
 - `i18n.js`: interface languages (en, ar, hi, pt, id, sw) for the main page chrome via `data-i18n` attributes; drafted translations, to be reviewed by native speakers.
+- `you.js`: "Your CleverFox": saved listings, recently viewed, resume, "new for you since your last visit", calendar reminder, and data download, load and clear. Kept only in localStorage (`cf_you`); used by `app.js` and every listing page (decision 77).
 - `picks.js`: top picks for "Find what to use" (task, device, country), from stated facts with reasons; imported by `app.js`.
 - `index.html`, `style.css`, `app.js`, `render.js`: the page. Vanilla, no build step. `render.js` holds the listing rendering (pure string functions), shared by `app.js` and `tools/build.mjs`, which writes a static page for every listing under `l/` plus `sitemap.xml` and `robots.txt` (generated, not committed). The site address is `SITE` at the top of `tools/build.mjs`; change it when the custom domain is set. Keep `?v=__BUILD__` on asset links (to be replaced by CI, as in Flattery).
 - `data/seed/*.json`: hand-entered records, the source of truth for now. Each record keeps `research_notes` (caveats, unconfirmed facts), which the build strips from the published catalog.

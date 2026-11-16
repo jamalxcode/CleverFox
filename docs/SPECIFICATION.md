@@ -42,6 +42,7 @@ The spec is tested against these. Each must be answerable from the site.
 3. **Run it offline on my laptop.** A developer in Indonesia wants a model that runs offline on an 8 GB laptop and handles Indonesian. *Needs:* local formats, runtimes, file sizes and languages. Hardware fit arrives in phase 1.5.
 4. **Pay for an API with crypto.** A freelancer in Argentina wants API access to a strong model and can only pay with crypto or a local method. *Needs:* API distributions, payment methods per route, and authorized aggregators shown as routes (section 8b).
 5. **What's new from my region.** A researcher in India wants recent model releases from Indian labs, or models for Indic languages. *Needs:* release feed, publisher region and language filters.
+6. **Coming back.** Someone who found a coding model last month returns to see what's new for them since then. They want their saved listings, and their picks for their device and country, without setting everything up again. *Needs:* saved preferences and picks, "new for you since your last visit", a saved list, recently viewed, an optional reminder and a feed for their task. All of it stays in their browser (decision 77).
 
 ## 3. Scope and phases
 
@@ -248,6 +249,15 @@ CleverFox takes no reports from people directly. It reads what people already po
 - Link to stable official pages, not temporary download URLs.
 - Analytics via the shared GoatCounter snippet.
 - WCAG AA contrast and no sideways scrolling on phones, as in Flattery.
+
+### 12a. Return visits (decision 77)
+The recurring need is "what can I use now, for my task, device and country, and what's new since I last looked". The site helps people come back when it's useful to them, not to keep them on the page:
+- **Effortless core action:** "Find what to use" is the main action. Your setup line shows what's set and what's missing, with one tap to accept the country suggested by the browser's language. Returning visitors see their picks again without a tap.
+- **One next step:** after picks, the main step is "How to start with <top pick>". "Show my picks" turns quiet until the question changes, and Compare and Save are secondary.
+- **Useful rewards:** picks show why each fits you. "New for you since <date>" lists new listings matching your task, device and country, and setup progress shows what's still missing. No badges, points or streaks.
+- **Continuation:** "Similar" listings on every listing. Empty results offer to remove the filter that blocks them, with counts, or to try another tab. Empty pick columns offer the nearest alternative. "Show more" stays a button (no endless scrolling).
+- **Accumulating value:** saved listings (☆), recently viewed, and the last tab, search and filters, all kept only in this browser. They can be downloaded, loaded on another device or cleared. Nothing is lost for not visiting.
+- **Triggers you control:** an optional weekly or monthly reminder added to your own calendar (an .ics file; delete the event to stop it), and an RSS feed for your task. CleverFox has no accounts and sends nothing.
 
 ## 13. Guides (phase 2)
 

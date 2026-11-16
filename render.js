@@ -261,9 +261,10 @@ export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
   h += glance(r);
-  h += startBlock(r);
+  h += view.base ? `<div id="start">${startBlock(r)}</div>` : startBlock(r); // an anchor on listing pages ("How to start →" links here)
   h += onlineLine(r);
   h += ytLine(r);
+  h += similarLine(r);
   // Facts: one or two lines; unknown fields gathered at the end.
   const unknown = [];
   const f = (emoji, label, c, fmt) => { if (c === undefined) return null; const v = claimVal(c, fmt); if (!v) { unknown.push(label); return null; } return item(emoji, v, label); };
@@ -364,6 +365,7 @@ export function shareRow(r) {
   const url = listingUrl(r);
   const text = `${r.name} on CleverFox: ${(r.answers?.good_for || []).slice(0, 3).map((c) => (CAPS[c] || c).replace(/^\S+\s/, '')).join(', ') || r.description}`;
   return `<div class="share" data-url="${esc(url)}" data-title="${esc(r.name)}" data-text="${esc(text)}">
+    <button type="button" class="share-btn save-btn" data-act="save" data-save="${esc(r.id)}" aria-pressed="false" hidden>☆ Save</button>
     <a class="share-btn" href="${esc(view.base + listingPath(r))}">🔗 Its own page</a>
     <button type="button" class="share-btn" data-act="copy">📋 Copy link</button>
     <button type="button" class="share-btn" data-act="share" hidden>📤 Share…</button>
@@ -540,4 +542,11 @@ export function ytLine(r) {
   const v = r.yt_videos || [];
   if (!v.length) return '';
   return `<p class="ln">▶️ <strong>On YouTube:</strong> ${v.slice(0, 3).map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.title)}</a> <span class="muted">(${esc(x.channel)}${x.official ? ', official' : ''}, ${esc(fmtDate(x.published_at))})</span>`).join('<span class="sep"> · </span>')} <a class="muted" href="${esc(ytSearchUrl(r))}" rel="noopener" target="_blank">more ↗</a></p>`;
+}
+
+// A next step after looking at a listing: similar ones (computed by the build), each with what they share.
+export function similarLine(r) {
+  const s = r.similar || [];
+  if (!s.length) return '';
+  return `<p class="ln similar">🔎 <strong>Similar:</strong> ${s.map((x) => `<a href="${esc(view.base + x.path)}">${esc(x.name)}</a> <span class="muted">(${esc(x.shared.join(', ').toLowerCase())})</span>`).join('<span class="sep"> · </span>')}</p>`;
 }
