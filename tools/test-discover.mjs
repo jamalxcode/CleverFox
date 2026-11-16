@@ -1,6 +1,7 @@
 // Offline tests for tools/discover.mjs.
 import assert from 'node:assert/strict';
-import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube } from './discover.mjs';
+import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate } from './discover.mjs';
+import { replicateRecord, replicateMatch } from './import.mjs';
 
 assert.equal(robotsAllows('', '/'), true, 'no robots.txt: allowed');
 assert.equal(robotsAllows('User-agent: *\nDisallow: /', '/'), false);
@@ -38,4 +39,41 @@ try {
   assert.deepEqual(y.videos.map((x) => x.id), ['n1'], 'only recent videos');
   assert.deepEqual(y.hf_datasets, ['acme/corpus']);
 } finally { fs.writeFileSync(chFile, saved); }
+// Replicate: skipped without a token; baseline on the first run; official or used models only; tasks from collections.
+const none = await replicate({ token: '' });
+assert.equal(none.skipped, 'no REPLICATE_API_TOKEN');
+const now = new Date('2026-11-16T00:00:00Z');
+const model = (owner, name, o) => ({ owner, name, url: `https://replicate.com/${owner}/${name}`, visibility: 'public', is_official: false, run_count: 0, latest_version: null, description: 'A model.', ...o });
+let page = [model('acme', 'acme-video-2', { is_official: true, latest_version: { created_at: '2026-11-14T00:00:00Z' } }),
+  model('bob', 'tiny-test', { run_count: 3, latest_version: { created_at: '2026-11-15T00:00:00Z' } }),
+  model('carol', 'old-classic', { run_count: 90000, latest_version: { created_at: '2025-01-01T00:00:00Z' } })];
+let auth = '';
+const rfetch = async (u, o) => {
+  auth = o.headers.authorization;
+  const json = (d) => ({ ok: true, status: 200, json: async () => d });
+  if (u.includes('/v1/models?')) return json({ results: page, next: null });
+  if (u.endsWith('/v1/collections')) return json({ results: [{ slug: 'text-to-video' }, { slug: 'fun-stuff' }], next: null });
+  if (u.endsWith('/v1/collections/text-to-video')) return json({ models: [{ owner: 'acme', name: 'acme-video-2' }] });
+  throw new Error('unexpected ' + u);
+};
+const r1 = await replicate({ now, fetchImpl: rfetch, token: 't0k' });
+assert.equal(auth, 'Bearer t0k');
+assert.equal(r1.baseline, true);
+assert.deepEqual(r1.models.map((m) => m.id), ['acme/acme-video-2'], 'official and recent only; not unused or old models');
+assert.deepEqual(r1.models[0].tasks, ['text-to-video'], 'task from the collection');
+assert.equal(r1.first_seen['carol/old-classic'], 'baseline', 'the first run is a baseline');
+// Second run: a model never seen before, with runs but no version date, counts as new.
+page = [...page, model('dave', 'dave-tts', { run_count: 800 })];
+const r2 = await replicate({ now: new Date('2026-11-17T00:00:00Z'), prev: r1, fetchImpl: rfetch, token: 't0k' });
+assert.ok(r2.models.some((m) => m.id === 'dave/dave-tts') && !r2.models.some((m) => m.id === 'carol/old-classic'));
+// Records: a candidate, nothing invented, matched to the same model listed from Hugging Face.
+const rec = replicateRecord(r1.models[0]);
+assert.equal(rec.verification_status, 'candidate');
+assert.equal(rec.availability.value, 'unknown');
+assert.equal(rec.distributions[0].availability, 'api_only');
+assert.deepEqual(rec.tasks, ['text-to-video']);
+assert.match(rec.description, /^Text-to-video model run by its maker on Replicate/);
+const hf = { id: 'x', distributions: [{ source: 'huggingface', native_id: 'Acme-AI/Acme-Video-2' }] };
+assert.equal(replicateMatch({ id: 'acme/acme-video-2', owner: 'acme', name: 'acme-video-2' }, [hf]), hf, 'same name, related owner');
+assert.equal(replicateMatch({ id: 'zed/acme-video-2', owner: 'zed', name: 'acme-video-2' }, [hf]), undefined, 'same name, unrelated owner');
 console.log('All discovery tests passed.');

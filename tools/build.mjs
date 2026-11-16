@@ -20,7 +20,7 @@ const VOCAB = {
   source_type: ['official', 'third_party', 'independently_verified', 'web_reported'],
   free: ['free', 'free_tier', 'trial', 'paid_only', 'unknown'],
   availability: ['announced', 'downloadable', 'gated', 'api_only', 'withdrawn', 'unknown'],
-  dist_source: ['huggingface', 'ollama', 'api', 'aggregator', 'github', 'kaggle', 'modelscope'],
+  dist_source: ['huggingface', 'ollama', 'api', 'aggregator', 'github', 'kaggle', 'modelscope', 'replicate'],
   method: ['card_international', 'card_local', 'paypal', 'crypto', 'mobile_money', 'upi', 'pix', 'alipay',
     'wechat_pay', 'bank_transfer', 'app_store_billing', 'prepaid_or_gift_card', 'carrier_billing', 'other'],
   kinds: ['gpu_cloud', 'vm', 'bare_metal', 'managed_hosting', 'inference_endpoint'],
@@ -433,6 +433,27 @@ if (PROV) {
   }
   console.log(`Use it online: ${n} models served by API providers`);
 }
+// Replicate (tools/discover.mjs): its own listings, and listings of the same model (same name, related owner).
+// Price per run varies by hardware and isn't read, so it shows as unknown.
+{
+  const D = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
+  const { replicateMatch } = await import('./import.mjs');
+  const rep = D.replicate?.models || [];
+  let n = 0;
+  const add = (r, id, url) => {
+    if ((r.online ||= []).some((p) => p.provider === 'replicate')) return;
+    r.online.push({ provider: 'replicate', name: 'Replicate', url, host_id: null, input: null, output: null, free: false, no_card: null, source_url: `https://api.replicate.com/v1/models/${id}`, observed_at: D.replicate?.checked_at || null });
+    n++;
+  };
+  for (const r of published) {
+    if (r.type !== 'model') continue;
+    const own = (r.distributions || []).find((d) => d.source === 'replicate');
+    if (own) { add(r, own.native_id, own.url); continue; }
+  }
+  const models = published.filter((r) => r.type === 'model');
+  for (const m of rep) { const r = replicateMatch(m, models); if (r) add(r, m.id, m.url); }
+  if (rep.length || n) console.log(`Replicate: ${rep.length} new models found, shown on ${n} listings`);
+}
 
 // ---- App Store check (tools/appstore.mjs) and store links (data/app-stores.json) ----
 const APPSTORE = existsSync(join(importDir, 'appstore.json')) ? JSON.parse(readFileSync(join(importDir, 'appstore.json'), 'utf8')) : null;
@@ -648,7 +669,7 @@ async function writeNewPages(records) {
   const listedSites = new Set(records.flatMap((r) => [r.url, ...(r.official_urls || [])]).filter(Boolean).map((u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return null; } }));
   const spotted = (XDATA.announcements || []).filter((a) => a.kind === 'launch' && a.created_at >= cutoff && !a.links.sites.some((h) => listedSites.has(h)))
     .sort((a, b) => b.likes - a.likes).slice(0, 40);
-  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${r.discovered_via?.source === 'x' ? ' · 🆕 spotted on X' : ''}</span><br>${esc(r.description)}</li>`;
+  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${r.discovered_via?.source === 'x' ? ' · 🆕 spotted on X' : r.discovered_via?.source === 'replicate' ? ' · 🆕 new on Replicate' : ''}</span><br>${esc(r.description)}</li>`;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">

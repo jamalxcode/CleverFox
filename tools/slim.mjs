@@ -28,7 +28,7 @@ export function slim(r) {
       uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free },
     hardware: r.hardware && { min_memory_gb: r.hardware.min_memory_gb, recommended_gb: r.hardware.recommended_gb, estimate: isEstimate(r.hardware) || undefined },
     platforms: r.platforms && Object.fromEntries(Object.keys(r.platforms).map((k) => [k, []])),
-    popularity: pop.length ? [{ downloads_30d: pop.reduce((n, p) => n + (p.downloads_30d || 0) + pullsN(p.pulls), 0), likes: pop.reduce((n, p) => n + (p.likes || 0), 0) }] : undefined,
+    popularity: pop.length ? [{ downloads_30d: pop.reduce((n, p) => n + (p.downloads_30d || 0) + pullsN(p.pulls), 0), likes: pop.reduce((n, p) => n + (p.likes || 0), 0), ...(pop.some((p) => p.runs) ? { runs: pop.reduce((n, p) => n + (p.runs || 0), 0) } : {}) }] : undefined,
     independent_benchmarks: (r.independent_benchmarks || []).filter((x) => ['epoch_eci', 'aa_intelligence'].includes(x.id)).map((x) => ({ id: x.id, display: x.display })),
     distributions: (r.distributions || []).filter((d) => d.access || d.availability === 'downloadable').slice(0, 3).map((d) => ({ source: d.source, availability: d.availability, access: slimAccess(d.access) })),
     paper_urls: r.paper_urls?.length ? [r.paper_urls[0]] : undefined,

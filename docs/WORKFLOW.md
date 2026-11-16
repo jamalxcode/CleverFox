@@ -6,7 +6,7 @@ How the data flows, what runs when, and how changes are made. Rules and numbers 
 
 `.github/workflows/pages.yml` ("Import and deploy") runs **three times a day**. cron-job.org starts it at 03:41, 11:41 and 19:41 UTC through GitHub's API, as Flattery does: `POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches`, body `{"ref":"main"}`, with a fine-grained token limited to this repo (*Actions: read and write*). GitHub's own schedule (05:07, 13:07, 21:07) is a late backup.
 
-Every scan (quick and full) also runs `tools/discover.mjs`: Hugging Face new releases, llm-releases.com, GitHub new projects and watchlist releases (with the workflow's own GitHub token), and YouTube (official channels' uploads and keyword search, both through the Data API with `YOUTUBE_API_KEY`, since the channels' RSS feeds answered 404). The build then attaches up to 3 of those videos to each listing whose name they mention (`yt_videos`, official channels first; decision 73).
+Every scan (quick and full) also runs `tools/discover.mjs`: Hugging Face new releases, llm-releases.com, GitHub new projects and watchlist releases (with the workflow's own GitHub token), and YouTube (official channels' uploads and keyword search, both through the Data API with `YOUTUBE_API_KEY`, since the channels' RSS feeds answered 404). With `REPLICATE_API_TOKEN`, it also reads Replicate's public model list and collections; new official or used models become candidate listings (`tools/import.mjs`), and listings of the same model get Replicate under "Use it online" (decision 75). The build then attaches up to 3 of those videos to each listing whose name they mention (`yt_videos`, official channels first; decision 73).
 
 `tools/mode.mjs` decides each run's mode:
 - **full:** the first run 20 or more hours after the last full refresh. It does every step below.
@@ -100,6 +100,7 @@ Its old page then explains where it went.
 | `X_MONTHLY_READS` | repo variable | Monthly X read budget (default 10,000; set to 2,000) |
 | `HF_TOKEN` | repo secret (optional) | Higher Hugging Face rate limits |
 | `AA_API_KEY` | repo secret (optional) | Artificial Analysis benchmarks |
+| `REPLICATE_API_TOKEN` | repo secret (optional) | Replicate: new models and their tasks (a free account's API token; reading the model list costs nothing) |
 | `YOUTUBE_API_KEY` | repo secret (optional) | YouTube official channels' uploads and keyword search (RSS fallback without it, which currently answers 404) |
 | `X_POST_ENABLED` | repo variable (optional) | `true` turns on the weekly X post |
 | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | repo secrets (optional) | X posting keys (OAuth 1.0a, read and write) for the weekly post |

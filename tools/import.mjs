@@ -478,6 +478,79 @@ function xAnnouncements(kind) {
   return out;
 }
 
+// ---- Replicate (tools/discover.mjs): new models run on Replicate become candidate listings ----
+// Skipped when the same model is already listed (same name, related owner): the build then shows Replicate under
+// "Use it online" on that listing instead. Tasks come only from Replicate's collections; nothing else is guessed.
+const MODALITIES_MORE = { 'image-to-video': ['image', 'video'], 'text-to-audio': ['text', 'audio'] };
+const TASK_WORDS_MORE = { 'image-to-video': 'Image-to-video', 'text-to-audio': 'Text-to-audio' };
+const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+export const sameOwner = (a, b) => { a = String(a || '').toLowerCase(); b = String(b || '').toLowerCase(); return a === b || norm(a) === norm(b) || a.startsWith(b + '-') || b.startsWith(a + '-'); };
+export function replicateMatch(m, records) {
+  return records.find((r) => (r.distributions || []).some((d) => {
+    if (d.source === 'replicate') return String(d.native_id).toLowerCase() === m.id.toLowerCase();
+    const [o, n] = String(d.native_id || '').split('/');
+    return n && norm(n) === norm(m.name) && sameOwner(o, m.owner);
+  }));
+}
+export function replicateRecord(m) {
+  const api = `https://api.replicate.com/v1/models/${m.id}`;
+  const task = m.tasks?.[0];
+  const words = m.description ? m.description.split(/\s+/).slice(0, 22).join(' ').replace(/[.,;:]$/, '') + (m.description.split(/\s+/).length > 22 ? '…' : '') : '';
+  return {
+    schema_version: 1,
+    id: `cf:model:${ownerSlug(m.owner)}/${slug(m.name)}`,
+    type: 'model',
+    name: m.name,
+    description: `${TASK_WORDS[task] || TASK_WORDS_MORE[task] || 'AI'} model ${m.official ? 'run by its maker' : `published by ${m.owner}`} on Replicate${words ? `: ${words}` : ''}${/[.…!?]$/.test(words) ? '' : '.'}`,
+    publisher: m.owner,
+    publisher_region: claim('unknown'),
+    official_urls: [m.url],
+    documentation_urls: [m.github_url, m.license_url].filter(Boolean),
+    paper_urls: [m.paper_url].filter(Boolean),
+    evidence_urls: [api],
+    verification_status: 'candidate',
+    warning: 'none',
+    first_seen_at: TODAY,
+    last_content_change_at: TODAY,
+    relations: [],
+    family: null,
+    distributions: [{ source: 'replicate', native_id: m.id, url: m.url, availability: 'api_only', formats: [], file_size_bytes: null, access: null, observed_at: TODAY }],
+    tasks: m.tasks || [],
+    modalities: [...new Set((m.tasks || []).flatMap((t) => MODALITIES[t] || MODALITIES_MORE[t] || []))],
+    languages: claim('unknown'),
+    formats: [],
+    local_runtimes: [],
+    local_ready: false,
+    official: !!m.official,
+    license: claim('unknown'),
+    availability: claim('unknown'), // runs on Replicate's API; whether the weights can be downloaded elsewhere isn't checked
+    parameters: claim('unknown'),
+    released_at: claim('unknown'),
+    first_published: claim('unknown'),
+    announced_at: null,
+    benchmarks: [],
+    gate: null,
+    uncensored: false,
+    tags_seen: [],
+    popularity: [{ source: 'replicate', runs: m.runs ?? null, observed_at: TODAY }],
+    import_source: 'replicate',
+    discovered_via: { source: 'replicate', url: m.url, created_at: m.version_at || (m.first_seen !== 'baseline' ? m.first_seen : null) },
+  };
+}
+const seedRecords = () => readdirSync(join(root, 'data', 'seed')).filter((x) => x.endsWith('.json')).flatMap((f) => JSON.parse(readFileSync(join(root, 'data', 'seed', f), 'utf8')));
+function replicateRecords(existing, seed) {
+  existing = [...seedRecords().filter((r) => r.type === 'model'), ...existing];
+  const d = join(outDir, 'discover.json');
+  const list = existsSync(d) ? JSON.parse(readFileSync(d, 'utf8')).replicate?.models || [] : [];
+  const out = [];
+  for (const m of list) {
+    if (seed.has(`replicate:${m.id.toLowerCase()}`) || replicateMatch(m, [...existing, ...out])) continue;
+    const r = replicateRecord(m); r.capabilities = capabilitiesOf(r, []); r.highlights = highlightsOf(r);
+    if (!existing.some((x) => x.id === r.id) && !out.some((x) => x.id === r.id)) out.push(r);
+  }
+  return out;
+}
+
 // Publisher names and countries from data/publishers.json (Wikidata, reviewed).
 const PUBLISHERS = existsSync(join(root, 'data', 'publishers.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publishers.json'), 'utf8')).publishers || {} : {};
 function applyPublisher(r) {
@@ -534,6 +607,12 @@ async function main() {
     console.log(`Ollama: ${extra.length} families linked to their Hugging Face original, ${standalone.length} listed on their own`);
     const all = [...models, ...extra, ...standalone].filter((r) => !inSeed(r));
     for (const r of all) { r.capabilities = capabilitiesOf(r, r.tags_seen); r.highlights = highlightsOf(r); applyPublisher(r); }
+    // Replicate listings: earlier ones are kept (records are never silently lost) unless the model is now listed from Hugging Face.
+    const prevRep = (existsSync(join(outDir, 'models.json')) ? JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')) : []).filter((r) => r.import_source === 'replicate' && !inSeed(r));
+    const keptRep = prevRep.filter((r) => !replicateMatch({ id: r.distributions[0].native_id, owner: r.publisher, name: r.name }, [...all, ...seedRecords().filter((x) => x.type === 'model')]));
+    const newRep = replicateRecords([...all, ...keptRep], seed);
+    all.push(...keptRep, ...newRep);
+    console.log(`Replicate: ${keptRep.length} listings kept, ${newRep.length} new (${newRep.map((r) => r.name).join(', ') || 'none'})`);
     // de-duplicate ids
     const seen = new Set();
     const unique = all.filter((r) => (seen.has(r.id) ? false : seen.add(r.id)));
@@ -581,11 +660,12 @@ async function xOnly() {
     const r = datasetRecord(d, readme); r.discovered_via = post; r.capabilities = capabilitiesOf(r, []); applyPublisher(r);
     if (!datasets.some((x) => x.id === r.id)) newD.push(r);
   }
+  newM.push(...replicateRecords([...models, ...newM], seed));
   const ids = new Set([...models, ...datasets].map((r) => r.id));
   const addM = newM.filter((r) => !ids.has(r.id)); const addD = newD.filter((r) => !ids.has(r.id));
   if (addM.length) writeFileSync(join(outDir, 'models.json'), JSON.stringify([...models, ...addM], null, 1) + '\n');
   if (addD.length) writeFileSync(join(outDir, 'datasets.json'), JSON.stringify([...datasets, ...addD], null, 1) + '\n');
-  console.log(`X-only import: ${addM.length} new models (${addM.map((r) => r.name).join(', ') || 'none'}), ${addD.length} new datasets (${addD.map((r) => r.name).join(', ') || 'none'})`);
+  console.log(`X-only import (with Replicate): ${addM.length} new models (${addM.map((r) => r.name).join(', ') || 'none'}), ${addD.length} new datasets (${addD.map((r) => r.name).join(', ') || 'none'})`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

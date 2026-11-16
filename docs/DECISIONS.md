@@ -364,6 +364,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** the "Any language" filter groups codes by their English name. It shows each language once with a listing count, and leaves out codes that have no name.
 **Why:** the owner found the list full of raw codes ("atj", "av") and repeats (Aymara and Azerbaijani three times each). Hugging Face cards mix 2- and 3-letter codes and tag hundreds of languages. With grouping, the list went from about 220 entries to 150 real languages. The records stay unchanged (never invent or drop metadata).
 
+### 75. New models from Replicate
+**Decision:** every scan reads Replicate's public model list and collections, using a free account's API token. New models that are official or have 500+ runs become candidate listings, with tasks taken from Replicate's collections. Availability, license and size stay unknown. A model that is already listed gets Replicate under "Use it online" instead of a second listing.
+**Why:** the owner asked to catalog new models from Replicate. Its API needs a token even to read, so it's a repo secret (reading costs nothing). Replicate runs both makers' own models and copies of open models. So matching by name and owner keeps one record per model, and nothing that Replicate doesn't state is filled in. The 500-run bar keeps out the many personal test models. The first run is a baseline, so the back catalog isn't called new.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

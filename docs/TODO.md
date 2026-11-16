@@ -4,6 +4,8 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 
 ## For the owner (needs your accounts or money)
 
+- [ ] **Replicate token:** make a free Replicate account, create an API token at replicate.com/account/api-tokens, and add it as the repo secret `REPLICATE_API_TOKEN`. Until then the Replicate source is skipped.
+
 - [x] **YouTube key:** added 16 November; it powers both official channels (the RSS feeds answered 404) and keyword search.
 
 - [ ] **cron-job.org timer:**
@@ -39,8 +41,9 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | llm-releases.com | Hugging Face links and release announcements (robots.txt respected) | ✓ | ✓ | `tools/discover.mjs` |
 | GitHub search | brand-new AI projects (4 searches, last 14 days) | ✓ | ✓ | `tools/discover.mjs` |
 | GitHub releases | latest releases of the watchlist and projects linked from listings | ✓ | ✓ | `tools/discover.mjs` |
-| YouTube official channels (RSS) | new videos from AI makers; Hugging Face links in descriptions | ✓ | ✓ | `tools/discover.mjs` |
+| YouTube official channels (Data API, RSS fallback) | new videos from AI makers; Hugging Face links in descriptions | ✓ | ✓ | `tools/discover.mjs` |
 | YouTube search (with `YOUTUBE_API_KEY`) | recent AI release videos, not reviewed | ✓ | ✓ | `tools/discover.mjs` |
+| Replicate (with `REPLICATE_API_TOKEN`) | new models (newest version or first seen in 14 days; official or 500+ runs), tasks from Replicate's collections | ✓ | ✓ | `tools/discover.mjs`, listings by `tools/import.mjs` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
 | Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |
@@ -61,6 +64,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Decide whether quick scans should run more often than 3 times a day (each run rebuilds the site; X reads stay within the same daily share).
 - [ ] Open a listing on the live site (for example ChatGPT) and confirm the "Videos on YouTube" button and the "On YouTube" line show; the 16 November session couldn't reach the site.
 - [ ] YouTube matches: only 6 listings matched on the first build. Watch the count in the build log ("YouTube: videos naming N listings") as scans collect more videos, and check that matches stay correct (no listing linked to a video about a different model).
+- [ ] Replicate's first run with the token: check `discover.json` → `replicate` (pages, seen, collections, models). Check whether the `sort_by` parameter worked (models newest first); without it, 10 pages may miss new models. Check that the collection slugs matched tasks, and that no listing duplicates one already listed from Hugging Face.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

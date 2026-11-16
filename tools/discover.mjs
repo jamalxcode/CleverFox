@@ -4,10 +4,13 @@
 //  3. GitHub: brand-new AI projects (repository search) and releases of a watchlist (data/github-watch.json plus
 //     GitHub projects linked from seed listings). New projects and releases are kept apart: a new repository is
 //     not a usable release.
+//  4. YouTube: official channels' uploads and keyword search (YOUTUBE_API_KEY).
+//  5. Replicate: models published or updated there, with Replicate's own collections as their tasks (REPLICATE_API_TOKEN).
 // Models and datasets found here are filled in from Hugging Face by tools/import.mjs (--x-only in quick scans).
 // Output: data/imported/discover.json. Each source keeps its last data if it fails.
 //
-// Usage: node tools/discover.mjs     Env: GH_TOKEN (GitHub API; the workflow passes its own token), HF_TOKEN (optional)
+// Usage: node tools/discover.mjs     Env: GH_TOKEN (GitHub API; the workflow passes its own token), HF_TOKEN (optional),
+//        YOUTUBE_API_KEY and REPLICATE_API_TOKEN (optional; each source is skipped without its key)
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,7 +20,15 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'data', 'imported', 'discover.json');
 const HF = 'https://huggingface.co';
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
-export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14 };
+export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14, replicatePages: 10, replicateMinRuns: 500, replicateCollections: 20 };
+// Replicate collections (by slug) -> the task they stand for. Collections not matched here are ignored.
+export const REPLICATE_TASKS = [
+  [/image-to-video/, 'image-to-video'], [/text-to-video|video-gen|generate-videos/, 'text-to-video'],
+  [/text-to-image|image-gen|generate-images/, 'text-to-image'], [/image-edit|edit-images|image-to-image|restor|upscal|super-res/, 'image-to-image'],
+  [/language-model|^llms?$|chat/, 'text-generation'], [/speech-to-text|speech-recog|transcri/, 'automatic-speech-recognition'],
+  [/text-to-speech|speech-gen|voice/, 'text-to-speech'], [/vision|image-to-text|caption/, 'image-text-to-text'],
+  [/embedding/, 'feature-extraction'], [/music|audio-gen|sound/, 'text-to-audio'],
+];
 // Optional YouTube keyword searches (only with YOUTUBE_API_KEY; each costs 100 of the free 10,000 daily quota units).
 export const YOUTUBE_QUERIES = ['new AI model release', 'open source LLM released', 'new AI app launch', 'GPU cloud launch'];
 // The repository searches (GitHub's own search syntax); {since} is today minus githubDays.
@@ -202,11 +213,58 @@ export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, 
   return { checked_at: now.toISOString(), channel_ids: ids, skipped, feeds, videos: vids, search, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
 }
 
+// 5. Replicate (api.replicate.com, needs a free account's REPLICATE_API_TOKEN): models whose newest version is recent,
+// or first seen recently, that are official (run by their maker) or already have runs. Tasks come from Replicate's own
+// collections. The first run only records what exists (a baseline), so the whole back catalog isn't called "new".
+export async function replicate({ now = new Date(), prev = {}, fetchImpl = fetch, token = process.env.REPLICATE_API_TOKEN } = {}) {
+  if (!token) return { ...prev, checked_at: now.toISOString(), skipped: 'no REPLICATE_API_TOKEN' };
+  const API = 'https://api.replicate.com/v1';
+  const get = async (url) => {
+    for (let i = 0; i < 4; i++) {
+      const res = await fetchImpl(url, { headers: { 'user-agent': UA, accept: 'application/json', authorization: `Bearer ${token}` } });
+      if (res.status === 429) { await new Promise((r) => setTimeout(r, Math.min(30, +(res.headers?.get?.('retry-after') || 0) || 2 ** i * 2) * 1000)); continue; }
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url.replace(API, '').split('?')[0]}`);
+      return res.json();
+    }
+    throw new Error('HTTP 429 (rate limited)');
+  };
+  // Models, newest version first (the sort is ignored if the API doesn't support it; dates are checked below anyway).
+  const all = []; let url = `${API}/models?sort_by=latest_version_created_at&sort_direction=desc`; let pages = 0;
+  while (url && pages < RULES.replicatePages) { const d = await get(url); all.push(...(d.results || [])); url = d.next || null; pages++; }
+  // Collections -> tasks.
+  const tasks = {}; let collections = 0;
+  try {
+    const list = []; let cu = `${API}/collections`; let cp = 0;
+    while (cu && cp < 5) { const d = await get(cu); list.push(...(d.results || [])); cu = d.next || null; cp++; }
+    for (const c of list.filter((c) => REPLICATE_TASKS.some(([re]) => re.test(c.slug))).slice(0, RULES.replicateCollections)) {
+      const task = REPLICATE_TASKS.find(([re]) => re.test(c.slug))[1];
+      try { const d = await get(`${API}/collections/${encodeURIComponent(c.slug)}`); collections++; for (const m of d.models || []) (tasks[`${m.owner}/${m.name}`] ||= new Set()).add(task); } catch { /* skip this collection */ }
+    }
+  } catch { /* collections are optional */ }
+  const baseline = !prev.first_seen;
+  const firstSeen = { ...(prev.first_seen || {}) };
+  const today = now.toISOString().slice(0, 10);
+  const models = new Map((prev.models || []).filter((m) => daysAgo(m.first_seen === 'baseline' ? m.version_at : m.first_seen, now) <= RULES.keepDays).map((m) => [m.id, m]));
+  for (const m of all) {
+    if (m.visibility && m.visibility !== 'public') continue;
+    const id = `${m.owner}/${m.name}`;
+    if (!firstSeen[id]) firstSeen[id] = baseline ? 'baseline' : today;
+    const versionAt = m.latest_version?.created_at || null;
+    const fresh = (versionAt && daysAgo(versionAt, now) <= RULES.newDays) || (firstSeen[id] !== 'baseline' && daysAgo(firstSeen[id], now) <= RULES.newDays);
+    if (!fresh || !(m.is_official || (m.run_count || 0) >= RULES.replicateMinRuns)) { if (models.has(id)) Object.assign(models.get(id), { runs: m.run_count ?? null }); continue; }
+    models.set(id, { id, owner: m.owner, name: m.name, url: m.url || `https://replicate.com/${id}`, description: String(m.description || '').replace(/\s+/g, ' ').trim().slice(0, 300),
+      official: !!m.is_official, runs: m.run_count ?? null, github_url: m.github_url || null, paper_url: m.paper_url || null, license_url: m.license_url || null,
+      version_at: versionAt, first_seen: firstSeen[id], tasks: [...(tasks[id] || [])] });
+  }
+  for (const [id, t] of Object.entries(tasks)) if (models.has(id) && !models.get(id).tasks.length) models.get(id).tasks = [...t];
+  return { checked_at: now.toISOString(), source_url: `${API}/models`, baseline, pages, seen: all.length, collections, models: [...models.values()].sort((a, b) => String(b.version_at || b.first_seen).localeCompare(String(a.version_at || a.first_seen))), first_seen: firstSeen };
+}
+
 async function main() {
   mkdirSync(dirname(OUT), { recursive: true });
   const prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
   const out = { ...prev };
-  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })]]) {
+  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })], ['replicate', () => replicate({ prev: prev.replicate || {} })]]) {
     try { out[key] = await fn(); console.log(`Discover ${key}: ${JSON.stringify(Object.fromEntries(Object.entries(out[key]).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.length])))}`); }
     catch (e) { console.warn(`Discover ${key} failed (${e.message}); keeping the last data`); }
   }

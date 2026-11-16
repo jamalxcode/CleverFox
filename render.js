@@ -13,7 +13,7 @@ export const METHOD_LABELS = {
 export const FREE_LABELS = { free: 'Free', free_tier: 'Free tier', trial: 'Free trial', paid_only: 'Paid only' };
 export const KIND_LABELS = { gpu_cloud: 'GPU cloud', vm: 'Virtual machines', bare_metal: 'Bare metal', managed_hosting: 'Managed hosting', inference_endpoint: 'Inference endpoints' };
 export const AVAIL_LABELS = { downloadable: 'Downloadable', gated: 'Gated download', api_only: 'API only', announced: 'Announced only', withdrawn: 'Withdrawn' };
-export const SOURCE_LABELS = { huggingface: 'Hugging Face', ollama: 'Ollama', api: 'Official API', aggregator: 'API aggregator', github: 'GitHub', kaggle: 'Kaggle', modelscope: 'ModelScope' };
+export const SOURCE_LABELS = { huggingface: 'Hugging Face', ollama: 'Ollama', api: 'Official API', aggregator: 'API aggregator', github: 'GitHub', kaggle: 'Kaggle', modelscope: 'ModelScope', replicate: 'Replicate' };
 export const langNames = (() => { try { return new Intl.DisplayNames(['en'], { type: 'language' }); } catch { return null; } })();
 export const langName = (c) => { try { return langNames?.of(c) || c; } catch { return c; } };
 export const countryName = (c) => countryNames.get(c) || c;
@@ -25,7 +25,7 @@ export const FREE_TEXT = { free_download: 'Free download', free: 'Free', free_ti
 export const DEVICES = [[4, 'a phone or Raspberry Pi (4 GB)'], [8, 'a basic laptop with 8 GB'], [16, 'a 16 GB laptop or Mac, or a 12–16 GB graphics card'], [24, 'a 24 GB graphics card (e.g. RTX 3090/4090) or a 32 GB Mac'], [48, 'a 48 GB graphics card or a 64 GB Mac or PC'], [96, 'a 128 GB Mac or several graphics cards'], [Infinity, 'a server with several data-center GPUs']];
 export const deviceFor = (gb) => DEVICES.find(([m]) => gb <= m)[1];
 export const GATE_TEXT = { none: 'No sign-in needed', login_and_terms: 'Log in and accept terms', approval: 'Needs approval' };
-export const popularity = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50 + pullsNum(p.pulls), 0);
+export const popularity = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50 + pullsNum(p.pulls) + (p.runs || 0) / 10, 0);
 export const pullsNum = (s) => { const m = String(s || '').match(/^([\d.]+)([KMB]?)$/); return m ? +m[1] * ({ K: 1e3, M: 1e6, B: 1e9 }[m[2]] || 1) : 0; };
 export const fmtNum = (n) => n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}K` : String(n);
 
@@ -118,7 +118,8 @@ export function cardBadges(r) {
     if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
     const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
     if (langs.length && !(langs.length === 1 && langs[0] === 'en')) b.push(badge(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', ')));
-    const pop = popularity(r); if (pop) b.push(badge(`↓ ${fmtNum((r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0))}`));
+    const dl = (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0); if (dl) b.push(badge(`↓ ${fmtNum(dl)}`));
+    const runs = (r.popularity || []).reduce((n, p) => n + (p.runs || 0), 0); if (runs) b.push(`<span class="badge" title="Times it has been run on Replicate">▶ ${fmtNum(runs)} runs</span>`);
   } else if (r.type === 'dataset') {
     if (known(r.availability)) b.push(badge(AVAIL_LABELS[r.availability.value] || r.availability.value));
     if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
@@ -444,7 +445,7 @@ export function onlineLine(r) {
     return `<a href="${esc(p.url)}" rel="noopener" target="_blank">${esc(p.name)}</a> ${price}${pay}`;
   };
   const shown = list.slice(0, 5).map(one).join('<span class="sep"> · </span>');
-  const src = list[0].source_url ? ` <a class="src-i" href="${esc(list[0].source_url)}" rel="noopener" target="_blank" title="Provider list from ${esc(list[0].source_url.includes('openrouter') ? 'OpenRouter' : 'Hugging Face')}, ${esc(fmtDate(list[0].observed_at))}">ⓘ</a>` : '';
+  const src = list[0].source_url ? ` <a class="src-i" href="${esc(list[0].source_url)}" rel="noopener" target="_blank" title="Provider list from ${esc(list[0].source_url.includes('openrouter') ? 'OpenRouter' : list[0].source_url.includes('replicate') ? 'Replicate' : 'Hugging Face')}, ${esc(fmtDate(list[0].observed_at))}">ⓘ</a>` : '';
   return `<p class="ln">☁️ <strong>Use it online</strong> <span class="muted">(no GPU needed; $ per million tokens in / out, <a href="${esc(view.base)}glossary/#tokens">what's a token?</a>)</span>: ${shown}${list.length > 5 ? ` <span class="muted">+${list.length - 5} more</span>` : ''}${src}</p>`;
 }
 

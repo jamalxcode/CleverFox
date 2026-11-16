@@ -12,6 +12,17 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: new models from Replicate
+**Where:** Claude Code session.
+**Asked:** pull new releases from replicate.com for new AI models to catalog.
+**Outcome (decision 75):**
+- A Replicate source in `tools/discover.mjs`: model list (newest version first), collections as tasks, a baseline on the first run, official or 500+ runs.
+- `tools/import.mjs` makes candidate listings with nothing invented, skipping models already listed (seed or Hugging Face). The build adds Replicate under "Use it online" and "new on Replicate" on New this week.
+**Notes:**
+- Replicate's API needs a token even to read, so it waits on the owner adding `REPLICATE_API_TOKEN`.
+- This session couldn't reach replicate.com (network), so the API's shape was taken from Replicate's official JavaScript client on npm. The first real run must be checked (TODO).
+- A local test caught a duplicate: a seed listing (Qwen3.8-27B) wasn't checked at first. Seed records are now included.
+
 ## 2026-11-16: language filter cleanup
 **Where:** Claude Code session.
 **Asked:** the language dropdown showed languages that don't exist (screenshot: "atj", "av" and repeated names); fix it.
