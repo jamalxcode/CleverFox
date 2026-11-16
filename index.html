@@ -7,7 +7,7 @@
 <meta name="description" content="Find AI models, datasets, apps and hosting from every source, and see whether you can use them from your country: free options, paying without a card, local models and nearby data centers.">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=__BUILD__">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=__BUILD__">
-<meta name="theme-color" content="#c2410c">
+<meta name="theme-color" content="#04070a">
 <meta property="og:title" content="CleverFox: AI you can actually use">
 <meta property="og:description" content="AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free, runs locally, no card needed.">
 <meta property="og:image" content="https://jamalxcode.github.io/CleverFox/img/og.jpg">
@@ -19,6 +19,7 @@
 </head>
 <body>
 <header class="top">
+  <canvas id="cf-rain" aria-hidden="true"></canvas>
   <div class="wrap top-row">
     <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
     <div class="pickers">
@@ -82,10 +83,31 @@
 
 <footer class="wrap foot">
   <p>Researched apps, hosting and API providers, plus models and datasets imported daily from Hugging Face and the Ollama library. Apps and hosts marked "not yet verified" come from search results and haven't been checked at the official page. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
-  <p><a href="new/" data-i18n="newweek">🆕 New this week</a> · <a href="guides/">📚 Guides</a> · <a href="glossary/">📖 Glossary</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Theme: auto</button></p>
+  <p><a href="new/" data-i18n="newweek">🆕 New this week</a> · <a href="guides/">📚 Guides</a> · <a href="glossary/">📖 Glossary</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Light mode</button></p>
   <p id="generated" class="muted"></p>
 </footer>
 
+<script>
+  // Digital rain behind the header: decorative only, paused when the tab is hidden, off for reduced motion and light mode.
+  (function () {
+    var c = document.getElementById('cf-rain'); if (!c || !c.getContext) return;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var x = c.getContext('2d'), glyphs = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄ0123456789AIモデル🦊'.split(''), size = 14, drops = [], last = 0;
+    function fit() { c.width = c.offsetWidth; c.height = c.offsetHeight; drops = Array.from({ length: Math.ceil(c.width / size) }, function () { return Math.random() * -40; }); }
+    function frame(t) {
+      requestAnimationFrame(frame);
+      if (document.hidden || document.documentElement.dataset.theme === 'light' || t - last < 70) return; last = t;
+      x.fillStyle = 'rgba(4, 7, 10, 0.18)'; x.fillRect(0, 0, c.width, c.height);
+      x.font = size + 'px monospace';
+      for (var i = 0; i < drops.length; i++) {
+        x.fillStyle = Math.random() < 0.04 ? '#3ce7ff' : '#00ff9c';
+        x.fillText(glyphs[(Math.random() * glyphs.length) | 0], i * size, drops[i] * size);
+        if (drops[i] * size > c.height && Math.random() > 0.96) drops[i] = 0; else drops[i] += 1;
+      }
+    }
+    fit(); addEventListener('resize', fit); requestAnimationFrame(frame);
+  })();
+</script>
 <script type="module" src="app.js?v=__BUILD__"></script>
 <!-- GoatCounter analytics (not loaded on localhost; paths are prefixed with the host so all *.sala.company apps share one dashboard) -->
 <script>

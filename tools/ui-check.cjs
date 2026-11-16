@@ -50,6 +50,8 @@ function serve() {
     const axe = fs.readFileSync(axePath, 'utf8');
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, colorScheme: theme });
+      // The site's own switch: light mode is stored in localStorage ("theme"); the dark Matrix look is the default.
+      await ctx.addInitScript((t) => { try { localStorage.setItem('theme', t === 'light' ? 'light' : ''); } catch (e) {} }, theme);
       const page = await ctx.newPage();
       for (const p of pages) {
         await page.goto(base + p, { waitUntil: 'networkidle' });

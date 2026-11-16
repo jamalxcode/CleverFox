@@ -346,6 +346,16 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 **Decision:** with a key, official channels are read from their uploads lists through the YouTube Data API (about 8 units a scan), and RSS stays as the fallback. llm-releases.com is read through its home page plus up to 25 of its own release pages, which is where its Hugging Face links are; robots.txt is respected and pages are read one at a time.
 **Why:** the first runs on GitHub showed that YouTube's RSS feeds answered 404 for 7 of 8 channels. After switching to the API, 33 official videos came through in 14 days. llm-releases.com's home page links only to itself; following its release pages found 84 Hugging Face models. Diagnostics (feed status per channel, page size and domains for llm-releases) now sit in `discover.json`, so failures show instead of passing silently.
 
+### 72. A Matrix / cyberpunk look, readable first
+**Decision:** the default look is a dark terminal:
+- near-black background with neon green, plus cyan and magenta accents;
+- code-style lettering for headings, tabs, badges and labels, while long text stays in the system font;
+- a faint "digital rain" canvas behind the header, paused when the tab is hidden and off for reduced motion;
+- glowing panels with corner brackets, `>_` and `//` prompts on section titles, and faint scanlines.
+
+A light "terminal paper" mode is available from the footer button (stored as `theme: light`). The browser's light/dark preference no longer chooses the look; dark is the default.
+**Why:** the owner asked for a less boring, functional but fun look in a Matrix cyberpunk style. Readability comes first: the deploy's contrast check now tests both looks the way the site switches them (it caught the selected tab's count in light mode), and the rain is decorative only, so it's never needed to read anything.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

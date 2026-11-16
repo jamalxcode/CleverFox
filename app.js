@@ -211,18 +211,17 @@ $('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncV
 $('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); if ($('#picks').childElementCount) showPicks(false); });
 $('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); });
 
-const themes = ['auto', 'light', 'dark'];
+// Two looks: "Matrix" (dark, the default) and light "terminal paper".
 function applyTheme(t) {
-  if (t === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = t;
-  $('#theme-btn').textContent = `◐ Theme: ${t}`;
+  if (t === 'light') document.documentElement.dataset.theme = 'light'; else delete document.documentElement.dataset.theme;
+  $('#theme-btn').textContent = t === 'light' ? '◐ Matrix mode' : '◐ Light mode';
 }
 $('#theme-btn').addEventListener('click', () => {
-  const cur = store.get('theme') || 'auto';
-  const next = themes[(themes.indexOf(cur) + 1) % 3];
-  store.set('theme', next === 'auto' ? '' : next);
+  const next = store.get('theme') === 'light' ? '' : 'light';
+  store.set('theme', next);
   applyTheme(next);
 });
-applyTheme(store.get('theme') || 'auto');
+applyTheme(store.get('theme') === 'light' ? 'light' : '');
 
 // ---- start ----
 try {

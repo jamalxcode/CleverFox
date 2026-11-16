@@ -305,6 +305,8 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
+- **Look (decision 72):** dark "Matrix" by default (the browser's light/dark preference doesn't choose it); light "terminal paper" from the footer button, kept in the browser as `theme: light`. Digital rain behind the header, decorative only: paused when the tab is hidden, off for reduced motion and in light mode. The page check tests contrast in both looks.
+
 - **List records:** apps and hosts keep their whole record in the list (sources, payment notes, prices, App Store countries); only internal notes and the evidence list are left out (`tools/slim.mjs`). Every card loads its full record (`record.json`) when opened. Models keep the slim list.
 - **Verified first:** apps and hosts that aren't verified show "⚠️ Not yet verified: facts from search results" as their first badge, with a dashed card border.
 - **Freshness line** in the footer: when each source last refreshed (Hugging Face models and datasets, Ollama, X, API providers, benchmarks, App Store check, re-check), flagged ⚠️ when older than 48 hours (X: 24, benchmarks and App Store: 72) or never.

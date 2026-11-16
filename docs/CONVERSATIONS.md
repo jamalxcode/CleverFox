@@ -12,6 +12,15 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: a Matrix / cyberpunk look
+**Where:** Claude Code session.
+**Asked:** give the website a less boring look, really functional but fun to read, in a Matrix cyberpunk style.
+**Outcome (decision 72):**
+- The dark terminal look is now the default, with neon accents, code-style lettering for headings and labels, digital rain behind the header, glowing card brackets, prompts on section titles and scanlines.
+- A light "terminal paper" mode stays available from the footer.
+- The page check now switches looks the way the site does, and caught one low-contrast tab count in light mode, which was fixed.
+- No sideways scrolling on phones; the contrast check passes in both looks.
+
 ## 2026-11-16: YouTube key added; checking the new sources
 **Where:** Claude Code session.
 **Asked:**
