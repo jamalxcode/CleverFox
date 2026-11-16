@@ -59,6 +59,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [x] Review the remaining 40 listings against those pages: 26 more verified, so 82 of 96 are now verified.
 - [ ] Freshness: add discovery (Hugging Face new, llm-releases, GitHub) to the footer's "Last refreshed" line.
 - [ ] Decide whether quick scans should run more often than 3 times a day (each run rebuilds the site; X reads stay within the same daily share).
+- [ ] Open a listing on the live site (for example ChatGPT) and confirm the "Videos on YouTube" button and the "On YouTube" line show; the 16 November session couldn't reach the site.
+- [ ] YouTube matches: only 6 listings matched on the first build. Watch the count in the build log ("YouTube: videos naming N listings") as scans collect more videos, and check that matches stay correct (no listing linked to a video about a different model).
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

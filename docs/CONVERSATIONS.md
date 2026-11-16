@@ -18,6 +18,9 @@ Entry format:
 **Outcome (decision 73):**
 - A "▶️ Videos on YouTube" button on every listing: a live YouTube search, newest first, with no quota used.
 - Already-collected videos that name the listing show under "▶️ On YouTube", official channels first; 6 listings matched on the first build.
+- Why not a search per listing: the YouTube API charges 100 units per search, and the free daily allowance can't cover about 1,240 listings.
+- The first deploy failed on a GitHub glitch (the build's upload "github-pages" wasn't found). Rerunning only the deploy job failed too; rerunning the whole run worked.
+- The session's network then refused the live site (403), so the live page is still to be checked (TODO).
 
 ## 2026-11-16: a Matrix / cyberpunk look
 **Where:** Claude Code session.

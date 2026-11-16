@@ -354,6 +354,7 @@ Built and live (16 November 2026), about 1,240 listings (875 models, 268 dataset
   - "possibly discontinued" marks;
   - verified versus not yet verified on every listing.
 - **X:** 3 scans a day for announcements and launches, tone and "praised on X", a "What people say on X" panel, and a weekly post (off).
+- **YouTube:** a "Videos on YouTube" search button on every listing, and up to 3 collected videos that name it, official channels first (decision 73).
 - **Discovery:** Hugging Face new releases, llm-releases.com, and GitHub new projects and watchlist releases, on every scan (decision 68).
 - **Verification:** official pages fetched by GitHub and compared fact by fact with quotes (decisions 67 and 69); a page check and tests before every deploy (decision 66).
 - **Site:**
