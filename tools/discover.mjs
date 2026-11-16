@@ -86,10 +86,24 @@ export async function llmReleases({ now = new Date(), fetchImpl = fetch } = {}) 
   const res = await fetchImpl(site, { headers: { 'user-agent': UA, accept: 'text/html' } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const html = await res.text();
+  // The home page links to the site's own release pages; follow up to 25 of them (robots.txt allowed, one at a time)
+  // and collect Hugging Face links and outside announcements there too.
+  const host = new URL(site).hostname;
+  const inner = [...new Set([...html.matchAll(/<a\b[^>]*href=["']([^"'#]+)["']/gi)].map(([, h]) => { try { return new URL(h, site); } catch { return null; } })
+    .filter((u) => u && u.hostname === host && u.pathname.split('/').filter(Boolean).length >= 1 && !/^\/(about|privacy|terms|contact|login|signup|rss|feed)/i.test(u.pathname) && robotsAllows(robots, u.pathname)).map((u) => u.href))].slice(0, 25);
+  const pages = [html];
+  for (const u of inner) {
+    try { const rr = await fetchImpl(u, { headers: { 'user-agent': UA, accept: 'text/html' } }); if (rr.ok) pages.push(await rr.text()); } catch { /* skip */ }
+    await new Promise((res2) => setTimeout(res2, 500));
+  }
   // Diagnostics: page size, link count and title, to see whether the page is built by JavaScript (no links in the HTML).
   const domains = {}; for (const m of html.matchAll(/https?:\\?\/\\?\/([\w.-]+\.[a-z]{2,})/gi)) domains[m[1].toLowerCase()] = (domains[m[1].toLowerCase()] || 0) + 1;
   const diag = { html_chars: html.length, links_in_html: (html.match(/<a\b/gi) || []).length, next_data: html.includes('__NEXT_DATA__'), top_domains: Object.entries(domains).sort((a, b) => b[1] - a[1]).slice(0, 15), title: (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').trim().slice(0, 120) };
-  return { checked_at: now.toISOString(), allowed: true, source_url: site, diag, ...releasesFromHtml(html, site) };
+  const parts = pages.map((pg) => releasesFromHtml(pg, site));
+  const seen = new Set();
+  return { checked_at: now.toISOString(), allowed: true, source_url: site, diag: { ...diag, inner_pages: inner.length, read: pages.length - 1 },
+    hf_models: [...new Set(parts.flatMap((x) => x.hf_models))], hf_datasets: [...new Set(parts.flatMap((x) => x.hf_datasets))],
+    announcements: parts.flatMap((x) => x.announcements).filter((a) => !seen.has(a.url) && seen.add(a.url)).slice(0, 60) };
 }
 
 // 3. GitHub: new projects (search) and watchlist releases.
