@@ -1,6 +1,6 @@
 // Offline tests for tools/discover.mjs.
 import assert from 'node:assert/strict';
-import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate } from './discover.mjs';
+import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate, youtubeReviews, reviewQuery } from './discover.mjs';
 import { replicateRecord, replicateMatch, parentsFromMeta, traceOrigin } from './import.mjs';
 
 assert.equal(robotsAllows('', '/'), true, 'no robots.txt: allowed');
@@ -83,4 +83,20 @@ const tree = { 'me/ft': [{ id: 'org/base' }], 'org/base': [{ id: 'org/pretrained
 assert.deepEqual(traceOrigin('me/ft', (id) => tree[id]), { original: 'org/pretrained', chain: ['me/ft', 'org/base', 'org/pretrained'], complete: true });
 assert.equal(traceOrigin('x/gone', () => undefined).complete, false, 'an unreadable page stops the chain');
 assert.equal(traceOrigin('a/a', (id) => [{ id: id === 'a/a' ? 'b/b' : 'a/a' }]).chain.length, 2, 'loops stop');
+// YouTube reviews: titles must name the listing; least recently checked first; re-checked after 7 days; quota stops the loop.
+assert.equal(reviewQuery({ name: 'Le Chat (Mistral)', publisher: 'Mistral' }), '"Le Chat" review');
+assert.equal(reviewQuery({ name: 'Jan', publisher: 'Menlo' }), 'Jan Menlo review', 'short names get the publisher');
+const cands = [{ id: 'a', name: 'Acme Chat', publisher: 'Acme' }, { id: 'b', name: 'Bolt', publisher: 'B' }, { id: 'c', name: 'Cora', publisher: 'C' }];
+const seenQ = [];
+const vfetch = async (u) => {
+  const q = decodeURIComponent(u.match(/q=([^&]+)/)[1]); seenQ.push(q);
+  return { ok: true, json: async () => ({ items: [{ id: { videoId: 'v1aaaaaaaaa' }, snippet: { title: 'Acme Chat review: is it worth it?', channelTitle: 'Rev', publishedAt: '2026-11-01T00:00:00Z' } }, { id: { videoId: 'v2bbbbbbbbb' }, snippet: { title: 'Unrelated video', channelTitle: 'X', publishedAt: '2026-11-01T00:00:00Z' } }] }) };
+};
+const rv = await youtubeReviews({ now, prev: { c: { checked_at: '2026-11-15T00:00:00Z', videos: [] } }, fetchImpl: vfetch, key: 'k', candidates: cands });
+assert.deepEqual(seenQ, ['"Acme Chat" review', 'Bolt B review'], 'recently checked listings wait');
+assert.deepEqual(rv.a.videos.map((v) => v.id), ['v1aaaaaaaaa'], 'only titles naming the listing');
+assert.deepEqual(rv.b.videos, []);
+let calls = 0;
+await youtubeReviews({ now, fetchImpl: async () => { calls++; return { ok: false, status: 403 }; }, key: 'k', candidates: cands });
+assert.equal(calls, 1, 'quota errors stop the loop');
 console.log('All discovery tests passed.');

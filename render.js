@@ -376,11 +376,17 @@ export function shareRow(r) {
     <button type="button" class="share-btn compare-btn" data-compare="${esc(r.id)}" hidden>⚖️ Compare</button>
   </div>`;
 }
-// Browser only: makes the share buttons work (copy, the phone's share menu).
+// Browser only: makes the share buttons work (copy, the phone's share menu), and plays a YouTube video when asked.
 export function wireShare(root) {
   if (navigator.share) root.querySelectorAll?.('[data-act="share"]').forEach((b) => { b.hidden = false; });
   root.addEventListener('click', async (e) => {
     const b = e.target.closest?.('[data-act]'); if (!b) return;
+    if (b.dataset.act === 'yt-play') {
+      // Nothing loads from YouTube until the visitor presses play (privacy-enhanced mode, youtube-nocookie.com).
+      const f = Object.assign(document.createElement('iframe'), { src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(b.dataset.yt)}?autoplay=1`, title: b.dataset.title || 'YouTube video', allow: 'autoplay; encrypted-media; picture-in-picture', allowFullscreen: true, loading: 'lazy' });
+      f.className = 'yt-frame'; b.replaceWith(f);
+      return;
+    }
     const box = b.closest('.share');
     if (b.dataset.act === 'copy-cmd') {
       try { await navigator.clipboard.writeText(b.dataset.text); b.textContent = '✓ Copied'; } catch { prompt('Copy this command:', b.dataset.text); }
@@ -420,6 +426,24 @@ export function xPanel(r) {
     <p><button type="button" id="x-load" class="share-btn">▶ Show the posts <span class="muted">(loads content from X)</span></button></p>
     ${group('⭐ Most liked', uniq(b.top?.all))}${group('👍 Positive', uniq(b.top?.positive))}${group('👎 Critical', uniq(b.top?.critical))}${group('💬 General', uniq(b.top?.general))}
     <p class="muted src">Tone is sorted by simple word rules, so treat it as a rough guide. ${live}</p></aside>`;
+}
+
+// "What people show on YouTube": reviews found by searching "<name> review", and videos from makers' channels
+// and release searches that name the listing. Links first; a video plays in the page only when pressed.
+export const ytReviewUrl = (r) => { const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim(); return `https://www.youtube.com/results?search_query=${encodeURIComponent(`${/\s/.test(name) ? `"${name}"` : name}${name.length <= 4 ? ` ${r.publisher_name || r.publisher}` : ''} review`)}`; };
+const ytId = (v) => v.id || String(v.url || '').match(/[?&]v=([\w-]{11})/)?.[1];
+export function ytPanel(r) {
+  if (r.type === 'dataset') return '';
+  const reviews = r.yt_reviews?.videos || [];
+  const shown = new Set(reviews.map(ytId));
+  const more = (r.yt_videos || []).filter((v) => !shown.has(ytId(v)));
+  const links = `<a href="${esc(ytReviewUrl(r))}" rel="noopener" target="_blank">▶️ Reviews on YouTube ↗</a> · <a href="${esc(ytSearchUrl(r))}" rel="noopener" target="_blank">Latest videos ↗</a>`;
+  if (!reviews.length && !more.length) return `<aside class="xside ytside" id="yt"><h2>What people show on YouTube</h2><p class="muted">${r.yt_reviews ? `No review videos found when we last looked (${esc(fmtDate(r.yt_reviews.checked_at))}).` : 'No videos collected yet. CleverFox looks for reviews of a few listings on YouTube each scan.'}</p><p>${links}</p></aside>`;
+  const vid = (v) => { const id = ytId(v); return `<li class="yt-item"><a href="${esc(v.url)}" rel="noopener" target="_blank">${esc(v.title)}</a> <span class="muted">${esc(v.channel || '')}${v.official ? ' · official' : ''} · ${esc(fmtDate(v.published_at))}</span>${id ? `<br><button type="button" class="share-btn yt-play" data-act="yt-play" data-yt="${esc(id)}" data-title="${esc(v.title)}">▶ Play here</button>` : ''}</li>`; };
+  return `<aside class="xside ytside" id="yt"><h2>What people show on YouTube</h2>
+    ${reviews.length ? `<h3>🔎 Reviews and walkthroughs</h3><ul class="yt-list">${reviews.map(vid).join('')}</ul>` : ''}
+    ${more.length ? `<h3>📢 From makers and release news</h3><ul class="yt-list">${more.map(vid).join('')}</ul>` : ''}
+    <p class="muted src">Found by YouTube search${r.yt_reviews ? `, checked ${esc(fmtDate(r.yt_reviews.checked_at))}` : ''}; not reviewed by CleverFox. Videos load from YouTube only when you press play. ${links}</p></aside>`;
 }
 
 // How fresh the access facts are, and whether their source pages changed or broke since (tools/recheck.mjs).

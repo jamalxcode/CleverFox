@@ -20,7 +20,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'data', 'imported', 'discover.json');
 const HF = 'https://huggingface.co';
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
-export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14, replicatePages: 10, replicateMinRuns: 500, replicateCollections: 20 };
+export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14, replicatePages: 10, replicateMinRuns: 500, replicateCollections: 20, reviewsPerScan: 15, reviewDays: 7, reviewModels: 80 };
 // Replicate collections (by slug) -> the task they stand for. Collections not matched here are ignored.
 export const REPLICATE_TASKS = [
   [/image-to-video/, 'image-to-video'], [/text-to-video|video-gen|generate-videos/, 'text-to-video'],
@@ -209,8 +209,38 @@ export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, 
     }
     if (found.size) search = [...found.values()];
   }
+  const reviews = key ? await youtubeReviews({ now, prev: prev.reviews || {}, fetchImpl, key }) : prev.reviews || {};
   const vids = [...videos.values()].sort((a, b) => b.published_at.localeCompare(a.published_at));
-  return { checked_at: now.toISOString(), channel_ids: ids, skipped, feeds, videos: vids, search, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
+  return { checked_at: now.toISOString(), channel_ids: ids, skipped, feeds, videos: vids, search, reviews, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
+}
+
+// YouTube reviews of listings ("<name> review"): a few listings per scan, the least recently checked first, each
+// re-checked after reviewDays. Candidates: every app and host, hand-researched models and the most popular imported
+// models (no datasets, nothing with a warning, no uncensored models). Only videos whose titles name the listing are kept.
+// Each search costs 100 of the free 10,000 daily quota units: 15 a scan, 3 scans a day = 4,500.
+export function reviewCandidates(dir = join(root, 'data')) {
+  const read = (f) => { try { return JSON.parse(readFileSync(f, 'utf8')); } catch { return []; } };
+  const seed = readdirSync(join(dir, 'seed')).filter((f) => f.endsWith('.json')).flatMap((f) => read(join(dir, 'seed', f)));
+  const pop = (r) => (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + (p.likes || 0) * 50, 0);
+  const imported = read(join(dir, 'imported', 'models.json')).filter((r) => r.warning === 'none' && !r.uncensored).sort((a, b) => pop(b) - pop(a)).slice(0, RULES.reviewModels);
+  return [...seed.filter((r) => r.type !== 'dataset' && (r.warning || 'none') === 'none'), ...imported].map((r) => ({ id: r.id, name: r.name, type: r.type, publisher: r.publisher_name || r.publisher }));
+}
+export const reviewQuery = (r) => { const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim(); return `${/\s/.test(name) ? `"${name}"` : name}${name.length <= 4 ? ` ${r.publisher}` : ''} review`; };
+const normT = (t) => ' ' + String(t || '').toLowerCase().replace(/[^\p{L}\p{N}.]+/gu, ' ') + ' ';
+export async function youtubeReviews({ now = new Date(), prev = {}, fetchImpl = fetch, key, candidates = reviewCandidates() } = {}) {
+  const out = Object.fromEntries(Object.entries(prev).filter(([id]) => candidates.some((c) => c.id === id)));
+  const due = candidates.filter((c) => !out[c.id] || daysAgo(out[c.id].checked_at, now) >= RULES.reviewDays)
+    .sort((a, b) => String(out[a.id]?.checked_at || '').localeCompare(String(out[b.id]?.checked_at || ''))).slice(0, RULES.reviewsPerScan);
+  for (const c of due) {
+    try {
+      const d = await getJson(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=relevance&maxResults=8&q=${encodeURIComponent(reviewQuery(c))}&key=${encodeURIComponent(key)}`, {}, fetchImpl);
+      const name = normT(c.name.replace(/\s*\(.*?\)\s*/g, ' ')).trim();
+      const videos = (d.items || []).filter((it) => it.id?.videoId && normT(unescHtml(it.snippet?.title)).includes(` ${name} `)).slice(0, 4)
+        .map((it) => ({ id: it.id.videoId, title: unescHtml(it.snippet.title).slice(0, 160), channel: unescHtml(it.snippet.channelTitle || ''), published_at: it.snippet.publishedAt, url: `https://www.youtube.com/watch?v=${it.id.videoId}` }));
+      out[c.id] = { checked_at: now.toISOString(), query: reviewQuery(c), videos };
+    } catch (e) { if (/HTTP 403/.test(e.message)) break; /* quota used up: try again next scan */ }
+  }
+  return out;
 }
 
 // 5. Replicate (api.replicate.com, needs a free account's REPLICATE_API_TOKEN): models whose newest version is recent,

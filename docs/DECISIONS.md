@@ -386,6 +386,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 - **Privacy:** personal data stays in localStorage, and GoatCounter still sees only page views and the existing anonymous events.
 - **Language:** the new text is English for now; adding it to `i18n.js` is in the TODO.
 
+### 78. "What people show on YouTube" panel
+**Decision:** listing pages get a YouTube panel beside the X panel. It shows reviews found by searching "<name> review" (a few listings per scan, rotating weekly; titles must name the listing), and videos from makers and release news that name it. Videos play in the page only when pressed.
+**Why:** the owner asked for YouTube reviews like "What people say on X". Searching every listing every day would cost far more than the free quota (100 units per search). Rotating 15 per scan covers about 200 listings every 4 to 5 days within 4,500 units. Click-to-play keeps YouTube from loading for visitors who don't ask for it, like the X posts' "Show the posts" button.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

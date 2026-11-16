@@ -424,6 +424,10 @@ if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
     }
     console.log(`YouTube: videos naming ${n} listings`);
   }
+  // Reviews found by searching "<name> review" (tools/discover.mjs youtubeReviews).
+  const rev = D.youtube?.reviews || {}; let nr = 0;
+  for (const r of published) { const x = rev[r.id]; if (x) { r.yt_reviews = { checked_at: x.checked_at, videos: x.videos || [] }; if (x.videos?.length) nr++; } }
+  if (Object.keys(rev).length) console.log(`YouTube reviews: ${nr} listings with videos (${Object.keys(rev).length} checked)`);
 }
 
 // ---- use it online: API providers serving each model (tools/providers.mjs) ----
@@ -661,7 +665,7 @@ async function writeListingPages(records, countryList) {
     <div class="badges">${R.cardBadges(r)}</div>
     ${R.detail(r)}
   </article>
-  ${R.xPanel(r)}
+  <div class="side-col">${R.xPanel(r)}${R.ytPanel(r)}</div>
   </div>
 </main>
 <footer class="wrap foot">

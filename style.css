@@ -333,3 +333,12 @@ a:hover { color: var(--cyan); }
 .empty-help p { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; }
 .similar a { overflow-wrap: anywhere; }
 .start-here .go-btn.go-quiet, :root:not([data-theme="light"]) .start-here .go-btn.go-quiet { background: transparent; color: var(--accent-text); border: 1px solid var(--accent); box-shadow: none; }
+
+/* side column on listing pages: What people say on X, What people show on YouTube */
+.side-col { display: grid; gap: 16px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.side-col .xside { position: static; max-height: none; overflow: visible; }
+.yt-list { list-style: none; margin: 0; padding: 0; }
+.yt-item { margin: 0 0 12px; overflow-wrap: anywhere; font-size: .92rem; }
+.yt-play { margin-top: 4px; }
+.yt-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; margin-top: 6px; }
+@media (max-width: 900px) { .side-col { position: static; max-height: none; overflow: visible; } }

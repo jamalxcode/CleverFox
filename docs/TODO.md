@@ -42,7 +42,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | GitHub search | brand-new AI projects (4 searches, last 14 days) | ✓ | ✓ | `tools/discover.mjs` |
 | GitHub releases | latest releases of the watchlist and projects linked from listings | ✓ | ✓ | `tools/discover.mjs` |
 | YouTube official channels (Data API, RSS fallback) | new videos from AI makers; Hugging Face links in descriptions | ✓ | ✓ | `tools/discover.mjs` |
-| YouTube search (with `YOUTUBE_API_KEY`) | recent AI release videos, not reviewed | ✓ | ✓ | `tools/discover.mjs` |
+| YouTube search (with `YOUTUBE_API_KEY`) | recent AI release videos, not reviewed; reviews of 15 listings a scan | ✓ | ✓ | `tools/discover.mjs` |
 | Replicate (with `REPLICATE_API_TOKEN`) | new models (newest version or first seen in 14 days; official or 500+ runs), tasks from Replicate's collections | ✓ | ✓ | `tools/discover.mjs`, listings by `tools/import.mjs` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
@@ -68,6 +68,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Originals (decision 76): after the next full refresh, check the log line "Originals: N models traced" and a few listings' "🌱 Original" links.
 - [ ] Translate the new return-visit text (setup line, Your CleverFox panel, next steps, empty-result help) into `i18n.js` (decision 77).
 - [ ] Return visits: after a week live, check GoatCounter page views for returning patterns. Consider adding an anonymous event for "Next: How to start" clicks, to see whether the next step helps (no personal data).
+- [ ] YouTube reviews (decision 78): after a day of scans, check `discover.json` → `youtube.reviews` (how many listings have videos) and a few listings' panels for wrong matches (a video about a different product with the same name).
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

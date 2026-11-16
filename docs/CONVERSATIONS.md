@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: YouTube reviews panel
+**Where:** Claude Code session.
+**Asked:** add YouTube reviews, like "What people say on X" (screenshot of the X panel).
+**Outcome (decision 78):**
+- `tools/discover.mjs` searches "<name> review" for 15 listings a scan (with the YouTube key), keeping titles that name the listing.
+- Listing pages show "What people show on YouTube": reviews, and videos from makers and release news, each with "▶ Play here" (nothing loads before a press), plus review and latest-video search links.
+- It fills in over the next scans: about 45 listings a day.
+
 ## 2026-11-16: docs brought up to date (2)
 **Where:** Claude Code session.
 **Asked:** update the repo with design decisions and our chat.

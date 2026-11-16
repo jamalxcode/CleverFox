@@ -23,7 +23,7 @@ The site is live with about 1,240 listings: 875 models, 268 datasets, 56 apps an
 - an App Store check and Google Play payment methods per country;
 - a daily re-check of access pages;
 - discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (new models become candidate listings; needs the `REPLICATE_API_TOKEN` secret);
-- on each listing, "Reactions on X" and "Videos on YouTube" buttons, plus up to 3 collected YouTube videos that name it (decision 73).
+- on each listing, "Reactions on X" and "Videos on YouTube" buttons, plus up to 3 collected YouTube videos that name it (decision 73), and on listing pages a "What people show on YouTube" panel with reviews (decision 78).
 
 cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
 - picks ("Find what to use");
