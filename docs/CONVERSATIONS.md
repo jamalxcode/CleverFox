@@ -12,6 +12,20 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: YouTube key added; checking the new sources
+**Where:** Claude Code session.
+**Asked:**
+- simple steps for a YouTube API key, then the same as Cloud Shell commands: create a project, enable the YouTube Data API v3 and API Keys, create a key restricted to YouTube, add it as the `YOUTUBE_API_KEY` secret;
+- then check whether YouTube scanning works.
+
+**Outcome (decision 71):**
+- **The key works:** keyword search returned 51 recent videos.
+- **Official channels:** all 8 confirmed, but their RSS feeds answered 404 for 7 of 8. They're now read through the API (uploads lists): 33 official videos in 14 days.
+- **llm-releases.com:** robots.txt allows reading, but the home page links only to itself. Following its 16 release pages found 84 Hugging Face models, now filled in. Generic link labels ("open") are replaced by site and path.
+- **GitHub:** 113 new projects and 13 releases.
+- **Diagnostics:** per-channel feed status, and page size, link count and domains for llm-releases, saved in `discover.json`.
+- **Fixed:** search titles showed HTML codes.
+
 ## 2026-11-16: scanning YouTube
 **Where:** Claude Code session.
 **Asked:** scan YouTube for new AI announcements too.

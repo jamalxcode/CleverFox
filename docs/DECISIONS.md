@@ -342,6 +342,10 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 **Decision:** every scan reads the RSS feeds of AI makers' official YouTube channels (`data/youtube-channels.json`, by @handle; free, no key). Each channel's id is confirmed from its own page and never guessed, so a wrong or impersonating handle is skipped rather than followed. Hugging Face links in video descriptions feed the catalog like other announcements. With an optional `YOUTUBE_API_KEY`, 4 keyword searches a scan add a separate "not reviewed" list.
 **Why:** the owner asked to scan YouTube for new AI announcements. Official channels are a trustworthy, free signal. A keyword search reaches further, but anyone can post, so it's shown apart and never fills the catalog. The first channel list is mostly American labs; regional makers' channels should be added once their handles are confirmed on their own websites.
 
+### 71. YouTube through the Data API; llm-releases.com through its own release pages
+**Decision:** with a key, official channels are read from their uploads lists through the YouTube Data API (about 8 units a scan), and RSS stays as the fallback. llm-releases.com is read through its home page plus up to 25 of its own release pages, which is where its Hugging Face links are; robots.txt is respected and pages are read one at a time.
+**Why:** the first runs on GitHub showed that YouTube's RSS feeds answered 404 for 7 of 8 channels. After switching to the API, 33 official videos came through in 14 days. llm-releases.com's home page links only to itself; following its release pages found 84 Hugging Face models. Diagnostics (feed status per channel, page size and domains for llm-releases) now sit in `discover.json`, so failures show instead of passing silently.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

@@ -4,7 +4,7 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 
 ## For the owner (needs your accounts or money)
 
-- [ ] **YouTube keyword search (optional):** create a free YouTube Data API key in Google Cloud (YouTube Data API v3) and add it as the `YOUTUBE_API_KEY` repo secret. Official channels work without it.
+- [x] **YouTube key:** added 16 November; it powers both official channels (the RSS feeds answered 404) and keyword search.
 
 - [ ] **cron-job.org timer:**
   - make a fine-grained GitHub token for CleverFox (Actions: read and write);
@@ -103,9 +103,9 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 
 ## Development
 
-- [ ] **YouTube channels:** after the first run on GitHub, check that every handle in `data/youtube-channels.json` resolved, in the `skipped` list in `discover.json`. Add regional AI makers' official channels (Qwen, DeepSeek, Mistral, Sarvam, G42 and others) once their handles are confirmed on their own websites.
+- [ ] **YouTube channels:** all 8 handles resolved on the first run. Add regional AI makers' official channels (Qwen, DeepSeek, Mistral, Sarvam, G42 and others) once their handles are confirmed on their own websites.
 
-- [ ] **Check the first llm-releases.com read** on GitHub: does its layout give Hugging Face links and announcements? Adjust `releasesFromHtml` if not, and confirm robots.txt allows it.
+- [x] **Check the first llm-releases.com read:** robots.txt allows it; its release pages give 84 Hugging Face models (decision 71).
 
 - [ ] **Tone test set:** label about 200 real posts by hand, measure the praise and criticism rules, and only then consider putting praise back into the ordering.
 - [ ] **Translation review first:** native speakers review the interface translations before more text or languages are added.
