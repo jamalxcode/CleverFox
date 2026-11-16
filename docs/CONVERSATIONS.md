@@ -12,6 +12,13 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: docs brought up to date
+**Where:** Claude Code session.
+**Asked:** update the repo with the design decisions and the chat.
+**Outcome:**
+- The decisions (66 to 69) and the session entries below were already recorded.
+- Refreshed the summaries that had fallen behind: CLAUDE.md "Current state" (about 1,240 listings, 82 of 96 apps and hosts verified, discovery sources, deploy checks), the README status, and spec section 20. CLAUDE.md's commands now include the page check.
+
 ## 2026-11-16: verifying the remaining 40
 **Where:** Claude Code session.
 **Asked:**

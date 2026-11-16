@@ -332,7 +332,7 @@ Still open:
 
 ## 20. Next steps
 
-Built and live (15 November 2026), about 1,190 listings (857 models, 243 datasets, 55 apps, 38 hosts):
+Built and live (16 November 2026), about 1,240 listings (875 models, 268 datasets, 56 apps, 40 hosts; 82 of 96 apps and hosts verified against their official pages):
 - **Catalog:**
   - researched apps (27 regional, 10 offline phone apps), 14 API providers and 24 GPU hosts;
   - daily Hugging Face and Ollama imports;
@@ -354,6 +354,8 @@ Built and live (15 November 2026), about 1,190 listings (857 models, 243 dataset
   - "possibly discontinued" marks;
   - verified versus not yet verified on every listing.
 - **X:** 3 scans a day for announcements and launches, tone and "praised on X", a "What people say on X" panel, and a weekly post (off).
+- **Discovery:** Hugging Face new releases, llm-releases.com, and GitHub new projects and watchlist releases, on every scan (decision 68).
+- **Verification:** official pages fetched by GitHub and compared fact by fact with quotes (decisions 67 and 69); a page check and tests before every deploy (decision 66).
 - **Site:**
   - slim list files;
   - a page per listing;

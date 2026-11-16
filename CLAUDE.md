@@ -14,25 +14,26 @@ Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, incl
 
 ## Current state
 
-The site is live with about 1,190 listings: 857 models, 243 datasets, 55 apps and 38 hosts (including 14 API providers). It combines:
+The site is live with about 1,240 listings: 875 models, 268 datasets, 56 apps and 40 hosts (including 14 API providers). **82 of the 96 apps and hosts are verified**: their facts were compared with their official pages, with quotes (decision 67); the rest are flagged "not yet verified" and kept out of picks and guides. It combines:
 - researched seed records;
 - daily imports from Hugging Face and the Ollama library;
 - independent benchmarks (Epoch AI);
 - Wikidata publisher countries;
 - API providers per model (Hugging Face Inference Providers, OpenRouter);
-- an App Store check;
-- a daily re-check and automatic fact check of access pages;
-- Google Play payment methods per country.
+- an App Store check and Google Play payment methods per country;
+- a daily re-check of access pages;
+- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases.
 
-X is scanned 3 times a day: cron-job.org starts the workflow, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
+cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
 - picks ("Find what to use");
 - how to start, and use it online;
 - compare;
 - guides and a glossary;
-- New this week and RSS;
+- New this week (with GitHub new projects and releases) and RSS;
+- a freshness line;
 - an interface in 6 languages.
 
-What's left to do is in `docs/TODO.md`; open design questions are in spec section 19. Don't present them as decided.
+Every deploy is gated by tests and a page check. What's left to do is in `docs/TODO.md`; open design questions are in spec section 19. Don't present them as decided.
 
 ## Commands
 
@@ -40,7 +41,8 @@ Node 22, no dependencies.
 
 ```sh
 NODE_USE_ENV_PROXY=1 node tools/import.mjs [--quick]  # import from Hugging Face + Ollama into data/imported/ (the env var only matters behind a proxy)
-npm test            # offline tests (X, re-check, providers, App Store, X post, run mode), then node tools/build.mjs --check: validate seed + imported records
+npm test            # offline tests (X, re-check, providers, App Store, X post, run mode, slim records, discovery), then node tools/build.mjs --check: validate seed + imported records
+node tools/ui-check.cjs --root .  # page check (phone widths, contrast); needs Playwright and axe-core (npm i --no-save axe-core)
 node tools/benchmarks.mjs  # independent benchmarks into data/imported/benchmarks.json (Epoch AI; Artificial Analysis if AA_API_KEY is set)
 npm run build       # validate and write data/meta.json, data/{models,datasets,apps,hosts}.json, data/catalog.json, listing pages under l/ and sitemap.xml
 npm run serve       # python3 -m http.server 8000, then open http://localhost:8000

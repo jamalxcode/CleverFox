@@ -24,7 +24,7 @@ Also:
 - ⚖️ **Compare**, 📚 guides and a 📖 glossary.
 - 🆕 **New this week**, with RSS.
 
-**Status:** live with about 1,190 listings. Researched apps, hosting and API providers, plus models and datasets imported daily from Hugging Face and the Ollama library. X is scanned 3 times a day for new models, datasets, apps and hosting. What's left to do is in [docs/TODO.md](docs/TODO.md).
+**Status:** live with about 1,240 listings: researched apps, hosting and API providers (82 of 96 verified against their official pages), plus models and datasets imported daily from Hugging Face and the Ollama library. New releases are tracked 3 times a day on X, Hugging Face, llm-releases.com and GitHub. What's left to do is in [docs/TODO.md](docs/TODO.md).
 
 ## Docs
 
