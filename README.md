@@ -12,7 +12,8 @@ For every listing, CleverFox answers the questions people actually ask:
 - 🆓 **Is it free?** And 💳 can I pay without a Visa or Mastercard (crypto, mobile money, UPI, Pix, app stores)?
 - 🧠 **How smart is it?** independent benchmarks (Epoch AI), kept separate from publishers' own claims
 - 🕊️ **Any barriers?** sign-in gates, license limits, country blocks; ✂️ uncensored variants flagged
-- 👀 **What do people say?** a live X search for reactions; every listing has its own shareable page
+- 👀 **What do people say?** reactions on X and ▶️ videos on YouTube; every listing has its own shareable page
+- 🌱 **Where did it come from?** fine-tunes and copies are traced back to the original model
 
 CleverFox is a metadata directory. It links to official sources and never hosts model files. Every fact carries its source and the date it was checked; "unknown" means no source states it.
 
@@ -22,9 +23,11 @@ Also:
 - ☁️ **Use it online:** providers with prices.
 - 🛒 **Google Play payment methods** in your country.
 - ⚖️ **Compare**, 📚 guides and a 📖 glossary.
-- 🆕 **New this week**, with RSS.
+- 🆕 **New this week**, with RSS (and a feed per task).
+- ⭐ **Your CleverFox:** save listings, pick up where you left off, see what's new for you since your last visit, and set an optional calendar reminder. All kept only in your browser.
+- 🔎 **Similar listings** on every page, and help when a search finds nothing.
 
-**Status:** live with about 1,240 listings: researched apps, hosting and API providers (82 of 96 verified against their official pages), plus models and datasets imported daily from Hugging Face and the Ollama library. New releases are tracked 3 times a day on X, Hugging Face, llm-releases.com and GitHub. What's left to do is in [docs/TODO.md](docs/TODO.md).
+**Status:** live with about 1,240 listings: researched apps, hosting and API providers (82 of 96 verified against their official pages), plus models and datasets imported daily from Hugging Face and the Ollama library. New releases are tracked 3 times a day on X, Hugging Face, llm-releases.com, GitHub, YouTube and Replicate (Replicate once its token is added). What's left to do is in [docs/TODO.md](docs/TODO.md).
 
 ## Docs
 

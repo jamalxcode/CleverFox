@@ -12,6 +12,19 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: docs brought up to date (2)
+**Where:** Claude Code session.
+**Asked:** update the repo with design decisions and our chat.
+**Outcome:**
+- Decisions 73–77 and their session entries were already recorded:
+  - 73: YouTube on listings;
+  - 74: language filter;
+  - 75: Replicate;
+  - 76: originals;
+  - 77: return visits.
+- The README now lists the new features: YouTube videos, originals, Your CleverFox, similar listings, feeds per task, and Replicate in discovery.
+**Still waiting on the owner:** the `REPLICATE_API_TOKEN` secret (steps in TODO).
+
 ## 2026-11-16: engagement principles (return visits)
 **Where:** Claude Code session.
 **Asked:** apply six principles to the app's purpose: relevant triggers, effortless core action, clear next steps, varied meaningful rewards, relevant continuation, accumulating personal value. Genuine usefulness and voluntary return visits, not time spent, and no unrelated features.
