@@ -17,7 +17,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'data', 'imported', 'discover.json');
 const HF = 'https://huggingface.co';
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
-export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30 };
+export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14 };
+// Optional YouTube keyword searches (only with YOUTUBE_API_KEY; each costs 100 of the free 10,000 daily quota units).
+export const YOUTUBE_QUERIES = ['new AI model release', 'open source LLM released', 'new AI app launch', 'GPU cloud launch'];
 // The repository searches (GitHub's own search syntax); {since} is today minus githubDays.
 export const GITHUB_QUERIES = [
   { label: 'LLM projects', q: 'topic:llm created:>={since} stars:>=10 archived:false' },
@@ -112,11 +114,60 @@ export async function github({ now = new Date(), prev = {}, fetchImpl = fetch, t
   return { checked_at: now.toISOString(), queries: GITHUB_QUERIES.map((x) => x.q.replace('{since}', since)), new_repos: [...seen.values()].sort((a, b) => b.stars - a.stars), releases: [...releases.values()].sort((a, b) => b.published_at.localeCompare(a.published_at)) };
 }
 
+// 4. YouTube: official AI makers' channels (free RSS feeds, no key) and, with a key, keyword searches.
+// A channel's id is confirmed from its own page (its canonical /channel/UC… link) and cached; unconfirmed handles are skipped.
+export function feedEntries(xml) {
+  return [...String(xml).matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => {
+    const tag = (t) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`))?.[1] || '').replace(/<!\[CDATA\[|\]\]>/g, '').trim();
+    const unesc = (t) => t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+    const description = unesc(tag('media:description'));
+    return { id: tag('yt:videoId'), title: unesc(tag('title')).slice(0, 160), url: e.match(/<link[^>]+href="([^"]+)"/)?.[1] || null, published_at: tag('published'), links: linksIn(description.match(/https?:\/\/[^\s)"'<>]+/g) || []) };
+  }).filter((v) => v.id && v.url);
+}
+export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, key = process.env.YOUTUBE_API_KEY } = {}) {
+  const file = join(root, 'data', 'youtube-channels.json');
+  const channels = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).channels || [] : [];
+  const ids = { ...(prev.channel_ids || {}) }; const skipped = [];
+  const robots = await fetchImpl('https://www.youtube.com/robots.txt', { headers: { 'user-agent': UA } }).then((r) => (r.ok ? r.text() : '')).catch(() => '');
+  for (const c of channels) {
+    if (ids[c.handle]) continue;
+    if (!robotsAllows(robots, `/${c.handle}`)) { skipped.push(`${c.handle} (robots.txt)`); continue; }
+    try {
+      const html = await (await fetchImpl(`https://www.youtube.com/${c.handle}`, { headers: { 'user-agent': UA, 'accept-language': 'en' } })).text();
+      const id = html.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/channel\/(UC[\w-]{22})"/)?.[1];
+      if (id) ids[c.handle] = id; else skipped.push(`${c.handle} (no channel id on its page)`);
+    } catch { skipped.push(`${c.handle} (page failed)`); }
+  }
+  const videos = new Map((prev.videos || []).filter((v) => daysAgo(v.published_at, now) <= RULES.videoDays).map((v) => [v.id, v]));
+  for (const c of channels) {
+    const id = ids[c.handle]; if (!id) continue;
+    try {
+      const res = await fetchImpl(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`, { headers: { 'user-agent': UA } });
+      if (!res.ok) continue;
+      for (const v of feedEntries(await res.text())) if (daysAgo(v.published_at, now) <= RULES.videoDays) videos.set(v.id, { ...v, channel: c.name, handle: c.handle });
+    } catch { /* keep the last data for this channel */ }
+  }
+  let search = prev.search || [];
+  if (key) {
+    const found = new Map();
+    const after = new Date(now - 3 * 86400000).toISOString();
+    for (const q of YOUTUBE_QUERIES) {
+      try {
+        const d = await getJson(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=date&maxResults=15&publishedAfter=${encodeURIComponent(after)}&q=${encodeURIComponent(q)}&key=${encodeURIComponent(key)}`, {}, fetchImpl);
+        for (const it of d.items || []) if (it.id?.videoId) found.set(it.id.videoId, { id: it.id.videoId, title: (it.snippet?.title || '').slice(0, 160), url: `https://www.youtube.com/watch?v=${it.id.videoId}`, channel: it.snippet?.channelTitle || '', published_at: it.snippet?.publishedAt, query: q });
+      } catch { /* quota or error: keep the last search */ }
+    }
+    if (found.size) search = [...found.values()];
+  }
+  const vids = [...videos.values()].sort((a, b) => b.published_at.localeCompare(a.published_at));
+  return { checked_at: now.toISOString(), channel_ids: ids, skipped, videos: vids, search, hf_models: [...new Set(vids.flatMap((v) => v.links.models))], hf_datasets: [...new Set(vids.flatMap((v) => v.links.datasets))] };
+}
+
 async function main() {
   mkdirSync(dirname(OUT), { recursive: true });
   const prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
   const out = { ...prev };
-  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })]]) {
+  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })]]) {
     try { out[key] = await fn(); console.log(`Discover ${key}: ${JSON.stringify(Object.fromEntries(Object.entries(out[key]).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.length])))}`); }
     catch (e) { console.warn(`Discover ${key} failed (${e.message}); keeping the last data`); }
   }

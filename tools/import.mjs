@@ -471,6 +471,9 @@ function xAnnouncements(kind) {
     for (const m of disc.huggingface?.[kind] || []) if (!out.has(m.id)) out.set(m.id, { source: 'huggingface-new', url: `${HF}/${kind === 'datasets' ? 'datasets/' : ''}${m.id}`, likes: m.likes, created_at: m.created_at, why: m.why });
     const lr = disc.llm_releases; const ids = kind === 'models' ? lr?.hf_models : lr?.hf_datasets;
     for (const id of ids || []) if (!out.has(id)) out.set(id, { source: 'llm-releases', url: lr.source_url, created_at: lr.checked_at });
+    // Hugging Face links in official channels' video descriptions.
+    const yt = disc.youtube;
+    for (const v of yt?.videos || []) for (const id of (kind === 'models' ? v.links?.models : v.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'youtube', url: v.url, author: v.channel, created_at: v.published_at });
   }
   return out;
 }

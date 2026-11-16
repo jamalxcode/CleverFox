@@ -6,7 +6,7 @@ How the data flows, what runs when, and how changes are made. Rules and numbers 
 
 `.github/workflows/pages.yml` ("Import and deploy") runs **three times a day**. cron-job.org starts it at 03:41, 11:41 and 19:41 UTC through GitHub's API, as Flattery does: `POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches`, body `{"ref":"main"}`, with a fine-grained token limited to this repo (*Actions: read and write*). GitHub's own schedule (05:07, 13:07, 21:07) is a late backup.
 
-Every scan (quick and full) also runs `tools/discover.mjs`: Hugging Face new releases, llm-releases.com, GitHub new projects and watchlist releases (with the workflow's own GitHub token).
+Every scan (quick and full) also runs `tools/discover.mjs`: Hugging Face new releases, llm-releases.com, GitHub new projects and watchlist releases (with the workflow's own GitHub token), and YouTube (official channels' feeds; keyword search with `YOUTUBE_API_KEY`).
 
 `tools/mode.mjs` decides each run's mode:
 - **full:** the first run 20 or more hours after the last full refresh. It does every step below.
@@ -100,6 +100,7 @@ Its old page then explains where it went.
 | `X_MONTHLY_READS` | repo variable | Monthly X read budget (default 10,000; set to 2,000) |
 | `HF_TOKEN` | repo secret (optional) | Higher Hugging Face rate limits |
 | `AA_API_KEY` | repo secret (optional) | Artificial Analysis benchmarks |
+| `YOUTUBE_API_KEY` | repo secret (optional) | YouTube keyword search (official channels work without it) |
 | `X_POST_ENABLED` | repo variable (optional) | `true` turns on the weekly X post |
 | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | repo secrets (optional) | X posting keys (OAuth 1.0a, read and write) for the weekly post |
 

@@ -338,6 +338,10 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 
 **Why:** 40 listings stayed unverified after the first review, mostly because their pages need JavaScript or block bots. A first version pretended to be a normal Chrome browser, and the session's safety check refused it as getting around access controls. That was right: CleverFox respects sites that block automated visitors, and those listings stay unverified rather than being read by other means. Two runs with rendering hit the 50-minute limit and saved nothing, because some pages never finish loading. So each page also has a hard stop at 45 seconds, and the run saves what it has and exits at 38 minutes. The third run fetched 395 pages for the 40 listings (256 readable, 83 rendered).
 
+### 70. YouTube: official channels by RSS, keyword search only with a key
+**Decision:** every scan reads the RSS feeds of AI makers' official YouTube channels (`data/youtube-channels.json`, by @handle; free, no key). Each channel's id is confirmed from its own page and never guessed, so a wrong or impersonating handle is skipped rather than followed. Hugging Face links in video descriptions feed the catalog like other announcements. With an optional `YOUTUBE_API_KEY`, 4 keyword searches a scan add a separate "not reviewed" list.
+**Why:** the owner asked to scan YouTube for new AI announcements. Official channels are a trustworthy, free signal. A keyword search reaches further, but anyone can post, so it's shown apart and never fills the catalog. The first channel list is mostly American labs; regional makers' channels should be added once their handles are confirmed on their own websites.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

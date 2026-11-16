@@ -4,6 +4,8 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 
 ## For the owner (needs your accounts or money)
 
+- [ ] **YouTube keyword search (optional):** create a free YouTube Data API key in Google Cloud (YouTube Data API v3) and add it as the `YOUTUBE_API_KEY` repo secret. Official channels work without it.
+
 - [ ] **cron-job.org timer:**
   - make a fine-grained GitHub token for CleverFox (Actions: read and write);
   - make one cron-job.org job: minute 41, hours 3, 11 and 19 UTC, `POST https://api.github.com/repos/jamalxcode/CleverFox/actions/workflows/pages.yml/dispatches`, body `{"ref":"main"}`, with the `Authorization`, `Accept`, `X-GitHub-Api-Version` and `Content-Type` headers;
@@ -37,6 +39,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | llm-releases.com | Hugging Face links and release announcements (robots.txt respected) | ✓ | ✓ | `tools/discover.mjs` |
 | GitHub search | brand-new AI projects (4 searches, last 14 days) | ✓ | ✓ | `tools/discover.mjs` |
 | GitHub releases | latest releases of the watchlist and projects linked from listings | ✓ | ✓ | `tools/discover.mjs` |
+| YouTube official channels (RSS) | new videos from AI makers; Hugging Face links in descriptions | ✓ | ✓ | `tools/discover.mjs` |
+| YouTube search (with `YOUTUBE_API_KEY`) | recent AI release videos, not reviewed | ✓ | ✓ | `tools/discover.mjs` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
 | Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |
@@ -98,6 +102,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] **Publisher countries:** extend `data/publisher-map.json` beyond the first 59 organisations.
 
 ## Development
+
+- [ ] **YouTube channels:** after the first run on GitHub, check that every handle in `data/youtube-channels.json` resolved, in the `skipped` list in `discover.json`. Add regional AI makers' official channels (Qwen, DeepSeek, Mistral, Sarvam, G42 and others) once their handles are confirmed on their own websites.
 
 - [ ] **Check the first llm-releases.com read** on GitHub: does its layout give Hugging Face links and announcements? Adjust `releasesFromHtml` if not, and confirm robots.txt allows it.
 

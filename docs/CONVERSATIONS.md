@@ -12,6 +12,21 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: scanning YouTube
+**Where:** Claude Code session.
+**Asked:** scan YouTube for new AI announcements too.
+**Outcome (decision 70):**
+- `tools/discover.mjs` reads official AI makers' channels through YouTube's free RSS feeds, with every scan. The first list has 8 channels: OpenAI, Google DeepMind, Anthropic, AI at Meta, Hugging Face, NVIDIA, Google for Developers and Microsoft.
+- Channel ids are confirmed from each channel's own page, and unconfirmed handles are skipped.
+- Hugging Face links in video descriptions feed the catalog. New this week gets "▶️ On YouTube".
+- With an optional `YOUTUBE_API_KEY`, 4 keyword searches add "🔎 Spotted on YouTube (not reviewed)".
+- YouTube is unreachable from this session, so it runs on GitHub's servers; tested offline.
+
+**Open:**
+- the owner may add the API key;
+- regional makers' channels are to add once confirmed;
+- check the first run's skipped handles.
+
 ## 2026-11-16: docs brought up to date
 **Where:** Claude Code session.
 **Asked:** update the repo with the design decisions and the chat.

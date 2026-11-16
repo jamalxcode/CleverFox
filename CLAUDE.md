@@ -22,7 +22,7 @@ The site is live with about 1,240 listings: 875 models, 268 datasets, 56 apps an
 - API providers per model (Hugging Face Inference Providers, OpenRouter);
 - an App Store check and Google Play payment methods per country;
 - a daily re-check of access pages;
-- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases.
+- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube.
 
 cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
 - picks ("Find what to use");
@@ -74,7 +74,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/ui-check.cjs`: page check before deploy (phone widths 320 and 375, axe contrast in light and dark); needs Playwright and axe-core, which the workflow installs (`npm i --no-save`).
 - `tools/save-data.sh`: saves `data/imported/` to the `data` branch with the checkout's credentials.
 - `tools/fetch-pages.mjs` (workflow "Fetch pages for verification", output on the `pages-cache` branch) and `tools/apply-verification.mjs` (applies a review after checking every quote against the pages): the verification review (decision 67).
-- `tools/discover.mjs`: Hugging Face new releases, llm-releases.com (robots.txt respected), GitHub new projects and watchlist releases (`data/github-watch.json`), into `data/imported/discover.json`; every scan. Tested by `tools/test-discover.mjs`.
+- `tools/discover.mjs`: Hugging Face new releases, llm-releases.com (robots.txt respected), GitHub new projects and watchlist releases (`data/github-watch.json`), YouTube official channels (`data/youtube-channels.json`; keyword search with `YOUTUBE_API_KEY`), into `data/imported/discover.json`; every scan. Tested by `tools/test-discover.mjs`.
 - `tools/import.mjs --x-only`: quick mode that only adds models and datasets announced on X.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.
 - `.github/workflows/pages.yml`: on push, restores imports and deploys. Three times a day (cron-job.org, GitHub's schedule as backup) it scans X, imports (full refresh once a day, quick X-only fill-in otherwise) and saves to the `data` branch. Only public files are deployed. `data/seed/` stays out because it holds research notes.

@@ -280,6 +280,7 @@ export function detail(r) {
   const dv = r.discovered_via;
   if (dv?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${dv.author}`));
   else if (dv?.source === 'huggingface-new') facts.push(item('🆕', `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}`));
+  else if (dv?.source === 'youtube') facts.push(item('🆕', `in a ${esc(dv.author || '')} video ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">watch ↗</a>`));
   else if (dv?.source === 'llm-releases') facts.push(item('🆕', `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>`));
   h += line(facts);
   if (unknown.length) h += `<p class="ln muted">❓ Unknown: ${esc(unknown.join(', '))}</p>`;

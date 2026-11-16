@@ -1,0 +1,13 @@
+{
+ "_about": "Official YouTube channels of AI makers that CleverFox watches for announcements (their free RSS feeds, no key needed). Give the channel's @handle; the scan confirms its channel id from the channel's own page and skips handles it can't confirm. Check a handle belongs to the official channel (linked from the maker's own website) before adding it.",
+ "channels": [
+  { "handle": "@OpenAI", "name": "OpenAI" },
+  { "handle": "@googledeepmind", "name": "Google DeepMind" },
+  { "handle": "@anthropic-ai", "name": "Anthropic" },
+  { "handle": "@AIatMeta", "name": "AI at Meta" },
+  { "handle": "@HuggingFace", "name": "Hugging Face" },
+  { "handle": "@NVIDIA", "name": "NVIDIA" },
+  { "handle": "@GoogleDevelopers", "name": "Google for Developers" },
+  { "handle": "@Microsoft", "name": "Microsoft" }
+ ]
+}

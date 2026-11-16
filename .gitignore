@@ -7,6 +7,7 @@ node_modules/
 !/data/app-stores.json
 !/data/store-payments.json
 !/data/github-watch.json
+!/data/youtube-channels.json
 /data/imported/
 /l/
 /sitemap.xml
