@@ -71,7 +71,9 @@ export function releasesFromHtml(html, base) {
   const links = [...String(html).matchAll(/<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi)].map(([, href, text]) => {
     try { return { url: new URL(href, base).href, text: text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 140) }; } catch { return null; }
   }).filter(Boolean);
-  const hub = linksIn(links.map((l) => l.url));
+  // Pages built from embedded data list their releases in JSON, not links: read Hugging Face addresses anywhere in the HTML.
+  const anywhere = (String(html).match(/https?:\\?\/\\?\/(?:www\.)?huggingface\.co\\?\/[\w.-]+(?:\\?\/[\w.-]+){1,2}/g) || []).map((u) => u.replace(/\\\//g, '/'));
+  const hub = linksIn([...links.map((l) => l.url), ...anywhere]);
   const host = new URL(base).hostname;
   const others = links.filter((l) => { try { const h = new URL(l.url).hostname; return h !== host && !/huggingface\.co|hf\.co/.test(h) && l.text.length >= 4; } catch { return false; } });
   const seen = new Set();
@@ -85,7 +87,8 @@ export async function llmReleases({ now = new Date(), fetchImpl = fetch } = {}) 
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const html = await res.text();
   // Diagnostics: page size, link count and title, to see whether the page is built by JavaScript (no links in the HTML).
-  const diag = { html_chars: html.length, links_in_html: (html.match(/<a\b/gi) || []).length, title: (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').trim().slice(0, 120) };
+  const domains = {}; for (const m of html.matchAll(/https?:\\?\/\\?\/([\w.-]+\.[a-z]{2,})/gi)) domains[m[1].toLowerCase()] = (domains[m[1].toLowerCase()] || 0) + 1;
+  const diag = { html_chars: html.length, links_in_html: (html.match(/<a\b/gi) || []).length, next_data: html.includes('__NEXT_DATA__'), top_domains: Object.entries(domains).sort((a, b) => b[1] - a[1]).slice(0, 15), title: (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').trim().slice(0, 120) };
   return { checked_at: now.toISOString(), allowed: true, source_url: site, diag, ...releasesFromHtml(html, site) };
 }
 
@@ -146,9 +149,24 @@ export async function youtube({ now = new Date(), prev = {}, fetchImpl = fetch, 
   const feeds = {}; // per channel: HTTP status, entries in the feed, entries in the last videoDays (to see why a channel shows nothing)
   for (const c of channels) {
     const id = ids[c.handle]; if (!id) continue;
+    if (key) {
+      // The channel's uploads list ("UU" + the id after "UC"): 1 quota unit, and more reliable than the RSS feed.
+      try {
+        const d = await getJson(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=15&playlistId=UU${id.slice(2)}&key=${encodeURIComponent(key)}`, {}, fetchImpl);
+        let recent = 0;
+        for (const it of d.items || []) {
+          const sn = it.snippet || {}; const vid = sn.resourceId?.videoId; const at = sn.publishedAt;
+          if (!vid || !at || daysAgo(at, now) > RULES.videoDays) continue;
+          recent++;
+          videos.set(vid, { id: vid, title: unescHtml(sn.title || '').slice(0, 160), url: `https://www.youtube.com/watch?v=${vid}`, published_at: at, links: linksIn(String(sn.description || '').match(/https?:\/\/[^\s)"'<>]+/g) || []), channel: c.name, handle: c.handle });
+        }
+        feeds[c.handle] = { via: 'api', entries: (d.items || []).length, recent, newest: d.items?.[0]?.snippet?.publishedAt || null };
+        continue;
+      } catch (e) { feeds[c.handle] = { via: 'api', error: String(e.message || e).slice(0, 80) }; }
+    }
     try {
       const res = await fetchImpl(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`, { headers: { 'user-agent': UA } });
-      if (!res.ok) { feeds[c.handle] = { status: res.status }; continue; }
+      if (!res.ok) { feeds[c.handle] = { ...(feeds[c.handle] || {}), status: res.status }; continue; }
       const all = feedEntries(await res.text()); let recent = 0;
       for (const v of all) if (daysAgo(v.published_at, now) <= RULES.videoDays) { recent++; videos.set(v.id, { ...v, channel: c.name, handle: c.handle }); }
       feeds[c.handle] = { status: res.status, entries: all.length, recent, newest: all[0]?.published_at || null };
