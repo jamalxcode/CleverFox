@@ -10,7 +10,7 @@ CleverFox (live at https://jamalxcode.github.io/CleverFox/; the custom domain cl
 
 It is a metadata directory: it links to official sources and never hosts model files, runs inference, provisions servers or takes payments.
 
-Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, including user journeys, competitors and what we're aiming for), `docs/WORKFLOW.md` (the daily pipeline, data flow and how changes and research are made), `docs/BUSINESS-RULES.md` (every rule and number the code applies) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
+Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, including user journeys, competitors and what we're aiming for), `docs/WORKFLOW.md` (the daily pipeline, data flow and how changes and research are made), `docs/BUSINESS-RULES.md` (every rule and number the code applies), `docs/INTERFACE-RULES.md` (how pages look and behave), `docs/DESIGN-IDEAS.md` (built, planned, open and turned-down ideas), `docs/LESSONS.md` (lessons learned) and `docs/DECISIONS.md` before design or data decisions. `docs/archive/` is history only.
 
 ## Current state
 
@@ -119,6 +119,9 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
   - `docs/BUSINESS-RULES.md`: every rule and number the code applies. Update it in the same commit whenever a rule or threshold changes.
   - `docs/SPECIFICATION.md`: the product spec. Update it when a decision changes the design.
   - `docs/DECISIONS.md`: numbered decisions with situation, decision and why. Add an entry whenever something is decided or reversed (mark old ones superseded, don't rewrite them), and move items out of its open list as they're settled.
+  - `docs/INTERFACE-RULES.md`: interface rules (primary actions, defaults, continuation, privacy, look, accessibility, words). Update it when an interface rule changes.
+  - `docs/DESIGN-IDEAS.md`: ideas by status; move an idea when it's built, decided or turned down.
+  - `docs/LESSONS.md`: add a lesson when something broke, surprised us or took more than one try.
   - `docs/CONVERSATIONS.md`: a brief log of each design conversation or working session, newest first. Add an entry at the end of any session that discusses or changes the design. When the user pastes notes from another conversation, summarize them here and move lasting decisions into DECISIONS.md.
 - Keep the shared GoatCounter snippet (endpoint `https://salacompany.goatcounter.com/count`) on every page once the site exists.
 - Update this file with real commands (install, test, scan, build) once code exists.

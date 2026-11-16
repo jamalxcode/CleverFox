@@ -12,6 +12,21 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: design ideas, lessons and interface rules saved
+**Where:** Claude Code session.
+**Asked:** update the repo with design decisions and our chat; save design ideas, lessons learned, the conversation, business rules and interface rules.
+**Outcome:**
+- Three new docs, linked from the README, CLAUDE.md and BUSINESS-RULES section 11:
+  - `docs/INTERFACE-RULES.md`: one primary action per screen, defaults, continuation, honest rewards, personal data in the browser, honest labels, the look, accessibility, words and performance;
+  - `docs/DESIGN-IDEAS.md`: ideas that are built, planned, open, or considered and turned down (with why);
+  - `docs/LESSONS.md`: data and sources, pipeline and deploys, interface, and working practice.
+- Decisions 73–78, the business rules and this log were already up to date.
+- CLAUDE.md's conventions now say when to update each new doc.
+
+**This session's thread, in short:**
+- YouTube on listings (73), the language filter (74), Replicate (75), originals (76), return visits (77), and the YouTube reviews panel (78).
+- Waiting on the owner: the Replicate token. Checks after the next scans: Replicate's first run, originals, and YouTube reviews (TODO).
+
 ## 2026-11-16: YouTube reviews panel
 **Where:** Claude Code session.
 **Asked:** add YouTube reviews, like "What people say on X" (screenshot of the X panel).

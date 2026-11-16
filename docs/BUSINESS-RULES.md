@@ -325,6 +325,9 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
+The interface rules behind these (one primary action, defaults, continuation, privacy, look, accessibility, words) are in [INTERFACE-RULES.md](INTERFACE-RULES.md).
+
+
 - **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **What people show on YouTube (decision 78):** a panel under "What people say on X" on every listing page except datasets.
   - **Reviews:** YouTube searches for "<name> review" (with the publisher for names of 4 characters or less), 15 listings per scan, least recently checked first. Each listing is re-checked after 7 days.

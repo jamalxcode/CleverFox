@@ -33,6 +33,9 @@ Also:
 
 - [Specification](docs/SPECIFICATION.md): what CleverFox is, user journeys, competitors and how it works.
 - [Business rules](docs/BUSINESS-RULES.md): every rule and number the code applies.
+- [Interface rules](docs/INTERFACE-RULES.md): how the pages look and behave.
+- [Design ideas](docs/DESIGN-IDEAS.md): built, planned, open and turned-down ideas.
+- [Lessons learned](docs/LESSONS.md): what broke or surprised us, so it doesn't happen twice.
 - [Workflow](docs/WORKFLOW.md): the daily pipeline, the data flow and how changes are made.
 - [Decisions](docs/DECISIONS.md): what was decided and why.
 - [Conversation log](docs/CONVERSATIONS.md): notes from each design session.
