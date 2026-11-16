@@ -26,11 +26,20 @@ const recordsOf = (t) => loaded[t] || [];
 function options(values, labeler = (v) => v) {
   return [...new Set(values.filter(Boolean))].map((v) => [v, labeler(v)]).sort((a, b) => a[1].localeCompare(b[1]));
 }
+// Languages: one entry per language (several codes, such as ay/aym/ayr, name the same one), only codes the
+// browser can name (bare codes like "atj" are left out), with how many listings have it. The value is the name.
+const langOf = (c) => { const n = langName(c); return n && !/^[a-z]{2,3}([-_][a-z0-9]+)*$/i.test(n) ? n : null; };
+const langsOf = (r) => new Set((Array.isArray(r.languages?.value) ? r.languages.value : []).map(langOf).filter(Boolean));
+function langOptions(recs) {
+  const n = {};
+  for (const r of recs) for (const l of langsOf(r)) n[l] = (n[l] || 0) + 1;
+  return Object.entries(n).sort((a, b) => a[0].localeCompare(b[0])).map(([l, c]) => [l, `${l} (${c})`]);
+}
 function filterDefs(type) {
   const recs = recordsOf(type);
   const methods = options(recs.flatMap((r) => recordAccesses(r).flatMap((a) => methodsOf(a).map((m) => m.method))), (m) => METHOD_LABELS[m] || m);
   if (type === 'model') return [
-    { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
+    { key: 'lang', label: 'Any language', opts: langOptions(recs) },
     { key: 'region', label: 'Any publisher country', opts: options(recs.map((r) => known(r.publisher_region) ? r.publisher_region.value : null), countryName) },
     { key: 'avail', label: 'Any availability', opts: options(recs.map((r) => r.availability?.value).filter((v) => v !== 'unknown'), (v) => AVAIL_LABELS[v] || v) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
@@ -45,7 +54,7 @@ function filterDefs(type) {
     { key: 'online', toggle: '☁️ Use it online' },
   ];
   if (type === 'dataset') return [
-    { key: 'lang', label: 'Any language', opts: options(recs.flatMap((r) => Array.isArray(r.languages?.value) ? r.languages.value : []), langName) },
+    { key: 'lang', label: 'Any language', opts: langOptions(recs) },
     { key: 'task', label: 'Any task', opts: options(recs.flatMap((r) => r.tasks || []), (t) => t.replace(/-/g, ' ')) },
     { key: 'size', label: 'Any size', opts: options(recs.map((r) => r.size_category)) },
     { key: 'nobar', toggle: '🕊️ No barriers' },
@@ -103,7 +112,7 @@ function matches(r) {
   if (f.offline && !r.on_device) return false;
   const hasMethod = (m) => recordAccesses(r).some((a) => methodsOf(a).some((x) => x.method === m));
   if (r.type === 'model') {
-    if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;
+    if (f.lang && !langsOf(r).has(f.lang)) return false;
     if (f.region && r.publisher_region?.value !== f.region) return false;
     if (f.avail && r.availability?.value !== f.avail) return false;
     if (f.local && !r.local_ready) return false;
@@ -114,7 +123,7 @@ function matches(r) {
     if (f.bench && !r.answers?.benchmarks && !r.answers?.independent) return false;
     if (f.task && !(r.tasks || []).includes(f.task)) return false;
   } else if (r.type === 'dataset') {
-    if (f.lang && !(Array.isArray(r.languages?.value) && r.languages.value.includes(f.lang))) return false;
+    if (f.lang && !langsOf(r).has(f.lang)) return false;
     if (f.task && !(r.tasks || []).includes(f.task)) return false;
     if (f.size && r.size_category !== f.size) return false;
     if (f.nogate && r.availability?.value === 'gated') return false;

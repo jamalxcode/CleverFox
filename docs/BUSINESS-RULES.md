@@ -305,6 +305,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
+- **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **YouTube on listings:** every listing has a "▶️ Videos on YouTube" button next to "Reactions on X": a live YouTube search for its name (with "AI", "GPU" for hosts or "dataset"), newest first, using no API quota. Videos CleverFox already collected (official channels first, then keyword search) whose titles name the listing show under "▶️ On YouTube", up to 3. Matching uses the full name or short name for models (5+ characters with a digit or space), and the name for apps and hosts.
 - **Look (decision 72):** dark "Matrix" by default (the browser's light/dark preference doesn't choose it); light "terminal paper" from the footer button, kept in the browser as `look: light` (the previous design's `theme` setting is ignored, so everyone starts on Matrix). Digital rain behind the header, decorative only: paused when the tab is hidden, off for reduced motion and in light mode. The page check tests contrast in both looks.
 

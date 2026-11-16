@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-16: language filter cleanup
+**Where:** Claude Code session.
+**Asked:** the language dropdown showed languages that don't exist (screenshot: "atj", "av" and repeated names); fix it.
+**Outcome (decision 74):** the filter shows each language once, by name, with a count, and leaves out codes that have no name; choosing a language matches all its codes. 150 languages instead of about 220 entries.
+**Also:** the docs were updated for the YouTube feature (CLAUDE.md, spec, workflow, TODO).
+
 ## 2026-11-16: YouTube videos on listings
 **Where:** Claude Code session.
 **Asked:** like "Reactions on X", add related YouTube videos for each AI.

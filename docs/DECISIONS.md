@@ -360,6 +360,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** each listing gets a "▶️ Videos on YouTube" button beside "Reactions on X": a live search link that uses no quota. Up to 3 already-collected videos whose titles name the listing are also shown, official channels first.
 **Why:** the owner asked for YouTube videos about each AI, like the X reactions. A per-listing API search would cost 100 quota units each, far over the free daily allowance for about 1,240 listings. A search link plus matches from videos already collected give the same help for free. The first build matched 6 listings (ChatGPT, Gemini, Perplexity, DeepSeek, Gemma 4, LongCat-2.5).
 
+### 74. Language filter lists language names, not codes
+**Decision:** the "Any language" filter groups codes by their English name. It shows each language once with a listing count, and leaves out codes that have no name.
+**Why:** the owner found the list full of raw codes ("atj", "av") and repeats (Aymara and Azerbaijani three times each). Hugging Face cards mix 2- and 3-letter codes and tag hundreds of languages. With grouping, the list went from about 220 entries to 150 real languages. The records stay unchanged (never invent or drop metadata).
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.
