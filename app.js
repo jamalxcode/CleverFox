@@ -217,11 +217,12 @@ function applyTheme(t) {
   $('#theme-btn').textContent = t === 'light' ? '◐ Matrix mode' : '◐ Light mode';
 }
 $('#theme-btn').addEventListener('click', () => {
-  const next = store.get('theme') === 'light' ? '' : 'light';
-  store.set('theme', next);
+  const next = store.get('look') === 'light' ? '' : 'light';
+  store.set('look', next);
   applyTheme(next);
 });
-applyTheme(store.get('theme') === 'light' ? 'light' : '');
+// The look is stored as "look" (the old "theme" setting from the previous design is ignored, so everyone starts on Matrix).
+applyTheme(store.get('look') === 'light' ? 'light' : '');
 
 // ---- start ----
 try {

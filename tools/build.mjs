@@ -556,7 +556,7 @@ async function writeListingPages(records, countryList) {
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="${base}style.css?v=${build}">
-<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script>try { if (localStorage.getItem('look') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
 </head>
 <body>
 <header class="top">
@@ -633,7 +633,7 @@ async function writeNewPages(records) {
 <title>New this week · CleverFox</title><meta name="description" content="AI models, datasets, apps and hosting added to CleverFox in the last 7 days.">
 <link rel="canonical" href="${SITE}new/"><link rel="alternate" type="application/rss+xml" title="CleverFox: new listings" href="${SITE}feed.xml">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=${build}"><link rel="stylesheet" href="../style.css?v=${build}">
-<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script>try { if (localStorage.getItem('look') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
 </head><body>
 <header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="../">← All listings</a> · <a href="../feed.xml">RSS feed</a></p></div></header>
 <main class="wrap listing"><h1>🆕 New this week</h1>
@@ -700,7 +700,7 @@ async function writeGuides(records) {
 <title>${esc(title)} · CleverFox</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical}">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:image" content="${SITE}img/og.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="${'../'.repeat(depth)}img/favicon-32.png?v=${build}"><link rel="stylesheet" href="${'../'.repeat(depth)}style.css?v=${build}">
-<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script>try { if (localStorage.getItem('look') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
 </head><body>
 <header class="top"><div class="wrap top-row"><a class="brand" href="${'../'.repeat(depth)}"><img src="${'../'.repeat(depth)}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="${'../'.repeat(depth)}">← All listings</a> · <a href="${'../'.repeat(depth)}guides/">📚 All guides</a> · <a href="${'../'.repeat(depth)}glossary/">📖 Glossary</a></p></div></header>
 <main class="wrap listing">${body}</main>

@@ -20,6 +20,7 @@ Entry format:
 - A light "terminal paper" mode stays available from the footer.
 - The page check now switches looks the way the site does, and caught one low-contrast tab count in light mode, which was fixed.
 - No sideways scrolling on phones; the contrast check passes in both looks.
+- **Follow-up:** the owner still saw the light look, because the old theme button had saved "light" under `theme`. The new design stores its choice under `look` and ignores the old setting, so everyone starts on Matrix.
 
 ## 2026-11-16: YouTube key added; checking the new sources
 **Where:** Claude Code session.

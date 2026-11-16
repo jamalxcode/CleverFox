@@ -305,7 +305,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 
 ## 11. The site
 
-- **Look (decision 72):** dark "Matrix" by default (the browser's light/dark preference doesn't choose it); light "terminal paper" from the footer button, kept in the browser as `theme: light`. Digital rain behind the header, decorative only: paused when the tab is hidden, off for reduced motion and in light mode. The page check tests contrast in both looks.
+- **Look (decision 72):** dark "Matrix" by default (the browser's light/dark preference doesn't choose it); light "terminal paper" from the footer button, kept in the browser as `look: light` (the previous design's `theme` setting is ignored, so everyone starts on Matrix). Digital rain behind the header, decorative only: paused when the tab is hidden, off for reduced motion and in light mode. The page check tests contrast in both looks.
 
 - **List records:** apps and hosts keep their whole record in the list (sources, payment notes, prices, App Store countries); only internal notes and the evidence list are left out (`tools/slim.mjs`). Every card loads its full record (`record.json`) when opened. Models keep the slim list.
 - **Verified first:** apps and hosts that aren't verified show "⚠️ Not yet verified: facts from search results" as their first badge, with a dashed card border.

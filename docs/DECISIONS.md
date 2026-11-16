@@ -353,7 +353,7 @@ Models and datasets found go through the usual import and checks. New GitHub pro
 - a faint "digital rain" canvas behind the header, paused when the tab is hidden and off for reduced motion;
 - glowing panels with corner brackets, `>_` and `//` prompts on section titles, and faint scanlines.
 
-A light "terminal paper" mode is available from the footer button (stored as `theme: light`). The browser's light/dark preference no longer chooses the look; dark is the default.
+A light "terminal paper" mode is available from the footer button (stored as `look: light`; the old `theme` setting from the previous design is ignored, because visitors who had chosen light before kept seeing light). The browser's light/dark preference no longer chooses the look; dark is the default.
 **Why:** the owner asked for a less boring, functional but fun look in a Matrix cyberpunk style. Readability comes first: the deploy's contrast check now tests both looks the way the site switches them (it caught the selected tab's count in light mode), and the rain is decorative only, so it's never needed to read anything.
 
 ## Open decisions
