@@ -96,7 +96,7 @@ export function appRecord({ app, store, site, pages, facts, now }) {
   const pmUrl = facts.payment_methods[0]?.url;
   return {
     schema_version: 1, id: `cf:app:${slug(seller).replace(/\./g, '-')}/${slug(name)}`, type: 'app', name,
-    description: `AI app ${by}${about ? `: ${words(about, 22)}` : ''}${/[.…!?]$/.test(words(about, 22)) ? '' : '.'}`,
+    description: (() => { const head = `AI app ${by}`; const room = Math.max(4, 28 - head.split(/\s+/).length); const tail = about ? words(about, room) : ''; return `${head}${tail ? `: ${tail}` : ''}${/[.…!?]$/.test(tail) ? '' : '.'}`; })(),
     publisher: seller, publisher_region: claim('unknown', null, null, at),
     official_urls: [site].filter(Boolean), documentation_urls: pages.filter((p) => p.url !== site).map((p) => p.url),
     evidence_urls: [...new Set([store?.lookup, ...pages.map((p) => p.url)].filter(Boolean))],
@@ -147,11 +147,13 @@ export async function research({ queue, known, prev = {}, fetchImpl = fetch, now
   for (const app of due) {
     const st = app.apple_id ? store[String(app.apple_id)] : null;
     let site = st?.website || app.website || null;
+    if (site && known.site?.(site)) { state[app.key] = { at: now, skipped: 'already listed (same website)' }; continue; }
     const pages = [];
     if (site) {
       const home = await fetchPage(site, fetchImpl, robotsCache);
       if (home.html) {
         site = home.url.replace(/\/$/, '/');
+        if (known.site?.(site)) { state[app.key] = { at: now, skipped: 'already listed (same website)' }; continue; }
         pages.push({ url: home.url, text: visibleText(home.html), billing: /pric|plan|billing|faq/i.test(new URL(home.url).pathname) });
         for (const link of billingLinks(home.html, home.url)) { const p = await fetchPage(link, fetchImpl, robotsCache); if (p.html) pages.push({ url: p.url, text: visibleText(p.html), billing: true }); }
       }
@@ -159,9 +161,11 @@ export async function research({ queue, known, prev = {}, fetchImpl = fetch, now
     if (!st && !pages.length) { state[app.key] = { at: now, skipped: site ? 'website not readable' : 'no website' }; continue; }
     const facts = extractFacts(pages);
     const rec = appRecord({ app, store: st, site: pages[0]?.url || site, pages, facts, now });
-    state[app.key] = { at: now, id: rec.id, record: rec };
+    state[app.key] = { at: now, id: rec.id, pages_read: pages.length, site, record: rec };
   }
   const records = Object.values(state).map((s) => s.record).filter(Boolean);
+  const run = due.map((a) => state[a.key]).filter(Boolean);
+  log(`Auto-research: this run ${run.filter((s) => s.record).length} listed, ${run.filter((s) => s.skipped).length} skipped (${[...new Set(run.map((s) => s.skipped).filter(Boolean))].join('; ') || 'none'}), websites read for ${run.filter((s) => s.pages_read).length}, ${run.reduce((n, s) => n + (s.pages_read || 0), 0)} pages`);
   log(`Auto-research: ${due.length} researched this run, ${records.length} listings in all (${records.filter((r) => r.access.free.value !== 'unknown').length} with a free plan stated, ${records.filter((r) => Array.isArray(r.access.payment_methods.value)).length} with ways to pay)`);
   return { state: { checked_at: now, apps: state }, records };
 }
@@ -174,13 +178,17 @@ export function queueFrom(disc) {
   return q;
 }
 // Already listed (hand-researched): by App Store id or name.
+const siteOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').split('.').slice(-2).join('.'); } catch { return null; } };
 export function knownCheck(dir = join(root, 'data')) {
-  const ids = new Set(); const names = new Set();
+  const ids = new Set(); const names = new Set(); const sites = new Set();
   for (const f of readdirSync(join(dir, 'seed')).filter((x) => x.endsWith('.json'))) for (const r of JSON.parse(readFileSync(join(dir, 'seed', f), 'utf8'))) {
     if (r.type !== 'app') continue; names.add(String(r.name).toLowerCase().replace(/\s*\(.*?\)/g, '').trim());
     for (const u of r.app_store_urls || []) { const id = String(u).match(/id(\d{6,})/)?.[1]; if (id) ids.add(id); }
+    for (const u of [r.url, ...(r.official_urls || [])]) { const s = siteOf(u); if (s && !/^(apple|github)\.com$/.test(s)) sites.add(s); }
   }
-  return (a) => (a.apple_id && ids.has(String(a.apple_id))) || names.has(String(a.name).toLowerCase().replace(/\s*\(.*?\)/g, '').trim());
+  const check = (a) => (a.apple_id && ids.has(String(a.apple_id))) || names.has(String(a.name).toLowerCase().replace(/\s*\(.*?\)/g, '').trim());
+  check.site = (u) => { const s = siteOf(u); return !!s && sites.has(s); };
+  return check;
 }
 
 async function main() {

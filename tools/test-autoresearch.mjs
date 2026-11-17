@@ -55,4 +55,10 @@ assert.match(ph.description, /^AI app from zed\.app: Chat with your files\./); a
 assert.deepEqual(r.categories, ['chat'], 'categories from the publisher\'s own words'); // "Chat Assistant", "answers questions"
 const { categoriesOf } = await import('./autoresearch.mjs');
 assert.deepEqual(categoriesOf('Turn meetings into slides'), ['other']); assert.deepEqual(categoriesOf('Voice notes to text, translated'), ['audio', 'translation']);
+// Long seller names still fit the 30-word limit; an app on an already-listed website is skipped.
+const long = appRecord({ app: { name: 'X', from: 'app_store' }, store: { trackName: 'Chat AI', sellerName: 'Appnation Yazilim Hizmetleri Ticaret Anonim Sirketi Global Software Holdings', description: Array(60).fill('word').join(' ') + '.', lookup: 'l' }, site: null, pages: [], facts: { free: null, payment_methods: [], signup: null }, now: '2026-11-17T10:00:00Z' });
+assert.ok(long.description.split(/\s+/).length <= 30, 'descriptions fit 30 words');
+const dup = await research({ queue: [{ key: 'apple:9', from: 'app_store', apple_id: 9, name: 'Google Gemini' }], known: Object.assign(() => false, { site: (u) => /gemini\.google\.com/.test(u) }), log: () => {}, now: '2026-11-17T10:00:00Z',
+  fetchImpl: async (u) => u.includes('itunes') ? { ok: true, json: async () => ({ results: [{ trackId: 9, trackName: 'Google Gemini', sellerName: 'Google LLC', sellerUrl: 'https://gemini.google.com/' }] }) } : { ok: false, status: 404 } });
+assert.equal(dup.records.length, 0); assert.match(dup.state.apps['apple:9'].skipped, /already listed/);
 console.log('All auto-research tests passed.');
