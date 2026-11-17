@@ -12,6 +12,25 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: layout critique and pass
+**Where:** Claude Code session.
+**Asked:** review the layout: how can it be more useful, easier to understand and fun to use? Then "do it all".
+
+**Critique** (measured):
+- the first listing was 4 phone screens down, and the picks used an older style than the cards;
+- the API lane confused non-developers, raw model names came first, and whisperkit ranked high despite needing setup;
+- desktop rows were half empty, and there was no way back up a long page;
+- small friction: tagline, summary, tiny stars, and long payment lists on listing pages.
+
+**Outcome (decision 88):**
+- Compact picks (featured pick + "+2 more", verdicts, device-ordered lanes, "For developers (API)", swipe on phones, fox tip).
+- Cards with one clear action, ready-to-run first, a two-column desktop grid, a memory bar and a price scale.
+- A sticky mini-bar, back to top and a sort menu; a shorter summary and a one-line phone tagline.
+- Presets, Surprise me, toasts and the save pop.
+- Payment methods for other countries folded, and "runs with Python tools" wording.
+
+**Results:** the phone's first listing is at 1,929 px (was 2,639), and the picks end at 1,392 px (was 2,189). The page check passes in all three looks, and a browser walkthrough of each feature passed.
+
 ## 2026-11-17: docs and README brought up to date (5)
 **Where:** Claude Code session.
 **Asked:** update the repo with design decisions, our chat, and the README.

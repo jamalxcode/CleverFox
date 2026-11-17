@@ -474,3 +474,70 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 .section-head .section-title::before { content: ">_ "; color: var(--magenta); }
 .section-sub { margin: 0; font-size: .95rem; }
 @media (max-width: 560px) { .section-title, .start-here h2.section-title { font-size: 1.4rem; } .section-head { margin-top: 24px; } }
+
+/* ===== Layout pass (decision 88) ===== */
+/* picks: a featured pick per lane, compact ones under it; lanes swipe sideways on phones */
+.pick-col { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
+.pick-list { list-style: none; padding-left: 0; }
+.pick-list > li { margin: 0 0 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.pick-list > li.pick-feat { border-top: 0; padding-top: 4px; }
+.pick-feat .verdicts { gap: 4px 12px; }
+.pick-feat .pf-head strong { font-size: 1.12rem; }
+.pf-desc { margin: 4px 0 2px; }
+.pick-feat .verdicts { margin: 4px 0; }
+.pf-act { margin: 6px 0 0; display: flex; gap: 6px; flex-wrap: wrap; }
+.save-mini { font: inherit; font-size: .82rem; background: none; border: 1px solid var(--line); border-radius: 6px; color: var(--accent-text); cursor: pointer; padding: 2px 8px; min-height: 30px; }
+.save-mini[aria-pressed="true"] { border-color: var(--accent); }
+.swipe-hint { display: none; margin: 8px 0 0; font-size: .85rem; }
+@media (max-width: 700px) {
+  .pick-cols { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; align-items: flex-start; }
+  .presets { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .presets > * { flex: 0 0 auto; white-space: nowrap; }
+  .pick-col { flex: 0 0 86%; scroll-snap-align: start; }
+  .swipe-hint { display: block; }
+}
+[dir="rtl"] .pick-list { padding-right: 0; }
+/* cards: one clear action, details secondary; two columns on wide screens (an opened card spans both) */
+.card-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+.card-go { display: inline-flex; align-items: center; min-height: 34px; padding: 4px 12px; border-radius: 6px; border: 1px solid var(--accent); color: var(--accent-text); font-family: var(--mono); font-weight: 700; font-size: .85rem; text-decoration: none; }
+.card-go:hover { background: var(--accent); color: var(--accent-ink); }
+.card-foot .more { margin-top: 0; }
+@media (min-width: 1000px) {
+  .list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  .list > .card { margin: 0; }
+  .list > .card:has(details[open]) { grid-column: 1 / -1; }
+}
+/* navigation: sticky mini-bar, back to top, sort; one-line tagline on phones */
+.minibar { position: sticky; top: 0; z-index: 30; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 4px 14px rgba(0, 0, 0, .25); }
+.minibar-row { display: flex; gap: 6px 16px; align-items: center; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; font-family: var(--mono); font-size: .9rem; }
+.minibar-row a, .minibar-row button { text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.to-top { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--accent); background: var(--surface); color: var(--accent-text); font-size: 1.2rem; cursor: pointer; box-shadow: var(--glow); }
+.search-row #sort { flex: 0 0 auto; font-size: .9rem; min-height: 40px; padding: 4px 8px; max-width: 11rem; }
+.tagline-short { display: none; }
+@media (max-width: 560px) {
+  .tagline-long { display: none; } .tagline-short { display: block; }
+  .search-row { flex-wrap: wrap; } .search-row #q { flex: 1 1 100%; } .search-row #sort { flex: 1 1 auto; max-width: none; }
+}
+/* fun: presets, Surprise me, fox tip, toast, memory bar, save pop */
+.presets { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 10px 0 0; font-size: .9rem; }
+.chip-btn { font: inherit; font-size: .85rem; background: var(--chip); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; min-height: 32px; cursor: pointer; }
+.chip-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.section-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.section-row .section-title { margin-bottom: 4px; }
+.fox-tip { margin: 12px 0 0; padding: 8px 12px; border-left: 3px solid var(--magenta); background: var(--bg); border-radius: 6px; }
+.toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 40; background: var(--surface); color: var(--text); border: 1px solid var(--accent); border-radius: 999px; padding: 8px 16px; box-shadow: var(--glow); max-width: calc(100vw - 32px); }
+.membar { position: relative; height: 18px; margin: 4px 0 6px; border-radius: 999px; background: var(--chip); overflow: hidden; max-width: 360px; }
+.membar span { position: absolute; inset: 0 auto 0 0; border-radius: 999px; }
+.membar-ok span { background: color-mix(in srgb, var(--ok) 45%, transparent); }
+.membar-tight span { background: color-mix(in srgb, var(--warn) 45%, transparent); }
+.membar-no span { background: color-mix(in srgb, var(--no) 45%, transparent); width: 100% !important; }
+.membar em { position: relative; font-style: normal; font-size: .75rem; padding-left: 8px; line-height: 18px; color: var(--text); }
+@keyframes cf-pop { 0% { transform: scale(1); } 40% { transform: scale(1.18); } 100% { transform: scale(1); } }
+[data-save][aria-pressed="true"] { animation: cf-pop .35s ease-out; }
+@media (prefers-reduced-motion: reduce) { [data-save][aria-pressed="true"] { animation: none; } }
+.pay-more { margin: 2px 0 6px; }
+.pay-more summary { cursor: pointer; color: var(--muted); font-size: .9rem; }
+/* phones: presets in one swipeable row; each lane shows its featured pick, the rest behind "+2 more" */
+.pick-rest > summary { cursor: pointer; color: var(--cyan); font-size: .9rem; margin: 2px 0 6px; }
+@media (min-width: 701px) { .pick-rest > summary { display: none; } }
+@media (max-width: 700px) { .presets { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; } .presets > * { flex: 0 0 auto; white-space: nowrap; } }

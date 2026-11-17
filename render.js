@@ -108,9 +108,9 @@ export function verdicts(r) {
       else out.push(V('info', `Runs on your own device, ${h.recommended_gb || need} GB memory or more${est ? ' (estimate)' : ''}`));
     } else if (r.local_ready) out.push(V('yes', 'Runs on your own device'));
     else if (a.online) out.push(V('info', 'Online only: no download'));
-    else if ((r.distributions || []).some((d) => d.availability === 'downloadable')) out.push(V('info', 'Downloadable, but needs some setup to run'));
+    else if ((r.distributions || []).some((d) => d.availability === 'downloadable')) out.push(V('info', r.platforms ? 'Runs on a computer with Python tools (no one-click app)' : 'Downloadable, but needs some setup to run'));
     else out.push(V('unk', 'No version to run yourself found'));
-    if (a.online) out.push(f === 0 ? V('yes', r.local_ready ? 'Also free online' : 'Free online') : V('info', `${r.local_ready ? 'Also online' : 'Online'}${Number.isFinite(f) ? ` from $${f} per million tokens` : ''}`));
+    if (a.online) out.push(f === 0 ? V('yes', r.local_ready ? 'Also free online' : 'Free online') : V('info', `${r.local_ready ? 'Also online' : 'Online'}${Number.isFinite(f) ? ` from $${f} per million tokens (${priceScale(f)})` : ''}`));
     if (a.free === 'free_download') out.push(V('yes', 'Free to download'));
     else if (a.free === 'paid') out.push(V('no', 'Paid'));
     if (c && !r.local_ready && (r.distributions || []).some((d) => d.access)) { const s = modelCountryStatus(r, c); out.push(s === 'yes' ? V('yes', `API works in ${cn}`) : s === 'no' ? V('no', `API not available in ${cn}`) : V('unk', `${cn}: not stated`)); }
@@ -144,8 +144,17 @@ export function verdicts(r) {
   return out.slice(0, 6);
 }
 const V_ICON = { yes: '✓', no: '✗', maybe: '!', unk: '?', info: '•', ask: '→' };
-export function verdictStrip(r) {
-  const v = verdicts(r);
+// How much of the visitor's memory a model needs, as a small bar (only once their device memory is set).
+export function memBar(r) {
+  const need = r.hardware?.min_memory_gb; if (r.type !== 'model' || !need || !view.mem) return '';
+  const pct = Math.min(100, Math.round((need / view.mem) * 100));
+  const cls = need <= view.mem * 0.8 ? 'ok' : need <= view.mem ? 'tight' : 'no';
+  return `<div class="membar membar-${cls}" role="img" aria-label="Needs about ${need} GB of your ${view.mem} GB"><span style="width:${pct}%"></span><em>${need} GB of your ${view.mem} GB</em></div>`;
+}
+// $ / $$ / $$$ for online prices (per million output tokens): up to $0.50, up to $3, more.
+export const priceScale = (f) => !Number.isFinite(f) || f <= 0 ? '' : f <= 0.5 ? '$' : f <= 3 ? '$$' : '$$$';
+export function verdictStrip(r, max = 6) {
+  const v = verdicts(r).slice(0, max);
   return v.length ? `<ul class="verdicts">${v.map((x) => `<li class="v v-${x.state}"${x.title ? ` title="${esc(x.title)}"` : ''}><span class="v-ic" aria-hidden="true">${V_ICON[x.state]}</span> ${esc(x.text)}</li>`).join('')}</ul>` : '';
 }
 
@@ -158,7 +167,9 @@ export function plainWhat(r) {
     : g.includes('images') ? 'Makes and edits images' : g.includes('video') ? 'Makes videos' : g.includes('coding') ? 'Writes and explains code'
     : g.includes('vision') ? 'Chats about images and text' : g.includes('chat') || g.includes('writing') ? 'Chats and writes' : g.includes('translation') ? 'Translates text'
     : g.includes('search') ? 'Turns text into numbers for search tools (an embedding model, not a chatbot)' : t.includes('text-classification') ? 'Sorts text into labels (not a chatbot)' : 'An AI model';
-  const where = r.local_ready ? ', and runs on your own device' : r.answers?.online ? ', online through API providers' : '';
+  // Downloadable but without a one-click format: it still runs on a computer with Python tools.
+  const dl = (r.distributions || []).some((d) => d.availability === 'downloadable');
+  const where = r.local_ready ? ', and runs on your own device' : dl && r.platforms ? (r.answers?.online ? ', online or on your computer with Python tools' : ', on your computer with Python tools') : r.answers?.online ? ', online through API providers' : '';
   return `${what}${where}.`;
 }
 
@@ -282,7 +293,8 @@ export function factsTable(r) {
   const lic = r.license && known(r.license) ? `${licText(r.license.value)}${a.license_kind === 'open' ? ` · ${ok} commercial use` : a.license_kind === 'non_commercial' ? ` · ${bad} no commercial use` : ''}${src(r.license)}` : null;
   if (r.type === 'model' || r.type === 'dataset') {
     const sizes = (r.distributions || []).map((d) => d.file_size_bytes).filter(Boolean).sort((x, y) => x - y);
-    if (r.type === 'model') rows.push(row('Run it yourself', a.runs_locally ? `${ok} yes${r.local_runtimes?.length ? ` <span class="muted">with ${esc(r.local_runtimes.join(', '))}</span>` : ''}${sizes.length ? ` · download from ${gb(sizes[0])}` : ''}` : `${bad} no version to run yourself`, 'local'));
+    const viaPy = !a.runs_locally && r.platforms && (r.distributions || []).some((d) => d.availability === 'downloadable');
+    if (r.type === 'model') rows.push(row('Run it yourself', a.runs_locally ? `${ok} yes${r.local_runtimes?.length ? ` <span class="muted">with ${esc(r.local_runtimes.join(', '))}</span>` : ''}${sizes.length ? ` · download from ${gb(sizes[0])}` : ''}` : viaPy ? `! with Python tools (no one-click app version)${sizes.length ? ` · download from ${gb(sizes[0])}` : ''}` : `${bad} no version to run yourself`, 'local'));
     else if (sizes.length) rows.push(row('Download', `from ${gb(sizes[0])}`));
     rows.push(row('Cost', isFree ? `${ok} ${esc(FREE_TEXT[a.free])}` : a.free === 'paid' ? `${bad} paid` : unknownTxt, 'free-tier'));
     rows.push(row('Sign-in', a.gate && a.gate !== 'none' ? `🔒 ${esc(GATE_TEXT[a.gate] || a.gate)}` : `${ok} no sign-in needed`));
@@ -361,7 +373,10 @@ export function usingBox(r, a = r.access, what = 'it') {
     const here = (m) => methodFor(m, c);
     const sorted = [...pm].sort((x, y) => (here(y) - here(x)) || (CARDS.includes(x.method) - CARDS.includes(y.method)));
     const noCardHere = pm.some((m) => !CARDS.includes(m.method) && here(m));
-    rows.push(row('Ways to pay', `<ul class="pay">${sorted.map((m) => `<li${here(m) ? '' : ' class="elsewhere"'}>${CARDS.includes(m.method) ? '💳' : here(m) ? ok : '·'} <strong>${esc(METHOD_LABELS[m.method] || m.method)}</strong>${m.note ? ` <span class="muted">· ${esc(m.note)}</span>` : ''}${here(m) ? '' : ` <span class="muted">(not for ${esc(cn)})</span>`}</li>`).join('')}</ul>${noCardHere ? `<span class="yes">✓ You can pay without a card${c ? ` in ${esc(cn)}` : ''}</span>` : payNoCard(a) && c ? `<span class="muted">The card-free ways listed are for other countries</span>` : '<span class="muted">Paid plans take cards only</span>'}${src(a.payment_methods)}`, 'no-card'));
+    // Ways to pay that apply elsewhere fold behind "+N for other countries" (decision 88), so yours come first and clear.
+    const li = (m) => `<li${here(m) ? '' : ' class="elsewhere"'}>${CARDS.includes(m.method) ? '💳' : here(m) ? ok : '·'} <strong>${esc(METHOD_LABELS[m.method] || m.method)}</strong>${m.note ? ` <span class="muted">· ${esc(m.note)}</span>` : ''}${here(m) ? '' : ` <span class="muted">(not for ${esc(cn)})</span>`}</li>`;
+    const mine = sorted.filter(here); const other = sorted.filter((m) => !here(m));
+    rows.push(row('Ways to pay', `<ul class="pay">${mine.map(li).join('')}</ul>${other.length ? `<details class="pay-more"><summary>+${other.length} for other countries</summary><ul class="pay">${other.map(li).join('')}</ul></details>` : ''}${noCardHere ? `<span class="yes">✓ You can pay without a card${c ? ` in ${esc(cn)}` : ''}</span>` : payNoCard(a) && c ? `<span class="muted">The card-free ways listed are for other countries</span>` : '<span class="muted">Paid plans take cards only</span>'}${src(a.payment_methods)}`, 'no-card'));
   } else rows.push(row('Ways to pay', unknownTxt));
   if (known(a.signup_requirements)) rows.push(row('Sign-up', `${esc(a.signup_requirements.value)}${src(a.signup_requirements)}`));
   if (known(a.local_currency_pricing)) rows.push(row('Prices', `${a.local_currency_pricing.value ? `${ok} in local currency` : 'in US dollars or euros'}${src(a.local_currency_pricing)}`));
@@ -428,15 +443,18 @@ export function suits(r) {
   }
   return any ? s : 1;
 }
+// One clear action per card, leading to the listing's "How to start".
+const goLabel = (r) => r.type === 'app' ? 'Open app' : r.type === 'host' ? 'See plans' : r.type === 'dataset' ? 'Get the data' : r.local_ready ? 'Get it' : r.answers?.online ? 'Use it online' : 'See how to get it';
 export function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
   return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}${(r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified' ? ' candidate' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
     <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
     <p class="desc">${esc(plainWhat(r))}</p>
     ${verdictStrip(r)}
+    ${memBar(r)}
     <div class="badges">${cardBadges(r)}</div>
     ${metaLine(r)}
-    <div class="more">Open details ▾</div>
+    <div class="card-foot"><a class="card-go" href="${esc(view.base + listingPath(r))}#start">${esc(goLabel(r))} →</a><span class="more">Details ▾</span></div>
   </summary><div class="detail-slot" data-id="${esc(r.id)}"></div></details></li>`;
 }
 

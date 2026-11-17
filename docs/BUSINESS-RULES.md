@@ -378,6 +378,15 @@ The interface rules behind these (one primary action, defaults, continuation, pr
 - **Default order:** suits you first, then, when no capability or search is chosen, everyday models (chat, writing, coding, images, speech, video, translation, vision) before others. Then checked listings, then popularity.
 - **Picks on every visit** without a link hash: the visitor's last question, or chat on my computer.
 - **"AI that speaks" picker:** the same rule as the language filter: one entry per language name the browser can name, with bare codes and repeats left out. A previously saved choice is always kept.
+- **Layout rules (decision 88):**
+  - **Default order:** suits you first, then (with no capability or search) everyday models that run yourself, then everyday models online, then the rest.
+  - **Sort menu:** best for you (default), most popular, newest (first seen), free first (free download, free or free tier). The choice is remembered with the view.
+  - **Picks:** the noise chips "no independent score yet" and "N providers" are hidden; compact picks show 2 reasons.
+  - **Surprise me:** a random listing from the current tab, with no warnings, not a community version, not uncensored, not removed at its source, and suiting your device and country (or verified, when neither is set).
+  - **Presets:** Student with a phone (chat, phone, 4 GB), Coding on a 16 GB laptop (coding, computer, 16 GB), Free AI in Arabic (chat, web, Arabic), Make images online (images, web).
+  - **Memory bar:** needs ÷ your memory, green up to 80%, amber up to 100%, red above.
+  - **Price scale:** online price per million output tokens: up to $0.50 is $, up to $3 is $$, more is $$$.
+  - **Ways to pay for other countries** fold behind "+N for other countries".
 - **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **What people show on YouTube (decision 78):** a panel under "What people say on X" on every listing page except datasets.
   - **Reviews:** YouTube searches for "<name> review" (with the publisher for names of 4 characters or less), 15 listings per scan, least recently checked first. Each listing is re-checked after 7 days.

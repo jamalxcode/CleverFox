@@ -2,6 +2,7 @@
 import { LANGS, t, pickLang, applyLang } from './i18n.js?v=__BUILD__';
 import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart, ORDERING } from './picks.js?v=__BUILD__';
 import * as you from './you.js?v=__BUILD__';
+import { verdictStrip, plainWhat } from './render.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -17,7 +18,7 @@ const TYPES = ['model', 'dataset', 'app', 'host'];
 const MEMORY_CHOICES = [4, 8, 16, 24, 32, 48, 64, 128];
 const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
 const PAGE = 50;
-const state = { type: 'model', q: '', cap: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', ulang: store.get('ulang') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const state = { type: 'model', q: '', cap: '', sort: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', ulang: store.get('ulang') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
 const loaded = {}; // type -> records
 const syncView = () => { view.country = state.country; view.mem = state.mem; view.ulang = state.ulang; };
 syncView();
@@ -177,8 +178,12 @@ function render() {
   const weight = (r) => (r.warning === 'dont_touch' ? 2 : 0) + (r.verification_status === 'verified' ? 0 : 1);
   // With nothing narrowed, everyday models (chat, writing, coding, images, speech…) come before building blocks such as embeddings.
   const EVERYDAY = ['chat', 'writing', 'coding', 'images', 'speech', 'video', 'translation', 'vision'];
-  const plain = (r) => (state.cap || state.q || r.type !== 'model') ? 0 : (r.answers?.good_for || []).some((c) => EVERYDAY.includes(c)) ? 0 : 1;
-  recs.sort((a, b) => suits(a) - suits(b) || plain(a) - plain(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
+  // Ready to run comes first: everyday models you can run yourself, then everyday models used online, then the rest.
+  const plain = (r) => (state.cap || state.q || r.type !== 'model') ? 0 : !(r.answers?.good_for || []).some((c) => EVERYDAY.includes(c)) ? 2 : r.local_ready ? 0 : 1;
+  const isFree = (r) => ['free_download', 'free', 'free_tier'].includes(r.answers?.free) || ['free', 'free_tier'].includes(r.access?.free?.value) ? 0 : 1;
+  const SORTS = { popular: (a, b) => popularity(b) - popularity(a), new: (a, b) => String(b.first_seen_at || '').localeCompare(String(a.first_seen_at || '')), free: (a, b) => isFree(a) - isFree(b) };
+  const best = (a, b) => suits(a) - suits(b) || plain(a) - plain(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name);
+  recs.sort((a, b) => (SORTS[state.sort]?.(a, b) || 0) || best(a, b));
   $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
   // The tab and the filters in use, never the words typed.
@@ -187,7 +192,8 @@ function render() {
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
   const narrowed = activeFilters().length;
   const grouped = narrowed ? 0 : all.length - recs.length; // community versions shown under their original
-  $('#summary').textContent = `${narrowed ? `${recs.length} of ${all.length}` : recs.length} ${TYPE_WORDS[state.type]}${grouped ? ` (+${grouped} community versions under their originals)` : ''}${!narrowed && state.type === 'model' ? ', everyday ones first' : ''}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+  const SORT_WORDS = { '': 'best for you first', popular: 'most popular first', new: 'newest first', free: 'free first' };
+  $('#summary').textContent = `${narrowed ? `${recs.length} of ${all.length}` : recs.length} ${TYPE_WORDS[state.type]} · ${SORT_WORDS[state.sort] || SORT_WORDS['']}${grouped ? ` · ${grouped} community versions grouped` : ''}${state.country && state.type !== 'dataset' ? ` · access for ${countryName(state.country)}` : ''}`;
   if (activeFilters().length) $('#summary').insertAdjacentHTML('beforeend', ' · <button type="button" class="linkish" data-clear-all>clear filters</button>');
   $('#empty-help').innerHTML = recs.length ? '' : emptyHelp();
   rememberView();
@@ -229,7 +235,7 @@ document.addEventListener('click', (e) => {
 let viewTimer = null;
 function rememberView() {
   clearTimeout(viewTimer);
-  viewTimer = setTimeout(() => you.update((d) => { d.view = { type: state.type, q: state.q, cap: state.cap, f: state.f }; }), 600);
+  viewTimer = setTimeout(() => you.update((d) => { d.view = { type: state.type, q: state.q, cap: state.cap, sort: state.sort, f: state.f }; }), 600);
 }
 async function ensureLoaded(t) {
   if (loaded[t]) return;
@@ -248,6 +254,21 @@ $('.tabs').addEventListener('keydown', (e) => {
 });
 $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); state.limit = PAGE; render(); });
 $('#more-btn').addEventListener('click', () => { state.limit += PAGE; render(); });
+$('#sort').addEventListener('change', (e) => { state.sort = e.target.value; state.limit = PAGE; render(); });
+// ---- getting around a long page: a slim sticky bar once the top has scrolled away, and back to top ----
+{
+  const bar = $('#minibar'); const top = $('#to-top'); const head = document.querySelector('header.top');
+  const onScroll = () => {
+    const past = head.getBoundingClientRect().bottom < 0;
+    if (bar.hidden === past) bar.hidden = !past;
+    const far = scrollY > innerHeight * 1.5;
+    if (top.hidden === far) top.hidden = !far;
+    const saved = $('#mb-saved'); if (saved) saved.hidden = $('#you').hidden;
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  top.addEventListener('click', () => scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+  $('#mb-search').addEventListener('click', () => { $('#browse').scrollIntoView(); $('#q').focus({ preventScroll: true }); });
+}
 $('#caps').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-cap]'); if (!b) return;
   state.cap = state.cap === b.dataset.cap ? '' : b.dataset.cap; state.limit = PAGE; renderCaps(); render();
@@ -390,18 +411,31 @@ async function showPicks(share = true) {
   $('#picks').innerHTML = `<p class="muted">${esc(t('finding'))}</p>`;
   await Promise.all([ensureLoaded('model'), ensureLoaded('app')]);
   const models = loaded.model || []; const apps = loaded.app || [];
+  // Lanes in the order that suits the device: run it yourself first on a computer, apps first on a phone or the web;
+  // the API lane ("For developers") always last, since it needs code.
   const cols = [];
   if (s.device === 'computer') cols.push([t('runself'), pickModelsLocal(models, s), `${t('runNote')} ${s.mem ? `≤ ${s.mem} GB` : '(8 GB)'}`]);
-  if (s.device === 'phone') cols.push([t('offline'), pickOffline(apps, s), t('offNote')]);
   cols.push([t('appsCol'), pickApps(apps, s), t('appsNote')]);
+  if (s.device === 'phone') cols.push([t('offline'), pickOffline(apps, s), t('offNote')]);
   cols.push([t('online'), pickModelsOnline(models, s), t('onlineNote')]);
   you.update((d) => { d.picks = { task: s.task, device: s.device }; });
   pickRecs.clear();
-  const item = (p) => { pickRecs.set(p.r.id, p.r); return `<li><a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span> <button type="button" class="save-mini" data-save="${esc(p.r.id)}" aria-pressed="false" aria-label="Save ${esc(p.r.name)}">☆</button><div class="why">${p.reasons.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div></li>`; };
+  // The first pick of each lane is featured (plain description, its verdicts, a Start button); the others are compact,
+  // with their two most telling reasons (no "no independent score yet" or provider counts).
+  const NOISE = /no independent score yet|^\d+ providers?$/i;
+  const save = (r) => `<button type="button" class="save-mini" data-save="${esc(r.id)}" aria-pressed="false" aria-label="Save ${esc(r.name)}">☆ Save</button>`;
+  const item = (p, i) => {
+    pickRecs.set(p.r.id, p.r);
+    const head = `<a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span>`;
+    if (i === 0) return `<li class="pick-feat"><div class="pf-head">${head}</div><p class="pf-desc">${esc(plainWhat(p.r))}</p>${verdictStrip(p.r, 3)}<p class="pf-act"><a class="share-btn" href="${esc(listingPath(p.r))}#start">Start →</a> ${save(p.r)}</p></li>`;
+    const why = p.reasons.filter((x) => !NOISE.test(x)).slice(0, 2);
+    return `<li>${head} ${save(p.r)}${why.length ? `<div class="why">${why.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div>` : ''}</li>`;
+  };
   // An empty column offers the nearest alternative instead of a dead end.
-  const alt = (h) => h === t('runself') ? `<button type="button" class="share-btn" data-alt-device="online">${esc(t('online'))}</button>${state.mem && state.mem < 128 ? ' <span class="muted">or choose more memory above</span>' : ''}` : h === t('offline') ? `<button type="button" class="share-btn" data-alt-device="computer">${esc(t('computer'))}</button>` : `<button type="button" class="share-btn" data-alt-task="chat">${esc(t('t_chat'))}</button>`;
+  const alt = (h) => h === t('runself') ? `<button type="button" class="share-btn" data-alt-device="online">${esc(t('web'))}</button>${state.mem && state.mem < 128 ? ' <span class="muted">or choose more memory above</span>' : ''}` : h === t('offline') ? `<button type="button" class="share-btn" data-alt-device="computer">${esc(t('computer'))}</button>` : `<button type="button" class="share-btn" data-alt-task="chat">${esc(t('t_chat'))}</button>`;
   for (const [h, list] of cols) if (!list.length) try { window.goatcounter?.count?.({ path: `picks-empty/${h.replace(/^\S+\s/, '')}/${s.task}/${s.device}/${s.country || 'any'}/${s.ulang || 'any'}`, title: 'No picks', event: true }); } catch {}
-  $('#picks').innerHTML = `<div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${list.map(item).join('')}</ol>` : `<p class="muted">${esc(t('nothing'))}</p><p>Try: ${alt(h)}</p>`}</div>`).join('')}</div>
+  $('#picks').innerHTML = `<p class="muted swipe-hint">Swipe for more lanes →</p><div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${item(list[0], 0)}</ol>${list.length > 1 ? `<details class="pick-rest"${matchMedia('(min-width: 701px)').matches ? ' open' : ''}><summary>+${list.length - 1} more</summary><ol class="pick-list">${list.slice(1).map((p) => item(p, 1)).join('')}</ol></details>` : ''}` : `<p class="muted">${esc(t('nothing'))}</p><p>Try: ${alt(h)}</p>`}</div>`).join('')}</div>
+    ${foxTip(s, cols)}
     ${nextSteps(cols)}
     <details class="pick-how"><summary>How picks are ordered</summary><ul>${[ORDERING.local, ORDERING.offline, ORDERING.apps, ORDERING.online, ORDERING.not].map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>
     <p class="share pick-share"><button class="share-btn" type="button" id="s-share">${esc(t('share'))}</button></p>`;
@@ -413,6 +447,15 @@ async function showPicks(share = true) {
     try { if (navigator.share) await navigator.share({ title: 'My CleverFox picks', url }); else { await navigator.clipboard.writeText(url); $('#s-share').textContent = '✓ Link copied'; } } catch { /* cancelled */ }
   });
   try { window.goatcounter?.count?.({ path: `picks/${s.task}/${s.device}`, event: true }); } catch {}
+}
+// A short tip from the fox under the picks: what to do next, or why the first lane is worth a look.
+function foxTip(s, cols) {
+  const tip = !s.country ? 'Tell me your country above and I\'ll check where each one works and how you can pay.'
+    : !s.mem && s.device === 'computer' ? 'Set your device memory and I\'ll only pick models that fit.'
+    : s.device === 'computer' ? 'Psst: models you run yourself are free and private, and keep working offline.'
+    : s.device === 'phone' ? 'Psst: the offline phone apps keep working with no signal.'
+    : 'Tap ☆ Save on anything you like, and it waits for you in Your CleverFox.';
+  return `<p class="fox-tip">🦊 ${esc(tip)}</p>`;
 }
 // ---- clear next steps after picks: one main suggestion, then quieter ones; a clear stopping point ----
 const pickRecs = new Map();
@@ -432,14 +475,14 @@ $('#picks').addEventListener('click', (e) => {
 function labelSaves(root) {
   root.querySelectorAll('[data-save]').forEach((b) => {
     const on = you.isSaved(b.dataset.save); b.hidden = false; b.setAttribute('aria-pressed', String(on));
-    b.textContent = b.classList.contains('save-mini') ? (on ? '★' : '☆') : (on ? '★ Saved' : '☆ Save');
+    b.textContent = on ? '★ Saved' : '☆ Save';
   });
 }
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-save]'); if (!b) return;
   const id = b.dataset.save; const r = pickRecs.get(id) || recById(id) || you.load().saved.find((x) => x.id === id);
   if (!r) return;
-  you.toggleSave(r, r.path || listingPath(r));
+  if (you.toggleSave(r, r.path || listingPath(r))) toast('⭐ Saved! Find it in Your CleverFox.');
   document.querySelectorAll(`[data-save="${CSS.escape(id)}"]`).forEach((x) => labelSaves(x.parentElement));
   renderYou();
 });
@@ -502,6 +545,28 @@ $('#you-import').addEventListener('change', async (e) => {
 $('#you-clear').addEventListener('click', () => { if (confirm('Clear your saved listings, history and reminder choice from this browser?')) { you.clearAll(); you.markVisit(); renderYou(); labelSaves(document); } });
 
 $('#s-go').addEventListener('click', () => showPicks());
+// Quick-start presets: one tap fills the question (and memory or language where it matters) and shows picks.
+const PRESETS = { phone: { task: 'chat', device: 'phone', mem: 4 }, code16: { task: 'coding', device: 'computer', mem: 16 }, arabic: { task: 'chat', device: 'online', ulang: 'ar' }, images: { task: 'images', device: 'online' } };
+$('#presets').addEventListener('click', (e) => {
+  const p = PRESETS[e.target.closest('[data-preset]')?.dataset.preset]; if (!p) return;
+  $('#s-task').value = p.task; $('#s-device').value = p.device;
+  if (p.mem && $('#mem').querySelector(`option[value="${p.mem}"]`)) { $('#mem').value = String(p.mem); $('#mem').dispatchEvent(new Event('change')); }
+  if (p.ulang && $('#ulang').querySelector(`option[value="${p.ulang}"]`)) { $('#ulang').value = p.ulang; $('#ulang').dispatchEvent(new Event('change')); }
+  showPicks();
+  try { window.goatcounter?.count?.({ path: `preset/${e.target.closest('[data-preset]').dataset.preset}`, event: true }); } catch {}
+});
+// 🎲 Surprise me: a random listing that suits the visitor's setup (or, without one, a checked listing with no warnings).
+$('#surprise').addEventListener('click', async () => {
+  await ensureLoaded(state.type);
+  const pool = recordsOf(state.type).filter((r) => r.warning === 'none' && !r.copy_of && !r.answers?.uncensored && r.listing_status?.value !== 'removed_at_source' && ((view.mem || view.country) ? suits(r) === 0 : r.verification_status === 'verified'));
+  const pickOne = pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+  if (!pickOne) { toast('🦊 Nothing to surprise you with here yet. Try another tab.'); return; }
+  try { window.goatcounter?.count?.({ path: `surprise/${state.type}`, event: true }); } catch {}
+  location.href = `${listingPath(pickOne)}`;
+});
+// The fox's short notes: saved, or nothing to show.
+let toastTimer = null;
+function toast(text) { const el = $('#toast'); el.textContent = text; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2600); }
 ['#s-task', '#s-device'].forEach((s) => $(s).addEventListener('change', () => $('#s-go').classList.remove('go-quiet')));
 const cmpHash = location.hash.match(/^#compare=(.+)$/)?.[1];
 if (cmpHash) { cmp.push(...decodeURIComponent(cmpHash).split('|').slice(0, 3)); showCompare(cmp, false).then(renderCompareBar); }
@@ -511,7 +576,7 @@ const youData = you.load();
 if (!location.hash && youData.view) {
   const v = youData.view;
   if (TYPES.includes(v.type)) state.type = v.type;
-  state.q = String(v.q || ''); $('#q').value = state.q; state.cap = String(v.cap || '');
+  state.q = String(v.q || ''); $('#q').value = state.q; state.cap = String(v.cap || ''); state.sort = ['popular', 'new', 'free'].includes(v.sort) ? v.sort : ''; $('#sort').value = state.sort;
   for (const t of TYPES) if (v.f?.[t] && typeof v.f[t] === 'object') state.f[t] = v.f[t];
 }
 renderSetup();

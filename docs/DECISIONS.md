@@ -471,6 +471,16 @@ Countries come later from the daily App Store check, which now includes these li
 **Decision:** the main page has two large section titles at the same size: "🦊 Find what to use" (the question bar and picks) and "📚 Browse the catalog" (the directory, with a divider and a line giving the catalog's total), both in the 6 interface languages. The "AI that speaks" picker follows decision 74's rule: one entry per language the browser can name, with no bare codes or repeats.
 **Why:** the owner found "Find what to use" clear and asked for it bigger, with an equally clear title for the directory, so the page reads as two parts. A plain-text copy of the page showed the picker still listing codes such as "aa" and repeats such as "Akan, Akan".
 
+### 88. Layout pass: compact picks, clear card actions, easier to get around, a little fun
+**Decision:** after the owner's layout critique:
+- **Picks:** each lane shows one featured pick (plain description, up to 3 verdicts, Start and Save), then "+2 more". The "+2 more" opens by itself on desktop, and the noise chips are gone. Lanes come in device order: run it yourself first on a computer, apps first on a phone or the web, and the API lane last, renamed "🧑‍💻 For developers (API)" in all 6 languages. On phones, lanes swipe sideways. A short fox tip sits under the picks.
+- **Cards:** one clear action each ("Get it →", "Open app →", "See plans →", "Get the data →"), going to "How to start", with "Details ▾" secondary. Ready-to-run everyday models rank first. Two columns on wide screens. A memory bar shows on model cards once a device is set, and online prices get a $ / $$ / $$$ scale.
+- **Getting around:** a sticky bar (Find · Browse · Saved · Search) once the top scrolls away, a back-to-top button, and a visible sort menu (best for you, most popular, newest, free first). The summary line is shorter, and phones get a one-line tagline.
+- **Fun, without games:** quick-start presets, 🎲 Surprise me (a random listing that suits your setup), the fox's tips and a "Saved!" note, and a small pop when saving.
+- **Listing pages:** ways to pay for other countries fold behind "+N for other countries". Models that download but have no one-click version say "runs with Python tools" instead of "no version to run yourself".
+
+**Why:** the critique measured the first listing 4 phone screens down, picks in an older style than the cards, an API lane that confuses non-developers, raw names first, half-empty desktop rows, and no way back up a 17,900 px page. After the pass, the phone's first listing is at 1,929 px (was 2,639) and the picks end at 1,392 px (was 2,189). The fun comes from discovery and personality, never points or streaks (decision 77).
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

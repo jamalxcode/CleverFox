@@ -32,10 +32,16 @@
     </div>
   </div>
   <div class="wrap intro">
-    <p class="tagline" data-i18n="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
+    <p class="tagline tagline-short" data-i18n="taglineShort">AI you can actually use, wherever you live.</p>
+    <p class="tagline tagline-long" data-i18n="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
     <img class="mascot" src="img/fox.webp?v=__BUILD__" alt="CleverFox mascot: a smiling fox in sunglasses" width="104" height="120">
   </div>
 </header>
+<nav id="minibar" class="minibar" aria-label="Quick links" hidden>
+  <div class="wrap minibar-row"><a href="#start-h">🦊 <span data-i18n="mbFind">Find</span></a><a href="#browse">📚 <span data-i18n="mbBrowse">Browse</span></a><a href="#you" id="mb-saved">⭐ <span data-i18n="mbSaved">Saved</span></a><button type="button" id="mb-search" class="linkish">🔍 <span data-i18n="mbSearch">Search</span></button></div>
+</nav>
+<button type="button" id="to-top" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
 <main class="wrap">
   <section class="start-here" aria-labelledby="start-h">
@@ -45,6 +51,12 @@
       <label><span data-i18n="iwant">I want to</span> <select id="s-task" aria-label="What you want to do"></select></label>
       <label><span data-i18n="on">on</span> <select id="s-device" aria-label="Where you'll use it"><option value="computer" data-i18n="computer">my computer</option><option value="phone" data-i18n="phone">my phone</option><option value="online" data-i18n="web">the web (no download)</option></select></label>
       <button id="s-go" class="go-btn" type="button" data-i18n="go">Show my picks</button>
+    </div>
+    <div class="presets" id="presets"><span class="muted">Quick start:</span>
+      <button type="button" class="chip-btn" data-preset="phone">📱 Student with a phone</button>
+      <button type="button" class="chip-btn" data-preset="code16">💻 Coding on a 16 GB laptop</button>
+      <button type="button" class="chip-btn" data-preset="arabic">🆓 Free AI in Arabic</button>
+      <button type="button" class="chip-btn" data-preset="images">🎨 Make images online</button>
     </div>
     <div class="start-you">
       <label class="pick" id="pick-mem"><span data-i18n="device">Your device</span> <select id="mem" aria-label="Your device memory (RAM, or graphics card memory)"><option value="0" data-i18n="memory">Memory…</option></select></label>
@@ -69,7 +81,7 @@
     </details>
   </section>
   <div class="section-head" id="browse">
-    <h2 id="browse-h" class="section-title" data-i18n="browse">📚 Browse the catalog</h2>
+    <div class="section-row"><h2 id="browse-h" class="section-title" data-i18n="browse">📚 Browse the catalog</h2><button type="button" id="surprise" class="share-btn">🎲 Surprise me</button></div>
     <p id="browse-sub" class="muted section-sub"></p>
   </div>
   <nav class="tabs" role="tablist" aria-label="Listing type">
@@ -83,6 +95,7 @@
     <div id="caps" class="caps" hidden></div>
     <div class="search-row">
       <input id="q" type="search" data-i18n-ph="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
+      <select id="sort" aria-label="Sort by"><option value="">Best for you</option><option value="popular">Most popular</option><option value="new">Newest</option><option value="free">Free first</option></select>
       <button id="filters-btn" class="share-btn" type="button" aria-expanded="false" aria-controls="filters">⚙️ Filters</button>
     </div>
     <div id="filters" class="filters" hidden></div>

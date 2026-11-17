@@ -14,6 +14,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **Trust signals** (60, 64, 66, 67): verified versus not yet verified, a daily re-check of access pages, an App Store check, Google Play payments per country, and a freshness line.
 - **Discovery** (55, 65, 68, 70, 71, 75, 83): X 3 times a day, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (waiting on its token). With no sign-up: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries (a research queue), and Ollama's newest in quick scans.
 - **Pipeline safety and health** (86): listings never dropped, bad imported records quarantined, a status page, the X re-check, makers' news on listings, community versions grouped.
+- **Layout pass** (88): compact picks, clear card actions, sticky bar and sort, presets, Surprise me, the fox's tips.
 - **Two titled sections** (87): "Find what to use" and "Browse the catalog".
 - **Auto-research of new apps** (85): rules-only facts with quotes from the App Store and the app's own pages, so queued apps become "not yet verified" listings.
 - **Three looks** (80–82): Dark, In between (brighter slate, colour-blind-safe colours) and Light, as buttons in the header.

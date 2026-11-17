@@ -20,6 +20,13 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 
 - The main page has two big section titles at the same size (1.75rem, 1.4rem on phones): **"🦊 Find what to use"** (the question bar and picks) and **"📚 Browse the catalog"** (the directory: tabs, chips, search, filters and the list). The second has a divider above it and a line with the catalog's total. Both are in the 6 interface languages.
 
+## 1c. Picks, cards and getting around (decision 88)
+
+- **Picks:** a featured pick per lane (description, up to 3 verdicts, Start and Save), and the rest behind "+N more" on phones. Lanes follow the device; the API lane is "For developers" and comes last. Phone lanes swipe sideways.
+- **Cards:** one outlined action ("Get it →" and the like) to the listing's "How to start", and "Details ▾" to open the card. Two columns at 1,000 px and wider, and an opened card spans both.
+- **Getting around:** a sticky mini-bar after the header scrolls away, back to top after 1.5 screens, and a visible sort menu.
+- **Fun:** presets, Surprise me, the fox's tips and toasts, the memory bar and the save pop. Never points, streaks or anything that rewards time spent.
+
 ## 2. One primary action per screen
 
 - **Main page:** the question bar ("I want to … on …", then "Show my picks") is the main action, right under a one-sentence intro. Device, country and AI language are its setup pickers. The interface language is a small 🌐 in the header, kept apart from "AI that speaks". Picks show on every visit without a link. Browsing the tabs is secondary.
