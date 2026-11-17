@@ -55,10 +55,10 @@ function serve() {
   if (!axePath) problems.push('axe-core not found: install it (npm i --no-save axe-core) or pass --axe');
   else {
     const axe = fs.readFileSync(axePath, 'utf8');
-    for (const theme of ['light', 'dark']) {
-      const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, colorScheme: theme });
+    for (const theme of ['light', 'dim', 'dark']) {
+      const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, colorScheme: theme === 'light' ? 'light' : 'dark' });
       // The site's own switch: light mode is stored in localStorage ("look"); the dark Matrix look is the default.
-      await ctx.addInitScript((t) => { try { localStorage.setItem('look', t === 'light' ? 'light' : ''); } catch (e) {} }, theme);
+      await ctx.addInitScript((t) => { try { localStorage.setItem('look', t === 'dark' ? '' : t); } catch (e) {} }, theme);
       await seedYou(ctx);
       const page = await ctx.newPage();
       for (const p of pages) {
@@ -74,5 +74,5 @@ function serve() {
   }
   await browser.close(); server.close();
   if (problems.length) { console.error(`Page check failed (${problems.length}):\n- ${problems.slice(0, 40).join('\n- ')}`); process.exit(1); }
-  console.log(`Page check passed: ${pages.length} pages, phone widths 320 and 375, contrast in light and dark.`);
+  console.log(`Page check passed: ${pages.length} pages, phone widths 320 and 375, contrast in light, in between and dark.`);
 })().catch((e) => { console.error(e); process.exit(1); });

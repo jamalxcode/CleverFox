@@ -81,7 +81,7 @@ Once a day it also refreshes the big imports (Hugging Face, Ollama), API provide
 
 ## 😎 The look
 
-A dark **Matrix terminal**: neon green, faint digital rain behind the header, and monospace labels. It's readable first: every colour passes WCAG AA, and the rain stops for anyone who prefers less motion. Prefer daylight? One tap switches to the light "terminal paper" look. The interface also comes in English, العربية, हिन्दी, Português, Bahasa Indonesia and Kiswahili.
+A dark **Matrix terminal**: neon green, faint digital rain behind the header, and monospace labels. It's readable first: every colour passes WCAG AA, and the rain stops for anyone who prefers less motion. Prefer daylight? Pick 🌓 **In between** for a softer dim slate, or **Light** for "terminal paper". The interface also comes in English, العربية, हिन्दी, Português, Bahasa Indonesia and Kiswahili.
 
 ## 🧰 Under the hood
 

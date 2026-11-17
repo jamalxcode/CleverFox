@@ -63,7 +63,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 ## 8. Look and feel (decision 72)
 
 - **Matrix look by default:** dark terminal colours, neon green accents (cyan and magenta for secondary marks), monospace for headings, labels, chips and buttons, and the sans-serif Inter for body text.
-- **Light "terminal paper" look:** chosen from the footer, stored as `look: light`. The browser's light/dark preference doesn't choose the look.
+- **Three looks** (decision 80): Dark (Matrix, the default), In between (dim slate: flat background, no scanlines, faint rain, no glow) and Light ("terminal paper"). They're chosen with the 🌓 picker in the header and stored as `look` (`''`, `dim`, `light`). Every page sets it before drawing. The browser's light/dark preference doesn't choose the look.
 - **Decoration never costs readability:** the digital rain sits behind the header only, faintly, pauses when the tab is hidden, and is off for reduced motion and in light mode. Scanlines are faint and off in light mode.
 - **Colour roles:** green means good (✓ verdicts, positive badges) and the one primary button. Links are cyan, warnings amber, problems pink-red. Headings use the text colour. Badges, verdicts and facts use the body font, and monospace is kept for headings, labels, buttons and commands.
 - **Colours are tokens** on `:root` (`--bg`, `--surface`, `--text`, `--muted`, `--accent`, `--accent-text`, `--ok`, `--no`, `--warn`, …), redefined for light mode. Never hard-code a colour in a component.
@@ -72,7 +72,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 
 ## 9. Accessibility and phones (checked before every deploy)
 
-- **Contrast:** WCAG AA in both looks, checked by axe-core in `tools/ui-check.cjs` on 8 pages, including a returning visitor's "Your CleverFox" panel.
+- **Contrast:** WCAG AA in all three looks, checked by axe-core in `tools/ui-check.cjs` on 8 pages, including a returning visitor's "Your CleverFox" panel.
 - **`[hidden]` always hides** (`display: none !important`), so a component's own display rule can't reveal it.
 - **No sideways scrolling at 320 and 375 px** (`tools/ui-check.cjs`; four phone sizes in `tools/phone-check.cjs`). Long names wrap (`overflow-wrap: anywhere`).
 - **Phones:** the side panels (X, YouTube) drop below the listing under 900 px. Pick columns stack.

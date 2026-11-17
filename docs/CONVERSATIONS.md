@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: light, dark and in between
+**Where:** Claude Code session.
+**Asked:** a light, a dark and an in-between view mode.
+**Outcome (decision 80):**
+- A third look, "In between": dim slate, flat background, no scanlines, faint rain, no glow.
+- A 🌓 picker in the header (Dark · In between · Light, in the 6 interface languages) replaces the footer's light-mode button. Every page reads the choice before drawing.
+- The page check tests contrast in all three looks.
+
 ## 2026-11-17: docs brought up to date (3)
 **Where:** Claude Code session.
 **Asked:** update the repo with design decisions and our chat.

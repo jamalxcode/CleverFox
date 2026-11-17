@@ -278,18 +278,16 @@ $('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncV
 $('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
 $('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
 
-// Two looks: "Matrix" (dark, the default) and light "terminal paper".
+// Three looks: Dark ("Matrix", the default), In between (dim slate) and Light ("terminal paper"), stored as "look".
+// (The old "theme" setting from the first design is ignored, so everyone starts on Dark.)
+const LOOKS = ['', 'dim', 'light'];
 function applyTheme(t) {
-  if (t === 'light') document.documentElement.dataset.theme = 'light'; else delete document.documentElement.dataset.theme;
-  $('#theme-btn').textContent = t === 'light' ? '◐ Matrix mode' : '◐ Light mode';
+  if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  $('#look').value = t;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', t === 'light' ? '#f1faf5' : t === 'dim' ? '#1d2427' : '#04070a');
 }
-$('#theme-btn').addEventListener('click', () => {
-  const next = store.get('look') === 'light' ? '' : 'light';
-  store.set('look', next);
-  applyTheme(next);
-});
-// The look is stored as "look" (the old "theme" setting from the previous design is ignored, so everyone starts on Matrix).
-applyTheme(store.get('look') === 'light' ? 'light' : '');
+$('#look').addEventListener('change', (e) => { const t = LOOKS.includes(e.target.value) ? e.target.value : ''; store.set('look', t); applyTheme(t); });
+applyTheme(LOOKS.includes(store.get('look')) ? store.get('look') : '');
 
 // ---- start ----
 try {

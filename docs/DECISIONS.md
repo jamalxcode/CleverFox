@@ -405,6 +405,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 
 **Why:** the critique found the facts right but the page hard to read. Everything had equal weight, about 27 controls came before the first result (2.5 screens on a phone), the first results were embeddings, and access answers were scattered across 5 places with notes hidden behind an asterisk. Nothing new is claimed: the verdicts restate facts the listings already carry. The country check fixed a real error, where ChatGPT showed "Pay without a card: Pix, UPI" to someone in Kenya.
 
+### 80. Three looks: Dark, In between, Light
+**Decision:** a third look, "In between", sits between the Matrix dark look and the light "terminal paper" look. It uses dim slate colours, a flat background, no scanlines, faint digital rain and no neon glow. A 🌓 picker in the header (next to 🌐) chooses Dark, In between or Light, stored as `look` (`''`, `dim`, `light`). Every page reads it before drawing, and the page check tests contrast in all three.
+**Why:** the owner asked for a light, a dark and an in-between mode. Pure black with neon can tire the eyes, and bright light can glare at night. The middle look keeps the character with less contrast strain. The footer's "Light mode" button became the header picker, because three choices don't fit a toggle.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

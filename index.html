@@ -15,14 +15,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css?v=__BUILD__">
 <link rel="alternate" type="application/rss+xml" title="CleverFox: new listings" href="feed.xml">
-<script>try { if (localStorage.getItem('look') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
+<script>try { var l = localStorage.getItem('look'); if (l === 'light' || l === 'dim') document.documentElement.dataset.theme = l; } catch (e) {}</script>
 </head>
 <body>
 <header class="top">
   <canvas id="cf-rain" aria-hidden="true"></canvas>
   <div class="wrap top-row">
     <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
-    <label class="lang-pick"><span aria-hidden="true">🌐</span> <select id="lang" aria-label="Interface language"></select></label>
+    <div class="top-picks">
+      <label class="look-pick"><span aria-hidden="true">🌓</span> <select id="look" aria-label="Look: dark, in between or light"><option value="" data-i18n="look_dark">Dark</option><option value="dim" data-i18n="look_dim">In between</option><option value="light" data-i18n="look_light">Light</option></select></label>
+      <label class="lang-pick"><span aria-hidden="true">🌐</span> <select id="lang" aria-label="Interface language"></select></label>
+    </div>
   </div>
   <div class="wrap intro">
     <p class="tagline" data-i18n="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
@@ -87,7 +90,7 @@
 
 <footer class="wrap foot">
   <p>Researched apps, hosting and API providers, plus models and datasets imported daily from Hugging Face and the Ollama library. Apps and hosts marked "not yet verified" come from search results and haven't been checked at the official page. Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Payment and country facts change often, so check the official page before paying.</p>
-  <p><a href="new/" data-i18n="newweek">🆕 New this week</a> · <a href="guides/">📚 Guides</a> · <a href="glossary/">📖 Glossary</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a> · <button class="linkish" id="theme-btn" type="button">◐ Light mode</button></p>
+  <p><a href="new/" data-i18n="newweek">🆕 New this week</a> · <a href="guides/">📚 Guides</a> · <a href="glossary/">📖 Glossary</a> · <a href="feed.xml">RSS feed</a> · Catalog data <a href="data/catalog.json">(JSON)</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Code under MIT · Benchmarks: <a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0) · <a href="https://github.com/jamalxcode/cleverfox">GitHub</a></p>
   <p id="generated" class="muted"></p>
 </footer>
 

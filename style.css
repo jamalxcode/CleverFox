@@ -20,6 +20,15 @@
   --mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   color-scheme: dark;
 }
+:root[data-theme="dim"] {
+  --bg: #1d2427; --surface: #252e32; --text: #e6efe9; --muted: #b0c4ba; --line: #3d4d49;
+  --accent: #3ddc97; --accent-text: #74e9b6; --accent-ink: #062016; --cyan: #7fd9ea; --magenta: #eb9bd8;
+  --chip: #2e3b3a;
+  --ok-bg: #1f4434; --ok: #8cf0bf; --no-bg: #4a2633; --no: #ffb8cf;
+  --unk-bg: #2b3532; --unk: #c9d9d0; --warn-bg: #4a3d14; --warn: #ffe08a;
+  --glow: 0 0 10px rgba(61, 220, 151, .12);
+  color-scheme: dark;
+}
 :root[data-theme="light"] {
   --bg: #f1faf5; --surface: #ffffff; --text: #08251a; --muted: #2c5c47; --line: #b5d9c7;
   --accent: #007a48; --accent-text: #006a3f; --accent-ink: #ffffff; --cyan: #00708a; --magenta: #a1157f;
@@ -422,3 +431,16 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 .pick select, #mem { width: auto; }
 @media (max-width: 560px) { .pick select, #mem { flex: 0 1 62%; width: 62%; } #country-guess { flex: 1 1 100%; } }
 .pay li.elsewhere { opacity: .8; }
+
+/* In between (dim): the Matrix look turned down: flat slate background, no scanlines, faint rain, no neon glow */
+:root[data-theme="dim"] body { background: var(--bg); }
+:root[data-theme="dim"] body::before { display: none; }
+:root[data-theme="dim"] #cf-rain { opacity: .07; }
+:root[data-theme="dim"] .brand { text-shadow: none; }
+:root[data-theme="dim"] .top { box-shadow: none; border-bottom-color: var(--line); }
+:root[data-theme="dim"] .mascot { filter: none; }
+:root[data-theme="dim"] code.cmd, :root[data-theme="dim"] .start code { background: #151b1d; }
+.top-picks { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.top-picks .look-pick, .top-picks .lang-pick { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; }
+.top-picks select { width: auto; max-width: 11rem; font-size: .9rem; min-height: 36px; padding: 4px 8px; }
+@media (max-width: 560px) { .top-picks select { max-width: 8.5rem; } }
