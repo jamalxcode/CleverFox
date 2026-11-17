@@ -409,6 +409,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** a third look, "In between", sits between the Matrix dark look and the light "terminal paper" look. It uses dim slate colours, a flat background, no scanlines, faint digital rain and no neon glow. A 🌓 picker in the header (next to 🌐) chooses Dark, In between or Light, stored as `look` (`''`, `dim`, `light`). Every page reads it before drawing, and the page check tests contrast in all three.
 **Why:** the owner asked for a light, a dark and an in-between mode. Pure black with neon can tire the eyes, and bright light can glare at night. The middle look keeps the character with less contrast strain. The footer's "Light mode" button became the header picker, because three choices don't fit a toggle.
 
+### 81. Look buttons instead of a dropdown (refines 80)
+**Decision:** the look is chosen with three buttons side by side (🌙 Dark · 🌗 In between · ☀️ Light), with the current one shown pressed. Below 720 px only the icons show, and the words stay for screen readers.
+**Why:** the owner asked for buttons. With only three choices, buttons show them all at once and switch in one tap, where a dropdown takes two.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

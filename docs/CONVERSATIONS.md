@@ -12,6 +12,11 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: look buttons
+**Where:** Claude Code session.
+**Asked:** make the view modes buttons, not a dropdown.
+**Outcome (decision 81):** three buttons in the header, 🌙 Dark · 🌗 In between · ☀️ Light, with the current one pressed (`aria-pressed`). Phones show icons only. The page check passes in all three looks.
+
 ## 2026-11-17: light, dark and in between
 **Where:** Claude Code session.
 **Asked:** a light, a dark and an in-between view mode.

@@ -23,7 +23,11 @@
   <div class="wrap top-row">
     <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
     <div class="top-picks">
-      <label class="look-pick"><span aria-hidden="true">🌓</span> <select id="look" aria-label="Look: dark, in between or light"><option value="" data-i18n="look_dark">Dark</option><option value="dim" data-i18n="look_dim">In between</option><option value="light" data-i18n="look_light">Light</option></select></label>
+      <div class="look-btns" id="look" role="group" aria-label="Look">
+        <button type="button" data-look="" aria-pressed="true" title="Dark"><span aria-hidden="true">🌙</span> <span class="lbl" data-i18n="look_dark">Dark</span></button>
+        <button type="button" data-look="dim" aria-pressed="false" title="In between"><span aria-hidden="true">🌗</span> <span class="lbl" data-i18n="look_dim">In between</span></button>
+        <button type="button" data-look="light" aria-pressed="false" title="Light"><span aria-hidden="true">☀️</span> <span class="lbl" data-i18n="look_light">Light</span></button>
+      </div>
       <label class="lang-pick"><span aria-hidden="true">🌐</span> <select id="lang" aria-label="Interface language"></select></label>
     </div>
   </div>
