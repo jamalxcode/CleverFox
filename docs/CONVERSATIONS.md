@@ -12,10 +12,18 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: docs and README brought up to date (5)
+**Where:** Claude Code session.
+**Asked:** update the repo with design decisions, our chat, and the README.
+**Outcome:**
+- Decision 87 records the two section titles and the "AI that speaks" fix. Decisions 84–86 were already in.
+- The README now covers auto-research, Product Hunt in the sources diagram (Bluesky removed), "never quietly drops anything" with a link to the status page, community versions, the 1,380-listing count and 87 decisions.
+- CLAUDE.md's current state and DESIGN-IDEAS' built list are updated.
+
 ## 2026-11-17: clearer section titles
 **Where:** Claude Code session.
 **Asked:** make "🦊 Find what to use" bigger so it reads as a title, and give the directory a clear, prominent title too.
-**Outcome:**
+**Outcome (decision 87):**
 - Both are large section titles: "🦊 Find what to use" and a new "📚 Browse the catalog", with a divider and a line giving the total (in the 6 interface languages).
 - Recorded in INTERFACE-RULES 1b. The page check passes in all three looks.
 

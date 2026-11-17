@@ -467,6 +467,10 @@ Countries come later from the daily App Store check, which now includes these li
 
 **Why:** the review found 92 listings had vanished in 3 days (among them AI4Bharat's IndicTrans2), against the "never silently lost" rule. One bad outside record had blocked deploys twice in a day. Sources could fail quietly. X turned 27 Hugging Face-linked announcements into 4 listings because likes were judged too early. 54% of models had no languages and 65% no publisher country. 28% of models were community copies crowding out originals.
 
+### 87. Two titled sections on the main page; "AI that speaks" lists names only
+**Decision:** the main page has two large section titles at the same size: "🦊 Find what to use" (the question bar and picks) and "📚 Browse the catalog" (the directory, with a divider and a line giving the catalog's total), both in the 6 interface languages. The "AI that speaks" picker follows decision 74's rule: one entry per language the browser can name, with no bare codes or repeats.
+**Why:** the owner found "Find what to use" clear and asked for it bigger, with an equally clear title for the directory, so the page reads as two parts. A plain-text copy of the page showed the picker still listing codes such as "aa" and repeats such as "Akan, Akan".
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

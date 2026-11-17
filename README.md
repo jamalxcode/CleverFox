@@ -7,7 +7,7 @@
 
 Most AI directories assume you live in San Francisco, own a Visa card and a big graphics card, and speak English. CleverFox doesn't.
 
-Tell the fox what you want to do, what you're using, and where you are. It sniffs through about **1,310 AI models, datasets, apps and hosting providers** and tells you what works for *you*:
+Tell the fox what you want to do, what you're using, and where you are. It sniffs through about **1,380 AI models, datasets, apps and hosting providers** and tells you what works for *you*:
 
 - 🌍 Is it available in my country?
 - 💳 Can I pay without a Visa or Mastercard? (mobile money, UPI, Pix, crypto, app stores, phone bill…)
@@ -52,6 +52,7 @@ Unknown means unknown. If no source says it, CleverFox doesn't make it up.
 - **Picks remembered.** Come back, and your picks are already there, refreshed with today's catalog.
 - **🆕 New for you since your last visit.** New listings matching your task, your device and your country. Not everything new, just what's new *for you*.
 - **☆ Save** anything to find it again, and pick up where you left off.
+- **🔁 Community versions** (fine-tunes and copies by other people) tuck under their original, so the list shows the real thing first.
 - **🔎 Similar** listings on every page, and a helping hand when a search finds nothing ("remove *Free* → 34 results").
 - **🔔 Optional reminders** in *your own* calendar, plus an RSS feed for each task. Delete the event and it's gone. CleverFox never sends you anything.
 
@@ -69,10 +70,17 @@ A scheduled pipeline wakes up 3 times a day and goes hunting:
   ▶️ YouTube makers' channels and reviews    ─┤
   🔁 Replicate new models (needs its token)  ─┤
   ☁️ OpenRouter · 📰 makers' news · 📄 papers ─┤
-  🟧 Hacker News · 🦋 Bluesky · 📱 App Store ─┘
+  🟧 Hacker News · 🐱 Product Hunt · 📱 App Store ─┘
 ```
 
-Once a day it also refreshes the big imports (Hugging Face, Ollama), API providers and prices, benchmarks, the App Store check, and a re-check of every access fact's source page. If a source fails, the last good data stays, and the footer tells you what's stale.
+New apps found in the App Store and on Product Hunt get **auto-researched**: the fox reads their App Store listing and their own website, and lists them with every fact quoted from the official page (ways to pay, plans and prices, languages). They're marked "not yet verified" until a quote-checked review.
+
+Once a day it also refreshes the big imports (Hugging Face, Ollama), API providers and prices, benchmarks, the App Store check, and a re-check of every access fact's source page.
+
+The fox never quietly drops anything:
+- **Listings are kept.** Ones that fall out of the top lists stay, and get re-checked. If their page is gone at the source, they're marked "removed at its source".
+- **A bad record can't stop the site.** One odd record from an outside source is set aside (quarantined) instead of blocking the update.
+- **Every source is watched.** The 🩺 [status page](https://jamalxcode.github.io/CleverFox/status/) shows what each source brought, when it last answered, and flags any that drop or stop.
 
 ## 🔍 Trust, but verify
 
@@ -110,7 +118,7 @@ npm run serve                  # then open http://localhost:8000
 | [Business rules](docs/BUSINESS-RULES.md) | every rule and number the code applies |
 | [Interface rules](docs/INTERFACE-RULES.md) | how the pages look and behave |
 | [Workflow](docs/WORKFLOW.md) | the daily pipeline and how changes are made |
-| [Decisions](docs/DECISIONS.md) | 79 numbered decisions, each with the why |
+| [Decisions](docs/DECISIONS.md) | 87 numbered decisions, each with the why |
 | [Design ideas](docs/DESIGN-IDEAS.md) | built, planned, still open, and turned down (with reasons) |
 | [Lessons learned](docs/LESSONS.md) | what broke or surprised us, so it doesn't happen twice |
 | [Conversation log](docs/CONVERSATIONS.md) | notes from every design session |

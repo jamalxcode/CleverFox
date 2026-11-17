@@ -14,7 +14,7 @@ Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, incl
 
 ## Current state
 
-The site is live with about 1,310 listings: 941 models, 273 datasets, 56 apps and 40 hosts (including 14 API providers). **82 of the 96 apps and hosts are verified**: their facts were compared with their official pages, with quotes (decision 67); the rest are flagged "not yet verified" and kept out of picks and guides. It combines:
+The site is live with about 1,380 listings: 988 models, 283 datasets, 69 apps and 40 hosts (including 14 API providers). **82 of the 96 apps and hosts are verified**: their facts were compared with their official pages, with quotes (decision 67); the rest are flagged "not yet verified" and kept out of picks and guides. It combines:
 - researched seed records;
 - daily imports from Hugging Face and the Ollama library;
 - independent benchmarks (Epoch AI);
@@ -34,6 +34,7 @@ cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a ful
 - New this week (with GitHub new projects and releases) and RSS (all new, plus one feed per capability under `feeds/`);
 - return visits: a setup line, picks remembered, one next step, saved and recently viewed, "new for you", similar listings, and help for empty results (decision 77);
 - answers at a glance: a verdict strip on every card and listing page, one question bar, picks first, folded filters, "Using it in [country]" with country-aware ways to pay, and labelled facts (decision 79);
+- two titled sections on the main page, "Find what to use" and "Browse the catalog" (decision 87); three looks, Dark, In between and Light (decisions 80–82); community versions grouped under their originals (decision 86);
 - a freshness line;
 - an interface in 6 languages.
 
