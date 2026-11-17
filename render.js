@@ -127,7 +127,7 @@ export function verdicts(r) {
       out.push(s === 'no' ? V('no', `Not available in ${cn}`) : dcHere ? V('yes', `Data center in ${cn}`) : s === 'yes' ? V('yes', `Works in ${cn}`) : V('unk', `${cn}: not stated`));
     } else out.push(V('ask', 'Choose your country to check where it works'));
     const fv = acc?.free?.value;
-    out.push(fv === 'free' ? V('yes', 'Free') : fv === 'free_tier' ? V('yes', 'Free plan') : fv === 'trial' ? V('maybe', 'Free trial only') : fv === 'paid_only' ? V('no', 'Paid only') : V('unk', 'Price not stated'));
+    out.push(fv === 'free' ? V('yes', 'Free') : fv === 'free_tier' ? V('yes', 'Free plan') : fv === 'trial' ? V('maybe', 'Free trial only') : fv === 'paid_only' ? V('no', 'Paid only') : r.store_price?.free_download ? V('info', 'Free to download (App Store); plans not stated') : V('unk', 'Price not stated'));
     const allNon = methodsOf(acc).filter((m) => !CARDS.includes(m.method));
     const non = [...new Set(allNon.filter((m) => methodFor(m, c)).map(shortPay))];
     const play = playNoCard(r, c);
@@ -165,7 +165,7 @@ export function plainWhat(r) {
 // Flags: warnings always, then at most a few notable positives. Everything else goes in the quiet facts line.
 export function cardBadges(r) {
   const warn = []; const good = []; const a = r.answers || {};
-  if (r.verification_status !== 'verified') warn.push(badge(r.verification_status === 'candidate' ? ((r.type === 'app' || r.type === 'host') ? '⚠️ Not yet verified: facts from search results' : 'Not yet verified') : '⚠️ Last check failed', 'b-warn'));
+  if (r.verification_status !== 'verified') warn.push(badge(r.verification_status === 'candidate' ? (r.research ? '⚠️ Not yet verified: collected automatically from official pages' : (r.type === 'app' || r.type === 'host') ? '⚠️ Not yet verified: facts from search results' : 'Not yet verified') : '⚠️ Last check failed', 'b-warn'));
   if (r.warning === 'dont_touch') warn.push(badge('☠️ Don\'t touch', 'b-no'));
   else if (r.warning === 'reported') warn.push(badge('⚠️ Reported', 'b-warn'));
   if (r.possibly_discontinued) warn.push(`<span class="badge b-warn" title="${esc(r.possibly_discontinued.reason)}">⚠️ Possibly discontinued</span>`);
@@ -334,6 +334,8 @@ export function factsTable(r) {
     : dv?.source === 'hf-papers' ? `with a paper on Hugging Face <a href="${esc(dv.url)}" rel="noopener" target="_blank">read ↗</a>`
     : dv?.source === 'hackernews' ? `on Hacker News ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">discussion ↗</a>`
     : dv?.source === 'bluesky' ? `on Bluesky ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`
+    : dv?.source === 'app-store' ? `researched automatically from the <a href="${esc(dv.url)}" rel="noopener" target="_blank">App Store</a>`
+    : dv?.source === 'product-hunt' ? `researched automatically after its <a href="${esc(dv.url)}" rel="noopener" target="_blank">Product Hunt launch</a>`
     : dv?.source === 'ollama-new' ? `new in the <a href="${esc(dv.url)}" rel="noopener" target="_blank">Ollama library</a>` : '';
   if (found) rows.push(row('Found', found));
   return `<h3 class="dh">📋 The facts</h3><dl class="facts">${rows.join('')}</dl>${unknown.length ? `<p class="ln muted">❓ Not stated anywhere we checked: ${esc(unknown.join(', '))}</p>` : ''}`;

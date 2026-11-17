@@ -13,6 +13,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **Fit for you** (54): device memory, country and language pickers that sort and highlight what suits you.
 - **Trust signals** (60, 64, 66, 67): verified versus not yet verified, a daily re-check of access pages, an App Store check, Google Play payments per country, and a freshness line.
 - **Discovery** (55, 65, 68, 70, 71, 75, 83): X 3 times a day, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (waiting on its token). With no sign-up: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries (a research queue), and Ollama's newest in quick scans.
+- **Auto-research of new apps** (85): rules-only facts with quotes from the App Store and the app's own pages, so queued apps become "not yet verified" listings.
 - **Three looks** (80–82): Dark, In between (brighter slate, colour-blind-safe colours) and Light, as buttons in the header.
 - **What people say and show** (56, 73, 78): the X panel, YouTube videos and reviews, all loaded only when asked.
 - **Where it came from** (76): derived models traced to their original through `base_model`.

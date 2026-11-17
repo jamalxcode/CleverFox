@@ -42,11 +42,11 @@ jobs:
       - name: Quick scan - fill in models and datasets announced on X or newly released
         if: steps.mode.outputs.mode == 'x'
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}" }
-        run: node tools/import.mjs --x-only && node tools/providers.mjs
+        run: node tools/import.mjs --x-only && node tools/providers.mjs && node tools/autoresearch.mjs
       - name: Full refresh - import from Hugging Face and the Ollama library, benchmarks, providers, App Store, re-check
         if: steps.mode.outputs.mode == 'full'
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
-        run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/appstore.mjs && node tools/recheck.mjs
+        run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/autoresearch.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
         run: npm test && npm run build
       - name: Page check - phone widths and colour contrast (stops the deploy on a problem)

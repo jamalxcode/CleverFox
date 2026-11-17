@@ -31,6 +31,9 @@ function candidates() {
   const file = join(root, 'data', 'app-stores.json');
   const stores = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
   const seed = readdirSync(join(root, 'data', 'seed')).filter((f) => f.startsWith('apps')).flatMap((f) => JSON.parse(readFileSync(join(root, 'data', 'seed', f), 'utf8')));
+  // Auto-researched apps (tools/autoresearch.mjs) join the check: countries, look-alikes and languages come from here.
+  const researched = join(root, 'data', 'imported', 'apps-researched.json');
+  if (existsSync(researched)) seed.push(...JSON.parse(readFileSync(researched, 'utf8')));
   for (const r of seed) {
     const s = stores[r.id] || {};
     const fromUrl = (r.app_store_urls || []).map((u) => u.match(/apps\.apple\.com\/(?:([a-z]{2})\/)?.*?id(\d+)/)).find(Boolean);

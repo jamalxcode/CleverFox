@@ -88,7 +88,7 @@ function noCardNeeded(a) {
 const importDir = join(root, 'data', 'imported');
 const sourceFiles = [
   ...readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(seedDir, f)),
-  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => ['models.json', 'datasets.json'].includes(f)).sort().map((f) => join(importDir, f)) : []),
+  ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => ['models.json', 'datasets.json', 'apps-researched.json'].includes(f)).sort().map((f) => join(importDir, f)) : []),
 ];
 const records = sourceFiles.flatMap((f) => {
   const data = JSON.parse(readFileSync(f, 'utf8'));
@@ -733,6 +733,7 @@ function writeMovedPages() {
 // ---- new this week: a page and an RSS feed ----
 // Listings first seen in the last 7 days. The catalog's first day (the initial import) doesn't count as new.
 async function writeNewPages(records) {
+  R_LISTED_APP_IDS = records.flatMap((r) => (r.app_store_urls || []).map((u) => String(u).match(/id(\d{6,})/)?.[1]).filter(Boolean));
   const R = await import('../render.js');
   const esc = R.esc;
   const days = records.map((r) => (r.first_seen_at || '').slice(0, 10)).filter(Boolean).sort();
@@ -747,7 +748,7 @@ async function writeNewPages(records) {
   const listedSites = new Set(records.flatMap((r) => [r.url, ...(r.official_urls || [])]).filter(Boolean).map((u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return null; } }));
   const spotted = (XDATA.announcements || []).filter((a) => a.kind === 'launch' && a.created_at >= cutoff && !a.links.sites.some((h) => listedSites.has(h)))
     .sort((a, b) => b.likes - a.likes).slice(0, 40);
-  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${({ x: ' · 🆕 spotted on X', replicate: ' · 🆕 new on Replicate', openrouter: ' · 🆕 new on OpenRouter', 'maker-blog': ' · 🆕 in its maker\'s news', 'hf-papers': ' · 🆕 from a paper', hackernews: ' · 🆕 on Hacker News', bluesky: ' · 🆕 on Bluesky', 'ollama-new': ' · 🆕 new on Ollama' })[r.discovered_via?.source] || ''}</span><br>${esc(r.description)}</li>`;
+  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${({ 'app-store': ' · 🆕 researched from the App Store', 'product-hunt': ' · 🆕 researched from Product Hunt', x: ' · 🆕 spotted on X', replicate: ' · 🆕 new on Replicate', openrouter: ' · 🆕 new on OpenRouter', 'maker-blog': ' · 🆕 in its maker\'s news', 'hf-papers': ' · 🆕 from a paper', hackernews: ' · 🆕 on Hacker News', bluesky: ' · 🆕 on Bluesky', 'ollama-new': ' · 🆕 new on Ollama' })[r.discovered_via?.source] || ''}</span><br>${esc(r.description)}</li>`;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -855,6 +856,7 @@ ${GOATCOUNTER}
 }
 
 // "New this week": GitHub new projects and watchlist releases (tools/discover.mjs), kept apart on purpose.
+let R_LISTED_APP_IDS = []; // App Store ids of listed apps (set before New this week is written)
 const RULES_HN = 30; // keep in step with RULES.hnMinPoints in tools/discover.mjs
 function ghSections(R) {
   const d = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
@@ -878,7 +880,8 @@ function ghSections(R) {
   if (orNew.length) h += `<h2>☁️ New on OpenRouter (${orNew.length})</h2><p class="muted">Models added to <a href="https://openrouter.ai/models" rel="noopener">OpenRouter</a> this week. API-only ones are listed as "not yet verified"; ones that name a Hugging Face model are filled in from there.</p><ul class="new-list">${orNew.map((m) => `<li><a href="${esc(m.url)}" rel="noopener"><strong>${esc(m.name)}</strong></a> <span class="muted">· ${esc(m.owner)} · ${esc(R.fmtDate(m.created))}${m.input != null ? ` · $${m.input} / $${m.output} per million tokens` : ''}</span></li>`).join('')}</ul>`;
   const hn = (d.hacker_news?.launches || []).slice(0, 25);
   if (hn.length) h += `<h2>🟧 Launches on Hacker News (not reviewed)</h2><p class="muted">AI launches and releases with ${RULES_HN} or more points in the last few days. Anyone can post, so check the maker's own site; apps are queued for research.</p><ul class="new-list">${hn.map((l) => `<li><a href="${esc(l.url)}" rel="noopener"><strong>${esc(l.title)}</strong></a> <span class="muted">· ${esc(l.site)} · ▲ ${l.points} · <a href="${esc(l.hn_url)}" rel="noopener">discussion</a></span></li>`).join('')}</ul>`;
-  const apps = (d.app_store?.apps || []).slice(0, 30);
+  const listedIds = new Set(R_LISTED_APP_IDS);
+  const apps = (d.app_store?.apps || []).filter((a) => !listedIds.has(String(a.id))).slice(0, 30);
   if (apps.length) h += `<h2>📱 Popular AI apps not yet listed (research queue)</h2><p class="muted">Apps with 1,000+ ratings that App Store searches for "AI chat" and "AI assistant" show in ${d.app_store.countries.length} countries, checked ${esc(R.fmtDate(d.app_store.checked_at))}. They're added once their access facts are checked at the official site.</p><ul class="new-list">${apps.map((a) => `<li><a href="${esc(a.url)}" rel="noopener"><strong>${esc(a.name)}</strong></a> <span class="muted">· ${esc(a.seller)} · ⭐ ${a.rating ?? '?'} from ${R.fmtNum(a.ratings)} ratings · ${a.countries.map((c) => R.flag(c)).join('')}</span></li>`).join('')}</ul>`;
   const ph = (d.product_hunt?.launches || []).slice(0, 25);
   if (ph.length) h += `<h2>🐱 Launches on Product Hunt (research queue)</h2><p class="muted">Top launches in Product Hunt's AI topic over the last few days, by votes, via the <a href="https://www.producthunt.com/" rel="noopener">Product Hunt</a> API. Not reviewed: they're added once their access facts are checked at the official site.</p><ul class="new-list">${ph.map((l) => `<li><a href="${esc(l.url)}" rel="noopener"><strong>${esc(l.name)}</strong></a> <span class="muted">· ▲ ${l.votes}${l.created_at ? ` · ${esc(R.fmtDate(l.created_at))}` : ''}</span>${l.tagline ? `<br>${esc(l.tagline)}` : ''}</li>`).join('')}</ul>`;

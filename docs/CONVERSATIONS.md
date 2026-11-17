@@ -12,6 +12,23 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: filling gaps ourselves (auto-research)
+**Where:** Claude Code session.
+**Asked:**
+- Can we fill information gaps ourselves, so new listings can be featured?
+- Then "do it all, rules only first".
+
+**What can and can't be filled ourselves:** facts from official sources only.
+- **Can:** the App Store listing (countries per storefront, price, languages, seller), the app's own pricing, plans and FAQ pages, and model cards.
+- **Can't:** country spoofing through VPNs or proxies, test purchases, getting past bot blocks, or reading a site's silence as a fact.
+
+**Outcome (decision 85):** `tools/autoresearch.mjs`, every scan, rules only.
+- Takes up to 8 queued apps and reads their App Store listing and their own website (robots.txt respected).
+- Keeps a free plan or trial, ways to pay (pricing or billing pages only, strict words), sign-up, languages and categories, each with a quote and a link.
+- Makes "not yet verified" listings. The daily App Store check adds their countries, and the decision 67 review promotes them.
+- Tested offline: rules, a whole run, robots.txt, the 14-day refresh, and the validator.
+- AI reading stays an optional later step.
+
 ## 2026-11-17: Product Hunt
 **Where:** Claude Code session.
 **Asked:** steps to get a Product Hunt token. Then the owner picked "Confidential" as the client type, added the `PRODUCT_HUNT_TOKEN` secret, and asked to check it works.

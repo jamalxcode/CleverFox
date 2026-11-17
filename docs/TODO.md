@@ -52,6 +52,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | App Store searches (20 countries) | popular AI apps not yet listed: research queue | once a day | once a day | `tools/discover.mjs` |
 | Ollama newest | new local models within hours | ✓ | | `tools/import.mjs --x-only` |
 | Product Hunt (with `PRODUCT_HUNT_TOKEN`) | top AI launches, as an app research queue | ✓ | ✓ | `tools/discover.mjs` |
+| Auto-research (rules only) | queued apps become "not yet verified" listings with quoted official facts | ✓ | ✓ | `tools/autoresearch.mjs` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
 | Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |
@@ -83,6 +84,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Research the App Store queue ("Popular AI apps not yet listed" on New this week) and the Hacker News launches: add real AI apps to `data/seed/` with sourced access facts.
 - [ ] ModelScope: check its public API from a session that can reach modelscope.cn, then add it as a source for Chinese models that aren't on Hugging Face.
 - [ ] Add more makers' feeds (DeepSeek, Cohere, xAI, Sarvam, G42 and regional labs) once their feed URLs are confirmed on their own sites.
+- [ ] Auto-research (decision 85): after the first runs, review the new listings' quotes (`research.quotes` in each record) for false matches, and promote good ones with the decision 67 review. Tune the word rules if needed.
+- [ ] Optional AI step for auto-research: Claude reads the official pages and proposes facts with quotes, and the tool rejects any quote not on the page. Needs an Anthropic API key and a spending cap (an open decision).
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

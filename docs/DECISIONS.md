@@ -440,6 +440,15 @@ Quick scans also pick up **Ollama's newest models** (up to 12 new families), so 
 **Decision:** with the owner's Product Hunt developer token (repo secret `PRODUCT_HUNT_TOKEN`), every scan reads the most-voted launches in Product Hunt's AI topic from the last 3 days. They go into a research queue on New this week, credited to Product Hunt, and are never added automatically.
 **Why:** apps are the catalog's thinnest side. Product Hunt is where many AI apps launch, but a launch page doesn't state the access facts CleverFox needs (countries, ways to pay), so each needs checking at the official site first. Product Hunt's API terms allow non-commercial use like this one.
 
+### 85. Auto-research of queued apps, rules only
+**Decision:** every scan, `tools/autoresearch.mjs` takes up to 8 apps from the research queues (popular App Store apps not yet listed, Product Hunt launches) and makes "not yet verified" listings. Every fact comes from an official source, with its quote, link and date:
+- **The App Store listing:** name, seller, website, price, interface languages.
+- **The app's own website** (home page, then its pricing, plans or FAQ pages): a free plan or trial, ways to pay (from pricing or billing pages only, by strict words such as "M-Pesa", "UPI", "PayPal", "Visa"), and sign-up methods.
+- **Categories:** from the publisher's own words, by rule.
+
+Countries come later from the daily App Store check, which now includes these listings. Nothing is read from a site's silence. robots.txt is respected, the fetcher says who it is, and refusals are left alone. Each app is researched again after 14 days. The listings say "Not yet verified: collected automatically from official pages", stay out of picks and guides, and are promoted only after the quote-checked review (decision 67). AI reading of pages is a later, optional step (it would need an API key).
+**Why:** the owner asked to fill information gaps ourselves so new listings can be featured, rules only first. The App Store and the maker's own pages are official sources. A quote for every fact keeps them checkable, and unknown stays unknown.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

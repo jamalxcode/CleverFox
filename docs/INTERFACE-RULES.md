@@ -55,7 +55,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 ## 7. Honest labels
 
 - **Every fact links to its source** behind ⓘ, with the date it was checked.
-- **Unchecked apps and hosts** show "⚠️ Not yet verified" as their first badge, with a dashed border, and are kept out of picks and guides.
+- **Unchecked apps and hosts** show "⚠️ Not yet verified" as their first badge (auto-researched ones say "collected automatically from official pages"), with a dashed border, and are kept out of picks and guides.
 - **Estimates say so:** "≈ 4 GB+ recommended (estimate)". Publishers' own benchmark scores say "self-reported".
 - **Content found by search** (YouTube reviews, X posts, launches spotted on X) is labeled "not reviewed by CleverFox", and tone sorted by word rules is called "a rough guide".
 - **A listing is never named after something it only copies:** derived models show their relation ("fine-tune of …") and their original.
