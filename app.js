@@ -284,7 +284,7 @@ const LOOKS = ['', 'dim', 'light'];
 function applyTheme(t) {
   if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
   document.querySelectorAll('#look [data-look]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.look === t)));
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', t === 'light' ? '#f1faf5' : t === 'dim' ? '#1d2427' : '#04070a');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', t === 'light' ? '#f1faf5' : t === 'dim' ? '#3b4449' : '#04070a');
 }
 $('#look').addEventListener('click', (e) => { const b = e.target.closest('[data-look]'); if (!b) return; const t = LOOKS.includes(b.dataset.look) ? b.dataset.look : ''; store.set('look', t); applyTheme(t); });
 applyTheme(LOOKS.includes(store.get('look')) ? store.get('look') : '');

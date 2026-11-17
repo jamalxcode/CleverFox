@@ -21,12 +21,13 @@
   color-scheme: dark;
 }
 :root[data-theme="dim"] {
-  --bg: #1d2427; --surface: #252e32; --text: #e6efe9; --muted: #b0c4ba; --line: #3d4d49;
-  --accent: #3ddc97; --accent-text: #74e9b6; --accent-ink: #062016; --cyan: #7fd9ea; --magenta: #eb9bd8;
-  --chip: #2e3b3a;
-  --ok-bg: #1f4434; --ok: #8cf0bf; --no-bg: #4a2633; --no: #ffb8cf;
-  --unk-bg: #2b3532; --unk: #c9d9d0; --warn-bg: #4a3d14; --warn: #ffe08a;
-  --glow: 0 0 10px rgba(61, 220, 151, .12);
+  /* Brighter slate, with colour-blind-safe roles (Okabe–Ito): good = sky blue, no = orange, warning = yellow, links = lavender */
+  --bg: #3b4449; --surface: #465055; --text: #f6f8f7; --muted: #d3dcd8; --line: #66727a;
+  --accent: #56b4e9; --accent-text: #8fd3ff; --accent-ink: #08202e; --cyan: #d9ccff; --magenta: #f2b8e2;
+  --chip: #505b61;
+  --ok-bg: #23465e; --ok: #8fd3ff; --no-bg: #5a3a24; --no: #ffb47f;
+  --unk-bg: #3f4a4f; --unk: #e1e8e4; --warn-bg: #534c1e; --warn: #f5e663;
+  --glow: none;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
@@ -452,3 +453,11 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 .look-btns button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
 .look-btns button:focus-visible { outline: 2px solid var(--cyan); outline-offset: -2px; }
 @media (max-width: 720px) { .look-btns .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .look-btns button { padding: 6px 9px; } }
+/* In between: no colour-only signals: links underlined, badge borders neutral, no green glows */
+:root[data-theme="dim"] a { text-decoration: underline; text-underline-offset: 2px; }
+:root[data-theme="dim"] .badge { border-color: transparent; }
+:root[data-theme="dim"] .card:hover, :root[data-theme="dim"] .card.best { box-shadow: 0 0 0 1px var(--accent) inset; }
+:root[data-theme="dim"] .card.best { border-color: var(--accent); }
+:root[data-theme="dim"] .start-here, :root[data-theme="dim"] .compare, :root[data-theme="dim"] .xside { box-shadow: none; }
+:root[data-theme="dim"] .cap[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+:root[data-theme="dim"] h1 { text-shadow: none; }

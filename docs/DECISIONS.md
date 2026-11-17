@@ -413,6 +413,10 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** the look is chosen with three buttons side by side (🌙 Dark · 🌗 In between · ☀️ Light), with the current one shown pressed. Below 720 px only the icons show, and the words stay for screen readers.
 **Why:** the owner asked for buttons. With only three choices, buttons show them all at once and switch in one tap, where a dropdown takes two.
 
+### 82. In between: brighter and colour-blind friendly (refines 80)
+**Decision:** "In between" now uses a lighter slate grey (background #3b4449, surfaces #465055), with colour roles from the Okabe–Ito colour-blind-safe palette: good is sky blue, no is orange, warnings are yellow, and links are lavender and always underlined. Neon glows and coloured badge borders are off. Meaning never rests on colour alone: every verdict keeps its symbol (✓ ✗ ! ?) and its words.
+**Why:** the owner asked for a brighter in-between look that's colour-blind friendly. Green against red is the pair most people with colour vision deficiency can't tell apart. Blue against orange and yellow stays distinct under deuteranopia and protanopia (checked with simulated colour blindness), and the page check confirms WCAG AA contrast.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

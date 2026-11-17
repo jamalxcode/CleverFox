@@ -12,6 +12,15 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: brighter, colour-blind-friendly In between
+**Where:** Claude Code session.
+**Asked:** make In between brighter, and colour-blind friendly.
+**Outcome (decision 82):**
+- In between moved to a lighter slate grey.
+- Colours follow the Okabe–Ito palette: good is sky blue, no orange, warnings yellow, links lavender and underlined.
+- Checked by simulating deuteranopia, protanopia and tritanopia on a sample of every verdict and badge: ✓ stays distinct, and ✗ and ! keep their symbols and words.
+- WCAG AA contrast passes in all three looks.
+
 ## 2026-11-17: look buttons
 **Where:** Claude Code session.
 **Asked:** make the view modes buttons, not a dropdown.

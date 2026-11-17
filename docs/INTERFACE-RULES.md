@@ -63,7 +63,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 ## 8. Look and feel (decision 72)
 
 - **Matrix look by default:** dark terminal colours, neon green accents (cyan and magenta for secondary marks), monospace for headings, labels, chips and buttons, and the sans-serif Inter for body text.
-- **Three looks** (decision 80): Dark (Matrix, the default), In between (dim slate: flat background, no scanlines, faint rain, no glow) and Light ("terminal paper"). They're chosen with three buttons in the header (🌙 Dark · 🌗 In between · ☀️ Light; the pressed one is current, icons only on phones) and stored as `look` (`''`, `dim`, `light`). Every page sets it before drawing. The browser's light/dark preference doesn't choose the look.
+- **Three looks** (decision 80): Dark (Matrix, the default), In between (a brighter slate grey with colour-blind-safe colours: good is sky blue, no is orange, warnings yellow, links lavender and underlined; flat background, no scanlines, faint rain, no glow; decision 82) and Light ("terminal paper"). They're chosen with three buttons in the header (🌙 Dark · 🌗 In between · ☀️ Light; the pressed one is current, icons only on phones) and stored as `look` (`''`, `dim`, `light`). Every page sets it before drawing. The browser's light/dark preference doesn't choose the look.
 - **Decoration never costs readability:** the digital rain sits behind the header only, faintly, pauses when the tab is hidden, and is off for reduced motion and in light mode. Scanlines are faint and off in light mode.
 - **Colour roles:** green means good (✓ verdicts, positive badges) and the one primary button. Links are cyan, warnings amber, problems pink-red. Headings use the text colour. Badges, verdicts and facts use the body font, and monospace is kept for headings, labels, buttons and commands.
 - **Colours are tokens** on `:root` (`--bg`, `--surface`, `--text`, `--muted`, `--accent`, `--accent-text`, `--ok`, `--no`, `--warn`, …), redefined for light mode. Never hard-code a colour in a component.
@@ -77,6 +77,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **No sideways scrolling at 320 and 375 px** (`tools/ui-check.cjs`; four phone sizes in `tools/phone-check.cjs`). Long names wrap (`overflow-wrap: anywhere`).
 - **Phones:** the side panels (X, YouTube) drop below the listing under 900 px. Pick columns stack.
 - **Keyboard and screen readers:** tabs use `role="tab"` with arrow keys. Toggle buttons use `aria-pressed` (capabilities, ☆ Save). Live regions announce picks and result counts. Every control has a label or `aria-label`. Touch targets are at least about 28–40 px.
+- **Colour blindness:** meaning never rests on colour alone. Every verdict has a symbol (✓ ✗ ! ?) and words, and warnings have ⚠️. In between uses a colour-blind-safe palette (Okabe–Ito: blue, orange, yellow) for anyone who wants extra help (decision 82).
 - **Motion:** respect `prefers-reduced-motion` (no rain, no blinking cursor, no card transitions).
 
 ## 10. Words
