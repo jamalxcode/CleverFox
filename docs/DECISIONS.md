@@ -436,6 +436,10 @@ Quick scans also pick up **Ollama's newest models** (up to 12 new families), so 
 
 **Why:** the owner asked for more places to catch AI announcements, preferring ones that need no sign-up. The statistics showed X had added only 3 listings, and the catalog lacked closed API models, apps and announcements made before Hugging Face. Each source keeps its last good data if it fails. Its findings go through the usual checks (one record per model, nothing invented, sources and dates), and anything that can't be checked automatically is labelled "not reviewed" or queued for research.
 
+### 84. Product Hunt as an app research queue
+**Decision:** with the owner's Product Hunt developer token (repo secret `PRODUCT_HUNT_TOKEN`), every scan reads the most-voted launches in Product Hunt's AI topic from the last 3 days. They go into a research queue on New this week, credited to Product Hunt, and are never added automatically.
+**Why:** apps are the catalog's thinnest side. Product Hunt is where many AI apps launch, but a launch page doesn't state the access facts CleverFox needs (countries, ways to pay), so each needs checking at the official site first. Product Hunt's API terms allow non-commercial use like this one.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

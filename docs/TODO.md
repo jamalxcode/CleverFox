@@ -51,6 +51,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | Bluesky (public search) | posts linking to Hugging Face; skipped if sign-in is needed | ✓ | ✓ | `tools/discover.mjs` |
 | App Store searches (20 countries) | popular AI apps not yet listed: research queue | once a day | once a day | `tools/discover.mjs` |
 | Ollama newest | new local models within hours | ✓ | | `tools/import.mjs --x-only` |
+| Product Hunt (with `PRODUCT_HUNT_TOKEN`) | top AI launches, as an app research queue | ✓ | ✓ | `tools/discover.mjs` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
 | Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |

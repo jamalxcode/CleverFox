@@ -37,7 +37,7 @@ jobs:
         run: node tools/x.mjs
       - name: Discover - Hugging Face new releases, llm-releases.com, GitHub, YouTube, Replicate
         if: steps.mode.outputs.mode != 'none'
-        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", GH_TOKEN: "${{ github.token }}", YOUTUBE_API_KEY: "${{ secrets.YOUTUBE_API_KEY }}", REPLICATE_API_TOKEN: "${{ secrets.REPLICATE_API_TOKEN }}" }
+        env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", GH_TOKEN: "${{ github.token }}", YOUTUBE_API_KEY: "${{ secrets.YOUTUBE_API_KEY }}", REPLICATE_API_TOKEN: "${{ secrets.REPLICATE_API_TOKEN }}", PRODUCT_HUNT_TOKEN: "${{ secrets.PRODUCT_HUNT_TOKEN }}" }
         run: node tools/discover.mjs
       - name: Quick scan - fill in models and datasets announced on X or newly released
         if: steps.mode.outputs.mode == 'x'

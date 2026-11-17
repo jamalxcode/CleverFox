@@ -37,7 +37,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 
 - **LMArena ranks** beside independent benchmarks, once the leaderboard data's license is confirmed.
 - **A headless browser for re-checking** the few JavaScript-only source pages (honest user agent, refusals respected).
-- **More reading sources than X:** Reddit (its API terms need permission), Product Hunt (needs a token), forums and app-store reviews. Each needs its permitted use checked.
+- **More reading sources than X:** Reddit (its API terms need permission), forums and app-store reviews. Each needs its permitted use checked.
 - **AI for extraction or classification:** none is used now. Only with a labelled test set and a spending cap.
 - **An anonymous "Next step" event** to see whether "How to start" helps people, with nothing personal.
 - **Per-country guides** ("Pay without a card in Kenya"), now that ways to pay are country-aware. One page per country, not per filter combination.

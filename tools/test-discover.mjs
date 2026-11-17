@@ -1,6 +1,6 @@
 // Offline tests for tools/discover.mjs.
 import assert from 'node:assert/strict';
-import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate, youtubeReviews, reviewQuery, openrouterNew, feedItems, hfPapers, hackerNews, bluesky, appStoreSpotted } from './discover.mjs';
+import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate, youtubeReviews, reviewQuery, openrouterNew, feedItems, hfPapers, hackerNews, bluesky, appStoreSpotted, productHunt } from './discover.mjs';
 import { replicateRecord, replicateMatch, parentsFromMeta, traceOrigin, openrouterRecord } from './import.mjs';
 
 assert.equal(robotsAllows('', '/'), true, 'no robots.txt: allowed');
@@ -144,3 +144,11 @@ console.log('All discovery tests passed.');
 await assert.rejects(hackerNews({ now: N, fetchImpl: async () => { throw new Error('offline'); } }), /every Hacker News search failed/);
 await assert.rejects(appStoreSpotted({ now: N, countries: ['KE'], pause: 0, known: { ids: new Set(), names: new Set() }, fetchImpl: async () => { throw new Error('offline'); } }), /every App Store search failed/);
 console.log('Failure-keeps-last-data tests passed.');
+// Product Hunt: skipped without a token; a GraphQL query with the token; errors throw so the last data is kept.
+assert.equal((await productHunt({ token: '' })).skipped, 'no PRODUCT_HUNT_TOKEN');
+let phReq = null;
+const ph = await productHunt({ now: N, token: 'tok', fetchImpl: async (u, o) => { phReq = { u, o }; return json({ data: { posts: { edges: [{ node: { id: '1', name: 'Acme AI', tagline: 'Chat with docs', url: 'https://www.producthunt.com/posts/acme-ai?utm_source=x', votesCount: 321, createdAt: '2026-11-16T08:00:00Z', topics: { edges: [{ node: { name: 'Artificial Intelligence' } }] } } }] } } }); } });
+assert.equal(phReq.u, 'https://api.producthunt.com/v2/api/graphql'); assert.equal(phReq.o.headers.authorization, 'Bearer tok'); assert.equal(phReq.o.method, 'POST');
+assert.deepEqual(ph.launches.map((l) => [l.name, l.votes, l.url]), [['Acme AI', 321, 'https://www.producthunt.com/posts/acme-ai']]);
+await assert.rejects(productHunt({ now: N, token: 'tok', fetchImpl: async () => json({ errors: [{ message: 'invalid_oauth_token' }] }) }), /invalid_oauth_token/);
+console.log('Product Hunt tests passed.');

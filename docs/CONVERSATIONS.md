@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: Product Hunt
+**Where:** Claude Code session.
+**Asked:** steps to get a Product Hunt token. Then the owner picked "Confidential" as the client type, added the `PRODUCT_HUNT_TOKEN` secret, and asked to check it works.
+**Outcome (decision 84):**
+- A Product Hunt source in `tools/discover.mjs`: GraphQL API v2, the top AI launches of the last 3 days.
+- Shown as a research queue on New this week, never added automatically.
+- Tested offline, then checked with a manual quick scan on GitHub.
+
 ## 2026-11-17: docs brought up to date (4)
 **Where:** Claude Code session.
 **Asked:** update the repo with design decisions and our chat.

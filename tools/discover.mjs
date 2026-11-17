@@ -9,6 +9,7 @@
 //  6. No sign-up needed: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers (models and datasets
 //     linked to papers), Hacker News launches, Bluesky posts (if its public search answers), and popular AI apps in
 //     App Store searches per country (once a day).
+//  7. Product Hunt (PRODUCT_HUNT_TOKEN): the top AI launches of the last few days, as an app research queue.
 // Models and datasets found here are filled in from Hugging Face by tools/import.mjs (--x-only in quick scans).
 // Output: data/imported/discover.json. Each source keeps its last data if it fails.
 //
@@ -451,13 +452,30 @@ export async function appStoreSpotted({ now = new Date(), prev = {}, fetchImpl =
   return { checked_at: now.toISOString(), countries, apps: [...found.values()].sort((a, b) => b.countries.length - a.countries.length || b.ratings - a.ratings).slice(0, 60) };
 }
 
+// ---- 7. Product Hunt (GraphQL API v2 with a developer token; skipped without PRODUCT_HUNT_TOKEN) ----
+// Top launches in the "artificial-intelligence" topic from the last phDays days, by votes. A research queue on New this
+// week, never added to the catalog automatically (their access facts must be checked first).
+export const PH_QUERY = `query($after: DateTime!) { posts(first: 30, order: VOTES, topic: "artificial-intelligence", postedAfter: $after) { edges { node { id name tagline url website votesCount commentsCount createdAt topics(first: 5) { edges { node { slug name } } } } } } }`;
+export async function productHunt({ now = new Date(), prev = {}, fetchImpl = fetch, token = process.env.PRODUCT_HUNT_TOKEN } = {}) {
+  if (!token) return { ...prev, checked_at: now.toISOString(), skipped: 'no PRODUCT_HUNT_TOKEN' };
+  const after = new Date(now - 3 * 86400000).toISOString();
+  const res = await fetchImpl('https://api.producthunt.com/v2/api/graphql', { method: 'POST', headers: { 'user-agent': UA, accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify({ query: PH_QUERY, variables: { after } }) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const d = await res.json();
+  if (d.errors?.length) throw new Error(String(d.errors[0].message || 'GraphQL error').slice(0, 120));
+  const launches = (d.data?.posts?.edges || []).map((e) => e.node).filter((n) => n?.url).map((n) => ({
+    name: String(n.name || '').slice(0, 120), tagline: String(n.tagline || '').slice(0, 200), url: String(n.url).split('?')[0], website: n.website || null,
+    votes: n.votesCount || 0, comments: n.commentsCount || 0, created_at: n.createdAt || null, topics: (n.topics?.edges || []).map((t) => t.node?.name).filter(Boolean) }));
+  return { checked_at: now.toISOString(), launches };
+}
+
 async function main() {
   mkdirSync(dirname(OUT), { recursive: true });
   const prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
   const out = { ...prev };
   for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })], ['replicate', () => replicate({ prev: prev.replicate || {} })],
     ['openrouter', () => openrouter({ prev: prev.openrouter || {} })], ['maker_feeds', () => makerFeeds({ prev: prev.maker_feeds || {} })], ['hf_papers', () => hfPapers()],
-    ['hacker_news', () => hackerNews()], ['bluesky', () => bluesky()], ['app_store', () => appStoreSpotted({ prev: prev.app_store || {} })]]) {
+    ['hacker_news', () => hackerNews()], ['bluesky', () => bluesky()], ['app_store', () => appStoreSpotted({ prev: prev.app_store || {} })], ['product_hunt', () => productHunt({ prev: prev.product_hunt || {} })]]) {
     try { out[key] = await fn(); console.log(`Discover ${key}: ${JSON.stringify(Object.fromEntries(Object.entries(out[key]).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.length])))}`); }
     catch (e) { console.warn(`Discover ${key} failed (${e.message}); keeping the last data`); }
   }

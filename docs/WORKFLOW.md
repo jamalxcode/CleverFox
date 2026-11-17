@@ -100,6 +100,7 @@ Its old page then explains where it went.
 | `X_MONTHLY_READS` | repo variable | Monthly X read budget (default 10,000; set to 2,000) |
 | `HF_TOKEN` | repo secret (optional) | Higher Hugging Face rate limits |
 | `AA_API_KEY` | repo secret (optional) | Artificial Analysis benchmarks |
+| `PRODUCT_HUNT_TOKEN` | repo secret (optional) | Product Hunt: top AI launches for the app research queue (a developer token from producthunt.com/v2/oauth/applications) |
 | `REPLICATE_API_TOKEN` | repo secret (optional) | Replicate: new models and their tasks (a free account's API token; reading the model list costs nothing) |
 | `YOUTUBE_API_KEY` | repo secret (optional) | YouTube official channels' uploads and keyword search (RSS fallback without it, which currently answers 404) |
 | `X_POST_ENABLED` | repo variable (optional) | `true` turns on the weekly X post |
