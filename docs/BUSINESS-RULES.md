@@ -328,6 +328,16 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
 The interface rules behind these (one primary action, defaults, continuation, privacy, look, accessibility, words) are in [INTERFACE-RULES.md](INTERFACE-RULES.md).
 
 
+- **Verdict strip (decision 79, `verdicts()` in `render.js`):** up to 6 plain answers per listing.
+  - **Models:** memory fit when memory figures exist. With a device chosen: ✓ fits (needs at most 80%), ! tight, ✗ needs more, or ! may fit when the figure is a rough estimate. Without one: "runs on your own device, N GB or more". Also: online, and free when ≤ $0 or from $N per million tokens; free to download; for API-only models, the API in your country; no sign-up and open license, or the first barrier.
+  - **Datasets:** sign-in gate, and commercial use.
+  - **Apps and hosts:** your country (a data center there counts), free, pay without a card (or via Google Play in your country), and offline on your phone.
+  - **Your language:** if chosen, whether it's spoken.
+- **Ways to pay by country:** with a country chosen, a method counts only if its note names no country, or names that one. Notes naming countries by name, UK, US, UAE, or EEA/EU/SEPA (the EEA countries) don't count elsewhere. Used by verdicts, the "Using it in" box, picks, the highlighting, the "usable without a card" filter and compare.
+- **Plain description:** template descriptions ("… model published by X on Hugging Face", "Local model in the Ollama library …", Replicate's template) become one sentence from the stated tasks and capabilities, plus "runs on your own device" or "online through API providers".
+- **Badges:** every warning (not yet verified, don't touch, reported, possibly discontinued, look-alikes, pricing page changed or facts old, uncensored), then up to 3 in total with positives (independent score, praised on X, local prices). Everything else goes in the quiet facts line.
+- **Default order:** suits you first, then, when no capability or search is chosen, everyday models (chat, writing, coding, images, speech, video, translation, vision) before others. Then checked listings, then popularity.
+- **Picks on every visit** without a link hash: the visitor's last question, or chat on my computer.
 - **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **What people show on YouTube (decision 78):** a panel under "What people say on X" on every listing page except datasets.
   - **Reviews:** YouTube searches for "<name> review" (with the publisher for names of 4 characters or less), 15 listings per scan, least recently checked first. Each listing is re-checked after 7 days.

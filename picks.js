@@ -1,7 +1,7 @@
 // Top picks for "I want to <task> on <device> from <country>". Built only from stated facts
 // (memory fit, independent benchmarks, popularity, praise on X, free status, country availability,
 // payment without a card); every pick carries the reasons it was picked. No hidden quality score.
-import { availableIn, popularity, countryName, fmtNum, CAPS, speaks, langName, playNoCard, shortPay } from './render.js?v=__BUILD__';
+import { availableIn, popularity, countryName, fmtNum, CAPS, speaks, langName, playNoCard, shortPay, payNoCard } from './render.js?v=__BUILD__';
 const langReason = (r, l) => speaks(r, l) ? `🗣️ ${langName(l)}` : null;
 const langBonus = (r, l) => speaks(r, l) ? 3 : 0;
 
@@ -58,8 +58,8 @@ export function pickApps(apps, { task, device, country, ulang }) {
     const local = country && r.publisher_region?.value === country;
     const free = r.answers?.free;
     const reasons = [here === 'yes' && `✓ available in ${countryName(country)}`, local && `🏠 made in ${countryName(country)}`, free === 'free' ? '🆓 free' : free === 'free_tier' ? '🆓 free tier' : null,
-      r.answers?.pay_without_card ? '🪙 pay without a card' : (playNoCard(r, country)[0] && `🪙 via Google Play: ${[...new Set(playNoCard(r, country).map(shortPay))].slice(0, 2).join(', ')}`), r.access?.local_currency_pricing?.value === true && '💱 local prices', r.official_store?.rating && `⭐ ${r.official_store.rating} on the App Store`, r.on_device && '📱 works offline on your phone', langReason(r, ulang)].filter(Boolean);
-    const score = (here === 'yes' ? 3 : 0) + (local ? 2 : 0) + (free === 'free' ? 2.5 : free === 'free_tier' ? 2 : 0) + (r.answers?.pay_without_card || playNoCard(r, country).length ? 1.5 : 0) + (r.access?.local_currency_pricing?.value === true ? 0.5 : 0) + (r.official_store?.rating ? r.official_store.rating / 2.5 : 0)
+      payNoCard(r.access, country) ? '🪙 pay without a card' : (playNoCard(r, country)[0] && `🪙 via Google Play: ${[...new Set(playNoCard(r, country).map(shortPay))].slice(0, 2).join(', ')}`), r.access?.local_currency_pricing?.value === true && '💱 local prices', r.official_store?.rating && `⭐ ${r.official_store.rating} on the App Store`, r.on_device && '📱 works offline on your phone', langReason(r, ulang)].filter(Boolean);
+    const score = (here === 'yes' ? 3 : 0) + (local ? 2 : 0) + (free === 'free' ? 2.5 : free === 'free_tier' ? 2 : 0) + (payNoCard(r.access, country) || playNoCard(r, country).length ? 1.5 : 0) + (r.access?.local_currency_pricing?.value === true ? 0.5 : 0) + (r.official_store?.rating ? r.official_store.rating / 2.5 : 0)
       + (device === 'phone' && r.on_device ? 1.5 : 0) + Math.log10(1 + (r.official_store?.ratings || 0)) * 0.3 + langBonus(r, ulang);
     return { r, score, reasons, key: r.id };
   }));

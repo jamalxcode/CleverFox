@@ -658,12 +658,8 @@ async function writeListingPages(records, countryList) {
 </header>
 <main class="wrap listing">
   <div class="listing-grid">
-  <article class="card card-page">
-    <div class="card-head"><h1>${R.esc(r.name)}</h1><span class="pub">${R.esc(pub)}${region}</span></div>
-    <p class="desc">${R.esc(r.description)}</p>
-    ${R.goodForLine(r)}
-    <div class="badges">${R.cardBadges(r)}</div>
-    ${R.detail(r)}
+  <article class="card card-page" id="listing">
+    ${R.listingInner(r)}
   </article>
   <div class="side-col">${R.xPanel(r)}${R.ytPanel(r)}</div>
   </div>
@@ -671,7 +667,30 @@ async function writeListingPages(records, countryList) {
 <footer class="wrap foot">
   <p>Every fact links to its source and the date it was checked; "unknown" means we couldn't confirm it. Catalog data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${r.independent_benchmarks?.length ? ` · Benchmarks: ${[...new Set(r.independent_benchmarks.map((x) => x.source))].map((s) => s === 'Epoch AI' ? '<a href="https://epoch.ai/benchmarks">Epoch AI</a> (CC BY 4.0)' : '<a href="https://artificialanalysis.ai/">Artificial Analysis</a>').join(', ')}` : ''} · <a href="${base}">CleverFox</a></p>
 </footer>
-<script type="module">import { wireShare } from '${base}render.js?v=${build}'; import { wireListingPage } from '${base}you.js?v=${build}'; wireShare(document); wireListingPage(${JSON.stringify({ id: r.id, name: r.name, type: r.type, publisher: r.publisher_name || r.publisher }).replace(/</g, '\\u003c')}, '${path}');</script>
+<script type="module">
+import { wireShare, view, setCountries, listingInner } from '${base}render.js?v=${build}';
+import { wireListingPage } from '${base}you.js?v=${build}';
+const brief = ${JSON.stringify({ id: r.id, name: r.name, type: r.type, publisher: r.publisher_name || r.publisher }).replace(/</g, '\\u003c')};
+wireShare(document); wireListingPage(brief, '${path}');
+// Redraw for this visitor's device, country and language (kept in this browser), and when they pick a country here.
+const get = (k) => { try { return localStorage.getItem(k) || ''; } catch { return ''; } };
+const box = document.getElementById('listing');
+let full = null;
+async function paint() {
+  if (!full) {
+    const meta = await fetch('${base}data/meta.json').then((x) => x.json()).catch(() => null);
+    if (meta) { setCountries(meta.countries || []); view.runtimes = meta.runtimes || {}; view.storePayments = meta.store_payments || null; }
+    full = await fetch('record.json').then((x) => x.json()).catch(() => null);
+    if (!full) return;
+  }
+  Object.assign(view, { base: '${base}', site: '${SITE}', country: get('country'), mem: +get('mem') || 0, ulang: get('ulang') });
+  box.innerHTML = listingInner(full);
+  if (navigator.share) box.querySelectorAll('[data-act="share"]').forEach((b) => { b.hidden = false; });
+  wireListingPage(brief, '${path}');
+}
+if (get('country') || get('mem') || get('ulang')) paint();
+box.addEventListener('change', (e) => { if (!e.target.matches('.use-country')) return; try { localStorage.setItem('country', e.target.value); } catch {} paint(); });
+</script>
 ${r.x_buzz?.posts ? `<script>document.getElementById('x-load')?.addEventListener('click', function () { this.disabled = true; this.textContent = 'Loading posts from X…'; var s = document.createElement('script'); s.async = true; s.src = 'https://platform.twitter.com/widgets.js'; document.body.appendChild(s); });</script>` : ''}
 ${GOATCOUNTER}
 </body>

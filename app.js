@@ -96,7 +96,15 @@ function renderFilters() {
     }
     return `<select data-key="${d.key}" aria-label="${esc(d.label)}"><option value="">${esc(d.label)}</option>${d.opts.map(([v, l]) => `<option value="${esc(v)}"${f[d.key] === v ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`;
   }).join('');
+  labelFiltersBtn();
 }
+// Filters fold behind one button that shows how many are in use; they open by themselves when some are.
+function labelFiltersBtn() {
+  const n = Object.values(state.f[state.type]).filter(Boolean).length;
+  $('#filters-btn').textContent = `⚙️ Filters${n ? ` (${n})` : ''}`;
+  if (n && $('#filters').hidden) { $('#filters').hidden = false; $('#filters-btn').setAttribute('aria-expanded', 'true'); }
+}
+$('#filters-btn').addEventListener('click', () => { const open = $('#filters').hidden; $('#filters').hidden = !open; $('#filters-btn').setAttribute('aria-expanded', String(open)); });
 
 function matches(r) {
   const f = state.f[r.type];
@@ -141,7 +149,7 @@ function matches(r) {
     if (f.gpu && !(Array.isArray(r.gpu_types?.value) && r.gpu_types.value.includes(f.gpu))) return false;
     if (f.kind && !(r.kinds || []).includes(f.kind)) return false;
     if (f.method && !hasMethod(f.method)) return false;
-    if (f.nocard && !payNoCard(r.access)) return false;
+    if (f.nocard && !payNoCard(r.access, state.country)) return false;
   }
   return true;
 }
@@ -162,14 +170,18 @@ function render() {
   const all = recordsOf(state.type);
   const recs = all.filter(matches);
   const weight = (r) => (r.warning === 'dont_touch' ? 2 : 0) + (r.verification_status === 'verified' ? 0 : 1);
-  recs.sort((a, b) => suits(a) - suits(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
+  // With nothing narrowed, everyday models (chat, writing, coding, images, speech…) come before building blocks such as embeddings.
+  const EVERYDAY = ['chat', 'writing', 'coding', 'images', 'speech', 'video', 'translation', 'vision'];
+  const plain = (r) => (state.cap || state.q || r.type !== 'model') ? 0 : (r.answers?.good_for || []).some((c) => EVERYDAY.includes(c)) ? 0 : 1;
+  recs.sort((a, b) => suits(a) - suits(b) || plain(a) - plain(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name));
   $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
   $('#empty').hidden = recs.length > 0;
   // The tab and the filters in use, never the words typed.
   if (!recs.length && (state.q || Object.values(state.f[state.type]).some(Boolean))) trackEmpty(`search-empty/${state.type}/${Object.entries(state.f[state.type]).filter(([, v]) => v).map(([k]) => k).sort().join('+') || 'text'}${state.cap ? '/' + state.cap : ''}`);
   $('#more-btn').hidden = recs.length <= state.limit;
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
-  $('#summary').textContent = `${recs.length} of ${all.length} ${TYPE_WORDS[state.type]}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+  const narrowed = activeFilters().length;
+  $('#summary').textContent = `${narrowed ? `${recs.length} of ${all.length}` : all.length} ${TYPE_WORDS[state.type]}${!narrowed && state.type === 'model' ? ', everyday ones first' : ''}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
   if (activeFilters().length) $('#summary').insertAdjacentHTML('beforeend', ' · <button type="button" class="linkish" data-clear-all>clear filters</button>');
   $('#empty-help').innerHTML = recs.length ? '' : emptyHelp();
   rememberView();
@@ -259,11 +271,12 @@ $('#filters').addEventListener('change', (e) => {
   if (!k) return;
   state.f[state.type][k] = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
   state.limit = PAGE;
+  labelFiltersBtn();
   render();
 });
-$('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncView(); store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); renderSetup(); });
+$('#mem').addEventListener('change', (e) => { state.mem = +e.target.value; syncView(); store.set('mem', e.target.value === '0' ? '' : e.target.value); renderFilters(); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
 $('#ulang').addEventListener('change', (e) => { state.ulang = e.target.value; syncView(); store.set('ulang', state.ulang); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
-$('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); renderSetup(); });
+$('#country').addEventListener('change', (e) => { state.country = e.target.value; syncView(); store.set('country', state.country); renderFilters(); render(); renderSetup(); if ($('#picks').childElementCount) showPicks(false); });
 
 // Two looks: "Matrix" (dark, the default) and light "terminal paper".
 function applyTheme(t) {
@@ -326,7 +339,7 @@ function compareTable(recs) {
     ['Independent benchmark', (r) => esc((r.independent_benchmarks || []).map((b) => `${b.id === 'epoch_eci' ? 'ECI' : 'AA'} ${b.display}`).join(', ') || '—')],
     ['License', (r) => esc(r.license?.value || '—')],
     [state.country ? `Available in ${countryName(state.country)}` : 'Available in your country', (r) => state.country ? esc(r.type === 'model' && (r.distributions || []).some((d) => d.availability === 'downloadable') ? 'download' : availableIn(r.access, state.country)) : 'choose your country'],
-    ['Pay without a card', (r) => yes(r.answers?.pay_without_card ?? (r.answers?.online_no_card || null))],
+    ['Pay without a card', (r) => yes(r.access ? payNoCard(r.access, state.country) : (r.answers?.online_no_card || null))],
     ['Offline on a phone', (r) => r.type === 'app' ? yes(!!r.on_device) : '—'],
     ['Praised on X', (r) => yes(!!r.answers?.x_praised)],
   ];
@@ -422,21 +435,17 @@ document.addEventListener('click', (e) => {
 
 // ---- effortless start: what's set, what's missing, one tap to fix (country suggested from the browser's language) ----
 function renderSetup() {
+  // The pickers are the setup: each shows ✓ once set. The country suggested by the browser's language is one tap, never set by itself.
   const guess = (navigator.language || '').split('-')[1]?.toUpperCase();
   const known2 = guess && catalog.countries.some(([c]) => c === guess) ? guess : null;
-  const part = (ok, label, fix) => `<span class="${ok ? 'ok' : 'todo'}">${ok ? '✓' : '○'} ${label}</span>${ok ? '' : ` ${fix}`}`;
-  const parts = [
-    part(state.mem, state.mem ? `device: ${state.mem} GB` : 'device memory', '<button type="button" class="linkish" data-focus="#mem">set it</button> <span class="muted">(models that fit come first)</span>'),
-    part(state.country, state.country ? `country: ${flag(state.country)} ${esc(countryName(state.country))}` : 'country', known2 ? `<button type="button" class="linkish" data-set-country="${known2}">${flag(known2)} ${esc(countryName(known2))}?</button> <button type="button" class="linkish" data-focus="#country">another</button>` : '<button type="button" class="linkish" data-focus="#country">set it</button> <span class="muted">(what works there and how to pay)</span>'),
-  ];
-  if (state.ulang) parts.push(part(true, `language: ${esc(langName(state.ulang))}`));
-  $('#setup').innerHTML = `Your setup: ${parts.join(' · ')}`;
-  $('#setup').hidden = false;
-  document.querySelector('.pick-hint')?.toggleAttribute('hidden', !!(state.mem && state.country));
+  $('#pick-mem').classList.toggle('set', !!state.mem);
+  $('#pick-country').classList.toggle('set', !!state.country);
+  $('#pick-ulang').classList.toggle('set', !!state.ulang);
+  $('#country-guess').innerHTML = !state.country && known2 ? `<button type="button" class="linkish" data-set-country="${known2}">${flag(known2)} ${esc(countryName(known2))}?</button>` : '';
 }
-$('#setup').addEventListener('click', (e) => {
-  const f = e.target.closest('[data-focus]'); if (f) { $(f.dataset.focus).focus(); return; }
-  const c = e.target.closest('[data-set-country]'); if (c) { $('#country').value = c.dataset.setCountry; $('#country').dispatchEvent(new Event('change')); if ($('#picks').childElementCount) showPicks(false); }
+$('#country-guess').addEventListener('click', (e) => {
+  const c = e.target.closest('[data-set-country]'); if (!c) return;
+  $('#country').value = c.dataset.setCountry; $('#country').dispatchEvent(new Event('change'));
 });
 
 // ---- your CleverFox: new for you, saved, recently viewed, reminders, your data ----
@@ -495,9 +504,9 @@ if (!location.hash && youData.view) {
   for (const t of TYPES) if (v.f?.[t] && typeof v.f[t] === 'object') state.f[t] = v.f[t];
 }
 renderSetup();
-if (!started && !cmpHash && youData.picks && TASKS.includes(youData.picks.task)) {
-  // Returning visitors see their picks again, refreshed with today's catalog, without a tap.
-  $('#s-task').value = youData.picks.task; $('#s-device').value = youData.picks.device || 'computer';
+if (!started && !cmpHash) {
+  // Picks come first: returning visitors get their own question again, first visits a sensible default (chat on my computer).
+  if (youData.picks && TASKS.includes(youData.picks.task)) { $('#s-task').value = youData.picks.task; $('#s-device').value = youData.picks.device || 'computer'; }
   showPicks(false);
 }
 if (started) {

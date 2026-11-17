@@ -12,6 +12,31 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: UI critique, then the clarity pass
+**Where:** Claude Code session.
+**Asked:**
+- Critique the interface: how to make the information immediately clear.
+- Then "do it all and merge to main".
+
+**The critique, in short:**
+- explanations came before the question, with repeated hints and two "language" pickers;
+- the first results were embeddings;
+- about 27 controls came before the first result;
+- cards had 6–9 badges of equal weight with raw data mixed in;
+- details opened with 9 buttons and emoji sentences;
+- access facts were scattered, with notes behind a hover-only asterisk and the sign-up text cut mid-word;
+- the X panel showed zeros, and lines repeated the side panels;
+- everything was green and monospace.
+
+**Outcome (decision 79):**
+- A verdict strip on every card and listing page, plain descriptions, flag badges plus a quiet facts line.
+- One question bar with the setup pickers, picks first, everyday models first, folded filters, and phone tabs in a 2×2 grid.
+- Details: an action row with menus, How to start, "Using it in [country]" with notes written out, labelled facts with glossary links, then links.
+- Listing pages redraw with the visitor's choices, and have a country picker. The X panel says "not much talk yet" when there's no signal.
+- Colour roles: green for good, cyan links. Body font for badges.
+- **Found and fixed on the way:** ways to pay noted for other countries counted everywhere (ChatGPT showed Pix and UPI for Kenya). Payment methods are now country-aware in verdicts, picks, highlighting, the filter and compare, with tests.
+- Tests, the page check (8 pages, phones, contrast in both looks) and a browser walkthrough pass.
+
 ## 2026-11-16: design ideas, lessons and interface rules saved
 **Where:** Claude Code session.
 **Asked:** update the repo with design decisions and our chat; save design ideas, lessons learned, the conversation, business rules and interface rules.

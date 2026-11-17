@@ -25,6 +25,11 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 
 ## Interface
 
+- **A payment method isn't global just because it's listed.** ChatGPT's list (Pix · Brazil, UPI · India, Kakao Pay · South Korea) made the page tell someone in Kenya they could pay without a card. Country words in notes now decide where a method counts (decision 79). Read notes as data, not decoration.
+- **A component's display rule can beat the `hidden` attribute.** The folded filters showed anyway because `.filters { display: flex }` won. `[hidden] { display: none !important; }` now guarantees it.
+- **Never cut text mid-word to make it fit.** The sign-up line was cut at 80 characters ("…Apple; loggin"). Show the full text in a place with room.
+- **Equal weight hides the answer.** Nine buttons before the facts, eight badges per card and three repeats of the same hint made correct facts hard to read. Verdicts first, details folded.
+
 - **Old browser settings outlive a redesign.** After the Matrix look shipped, the owner still saw the light design because an old `theme=light` was stored. The new look uses its own key (`look`) and ignores the old one (decision 72).
 - **CSS specificity bites in dark mode.** A quiet outline button inherited dark text from a more specific dark-mode rule and failed contrast. The page check caught it before deploy. Make the rule specific enough, and let the automated contrast check run on every change.
 - **The page check must see the states people actually see.** A returning visitor's panel isn't on a fresh page, so the check now loads sample saved data and opens the panel.

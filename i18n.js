@@ -5,7 +5,7 @@ const RTL = new Set(['ar']);
 
 const S = {
   en: {
-    ulang: 'Your language', anylang: 'Any language',
+    ulang: 'Your language', aispeaks: 'AI that speaks', anylang: 'Any language',
     device: 'Your device', country: 'Your country', memory: 'Memory…', choose: 'Choose…', language: 'Language',
     hint: "💡 Tell us your device's memory and your country: CleverFox then puts first, and highlights, the models that fit your machine and the apps and services that work in your country and accept a way you can pay.",
     tagline: 'AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.',
@@ -18,7 +18,7 @@ const S = {
     t_chat: 'chat', t_writing: 'write', t_coding: 'code', t_reasoning: 'reason through problems', t_math: 'do maths', t_analytics: 'analyse data', t_images: 'make images', t_vision: 'understand images', t_speech: 'work with speech', t_video: 'make video', t_translation: 'translate', t_search: 'search', t_tools: 'build agents and tools',
   },
   ar: {
-    ulang: 'لغتك', anylang: 'أي لغة',
+    ulang: 'لغتك', aispeaks: 'ذكاء اصطناعي يتحدث', anylang: 'أي لغة',
     device: 'جهازك', country: 'بلدك', memory: 'الذاكرة…', choose: 'اختر…', language: 'اللغة',
     hint: '💡 أخبرنا بذاكرة جهازك وبلدك: يعرض CleverFox أولاً ويُبرز النماذج التي تناسب جهازك، والتطبيقات والخدمات المتاحة في بلدك والتي تقبل وسيلة دفع تستطيع استخدامها.',
     tagline: 'نماذج ذكاء اصطناعي وبيانات وتطبيقات واستضافة من كل المصادر، ومعرفة إن كان بإمكانك استخدامها حيث تعيش: خيارات مجانية، والدفع دون بطاقة، ونماذج تعمل على جهازك، ومراكز بيانات قريبة.',
@@ -31,7 +31,7 @@ const S = {
     t_chat: 'أتحدث', t_writing: 'أكتب', t_coding: 'أبرمج', t_reasoning: 'أحل المسائل بالتفكير', t_math: 'أحل الرياضيات', t_analytics: 'أحلل البيانات', t_images: 'أصنع صوراً', t_vision: 'أفهم الصور', t_speech: 'أعمل مع الصوت', t_video: 'أصنع فيديو', t_translation: 'أترجم', t_search: 'أبحث', t_tools: 'أبني وكلاء وأدوات',
   },
   hi: {
-    ulang: 'आपकी भाषा', anylang: 'कोई भी भाषा',
+    ulang: 'आपकी भाषा', aispeaks: 'AI जो बोलती है', anylang: 'कोई भी भाषा',
     device: 'आपका डिवाइस', country: 'आपका देश', memory: 'मेमोरी…', choose: 'चुनें…', language: 'भाषा',
     hint: '💡 अपने डिवाइस की मेमोरी और अपना देश बताएं: CleverFox पहले वे मॉडल दिखाएगा जो आपकी मशीन पर चलते हैं, और वे ऐप और सेवाएं जो आपके देश में काम करती हैं और जिनका भुगतान आप कर सकते हैं।',
     tagline: 'हर स्रोत से AI मॉडल, डेटासेट, ऐप और होस्टिंग, और क्या आप इन्हें अपने देश में इस्तेमाल कर सकते हैं: मुफ़्त विकल्प, बिना कार्ड भुगतान, अपने कंप्यूटर पर चलने वाले मॉडल और पास के डेटा सेंटर।',
@@ -44,7 +44,7 @@ const S = {
     t_chat: 'बातचीत करना', t_writing: 'लिखना', t_coding: 'कोड लिखना', t_reasoning: 'सोचकर समस्याएं हल करना', t_math: 'गणित करना', t_analytics: 'डेटा का विश्लेषण करना', t_images: 'तस्वीरें बनाना', t_vision: 'तस्वीरें समझना', t_speech: 'आवाज़ के साथ काम करना', t_video: 'वीडियो बनाना', t_translation: 'अनुवाद करना', t_search: 'खोजना', t_tools: 'एजेंट और टूल बनाना',
   },
   pt: {
-    ulang: 'Seu idioma', anylang: 'Qualquer idioma',
+    ulang: 'Seu idioma', aispeaks: 'IA que fala', anylang: 'Qualquer idioma',
     device: 'Seu dispositivo', country: 'Seu país', memory: 'Memória…', choose: 'Escolha…', language: 'Idioma',
     hint: '💡 Informe a memória do seu dispositivo e o seu país: o CleverFox mostra primeiro, e destaca, os modelos que cabem na sua máquina e os apps e serviços que funcionam no seu país e aceitam uma forma de pagamento que você pode usar.',
     tagline: 'Modelos de IA, conjuntos de dados, apps e hospedagem de todas as fontes, e se você pode usá-los onde mora: opções grátis, pagamento sem cartão, modelos locais e data centers próximos.',
@@ -57,7 +57,7 @@ const S = {
     t_chat: 'conversar', t_writing: 'escrever', t_coding: 'programar', t_reasoning: 'resolver problemas', t_math: 'fazer contas', t_analytics: 'analisar dados', t_images: 'criar imagens', t_vision: 'entender imagens', t_speech: 'trabalhar com voz', t_video: 'criar vídeos', t_translation: 'traduzir', t_search: 'pesquisar', t_tools: 'criar agentes e ferramentas',
   },
   id: {
-    ulang: 'Bahasa Anda', anylang: 'Bahasa apa saja',
+    ulang: 'Bahasa Anda', aispeaks: 'AI yang berbahasa', anylang: 'Bahasa apa saja',
     device: 'Perangkat Anda', country: 'Negara Anda', memory: 'Memori…', choose: 'Pilih…', language: 'Bahasa',
     hint: '💡 Beri tahu kami memori perangkat dan negara Anda: CleverFox lalu menampilkan lebih dulu, dan menandai, model yang muat di mesin Anda serta aplikasi dan layanan yang tersedia di negara Anda dan menerima cara bayar yang bisa Anda pakai.',
     tagline: 'Model AI, dataset, aplikasi, dan hosting dari semua sumber, serta apakah Anda bisa memakainya di tempat Anda: opsi gratis, bayar tanpa kartu, model lokal, dan pusat data terdekat.',
@@ -70,7 +70,7 @@ const S = {
     t_chat: 'mengobrol', t_writing: 'menulis', t_coding: 'membuat kode', t_reasoning: 'memecahkan masalah', t_math: 'berhitung', t_analytics: 'menganalisis data', t_images: 'membuat gambar', t_vision: 'memahami gambar', t_speech: 'mengolah suara', t_video: 'membuat video', t_translation: 'menerjemahkan', t_search: 'mencari', t_tools: 'membuat agen dan alat',
   },
   sw: {
-    ulang: 'Lugha yako', anylang: 'Lugha yoyote',
+    ulang: 'Lugha yako', aispeaks: 'AI inayozungumza', anylang: 'Lugha yoyote',
     device: 'Kifaa chako', country: 'Nchi yako', memory: 'Kumbukumbu…', choose: 'Chagua…', language: 'Lugha',
     hint: '💡 Tuambie kumbukumbu (RAM) ya kifaa chako na nchi yako: CleverFox itaonyesha kwanza, na kuangazia, modeli zinazotosha kwenye mashine yako na programu na huduma zinazopatikana nchini mwako na zinazokubali njia ya malipo unayoweza kutumia.',
     tagline: 'Modeli za AI, data, programu na huduma za seva kutoka kila chanzo, na kama unaweza kuzitumia unapoishi: chaguo za bure, kulipa bila kadi, modeli za kuendesha mwenyewe na vituo vya data vilivyo karibu.',

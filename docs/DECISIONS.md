@@ -390,6 +390,21 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** listing pages get a YouTube panel beside the X panel. It shows reviews found by searching "<name> review" (a few listings per scan, rotating weekly; titles must name the listing), and videos from makers and release news that name it. Videos play in the page only when pressed.
 **Why:** the owner asked for YouTube reviews like "What people say on X". Searching every listing every day would cost far more than the free quota (100 units per search). Rotating 15 per scan covers about 200 listings every 4 to 5 days within 4,500 units. Click-to-play keeps YouTube from loading for visitors who don't ask for it, like the X posts' "Show the posts" button.
 
+### 79. Clarity pass: answers first, one question bar, labelled facts
+**Decision:** following the owner's UI critique, the interface was reworked so the answer can be read at a glance:
+- **Verdict strip:** every card and listing page leads with what the listing means for you, in plain words: ✓ yes, ✗ no, ! maybe, ? not stated. It covers fits your device, works in your country, free, pay without a card, sign-up and license, and speaks your language.
+- **Plain description:** imported models whose description is only a template get a plain sentence from their stated tasks ("Turns text into numbers for search tools, not a chatbot").
+- **Fewer badges:** warnings always, then up to 3 notable positives. Raw details go in one quiet line, with the license said once.
+- **One question bar:** "I want to … on …", with device, country and AI language as the setup pickers (✓ when set). The country is suggested from the browser as one tap. The interface language is a small 🌐 in the header. The repeated explanations are gone.
+- **Picks first** on every visit without a link. With nothing narrowed, everyday models come before building blocks such as embeddings.
+- **Folded filters:** search plus capability chips, and the rest behind "⚙️ Filters (n)". On phones the tabs form a 2×2 grid and the chips are one sideways row.
+- **Details reordered:** actions folded into Save · Compare · Share ▾ · More ▾. Then How to start, then "🌍 Using it in [country]" (availability, free plan with limits, every way to pay with its note written out, the full sign-up text, prices), then labelled facts with glossary links, then links and sources.
+- **Listing pages redraw for you:** with the visitor's stored device, country and language, and with a country picker in the "Using it in" box. They no longer repeat the X and YouTube lines from the side panels.
+- **Country-aware payments:** a way to pay whose note names other countries but not yours ("Pix · Brazil") no longer counts as "pay without a card" for you. This applies to verdicts, picks, the highlighting, the filter and compare.
+- **Colour roles:** green means good and the one primary action, links are cyan, badges use the body font, and names are bigger.
+
+**Why:** the critique found the facts right but the page hard to read. Everything had equal weight, about 27 controls came before the first result (2.5 screens on a phone), the first results were embeddings, and access answers were scattered across 5 places with notes hidden behind an asterisk. Nothing new is claimed: the verdicts restate facts the listings already carry. The country check fixed a real error, where ChatGPT showed "Pay without a card: Pix, UPI" to someone in Kenya.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

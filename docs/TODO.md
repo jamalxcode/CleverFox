@@ -69,6 +69,8 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Translate the new return-visit text (setup line, Your CleverFox panel, next steps, empty-result help) into `i18n.js` (decision 77).
 - [ ] Return visits: after a week live, check GoatCounter page views for returning patterns. Consider adding an anonymous event for "Next: How to start" clicks, to see whether the next step helps (no personal data).
 - [ ] YouTube reviews (decision 78): after a day of scans, check `discover.json` → `youtube.reviews` (how many listings have videos) and a few listings' panels for wrong matches (a video about a different product with the same name).
+- [ ] Translate the clarity-pass text (verdicts, "Using it in", fact labels, Filters) into `i18n.js` (decision 79).
+- [ ] Guides and the build's `pay_without_card` answer are still country-blind (fine for global guides). Revisit if a guide becomes per-country.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

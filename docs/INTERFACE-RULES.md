@@ -8,11 +8,21 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **Usefulness over time spent** (decision 77). People come back because something new fits their task, device and country, or to get back to what they found. Never add a feature only to keep people on the page.
 - **One page per listing, no page per filter combination.** Listing pages are shareable and previewable, and filters live in the main page.
 
+## 1a. Answers at a glance (decision 79)
+
+- **Every card and listing page leads with the verdict strip:** what it means for *you*, in plain words, with ✓ yes, ✗ no, ! maybe, ? not stated, • information and → a prompt. It covers device fit, your country, free, pay without a card, sign-up and license, and your language. Verdicts only restate stated facts. Each one has words after its icon.
+- **Then a plain one-sentence description.** Template descriptions are replaced by what the model does ("Turns speech into text"). The original description is kept under it on listing pages.
+- **At most 3 positive badges.** Warnings always show. Raw details (license once, size, platforms in words, downloads) go in one quiet grey line.
+- **Facts are labelled rows** (label: value), not emoji sentences. Jargon gets a small "?" link to the glossary.
+- **Country-specific facts follow the chosen country.** A payment method noted for other countries is shown as "(not for <country>)" and never counts as a way for you to pay.
+
 ## 2. One primary action per screen
 
-- **Main page:** "Find what to use" (task + device → "Show my picks") is the main action, near the top. Browsing the tabs is secondary.
+- **Main page:** the question bar ("I want to … on …", then "Show my picks") is the main action, right under a one-sentence intro. Device, country and AI language are its setup pickers. The interface language is a small 🌐 in the header, kept apart from "AI that speaks". Picks show on every visit without a link. Browsing the tabs is secondary.
+- **Filters fold:** search and the capability chips are visible, and the rest sits behind "⚙️ Filters (n)", which opens by itself when filters are in use. On phones the chips are one sideways row and the tabs a 2×2 grid.
 - **After picks:** the one main step is "How to start with <top pick> →", which links to `#start` on its page. "Show my picks" turns into a quiet outline button until the question changes. Compare and ☆ Save are secondary buttons.
-- **Listing page:** "How to start" (commands for your memory, app download buttons) is the main block. Sharing, compare, reactions and videos are secondary buttons in the share row.
+- **Details and listing pages:** the order is the action row (☆ Save · ⚖️ Compare · 📤 Share ▾ · More ▾), then How to start, then "🌍 Using it in [country]", then the labelled facts, then links and sources. The X and YouTube summaries appear once: in the side panels on listing pages, and in the details on the main page.
+- **Listing pages redraw for the visitor** using their stored device, country and language. The "Using it in" box has its own country picker, so nobody is sent back to the main page.
 - **Primary styling:** the bright filled button (`.go-btn`) is for the one primary action only. Everything else uses `.share-btn` (outlined) or `.linkish` (text).
 
 ## 3. Sensible defaults, little setup
@@ -55,6 +65,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **Matrix look by default:** dark terminal colours, neon green accents (cyan and magenta for secondary marks), monospace for headings, labels, chips and buttons, and the sans-serif Inter for body text.
 - **Light "terminal paper" look:** chosen from the footer, stored as `look: light`. The browser's light/dark preference doesn't choose the look.
 - **Decoration never costs readability:** the digital rain sits behind the header only, faintly, pauses when the tab is hidden, and is off for reduced motion and in light mode. Scanlines are faint and off in light mode.
+- **Colour roles:** green means good (✓ verdicts, positive badges) and the one primary button. Links are cyan, warnings amber, problems pink-red. Headings use the text colour. Badges, verdicts and facts use the body font, and monospace is kept for headings, labels, buttons and commands.
 - **Colours are tokens** on `:root` (`--bg`, `--surface`, `--text`, `--muted`, `--accent`, `--accent-text`, `--ok`, `--no`, `--warn`, …), redefined for light mode. Never hard-code a colour in a component.
 - **Emoji lead lines and badges** as signposts (🎯 good for, 💻 runs locally, 🆓 free, 💳 pay, 🕊️ no barriers, 🔒 only for real gates). They are never the only carrier of meaning: text always follows.
 - **The fox mascot** is the brand. It appears in the header and on empty states.
@@ -62,6 +73,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 ## 9. Accessibility and phones (checked before every deploy)
 
 - **Contrast:** WCAG AA in both looks, checked by axe-core in `tools/ui-check.cjs` on 8 pages, including a returning visitor's "Your CleverFox" panel.
+- **`[hidden]` always hides** (`display: none !important`), so a component's own display rule can't reveal it.
 - **No sideways scrolling at 320 and 375 px** (`tools/ui-check.cjs`; four phone sizes in `tools/phone-check.cjs`). Long names wrap (`overflow-wrap: anywhere`).
 - **Phones:** the side panels (X, YouTube) drop below the listing under 900 px. Pick columns stack.
 - **Keyboard and screen readers:** tabs use `role="tab"` with arrow keys. Toggle buttons use `aria-pressed` (capabilities, ☆ Save). Live regions announce picks and result counts. Every control has a label or `aria-label`. Touch targets are at least about 28–40 px.

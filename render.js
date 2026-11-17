@@ -53,7 +53,8 @@ export function modelCountryStatus(r, country) {
 }
 export const anyNoCard = (r) => recordAccesses(r).some((a) => a.no_card_needed === true);
 export const CARDS = ['card_international', 'card_local'];
-export const payNoCard = (a) => methodsOf(a).some((m) => !CARDS.includes(m.method));
+// With a country, only ways to pay that apply there count (see methodFor).
+export const payNoCard = (a, c) => methodsOf(a).some((m) => !CARDS.includes(m.method) && methodFor(m, c));
 export const anyFree = (r) => recordAccesses(r).some((a) => ['free', 'free_tier'].includes(a.free?.value));
 
 // ---- rendering ----
@@ -81,68 +82,131 @@ export function goodForLine(r) {
   const g = r.answers?.good_for || [];
   return g.length ? `<p class="goodfor"><span class="muted">Good for:</span> ${g.map((c) => esc(CAPS[c] || c)).join(' · ')}</p>` : '';
 }
-export function cardBadges(r) {
-  const b = [];
-  if ((r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified') b.push(badge(r.verification_status === 'candidate' ? '⚠️ Not yet verified: facts from search results' : '⚠️ Last check failed', 'b-warn'));
-  const a = r.answers || {};
-  if (a.no_barriers) b.push(badge('🕊️ No barriers', 'b-ok'));
-  else if (a.barriers?.length && r.type !== 'host') b.push(badge(`🚧 ${a.barriers[0]}${a.barriers.length > 1 ? ` +${a.barriers.length - 1}` : ''}`, 'b-warn'));
-  if (r.hardware) {
-    const need = r.hardware.min_memory_gb;
-    // From the download size: a fair figure. From the parameter count only: a rough estimate, never a plain ✓.
-    const est = r.hardware.estimate ?? (r.hardware.options?.length && r.hardware.options.every((o) => /^parameter/i.test(o.basis || '')));
-    if (view.mem) b.push(need > view.mem ? badge(`✗ Needs ~${need} GB${est ? ' (estimate)' : ''}`, 'b-no') : est ? badge(`≈ May fit your ${view.mem} GB (estimate)`, 'b-warn') : need <= view.mem * 0.8 ? badge(`✓ Fits your ${view.mem} GB`, 'b-ok') : badge(`⚠ Tight on ${view.mem} GB`, 'b-warn'));
-    else b.push(badge(`🖥️ ${est ? '≈ ' : ''}${r.hardware.recommended_gb || need} GB+ recommended${est ? ' (estimate)' : ''}`));
-  }
-  if (r.platforms && r.type === 'model') b.push(`<span class="badge" title="Runs on ${Object.keys(r.platforms).map((p) => PLATFORMS[p]?.[1]).join(', ')}">${platformIcons(r)}</span>`);
-  if (r.type === 'model' && a.online) { const f = r.online_from ?? (r.online ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null); b.push(badge(f === 0 ? '☁️ Free online' : Number.isFinite(f) ? `☁️ Online from $${f}/M` : '☁️ Use online', f === 0 ? 'b-ok' : '')); }
-  if (r.lookalikes?.count) b.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
-  if ((r.type === 'app' || r.type === 'host') && r.access?.local_currency_pricing?.value === true) b.push(badge('💱 Local prices', 'b-ok'));
-  { const pn = playNoCard(r, view.country); if (pn.length && !payNoCard(r.access)) b.push(badge(`🪙 Via Google Play: ${[...new Set(pn.map(shortPay))].slice(0, 3).join(' · ')}`, 'b-ok')); }
-  if (view.ulang && speaks(r, view.ulang)) b.push(badge(`🗣️ ${langName(view.ulang)}`, 'b-ok'));
-  if (r.on_device) b.push(`<span class="badge b-ok" title="Runs AI models on the phone itself: works offline once a model is downloaded">📱 Offline on your phone</span>`);
-  if (a.x_praised) b.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
-  if (a.uncensored) b.push(badge('Uncensored / abliterated', 'b-warn'));
-  const eci = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci'); const aai = (r.independent_benchmarks || []).find((x) => x.id === 'aa_intelligence');
-  if (eci) b.push(`<span class="badge b-ok" title="Epoch Capabilities Index (Epoch AI)">🧠 ECI ${esc(eci.display)}</span>`);
-  if (aai) b.push(`<span class="badge b-ok" title="Artificial Analysis Intelligence Index">🧠 AA ${esc(aai.display)}</span>`);
-  if (a.benchmarks && !eci && !aai) b.push(badge(`📊 ${a.benchmarks} benchmark${a.benchmarks > 1 ? 's' : ''} (self-reported)`));
-  if (r.possibly_discontinued) b.push(`<span class="badge b-warn" title="${esc(r.possibly_discontinued.reason)}">⚠️ Possibly discontinued</span>`);
-  if (r.warning === 'dont_touch') b.push(badge('☠️ Don\'t touch', 'b-no'));
-  else if (r.warning === 'reported') b.push(badge('⚠️ Reported', 'b-warn'));
-  b.push(countryBadge(r));
+// ---- the verdict strip: what this listing means for *you*, in plain words (✓ yes · ✗ no · ! maybe · ? unknown) ----
+// Built only from stated facts (memory needed, country lists, ways to pay, free status, gates, licenses).
+const V = (state, text, title = '') => ({ state, text, title });
+// A payment method whose note names other countries, but not the chosen one, doesn't count for that country
+// ("Pix · Brazil" isn't a way to pay in Kenya). Without a chosen country, or with no country in the note, it counts.
+const EEA = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO'];
+const PAY_ALIASES = [[/\bUK\b|\bU\.K\./, ['GB']], [/\bUSA?\b|\bU\.S\./, ['US']], [/\bUAE\b/, ['AE']], [/\bEEA\b|\bEU\b|\bEurope(an)?\b|\bSEPA\b/, EEA]];
+export function methodFor(m, c) {
+  if (!c || !m.note) return true;
+  const named = [...countryNames.entries()].filter(([, n]) => new RegExp(`\\b${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(m.note)).map(([k]) => k);
+  for (const [re, codes] of PAY_ALIASES) if (re.test(m.note)) named.push(...codes);
+  return !named.length || named.includes(c);
+}
+const isEstimate = (h) => h?.estimate ?? (h?.options?.length && h.options.every((o) => /^parameter/i.test(o.basis || '')));
+const onlineFrom = (r) => r.online_from ?? (r.online?.length ? (r.online.some((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity))) : null);
+export function verdicts(r) {
+  const out = []; const a = r.answers || {}; const c = view.country; const cn = c ? countryName(c) : '';
+  const lang = view.ulang ? langName(view.ulang) : '';
   if (r.type === 'model') {
-    if (r.local_ready) b.push(badge('Runs locally', 'b-ok'));
-    if (known(r.availability)) b.push(badge(AVAIL_LABELS[r.availability.value] || r.availability.value));
-    if (known(r.parameters)) b.push(badge(r.parameters.value));
-    if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
-    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
-    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) b.push(badge(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', ')));
-    const dl = (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0); if (dl) b.push(badge(`↓ ${fmtNum(dl)}`));
-    const runs = (r.popularity || []).reduce((n, p) => n + (p.runs || 0), 0); if (runs) b.push(`<span class="badge" title="Times it has been run on Replicate">▶ ${fmtNum(runs)} runs</span>`);
+    const h = r.hardware; const f = onlineFrom(r);
+    if (h) {
+      const need = h.min_memory_gb; const est = isEstimate(h);
+      if (view.mem) out.push(need > view.mem ? V('no', `Needs ~${need} GB, more than your ${view.mem} GB`) : est ? V('maybe', `May fit your ${view.mem} GB (rough estimate)`) : need <= view.mem * 0.8 ? V('yes', `Fits your ${view.mem} GB`) : V('maybe', `Tight on your ${view.mem} GB`));
+      else out.push(V('info', `Runs on your own device, ${h.recommended_gb || need} GB memory or more${est ? ' (estimate)' : ''}`));
+    } else if (r.local_ready) out.push(V('yes', 'Runs on your own device'));
+    else if (a.online) out.push(V('info', 'Online only: no download'));
+    else if ((r.distributions || []).some((d) => d.availability === 'downloadable')) out.push(V('info', 'Downloadable, but needs some setup to run'));
+    else out.push(V('unk', 'No version to run yourself found'));
+    if (a.online) out.push(f === 0 ? V('yes', r.local_ready ? 'Also free online' : 'Free online') : V('info', `${r.local_ready ? 'Also online' : 'Online'}${Number.isFinite(f) ? ` from $${f} per million tokens` : ''}`));
+    if (a.free === 'free_download') out.push(V('yes', 'Free to download'));
+    else if (a.free === 'paid') out.push(V('no', 'Paid'));
+    if (c && !r.local_ready && (r.distributions || []).some((d) => d.access)) { const s = modelCountryStatus(r, c); out.push(s === 'yes' ? V('yes', `API works in ${cn}`) : s === 'no' ? V('no', `API not available in ${cn}`) : V('unk', `${cn}: not stated`)); }
+    if (a.no_barriers) out.push(V('yes', 'No sign-up, open license'));
+    else if (a.barriers?.length) out.push(V('maybe', a.barriers[0]));
   } else if (r.type === 'dataset') {
-    if (known(r.availability)) b.push(badge(AVAIL_LABELS[r.availability.value] || r.availability.value));
-    if (known(r.license)) b.push(badge(r.license.value === 'custom' ? 'Custom license' : r.license.value));
-    if (r.size_category) b.push(badge(r.size_category.replace('n<', '< ').replace('<n<', ' to ').replace('K', 'K rows').replace('M', 'M rows')));
-    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
-    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) b.push(badge(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', ')));
-    if (r.paper_urls?.length) b.push(badge('📄 Paper'));
+    out.push(a.gate && a.gate !== 'none' ? V('maybe', GATE_TEXT[a.gate] || 'Sign-in needed') : V('yes', 'Download without signing in'));
+    out.push(a.license_kind === 'open' ? V('yes', 'Commercial use allowed') : a.license_kind === 'non_commercial' ? V('no', 'No commercial use') : V('unk', 'License terms unclear'));
   } else {
-    const a = r.access;
-    if (a && known(a.free) && FREE_LABELS[a.free.value]) b.push(badge(FREE_LABELS[a.free.value], a.free.value === 'paid_only' ? '' : 'b-ok'));
-    const non = methodsOf(a).filter((m) => !CARDS.includes(m.method)).map((m) => METHOD_LABELS[m.method]);
-    if (non.length) b.push(badge(`Pay without a card: ${[...new Set(non)].slice(0, 3).join(' · ')}`, 'b-ok'));
-    else if (methodsOf(a).length) b.push(badge('Paid plans: card only'));
+    const acc = r.access;
+    if (c) {
+      const dcHere = r.type === 'host' && Array.isArray(r.data_centers?.value) && r.data_centers.value.some((d) => d.country === c);
+      const s = availableIn(acc, c);
+      out.push(s === 'no' ? V('no', `Not available in ${cn}`) : dcHere ? V('yes', `Data center in ${cn}`) : s === 'yes' ? V('yes', `Works in ${cn}`) : V('unk', `${cn}: not stated`));
+    } else out.push(V('ask', 'Choose your country to check where it works'));
+    const fv = acc?.free?.value;
+    out.push(fv === 'free' ? V('yes', 'Free') : fv === 'free_tier' ? V('yes', 'Free plan') : fv === 'trial' ? V('maybe', 'Free trial only') : fv === 'paid_only' ? V('no', 'Paid only') : V('unk', 'Price not stated'));
+    const allNon = methodsOf(acc).filter((m) => !CARDS.includes(m.method));
+    const non = [...new Set(allNon.filter((m) => methodFor(m, c)).map(shortPay))];
+    const play = playNoCard(r, c);
+    if (non.length) out.push(V('yes', `Pay without a card: ${non.slice(0, 3).join(', ')}`));
+    else if (play.length) out.push(V('yes', `Pay without a card via Google Play: ${[...new Set(play.map(shortPay))].slice(0, 3).join(', ')}`));
+    else if (allNon.length && c) out.push(V('maybe', `Card-free ways to pay are for other countries, not ${cn}`));
+    else if (methodsOf(acc).length && fv !== 'free') out.push(V('no', 'Paid plans take cards only'));
+    if (r.on_device) out.push(V('yes', 'Works offline on your phone'));
   }
-  if (r.type === 'host' && Array.isArray(r.data_centers?.value)) {
-    const cs = [...new Set(r.data_centers.value.map((d) => d.country))];
-    b.push(badge(cs.map(flag).join(' ') || 'Data centers'));
+  if (lang && r.type !== 'host') {
+    const list = r.type === 'app' ? r.interface_languages : r.languages;
+    out.push(speaks(r, view.ulang) ? V('yes', `Speaks ${lang}`) : Array.isArray(list?.value) ? V('no', `No ${lang} listed`) : V('unk', `${lang}: not stated`));
   }
-  const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) b.push(badge(`🔁 +${nv} version${nv > 1 ? 's' : ''}`));
-  if (r.access_check?.changed?.length) b.push(`<span class="badge b-warn" title="A pricing, payment or availability page changed after these facts were checked">⚠️ Pricing page changed</span>`);
-  else if (r.access_check?.stale) b.push(badge('⏳ Access facts are old', 'b-warn'));
-  if (r.verification_status !== 'verified' && r.type !== 'app' && r.type !== 'host') b.push(badge(r.verification_status === 'candidate' ? 'Not yet verified' : 'Last check failed', 'b-warn'));
-  return b.join('');
+  return out.slice(0, 6);
+}
+const V_ICON = { yes: '✓', no: '✗', maybe: '!', unk: '?', info: '•', ask: '→' };
+export function verdictStrip(r) {
+  const v = verdicts(r);
+  return v.length ? `<ul class="verdicts">${v.map((x) => `<li class="v v-${x.state}"${x.title ? ` title="${esc(x.title)}"` : ''}><span class="v-ic" aria-hidden="true">${V_ICON[x.state]}</span> ${esc(x.text)}</li>`).join('')}</ul>` : '';
+}
+
+// A plain sentence of what it is, for imported listings whose description is only a template ("… published by X on Hugging Face").
+const TEMPLATED = /^(?:[\w-]+ )?model published by .+ on Hugging Face|^Local model in the Ollama library|^(?:[\w-]+ )?model (?:run by its maker|published by .+) on Replicate/;
+export function plainWhat(r) {
+  if (r.type !== 'model' || !TEMPLATED.test(r.description || '')) return r.description;
+  const g = r.answers?.good_for || []; const t = r.tasks || [];
+  const what = t.includes('automatic-speech-recognition') ? 'Turns speech into text' : t.includes('text-to-speech') ? 'Turns text into speech'
+    : g.includes('images') ? 'Makes and edits images' : g.includes('video') ? 'Makes videos' : g.includes('coding') ? 'Writes and explains code'
+    : g.includes('vision') ? 'Chats about images and text' : g.includes('chat') || g.includes('writing') ? 'Chats and writes' : g.includes('translation') ? 'Translates text'
+    : g.includes('search') ? 'Turns text into numbers for search tools (an embedding model, not a chatbot)' : t.includes('text-classification') ? 'Sorts text into labels (not a chatbot)' : 'An AI model';
+  const where = r.local_ready ? ', and runs on your own device' : r.answers?.online ? ', online through API providers' : '';
+  return `${what}${where}.`;
+}
+
+// Flags: warnings always, then at most a few notable positives. Everything else goes in the quiet facts line.
+export function cardBadges(r) {
+  const warn = []; const good = []; const a = r.answers || {};
+  if (r.verification_status !== 'verified') warn.push(badge(r.verification_status === 'candidate' ? ((r.type === 'app' || r.type === 'host') ? '⚠️ Not yet verified: facts from search results' : 'Not yet verified') : '⚠️ Last check failed', 'b-warn'));
+  if (r.warning === 'dont_touch') warn.push(badge('☠️ Don\'t touch', 'b-no'));
+  else if (r.warning === 'reported') warn.push(badge('⚠️ Reported', 'b-warn'));
+  if (r.possibly_discontinued) warn.push(`<span class="badge b-warn" title="${esc(r.possibly_discontinued.reason)}">⚠️ Possibly discontinued</span>`);
+  if (r.lookalikes?.count) warn.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
+  if (r.access_check?.changed?.length) warn.push(`<span class="badge b-warn" title="A pricing, payment or availability page changed after these facts were checked">⚠️ Pricing page changed</span>`);
+  else if (r.access_check?.stale) warn.push(badge('⏳ Access facts are old', 'b-warn'));
+  if (a.uncensored) warn.push(`<span class="badge b-warn" title="Changed by someone other than the maker to refuse fewer requests">✂️ Uncensored</span>`);
+  const eci = (r.independent_benchmarks || []).find((x) => x.id === 'epoch_eci'); const aai = (r.independent_benchmarks || []).find((x) => x.id === 'aa_intelligence');
+  if (eci) good.push(`<span class="badge b-ok" title="Epoch Capabilities Index (Epoch AI), an independent score">🧠 ECI ${esc(eci.display)}</span>`);
+  else if (aai) good.push(`<span class="badge b-ok" title="Artificial Analysis Intelligence Index, an independent score">🧠 AA ${esc(aai.display)}</span>`);
+  if (a.x_praised) good.push(`<span class="badge b-ok" title="Praised on X by several accounts, with likes and reposts">📣 Praised on X</span>`);
+  if ((r.type === 'app' || r.type === 'host') && r.access?.local_currency_pricing?.value === true) good.push(badge('💱 Local prices', 'b-ok'));
+  return [...warn, ...good.slice(0, Math.max(0, 3 - warn.length))].join('');
+}
+// The quiet facts line: raw details for people who want them (license once, size, downloads, platforms…).
+export function metaLine(r) {
+  const m = []; const a = r.answers || {};
+  const lic = known(r.license) ? (r.license.value === 'custom' ? 'custom license' : r.license.value) : null;
+  if (r.type === 'model') {
+    if (known(r.availability) && r.availability.value !== 'downloadable') m.push(AVAIL_LABELS[r.availability.value] || r.availability.value);
+    if (known(r.parameters)) m.push(r.parameters.value);
+    if (r.platforms) m.push(Object.keys(PLATFORMS).filter((p) => r.platforms[p]).map((p) => PLATFORMS[p][1]).join(', '));
+    if (lic) m.push(lic);
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) m.push(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', '));
+    const dl = (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0); if (dl) m.push(`${fmtNum(dl)} downloads`);
+    const runs = (r.popularity || []).reduce((n, p) => n + (p.runs || 0), 0); if (runs) m.push(`${fmtNum(runs)} runs on Replicate`);
+    if (a.benchmarks && !r.independent_benchmarks?.length) m.push(`${a.benchmarks} self-reported benchmark${a.benchmarks > 1 ? 's' : ''}`);
+  } else if (r.type === 'dataset') {
+    if (r.size_category) m.push(r.size_category.replace('n<', '< ').replace('<n<', ' to ').replace('K', 'K rows').replace('M', 'M rows'));
+    if (lic) m.push(lic);
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    if (langs.length && !(langs.length === 1 && langs[0] === 'en')) m.push(langs.length > 3 ? `${langs.length} languages` : langs.map(langName).join(', '));
+    if (r.paper_urls?.length) m.push('has a paper');
+  } else {
+    if (r.categories?.length) m.push(r.categories.slice(0, 3).join(', '));
+    if (r.type === 'host' && Array.isArray(r.data_centers?.value)) { const cs = [...new Set(r.data_centers.value.map((d) => d.country))]; if (cs.length) m.push(`data centers ${cs.map(flag).join(' ')}`); }
+    if (r.official_store?.rating) m.push(`⭐ ${r.official_store.rating} on the App Store`);
+  }
+  const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) m.push(`+${nv} other version${nv > 1 ? 's' : ''}`);
+  return m.length ? `<p class="meta">${m.map(esc).join('<span class="sep"> · </span>')}</p>` : '';
 }
 
 // Source as a small ⓘ link: hover or long-press shows where the fact came from and when.
@@ -205,110 +269,128 @@ export function accessFacts(a) {
   ]);
 }
 
-// "At a glance": emoji-led lines, several related facts per line.
-export function glance(r) {
-  const a = r.answers || {};
-  let h = '<div class="glance">';
-  if (a.good_for?.length) h += line([`<span class="it">🎯 <strong>${a.good_for.map((c) => esc((CAPS[c] || c).replace(/^\S+\s/, ''))).join(' · ')}</strong></span>`]);
+// ---- details: labelled facts (label: value), with jargon linked to the glossary ----
+const row = (label, html, gl) => html ? `<div class="fr"><dt>${esc(label)}${gl ? ` <a class="gl" href="${esc(view.base)}glossary/#${gl}" title="What does this mean?" aria-label="What does ${esc(label.toLowerCase())} mean?">?</a>` : ''}</dt><dd>${html}</dd></div>` : '';
+export function factsTable(r) {
+  const a = r.answers || {}; const rows = []; const unknown = [];
+  const f = (label, c, fmt = (v) => esc(v), gl) => { if (c === undefined) return; const v = claimVal(c, fmt); if (!v) { unknown.push(label.toLowerCase()); return; } rows.push(row(label, v, gl)); };
+  if (a.good_for?.length) rows.push(row('Good for', esc(a.good_for.map((c) => CAPS[c] || c).join(' · '))));
   const isFree = ['free_download', 'free', 'free_tier', 'trial'].includes(a.free);
-  const lic = r.license && known(r.license) ? `${licText(r.license.value)}${a.license_kind === 'open' ? ` ${ok} commercial` : a.license_kind === 'non_commercial' ? ` ${bad} commercial` : ''}${src(r.license)}` : null;
+  const lic = r.license && known(r.license) ? `${licText(r.license.value)}${a.license_kind === 'open' ? ` · ${ok} commercial use` : a.license_kind === 'non_commercial' ? ` · ${bad} no commercial use` : ''}${src(r.license)}` : null;
   if (r.type === 'model' || r.type === 'dataset') {
     const sizes = (r.distributions || []).map((d) => d.file_size_bytes).filter(Boolean).sort((x, y) => x - y);
-    h += line([
-      r.type === 'model' && item('💻', a.runs_locally ? `${ok} local${r.local_runtimes?.length ? ` <span class="muted">${esc(r.local_runtimes.join(', '))}</span>` : ''}` : `${bad} no local version`),
-      sizes.length && item('⬇️', `from ${gb(sizes[0])}`),
-      item('🆓', isFree ? `${ok} ${esc(FREE_TEXT[a.free])}` : a.free === 'paid' ? `${bad} paid` : unknownTxt),
-      item(a.gate === 'none' ? '🚪' : '🔒', esc(GATE_TEXT[a.gate] || 'No sign-in')),
-      item('📜', lic || unknownTxt),
-    ]);
+    if (r.type === 'model') rows.push(row('Run it yourself', a.runs_locally ? `${ok} yes${r.local_runtimes?.length ? ` <span class="muted">with ${esc(r.local_runtimes.join(', '))}</span>` : ''}${sizes.length ? ` · download from ${gb(sizes[0])}` : ''}` : `${bad} no version to run yourself`, 'local'));
+    else if (sizes.length) rows.push(row('Download', `from ${gb(sizes[0])}`));
+    rows.push(row('Cost', isFree ? `${ok} ${esc(FREE_TEXT[a.free])}` : a.free === 'paid' ? `${bad} paid` : unknownTxt, 'free-tier'));
+    rows.push(row('Sign-in', a.gate && a.gate !== 'none' ? `🔒 ${esc(GATE_TEXT[a.gate] || a.gate)}` : `${ok} no sign-in needed`));
+    rows.push(row('License', lic || unknownTxt, 'open-weights'));
   }
-  h += platformLine(r);
+  if (r.platforms) {
+    const parts = Object.keys(PLATFORMS).filter((p) => r.platforms[p]).map((p) => `<span title="${esc(`${PLATFORMS[p][1]} via ${r.platforms[p].map(viaName).join(', ')}`)}">${PLATFORMS[p][0]} ${PLATFORMS[p][1]}</span>`);
+    const via = [...new Set(Object.values(r.platforms).flat())].filter((v) => view.runtimes?.[v]);
+    rows.push(row('Runs on', `${parts.join('<span class="sep"> · </span>')}${via.length ? ` <span class="muted">via ${via.map((v) => `<a href="${esc(view.runtimes[v].docs)}" rel="noopener" target="_blank">${esc(view.runtimes[v].name)}</a>`).join(', ')}</span>` : ''}`));
+  }
   if (r.hardware) {
-    const o = r.hardware.options;
-    const rec = o[0].recommended_gb || o[0].memory_gb;
-    h += line([item('🖥️', `needs ~${o[0].memory_gb} GB${fitMark(o[0].memory_gb)}`, `Rough estimate from ${o[0].basis}, not the publisher's requirement`), item('👍', `<strong>${rec} GB recommended</strong> → ${esc(deviceShort(rec))}`, 'Smallest standard memory size with about 25% headroom for the system and longer conversations')]);
-    if (o.length > 1) h += line([item('📐', o.map((x) => `<span class="chip" title="${x.download_gb ? `${x.download_gb} GB download · ` : ''}needs ~${x.memory_gb} GB">${esc(x.label)} → ${x.recommended_gb || x.memory_gb} GB${fitMark(x.memory_gb)}</span>`).join(' '))]);
-    h += line([item('⚙️', 'CPU works, slowly'), item('🎮', 'GPU fast if it fits'), item('🍎', 'Mac: shared memory counts'), r.hardware.moe && item('⚡', 'MoE: faster than its size'), '<span class="muted">estimates</span>']);
+    const o = r.hardware.options; const rec = o[0].recommended_gb || o[0].memory_gb;
+    rows.push(row('Memory', `needs ~${o[0].memory_gb} GB${fitMark(o[0].memory_gb)} · <strong>${rec} GB recommended</strong> <span class="muted">(${esc(deviceShort(rec))})</span>`, 'memory'));
+    if (o.length > 1) rows.push(row('Sizes', o.map((x) => `<span class="chip" title="${x.download_gb ? `${x.download_gb} GB download · ` : ''}needs ~${x.memory_gb} GB">${esc(x.label)} → ${x.recommended_gb || x.memory_gb} GB${fitMark(x.memory_gb)}</span>`).join(' '), 'bit'));
+    rows.push(row('Good to know', `A processor alone works, slowly · a graphics card is fast if it fits · on a Mac the memory is shared${r.hardware.moe ? ' · MoE: faster than its size' : ''} <span class="muted">(estimates)</span>`));
   }
   if (r.type === 'model') {
-    const bm = r.benchmarks || [];
-    const ind = r.independent_benchmarks || [];
+    const bm = r.benchmarks || []; const ind = r.independent_benchmarks || [];
     const indChip = (x) => `<a class="chip" href="${esc(x.url)}" rel="noopener" target="_blank" title="${esc(`${x.source}${x.detail ? ' · ' + x.detail : ''} · checked ${fmtDate(x.observed_at)}`)}">${esc(x.label.replace('Epoch Capabilities Index', 'Epoch index').replace('AA Intelligence Index', 'AA index'))} <strong>${esc(x.display)}</strong></a>`;
-    const more = [a.good_for?.includes('chat') && '<a href="https://lmarena.ai/leaderboard" rel="noopener" target="_blank">🏟️ LMArena ↗</a>', a.good_for?.includes('search') && '<a href="https://huggingface.co/spaces/mteb/leaderboard" rel="noopener" target="_blank">📊 MTEB ↗</a>'].filter(Boolean).join(' · ');
-    h += line([
-      ind.length ? item('🧠', ind.map(indChip).join(' ') + ` <span class="muted">independent</span>`, 'Independent results: hover a score for its source') : null,
-      bm.length ? item('📊', bm.slice(0, 4).map((x) => `<span class="chip">${esc(x.benchmark)} <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(1) : x.value)}</strong></span>`).join(' ') + ' <span class="muted">self-reported</span>', 'Publisher\'s own results, not independently checked') : null,
-      !ind.length && !bm.length ? item('🧠', '<span class="unknown">no benchmark results yet</span>') : null,
-      more ? `<span class="it">${more}</span>` : null,
-    ]);
-    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    const more = [a.good_for?.includes('chat') && '<a href="https://lmarena.ai/leaderboard" rel="noopener" target="_blank">LMArena ↗</a>', a.good_for?.includes('search') && '<a href="https://huggingface.co/spaces/mteb/leaderboard" rel="noopener" target="_blank">MTEB ↗</a>'].filter(Boolean).join(' · ');
+    rows.push(row('How smart', [ind.length && `${ind.map(indChip).join(' ')} <span class="muted">independent</span>`, bm.length && `${bm.slice(0, 4).map((x) => `<span class="chip">${esc(x.benchmark)} <strong>${esc(typeof x.value === 'number' ? +x.value.toFixed(1) : x.value)}</strong></span>`).join(' ')} <span class="muted">self-reported</span>`, !ind.length && !bm.length && '<span class="unknown">no benchmark results yet</span>', more && `<span class="muted">leaderboards:</span> ${more}`].filter(Boolean).join(' · '), 'benchmark'));
     const ctx = r.ollama?.context || r.distributions?.find((d) => d.context)?.context;
-    h += line([
-      ctx && item('📏', `${esc(ctx)} context`),
-      a.good_for?.includes('reasoning') && item('🧠', 'thinking'),
-      a.good_for?.includes('tools') && item('🛠️', 'tools'),
-      a.good_for?.includes('vision') && item('👁️', 'vision'),
-      r.hardware?.moe && item('⚡', 'MoE'),
-      langs.length && item('🗣️', langs.length > 4 ? `${langs.length} languages` : esc(langs.map(langName).join(', ')), langs.map(langName).join(', ')),
-    ]);
+    if (ctx) rows.push(row('Context', `${esc(ctx)} tokens <span class="muted">(how much text it can take in at once)</span>`, 'tokens'));
+    const feats = [a.good_for?.includes('reasoning') && '🧠 thinks step by step', a.good_for?.includes('tools') && '🛠️ uses tools', a.good_for?.includes('vision') && '👁️ sees images', r.hardware?.moe && '⚡ MoE'].filter(Boolean);
+    if (feats.length) rows.push(row('Features', feats.join(' · ')));
+    const langs = Array.isArray(r.languages?.value) ? r.languages.value : [];
+    if (langs.length) rows.push(row('Languages', `<span title="${esc(langs.map(langName).join(', '))}">${esc(langs.length > 6 ? `${langs.length} languages` : langs.map(langName).join(', '))}</span>${src(r.languages)}`));
+    else unknown.push('languages');
   }
-  h += xLine(r);
-  if (a.uncensored || a.barriers?.length) h += line([a.uncensored && item('✂️', '<strong>uncensored</strong>', 'Abliterated or uncensored variant: refusals removed by its publisher'), ...(a.barriers || []).map((x) => item('🚧', esc(x)))]);
-  return h + '</div>';
+  if (a.uncensored || a.barriers?.length) rows.push(row('Watch out', [a.uncensored && '✂️ <strong>uncensored</strong>: changed to refuse fewer requests', ...(a.barriers || []).map((x) => `🚧 ${esc(x)}`)].filter(Boolean).join(' · '), a.uncensored ? 'uncensored' : null));
+  f('Publisher country', r.publisher_region, (v) => `${flag(v)} ${esc(countryName(v))}`);
+  if (r.type === 'model') {
+    f('Release date', r.released_at);
+    if (r.first_published && known(r.first_published)) rows.push(row('First on Hugging Face', claimVal(r.first_published)));
+    f('Parameters', r.parameters, undefined, 'params');
+  }
+  if (r.type === 'dataset') { if (r.size_category) rows.push(row('Rows', esc(r.size_category))); if (r.formats?.length) rows.push(row('Formats', esc(r.formats.join(', ')))); f('Languages', r.languages, (v) => Array.isArray(v) ? esc(v.length > 6 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)); }
+  if (r.type === 'app') { if (r.categories?.length) rows.push(row('Category', esc(r.categories.join(', ')))); f('Interface languages', r.interface_languages, (v) => Array.isArray(v) ? esc(v.length > 6 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)); }
+  if (r.type === 'host') { if (r.kinds?.length) rows.push(row('Offers', esc(r.kinds.map((k) => KIND_LABELS[k] || k).join(', ')))); f('Data centers', r.data_centers, (v) => v.map((d) => `<span title="${esc(d.city_or_region || '')}">${flag(d.country)} ${esc(countryName(d.country))}</span>`).join(', ')); f('GPUs', r.gpu_types, (v) => Array.isArray(v) ? esc(v.join(', ')) : esc(v)); f('Data residency', r.data_residency, (v) => esc(String(v))); }
+  if (r.type === 'model' && r.relations?.length) {
+    const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
+    const to = (x, label) => x.listing ? `<a href="${esc(view.base + x.listing)}">${esc(x.name || label)}</a>` : x.url ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label);
+    rows.push(row('Made from', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); const label = t.replace('https://huggingface.co/', '').split('/').slice(t.startsWith('cf:') ? -1 : 0).join('/') || '?'; return `${esc(REL[x.type] || x.type || 'related to')} ${x.listing || x.url ? to(x, label) : /^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label)}`; }).join('; ')));
+    const direct = new Set((r.origin?.parents || []).map((p) => p.hf_id));
+    const up = (r.origin?.originals || []).filter((o) => !direct.has(o.hf_id));
+    if (up.length) rows.push(row('🌱 Original', `${up.map((o) => `${to(o, o.hf_id)}${o.chain.length > 2 ? ` <span class="muted">(${o.chain.length - 1} steps up)</span>` : ''}`).join(', ')} <span class="muted" title="${esc(`Traced through ${r.origin.source}${up.some((o) => !o.complete) ? '; the chain stops where a model page couldn\'t be read' : ''}`)}">ⓘ</span>`));
+  }
+  const dv = r.discovered_via;
+  const found = dv?.source === 'x' ? `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>` : dv?.source === 'huggingface-new' ? `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}` : dv?.source === 'youtube' ? `in a ${esc(dv.author || '')} video ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">watch ↗</a>` : dv?.source === 'llm-releases' ? `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>` : dv?.source === 'replicate' ? `new on <a href="${esc(dv.url)}" rel="noopener" target="_blank">Replicate</a>` : '';
+  if (found) rows.push(row('Found', found));
+  return `<h3 class="dh">📋 The facts</h3><dl class="facts">${rows.join('')}</dl>${unknown.length ? `<p class="ln muted">❓ Not stated anywhere we checked: ${esc(unknown.join(', '))}</p>` : ''}`;
+}
+
+// ---- "Using it in [country]": availability, free plan, every way to pay with its note written out, sign-up, prices ----
+export function usingBox(r, a = r.access, what = 'it') {
+  if (!a) return '';
+  const c = view.country; const cn = c ? countryName(c) : '';
+  const opts = [...countryNames.entries()].sort((x, y) => x[1].localeCompare(y[1])).map(([k, n]) => `<option value="${esc(k)}"${k === c ? ' selected' : ''}>${flag(k)} ${esc(n)}</option>`).join('');
+  const where = view.base ? `<select class="use-country" aria-label="Your country"><option value="">your country…</option>${opts}</select>` : c ? `${flag(c)} ${esc(cn)}` : 'your country';
+  const rows = [];
+  const av = a.countries_available?.value; const un = a.countries_unavailable?.value;
+  const general = av === 'all_except_listed' ? `most countries${Array.isArray(un) && un.length ? `, except ${countryList(un)}` : ''}` : Array.isArray(av) ? (av.length > 8 ? `${av.length} countries` : countryList(av)) : null;
+  if (c) { const s = availableIn(a, c); rows.push(row('Available', `${s === 'yes' ? `${ok} yes, in ${esc(cn)}` : s === 'no' ? `${bad} not in ${esc(cn)}` : `<span class="unknown">not stated for ${esc(cn)}</span>`}${general ? ` <span class="muted">· ${general}</span>` : ''}${src(a.countries_available)}`)); }
+  else rows.push(row('Available', general ? `${general}${src(a.countries_available)}` : `<span class="unknown">not stated</span>${view.base ? '' : ' · <span class="muted">choose your country above</span>'}`));
+  if (known(a.free)) rows.push(row('Free plan', `${a.free.value === 'paid_only' ? bad : ok} ${esc(FREE_LABELS[a.free.value] || a.free.value)}${a.free_limits ? ` <span class="muted">· ${esc(a.free_limits)}</span>` : ''}${src(a.free)}`, 'free-tier'));
+  const pm = methodsOf(a);
+  if (pm.length) {
+    const here = (m) => methodFor(m, c);
+    const sorted = [...pm].sort((x, y) => (here(y) - here(x)) || (CARDS.includes(x.method) - CARDS.includes(y.method)));
+    const noCardHere = pm.some((m) => !CARDS.includes(m.method) && here(m));
+    rows.push(row('Ways to pay', `<ul class="pay">${sorted.map((m) => `<li${here(m) ? '' : ' class="elsewhere"'}>${CARDS.includes(m.method) ? '💳' : here(m) ? ok : '·'} <strong>${esc(METHOD_LABELS[m.method] || m.method)}</strong>${m.note ? ` <span class="muted">· ${esc(m.note)}</span>` : ''}${here(m) ? '' : ` <span class="muted">(not for ${esc(cn)})</span>`}</li>`).join('')}</ul>${noCardHere ? `<span class="yes">✓ You can pay without a card${c ? ` in ${esc(cn)}` : ''}</span>` : payNoCard(a) && c ? `<span class="muted">The card-free ways listed are for other countries</span>` : '<span class="muted">Paid plans take cards only</span>'}${src(a.payment_methods)}`, 'no-card'));
+  } else rows.push(row('Ways to pay', unknownTxt));
+  if (known(a.signup_requirements)) rows.push(row('Sign-up', `${esc(a.signup_requirements.value)}${src(a.signup_requirements)}`));
+  if (known(a.local_currency_pricing)) rows.push(row('Prices', `${a.local_currency_pricing.value ? `${ok} in local currency` : 'in US dollars or euros'}${src(a.local_currency_pricing)}`));
+  return `<section class="using"><h3 class="dh">🌍 Using ${esc(what)} in ${where}</h3><dl class="facts">${rows.join('')}</dl>${r.access === a ? playLine(r) + priceLine(a) : ''}</section>`;
+}
+
+// Re-renders the listing on its own page with the visitor's choices (device, country, language) from this browser.
+export function listingInner(r) {
+  const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
+  return `<div class="card-head"><h1>${esc(r.name)}</h1><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
+    <p class="desc">${esc(plainWhat(r))}</p>${plainWhat(r) !== r.description ? `<p class="desc-src muted">${esc(r.description)}</p>` : ''}
+    ${verdictStrip(r)}
+    <div class="badges">${cardBadges(r)}</div>
+    ${metaLine(r)}
+    ${detail(r)}`;
 }
 
 export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
-  h += glance(r);
   h += view.base ? `<div id="start">${startBlock(r)}</div>` : startBlock(r); // an anchor on listing pages ("How to start →" links here)
+  if (r.type === 'app' || r.type === 'host') h += usingBox(r);
+  if (r.type === 'model') for (const d of (r.distributions || []).filter((x) => x.access)) h += usingBox(r, d.access, `the ${SOURCE_LABELS[d.source] || d.source}`);
   h += onlineLine(r);
-  h += ytLine(r);
+  h += factsTable(r);
   h += similarLine(r);
-  // Facts: one or two lines; unknown fields gathered at the end.
-  const unknown = [];
-  const f = (emoji, label, c, fmt) => { if (c === undefined) return null; const v = claimVal(c, fmt); if (!v) { unknown.push(label); return null; } return item(emoji, v, label); };
-  const facts = [f('🌍', 'publisher country', r.publisher_region, (v) => `${flag(v)} ${esc(countryName(v))}`)];
-  if (r.type === 'model') {
-    facts.push(f('📅', 'release date', r.released_at), r.first_published && known(r.first_published) ? item('🤗', `${claimVal(r.first_published)}`, 'First published on Hugging Face') : null, f('⚙️', 'parameters', r.parameters));
-    if (!known(r.languages)) unknown.push('languages');
-  }
-  if (r.type === 'dataset') facts.push(r.size_category && item('📦', `${esc(r.size_category)} rows`), r.formats?.length && item('🗂️', esc(r.formats.join(', '))), f('🗣️', 'languages', r.languages, (v) => Array.isArray(v) ? esc(v.length > 4 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)));
-  if (r.type === 'app') facts.push(r.categories?.length && item('🏷️', esc(r.categories.join(', '))), f('🗣️', 'interface languages', r.interface_languages, (v) => Array.isArray(v) ? esc(v.length > 4 ? `${v.length} languages` : v.map(langName).join(', ')) : esc(v)));
-  if (r.type === 'host') facts.push(r.kinds?.length && item('🏷️', esc(r.kinds.map((k) => KIND_LABELS[k] || k).join(', '))), f('📍', 'data centers', r.data_centers, (v) => v.map((d) => `<span title="${esc(d.city_or_region || '')}">${flag(d.country)}</span>`).join(' ')), f('🎮', 'GPUs', r.gpu_types, (v) => Array.isArray(v) ? esc(v.join(', ')) : esc(v)), f('🔐', 'data residency', r.data_residency, (v) => esc(String(v).slice(0, 90))));
-  if (r.type === 'model' && r.relations?.length) {
-    const REL = { uncensored_variant_of: 'uncensored variant of', finetune_of: 'fine-tune of', adapter_of: 'adapter for', merge_of: 'merge of', quantization_of: 'quantization of', variant_of: 'variant of', successor_of: 'successor of' };
-    const to = (x, label) => x.listing ? `<a href="${esc(view.base + x.listing)}">${esc(x.name || label)}</a>` : x.url ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label);
-    facts.push(item('🧬', r.relations.slice(0, 2).map((x) => { const t = String(x.target || x.target_id || x.id || ''); const label = t.replace('https://huggingface.co/', '').split('/').slice(t.startsWith('cf:') ? -1 : 0).join('/') || '?'; return `${esc(REL[x.type] || x.type || 'related to')} ${x.listing || x.url ? to(x, label) : /^https?:/.test(t) ? `<a href="${esc(t)}" rel="noopener" target="_blank">${esc(label)}</a>` : esc(label)}`; }).join('; ')));
-    // The original, traced upstream through base_model (shown when it's further up than the direct parent).
-    const direct = new Set((r.origin?.parents || []).map((p) => p.hf_id));
-    const up = (r.origin?.originals || []).filter((o) => !direct.has(o.hf_id));
-    if (up.length) facts.push(item('🌱', `<strong>Original:</strong> ${up.map((o) => `${to(o, o.hf_id)}${o.chain.length > 2 ? ` <span class="muted">(${o.chain.length - 1} steps up)</span>` : ''}`).join(', ')}`, `Traced through ${r.origin.source}${up.some((o) => !o.complete) ? '; the chain stops where a model page couldn\'t be read' : ''}`));
-  }
-  const dv = r.discovered_via;
-  if (dv?.source === 'x') facts.push(item('🆕', `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`, `Announced by @${dv.author}`));
-  else if (dv?.source === 'huggingface-new') facts.push(item('🆕', `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}`));
-  else if (dv?.source === 'youtube') facts.push(item('🆕', `in a ${esc(dv.author || '')} video ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">watch ↗</a>`));
-  else if (dv?.source === 'llm-releases') facts.push(item('🆕', `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>`));
-  h += line(facts);
-  if (unknown.length) h += `<p class="ln muted">❓ Unknown: ${esc(unknown.join(', '))}</p>`;
-  // Where to get it, payment, links: compact lines.
-  if (r.type === 'model') {
-    h += line([item('⬇️', (r.distributions || []).map((d) => `<a href="${esc(d.url)}" rel="noopener" target="_blank" title="${esc((AVAIL_LABELS[d.availability] || '') + (d.formats?.length ? ' · ' + d.formats.join(', ') : '') + (d.file_size_bytes ? ' · ' + gb(d.file_size_bytes) : ''))}">${esc(SOURCE_LABELS[d.source] || d.source)}${d.source === 'ollama' ? ' ' + esc(String(d.native_id).split(':')[1] || '') : ''}</a>`).join(' · '))]);
-    for (const d of (r.distributions || []).filter((x) => x.access)) h += `<p class="ln muted">${esc(SOURCE_LABELS[d.source] || d.source)} access:</p>` + accessFacts(d.access);
-  } else if (r.type !== 'dataset') {
-    h += accessFacts(r.access);
-    h += playLine(r);
-    h += priceLine(r.access);
-  }
+  if (!view.base) { h += xLine(r); h += ytLine(r); } // listing pages show these in their side panels
   h += accessCheckLine(r);
   if (r.possibly_discontinued) h += `<p class="ln warn-ln">⚠️ Possibly discontinued: ${esc(r.possibly_discontinued.reason)}. Check the official site before using or paying.</p>`;
   const short = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch { return u; } };
   const mid = (t, n = 52) => t.length <= n ? t : `${t.slice(0, Math.ceil(n * 0.45))}…${t.slice(-Math.floor(n * 0.5))}`;
   const linkList = (urls, max = 4) => urls.slice(0, max).map((u) => `<a href="${esc(u)}" rel="noopener" target="_blank" title="${esc(u)}">${esc(mid(short(u)))}</a>`).join(' · ') + (urls.length > max ? ` <span class="muted">+${urls.length - max}</span>` : '');
   const links = [...new Set([r.url, r.launch_url, ...(r.official_urls || []), ...(r.app_store_urls || [])].filter(Boolean))];
-  h += line([item('🔗', linkList(links, 3)), r.documentation_urls?.length && item('🛠️', linkList(r.documentation_urls, 3)), r.paper_urls?.length && item('📄', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · '))]);
-  if (r.variants?.length) h += line([item('🔁', `<strong>Other versions:</strong> ${r.variants.slice(0, 6).map((v) => `<a href="${esc(v.url)}" rel="noopener" target="_blank" title="${esc(v.kind)}${v.downloads_30d ? ' · ↓ ' + fmtNum(v.downloads_30d) + ' a month' : ''}">${esc(v.name)}</a>${v.publisher !== r.publisher ? ` <span class="muted">by ${esc(v.publisher)}</span>` : ''}`).join(' · ')}${r.variants.length > 6 ? ` <span class="muted">+${r.variants.length - 6}</span>` : ''}`)]);
+  const lrows = [];
+  if (r.type === 'model') lrows.push(row('Get it from', (r.distributions || []).map((d) => `<a href="${esc(d.url)}" rel="noopener" target="_blank" title="${esc((AVAIL_LABELS[d.availability] || '') + (d.formats?.length ? ' · ' + d.formats.join(', ') : '') + (d.file_size_bytes ? ' · ' + gb(d.file_size_bytes) : ''))}">${esc(SOURCE_LABELS[d.source] || d.source)}${d.source === 'ollama' ? ' ' + esc(String(d.native_id).split(':')[1] || '') : ''}</a>`).join(' · ')));
+  if (links.length) lrows.push(row('Official', linkList(links, 3)));
+  if (r.documentation_urls?.length) lrows.push(row('Docs', linkList(r.documentation_urls, 3)));
+  if (r.paper_urls?.length) lrows.push(row('Papers', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · ')));
+  if (r.variants?.length) lrows.push(row('Other versions', `${r.variants.slice(0, 6).map((v) => `<a href="${esc(v.url)}" rel="noopener" target="_blank" title="${esc(v.kind)}${v.downloads_30d ? ' · ↓ ' + fmtNum(v.downloads_30d) + ' a month' : ''}">${esc(v.name)}</a>${v.publisher !== r.publisher ? ` <span class="muted">by ${esc(v.publisher)}</span>` : ''}`).join(' · ')}${r.variants.length > 6 ? ` <span class="muted">+${r.variants.length - 6}</span>` : ''}`));
+  if (lrows.length) h += `<h3 class="dh">🔗 Links</h3><dl class="facts">${lrows.join('')}</dl>`;
   h += `<p class="ln src">${r.verification_status === 'verified' ? (r.verified_by ? `✅ Verified (${esc(r.verified_by)})` : '✅ Verified at an official source') : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
 }
@@ -327,7 +409,7 @@ export function suits(r) {
     const av = acc.map((a) => availableIn(a, view.country));
     const dcHere = r.type === 'host' && Array.isArray(r.data_centers?.value) && r.data_centers.value.some((d) => d.country === view.country);
     const c = av.includes('no') && !av.includes('yes') ? 2 : (av.includes('yes') || dcHere) ? 0 : 1;
-    const pay = acc.some((a) => payNoCard(a) || ['free', 'free_tier'].includes(a.free?.value)) || playNoCard(r, view.country).length ? 0 : 1;
+    const pay = acc.some((a) => payNoCard(a, view.country) || ['free', 'free_tier'].includes(a.free?.value)) || playNoCard(r, view.country).length ? 0 : 1;
     const countryScore = c === 2 ? 2 : c === 0 && pay === 0 ? 0 : 1; // available there and payable without a card (or free)
     s = Math.max(view.mem && r.type === 'model' ? s : 0, countryScore);
   }
@@ -337,10 +419,11 @@ export function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
   return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}${(r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified' ? ' candidate' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
     <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
-    <p class="desc">${esc(r.description)}</p>
-    ${goodForLine(r)}
+    <p class="desc">${esc(plainWhat(r))}</p>
+    ${verdictStrip(r)}
     <div class="badges">${cardBadges(r)}</div>
-    <div class="more">Details and sources ▾</div>
+    ${metaLine(r)}
+    <div class="more">Open details ▾</div>
   </summary><div class="detail-slot" data-id="${esc(r.id)}"></div></details></li>`;
 }
 
@@ -361,19 +444,24 @@ export function ytSearchUrl(r) {
   const q = name.length <= 3 ? `${name} ${r.publisher_name || r.publisher}` : `${/\s/.test(name) ? `"${name}"` : name}${r.type === 'host' ? ' GPU' : r.type === 'dataset' ? ' dataset' : ' AI'}`;
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}&sp=CAI%253D`;
 }
+// The action row: Save and Compare, then Share ▾ and More ▾ menus (one row instead of nine buttons).
 export function shareRow(r) {
   const url = listingUrl(r);
   const text = `${r.name} on CleverFox: ${(r.answers?.good_for || []).slice(0, 3).map((c) => (CAPS[c] || c).replace(/^\S+\s/, '')).join(', ') || r.description}`;
-  return `<div class="share" data-url="${esc(url)}" data-title="${esc(r.name)}" data-text="${esc(text)}">
+  return `<div class="share actions" data-url="${esc(url)}" data-title="${esc(r.name)}" data-text="${esc(text)}">
     <button type="button" class="share-btn save-btn" data-act="save" data-save="${esc(r.id)}" aria-pressed="false" hidden>☆ Save</button>
-    <a class="share-btn" href="${esc(view.base + listingPath(r))}">🔗 Its own page</a>
-    <button type="button" class="share-btn" data-act="copy">📋 Copy link</button>
-    <button type="button" class="share-btn" data-act="share" hidden>📤 Share…</button>
-    <a class="share-btn" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">𝕏 Post</a>
-    <a class="share-btn" href="https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}" target="_blank" rel="noopener">💬 WhatsApp</a>
-    <a class="share-btn" href="${esc(xSearchUrl(r))}" target="_blank" rel="noopener">👀 Reactions on X</a>
-    <a class="share-btn" href="${esc(ytSearchUrl(r))}" target="_blank" rel="noopener">▶️ Videos on YouTube</a>
     <button type="button" class="share-btn compare-btn" data-compare="${esc(r.id)}" hidden>⚖️ Compare</button>
+    <details class="menu"><summary class="share-btn">📤 Share ▾</summary><div class="menu-list">
+      <button type="button" class="share-btn" data-act="copy">📋 Copy link</button>
+      <button type="button" class="share-btn" data-act="share" hidden>📤 Share…</button>
+      <a class="share-btn" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">𝕏 Post</a>
+      <a class="share-btn" href="https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div></details>
+    <details class="menu"><summary class="share-btn">More ▾</summary><div class="menu-list">
+      ${view.base ? '' : `<a class="share-btn" href="${esc(view.base + listingPath(r))}">🔗 Its own page</a>`}
+      <a class="share-btn" href="${esc(xSearchUrl(r))}" target="_blank" rel="noopener">👀 Reactions on X</a>
+      <a class="share-btn" href="${esc(ytSearchUrl(r))}" target="_blank" rel="noopener">▶️ Videos on YouTube</a>
+    </div></details>
   </div>`;
 }
 // Browser only: makes the share buttons work (copy, the phone's share menu), and plays a YouTube video when asked.
@@ -414,6 +502,8 @@ export function xPanel(r) {
   const b = r.x_buzz;
   const live = `<a href="${esc(xSearchUrl(r))}" rel="noopener" target="_blank">👀 Latest posts on X ↗</a>`;
   if (!b || !b.posts) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">No posts collected yet. X scanning collects the most-liked posts about each listing once it's switched on.</p><p>${live}</p></aside>`;
+  // Little signal (no likes, no clear praise or criticism): say so plainly instead of a row of zeros.
+  if (!(b.total_likes ?? b.likes) && !b.positive && !b.critical) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">Not much talk on X yet: ${b.posts} recent post${b.posts > 1 ? 's' : ''}, none with likes (checked ${esc(fmtDate(b.observed_at))}).</p><p>${live}</p></aside>`;
   const embed = (p) => `<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="${esc(p.url)}">Post by @${esc(p.author)} · ❤️ ${fmtK(p.likes)} · ${esc(fmtDate(p.created_at))}</a></blockquote>`;
   const group = (title, list) => list?.length ? `<h3>${title}</h3>${list.map(embed).join('')}` : '';
   const total = Math.max(1, b.posts);
@@ -549,7 +639,7 @@ export function playLine(r) {
   if (!c) {
     const ex = [['IN', 'upi'], ['BR', 'pix'], ['ID', 'other'], ['KE', 'mobile_money'], ['PH', 'other'], ['EG', 'carrier_billing']].map(([cc, m]) => { const hit = (t.countries[cc] || []).find(([x]) => x === m); return hit ? `${hit[1] || METHOD_LABELS[m]} in ${countryName(cc)}` : null; }).filter(Boolean);
     const n = Object.values(t.countries).filter((l) => l.some(([m]) => !CARDS.includes(m))).length;
-    return `<p class="ln">🛒 Sold in the Android app through Google Play, which accepts other ways to pay than cards in ${n} countries${ex.length ? `, for example ${esc(ex.slice(0, 4).join(', '))}` : ''}. Choose your country on the main page to see yours. <a class="src-i" href="${esc(t.source_url)}" rel="noopener" target="_blank" title="Google Play Help">ⓘ</a></p>`;
+    return `<p class="ln">🛒 Sold in the Android app through Google Play, which accepts other ways to pay than cards in ${n} countries${ex.length ? `, for example ${esc(ex.slice(0, 4).join(', '))}` : ''}. Choose your country to see yours. <a class="src-i" href="${esc(t.source_url)}" rel="noopener" target="_blank" title="Google Play Help">ⓘ</a></p>`;
   }
   const list = t.countries[c];
   const url = t.country_url.replace('{CC}', c);

@@ -23,7 +23,7 @@ assert.equal(s.access.payment_methods.source_url, 'https://app.example/pricing',
 assert.equal(s.access.prices[0].amount, 399, 'prices survive');
 assert.equal(R.availableIn(s.access, 'KE'), 'yes', 'App Store countries reach the country badge');
 R.view.country = 'KE';
-assert.ok(R.cardBadges(s).includes('Available in'), 'the card shows availability from the App Store');
+assert.ok(R.verdictStrip(s).includes('Works in'), 'the card shows availability from the App Store');
 assert.equal(R.suits(s), 0, 'sorting and highlighting see it as available and payable');
 assert.ok(R.priceLine(s.access).includes('399'), 'the price line renders from the list record');
 R.view.country = '';
@@ -34,6 +34,14 @@ const model = { id: 'cf:model:a/b', type: 'model', name: 'B', description: 'x', 
 const sm = slim(model);
 assert.equal(sm.hardware.estimate, true);
 R.view.mem = 16;
-assert.ok(R.cardBadges(sm).includes('estimate') && !R.cardBadges(sm).includes('✓ Fits'), 'an estimate never shows a plain ✓');
+assert.ok(R.verdictStrip(sm).includes('estimate') && !R.verdictStrip(sm).includes('Fits your'), 'an estimate never shows a plain ✓');
 R.view.mem = 0;
 console.log('All slim-record tests passed.');
+// Ways to pay named for other countries don't count for the chosen one (verdicts and "Using it in").
+R.setCountries([['KE', 'Kenya'], ['BR', 'Brazil']]);
+assert.equal(R.methodFor({ method: 'pix', note: 'Brazil; Go and Plus plans' }, 'KE'), false, 'Pix in Brazil is not a way to pay in Kenya');
+assert.equal(R.methodFor({ method: 'pix', note: 'Brazil; Go and Plus plans' }, 'BR'), true);
+assert.equal(R.methodFor({ method: 'mobile_money', note: 'M-Pesa' }, 'KE'), true, 'notes without a country count everywhere');
+console.log('Payment-country test passed.');
+assert.equal(R.methodFor({ method: 'bank_transfer', note: 'Bank debit via Link, UK and EEA where supported' }, 'KE'), false, 'UK and EEA name countries too');
+assert.equal(R.methodFor({ method: 'bank_transfer', note: 'Bank debit via Link, UK and EEA where supported' }, 'DE'), true);

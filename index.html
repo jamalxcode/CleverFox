@@ -22,26 +22,8 @@
   <canvas id="cf-rain" aria-hidden="true"></canvas>
   <div class="wrap top-row">
     <a class="brand" href="./"><img src="img/fox-logo.webp?v=__BUILD__" alt="" width="40" height="40">CleverFox</a>
-    <div class="pickers">
-    <label class="country">
-      <span class="country-label" data-i18n="device">Your device</span>
-      <select id="mem" aria-label="Your device memory (RAM, or graphics card memory)"><option value="0" data-i18n="memory">Memory…</option></select>
-    </label>
-    <label class="country">
-      <span class="country-label" data-i18n="country">Your country</span>
-      <select id="country" aria-label="Your country"><option value="" data-i18n="choose">Choose…</option></select>
-    </label>
-    <label class="country">
-      <span class="country-label" data-i18n="ulang">Your language</span>
-      <select id="ulang" aria-label="The language you want AI to speak"><option value="" data-i18n="anylang">Any language</option></select>
-    </label>
-    <label class="country lang-pick">
-      <span class="country-label" aria-hidden="true">🌐</span>
-      <select id="lang" aria-label="Language"></select>
-    </label>
-    </div>
+    <label class="lang-pick"><span aria-hidden="true">🌐</span> <select id="lang" aria-label="Interface language"></select></label>
   </div>
-  <div class="wrap"><p class="pick-hint" data-i18n="hint">💡 Tell us your device's memory and your country: CleverFox then puts first, and highlights, the models that fit your machine and the apps and services that work in your country and accept a way you can pay.</p></div>
   <div class="wrap intro">
     <p class="tagline" data-i18n="tagline">AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.</p>
     <img class="mascot" src="img/fox.webp?v=__BUILD__" alt="CleverFox mascot: a smiling fox in sunglasses" width="104" height="120">
@@ -52,13 +34,17 @@
   <section class="start-here" aria-labelledby="start-h">
     <h2 id="start-h" data-i18n="find">🦊 Find what to use</h2>
     <p id="lang-draft" class="muted start-note" hidden></p>
-    <p class="start-q">
+    <div class="start-q">
       <label><span data-i18n="iwant">I want to</span> <select id="s-task" aria-label="What you want to do"></select></label>
       <label><span data-i18n="on">on</span> <select id="s-device" aria-label="Where you'll use it"><option value="computer" data-i18n="computer">my computer</option><option value="phone" data-i18n="phone">my phone</option><option value="online" data-i18n="web">the web (no download)</option></select></label>
       <button id="s-go" class="go-btn" type="button" data-i18n="go">Show my picks</button>
-    </p>
-    <p id="setup" class="setup muted" hidden></p>
-    <p class="muted start-note" data-i18n="note">Uses your device memory and country from the pickers above. Picks come from stated facts: memory fit, independent benchmarks, popularity, free options, country and ways to pay. Only checked apps and hosts.</p>
+    </div>
+    <div class="start-you">
+      <label class="pick" id="pick-mem"><span data-i18n="device">Your device</span> <select id="mem" aria-label="Your device memory (RAM, or graphics card memory)"><option value="0" data-i18n="memory">Memory…</option></select></label>
+      <label class="pick" id="pick-country"><span data-i18n="country">Your country</span> <select id="country" aria-label="Your country"><option value="" data-i18n="choose">Choose…</option></select></label>
+      <span id="country-guess"></span>
+      <label class="pick" id="pick-ulang"><span data-i18n="aispeaks">AI that speaks</span> <select id="ulang" aria-label="The language you want AI to speak"><option value="" data-i18n="anylang">Any language</option></select></label>
+    </div>
     <div id="picks" aria-live="polite"></div>
   </section>
 
@@ -84,8 +70,11 @@
 
   <div class="controls">
     <div id="caps" class="caps" hidden></div>
-    <input id="q" type="search" data-i18n-ph="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
-    <div id="filters" class="filters"></div>
+    <div class="search-row">
+      <input id="q" type="search" data-i18n-ph="search" placeholder="Search name, publisher, language, task…" aria-label="Search">
+      <button id="filters-btn" class="share-btn" type="button" aria-expanded="false" aria-controls="filters">⚙️ Filters</button>
+    </div>
+    <div id="filters" class="filters" hidden></div>
   </div>
 
   <p id="summary" class="summary" aria-live="polite"></p>

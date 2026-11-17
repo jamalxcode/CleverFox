@@ -108,7 +108,7 @@ npm run serve                  # then open http://localhost:8000
 | [Business rules](docs/BUSINESS-RULES.md) | every rule and number the code applies |
 | [Interface rules](docs/INTERFACE-RULES.md) | how the pages look and behave |
 | [Workflow](docs/WORKFLOW.md) | the daily pipeline and how changes are made |
-| [Decisions](docs/DECISIONS.md) | 78 numbered decisions, each with the why |
+| [Decisions](docs/DECISIONS.md) | 79 numbered decisions, each with the why |
 | [Design ideas](docs/DESIGN-IDEAS.md) | built, planned, still open, and turned down (with reasons) |
 | [Lessons learned](docs/LESSONS.md) | what broke or surprised us, so it doesn't happen twice |
 | [Conversation log](docs/CONVERSATIONS.md) | notes from every design session |

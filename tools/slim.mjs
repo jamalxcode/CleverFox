@@ -25,7 +25,7 @@ export function slim(r) {
     languages: slimClaim(r.languages), publisher_region: slimClaim(r.publisher_region), availability: slimClaim(r.availability),
     license: slimClaim(r.license), parameters: slimClaim(r.parameters), local_ready: r.local_ready, size_category: r.size_category,
     answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised, online: r.answers.online, online_free: r.answers.online_free, online_no_card: r.answers.online_no_card,
-      uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free },
+      uncensored: r.answers.uncensored, benchmarks: r.answers.benchmarks, independent: r.answers.independent, free: r.answers.free, gate: r.answers.gate, license_kind: r.answers.license_kind },
     hardware: r.hardware && { min_memory_gb: r.hardware.min_memory_gb, recommended_gb: r.hardware.recommended_gb, estimate: isEstimate(r.hardware) || undefined },
     platforms: r.platforms && Object.fromEntries(Object.keys(r.platforms).map((k) => [k, []])),
     popularity: pop.length ? [{ downloads_30d: pop.reduce((n, p) => n + (p.downloads_30d || 0) + pullsN(p.pulls), 0), likes: pop.reduce((n, p) => n + (p.likes || 0), 0), ...(pop.some((p) => p.runs) ? { runs: pop.reduce((n, p) => n + (p.runs || 0), 0) } : {}) }] : undefined,
