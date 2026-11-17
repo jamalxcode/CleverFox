@@ -16,6 +16,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **What people say and show** (56, 73, 78): the X panel, YouTube videos and reviews, all loaded only when asked.
 - **Where it came from** (76): derived models traced to their original through `base_model`.
 - **Return visits** (77): setup line, remembered picks, one next step, saved and recently viewed, new for you, similar listings, help for empty results, calendar reminder and a feed per task.
+- **Answers at a glance** (79): verdict strip, plain descriptions, one question bar, picks first, folded filters, "Using it in [country]", labelled facts, and country-aware ways to pay.
 - **A look with character** (72): the Matrix terminal look, readable first, with a light paper look.
 
 ## Planned (in TODO)
@@ -37,6 +38,8 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **More reading sources than X:** Reddit, forums, app-store reviews, news. Each needs its permitted use checked.
 - **AI for extraction or classification:** none is used now. Only with a labelled test set and a spending cap.
 - **An anonymous "Next step" event** to see whether "How to start" helps people, with nothing personal.
+- **Per-country guides** ("Pay without a card in Kenya"), now that ways to pay are country-aware. One page per country, not per filter combination.
+- **Verdicts in the 6 interface languages,** after the native-speaker review.
 - **YouTube thumbnails** in the panel, only if they can load on request like the videos.
 - **A general guide to crypto-funded virtual cards:** undecided. It must never become a guide to getting around country restrictions.
 - **Price comparisons across equivalent configurations,** never "cheapest" without matching setups (phase 3).

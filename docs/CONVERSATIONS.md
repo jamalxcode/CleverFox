@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: docs brought up to date (3)
+**Where:** Claude Code session.
+**Asked:** update the repo with design decisions and our chat.
+**Outcome:**
+- Decision 79, the business rules, interface rules, lessons, TODO and this log were already updated with the clarity pass.
+- Added spec section 12b, "Answers at a glance".
+- Moved the clarity pass into "Built" in DESIGN-IDEAS, with two new open ideas: per-country guides, and verdicts in the 6 interface languages.
+
 ## 2026-11-17: UI critique, then the clarity pass
 **Where:** Claude Code session.
 **Asked:**

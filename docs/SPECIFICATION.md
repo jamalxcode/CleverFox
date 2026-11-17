@@ -259,6 +259,15 @@ The recurring need is "what can I use now, for my task, device and country, and 
 - **Accumulating value:** saved listings (☆), recently viewed, and the last tab, search and filters, all kept only in this browser. They can be downloaded, loaded on another device or cleared. Nothing is lost for not visiting.
 - **Triggers you control:** an optional weekly or monthly reminder added to your own calendar (an .ics file; delete the event to stop it), and an RSS feed for your task. CleverFox has no accounts and sends nothing.
 
+### 12b. Answers at a glance (decision 79)
+The answer comes before the detail:
+- **Verdict strip:** every card and listing page opens with plain verdicts about the visitor (✓ yes, ✗ no, ! maybe, ? not stated): fits your device, works in your country, free, pay without a card, sign-up and license, your language.
+- **Plain description and quiet facts:** a one-sentence description, at most 3 positive badges (warnings always show), and one quiet line of raw details.
+- **The top of the page:** one question bar ("I want to … on …") with device, country and AI language as its setup pickers. Picks show on every visit, and filters fold behind "Filters (n)".
+- **Details:** Save · Compare · Share ▾ · More ▾, then How to start, then "Using it in [country]" (availability, free plan, every way to pay with its note written out, sign-up, prices), then labelled facts with glossary links.
+- **Listing pages** redraw with the visitor's choices and have their own country picker.
+- **Ways to pay are country-aware:** a method noted for other countries never counts as a way for you to pay.
+
 ## 13. Guides (phase 2)
 
 AI writes short original guides from official documentation, under the same evidence rules: every material claim links its source, and nothing is invented. Upstream docs are linked, not mirrored.
