@@ -169,6 +169,7 @@ export function cardBadges(r) {
   if (r.warning === 'dont_touch') warn.push(badge('☠️ Don\'t touch', 'b-no'));
   else if (r.warning === 'reported') warn.push(badge('⚠️ Reported', 'b-warn'));
   if (r.possibly_discontinued) warn.push(`<span class="badge b-warn" title="${esc(r.possibly_discontinued.reason)}">⚠️ Possibly discontinued</span>`);
+  if (r.listing_status?.value === 'removed_at_source') warn.push(`<span class="badge b-warn" title="Its page at the source no longer exists (checked ${esc(fmtDate(r.listing_status.checked_at))}); kept here for the record">⚠️ Removed at its source</span>`);
   if (r.lookalikes?.count) warn.push(`<span class="badge b-warn" title="${esc(`${r.lookalikes.count} App Store apps use the name ${r.lookalikes.brand} but come from other sellers. The official one is by ${r.official_store?.seller}.`)}">⚠️ ${r.lookalikes.count} look-alike apps</span>`);
   if (r.access_check?.changed?.length) warn.push(`<span class="badge b-warn" title="A pricing, payment or availability page changed after these facts were checked">⚠️ Pricing page changed</span>`);
   else if (r.access_check?.stale) warn.push(badge('⏳ Access facts are old', 'b-warn'));
@@ -206,6 +207,8 @@ export function metaLine(r) {
     if (r.official_store?.rating) m.push(`⭐ ${r.official_store.rating} on the App Store`);
   }
   const nv = Array.isArray(r.variants) ? r.variants.length : r.variants; if (nv) m.push(`+${nv} other version${nv > 1 ? 's' : ''}`);
+  const nc = Array.isArray(r.copies) ? r.copies.length : r.copies; if (nc) m.push(`+${nc} community version${nc > 1 ? 's' : ''}`);
+  if (r.copy_of) m.push(`community version of ${typeof r.copy_of === 'object' ? r.copy_of.name : 'a listed model'}`);
   return m.length ? `<p class="meta">${m.map(esc).join('<span class="sep"> · </span>')}</p>` : '';
 }
 
@@ -383,6 +386,7 @@ export function detail(r) {
   if (r.type === 'app' || r.type === 'host') h += usingBox(r);
   if (r.type === 'model') for (const d of (r.distributions || []).filter((x) => x.access)) h += usingBox(r, d.access, `the ${SOURCE_LABELS[d.source] || d.source}`);
   h += onlineLine(r);
+  h += newsLine(r);
   h += factsTable(r);
   h += similarLine(r);
   if (!view.base) { h += xLine(r); h += ytLine(r); } // listing pages show these in their side panels
@@ -398,6 +402,7 @@ export function detail(r) {
   if (r.documentation_urls?.length) lrows.push(row('Docs', linkList(r.documentation_urls, 3)));
   if (r.paper_urls?.length) lrows.push(row('Papers', r.paper_urls.slice(0, 4).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">paper${r.paper_urls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join(' · ')));
   if (r.variants?.length) lrows.push(row('Other versions', `${r.variants.slice(0, 6).map((v) => `<a href="${esc(v.url)}" rel="noopener" target="_blank" title="${esc(v.kind)}${v.downloads_30d ? ' · ↓ ' + fmtNum(v.downloads_30d) + ' a month' : ''}">${esc(v.name)}</a>${v.publisher !== r.publisher ? ` <span class="muted">by ${esc(v.publisher)}</span>` : ''}`).join(' · ')}${r.variants.length > 6 ? ` <span class="muted">+${r.variants.length - 6}</span>` : ''}`));
+  if (Array.isArray(r.copies) && r.copies.length) lrows.push(row('Community versions', `${r.copies.slice(0, 8).map((c) => `<a href="${esc(view.base + c.path)}">${esc(c.name)}</a> <span class="muted">by ${esc(c.publisher)}</span>`).join(' · ')}${r.copies.length > 8 ? ` <span class="muted">+${r.copies.length - 8}</span>` : ''}`));
   if (lrows.length) h += `<h3 class="dh">🔗 Links</h3><dl class="facts">${lrows.join('')}</dl>`;
   h += `<p class="ln src">${r.verification_status === 'verified' ? (r.verified_by ? `✅ Verified (${esc(r.verified_by)})` : '✅ Verified at an official source') : '⚠️ Not yet verified: treat facts with care'} · first seen ${esc(fmtDate(r.first_seen_at))} · ${r.evidence_urls?.length || 0} sources</p>`;
   return h + '</div>';
@@ -671,4 +676,11 @@ export function similarLine(r) {
   const s = r.similar || [];
   if (!s.length) return '';
   return `<p class="ln similar">🔎 <strong>Similar:</strong> ${s.map((x) => `<a href="${esc(view.base + x.path)}">${esc(x.name)}</a> <span class="muted">(${esc(x.shared.join(', ').toLowerCase())})</span>`).join('<span class="sep"> · </span>')}</p>`;
+}
+
+// Makers' own news that names this listing (tools/discover.mjs makers' feeds, matched by the build).
+export function newsLine(r) {
+  const n = r.maker_news || [];
+  if (!n.length) return '';
+  return `<p class="ln">📰 <strong>In the news:</strong> ${n.map((x) => `<a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.title)}</a> <span class="muted">(${esc(x.source)}, ${esc(fmtDate(x.published_at))})</span>`).join('<span class="sep"> · </span>')}</p>`;
 }

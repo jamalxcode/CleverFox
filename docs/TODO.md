@@ -48,7 +48,6 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | AI makers' news feeds | official posts; Hugging Face links filled in (`data/announce-feeds.json`) | ✓ | ✓ | `tools/discover.mjs` |
 | Hugging Face Daily Papers | models and datasets linked to top papers | ✓ | ✓ | `tools/discover.mjs` |
 | Hacker News (Algolia) | AI launches, not reviewed | ✓ | ✓ | `tools/discover.mjs` |
-| Bluesky (public search) | posts linking to Hugging Face; skipped if sign-in is needed | ✓ | ✓ | `tools/discover.mjs` |
 | App Store searches (20 countries) | popular AI apps not yet listed: research queue | once a day | once a day | `tools/discover.mjs` |
 | Ollama newest | new local models within hours | ✓ | | `tools/import.mjs --x-only` |
 | Product Hunt (with `PRODUCT_HUNT_TOKEN`) | top AI launches, as an app research queue | ✓ | ✓ | `tools/discover.mjs` |
@@ -86,6 +85,9 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Add more makers' feeds (DeepSeek, Cohere, xAI, Sarvam, G42 and regional labs) once their feed URLs are confirmed on their own sites.
 - [ ] Auto-research (decision 85): after the first runs, review the new listings' quotes (`research.quotes` in each record) for false matches, and promote good ones with the decision 67 review. Tune the word rules if needed.
 - [ ] Optional AI step for auto-research: Claude reads the official pages and proposes facts with quotes, and the tool rejects any quote not on the page. Needs an Anthropic API key and a spending cap (an open decision).
+- [ ] Health (decision 86): read the status page after a few days of history, and tune the drop and stale thresholds if they flag too much or too little.
+- [ ] Publishers: run the "Publishers" workflow after the smarter Wikidata matching, review its output (it prints every match), and fix wrong ones with an explicit `qid` in `data/publisher-map.json`.
+- [ ] Recovered listings: after the next full refresh, check how many of the 92 came back and how many were marked removed at their source.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

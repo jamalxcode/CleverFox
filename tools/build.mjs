@@ -90,9 +90,12 @@ const sourceFiles = [
   ...readdirSync(seedDir).filter((f) => f.endsWith('.json')).sort().map((f) => join(seedDir, f)),
   ...(existsSync(importDir) ? readdirSync(importDir).filter((f) => ['models.json', 'datasets.json', 'apps-researched.json'].includes(f)).sort().map((f) => join(importDir, f)) : []),
 ];
-const records = sourceFiles.flatMap((f) => {
+// Imported records are remembered, so a bad one can be quarantined instead of stopping every deploy (decision 86).
+const importedRecs = new Set();
+let records = sourceFiles.flatMap((f) => {
   const data = JSON.parse(readFileSync(f, 'utf8'));
   if (!Array.isArray(data)) throw new Error(`${f} must hold a JSON array`);
+  if (f.startsWith(importDir)) for (const r of data) importedRecs.add(r);
   return data;
 });
 
@@ -172,9 +175,23 @@ for (const r of records) {
   }
 }
 
-if (errors.length) {
-  console.error(`${errors.length} problem(s) in ${records.length} seed records:\n- ${errors.join('\n- ')}`);
-  process.exit(1);
+// Quarantine: an imported record with problems is left out and logged (data/imported/quarantine.json, shown by the
+// health report), so one surprise from an outside source can't block every deploy. Problems in hand-researched
+// records still stop the run.
+{
+  const importedIds = new Set([...importedRecs].map((r) => r.id || '(no id)'));
+  const bad = new Map();
+  for (const e of errors) { const id = e.slice(0, e.indexOf(': ')); if (importedIds.has(id)) (bad.get(id) || bad.set(id, []).get(id)).push(e.slice(id.length + 2)); }
+  const seedErrors = errors.filter((e) => !importedIds.has(e.slice(0, e.indexOf(': '))));
+  if (seedErrors.length) {
+    console.error(`${seedErrors.length} problem(s) in ${records.length} seed records:\n- ${seedErrors.join('\n- ')}`);
+    process.exit(1);
+  }
+  if (bad.size) {
+    records = records.filter((r) => !(importedRecs.has(r) && bad.has(r.id || '(no id)')));
+    console.warn(`Quarantined ${bad.size} imported record(s):\n- ${[...bad].map(([id, ps]) => `${id}: ${ps.join('; ')}`).join('\n- ')}`);
+  }
+  if (existsSync(importDir)) writeFileSync(join(importDir, 'quarantine.json'), JSON.stringify({ checked_at: new Date().toISOString(), records: [...bad].map(([id, problems]) => ({ id, problems })) }, null, 1) + '\n');
 }
 
 // Publishable catalog: drop internal research notes, add derived fields and every cited URL to evidence.
@@ -402,6 +419,22 @@ if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
     if (r.origin) { for (const o of r.origin.originals || []) Object.assign(o, link(o.hf_id)); n++; }
   }
   console.log(`Originals: ${n} models with a traced original`);
+  // Community versions (decision 86): a model made from another listed model by a different publisher is grouped
+  // under it in the list (its own page stays). Official variants by the same publisher stay visible.
+  const byPath = new Map(published.map((r) => [listingPath(r), r]));
+  const COPY = new Set(['finetune_of', 'uncensored_variant_of', 'quantization_of', 'adapter_of', 'merge_of']);
+  const pubKey = (r) => String(r.publisher_name || r.publisher || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  let grouped = 0;
+  for (const r of published) {
+    if (r.type !== 'model') continue;
+    const rel = (r.relations || []).find((x) => COPY.has(x.type) && x.listing && byPath.has(x.listing));
+    const parent = rel && byPath.get(rel.listing);
+    if (!parent || parent === r || pubKey(parent) === pubKey(r)) continue;
+    r.copy_of = { id: parent.id, name: parent.name, path: rel.listing, relation: rel.type };
+    (parent.copies ||= []).push({ name: r.name, path: listingPath(r), publisher: r.publisher_name || r.publisher, relation: rel.type });
+    grouped++;
+  }
+  console.log(`Community versions: ${grouped} models grouped under ${published.filter((r) => r.copies?.length).length} originals`);
 }
 
 // ---- YouTube videos that name a listing (from tools/discover.mjs: official channels first, then keyword search) ----
@@ -428,6 +461,27 @@ if (xMatched) console.log(`X buzz attached to ${xMatched} listings`);
   const rev = D.youtube?.reviews || {}; let nr = 0;
   for (const r of published) { const x = rev[r.id]; if (x) { r.yt_reviews = { checked_at: x.checked_at, videos: x.videos || [] }; if (x.videos?.length) nr++; } }
   if (Object.keys(rev).length) console.log(`YouTube reviews: ${nr} listings with videos (${Object.keys(rev).length} checked)`);
+}
+
+// ---- Makers' news that names a listing (decision 86): titles matched like YouTube videos, shown on the listing ----
+{
+  const D = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
+  const posts = D.maker_feeds?.posts || [];
+  if (posts.length) {
+    const { shortName } = await import('./x.mjs');
+    const norm = (t) => ' ' + String(t || '').toLowerCase().replace(/[^\p{L}\p{N}.]+/gu, ' ') + ' ';
+    const titles = posts.map((p) => [p, norm(p.title)]);
+    let n = 0;
+    for (const r of published) {
+      if (r.type === 'dataset') continue;
+      const keys = [...new Set([r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim(), shortName(r)].filter((x) => x && x.length >= 5 && /\d|\s/.test(x)).map(norm))].filter((k) => k.trim().length >= 5);
+      if (!keys.length) continue;
+      const hit = titles.filter(([, t]) => keys.some((k) => t.includes(k))).map(([p]) => ({ title: p.title, url: p.url, source: p.source, published_at: p.published_at }));
+      const uniq = hit.filter((h, i) => hit.findIndex((x) => x.title.toLowerCase() === h.title.toLowerCase()) === i); // the same post in two feeds
+      if (uniq.length) { r.maker_news = uniq.sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 3); n++; }
+    }
+    console.log(`Makers' news: posts naming ${n} listings`);
+  }
 }
 
 // ---- use it online: API providers serving each model (tools/providers.mjs) ----
@@ -477,10 +531,10 @@ if (PROV) {
   const models = published.filter((r) => r.type === 'model');
   for (const m of rep) { const r = replicateMatch(m, models); if (r) add(r, m.id, m.url); }
   // OpenRouter's own API-only listings (decision 83): OpenRouter with its prices under "Use it online".
-  const orById = new Map((D.openrouter?.models || []).map((m) => [m.id, m]));
+  const orById = new Map([...(D.openrouter?.all || []), ...(D.openrouter?.models || [])].map((m) => [m.id, m])); // today's prices
   for (const r of models) {
     const dist = (r.distributions || []).find((x) => x.source === 'aggregator' && /openrouter\.ai/.test(x.url || ''));
-    if (!dist || (r.online ||= []).some((p) => p.provider === 'openrouter')) continue;
+    if (!dist || dist.availability === 'withdrawn' || (r.online ||= []).some((p) => p.provider === 'openrouter')) continue;
     const m = orById.get(dist.native_id) || {};
     r.online.push({ provider: 'openrouter', name: 'OpenRouter', url: dist.url, host_id: published.some((x) => x.id === 'cf:host:openrouter') ? 'cf:host:openrouter' : null, input: m.input ?? null, output: m.output ?? null, free: m.input === 0 && m.output === 0, no_card: null, source_url: 'https://openrouter.ai/api/v1/models', observed_at: D.openrouter?.checked_at || null });
     n++;
@@ -568,6 +622,7 @@ if (!checkOnly) {
     ['Hugging Face models', imp.huggingface_models, 48], ['Hugging Face datasets', imp.huggingface_datasets, 48], ['Ollama', imp.ollama, 48],
     ['X', xs.last_scan ? xs.last_scan.replace(/\.\d+Z$/, 'Z') : null, 24], ['API providers', pv?.sources?.huggingface?.observed_at, 48],
     ['Benchmarks', bm?.observed_at, 72], ['App Store check', ap?.checked_at, 72], ['Access page re-check', rc?.checked_at, 48],
+    ...(() => { const dj = readJ('discover.json') || {}; return [['Hugging Face new', dj.huggingface?.checked_at, 12], ['GitHub', dj.github?.checked_at, 12], ['YouTube', dj.youtube?.checked_at, 12], ['OpenRouter', dj.openrouter?.checked_at, 12], ["Makers' news", dj.maker_feeds?.checked_at, 12], ['Papers', dj.hf_papers?.checked_at, 12], ['Product Hunt', dj.product_hunt?.skipped ? null : dj.product_hunt?.checked_at, 12]].filter(([, at]) => at); })(),
   ].map(([label, at, max_hours]) => ({ label, at: at || null, max_hours }));
   writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, freshness, store_payments: storePayments ? { google_play: storePayments.google_play } : null, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
@@ -748,7 +803,7 @@ async function writeNewPages(records) {
   const listedSites = new Set(records.flatMap((r) => [r.url, ...(r.official_urls || [])]).filter(Boolean).map((u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return null; } }));
   const spotted = (XDATA.announcements || []).filter((a) => a.kind === 'launch' && a.created_at >= cutoff && !a.links.sites.some((h) => listedSites.has(h)))
     .sort((a, b) => b.likes - a.likes).slice(0, 40);
-  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${({ 'app-store': ' · 🆕 researched from the App Store', 'product-hunt': ' · 🆕 researched from Product Hunt', x: ' · 🆕 spotted on X', replicate: ' · 🆕 new on Replicate', openrouter: ' · 🆕 new on OpenRouter', 'maker-blog': ' · 🆕 in its maker\'s news', 'hf-papers': ' · 🆕 from a paper', hackernews: ' · 🆕 on Hacker News', bluesky: ' · 🆕 on Bluesky', 'ollama-new': ' · 🆕 new on Ollama' })[r.discovered_via?.source] || ''}</span><br>${esc(r.description)}</li>`;
+  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${({ 'app-store': ' · 🆕 researched from the App Store', 'product-hunt': ' · 🆕 researched from Product Hunt', x: ' · 🆕 spotted on X', replicate: ' · 🆕 new on Replicate', openrouter: ' · 🆕 new on OpenRouter', 'maker-blog': ' · 🆕 in its maker\'s news', 'hf-papers': ' · 🆕 from a paper', hackernews: ' · 🆕 on Hacker News', 'ollama-new': ' · 🆕 new on Ollama' })[r.discovered_via?.source] || ''}</span><br>${esc(r.description)}</li>`;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">

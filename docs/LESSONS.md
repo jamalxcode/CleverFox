@@ -4,6 +4,9 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 
 ## Data and sources
 
+- **Rewriting an import from today's top lists silently drops yesterday's listings.** 92 vanished in 3 days, including IndicTrans2. Imports now merge with what they had, re-check what fell out, and mark it, never delete it (decision 86).
+- **Judge engagement when it has had time to build.** X posts judged a few hours old rarely had 25 likes. A re-check a day later costs a single lookup.
+
 - **A source's published format isn't proof it works.** YouTube's channel RSS feeds answered 404 for 7 of 8 official channels, so uploads are read through the Data API instead (decision 71). Before relying on a feed, check what it returns from the machine that will run it.
 - **Check the identity of a new source against everything already listed, hand-entered records included.** A local Replicate test created a second Qwen3.8-27B listing because only imported records were checked, not the seed. Matching now includes seed records (decision 75).
 - **Hugging Face mixes 2- and 3-letter language codes and tags hundreds of languages.** Showing raw codes gave a dropdown full of "atj", "av" and Aymara three times. Group codes by their name and drop codes no browser can name (decision 74).
@@ -14,6 +17,9 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 - **Free quotas shape the design.** A YouTube search costs 100 of 10,000 daily units, so per-listing searches rotate a few listings per scan (decision 78). X reads are budgeted per day, and visitors never trigger reads (decision 55).
 
 ## Pipeline and deploys
+
+- **One bad outside record shouldn't stop everything.** Imported records that fail validation are now quarantined and reported. Only hand-researched records stop the run.
+- **Count every source every run.** Without a history, a source that quietly returns nothing looks like a quiet day. The health report compares each count with its recent median.
 
 - **Test a new source where it will really run.** OpenRouter, Hacker News and the App Store were blocked in the building session. The first GitHub run showed they worked, and also that OpenRouter lists "(batch)" variants and its own routers as models, and that API-only records need an access block to pass validation. The validation stopped that run before anything was saved or deployed.
 - **A source that fails every request must fail, not report "0 found".** Otherwise an outage replaces good data with an empty list. Each source now throws when all its requests fail, so the last data is kept.

@@ -118,12 +118,16 @@ async function fetchModels() {
 }
 const isQuantization = (m) => tagValues(m.tags, 'base_model:quantized:').length > 0;
 
+// Two-letter tags that are also common non-language words are left out of the tag fallback.
+const LANG_TAG_OK = new Set('af am ar as az be bg bn bo br bs ca cs cy da de el en eo es et eu fa fi fr ga gl gu ha he hi hr ht hu hy id ig is it ja jv ka kk km kn ko ku ky la lb lo lt lv mg mi mk ml mn mr ms mt my ne nl no ny oc om or pa pl ps pt qu ro ru rw sa sd si sk sl sm sn so sq sr st su sv sw ta te tg th ti tk tl tn tr ts tt ug uk ur uz vi wo xh yi yo zh zu'.split(' '));
 function modelRecord(m, readme) {
   const page = `${HF}/${m.id}`;
   const api = `${HF}/api/models/${m.id}`;
   const card = m.cardData || {};
   const [owner, name] = m.id.split('/');
-  const langs = asList(card.language).filter((l) => ISO639_1.test(l));
+  // Languages from the card's metadata; if it lists none, from the model's own Hugging Face tags (also the uploader's).
+  const cardLangs = asList(card.language).filter((l) => ISO639_1.test(l));
+  const langs = cardLangs.length ? cardLangs : [...new Set((m.tags || []).filter((t) => ISO639_1.test(t) && LANG_TAG_OK.has(t)))];
   const formats = formatsOf(m.siblings, m.tags);
   const links = cardLinks(readme);
   const papers = [...new Set([...tagValues(m.tags, 'arxiv:').map((a) => `https://arxiv.org/abs/${a}`), ...links.papers])];
@@ -479,7 +483,6 @@ function xAnnouncements(kind) {
     for (const p of disc.hf_papers?.papers || []) for (const id of (kind === 'models' ? p.models : p.datasets) || []) if (!out.has(id)) out.set(id, { source: 'hf-papers', url: p.url, created_at: disc.hf_papers.checked_at, title: p.title });
     if (kind === 'models') for (const m of disc.openrouter?.models || []) if (m.hf_id && !out.has(m.hf_id)) out.set(m.hf_id, { source: 'openrouter', url: m.url, created_at: m.created });
     for (const l of disc.hacker_news?.launches || []) for (const id of (kind === 'models' ? l.links?.models : l.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'hackernews', url: l.hn_url, created_at: l.created_at, points: l.points });
-    for (const p of disc.bluesky?.posts || []) for (const id of (kind === 'models' ? p.links?.models : p.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'bluesky', url: p.url, author: p.author, likes: p.likes, created_at: p.created_at });
   }
   return out;
 }
@@ -611,6 +614,20 @@ export function openrouterRecord(m) {
     popularity: [], import_source: 'openrouter', context: m.context ?? null,
     discovered_via: { source: 'openrouter', url: m.url, created_at: m.created } };
 }
+// OpenRouter listings stay current: context from today's full list, and ones OpenRouter no longer lists are marked
+// withdrawn (only when the list looks complete, so a partial answer can't withdraw everything).
+export function refreshOpenrouter(records, all) {
+  if (!Array.isArray(all) || all.length < 100) return 0;
+  const by = new Map(all.map((m) => [m.id, m])); let gone = 0;
+  for (const r of records) {
+    const d = (r.distributions || []).find((x) => x.source === 'aggregator' && /openrouter\.ai/.test(x.url || ''));
+    if (!d || r.import_source !== 'openrouter') continue;
+    const m = by.get(d.native_id);
+    if (m) { if (m.context != null) r.context = m.context; if (d.availability === 'withdrawn') { d.availability = 'api_only'; r.availability = claim('unknown'); delete r.listing_status; } }
+    else if (d.availability !== 'withdrawn') { d.availability = 'withdrawn'; r.availability = claim('withdrawn', 'https://openrouter.ai/api/v1/models', 'third_party'); r.listing_status = { value: 'removed_at_source', since: TODAY, checked_at: TODAY }; gone++; }
+  }
+  return gone;
+}
 function openrouterRecords(existing, seed) {
   const d = join(outDir, 'discover.json');
   const list = existsSync(d) ? JSON.parse(readFileSync(d, 'utf8')).openrouter?.models || [] : [];
@@ -634,6 +651,49 @@ function replicateRecords(existing, seed) {
     if (!existing.some((x) => x.id === r.id) && !out.some((x) => x.id === r.id)) out.push(r);
   }
   return out;
+}
+
+// ---- Never silently lost (decision 86): listings that leave the top lists are kept, re-checked, and marked ----
+// A listing not fetched this run stays, marked "not_in_top_lists". Up to 100 a run are re-checked at their source
+// (Hugging Face API, or the Ollama library page); a 404 marks it withdrawn ("removed at its source"), never deleted.
+export const KEEP = { recheckPerRun: 100, recheckDays: 7 };
+export async function carryForward(file, fresh, { inSeed = () => false, getImpl = get, today = TODAY, recover = [] } = {}) {
+  const path = join(outDir, file);
+  const prev = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : [];
+  // One-time recovery: listings dropped before this rule existed come back from the dated snapshots.
+  const have = new Set(prev.map((r) => r.id));
+  for (const r of recover) if (!have.has(r.id)) { prev.push(r); have.add(r.id); }
+  const ids = new Set(fresh.map((r) => r.id));
+  for (const r of fresh) delete r.listing_status;
+  const kept = prev.filter((r) => !ids.has(r.id) && !inSeed(r) && ['huggingface', 'ollama'].includes(r.import_source));
+  let checked = 0; let removed = 0;
+  for (const r of kept) {
+    r.listing_status = { value: r.listing_status?.value === 'removed_at_source' ? 'removed_at_source' : 'not_in_top_lists', since: r.listing_status?.since || today, checked_at: r.listing_status?.checked_at || null };
+    if (r.listing_status.value === 'removed_at_source' || checked >= KEEP.recheckPerRun) continue;
+    if (r.listing_status.checked_at && (Date.parse(today) - Date.parse(r.listing_status.checked_at)) / 86400000 < KEEP.recheckDays) continue;
+    const d = (r.distributions || [])[0];
+    const url = r.import_source === 'ollama' ? `https://ollama.com/library/${r.ollama?.family || r.name}` : d?.native_id ? `${HF}/api/${r.type === 'dataset' ? 'datasets' : 'models'}/${d.native_id}` : null;
+    if (!url) continue;
+    checked++;
+    const res = await getImpl(url, { json: r.import_source !== 'ollama', headers: HF_HEADERS, tries: 2 }).catch(() => undefined);
+    if (res === undefined) continue; // network trouble: try again another run
+    r.listing_status.checked_at = today;
+    if (res === null) { // 404: gone at its source
+      r.listing_status.value = 'removed_at_source'; removed++;
+      r.availability = claim('withdrawn', url.replace('/api/', '/'), 'official');
+      for (const x of r.distributions || []) x.availability = 'withdrawn';
+    }
+  }
+  if (kept.length) console.log(`${file}: kept ${kept.length} listings no longer in the top lists (${checked} re-checked, ${removed} removed at their source)`);
+  return [...fresh, ...kept];
+}
+
+function snapshotRecords(name) {
+  const st = existsSync(join(outDir, 'import-state.json')) ? JSON.parse(readFileSync(join(outDir, 'import-state.json'), 'utf8')) : {};
+  if (st.recovered_snapshots) return [];
+  const dir = join(root, 'data', 'snapshots');
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).sort().reverse().flatMap((d) => { const f = join(dir, d, name); try { return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : []; } catch { return []; } });
 }
 
 // Publisher names and countries from data/publishers.json (Wikidata, reviewed).
@@ -699,12 +759,13 @@ async function main() {
     const keptRep = prevRep.filter((r) => !replicateMatch({ id: r.distributions[0].native_id, owner: r.publisher, name: r.name }, [...all, ...seedRecords().filter((x) => x.type === 'model')]));
     const newRep = replicateRecords([...all, ...keptRep], seed);
     const newOr = openrouterRecords([...all, ...keptRep, ...newRep], seed);
+    { const dj = existsSync(join(outDir, 'discover.json')) ? JSON.parse(readFileSync(join(outDir, 'discover.json'), 'utf8')) : {}; const g = refreshOpenrouter(keptRep, dj.openrouter?.all); if (g) console.log(`OpenRouter: ${g} listings no longer on OpenRouter, marked withdrawn`); }
     all.push(...keptRep, ...newRep, ...newOr);
     console.log(`OpenRouter: ${newOr.length} new API-only listings (${newOr.map((r) => r.name).join(', ') || 'none'})`);
     console.log(`Replicate: ${keptRep.length} listings kept, ${newRep.length} new (${newRep.map((r) => r.name).join(', ') || 'none'})`);
     // de-duplicate ids
     const seen = new Set();
-    const unique = all.filter((r) => (seen.has(r.id) ? false : seen.add(r.id)));
+    const unique = await carryForward('models.json', all.filter((r) => (seen.has(r.id) ? false : seen.add(r.id))), { inSeed, recover: snapshotRecords('imported-models.json') });
     console.log(`models written: ${keepOrWrite('models.json', unique, 'models')}`);
     if (!keptPrevious.has('models')) markFresh(['huggingface_models', ...(ollama.length ? ['ollama'] : [])]);
   }
@@ -716,7 +777,8 @@ async function main() {
     const keepIds = new Set((existsSync(join(outDir, '..', 'corrections.json')) ? JSON.parse(readFileSync(join(outDir, '..', 'corrections.json'), 'utf8')).keep || [] : []).map((k) => k.id));
     const unique = datasets.filter((r) => !inSeed(r) && (real(r) || keepIds.has(r.id) || r.discovered_via) && (seen.has(r.id) ? false : seen.add(r.id)));
     for (const r of unique) { r.capabilities = capabilitiesOf(r, []); applyPublisher(r); }
-    console.log(`datasets written: ${keepOrWrite('datasets.json', unique, 'datasets')}`);
+    console.log(`datasets written: ${keepOrWrite('datasets.json', await carryForward('datasets.json', unique, { inSeed, recover: snapshotRecords('imported-datasets.json') }), 'datasets')}`);
+    { const p = join(outDir, 'import-state.json'); const st = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {}; if (!st.recovered_snapshots) { st.recovered_snapshots = TODAY; writeFileSync(p, JSON.stringify(st, null, 1) + '\n'); } }
     if (!keptPrevious.has('datasets')) markFresh(['huggingface_datasets']);
   }
 }

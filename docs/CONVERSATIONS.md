@@ -12,6 +12,28 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: data-pulling review, then fixes
+**Where:** Claude Code session.
+**Asked:** review data pulling and critique it. Then "do it all".
+
+**Findings** (from 40 runs, the saved data and the snapshots):
+- 92 imported listings vanished in 3 days, including IndicTrans2.
+- A single bad outside record blocked deploys twice.
+- There was no source monitoring: Bluesky needed sign-in, some feeds were dead, and the data branch kept no history.
+- Signals rarely became listings: X turned 27 Hugging Face links into 4 listings, makers' news into 0, and Hacker News was mostly noise.
+- Data gaps: languages 54% unknown, publisher country 65%, license 20%.
+- 28% of models were community copies.
+- OpenRouter listings went stale.
+
+**Outcome (decision 86):**
+- Listings are kept and re-checked, with a one-time recovery from snapshots.
+- Bad imported records are quarantined.
+- `tools/health.mjs` with a public status page and run summaries.
+- X likes are re-checked a day later; makers' news is matched to listings; Hacker News is filtered to AI; OpenRouter is refreshed and gone models marked withdrawn.
+- Language fallback from tags, smarter Wikidata matching plus 6 more organisations, and community versions grouped under originals (93 under 48).
+- Bluesky dropped.
+- Tests added for each; the page check now covers the status page.
+
 ## 2026-11-17: filling gaps ourselves (auto-research)
 **Where:** Claude Code session.
 **Asked:**

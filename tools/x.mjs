@@ -26,6 +26,7 @@ export const RULES = {
   praisedMinLikes: 200,       // ...with at least this many likes between them
   announceMinLikes: 25,       // an announcement is imported only with this much engagement
   buzzKeepDays: 30, refreshHours: 24,           // buzz older than this is dropped as stale
+  recheckAfterHours: 20, recheckWithinDays: 7,  // announcements are judged again about a day later, when likes have built up
 };
 
 // Good words in several languages. Matched case-insensitively; a negation just before cancels it.
@@ -123,6 +124,16 @@ export class XClient {
       this.log(`X HTTP ${res.status}`); return null;
     }
     return null;
+  }
+  // Current likes and reposts of known posts (decision 86), up to 100 per request; each post returned is a read.
+  async lookup(ids) {
+    ids = ids.slice(0, 100); if (!ids.length || this.reads + ids.length > this.budget) return null;
+    try {
+      const res = await this.fetch(`${API}/tweets?${new URLSearchParams({ ids: ids.join(','), 'tweet.fields': 'public_metrics' })}`, { headers: { Authorization: `Bearer ${this.token}`, 'User-Agent': 'CleverFox catalog' } });
+      if (!res.ok) { this.log(`X lookup HTTP ${res.status}`); return null; }
+      const body = await res.json(); this.reads += body.data?.length || 0;
+      return new Map((body.data || []).map((p) => [p.id, { likes: p.public_metrics?.like_count || 0, reposts: p.public_metrics?.retweet_count || 0 }]));
+    } catch { return null; }
   }
 }
 
@@ -241,6 +252,14 @@ export async function run({ token, fetchImpl = fetch, now = NOW(), listings = nu
 
   // This run's reads stop at its part of today's share, so later scans today still have reads.
   x.budget = Math.min(x.budget, runBudget);
+  // 1b. Likes build up after posting: announcements 20 h to 7 days old, still under the bar and not yet re-checked,
+  // are looked up again (at most a quarter of this run's reads), so a post judged too early can still count.
+  const due = keptAnn.filter((a) => !a.rechecked_at && (a.likes || 0) < RULES.announceMinLikes && (now - new Date(a.created_at)) / 3600000 >= RULES.recheckAfterHours && (now - new Date(a.created_at)) / 86400000 <= RULES.recheckWithinDays)
+    .slice(0, Math.max(0, Math.min(100, Math.floor(runBudget / 4))));
+  if (due.length) {
+    const got = await x.lookup(due.map((a) => a.url.split('/status/')[1]).filter(Boolean));
+    if (got) { let up = 0; for (const a of due) { const m = got.get(a.url.split('/status/')[1]); a.rechecked_at = now.toISOString(); if (m) { if (m.likes >= RULES.announceMinLikes && (a.likes || 0) < RULES.announceMinLikes) up++; a.likes = m.likes; a.reposts = m.reposts; } } log(`X: re-checked ${due.length} announcements a day later; ${up} now pass the like bar`); }
+  }
   // 2. Praise and validation for a rotating batch of listings
   listings = listings || listingsByPopularity();
   const buzz = Object.fromEntries(Object.entries(prev.buzz || {}).filter(([, b]) => (now - new Date(b.observed_at)) / 86400000 <= RULES.buzzKeepDays));

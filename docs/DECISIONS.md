@@ -449,6 +449,24 @@ Quick scans also pick up **Ollama's newest models** (up to 12 new families), so 
 Countries come later from the daily App Store check, which now includes these listings. Nothing is read from a site's silence. robots.txt is respected, the fetcher says who it is, and refusals are left alone. Each app is researched again after 14 days. The listings say "Not yet verified: collected automatically from official pages", stay out of picks and guides, and are promoted only after the quote-checked review (decision 67). AI reading of pages is a later, optional step (it would need an API key).
 **Why:** the owner asked to fill information gaps ourselves so new listings can be featured, rules only first. The App Store and the maker's own pages are official sources. A quote for every fact keeps them checkable, and unknown stays unknown.
 
+### 86. Data-pulling review: never lose listings, quarantine bad records, watch every source
+**Decision:** after the owner's review of data pulling:
+- **Never silently lost:** imported listings that leave the top lists are kept, marked "not in top lists". Up to 100 a run are re-checked at their source, and a 404 marks them withdrawn ("⚠️ Removed at its source"). A one-time recovery brings back listings dropped before this rule, from the 14–15 November snapshots.
+- **Quarantine:** an imported record that fails validation is left out and logged (`quarantine.json`) instead of blocking every deploy. Hand-researched records still stop the run.
+- **Pipeline health:** `tools/health.mjs` records per-source counts each run (30 days) and flags drops below half the usual count, stale sources and quarantined records. It shows them on a public status page (`status/`) and in each run's GitHub summary. The freshness line now includes the discovery sources.
+- **Better yield:**
+  - X announcements are re-checked about a day later, when likes have built up (one lookup of up to 100 posts, a quarter of a run's reads at most).
+  - Makers' news titles are matched to listings ("📰 In the news").
+  - Hacker News launches must be about AI.
+  - OpenRouter's full list is kept every scan, so its listings get fresh prices and ones it drops are marked withdrawn.
+- **Better quality:**
+  - Languages fall back to the model's own Hugging Face language tags.
+  - The publisher lookup picks the first Wikidata hit that's an organisation with a country, and 6 more organisations were mapped.
+  - Community versions (made from a listed model by another publisher) are grouped under the original in the list, with "+N community versions" and a toggle. Their pages stay.
+- **Bluesky dropped:** its search needs signing in.
+
+**Why:** the review found 92 listings had vanished in 3 days (among them AI4Bharat's IndicTrans2), against the "never silently lost" rule. One bad outside record had blocked deploys twice in a day. Sources could fail quietly. X turned 27 Hugging Face-linked announcements into 4 listings because likes were judged too early. 54% of models had no languages and 65% no publisher country. 28% of models were community copies crowding out originals.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

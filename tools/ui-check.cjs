@@ -30,7 +30,7 @@ function serve() {
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}/`;
   const listing = fs.readdirSync(path.join(root, 'l', 'app')).map((p) => `l/app/${p}/${fs.readdirSync(path.join(root, 'l', 'app', p))[0]}/`)[0];
-  const pages = ['', '#app', '#host', listing, 'guides/', 'guides/pay-without-a-card/', 'glossary/', 'new/'];
+  const pages = ['', '#app', '#host', listing, 'guides/', 'guides/pay-without-a-card/', 'glossary/', 'new/', ...(fs.existsSync(path.join(root, 'status', 'index.html')) ? ['status/'] : [])];
   const browser = await chromium.launch();
   const problems = [];
   // A returning visitor's data, so "Your CleverFox" (saved, recently viewed, new for you, reminders) is checked too.

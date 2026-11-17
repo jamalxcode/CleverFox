@@ -461,3 +461,5 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 :root[data-theme="dim"] .start-here, :root[data-theme="dim"] .compare, :root[data-theme="dim"] .xside { box-shadow: none; }
 :root[data-theme="dim"] .cap[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 :root[data-theme="dim"] h1 { text-shadow: none; }
+.status-table td, .status-table th { vertical-align: top; text-align: left; }
+.status-table .trend { font-size: .82rem; }

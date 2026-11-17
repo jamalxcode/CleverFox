@@ -118,3 +118,14 @@ assert.equal(queryFor({ type: 'model', name: 'Evil" OR (spam) -foo', relations: 
   RULES.monthlyReads = saved;
 }
 console.log('All X monitoring tests passed.');
+// Announcements are re-checked about a day later: likes build up, and a post judged too early can still count.
+{
+  const { XClient } = await import('./x.mjs');
+  let asked = null;
+  const xc = new XClient('t', { budget: 50, fetchImpl: async (u) => { asked = u; return { ok: true, json: async () => ({ data: [{ id: '11', public_metrics: { like_count: 80, retweet_count: 5 } }] }) }; }, log: () => {} });
+  const m = await xc.lookup(['11', '12']);
+  assert.ok(asked.includes('/tweets?ids=11%2C12')); assert.equal(m.get('11').likes, 80); assert.equal(xc.reads, 1);
+  const none = new XClient('t', { budget: 1, fetchImpl: async () => { throw new Error('no'); }, log: () => {} });
+  assert.equal(await none.lookup(['1', '2']), null, 'never over budget');
+  console.log('X re-check tests passed.');
+}

@@ -7,7 +7,7 @@
 //  4. YouTube: official channels' uploads and keyword search (YOUTUBE_API_KEY).
 //  5. Replicate: models published or updated there, with Replicate's own collections as their tasks (REPLICATE_API_TOKEN).
 //  6. No sign-up needed: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers (models and datasets
-//     linked to papers), Hacker News launches, Bluesky posts (if its public search answers), and popular AI apps in
+//     linked to papers), Hacker News launches, and popular AI apps in
 //     App Store searches per country (once a day).
 //  7. Product Hunt (PRODUCT_HUNT_TOKEN): the top AI launches of the last few days, as an app research queue.
 // Models and datasets found here are filled in from Hugging Face by tools/import.mjs (--x-only in quick scans).
@@ -314,7 +314,9 @@ export async function openrouter({ now = new Date(), prev = {}, fetchImpl = fetc
   const fresh = openrouterNew(d.data, now);
   const keep = (prev.models || []).filter((m) => daysAgo(m.created, now) <= RULES.keepDays && !fresh.some((f) => f.id === m.id));
   const models = [...fresh, ...keep];
-  return { checked_at: now.toISOString(), source_url: 'https://openrouter.ai/api/v1/models', listed: (d.data || []).length, models, hf_models: [...new Set(models.map((m) => m.hf_id).filter(Boolean))] };
+  const pm = (v) => (v == null || v === '' || isNaN(+v) ? null : +(+v * 1e6).toFixed(3));
+  const all = (d.data || []).filter((m) => m.id && !m.id.includes(':')).map((m) => ({ id: m.id, input: pm(m.pricing?.prompt), output: pm(m.pricing?.completion), context: m.context_length ?? null }));
+  return { checked_at: now.toISOString(), source_url: 'https://openrouter.ai/api/v1/models', listed: (d.data || []).length, models, all, hf_models: [...new Set(models.map((m) => m.hf_id).filter(Boolean))] };
 }
 
 // ---- 6b. AI makers' official news feeds (data/announce-feeds.json): RSS or Atom; a page can name its feed.
@@ -378,6 +380,8 @@ export async function hfPapers({ now = new Date(), fetchImpl = fetch } = {}) {
 }
 
 // ---- 6d. Hacker News (Algolia's public API): AI launches ("Show HN" and stories) with real interest.
+// A launch counts only when its title is about AI (Algolia's search also matches unrelated developer tools).
+export const HN_AI = /\b(ai|a\.i\.|llms?|gpt|models?|agents?|agentic|chatbot|machine learning|ml|neural|diffusion|transformers?|embeddings?|rag|inference|open[- ]weights?|fine-?tun\w*|voice clon\w*|speech|text-to-\w+)\b/i;
 export const HN_QUERIES = [['show_hn', 'AI'], ['show_hn', 'LLM'], ['story', 'open source model'], ['story', 'open weights']];
 export async function hackerNews({ now = new Date(), fetchImpl = fetch } = {}) {
   const since = Math.floor(now / 1000) - RULES.hnDays * 86400;
@@ -386,7 +390,7 @@ export async function hackerNews({ now = new Date(), fetchImpl = fetch } = {}) {
     try {
       const d = await getJson(`https://hn.algolia.com/api/v1/search?tags=${tags}&query=${encodeURIComponent(q)}&numericFilters=${encodeURIComponent(`created_at_i>${since},points>=${RULES.hnMinPoints}`)}&hitsPerPage=30`, {}, fetchImpl);
       ok++;
-      for (const h of d.hits || []) if (h.url && !hits.has(h.objectID)) hits.set(h.objectID, h);
+      for (const h of d.hits || []) if (h.url && HN_AI.test(h.title || '') && !hits.has(h.objectID)) hits.set(h.objectID, h);
     } catch { /* keep going */ }
   }
   if (!ok) throw new Error('every Hacker News search failed'); // keep the last data instead of an empty list
@@ -395,27 +399,6 @@ export async function hackerNews({ now = new Date(), fetchImpl = fetch } = {}) {
     return { title: String(h.title || '').slice(0, 200), url: h.url, site, points: h.points || 0, comments: h.num_comments || 0, created_at: h.created_at, hn_url: `https://news.ycombinator.com/item?id=${h.objectID}`, links: linksIn([h.url]) };
   }).sort((a, b) => b.points - a.points).slice(0, 40);
   return { checked_at: now.toISOString(), launches, hf_models: [...new Set(launches.flatMap((l) => l.links.models))], hf_datasets: [...new Set(launches.flatMap((l) => l.links.datasets))] };
-}
-
-// ---- 6e. Bluesky: public post search for releases that link to Hugging Face. Skipped if the search needs signing in.
-export const BSKY_QUERIES = ['huggingface.co new model', 'open weights released'];
-export async function bluesky({ now = new Date(), fetchImpl = fetch } = {}) {
-  const since = new Date(now - 3 * 86400000).toISOString();
-  const posts = [];
-  for (const q of BSKY_QUERIES) {
-    const res = await fetchImpl(`https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&sort=top&since=${encodeURIComponent(since)}&limit=50`, { headers: { 'user-agent': UA, accept: 'application/json' } });
-    if (res.status === 401 || res.status === 403) return { checked_at: now.toISOString(), skipped: 'Bluesky search needs signing in', posts: [], hf_models: [], hf_datasets: [] };
-    if (!res.ok) continue;
-    for (const p of (await res.json()).posts || []) {
-      const text = String(p.record?.text || ''); const ext = p.record?.embed?.external?.uri || p.embed?.external?.uri || '';
-      const facetLinks = (p.record?.facets || []).flatMap((f) => (f.features || []).map((x) => x.uri)).filter(Boolean);
-      const links = linksIn([ext, ...facetLinks, ...(text.match(/https?:\/\/[^\s]+/g) || [])]);
-      if ((p.likeCount || 0) < RULES.bskyMinLikes || !(links.models.length || links.datasets.length)) continue;
-      const rkey = String(p.uri || '').split('/').pop();
-      posts.push({ url: `https://bsky.app/profile/${p.author?.handle}/post/${rkey}`, author: p.author?.handle, likes: p.likeCount || 0, created_at: p.record?.createdAt, links });
-    }
-  }
-  return { checked_at: now.toISOString(), posts, hf_models: [...new Set(posts.flatMap((p) => p.links.models))], hf_datasets: [...new Set(posts.flatMap((p) => p.links.datasets))] };
 }
 
 // ---- 6f. App Store: popular AI apps per country that CleverFox doesn't list yet (a research queue; once a day).
@@ -475,7 +458,7 @@ async function main() {
   const out = { ...prev };
   for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })], ['replicate', () => replicate({ prev: prev.replicate || {} })],
     ['openrouter', () => openrouter({ prev: prev.openrouter || {} })], ['maker_feeds', () => makerFeeds({ prev: prev.maker_feeds || {} })], ['hf_papers', () => hfPapers()],
-    ['hacker_news', () => hackerNews()], ['bluesky', () => bluesky()], ['app_store', () => appStoreSpotted({ prev: prev.app_store || {} })], ['product_hunt', () => productHunt({ prev: prev.product_hunt || {} })]]) {
+    ['hacker_news', () => hackerNews()], ['app_store', () => appStoreSpotted({ prev: prev.app_store || {} })], ['product_hunt', () => productHunt({ prev: prev.product_hunt || {} })]]) {
     try { out[key] = await fn(); console.log(`Discover ${key}: ${JSON.stringify(Object.fromEntries(Object.entries(out[key]).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.length])))}`); }
     catch (e) { console.warn(`Discover ${key} failed (${e.message}); keeping the last data`); }
   }

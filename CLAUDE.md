@@ -22,7 +22,8 @@ The site is live with about 1,310 listings: 941 models, 273 datasets, 56 apps an
 - API providers per model (Hugging Face Inference Providers, OpenRouter);
 - an App Store check and Google Play payment methods per country;
 - a daily re-check of access pages;
-- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (new models become candidate listings; needs the `REPLICATE_API_TOKEN` secret), and with no sign-up: OpenRouter's new models, AI makers' news feeds (`data/announce-feeds.json`), Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries, and Ollama's newest in quick scans (decision 83);
+- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (new models become candidate listings; needs the `REPLICATE_API_TOKEN` secret), and with no sign-up: OpenRouter's new models, AI makers' news feeds (`data/announce-feeds.json`), Hugging Face Daily Papers, Hacker News launches, App Store searches in 20 countries, and Ollama's newest in quick scans (decision 83);
+- pipeline safety and health: listings are never dropped (kept, re-checked, marked removed at source), bad imported records are quarantined, and a status page (`status/`) flags sources that drop or stop (decision 86);
 - on each listing, "Reactions on X" and "Videos on YouTube" buttons, plus up to 3 collected YouTube videos that name it (decision 73), and on listing pages a "What people show on YouTube" panel with reviews (decision 78).
 
 cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:
@@ -79,6 +80,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `tools/save-data.sh`: saves `data/imported/` to the `data` branch with the checkout's credentials.
 - `tools/fetch-pages.mjs` (workflow "Fetch pages for verification", output on the `pages-cache` branch) and `tools/apply-verification.mjs` (applies a review after checking every quote against the pages): the verification review (decision 67).
 - `tools/discover.mjs`: Hugging Face new releases, llm-releases.com (robots.txt respected), GitHub new projects and watchlist releases (`data/github-watch.json`), YouTube official channels (`data/youtube-channels.json`; read through the Data API with the `YOUTUBE_API_KEY` secret, which also runs keyword search; RSS fallback), Replicate (public model list and collections, with the `REPLICATE_API_TOKEN` secret; `tools/import.mjs` turns new models into candidate listings), into `data/imported/discover.json` with per-source diagnostics; every scan (decisions 68, 70, 71, 75). Tested by `tools/test-discover.mjs`.
+- `tools/health.mjs`: pipeline health after each build: per-source counts, a 30-day history, flags, `data/imported/health.json`, the public `status/` page and the run's GitHub summary (decision 86).
 - `tools/autoresearch.mjs`: auto-research of queued apps, rules only (decision 85): App Store listing and the app's own pricing, plans and FAQ pages, into `data/imported/apps-researched.json` as "not yet verified" listings with a quote for every fact. Tested by `tools/test-autoresearch.mjs`.
 - `tools/import.mjs --x-only`: quick mode that only adds models and datasets announced on X.
 - `tools/import.mjs`: bulk importer with inclusion and gap rules. It skips anything a seed record covers and keeps previous files if a source fails or shrinks.

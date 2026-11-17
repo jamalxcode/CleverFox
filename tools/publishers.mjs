@@ -32,12 +32,15 @@ const map = JSON.parse(readFileSync(join(root, 'data', 'publisher-map.json'), 'u
 const names = [...new Set(Object.values(map).map((m) => m.name))];
 const qidOf = {};
 for (const m of Object.values(map)) if (m.qid) qidOf[m.name] = m.qid;
+// Up to 5 search hits per name: the first that Wikidata describes as an organisation with a country wins (the top hit
+// alone was often a person, a product or a place, which left 13 mapped publishers without a country).
+const candidates = {};
 for (const n of names) {
-  if (qidOf[n]) continue;
-  const r = (await get(`${API}action=wbsearchentities&language=en&type=item&limit=1&search=${encodeURIComponent(n)}`)).search || [];
-  if (r[0]) qidOf[n] = r[0].id;
+  if (qidOf[n]) { candidates[n] = [qidOf[n]]; continue; }
+  const r = (await get(`${API}action=wbsearchentities&language=en&type=item&limit=5&search=${encodeURIComponent(n)}`)).search || [];
+  candidates[n] = r.map((x) => x.id);
 }
-const ents = await batch([...new Set(Object.values(qidOf))], 'claims%7Clabels%7Cdescriptions');
+const ents = await batch([...new Set(Object.values(candidates).flat())], 'claims%7Clabels%7Cdescriptions');
 const hqs = [...new Set(Object.values(ents).filter((e) => !ids(e, 'P17').length).flatMap((e) => ids(e, 'P159').slice(0, 1)))];
 const hqe = hqs.length ? await batch(hqs, 'claims') : {};
 const countryOf = (e) => ids(e, 'P17')[0] || ids(hqe[ids(e, 'P159')[0]], 'P17')[0] || null;
@@ -45,6 +48,11 @@ const cids = [...new Set(Object.values(ents).map(countryOf).filter(Boolean))];
 const ce = await batch(cids, 'claims');
 const iso = Object.fromEntries(cids.map((c) => [c, ce[c]?.claims?.P297?.[0]?.mainsnak?.datavalue?.value || null]));
 
+for (const n of names) {
+  if (qidOf[n]) continue;
+  const ok = candidates[n].find((q) => ents[q] && ORG_WORDS.test(ents[q].descriptions?.en?.value || '') && iso[countryOf(ents[q])]);
+  qidOf[n] = ok || candidates[n][0];
+}
 const out = {}; const skipped = [];
 for (const [account, m] of Object.entries(map)) {
   const q = qidOf[m.name]; const e = q && ents[q];

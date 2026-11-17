@@ -177,6 +177,24 @@
   },
   "zai-org": {
    "name": "Zhipu AI"
+  },
+  "meituan-longcat": {
+   "name": "Meituan"
+  },
+  "pfnet": {
+   "name": "Preferred Networks"
+  },
+  "perplexity-ai": {
+   "name": "Perplexity AI"
+  },
+  "poolside": {
+   "name": "Poolside AI"
+  },
+  "unsloth": {
+   "name": "Unsloth AI"
+  },
+  "Comfy-Org": {
+   "name": "Comfy Org"
   }
  }
 }

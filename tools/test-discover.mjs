@@ -1,6 +1,6 @@
 // Offline tests for tools/discover.mjs.
 import assert from 'node:assert/strict';
-import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate, youtubeReviews, reviewQuery, openrouterNew, feedItems, hfPapers, hackerNews, bluesky, appStoreSpotted, productHunt } from './discover.mjs';
+import { robotsAllows, releasesFromHtml, GITHUB_QUERIES, feedEntries, youtube, replicate, youtubeReviews, reviewQuery, openrouterNew, feedItems, hfPapers, hackerNews, appStoreSpotted, productHunt } from './discover.mjs';
 import { replicateRecord, replicateMatch, parentsFromMeta, traceOrigin, openrouterRecord } from './import.mjs';
 
 assert.equal(robotsAllows('', '/'), true, 'no robots.txt: allowed');
@@ -126,11 +126,8 @@ assert.equal(feedItems(atom)[0].url, 'https://acme.ai/old');
 const pp = await hfPapers({ now: N, fetchImpl: async (u) => u.includes('daily_papers') ? json([{ paper: { id: '2611.1', title: 'P1', upvotes: 50 } }, { paper: { id: '2611.2', title: 'P2', upvotes: 5 } }]) : u.includes('2611.1') ? json({ models: [{ id: 'lab/m1' }, { id: 'lab/m2' }, { id: 'x/lora' }], datasets: [{ id: 'lab/d1' }] }) : json({ models: [], datasets: [] }) });
 assert.deepEqual(pp.hf_models, ['lab/m1', 'lab/m2'], 'two models per paper at most'); assert.deepEqual(pp.hf_datasets, ['lab/d1']);
 // Hacker News: launches with their site and Hugging Face links.
-const hn = await hackerNews({ now: N, fetchImpl: async () => json({ hits: [{ objectID: '1', title: 'Show HN: Acme app', url: 'https://www.acme.app/', points: 120, created_at: '2026-11-16T00:00:00Z' }, { objectID: '2', title: 'Weights out', url: 'https://huggingface.co/acme/Acme-7', points: 80 }] }) });
+const hn = await hackerNews({ now: N, fetchImpl: async () => json({ hits: [{ objectID: '1', title: 'Show HN: Acme, an AI app', url: 'https://www.acme.app/', points: 120, created_at: '2026-11-16T00:00:00Z' }, { objectID: '2', title: 'Acme 7 open weights out', url: 'https://huggingface.co/acme/Acme-7', points: 80 }] }) });
 assert.equal(hn.launches[0].site, 'acme.app'); assert.deepEqual(hn.hf_models, ['acme/Acme-7']);
-// Bluesky: skipped (not failed) when its search needs signing in.
-const bs = await bluesky({ now: N, fetchImpl: async () => json({}, 403) });
-assert.equal(bs.skipped, 'Bluesky search needs signing in');
 // App Store: popular apps that aren't listed; known ids and names skipped; once a day.
 const apps = await appStoreSpotted({ now: N, countries: ['KE', 'NG'], pause: 0, known: { ids: new Set(['111']), names: new Set(['chatgpt']) }, fetchImpl: async () => json({ results: [
   { trackId: 111, trackName: 'Known App', userRatingCount: 9000 }, { trackId: 222, trackName: 'ChatGPT', userRatingCount: 9000 },
@@ -152,3 +149,46 @@ assert.equal(phReq.u, 'https://api.producthunt.com/v2/api/graphql'); assert.equa
 assert.deepEqual(ph.launches.map((l) => [l.name, l.votes, l.url]), [['Acme AI', 321, 'https://www.producthunt.com/posts/acme-ai']]);
 await assert.rejects(productHunt({ now: N, token: 'tok', fetchImpl: async () => json({ errors: [{ message: 'invalid_oauth_token' }] }) }), /invalid_oauth_token/);
 console.log('Product Hunt tests passed.');
+// Never silently lost: listings that leave the top lists are kept; a 404 at the source marks them withdrawn.
+{
+  const { carryForward } = await import('./import.mjs');
+  const fs = await import('node:fs'); const path = await import('node:path');
+  const dir = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'data', 'imported'); fs.mkdirSync(dir, { recursive: true });
+  const f = path.join(dir, 'test-carry.json');
+  const rec = (id, nid) => ({ id, type: 'model', name: nid, import_source: 'huggingface', availability: { value: 'downloadable' }, distributions: [{ source: 'huggingface', native_id: nid, availability: 'downloadable' }] });
+  fs.writeFileSync(f, JSON.stringify([rec('cf:model:a/still', 'a/still'), rec('cf:model:a/gone', 'a/gone'), rec('cf:model:a/fresh', 'a/fresh')]));
+  try {
+    const out = await carryForward('test-carry.json', [rec('cf:model:a/fresh', 'a/fresh')], { today: '2026-11-17T00:00:00Z', getImpl: async (u) => (u.endsWith('a/gone') ? null : {}) });
+    const by = Object.fromEntries(out.map((r) => [r.id, r]));
+    assert.equal(out.length, 3, 'nothing dropped');
+    assert.equal(by['cf:model:a/fresh'].listing_status, undefined);
+    assert.equal(by['cf:model:a/still'].listing_status.value, 'not_in_top_lists');
+    assert.equal(by['cf:model:a/gone'].listing_status.value, 'removed_at_source');
+    assert.equal(by['cf:model:a/gone'].availability.value, 'withdrawn'); assert.equal(by['cf:model:a/gone'].distributions[0].availability, 'withdrawn');
+  } finally { fs.rmSync(f, { force: true }); }
+  console.log('Keep-listings tests passed.');
+}
+// Hacker News: only AI titles; OpenRouter listings refreshed and withdrawn when gone.
+{
+  const hn2 = await hackerNews({ now: N, fetchImpl: async () => json({ hits: [{ objectID: '1', title: 'Show HN: db-branch – database branches', url: 'https://db.example/', points: 99 }, { objectID: '2', title: 'Show HN: Coral, a gateway for AI agents', url: 'https://coral.example/', points: 50 }] }) });
+  assert.deepEqual(hn2.launches.map((l) => l.site), ['coral.example'], 'non-AI launches are filtered out');
+  const { refreshOpenrouter } = await import('./import.mjs');
+  const mk = (id) => ({ import_source: 'openrouter', availability: { value: 'unknown' }, distributions: [{ source: 'aggregator', native_id: id, url: `https://openrouter.ai/${id}`, availability: 'api_only' }] });
+  const recs = [mk('a/live'), mk('a/gone')];
+  const all = Array.from({ length: 120 }, (_, i) => ({ id: `x/${i}` })).concat([{ id: 'a/live', context: 64000 }]);
+  assert.equal(refreshOpenrouter(recs, all), 1); assert.equal(recs[0].context, 64000); assert.equal(recs[1].distributions[0].availability, 'withdrawn');
+  assert.equal(refreshOpenrouter([mk('a/x')], [{ id: 'b' }]), 0, 'a short list never withdraws anything');
+  console.log('Yield tests passed.');
+}
+// Pipeline health: drops far below the usual count, stale sources and quarantined records are flagged.
+{
+  const { flags, report } = await import('./health.mjs');
+  const now = new Date('2026-11-17T12:00:00Z');
+  const hist = [10, 12, 11, 12, 10].map((c) => ({ sources: { S: { count: c } } }));
+  assert.match(flags(now, { count: 3, at: '2026-11-17T11:00:00Z', every: 'scan' }, hist, 'S')[0], /dropped to 3/);
+  assert.deepEqual(flags(now, { count: 11, at: '2026-11-17T11:00:00Z', every: 'scan' }, hist, 'S'), []);
+  assert.match(flags(now, { count: 11, at: '2026-11-16T10:00:00Z', every: 'scan' }, hist, 'S')[0], /not refreshed for 26 h/);
+  assert.deepEqual(flags(now, { count: 0, at: null, every: 'scan', skipped: 'no token' }, [], 'S'), ['skipped: no token']);
+  assert.equal(report({ now, rows: { S: { count: 2, at: '2026-11-17T11:00:00Z', every: 'scan', bad: true } }, history: [] }).problems, 1, 'quarantined records count as a problem');
+  console.log('Health tests passed.');
+}

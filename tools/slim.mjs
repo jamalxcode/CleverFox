@@ -21,7 +21,7 @@ export function slim(r) {
   const pop = r.popularity || [];
   const o = {
     id: r.id, type: r.type, name: r.name, publisher: r.publisher, publisher_name: r.publisher_name, family: r.family,
-    description: r.description, tasks: r.tasks, first_seen_at: r.first_seen_at, warning: r.warning, verification_status: r.verification_status,
+    description: r.description, tasks: r.tasks, first_seen_at: r.first_seen_at, copy_of: r.copy_of ? r.copy_of.id : undefined, copies: r.copies?.length || undefined, listing_status: r.listing_status?.value === 'removed_at_source' ? { value: 'removed_at_source', checked_at: r.listing_status.checked_at } : undefined, warning: r.warning, verification_status: r.verification_status,
     languages: slimClaim(r.languages), publisher_region: slimClaim(r.publisher_region), availability: slimClaim(r.availability),
     license: slimClaim(r.license), parameters: slimClaim(r.parameters), local_ready: r.local_ready, size_category: r.size_category,
     answers: r.answers && { good_for: r.answers.good_for, no_barriers: r.answers.no_barriers, barriers: r.answers.barriers, x_praised: r.answers.x_praised, online: r.answers.online, online_free: r.answers.online_free, online_no_card: r.answers.online_no_card,

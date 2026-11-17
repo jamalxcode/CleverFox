@@ -53,6 +53,7 @@ function filterDefs(type) {
     { key: 'bench', toggle: '📊 Has benchmarks' },
     { key: 'xp', toggle: '📣 Praised on X' },
     { key: 'online', toggle: '☁️ Use it online' },
+    { key: 'versions', toggle: '🔁 Show community versions' },
   ];
   if (type === 'dataset') return [
     { key: 'lang', label: 'Any language', opts: langOptions(recs) },
@@ -106,8 +107,12 @@ function labelFiltersBtn() {
 }
 $('#filters-btn').addEventListener('click', () => { const open = $('#filters').hidden; $('#filters').hidden = !open; $('#filters-btn').setAttribute('aria-expanded', String(open)); });
 
+const idCache = new Map();
+const idsOf = (t) => { const list = recordsOf(t); const c = idCache.get(t); if (c && c.list === list) return c.ids; const ids = new Set(list.map((x) => x.id)); idCache.set(t, { list, ids }); return ids; };
 function matches(r) {
   const f = state.f[r.type];
+  // Community versions sit under their original ("+N community versions") unless asked for, or a search is typed.
+  if (r.copy_of && !f.versions && !state.q && idsOf(r.type).has(r.copy_of)) return false;
   if (state.q) {
     const hay = [r.name, r.publisher, r.description, r.family, ...(r.categories || []), ...(r.tasks || []),
       ...(Array.isArray(r.languages?.value) ? r.languages.value.map(langName) : []),
@@ -181,7 +186,8 @@ function render() {
   $('#more-btn').hidden = recs.length <= state.limit;
   $('#more-btn').textContent = `Show more (${recs.length - state.limit} left)`;
   const narrowed = activeFilters().length;
-  $('#summary').textContent = `${narrowed ? `${recs.length} of ${all.length}` : all.length} ${TYPE_WORDS[state.type]}${!narrowed && state.type === 'model' ? ', everyday ones first' : ''}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
+  const grouped = narrowed ? 0 : all.length - recs.length; // community versions shown under their original
+  $('#summary').textContent = `${narrowed ? `${recs.length} of ${all.length}` : recs.length} ${TYPE_WORDS[state.type]}${grouped ? ` (+${grouped} community versions under their originals)` : ''}${!narrowed && state.type === 'model' ? ', everyday ones first' : ''}${state.type === 'dataset' ? '' : state.country ? ` · showing access for ${countryName(state.country)}` : ' · choose your country to see what works there'}`;
   if (activeFilters().length) $('#summary').insertAdjacentHTML('beforeend', ' · <button type="button" class="linkish" data-clear-all>clear filters</button>');
   $('#empty-help').innerHTML = recs.length ? '' : emptyHelp();
   rememberView();

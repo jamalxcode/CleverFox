@@ -35,7 +35,7 @@ jobs:
         if: steps.mode.outputs.mode != 'none'
         env: { X_BEARER_TOKEN: "${{ secrets.X_BEARER_TOKEN }}", X_MONTHLY_READS: "${{ vars.X_MONTHLY_READS }}" }
         run: node tools/x.mjs
-      - name: Discover - Hugging Face new releases, llm-releases.com, GitHub, YouTube, Replicate
+      - name: Discover - Hugging Face, llm-releases.com, GitHub, YouTube, Replicate, OpenRouter, makers' news, papers, Hacker News, App Store, Product Hunt
         if: steps.mode.outputs.mode != 'none'
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", GH_TOKEN: "${{ github.token }}", YOUTUBE_API_KEY: "${{ secrets.YOUTUBE_API_KEY }}", REPLICATE_API_TOKEN: "${{ secrets.REPLICATE_API_TOKEN }}", PRODUCT_HUNT_TOKEN: "${{ secrets.PRODUCT_HUNT_TOKEN }}" }
         run: node tools/discover.mjs
@@ -48,7 +48,7 @@ jobs:
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
         run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/autoresearch.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
-        run: npm test && npm run build
+        run: npm test && npm run build && node tools/health.mjs
       - name: Page check - phone widths and colour contrast (stops the deploy on a problem)
         run: |
           npm i --no-save --no-audit --no-fund playwright@1.49.1 axe-core@4.10.2
@@ -62,7 +62,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html style.css app.js render.js picks.js i18n.js you.js .nojekyll sitemap.xml robots.txt _site/
-          cp -r l new guides glossary feeds _site/ && cp feed.xml _site/
+          cp -r l new guides glossary feeds status _site/ && cp feed.xml _site/
           cp -r img _site/ && rm -rf _site/img/source
           cp data/*.json _site/data/
           sed -i "s/__BUILD__/${GITHUB_SHA::7}/g" _site/index.html _site/app.js _site/picks.js _site/glossary/index.html
