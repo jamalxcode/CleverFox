@@ -16,6 +16,10 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **Facts are labelled rows** (label: value), not emoji sentences. Jargon gets a small "?" link to the glossary.
 - **Country-specific facts follow the chosen country.** A payment method noted for other countries is shown as "(not for <country>)" and never counts as a way for you to pay.
 
+## 1b. Two clear sections
+
+- The main page has two big section titles at the same size (1.75rem, 1.4rem on phones): **"🦊 Find what to use"** (the question bar and picks) and **"📚 Browse the catalog"** (the directory: tabs, chips, search, filters and the list). The second has a divider above it and a line with the catalog's total. Both are in the 6 interface languages.
+
 ## 2. One primary action per screen
 
 - **Main page:** the question bar ("I want to … on …", then "Show my picks") is the main action, right under a one-sentence intro. Device, country and AI language are its setup pickers. The interface language is a small 🌐 in the header, kept apart from "AI that speaks". Picks show on every visit without a link. Browsing the tabs is secondary.

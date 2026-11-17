@@ -318,6 +318,7 @@ $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => 
 }
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
+$('#browse-sub').textContent = `${total.toLocaleString('en')} AI models, datasets, apps and hosting providers: search, filter and compare them all.`;
 // Freshness: when each source last refreshed; a stale one is flagged, so a deploy doesn't look like everything refreshed.
 {
   const ago = (at) => { const h = (Date.now() - new Date(at)) / 3600000; return h < 1 ? 'under an hour ago' : h < 48 ? `${Math.round(h)} h ago` : `${Math.round(h / 24)} days ago`; };

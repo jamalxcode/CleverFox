@@ -467,3 +467,10 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 .status-table th[scope="row"] { min-width: 12rem; }
 .status-table td:nth-child(5) { overflow-wrap: anywhere; min-width: 14rem; }
 .status-table .trend { font-size: .82rem; }
+
+/* Section titles: "Find what to use" and "Browse the catalog" read clearly as the page's two main sections */
+.section-title, .start-here h2.section-title { font-size: 1.75rem; line-height: 1.25; margin: 0 0 10px; color: var(--text); }
+.section-head { margin: 34px 0 6px; padding-top: 18px; border-top: 1px solid var(--line); }
+.section-head .section-title::before { content: ">_ "; color: var(--magenta); }
+.section-sub { margin: 0; font-size: .95rem; }
+@media (max-width: 560px) { .section-title, .start-here h2.section-title { font-size: 1.4rem; } .section-head { margin-top: 24px; } }

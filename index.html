@@ -39,7 +39,7 @@
 
 <main class="wrap">
   <section class="start-here" aria-labelledby="start-h">
-    <h2 id="start-h" data-i18n="find">🦊 Find what to use</h2>
+    <h2 id="start-h" class="section-title" data-i18n="find">🦊 Find what to use</h2>
     <p id="lang-draft" class="muted start-note" hidden></p>
     <div class="start-q">
       <label><span data-i18n="iwant">I want to</span> <select id="s-task" aria-label="What you want to do"></select></label>
@@ -68,6 +68,10 @@
       </div>
     </details>
   </section>
+  <div class="section-head" id="browse">
+    <h2 id="browse-h" class="section-title" data-i18n="browse">📚 Browse the catalog</h2>
+    <p id="browse-sub" class="muted section-sub"></p>
+  </div>
   <nav class="tabs" role="tablist" aria-label="Listing type">
     <button role="tab" id="tab-model" data-type="model" aria-selected="true" data-i18n="models">Models <span class="count"></span></button>
     <button role="tab" id="tab-dataset" data-type="dataset" aria-selected="false" data-i18n="datasets">Datasets <span class="count"></span></button>

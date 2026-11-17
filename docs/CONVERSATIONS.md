@@ -12,6 +12,13 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: clearer section titles
+**Where:** Claude Code session.
+**Asked:** make "🦊 Find what to use" bigger so it reads as a title, and give the directory a clear, prominent title too.
+**Outcome:**
+- Both are large section titles: "🦊 Find what to use" and a new "📚 Browse the catalog", with a divider and a line giving the total (in the 6 interface languages).
+- Recorded in INTERFACE-RULES 1b. The page check passes in all three looks.
+
 ## 2026-11-17: "what am I seeing?" (page as plain text)
 **Where:** Claude Code session.
 **Asked:** the owner pasted the main page as plain text (dropdown options run together) and asked what it was.
