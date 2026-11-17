@@ -18,7 +18,7 @@ const OUT = join(outDir, 'apps-researched.json');
 const STATE = join(outDir, 'autoresearch-state.json');
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
 // version: bump when the rules change, so apps researched under older rules are researched again.
-export const RULES = { version: 2, newPerRun: 8, refreshDays: 14, pagesPerApp: 3, timeoutMs: 20000, quoteChars: 200 };
+export const RULES = { version: 3, newPerRun: 8, refreshDays: 14, pagesPerApp: 3, timeoutMs: 20000, quoteChars: 200 };
 
 // Ways to pay, by words that only mean payment (stricter than the re-check's lists: no bare "card", "wire" or
 // "app store", which also appear as download badges and in unrelated text).
@@ -66,7 +66,7 @@ export function inAppPurchases(text) {
   const t = String(text || '');
   const at = t.search(/In-App Purchases/i);
   if (at < 0) return null;
-  const tail = t.slice(at + 'In-App Purchases'.length, at + 1500);
+  const tail = t.slice(at + 'In-App Purchases'.length, at + 1500).replace(/^\s*:?\s*Yes\b\s*/i, ''); // Apple writes "In-App Purchases Yes"
   const items = [...tail.matchAll(/([A-Z][\w+&' .-]{2,40}?)\s+((?:US)?\$|€|£|₹|R\$|Rp|KSh|₦)\s?(\d[\d.,]*)/g)].slice(0, 6).map((m) => `${m[1].trim()} ${m[2]}${m[3]}`);
   return { quote: items.length ? `In-App Purchases: ${items.join(', ')}` : 'Offers In-App Purchases', items };
 }

@@ -29,6 +29,13 @@ Entry format:
 - Tested offline: rules, a whole run, robots.txt, the 14-day refresh, and the validator.
 - AI reading stays an optional later step.
 
+**First runs on GitHub:**
+- **Run 1** was stopped by validation, so nothing was saved. It caught a duplicate (App Store "Google Gemini" is our Gemini) and descriptions over 30 words. Fixed with a same-website identity check and a word budget.
+- **Run 2** listed 7 apps (63 apps in all). All 7 got App Store languages and categories, but their websites gave no prices: store-first apps point to company sites.
+- **Run 3** added Apple's app page as a source. 6 of 7 now show "app store billing" quoted with their real plans (Grok's SuperGrok $30.00, Character.AI+ $9.99, ChatOn Premium $6.99…).
+- The rules are versioned, so a rule change re-researches older apps.
+- One failing test was committed because a pipe hid its exit status. GitHub's test step stopped that deploy (see LESSONS).
+
 ## 2026-11-17: Product Hunt
 **Where:** Claude Code session.
 **Asked:** steps to get a Product Hunt token. Then the owner picked "Confidential" as the client type, added the `PRODUCT_HUNT_TOKEN` secret, and asked to check it works.
