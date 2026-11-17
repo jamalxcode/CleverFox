@@ -665,7 +665,13 @@ export async function carryForward(file, fresh, { inSeed = () => false, getImpl 
   for (const r of recover) if (!have.has(r.id)) { prev.push(r); have.add(r.id); }
   const ids = new Set(fresh.map((r) => r.id));
   for (const r of fresh) delete r.listing_status;
-  const kept = prev.filter((r) => !ids.has(r.id) && !inSeed(r) && ['huggingface', 'ollama'].includes(r.import_source));
+  // A listing whose downloads now belong to a current listing was merged into it (for example an Ollama model now
+  // linked to its Hugging Face original): that's not a loss, so it isn't kept as a duplicate.
+  const dists = new Set(fresh.flatMap((r) => (r.distributions || []).map((d) => `${d.source}:${String(d.native_id).toLowerCase()}`)));
+  const candidates = prev.filter((r) => !ids.has(r.id) && !inSeed(r) && ['huggingface', 'ollama'].includes(r.import_source));
+  const merged = candidates.filter((r) => (r.distributions || []).some((d) => dists.has(`${d.source}:${String(d.native_id).toLowerCase()}`)));
+  const kept = candidates.filter((r) => !merged.includes(r));
+  if (merged.length) console.log(`${file}: ${merged.length} earlier listings merged into current ones (${merged.slice(0, 6).map((r) => r.name).join(', ')})`);
   let checked = 0; let removed = 0;
   for (const r of kept) {
     r.listing_status = { value: r.listing_status?.value === 'removed_at_source' ? 'removed_at_source' : 'not_in_top_lists', since: r.listing_status?.since || today, checked_at: r.listing_status?.checked_at || null };

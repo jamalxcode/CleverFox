@@ -165,6 +165,10 @@ console.log('Product Hunt tests passed.');
     assert.equal(by['cf:model:a/still'].listing_status.value, 'not_in_top_lists');
     assert.equal(by['cf:model:a/gone'].listing_status.value, 'removed_at_source');
     assert.equal(by['cf:model:a/gone'].availability.value, 'withdrawn'); assert.equal(by['cf:model:a/gone'].distributions[0].availability, 'withdrawn');
+    // An earlier listing whose download now belongs to a current listing was merged, not lost: not kept as a duplicate.
+    fs.writeFileSync(f, JSON.stringify([{ ...rec('cf:model:ollama-library/x', 'x'), import_source: 'ollama', distributions: [{ source: 'ollama', native_id: 'x:7b' }] }]));
+    const out2 = await carryForward('test-carry.json', [{ ...rec('cf:model:org/x-7b', 'org/x-7b'), distributions: [{ source: 'huggingface', native_id: 'org/x-7b' }, { source: 'ollama', native_id: 'x:7b' }] }], { today: '2026-11-17T00:00:00Z', getImpl: async () => ({}) });
+    assert.deepEqual(out2.map((r) => r.id), ['cf:model:org/x-7b']);
   } finally { fs.rmSync(f, { force: true }); }
   console.log('Keep-listings tests passed.');
 }

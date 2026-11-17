@@ -86,7 +86,7 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] Auto-research (decision 85): after the first runs, review the new listings' quotes (`research.quotes` in each record) for false matches, and promote good ones with the decision 67 review. Tune the word rules if needed.
 - [ ] Optional AI step for auto-research: Claude reads the official pages and proposes facts with quotes, and the tool rejects any quote not on the page. Needs an Anthropic API key and a spending cap (an open decision).
 - [ ] Health (decision 86): read the status page after a few days of history, and tune the drop and stale thresholds if they flag too much or too little.
-- [ ] Publishers: run the "Publishers" workflow after the smarter Wikidata matching, review its output (it prints every match), and fix wrong ones with an explicit `qid` in `data/publisher-map.json`.
+- [ ] Publishers: the smarter matching (run 17 November) gives 49 publishers a country, up from 46. Review two: Hugging Face shows France while Wikidata describes it as an American company, and SYSTRAN shows South Korea (a French company owned by a Korean group). Wikidata has no country for Liquid AI, Nous Research, Poolside, ModelBest and Comfy Org, so they stay unknown.
 - [ ] Recovered listings: after the next full refresh, check how many of the 92 came back and how many were marked removed at their source.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 

@@ -34,6 +34,11 @@ Entry format:
 - Bluesky dropped.
 - Tests added for each; the page check now covers the status page.
 
+**First full refresh with the new rules:**
+- 1,380 listings: 61 models and 69 datasets kept or recovered, the 61 models re-checked with none removed at the source, 4 new OpenRouter models, and 104 community versions grouped under 55 originals.
+- The quarantine left out 7 records that would have blocked the deploy before. They were old Ollama-only listings now merged into their Hugging Face originals. Those merges are no longer kept as duplicates.
+- The Publishers workflow now gives 49 publishers a country (was 46).
+
 ## 2026-11-17: filling gaps ourselves (auto-research)
 **Where:** Claude Code session.
 **Asked:**
