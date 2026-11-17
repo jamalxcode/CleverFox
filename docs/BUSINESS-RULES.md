@@ -288,6 +288,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
     - **Free plan:** a free plan, tier or version, "free forever", "start for free" and the like mean "free tier"; a free or N-day trial means "trial". The first match is kept with its sentence.
     - **Ways to pay:** only from pricing or billing pages, by strict words (no bare "card", "wire" or "app store", which are download badges). Each method keeps its sentence as the note.
     - **Sign-up:** "sign up / log in / continue with Google, Apple, email, phone…", with its sentence.
+    - **Apple's app page** (`apps.apple.com`, robots.txt respected): if it shows "In-App Purchases", the app gets "app store billing" as a way to pay, quoted with up to 6 plans and prices from the listing (for example "Pro Weekly $6.99").
     - **Categories:** whole-word rules on the publisher's own text (App Store title and description, the tagline, the opening of the home page); "other" when nothing matches.
     - **Publisher:** the App Store seller, or the website's own host name when there's no stated seller ("AI app from zed.app").
     - **Countries, look-alikes and more languages:** these come from the daily App Store check, which includes these listings. Countries are never inferred from a website.

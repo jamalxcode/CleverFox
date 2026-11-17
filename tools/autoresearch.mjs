@@ -17,7 +17,8 @@ const outDir = join(root, 'data', 'imported');
 const OUT = join(outDir, 'apps-researched.json');
 const STATE = join(outDir, 'autoresearch-state.json');
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
-export const RULES = { newPerRun: 8, refreshDays: 14, pagesPerApp: 3, timeoutMs: 20000, quoteChars: 200 };
+// version: bump when the rules change, so apps researched under older rules are researched again.
+export const RULES = { version: 2, newPerRun: 8, refreshDays: 14, pagesPerApp: 3, timeoutMs: 20000, quoteChars: 200 };
 
 // Ways to pay, by words that only mean payment (stricter than the re-check's lists: no bare "card", "wire" or
 // "app store", which also appear as download badges and in unrelated text).
@@ -59,6 +60,17 @@ export function extractFacts(pages) {
   }
   return facts;
 }
+// Apple's own app page: "In-App Purchases" and the plans listed there (name and price). Paying for them goes through
+// the App Store, so it's an official "app store billing" fact, quoted from the listing.
+export function inAppPurchases(text) {
+  const t = String(text || '');
+  const at = t.search(/In-App Purchases/i);
+  if (at < 0) return null;
+  const tail = t.slice(at, at + 1500);
+  const items = [...tail.matchAll(/([A-Z][\w+&' .-]{2,40}?)\s+((?:US)?\$|€|£|₹|R\$|Rp|KSh|₦)\s?(\d[\d.,]*)/g)].slice(0, 6).map((m) => `${m[1].trim()} ${m[2]}${m[3]}`);
+  return { quote: items.length ? `In-App Purchases: ${items.join(', ')}` : 'Offers In-App Purchases', items };
+}
+
 // Links on the home page to its pricing / plans / FAQ pages (same site only).
 export function billingLinks(html, base) {
   const out = [];
@@ -133,7 +145,7 @@ export async function fetchPage(url, fetchImpl, robotsCache) {
 export async function research({ queue, known, prev = {}, fetchImpl = fetch, now = new Date().toISOString(), log = console.log } = {}) {
   const state = { ...(prev.apps || {}) };
   const robotsCache = {};
-  const due = queue.filter((a) => !known(a) && (!state[a.key] || (Date.parse(now) - Date.parse(state[a.key].at)) / 86400000 >= RULES.refreshDays)).slice(0, RULES.newPerRun);
+  const due = queue.filter((a) => !known(a) && (!state[a.key] || state[a.key].v !== RULES.version || (Date.parse(now) - Date.parse(state[a.key].at)) / 86400000 >= RULES.refreshDays)).slice(0, RULES.newPerRun);
   // App Store details for the ones with an id, in one lookup.
   const ids = due.map((a) => a.apple_id).filter(Boolean);
   const store = {};
@@ -147,21 +159,28 @@ export async function research({ queue, known, prev = {}, fetchImpl = fetch, now
   for (const app of due) {
     const st = app.apple_id ? store[String(app.apple_id)] : null;
     let site = st?.website || app.website || null;
-    if (site && known.site?.(site)) { state[app.key] = { at: now, skipped: 'already listed (same website)' }; continue; }
+    if (site && known.site?.(site)) { state[app.key] = { at: now, v: RULES.version, skipped: 'already listed (same website)' }; continue; }
     const pages = [];
     if (site) {
       const home = await fetchPage(site, fetchImpl, robotsCache);
       if (home.html) {
         site = home.url.replace(/\/$/, '/');
-        if (known.site?.(site)) { state[app.key] = { at: now, skipped: 'already listed (same website)' }; continue; }
+        if (known.site?.(site)) { state[app.key] = { at: now, v: RULES.version, skipped: 'already listed (same website)' }; continue; }
         pages.push({ url: home.url, text: visibleText(home.html), billing: /pric|plan|billing|faq/i.test(new URL(home.url).pathname) });
         for (const link of billingLinks(home.html, home.url)) { const p = await fetchPage(link, fetchImpl, robotsCache); if (p.html) pages.push({ url: p.url, text: visibleText(p.html), billing: true }); }
       }
     }
-    if (!st && !pages.length) { state[app.key] = { at: now, skipped: site ? 'website not readable' : 'no website' }; continue; }
+    if (!st && !pages.length) { state[app.key] = { at: now, v: RULES.version, skipped: site ? 'website not readable' : 'no website' }; continue; }
     const facts = extractFacts(pages);
+    // Apple's app page (official): in-app purchases mean paying through the App Store.
+    if (st?.url) {
+      const ap = await fetchPage(st.url, fetchImpl, robotsCache);
+      const iap = ap.html ? inAppPurchases(visibleText(ap.html)) : null;
+      if (iap && !facts.payment_methods.some((m) => m.method === 'app_store_billing')) facts.payment_methods.push({ method: 'app_store_billing', note: `"${iap.quote}" (App Store listing)`, url: st.url });
+      if (iap?.items.length) facts.iap = iap.items;
+    }
     const rec = appRecord({ app, store: st, site: pages[0]?.url || site, pages, facts, now });
-    state[app.key] = { at: now, id: rec.id, pages_read: pages.length, site, record: rec };
+    state[app.key] = { at: now, v: RULES.version, id: rec.id, pages_read: pages.length, site, record: rec };
   }
   const records = Object.values(state).map((s) => s.record).filter(Boolean);
   const run = due.map((a) => state[a.key]).filter(Boolean);

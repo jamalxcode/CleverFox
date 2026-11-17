@@ -61,4 +61,14 @@ assert.ok(long.description.split(/\s+/).length <= 30, 'descriptions fit 30 words
 const dup = await research({ queue: [{ key: 'apple:9', from: 'app_store', apple_id: 9, name: 'Google Gemini' }], known: Object.assign(() => false, { site: (u) => /gemini\.google\.com/.test(u) }), log: () => {}, now: '2026-11-17T10:00:00Z',
   fetchImpl: async (u) => u.includes('itunes') ? { ok: true, json: async () => ({ results: [{ trackId: 9, trackName: 'Google Gemini', sellerName: 'Google LLC', sellerUrl: 'https://gemini.google.com/' }] }) } : { ok: false, status: 404 } });
 assert.equal(dup.records.length, 0); assert.match(dup.state.apps['apple:9'].skipped, /already listed/);
+// Apple's app page: in-app purchases become "app store billing", quoted with the plans and prices.
+const { inAppPurchases } = await import('./autoresearch.mjs');
+const iap = inAppPurchases('Ratings 4.7 In-App Purchases Pro Weekly $6.99 Pro Yearly $49.99 Lifetime $99.99 Privacy');
+assert.deepEqual(iap.items, ['Pro Weekly $6.99', 'Pro Yearly $49.99', 'Lifetime $99.99']);
+assert.equal(inAppPurchases('A free app with no purchases.'), null);
+const withIap = await research({ queue: [{ key: 'apple:42', from: 'app_store', apple_id: 42, name: 'Zap' }], known: () => false, log: () => {}, now: '2026-11-17T10:00:00Z',
+  fetchImpl: async (u) => u.includes('itunes') ? { ok: true, json: async () => ({ results: [{ trackId: 42, trackName: 'Zap AI', sellerName: 'Zap Co', trackViewUrl: 'https://apps.apple.com/us/app/zap/id42', price: 0 }] }) }
+    : u.endsWith('robots.txt') ? { ok: true, text: async () => '' } : { ok: true, url: u, text: async () => '<div>In-App Purchases</div><li>Zap Pro Monthly $9.99</li>' } });
+assert.deepEqual(withIap.records[0].access.payment_methods.value.map((m) => m.method), ['app_store_billing']);
+assert.match(withIap.records[0].access.payment_methods.value[0].note, /Zap Pro Monthly \$9\.99/);
 console.log('All auto-research tests passed.');
