@@ -309,7 +309,13 @@ view.site = new URL('.', location.href).href;
 wireShare($('#list'));
 $('#mem').insertAdjacentHTML('beforeend', MEMORY_CHOICES.map((g) => `<option value="${g}"${g === state.mem ? ' selected' : ''}>${g === 128 ? '128 GB or more' : g + ' GB'}</option>`).join(''));
 $('#country').insertAdjacentHTML('beforeend', catalog.countries.map(([c, n]) => `<option value="${c}"${c === state.country ? ' selected' : ''}>${flag(c)} ${esc(n)}</option>`).join(''));
-$('#ulang').insertAdjacentHTML('beforeend', (catalog.languages || []).map((l) => [l, langName(l)]).sort((a, b) => a[1].localeCompare(b[1])).map(([l, n]) => `<option value="${l}"${l === state.ulang ? ' selected' : ''}>${esc(n)}</option>`).join(''));
+// "AI that speaks": one entry per language the browser can name (like the language filter, decision 74):
+// bare codes such as "aa" and repeats such as two "Akan" entries are left out. A saved choice is always kept.
+{
+  const named = new Map();
+  for (const l of catalog.languages || []) { const n = langName(l); if ((n && !/^[a-z]{2,3}([-_][a-z0-9]+)*$/i.test(n) && !named.has(n)) || l === state.ulang) named.set(n || l, l); }
+  $('#ulang').insertAdjacentHTML('beforeend', [...named].sort((a, b) => a[0].localeCompare(b[0])).map(([n, l]) => `<option value="${l}"${l === state.ulang ? ' selected' : ''}>${esc(n)}</option>`).join(''));
+}
 const total = Object.values(catalog.counts).reduce((a, b) => a + b, 0);
 $('#generated').textContent = `Catalog built ${fmtDate(catalog.generated_at)} · ${total} listings`;
 // Freshness: when each source last refreshed; a stale one is flagged, so a deploy doesn't look like everything refreshed.

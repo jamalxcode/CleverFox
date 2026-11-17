@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: "what am I seeing?" (page as plain text)
+**Where:** Claude Code session.
+**Asked:** the owner pasted the main page as plain text (dropdown options run together) and asked what it was.
+**Answer:** the question bar's dropdowns flattened, then the picks, "Your CleverFox", the directory and the footer.
+**Found and fixed:** the "AI that speaks" picker still listed bare codes (aa, ab, av…) and repeated names (Akan, Javanese). It now uses the same rule as the language filter (decision 74).
+
 ## 2026-11-17: data-pulling review, then fixes
 **Where:** Claude Code session.
 **Asked:** review data pulling and critique it. Then "do it all".

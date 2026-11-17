@@ -377,6 +377,7 @@ The interface rules behind these (one primary action, defaults, continuation, pr
 - **Badges:** every warning (not yet verified, don't touch, reported, possibly discontinued, look-alikes, pricing page changed or facts old, uncensored), then up to 3 in total with positives (independent score, praised on X, local prices). Everything else goes in the quiet facts line.
 - **Default order:** suits you first, then, when no capability or search is chosen, everyday models (chat, writing, coding, images, speech, video, translation, vision) before others. Then checked listings, then popularity.
 - **Picks on every visit** without a link hash: the visitor's last question, or chat on my computer.
+- **"AI that speaks" picker:** the same rule as the language filter: one entry per language name the browser can name, with bare codes and repeats left out. A previously saved choice is always kept.
 - **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **What people show on YouTube (decision 78):** a panel under "What people say on X" on every listing page except datasets.
   - **Reviews:** YouTube searches for "<name> review" (with the publisher for names of 4 characters or less), 15 listings per scan, least recently checked first. Each listing is re-checked after 7 days.
