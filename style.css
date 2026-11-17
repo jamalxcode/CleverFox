@@ -461,5 +461,9 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 :root[data-theme="dim"] .start-here, :root[data-theme="dim"] .compare, :root[data-theme="dim"] .xside { box-shadow: none; }
 :root[data-theme="dim"] .cap[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 :root[data-theme="dim"] h1 { text-shadow: none; }
-.status-table td, .status-table th { vertical-align: top; text-align: left; }
+.status-table td, .status-table th { vertical-align: top; text-align: left; word-break: normal; overflow-wrap: normal; }
+.status-table thead th, .status-table td:nth-child(1), .status-table td:nth-child(3), .status-table td:nth-child(4) { white-space: nowrap; }
+.status-table td:nth-child(3) { text-align: right; font-variant-numeric: tabular-nums; }
+.status-table th[scope="row"] { min-width: 12rem; }
+.status-table td:nth-child(5) { overflow-wrap: anywhere; min-width: 14rem; }
 .status-table .trend { font-size: .82rem; }

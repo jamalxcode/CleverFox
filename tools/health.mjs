@@ -61,7 +61,7 @@ const ago = (now, at) => { if (!at) return 'never'; const h = (now - new Date(at
 export function statusPage(rep, history, now = new Date()) {
   const rows = Object.entries(rep.rows).map(([k, r]) => { const f = rep.flagged[k]; const state = f.length ? (f.every((x) => x.startsWith('skipped')) ? '⏸️' : '⚠️') : '✅';
     const trend = history.slice(-8).map((h) => h.sources?.[k]?.count).filter((n) => typeof n === 'number').join(' → ');
-    return `<tr><td>${state}</td><th scope="row">${esc(k)}</th><td>${esc(r.count)}</td><td>${esc(ago(now, r.at))}</td><td class="muted">${esc([f.join('; '), r.note].filter(Boolean).join(' · '))}${trend ? `<br><span class="trend">recent: ${esc(trend)}</span>` : ''}</td></tr>`; }).join('');
+    return `<tr><td>${state}</td><th scope="row">${esc(k)}</th><td>${esc(Number(r.count).toLocaleString('en'))}</td><td>${esc(ago(now, r.at))}</td><td class="muted">${esc([f.join('; '), r.note].filter(Boolean).join(' · '))}${trend ? `<br><span class="trend">recent: ${esc(trend)}</span>` : ''}</td></tr>`; }).join('');
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
