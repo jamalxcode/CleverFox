@@ -6,6 +6,9 @@
 //     not a usable release.
 //  4. YouTube: official channels' uploads and keyword search (YOUTUBE_API_KEY).
 //  5. Replicate: models published or updated there, with Replicate's own collections as their tasks (REPLICATE_API_TOKEN).
+//  6. No sign-up needed: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers (models and datasets
+//     linked to papers), Hacker News launches, Bluesky posts (if its public search answers), and popular AI apps in
+//     App Store searches per country (once a day).
 // Models and datasets found here are filled in from Hugging Face by tools/import.mjs (--x-only in quick scans).
 // Output: data/imported/discover.json. Each source keeps its last data if it fails.
 //
@@ -20,7 +23,10 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'data', 'imported', 'discover.json');
 const HF = 'https://huggingface.co';
 const UA = 'CleverFox/1.0 (+https://jamalxcode.github.io/CleverFox/)';
-export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14, replicatePages: 10, replicateMinRuns: 500, replicateCollections: 20, reviewsPerScan: 15, reviewDays: 7, reviewModels: 80 };
+export const RULES = { newDays: 14, hfMinLikes: 10, githubDays: 14, keepDays: 30, releaseDays: 30, videoDays: 14, replicatePages: 10, replicateMinRuns: 500, replicateCollections: 20, reviewsPerScan: 15, reviewDays: 7, reviewModels: 80, papersTop: 15, hnMinPoints: 30, hnDays: 3, bskyMinLikes: 25, appStoreHours: 20, appStoreMinRatings: 1000 };
+// App Store searches per country (popular AI apps that aren't listed yet).
+export const APP_COUNTRIES = ['KE', 'NG', 'GH', 'ET', 'ZA', 'EG', 'MA', 'IN', 'PK', 'BD', 'ID', 'PH', 'VN', 'TR', 'SA', 'AE', 'BR', 'MX', 'AR', 'CO'];
+export const APP_TERMS = ['AI chat', 'AI assistant'];
 // Replicate collections (by slug) -> the task they stand for. Collections not matched here are ignored.
 export const REPLICATE_TASKS = [
   [/image-to-video/, 'image-to-video'], [/text-to-video|video-gen|generate-videos/, 'text-to-video'],
@@ -290,11 +296,168 @@ export async function replicate({ now = new Date(), prev = {}, fetchImpl = fetch
   return { checked_at: now.toISOString(), source_url: `${API}/models`, baseline, pages, seen: all.length, collections, models: [...models.values()].sort((a, b) => String(b.version_at || b.first_seen).localeCompare(String(a.version_at || a.first_seen))), first_seen: firstSeen };
 }
 
+// ---- 6a. OpenRouter: models added in the last newDays (public list, no key). API-only ones become candidate listings;
+// those that name a Hugging Face model are filled in from Hugging Face.
+export function openrouterNew(list, now = new Date()) {
+  const pm = (v) => (v == null || v === '' || isNaN(+v) ? null : +(+v * 1e6).toFixed(3));
+  return (list || []).filter((m) => m.id && m.created && daysAgo(new Date(m.created * 1000).toISOString(), now) <= RULES.newDays && !/:free$/.test(m.id)).map((m) => {
+    const [owner] = m.id.split('/');
+    const mods = m.architecture || {};
+    const tasks = (mods.output_modalities || []).includes('image') ? ['text-to-image'] : (mods.input_modalities || []).includes('image') ? ['image-text-to-text'] : ['text-generation'];
+    return { id: m.id, owner, name: String(m.name || m.id).replace(/^[^:]{1,40}:\s*/, '').trim(), created: new Date(m.created * 1000).toISOString(), description: String(m.description || '').replace(/\s+/g, ' ').trim().slice(0, 300),
+      context: m.context_length ?? null, input: pm(m.pricing?.prompt), output: pm(m.pricing?.completion), hf_id: m.hugging_face_id || null, tasks, url: `https://openrouter.ai/${m.id}` };
+  });
+}
+export async function openrouter({ now = new Date(), prev = {}, fetchImpl = fetch } = {}) {
+  const d = await getJson('https://openrouter.ai/api/v1/models', {}, fetchImpl);
+  const fresh = openrouterNew(d.data, now);
+  const keep = (prev.models || []).filter((m) => daysAgo(m.created, now) <= RULES.keepDays && !fresh.some((f) => f.id === m.id));
+  const models = [...fresh, ...keep];
+  return { checked_at: now.toISOString(), source_url: 'https://openrouter.ai/api/v1/models', listed: (d.data || []).length, models, hf_models: [...new Set(models.map((m) => m.hf_id).filter(Boolean))] };
+}
+
+// ---- 6b. AI makers' official news feeds (data/announce-feeds.json): RSS or Atom; a page can name its feed.
+const tag = (x, t) => { const m = x.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`, 'i')); return m ? m[1].replace(/^<!\[CDATA\[|\]\]>$/g, '').trim() : ''; };
+export function feedItems(xml) {
+  const blocks = [...xml.matchAll(/<item\b[\s\S]*?<\/item>|<entry\b[\s\S]*?<\/entry>/gi)].map((m) => m[0]);
+  return blocks.map((b) => {
+    const link = tag(b, 'link') || b.match(/<link[^>]*href="([^"]+)"/i)?.[1] || '';
+    const when = tag(b, 'pubDate') || tag(b, 'published') || tag(b, 'updated') || tag(b, 'dc:date');
+    const body = tag(b, 'description') || tag(b, 'summary') || tag(b, 'content') || tag(b, 'content:encoded');
+    const t = Date.parse(when);
+    return { title: unescHtml(tag(b, 'title').replace(/<[^>]+>/g, '')).slice(0, 200), url: unescHtml(link.trim()), published_at: Number.isFinite(t) ? new Date(t).toISOString() : null, text: unescHtml(body).slice(0, 4000) };
+  }).filter((x) => x.title && /^https?:/.test(x.url));
+}
+export async function makerFeeds({ now = new Date(), prev = {}, fetchImpl = fetch } = {}) {
+  const file = join(root, 'data', 'announce-feeds.json');
+  const feeds = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).feeds || [] : [];
+  const posts = new Map((prev.posts || []).filter((p) => daysAgo(p.published_at, now) <= RULES.newDays).map((p) => [p.url, p]));
+  const diag = {}; const robotsCache = {};
+  const allowed = async (u) => { const o = new URL(u).origin; robotsCache[o] ??= await fetchImpl(`${o}/robots.txt`, { headers: { 'user-agent': UA } }).then((r) => (r.ok ? r.text() : '')).catch(() => ''); return robotsAllows(robotsCache[o], new URL(u).pathname); };
+  for (const f of feeds) {
+    try {
+      let url = f.feed;
+      if (!url && f.page) {
+        if (!(await allowed(f.page))) { diag[f.name] = 'robots.txt'; continue; }
+        const html = await (await fetchImpl(f.page, { headers: { 'user-agent': UA, accept: 'text/html' } })).text();
+        const href = html.match(/<link[^>]+type="application\/(?:rss|atom)\+xml"[^>]*href="([^"]+)"/i)?.[1] || html.match(/<link[^>]+href="([^"]+)"[^>]*type="application\/(?:rss|atom)\+xml"/i)?.[1];
+        if (!href) { diag[f.name] = 'no feed on its page'; continue; }
+        url = new URL(href, f.page).href;
+      }
+      if (!(await allowed(url))) { diag[f.name] = 'robots.txt'; continue; }
+      const res = await fetchImpl(url, { headers: { 'user-agent': UA, accept: 'application/rss+xml, application/atom+xml, application/xml, text/xml' } });
+      if (!res.ok) { diag[f.name] = `HTTP ${res.status}`; continue; }
+      const items = feedItems(await res.text());
+      let recent = 0;
+      for (const it of items) {
+        if (!it.published_at || daysAgo(it.published_at, now) > RULES.newDays) continue;
+        recent++;
+        const links = linksIn([it.url, ...(it.text.match(/https?:\/\/[^\s"'<>)]+/g) || [])]);
+        posts.set(it.url, { source: f.name, title: it.title, url: it.url, published_at: it.published_at, links });
+      }
+      diag[f.name] = { items: items.length, recent };
+    } catch (e) { diag[f.name] = `failed: ${String(e.message || e).slice(0, 60)}`; }
+  }
+  const list = [...posts.values()].sort((a, b) => b.published_at.localeCompare(a.published_at));
+  return { checked_at: now.toISOString(), diag, posts: list, hf_models: [...new Set(list.flatMap((p) => p.links?.models || []))], hf_datasets: [...new Set(list.flatMap((p) => p.links?.datasets || []))] };
+}
+
+// ---- 6c. Hugging Face Daily Papers: the most upvoted papers and the models and datasets linked to them.
+export async function hfPapers({ now = new Date(), fetchImpl = fetch } = {}) {
+  const list = await getJson(`${HF}/api/daily_papers?limit=100`, {}, fetchImpl);
+  const top = (list || []).map((p) => p.paper || p).filter((p) => p.id).sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0)).slice(0, RULES.papersTop);
+  const papers = [];
+  for (const p of top) {
+    let repos = { models: [], datasets: [] };
+    try { repos = await getJson(`${HF}/api/arxiv/${encodeURIComponent(p.id)}/repos`, {}, fetchImpl); } catch { /* no repos */ }
+    papers.push({ id: p.id, title: String(p.title || '').slice(0, 200), url: `${HF}/papers/${p.id}`, upvotes: p.upvotes || 0, github: p.githubRepo || null,
+      models: (repos.models || []).map((m) => m.id).filter(Boolean).slice(0, 2), datasets: (repos.datasets || []).map((d) => d.id).filter(Boolean).slice(0, 5) });
+  }
+  return { checked_at: now.toISOString(), papers, hf_models: [...new Set(papers.flatMap((p) => p.models))], hf_datasets: [...new Set(papers.flatMap((p) => p.datasets))] };
+}
+
+// ---- 6d. Hacker News (Algolia's public API): AI launches ("Show HN" and stories) with real interest.
+export const HN_QUERIES = [['show_hn', 'AI'], ['show_hn', 'LLM'], ['story', 'open source model'], ['story', 'open weights']];
+export async function hackerNews({ now = new Date(), fetchImpl = fetch } = {}) {
+  const since = Math.floor(now / 1000) - RULES.hnDays * 86400;
+  const hits = new Map(); let ok = 0;
+  for (const [tags, q] of HN_QUERIES) {
+    try {
+      const d = await getJson(`https://hn.algolia.com/api/v1/search?tags=${tags}&query=${encodeURIComponent(q)}&numericFilters=${encodeURIComponent(`created_at_i>${since},points>=${RULES.hnMinPoints}`)}&hitsPerPage=30`, {}, fetchImpl);
+      ok++;
+      for (const h of d.hits || []) if (h.url && !hits.has(h.objectID)) hits.set(h.objectID, h);
+    } catch { /* keep going */ }
+  }
+  if (!ok) throw new Error('every Hacker News search failed'); // keep the last data instead of an empty list
+  const launches = [...hits.values()].map((h) => {
+    let site = ''; try { site = new URL(h.url).hostname.replace(/^www\./, ''); } catch {}
+    return { title: String(h.title || '').slice(0, 200), url: h.url, site, points: h.points || 0, comments: h.num_comments || 0, created_at: h.created_at, hn_url: `https://news.ycombinator.com/item?id=${h.objectID}`, links: linksIn([h.url]) };
+  }).sort((a, b) => b.points - a.points).slice(0, 40);
+  return { checked_at: now.toISOString(), launches, hf_models: [...new Set(launches.flatMap((l) => l.links.models))], hf_datasets: [...new Set(launches.flatMap((l) => l.links.datasets))] };
+}
+
+// ---- 6e. Bluesky: public post search for releases that link to Hugging Face. Skipped if the search needs signing in.
+export const BSKY_QUERIES = ['huggingface.co new model', 'open weights released'];
+export async function bluesky({ now = new Date(), fetchImpl = fetch } = {}) {
+  const since = new Date(now - 3 * 86400000).toISOString();
+  const posts = [];
+  for (const q of BSKY_QUERIES) {
+    const res = await fetchImpl(`https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&sort=top&since=${encodeURIComponent(since)}&limit=50`, { headers: { 'user-agent': UA, accept: 'application/json' } });
+    if (res.status === 401 || res.status === 403) return { checked_at: now.toISOString(), skipped: 'Bluesky search needs signing in', posts: [], hf_models: [], hf_datasets: [] };
+    if (!res.ok) continue;
+    for (const p of (await res.json()).posts || []) {
+      const text = String(p.record?.text || ''); const ext = p.record?.embed?.external?.uri || p.embed?.external?.uri || '';
+      const facetLinks = (p.record?.facets || []).flatMap((f) => (f.features || []).map((x) => x.uri)).filter(Boolean);
+      const links = linksIn([ext, ...facetLinks, ...(text.match(/https?:\/\/[^\s]+/g) || [])]);
+      if ((p.likeCount || 0) < RULES.bskyMinLikes || !(links.models.length || links.datasets.length)) continue;
+      const rkey = String(p.uri || '').split('/').pop();
+      posts.push({ url: `https://bsky.app/profile/${p.author?.handle}/post/${rkey}`, author: p.author?.handle, likes: p.likeCount || 0, created_at: p.record?.createdAt, links });
+    }
+  }
+  return { checked_at: now.toISOString(), posts, hf_models: [...new Set(posts.flatMap((p) => p.links.models))], hf_datasets: [...new Set(posts.flatMap((p) => p.links.datasets))] };
+}
+
+// ---- 6f. App Store: popular AI apps per country that CleverFox doesn't list yet (a research queue; once a day).
+export function knownAppIds(dir = join(root, 'data')) {
+  const ids = new Set(); const names = new Set();
+  const read = (f) => { try { return JSON.parse(readFileSync(f, 'utf8')); } catch { return null; } };
+  for (const f of readdirSync(join(dir, 'seed')).filter((x) => x.endsWith('.json'))) for (const r of read(join(dir, 'seed', f)) || []) {
+    if (r.type !== 'app') continue; names.add(String(r.name).toLowerCase().replace(/\s*\(.*?\)/g, '').trim());
+    for (const u of r.app_store_urls || []) { const id = String(u).match(/id(\d{6,})/)?.[1]; if (id) ids.add(id); }
+  }
+  const stores = read(join(dir, 'app-stores.json')); for (const v of Object.values(stores?.apps || stores || {})) for (const id of [].concat(v?.ids || v?.id || [])) ids.add(String(id));
+  return { ids, names };
+}
+export async function appStoreSpotted({ now = new Date(), prev = {}, fetchImpl = fetch, countries = APP_COUNTRIES, known = knownAppIds(), pause = 3000 } = {}) {
+  if (prev.checked_at && (now - new Date(prev.checked_at)) / 3600000 < RULES.appStoreHours) return prev;
+  const found = new Map(); let ok = 0;
+  for (const c of countries) {
+    for (const term of APP_TERMS) {
+      try {
+        const d = await getJson(`https://itunes.apple.com/search?term=${encodeURIComponent(term)}&country=${c.toLowerCase()}&entity=software&limit=25`, {}, fetchImpl);
+        ok++;
+        for (const a of d.results || []) {
+          const id = String(a.trackId || ''); const nm = String(a.trackName || '').toLowerCase();
+          if (!id || known.ids.has(id) || [...known.names].some((n) => n.length >= 4 && nm.startsWith(n)) || (a.userRatingCount || 0) < RULES.appStoreMinRatings) continue;
+          const x = found.get(id) || { id, name: a.trackName, seller: a.sellerName, rating: a.averageUserRating ? +a.averageUserRating.toFixed(1) : null, ratings: a.userRatingCount || 0, url: String(a.trackViewUrl || '').split('?')[0], released: a.releaseDate || null, countries: [] };
+          if (!x.countries.includes(c)) x.countries.push(c);
+          x.ratings = Math.max(x.ratings, a.userRatingCount || 0); found.set(id, x);
+        }
+      } catch { /* this country or term failed; keep going */ }
+      if (pause) await new Promise((r) => setTimeout(r, pause));
+    }
+  }
+  if (!ok) throw new Error('every App Store search failed'); // keep the last data instead of an empty list
+  return { checked_at: now.toISOString(), countries, apps: [...found.values()].sort((a, b) => b.countries.length - a.countries.length || b.ratings - a.ratings).slice(0, 60) };
+}
+
 async function main() {
   mkdirSync(dirname(OUT), { recursive: true });
   const prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
   const out = { ...prev };
-  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })], ['replicate', () => replicate({ prev: prev.replicate || {} })]]) {
+  for (const [key, fn] of [['huggingface', () => hfNew()], ['llm_releases', () => llmReleases()], ['github', () => github({ prev: prev.github || {} })], ['youtube', () => youtube({ prev: prev.youtube || {} })], ['replicate', () => replicate({ prev: prev.replicate || {} })],
+    ['openrouter', () => openrouter({ prev: prev.openrouter || {} })], ['maker_feeds', () => makerFeeds({ prev: prev.maker_feeds || {} })], ['hf_papers', () => hfPapers()],
+    ['hacker_news', () => hackerNews()], ['bluesky', () => bluesky()], ['app_store', () => appStoreSpotted({ prev: prev.app_store || {} })]]) {
     try { out[key] = await fn(); console.log(`Discover ${key}: ${JSON.stringify(Object.fromEntries(Object.entries(out[key]).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [k, v.length])))}`); }
     catch (e) { console.warn(`Discover ${key} failed (${e.message}); keeping the last data`); }
   }

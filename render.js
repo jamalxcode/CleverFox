@@ -150,7 +150,7 @@ export function verdictStrip(r) {
 }
 
 // A plain sentence of what it is, for imported listings whose description is only a template ("… published by X on Hugging Face").
-const TEMPLATED = /^(?:[\w-]+ )?model published by .+ on Hugging Face|^Local model in the Ollama library|^(?:[\w-]+ )?model (?:run by its maker|published by .+) on Replicate/;
+const TEMPLATED = /^(?:[\w-]+ )?model published by .+ on Hugging Face|^Local model in the Ollama library|^(?:[\w-]+ )?model (?:run by its maker|published by .+) on Replicate|^(?:[\w-]+ )?model by .+, available through OpenRouter/;
 export function plainWhat(r) {
   if (r.type !== 'model' || !TEMPLATED.test(r.description || '')) return r.description;
   const g = r.answers?.good_for || []; const t = r.tasks || [];
@@ -328,7 +328,13 @@ export function factsTable(r) {
     if (up.length) rows.push(row('🌱 Original', `${up.map((o) => `${to(o, o.hf_id)}${o.chain.length > 2 ? ` <span class="muted">(${o.chain.length - 1} steps up)</span>` : ''}`).join(', ')} <span class="muted" title="${esc(`Traced through ${r.origin.source}${up.some((o) => !o.complete) ? '; the chain stops where a model page couldn\'t be read' : ''}`)}">ⓘ</span>`));
   }
   const dv = r.discovered_via;
-  const found = dv?.source === 'x' ? `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>` : dv?.source === 'huggingface-new' ? `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}` : dv?.source === 'youtube' ? `in a ${esc(dv.author || '')} video ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">watch ↗</a>` : dv?.source === 'llm-releases' ? `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>` : dv?.source === 'replicate' ? `new on <a href="${esc(dv.url)}" rel="noopener" target="_blank">Replicate</a>` : '';
+  const found = dv?.source === 'x' ? `spotted on X ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>` : dv?.source === 'huggingface-new' ? `new on Hugging Face ${esc(fmtDate(dv.created_at))}${dv.why === 'trending' ? ', trending' : ''}` : dv?.source === 'youtube' ? `in a ${esc(dv.author || '')} video ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">watch ↗</a>` : dv?.source === 'llm-releases' ? `listed on <a href="${esc(dv.url)}" rel="noopener" target="_blank">llm-releases.com</a>` : dv?.source === 'replicate' ? `new on <a href="${esc(dv.url)}" rel="noopener" target="_blank">Replicate</a>`
+    : dv?.source === 'openrouter' ? `new on <a href="${esc(dv.url)}" rel="noopener" target="_blank">OpenRouter</a> ${esc(fmtDate(dv.created_at))}`
+    : dv?.source === 'maker-blog' ? `in ${esc(dv.author || 'its maker')}'s news ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">read ↗</a>`
+    : dv?.source === 'hf-papers' ? `with a paper on Hugging Face <a href="${esc(dv.url)}" rel="noopener" target="_blank">read ↗</a>`
+    : dv?.source === 'hackernews' ? `on Hacker News ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">discussion ↗</a>`
+    : dv?.source === 'bluesky' ? `on Bluesky ${esc(fmtDate(dv.created_at))} <a href="${esc(dv.url)}" rel="noopener" target="_blank">post ↗</a>`
+    : dv?.source === 'ollama-new' ? `new in the <a href="${esc(dv.url)}" rel="noopener" target="_blank">Ollama library</a>` : '';
   if (found) rows.push(row('Found', found));
   return `<h3 class="dh">📋 The facts</h3><dl class="facts">${rows.join('')}</dl>${unknown.length ? `<p class="ln muted">❓ Not stated anywhere we checked: ${esc(unknown.join(', '))}</p>` : ''}`;
 }

@@ -44,6 +44,13 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 | YouTube official channels (Data API, RSS fallback) | new videos from AI makers; Hugging Face links in descriptions | ✓ | ✓ | `tools/discover.mjs` |
 | YouTube search (with `YOUTUBE_API_KEY`) | recent AI release videos, not reviewed; reviews of 15 listings a scan | ✓ | ✓ | `tools/discover.mjs` |
 | Replicate (with `REPLICATE_API_TOKEN`) | new models (newest version or first seen in 14 days; official or 500+ runs), tasks from Replicate's collections | ✓ | ✓ | `tools/discover.mjs`, listings by `tools/import.mjs` |
+| OpenRouter (public) | new models; API-only ones become candidate listings | ✓ | ✓ | `tools/discover.mjs`, `tools/import.mjs` |
+| AI makers' news feeds | official posts; Hugging Face links filled in (`data/announce-feeds.json`) | ✓ | ✓ | `tools/discover.mjs` |
+| Hugging Face Daily Papers | models and datasets linked to top papers | ✓ | ✓ | `tools/discover.mjs` |
+| Hacker News (Algolia) | AI launches, not reviewed | ✓ | ✓ | `tools/discover.mjs` |
+| Bluesky (public search) | posts linking to Hugging Face; skipped if sign-in is needed | ✓ | ✓ | `tools/discover.mjs` |
+| App Store searches (20 countries) | popular AI apps not yet listed: research queue | once a day | once a day | `tools/discover.mjs` |
+| Ollama newest | new local models within hours | ✓ | | `tools/import.mjs --x-only` |
 | Hugging Face (fill-in) | details for models and datasets found above | ✓ (`--x-only`) | ✓ | `tools/import.mjs` |
 | Hugging Face Inference Providers, OpenRouter | API providers per model, with prices | ✓ | ✓ | `tools/providers.mjs` |
 | Hugging Face (bulk) and the Ollama library | top, liked, trending and gap-rule models and datasets; local models | | ✓ | `tools/import.mjs` |
@@ -71,6 +78,10 @@ Each run reads its sources, builds, checks the pages, saves the data to the `dat
 - [ ] YouTube reviews (decision 78): after a day of scans, check `discover.json` → `youtube.reviews` (how many listings have videos) and a few listings' panels for wrong matches (a video about a different product with the same name).
 - [ ] Translate the clarity-pass text (verdicts, "Using it in", fact labels, Filters) into `i18n.js` (decision 79).
 - [ ] Guides and the build's `pay_without_card` answer are still country-blind (fine for global guides). Revisit if a guide becomes per-country.
+- [ ] New sources' first run on GitHub (decision 83): check `discover.json` for `openrouter` (listed and new), `maker_feeds.diag` (which feeds answered; fix or drop the ones that fail), `hf_papers`, `hacker_news`, `bluesky` (works, or "needs signing in") and `app_store` (apps found per country).
+- [ ] Research the App Store queue ("Popular AI apps not yet listed" on New this week) and the Hacker News launches: add real AI apps to `data/seed/` with sourced access facts.
+- [ ] ModelScope: check its public API from a session that can reach modelscope.cn, then add it as a source for Chinese models that aren't on Hugging Face.
+- [ ] Add more makers' feeds (DeepSeek, Cohere, xAI, Sarvam, G42 and regional labs) once their feed URLs are confirmed on their own sites.
 - [ ] Keep this table and WORKFLOW.md in step whenever a source is added or removed.
 
 ## Data to research

@@ -67,7 +67,9 @@ A scheduled pipeline wakes up 3 times a day and goes hunting:
   📰 llm-releases.com                        ─┤
   🐙 GitHub new projects and releases        ─┼─▶ check ─▶ catalog ─▶ 🦊 site
   ▶️ YouTube makers' channels and reviews    ─┤
-  🔁 Replicate new models (needs its token)  ─┘
+  🔁 Replicate new models (needs its token)  ─┤
+  ☁️ OpenRouter · 📰 makers' news · 📄 papers ─┤
+  🟧 Hacker News · 🦋 Bluesky · 📱 App Store ─┘
 ```
 
 Once a day it also refreshes the big imports (Hugging Face, Ollama), API providers and prices, benchmarks, the App Store check, and a re-check of every access fact's source page. If a source fails, the last good data stays, and the footer tells you what's stale.

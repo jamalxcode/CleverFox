@@ -417,6 +417,25 @@ A light "terminal paper" mode is available from the footer button (stored as `lo
 **Decision:** "In between" now uses a lighter slate grey (background #3b4449, surfaces #465055), with colour roles from the Okabe–Ito colour-blind-safe palette: good is sky blue, no is orange, warnings are yellow, and links are lavender and always underlined. Neon glows and coloured badge borders are off. Meaning never rests on colour alone: every verdict keeps its symbol (✓ ✗ ! ?) and its words.
 **Why:** the owner asked for a brighter in-between look that's colour-blind friendly. Green against red is the pair most people with colour vision deficiency can't tell apart. Blue against orange and yellow stays distinct under deuteranopia and protanopia (checked with simulated colour blindness), and the page check confirms WCAG AA contrast.
 
+### 83. More discovery sources that need no sign-up
+**Decision:** every scan also reads six sources that need no account or key:
+- **OpenRouter's public model list:** models added in the last 14 days. Ones that name a Hugging Face model are filled in from there. API-only ones become candidate listings with OpenRouter and its prices under "Use it online". Nothing that OpenRouter doesn't state is filled in.
+- **AI makers' official news feeds** (`data/announce-feeds.json`, robots.txt respected): Hugging Face links in posts are filled in, and the posts show on New this week.
+- **Hugging Face Daily Papers:** the 15 most upvoted papers, and up to 2 models and 5 datasets linked to each.
+- **Hacker News** (Algolia's public API): AI launches with 30+ points in 3 days, shown as "not reviewed". Hugging Face links are filled in.
+- **Bluesky's public search:** posts with 25+ likes linking to Hugging Face. It's skipped, not failed, if the search needs signing in.
+- **App Store searches** ("AI chat", "AI assistant") in 20 countries, once a day: popular apps (1,000+ ratings) that aren't listed yet go into a research queue on New this week. They're never added automatically, because their access facts must be checked first.
+
+Quick scans also pick up **Ollama's newest models** (up to 12 new families), so local models arrive within hours.
+
+**Not added:**
+- Product Hunt (needs a token);
+- Reddit (its API terms need permission);
+- ModelScope (its public API couldn't be checked from here, so it's in the TODO);
+- arXiv (Hugging Face Daily Papers already brings the papers that have models).
+
+**Why:** the owner asked for more places to catch AI announcements, preferring ones that need no sign-up. The statistics showed X had added only 3 listings, and the catalog lacked closed API models, apps and announcements made before Hugging Face. Each source keeps its last good data if it fails. Its findings go through the usual checks (one record per model, nothing invented, sources and dates), and anything that can't be checked automatically is labelled "not reviewed" or queued for research.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

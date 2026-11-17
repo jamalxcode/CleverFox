@@ -1,0 +1,17 @@
+{
+  "note": "AI makers' official news feeds, read by tools/discover.mjs every scan (robots.txt respected). Give a feed URL, or a page whose <link rel=alternate> names its feed. Only official sources; add a maker only after confirming the URL on its own website.",
+  "feeds": [
+    { "name": "OpenAI", "feed": "https://openai.com/news/rss.xml" },
+    { "name": "Hugging Face", "feed": "https://huggingface.co/blog/feed.xml" },
+    { "name": "Ollama", "page": "https://ollama.com/blog" },
+    { "name": "Google DeepMind", "feed": "https://deepmind.google/blog/rss.xml" },
+    { "name": "Google AI", "feed": "https://blog.google/technology/ai/rss/" },
+    { "name": "NVIDIA", "feed": "https://blogs.nvidia.com/feed/" },
+    { "name": "Microsoft AI", "feed": "https://news.microsoft.com/source/topics/ai/feed/" },
+    { "name": "Qwen", "feed": "https://qwenlm.github.io/blog/index.xml" },
+    { "name": "Anthropic", "page": "https://www.anthropic.com/news" },
+    { "name": "Mistral AI", "page": "https://mistral.ai/news" },
+    { "name": "Meta AI", "page": "https://ai.meta.com/blog/" },
+    { "name": "Stability AI", "page": "https://stability.ai/news" }
+  ]
+}

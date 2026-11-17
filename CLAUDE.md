@@ -22,7 +22,7 @@ The site is live with about 1,240 listings: 875 models, 268 datasets, 56 apps an
 - API providers per model (Hugging Face Inference Providers, OpenRouter);
 - an App Store check and Google Play payment methods per country;
 - a daily re-check of access pages;
-- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (new models become candidate listings; needs the `REPLICATE_API_TOKEN` secret);
+- discovery: X, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (new models become candidate listings; needs the `REPLICATE_API_TOKEN` secret), and with no sign-up: OpenRouter's new models, AI makers' news feeds (`data/announce-feeds.json`), Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries, and Ollama's newest in quick scans (decision 83);
 - on each listing, "Reactions on X" and "Videos on YouTube" buttons, plus up to 3 collected YouTube videos that name it (decision 73), and on listing pages a "What people show on YouTube" panel with reviews (decision 78).
 
 cron-job.org starts the workflow 3 times a day, and `tools/mode.mjs` picks a full refresh or a quick scan. The site gives:

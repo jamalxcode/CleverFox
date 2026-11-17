@@ -476,6 +476,15 @@ if (PROV) {
   }
   const models = published.filter((r) => r.type === 'model');
   for (const m of rep) { const r = replicateMatch(m, models); if (r) add(r, m.id, m.url); }
+  // OpenRouter's own API-only listings (decision 83): OpenRouter with its prices under "Use it online".
+  const orById = new Map((D.openrouter?.models || []).map((m) => [m.id, m]));
+  for (const r of models) {
+    const dist = (r.distributions || []).find((x) => x.source === 'aggregator' && /openrouter\.ai/.test(x.url || ''));
+    if (!dist || (r.online ||= []).some((p) => p.provider === 'openrouter')) continue;
+    const m = orById.get(dist.native_id) || {};
+    r.online.push({ provider: 'openrouter', name: 'OpenRouter', url: dist.url, host_id: published.some((x) => x.id === 'cf:host:openrouter') ? 'cf:host:openrouter' : null, input: m.input ?? null, output: m.output ?? null, free: m.input === 0 && m.output === 0, no_card: null, source_url: 'https://openrouter.ai/api/v1/models', observed_at: D.openrouter?.checked_at || null });
+    n++;
+  }
   if (rep.length || n) console.log(`Replicate: ${rep.length} new models found, shown on ${n} listings`);
 }
 
@@ -738,7 +747,7 @@ async function writeNewPages(records) {
   const listedSites = new Set(records.flatMap((r) => [r.url, ...(r.official_urls || [])]).filter(Boolean).map((u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return null; } }));
   const spotted = (XDATA.announcements || []).filter((a) => a.kind === 'launch' && a.created_at >= cutoff && !a.links.sites.some((h) => listedSites.has(h)))
     .sort((a, b) => b.likes - a.likes).slice(0, 40);
-  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${r.discovered_via?.source === 'x' ? ' · 🆕 spotted on X' : r.discovered_via?.source === 'replicate' ? ' · 🆕 new on Replicate' : ''}</span><br>${esc(r.description)}</li>`;
+  const li = (r) => `<li><a href="../${R.listingPath(r)}"><strong>${esc(r.name)}</strong></a> <span class="muted">${esc(r.publisher_name || r.publisher)} · ${esc(R.fmtDate(r.first_seen_at))}${({ x: ' · 🆕 spotted on X', replicate: ' · 🆕 new on Replicate', openrouter: ' · 🆕 new on OpenRouter', 'maker-blog': ' · 🆕 in its maker\'s news', 'hf-papers': ' · 🆕 from a paper', hackernews: ' · 🆕 on Hacker News', bluesky: ' · 🆕 on Bluesky', 'ollama-new': ' · 🆕 new on Ollama' })[r.discovered_via?.source] || ''}</span><br>${esc(r.description)}</li>`;
   const build = (process.env.GITHUB_SHA || 'dev').slice(0, 7);
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -846,6 +855,7 @@ ${GOATCOUNTER}
 }
 
 // "New this week": GitHub new projects and watchlist releases (tools/discover.mjs), kept apart on purpose.
+const RULES_HN = 30; // keep in step with RULES.hnMinPoints in tools/discover.mjs
 function ghSections(R) {
   const d = existsSync(join(importDir, 'discover.json')) ? JSON.parse(readFileSync(join(importDir, 'discover.json'), 'utf8')) : {};
   const esc = R.esc; const week = Date.now() - 7 * 86400000;
@@ -859,6 +869,17 @@ function ghSections(R) {
   const ytSearch = (d.youtube?.search || []).slice(0, 20);
   if (vids.length) h += `<h2>▶️ On YouTube: official channels (${vids.length})</h2><p class="muted">New videos from AI makers' official channels. Models and datasets they link on Hugging Face are added to the catalog.</p><ul class="new-list">${vids.map((v) => `<li><a href="${esc(v.url)}" rel="noopener"><strong>${esc(v.title)}</strong></a> <span class="muted">· ${esc(v.channel)} · ${esc(R.fmtDate(v.published_at))}</span></li>`).join('')}</ul>`;
   if (ytSearch.length) h += `<h2>🔎 Spotted on YouTube (not reviewed)</h2><p class="muted">Recent videos matching AI release searches. Anyone can post, so check the maker's own site.</p><ul class="new-list">${ytSearch.map((v) => `<li><a href="${esc(v.url)}" rel="noopener">${esc(v.title)}</a> <span class="muted">· ${esc(v.channel)}</span></li>`).join('')}</ul>`;
+  // No-sign-up sources (decision 83): makers' news, papers, OpenRouter, Hacker News launches, apps popular in App Store searches.
+  const posts = (d.maker_feeds?.posts || []).filter((p) => new Date(p.published_at) >= week).slice(0, 40);
+  if (posts.length) h += `<h2>📰 From AI makers' own news (${posts.length})</h2><p class="muted">Official news feeds of AI makers (${esc([...new Set(posts.map((p) => p.source))].join(', '))}). Models and datasets they link on Hugging Face are added to the catalog.</p><ul class="new-list">${posts.map((p) => `<li><a href="${esc(p.url)}" rel="noopener"><strong>${esc(p.title)}</strong></a> <span class="muted">· ${esc(p.source)} · ${esc(R.fmtDate(p.published_at))}</span></li>`).join('')}</ul>`;
+  const papers = (d.hf_papers?.papers || []).filter((p) => p.models.length || p.datasets.length);
+  if (papers.length) h += `<h2>📄 Papers with models or data (${papers.length})</h2><p class="muted">The most upvoted papers on <a href="https://huggingface.co/papers" rel="noopener">Hugging Face Daily Papers</a> that come with models or datasets, which are added to the catalog.</p><ul class="new-list">${papers.map((p) => `<li><a href="${esc(p.url)}" rel="noopener"><strong>${esc(p.title)}</strong></a> <span class="muted">· ▲ ${p.upvotes} · ${esc([...p.models, ...p.datasets].slice(0, 3).join(', '))}</span></li>`).join('')}</ul>`;
+  const orNew = (d.openrouter?.models || []).filter((m) => new Date(m.created) >= week);
+  if (orNew.length) h += `<h2>☁️ New on OpenRouter (${orNew.length})</h2><p class="muted">Models added to <a href="https://openrouter.ai/models" rel="noopener">OpenRouter</a> this week. API-only ones are listed as "not yet verified"; ones that name a Hugging Face model are filled in from there.</p><ul class="new-list">${orNew.map((m) => `<li><a href="${esc(m.url)}" rel="noopener"><strong>${esc(m.name)}</strong></a> <span class="muted">· ${esc(m.owner)} · ${esc(R.fmtDate(m.created))}${m.input != null ? ` · $${m.input} / $${m.output} per million tokens` : ''}</span></li>`).join('')}</ul>`;
+  const hn = (d.hacker_news?.launches || []).slice(0, 25);
+  if (hn.length) h += `<h2>🟧 Launches on Hacker News (not reviewed)</h2><p class="muted">AI launches and releases with ${RULES_HN} or more points in the last few days. Anyone can post, so check the maker's own site; apps are queued for research.</p><ul class="new-list">${hn.map((l) => `<li><a href="${esc(l.url)}" rel="noopener"><strong>${esc(l.title)}</strong></a> <span class="muted">· ${esc(l.site)} · ▲ ${l.points} · <a href="${esc(l.hn_url)}" rel="noopener">discussion</a></span></li>`).join('')}</ul>`;
+  const apps = (d.app_store?.apps || []).slice(0, 30);
+  if (apps.length) h += `<h2>📱 Popular AI apps not yet listed (research queue)</h2><p class="muted">Apps with 1,000+ ratings that App Store searches for "AI chat" and "AI assistant" show in ${d.app_store.countries.length} countries, checked ${esc(R.fmtDate(d.app_store.checked_at))}. They're added once their access facts are checked at the official site.</p><ul class="new-list">${apps.map((a) => `<li><a href="${esc(a.url)}" rel="noopener"><strong>${esc(a.name)}</strong></a> <span class="muted">· ${esc(a.seller)} · ⭐ ${a.rating ?? '?'} from ${R.fmtNum(a.ratings)} ratings · ${a.countries.map((c) => R.flag(c)).join('')}</span></li>`).join('')}</ul>`;
   if (ann.length) h += `<h2>📰 On llm-releases.com</h2><p class="muted">Release announcements linked from <a href="${esc(d.llm_releases.source_url)}" rel="noopener">llm-releases.com</a>, checked ${esc(R.fmtDate(d.llm_releases.checked_at))}. Models and datasets it links on Hugging Face are added to the catalog.</p><ul class="new-list">${ann.map((a) => { const generic = /^(open|read more|more|link|source|here|view|details|visit|go|→|↗)$/i.test(a.text.trim()); let label = a.text; if (generic || a.text.length < 4) { try { const u = new URL(a.url); label = (u.hostname.replace(/^www\./, '') + u.pathname).replace(/\/$/, '').slice(0, 90); } catch {} } return `<li><a href="${esc(a.url)}" rel="noopener">${esc(label)}</a></li>`; }).join('')}</ul>`;
   return h;
 }

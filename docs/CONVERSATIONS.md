@@ -12,6 +12,29 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: more discovery sources, no sign-up
+**Where:** Claude Code session.
+**Asked:**
+- How many entries come from X, Hugging Face and YouTube?
+- What other places could we pull announcements from?
+- Then "do it all, especially if no sign-up needed".
+
+**Statistics (17 November):** of 1,291 listings, 989 came from Hugging Face, 185 from Ollama alone and 117 were hand-researched. X added 3 listings, but it feeds the X panel on 54. YouTube added none, but has reviews for 36 listings so far. Replicate is waiting on its token.
+
+**Outcome (decision 83):** new sources that need no account:
+- OpenRouter's new models (API-only ones become candidate listings with prices);
+- AI makers' news feeds;
+- Hugging Face Daily Papers' linked models and datasets;
+- Hacker News launches;
+- Bluesky (if its search is open);
+- App Store searches in 20 countries, as a research queue;
+- Ollama's newest models in quick scans.
+
+**Notes:**
+- From this session, OpenAI's, Hugging Face's and Mistral's feeds and the papers source worked. Other hosts are blocked here, and their first GitHub run is in the TODO.
+- Not added: Product Hunt (token), Reddit (permission), ModelScope (API unchecked), arXiv (covered by Daily Papers).
+- A safety check blocked one long inline edit command (no deletion was involved). The edit was rerun from a script file.
+
 ## 2026-11-17: brighter, colour-blind-friendly In between
 **Where:** Claude Code session.
 **Asked:** make In between brighter, and colour-blind friendly.

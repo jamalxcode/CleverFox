@@ -232,8 +232,8 @@ function datasetRecord(d, readme) {
 }
 
 // ---- Ollama library ----
-async function fetchOllama() {
-  const html = await get('https://ollama.com/library?sort=popular', { json: false });
+async function fetchOllama(sort = 'popular') {
+  const html = await get(`https://ollama.com/library?sort=${sort}`, { json: false });
   const out = [];
   for (const block of html.split('href="/library/').slice(1)) {
     const name = block.match(/^([a-z0-9._-]+)"/)?.[1];
@@ -242,7 +242,7 @@ async function fetchOllama() {
     const pulls = block.match(/<span[^>]*>([\d.]+[KMB]?)<\/span>\s*<span[^>]*>&nbsp;Pulls/)?.[1] || null;
     out.push({ name, capabilities: chips.filter((c) => c[0] === 'indigo').map((c) => c[1]), sizes: chips.filter((c) => c[0] !== 'indigo').map((c) => c[1].toLowerCase()), pulls });
   }
-  return QUICK ? out.slice(0, 25) : out;
+  return QUICK || sort !== 'popular' ? out.slice(0, 25) : out;
 }
 const toText = (h) => (h || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
 // Licenses named in an Ollama model page's License section.
@@ -474,6 +474,12 @@ function xAnnouncements(kind) {
     // Hugging Face links in official channels' video descriptions.
     const yt = disc.youtube;
     for (const v of yt?.videos || []) for (const id of (kind === 'models' ? v.links?.models : v.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'youtube', url: v.url, author: v.channel, created_at: v.published_at });
+    // No-sign-up sources (decision 83): makers' news feeds, Hugging Face Daily Papers, OpenRouter, Hacker News, Bluesky.
+    for (const p of disc.maker_feeds?.posts || []) for (const id of (kind === 'models' ? p.links?.models : p.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'maker-blog', url: p.url, author: p.source, created_at: p.published_at });
+    for (const p of disc.hf_papers?.papers || []) for (const id of (kind === 'models' ? p.models : p.datasets) || []) if (!out.has(id)) out.set(id, { source: 'hf-papers', url: p.url, created_at: disc.hf_papers.checked_at, title: p.title });
+    if (kind === 'models') for (const m of disc.openrouter?.models || []) if (m.hf_id && !out.has(m.hf_id)) out.set(m.hf_id, { source: 'openrouter', url: m.url, created_at: m.created });
+    for (const l of disc.hacker_news?.launches || []) for (const id of (kind === 'models' ? l.links?.models : l.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'hackernews', url: l.hn_url, created_at: l.created_at, points: l.points });
+    for (const p of disc.bluesky?.posts || []) for (const id of (kind === 'models' ? p.links?.models : p.links?.datasets) || []) if (!out.has(id)) out.set(id, { source: 'bluesky', url: p.url, author: p.author, likes: p.likes, created_at: p.created_at });
   }
   return out;
 }
@@ -537,7 +543,7 @@ const TASK_WORDS_MORE = { 'image-to-video': 'Image-to-video', 'text-to-audio': '
 const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 export const sameOwner = (a, b) => { a = String(a || '').toLowerCase(); b = String(b || '').toLowerCase(); return a === b || norm(a) === norm(b) || a.startsWith(b + '-') || b.startsWith(a + '-'); };
 export function replicateMatch(m, records) {
-  return records.find((r) => (r.distributions || []).some((d) => {
+  return records.find((r) => (norm(r.name) === norm(m.name) && sameOwner(r.publisher, m.owner)) || (r.distributions || []).some((d) => {
     if (d.source === 'replicate') return String(d.native_id).toLowerCase() === m.id.toLowerCase();
     const [o, n] = String(d.native_id || '').split('/');
     return n && norm(n) === norm(m.name) && sameOwner(o, m.owner);
@@ -589,6 +595,30 @@ export function replicateRecord(m) {
   };
 }
 const seedRecords = () => readdirSync(join(root, 'data', 'seed')).filter((x) => x.endsWith('.json')).flatMap((f) => JSON.parse(readFileSync(join(root, 'data', 'seed', f), 'utf8')));
+// OpenRouter's new API-only models (no Hugging Face id): candidate listings, like Replicate's, with OpenRouter as the way to use them.
+export function openrouterRecord(m) {
+  const task = m.tasks?.[0];
+  const words = m.description ? m.description.split(/\s+/).slice(0, 22).join(' ').replace(/[.,;:]$/, '') + (m.description.split(/\s+/).length > 22 ? '…' : '') : '';
+  const r = replicateRecord({ id: m.id, owner: m.owner, name: m.name, url: m.url, description: '', official: false, runs: null, tasks: m.tasks, version_at: m.created, first_seen: m.created });
+  return { ...r,
+    description: `${TASK_WORDS[task] || 'AI'} model by ${m.owner}, available through OpenRouter${words ? `: ${words}` : ''}${/[.…!?]$/.test(words) ? '' : '.'}`,
+    distributions: [{ source: 'aggregator', native_id: m.id, url: m.url, availability: 'api_only', formats: [], file_size_bytes: null, access: null, observed_at: TODAY }],
+    evidence_urls: ['https://openrouter.ai/api/v1/models'], documentation_urls: [], paper_urls: [],
+    popularity: [], import_source: 'openrouter', context: m.context ?? null,
+    discovered_via: { source: 'openrouter', url: m.url, created_at: m.created } };
+}
+function openrouterRecords(existing, seed) {
+  const d = join(outDir, 'discover.json');
+  const list = existsSync(d) ? JSON.parse(readFileSync(d, 'utf8')).openrouter?.models || [] : [];
+  existing = [...seedRecords().filter((r) => r.type === 'model'), ...existing];
+  const out = [];
+  for (const m of list.filter((x) => !x.hf_id)) {
+    if (seed.has(`aggregator:${m.id.toLowerCase()}`) || replicateMatch(m, [...existing, ...out])) continue;
+    const r = openrouterRecord(m); r.capabilities = capabilitiesOf(r, []); r.highlights = highlightsOf(r);
+    if (!existing.some((x) => x.id === r.id) && !out.some((x) => x.id === r.id)) out.push(r);
+  }
+  return out;
+}
 function replicateRecords(existing, seed) {
   existing = [...seedRecords().filter((r) => r.type === 'model'), ...existing];
   const d = join(outDir, 'discover.json');
@@ -661,10 +691,12 @@ async function main() {
     const all = [...models, ...extra, ...standalone].filter((r) => !inSeed(r));
     for (const r of all) { r.capabilities = capabilitiesOf(r, r.tags_seen); r.highlights = highlightsOf(r); applyPublisher(r); }
     // Replicate listings: earlier ones are kept (records are never silently lost) unless the model is now listed from Hugging Face.
-    const prevRep = (existsSync(join(outDir, 'models.json')) ? JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')) : []).filter((r) => r.import_source === 'replicate' && !inSeed(r));
+    const prevRep = (existsSync(join(outDir, 'models.json')) ? JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')) : []).filter((r) => ['replicate', 'openrouter'].includes(r.import_source) && !inSeed(r));
     const keptRep = prevRep.filter((r) => !replicateMatch({ id: r.distributions[0].native_id, owner: r.publisher, name: r.name }, [...all, ...seedRecords().filter((x) => x.type === 'model')]));
     const newRep = replicateRecords([...all, ...keptRep], seed);
-    all.push(...keptRep, ...newRep);
+    const newOr = openrouterRecords([...all, ...keptRep, ...newRep], seed);
+    all.push(...keptRep, ...newRep, ...newOr);
+    console.log(`OpenRouter: ${newOr.length} new API-only listings (${newOr.map((r) => r.name).join(', ') || 'none'})`);
     console.log(`Replicate: ${keptRep.length} listings kept, ${newRep.length} new (${newRep.map((r) => r.name).join(', ') || 'none'})`);
     // de-duplicate ids
     const seen = new Set();
@@ -715,9 +747,24 @@ async function xOnly() {
     if (!datasets.some((x) => x.id === r.id)) newD.push(r);
   }
   newM.push(...replicateRecords([...models, ...newM], seed));
+  newM.push(...openrouterRecords([...models, ...newM], seed));
+  // Ollama's newest models, so local models arrive within hours instead of once a day (decision 83).
+  let ollamaChanged = false;
+  try {
+    const have = new Set(models.flatMap((r) => (r.distributions || []).filter((d) => d.source === 'ollama').map((d) => String(d.native_id).split(':')[0])));
+    const fresh = (await fetchOllama('newest')).filter((f) => !have.has(f.name)).slice(0, 12);
+    if (fresh.length) {
+      const before = JSON.stringify(models);
+      const { extra, standalone } = await enrichOllama(models, fresh);
+      for (const r of [...extra, ...standalone]) { r.capabilities = capabilitiesOf(r, r.tags_seen || []); r.highlights = highlightsOf(r); applyPublisher(r); r.discovered_via = { source: 'ollama-new', url: `https://ollama.com/library/${r.ollama?.family || r.name}`, created_at: NOW }; }
+      newM.push(...extra, ...standalone);
+      ollamaChanged = JSON.stringify(models) !== before;
+      console.log(`Ollama newest: ${fresh.length} new families (${fresh.map((f) => f.name).join(', ')})`);
+    }
+  } catch (e) { console.warn(`Ollama newest failed: ${e.message}`); }
   const ids = new Set([...models, ...datasets].map((r) => r.id));
   const addM = newM.filter((r) => !ids.has(r.id)); const addD = newD.filter((r) => !ids.has(r.id));
-  if (addM.length) writeFileSync(join(outDir, 'models.json'), JSON.stringify([...models, ...addM], null, 1) + '\n');
+  if (addM.length || ollamaChanged) writeFileSync(join(outDir, 'models.json'), JSON.stringify([...models, ...addM], null, 1) + '\n');
   if (addD.length) writeFileSync(join(outDir, 'datasets.json'), JSON.stringify([...datasets, ...addD], null, 1) + '\n');
   console.log(`X-only import (with Replicate): ${addM.length} new models (${addM.map((r) => r.name).join(', ') || 'none'}), ${addD.length} new datasets (${addD.map((r) => r.name).join(', ') || 'none'})`);
 }
