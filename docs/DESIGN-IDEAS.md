@@ -12,7 +12,8 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **Answers people ask** (45, 47, 49, 50, 52): good for, runs locally, platforms, hardware estimates, free, pay without a card, independent benchmarks, barriers, uncensored variants.
 - **Fit for you** (54): device memory, country and language pickers that sort and highlight what suits you.
 - **Trust signals** (60, 64, 66, 67): verified versus not yet verified, a daily re-check of access pages, an App Store check, Google Play payments per country, and a freshness line.
-- **Discovery** (55, 65, 68, 70, 71, 75): X 3 times a day, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, and Replicate (waiting on its token).
+- **Discovery** (55, 65, 68, 70, 71, 75, 83): X 3 times a day, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (waiting on its token). With no sign-up: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries (a research queue), and Ollama's newest in quick scans.
+- **Three looks** (80–82): Dark, In between (brighter slate, colour-blind-safe colours) and Light, as buttons in the header.
 - **What people say and show** (56, 73, 78): the X panel, YouTube videos and reviews, all loaded only when asked.
 - **Where it came from** (76): derived models traced to their original through `base_model`.
 - **Return visits** (77): setup line, remembered picks, one next step, saved and recently viewed, new for you, similar listings, help for empty results, calendar reminder and a feed per task.
@@ -25,7 +26,8 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **Tone test set:** about 200 hand-labelled posts, to measure the praise and criticism word rules before praise counts in picks.
 - **App Store payment methods per country,** read from Apple's own page.
 - **More regional coverage:** mobile-money services (Paystack and Flutterwave checkouts), GPU hosts in Nigeria, Kenya, Egypt, Morocco and South Africa, and regional AI makers' YouTube channels.
-- **More sources that link out:** ModelScope, Kaggle, and API providers' own model lists.
+- **More sources:** ModelScope (check its public API first), Kaggle (free key), more makers' news feeds (DeepSeek, Cohere, xAI, Sarvam, G42, regional labs), and other API providers' public model lists.
+- **Work through the research queues** on New this week: popular App Store apps and Hacker News launches.
 - **Translations:** review the 6 interface languages with native speakers, then translate the return-visit text, listing details, reasons and filters.
 - **Prices:** more amounts from official pages (Gemini, ChatGPT, RunPod, Vast, regional apps), as dated observations.
 - **Guides driven by gaps:** new guides where GoatCounter's "no results" events show people looking and finding nothing.
@@ -35,7 +37,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 
 - **LMArena ranks** beside independent benchmarks, once the leaderboard data's license is confirmed.
 - **A headless browser for re-checking** the few JavaScript-only source pages (honest user agent, refusals respected).
-- **More reading sources than X:** Reddit, forums, app-store reviews, news. Each needs its permitted use checked.
+- **More reading sources than X:** Reddit (its API terms need permission), Product Hunt (needs a token), forums and app-store reviews. Each needs its permitted use checked.
 - **AI for extraction or classification:** none is used now. Only with a labelled test set and a spending cap.
 - **An anonymous "Next step" event** to see whether "How to start" helps people, with nothing personal.
 - **Per-country guides** ("Pay without a card in Kenya"), now that ways to pay are country-aware. One page per country, not per filter combination.

@@ -7,7 +7,7 @@
 
 Most AI directories assume you live in San Francisco, own a Visa card and a big graphics card, and speak English. CleverFox doesn't.
 
-Tell the fox what you want to do, what you're using, and where you are. It sniffs through about **1,240 AI models, datasets, apps and hosting providers** and tells you what works for *you*:
+Tell the fox what you want to do, what you're using, and where you are. It sniffs through about **1,310 AI models, datasets, apps and hosting providers** and tells you what works for *you*:
 
 - 🌍 Is it available in my country?
 - 💳 Can I pay without a Visa or Mastercard? (mobile money, UPI, Pix, crypto, app stores, phone bill…)

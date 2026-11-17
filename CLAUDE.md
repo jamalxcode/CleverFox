@@ -14,7 +14,7 @@ Read `docs/TODO.md` (outstanding tasks), `docs/SPECIFICATION.md` (the spec, incl
 
 ## Current state
 
-The site is live with about 1,240 listings: 875 models, 268 datasets, 56 apps and 40 hosts (including 14 API providers). **82 of the 96 apps and hosts are verified**: their facts were compared with their official pages, with quotes (decision 67); the rest are flagged "not yet verified" and kept out of picks and guides. It combines:
+The site is live with about 1,310 listings: 941 models, 273 datasets, 56 apps and 40 hosts (including 14 API providers). **82 of the 96 apps and hosts are verified**: their facts were compared with their official pages, with quotes (decision 67); the rest are flagged "not yet verified" and kept out of picks and guides. It combines:
 - researched seed records;
 - daily imports from Hugging Face and the Ollama library;
 - independent benchmarks (Epoch AI);
@@ -75,7 +75,7 @@ node tools/phone-check.cjs  # with the server running: no sideways scrolling on 
 - `glossary/index.html`: plain-language glossary (static). `guides/`, `new/` and `feed.xml` are written by the build.
 - `tools/mode.mjs`: decides each workflow run's mode (full refresh if the last was 20+ hours ago, else a quick X scan; `none` on push). Tested by `tools/test-mode.mjs`. cron-job.org starts the workflow at 03:41, 11:41 and 19:41 UTC.
 - `tools/slim.mjs`: the slim list records (models slimmed; apps and hosts keep their access block). Tested by `tools/test-slim.mjs`, which reads them back with `render.js` as the browser does.
-- `tools/ui-check.cjs`: page check before deploy (phone widths 320 and 375, axe contrast in light and dark); needs Playwright and axe-core, which the workflow installs (`npm i --no-save`).
+- `tools/ui-check.cjs`: page check before deploy (phone widths 320 and 375, axe contrast in the three looks: light, in between and dark); needs Playwright and axe-core, which the workflow installs (`npm i --no-save`).
 - `tools/save-data.sh`: saves `data/imported/` to the `data` branch with the checkout's credentials.
 - `tools/fetch-pages.mjs` (workflow "Fetch pages for verification", output on the `pages-cache` branch) and `tools/apply-verification.mjs` (applies a review after checking every quote against the pages): the verification review (decision 67).
 - `tools/discover.mjs`: Hugging Face new releases, llm-releases.com (robots.txt respected), GitHub new projects and watchlist releases (`data/github-watch.json`), YouTube official channels (`data/youtube-channels.json`; read through the Data API with the `YOUTUBE_API_KEY` secret, which also runs keyword search; RSS fallback), Replicate (public model list and collections, with the `REPLICATE_API_TOKEN` secret; `tools/import.mjs` turns new models into candidate listings), into `data/imported/discover.json` with per-source diagnostics; every scan (decisions 68, 70, 71, 75). Tested by `tools/test-discover.mjs`.

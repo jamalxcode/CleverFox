@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-17: docs brought up to date (4)
+**Where:** Claude Code session.
+**Asked:** update the repo with design decisions and our chat.
+**Outcome:**
+- Decisions 80–83 and their log entries were already recorded.
+- Added the second GitHub run's results to the discovery entry.
+- DESIGN-IDEAS now shows the new sources and the three looks as built. Its planned and open lists name ModelScope, Kaggle, more makers' feeds, the research queues, Reddit and Product Hunt.
+
 ## 2026-11-17: more discovery sources, no sign-up
 **Where:** Claude Code session.
 **Asked:**
@@ -35,6 +43,7 @@ Entry format:
 - Not added: Product Hunt (token), Reddit (permission), ModelScope (API unchecked), arXiv (covered by Daily Papers).
 - A safety check blocked one long inline edit command (no deletion was involved). The edit was rerun from a script file.
 - A manual quick scan on GitHub (no extra X cost) showed every new source working: OpenRouter 20 new, makers' feeds 98 posts, papers 4 + 4, Hacker News 4, App Store 42 apps queued, Bluesky open but nothing past the bar. The validation then stopped the run, because OpenRouter records had no access block and included "(batch)" variants and routers. Both were fixed, and nothing was saved or deployed before the fix.
+- After the fix, a second manual quick scan passed and deployed: OpenRouter added 15 clean models (no variants or routers, among them Claude Fable 5.2, Gemini 4 Carbon and Hydrogen, Qwen4 Max, Hy4 flash), papers added 4 models and 4 datasets, and the catalog reached 1,310 listings (941 models, 273 datasets, 56 apps, 40 hosts).
 
 ## 2026-11-17: brighter, colour-blind-friendly In between
 **Where:** Claude Code session.
