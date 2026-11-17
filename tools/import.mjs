@@ -602,7 +602,11 @@ export function openrouterRecord(m) {
   const r = replicateRecord({ id: m.id, owner: m.owner, name: m.name, url: m.url, description: '', official: false, runs: null, tasks: m.tasks, version_at: m.created, first_seen: m.created });
   return { ...r,
     description: `${TASK_WORDS[task] || 'AI'} model by ${m.owner}, available through OpenRouter${words ? `: ${words}` : ''}${/[.…!?]$/.test(words) ? '' : '.'}`,
-    distributions: [{ source: 'aggregator', native_id: m.id, url: m.url, availability: 'api_only', formats: [], file_size_bytes: null, access: null, observed_at: TODAY }],
+    // The access block for using it on OpenRouter: free or paid comes from OpenRouter's own price list; how to pay
+    // and where it works are OpenRouter's (its host listing), so they stay unknown here rather than copied.
+    distributions: [{ source: 'aggregator', native_id: m.id, url: m.url, availability: 'api_only', formats: [], file_size_bytes: null, observed_at: TODAY,
+      access: { free: m.input != null ? claim(m.input === 0 && m.output === 0 ? 'free' : 'paid_only', 'https://openrouter.ai/api/v1/models', 'third_party') : claim('unknown'),
+        free_limits: null, payment_methods: claim('unknown'), countries_available: claim('unknown'), countries_unavailable: claim('unknown'), signup_requirements: claim('unknown'), local_currency_pricing: claim('unknown') } }],
     evidence_urls: ['https://openrouter.ai/api/v1/models'], documentation_urls: [], paper_urls: [],
     popularity: [], import_source: 'openrouter', context: m.context ?? null,
     discovered_via: { source: 'openrouter', url: m.url, created_at: m.created } };

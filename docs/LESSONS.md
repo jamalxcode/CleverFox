@@ -15,6 +15,9 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 
 ## Pipeline and deploys
 
+- **Test a new source where it will really run.** OpenRouter, Hacker News and the App Store were blocked in the building session. The first GitHub run showed they worked, and also that OpenRouter lists "(batch)" variants and its own routers as models, and that API-only records need an access block to pass validation. The validation stopped that run before anything was saved or deployed.
+- **A source that fails every request must fail, not report "0 found".** Otherwise an outage replaces good data with an empty list. Each source now throws when all its requests fail, so the last data is kept.
+
 - **GitHub's schedules run late or not at all.** An outside timer (cron-job.org) starts the workflow, with GitHub's schedule only as a backup (decision 65).
 - **Re-running only the failed deploy job doesn't help when the build's upload is missing.** The "github-pages" artifact wasn't found once. Re-running the whole run fixed it.
 - **Long fetch jobs need hard stops, not hopes.** The page-fetching workflow hit its 50-minute limit twice. Per-page time limits, a stop for starting new pages and a save-and-exit timer made it finish every time (decision 67).

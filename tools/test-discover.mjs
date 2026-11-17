@@ -106,12 +106,14 @@ const json = (d, status = 200) => ({ ok: status < 400, status, json: async () =>
 const orl = openrouterNew([
   { id: 'acme/acme-7', name: 'Acme: Acme 7', created: sec('2026-11-15T00:00:00Z'), pricing: { prompt: '0.000002', completion: '0.00001' }, context_length: 128000, architecture: { input_modalities: ['text', 'image'] } },
   { id: 'acme/acme-7:free', name: 'Acme 7 (free)', created: sec('2026-11-15T00:00:00Z') },
+  { id: 'acme/acme-7:batch', name: 'Acme 7 (batch)', created: sec('2026-11-15T00:00:00Z') },
+  { id: 'openrouter/auto', name: 'Auto Router', created: sec('2026-11-15T00:00:00Z') },
   { id: 'old/model', name: 'Old', created: sec('2025-01-01T00:00:00Z') },
   { id: 'meta/llama-9', name: 'Meta: Llama 9', created: sec('2026-11-16T00:00:00Z'), hugging_face_id: 'meta-llama/Llama-9' }], N);
 assert.deepEqual(orl.map((m) => m.id), ['acme/acme-7', 'meta/llama-9']);
 assert.equal(orl[0].name, 'Acme 7'); assert.equal(orl[0].input, 2); assert.equal(orl[0].output, 10); assert.deepEqual(orl[0].tasks, ['image-text-to-text']);
 const orr = openrouterRecord(orl[0]);
-assert.equal(orr.verification_status, 'candidate'); assert.equal(orr.availability.value, 'unknown'); assert.equal(orr.distributions[0].source, 'aggregator');
+assert.equal(orr.verification_status, 'candidate'); assert.equal(orr.distributions[0].access.free.value, 'paid_only', 'free or paid from OpenRouter prices'); assert.equal(orr.distributions[0].access.payment_methods.value, 'unknown'); assert.equal(orr.availability.value, 'unknown'); assert.equal(orr.distributions[0].source, 'aggregator');
 assert.match(orr.description, /^Vision-language model by acme, available through OpenRouter/);
 assert.ok(replicateMatch({ id: 'anthropic/claude-x-2', owner: 'anthropic', name: 'Claude X 2' }, [{ name: 'Claude X 2', publisher: 'Anthropic', distributions: [{ source: 'api', native_id: 'claude-x-2' }] }]), 'matches a hand-researched listing by name and maker');
 // Feeds: RSS and Atom, CDATA, dates.

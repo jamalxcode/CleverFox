@@ -34,6 +34,7 @@ Entry format:
 - From this session, OpenAI's, Hugging Face's and Mistral's feeds and the papers source worked. Other hosts are blocked here, and their first GitHub run is in the TODO.
 - Not added: Product Hunt (token), Reddit (permission), ModelScope (API unchecked), arXiv (covered by Daily Papers).
 - A safety check blocked one long inline edit command (no deletion was involved). The edit was rerun from a script file.
+- A manual quick scan on GitHub (no extra X cost) showed every new source working: OpenRouter 20 new, makers' feeds 98 posts, papers 4 + 4, Hacker News 4, App Store 42 apps queued, Bluesky open but nothing past the bar. The validation then stopped the run, because OpenRouter records had no access block and included "(batch)" variants and routers. Both were fixed, and nothing was saved or deployed before the fix.
 
 ## 2026-11-17: brighter, colour-blind-friendly In between
 **Where:** Claude Code session.

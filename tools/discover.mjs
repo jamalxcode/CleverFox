@@ -300,7 +300,7 @@ export async function replicate({ now = new Date(), prev = {}, fetchImpl = fetch
 // those that name a Hugging Face model are filled in from Hugging Face.
 export function openrouterNew(list, now = new Date()) {
   const pm = (v) => (v == null || v === '' || isNaN(+v) ? null : +(+v * 1e6).toFixed(3));
-  return (list || []).filter((m) => m.id && m.created && daysAgo(new Date(m.created * 1000).toISOString(), now) <= RULES.newDays && !/:free$/.test(m.id)).map((m) => {
+  return (list || []).filter((m) => m.id && m.created && daysAgo(new Date(m.created * 1000).toISOString(), now) <= RULES.newDays && !m.id.includes(':') && !/^openrouter\//.test(m.id) && !/\((batch|free)\)/i.test(m.name || '')).map((m) => {
     const [owner] = m.id.split('/');
     const mods = m.architecture || {};
     const tasks = (mods.output_modalities || []).includes('image') ? ['text-to-image'] : (mods.input_modalities || []).includes('image') ? ['image-text-to-text'] : ['text-generation'];
