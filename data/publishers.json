@@ -183,6 +183,13 @@
    "country": "US",
    "source": "https://www.wikidata.org/wiki/Q2283"
   },
+  "MiniMaxAI": {
+   "name": "MiniMax Group",
+   "qid": "Q130263208",
+   "description": "Chinese multinational artificial intelligence company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q130263208"
+  },
   "mistralai": {
    "name": "Mistral AI",
    "qid": "Q119718658",
@@ -322,6 +329,20 @@
    "description": "Chinese technology company based in Beijing",
    "country": "CN",
    "source": "https://www.wikidata.org/wiki/Q129572031"
+  },
+  "pfnet": {
+   "name": "Preferred Networks",
+   "qid": "Q53309069",
+   "description": "computing and network technology company from Tokyo, Japan",
+   "country": "JP",
+   "source": "https://www.wikidata.org/wiki/Q53309069"
+  },
+  "perplexity-ai": {
+   "name": "Perplexity AI",
+   "qid": "Q124333951",
+   "description": "American conversational search engine company",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q124333951"
   }
  }
 }
