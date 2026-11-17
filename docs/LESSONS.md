@@ -41,6 +41,8 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 
 ## Working practice
 
+- **A pipe can hide a failed test.** `node test.mjs | tail -1 && git commit` committed after a failing test, because the pipeline's exit status was `tail`'s. GitHub's test step caught it and stopped the deploy. Use `set -o pipefail` (or don't pipe) before chaining on test results.
+
 - **Never get around a site that refuses bots.** A headless fetch that pretended to be Chrome was rightly refused. The fetcher now identifies itself as CleverFox, respects robots.txt, and leaves 401, 403 and 429 responses alone (decision 69).
 - **When the session's network blocks a host, use an official mirror of the facts.** replicate.com was unreachable here. Replicate's official JavaScript client on npm documented the API shape, and the first real run is listed in the TODO to check.
 - **Reviews must quote the page.** Verification is applied only when every quoted fact is found on the fetched official page. Otherwise the listing stays unverified (decision 67).
