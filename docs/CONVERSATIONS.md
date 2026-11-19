@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: Replicate token, publisher names, X access
+**Where:** Claude Code session.
+**Asked:** what to do on Replicate's token page (create a token, add it as `REPLICATE_API_TOKEN`), a 1Password note for it (signed in with GitHub, no separate password), then check Replicate works, and fix the two problems found.
+
+**Outcome:** Replicate answered (144 new models, 139 candidate listings). Replicate owners now map to organisations (`replicate:<owner>` in `data/publisher-map.json`), and quick scans re-apply names to saved listings. X had been refused since 18 November without saying why; `tools/x.mjs` now saves X's reason and the status page shows "Fix X access" with what to do.
+
 ## 2026-11-19: "Needs you" on the status page
 **Where:** Claude Code session.
 **Asked:** add to the status page anything that needs the owner, like the Dubai map's data status ("Needs you" with what to do). Then: in future, status will be an admin job shown separately, not for visitors, once CleverFox has its own domain.

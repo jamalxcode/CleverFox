@@ -1,5 +1,5 @@
 {
- "_about": "Hugging Face account -> organisation name to look up on Wikidata (tools/publishers.mjs). Only organisations go here, never individuals. Fix a wrong match by setting \"qid\" explicitly, or remove the entry.",
+ "_about": "Hugging Face account -> organisation name to look up on Wikidata (tools/publishers.mjs). Only organisations go here, never individuals. Fix a wrong match by setting \"qid\" explicitly, or remove the entry. Replicate accounts are keyed \"replicate:<owner>\".",
  "publishers": {
   "ai4bharat": {
    "name": "AI4Bharat"
@@ -195,6 +195,93 @@
   },
   "Comfy-Org": {
    "name": "Comfy Org"
+  },
+  "replicate:google": {
+   "name": "Google"
+  },
+  "replicate:openai": {
+   "name": "OpenAI"
+  },
+  "replicate:anthropic": {
+   "name": "Anthropic"
+  },
+  "replicate:minimax": {
+   "name": "MiniMax"
+  },
+  "replicate:alibaba": {
+   "name": "Alibaba Group"
+  },
+  "replicate:wan-video": {
+   "name": "Alibaba Group"
+  },
+  "replicate:qwen": {
+   "name": "Alibaba Cloud"
+  },
+  "replicate:bytedance": {
+   "name": "ByteDance"
+  },
+  "replicate:xai": {
+   "name": "xAI"
+  },
+  "replicate:recraft-ai": {
+   "name": "Recraft"
+  },
+  "replicate:kwaivgi": {
+   "name": "Kuaishou"
+  },
+  "replicate:prunaai": {
+   "name": "Pruna AI"
+  },
+  "replicate:bria": {
+   "name": "Bria AI"
+  },
+  "replicate:ideogram-ai": {
+   "name": "Ideogram"
+  },
+  "replicate:ultralytics": {
+   "name": "Ultralytics"
+  },
+  "replicate:black-forest-labs": {
+   "name": "Black Forest Labs"
+  },
+  "replicate:stability-ai": {
+   "name": "Stability AI"
+  },
+  "replicate:meta": {
+   "name": "Meta Platforms"
+  },
+  "replicate:deepseek-ai": {
+   "name": "DeepSeek"
+  },
+  "replicate:mistralai": {
+   "name": "Mistral AI"
+  },
+  "replicate:nvidia": {
+   "name": "Nvidia"
+  },
+  "replicate:microsoft": {
+   "name": "Microsoft"
+  },
+  "replicate:luma": {
+   "name": "Luma AI"
+  },
+  "replicate:runwayml": {
+   "name": "Runway"
+  },
+  "replicate:lightricks": {
+   "name": "Lightricks"
+  },
+  "replicate:tencent": {
+   "name": "Tencent"
+  },
+  "replicate:elevenlabs": {
+   "name": "ElevenLabs"
+  },
+  "replicate:resemble-ai": {
+   "name": "Resemble AI"
+  },
+  "replicate:topazlabs": {
+   "name": "Topaz Labs"
   }
  }
 }

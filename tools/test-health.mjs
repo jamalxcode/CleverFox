@@ -27,6 +27,11 @@ assert.deepEqual(titles(l), ['Point cleverfox.sala.company at the site', 'Check 
 assert.equal(l.find((n) => n.title.startsWith('Research')).items, 'Some App (no website)');
 assert.match(l.find((n) => n.title.startsWith('Turn on')).todo, /^Set the repository variable X_POST_ENABLED/);
 assert.deepEqual(l.filter((n) => n.optional).map((n) => n.title.split(' ')[0]), ['Research', 'Add', 'Turn']);
+// X refusing the token: a "Fix X access" item, but not once a later scan worked.
+l = needsYou({ xState: { last_scan: '2026-11-18T13:44:00Z', last_error: { at: '2026-11-19T04:03:00Z', status: 401, message: 'X rejected the request (401: Unauthorized)' } } });
+assert.deepEqual(titles(l), ['Fix X access']); assert.match(l[0].todo, /X_BEARER_TOKEN/);
+assert.match(needsYou({ xState: { last_error: { at: '2026-11-19T04:03:00Z', status: 402, message: 'X rejected the request (402: CreditsDepleted)' } } })[0].todo, /credits/);
+assert.deepEqual(needsYou({ xState: { last_scan: '2026-11-19T05:00:00Z', last_error: { at: '2026-11-19T04:03:00Z', status: 401, message: 'x' } } }), []);
 // Nothing set up wrong: an empty list and a calm page.
 assert.deepEqual(needsYou({ site: 'https://cleverfox.sala.company/' }), []);
 const html = statusPage({ at: new Date().toISOString(), rows: {}, flagged: {}, problems: 0 }, [], new Date(), l);

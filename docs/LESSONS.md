@@ -55,3 +55,10 @@ What building CleverFox taught us, so the same mistakes aren't made twice. Newes
 - **Reports from people were dropped for public posts** (decision 42, superseding 28 and 39–41). Collecting screenshots and personal details wasn't worth the risk for a public directory.
 - **Docs go in the same commit as the change.** BUSINESS-RULES, DECISIONS and CONVERSATIONS stay in step with the code. A later "update the docs" session should find little missing.
 - **Keep private details out of outside requests.** The commit email must never appear in anything sent to an outside service. Run edits and commits as separate commands.
+
+## X stopped answering and nothing said why (19 November)
+The X step threw on a 401/403 and the run went on with the last saved results, which is right, but it saved nothing about the failure. The status page could only say "not refreshed for 14 h". Now `tools/x.mjs` keeps X's own reason (`last_error`, never the token) and the status page turns it into "Fix X access" with what to do. Lesson: when a source fails but the run carries on, save the reason where the status page can read it.
+
+## New sources need the publisher mapping too (19 November)
+Replicate's first run added 139 listings with raw account names ("google", "kwaivgi") and no country, because only Hugging Face accounts went through the publisher mapping. Lesson: every new source that creates listings goes through `applyPublisher`, and quick scans re-apply it to saved listings.
+

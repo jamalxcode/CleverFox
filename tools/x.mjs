@@ -113,7 +113,11 @@ export class XClient {
           urls: (p.entities?.urls || []).map((u) => u.unwound_url || u.expanded_url || u.url).filter(Boolean),
         }));
       }
-      if (res.status === 401 || res.status === 403) throw new Error(`X rejected the request (${res.status})`);
+      if ([401, 402, 403].includes(res.status)) {
+        // X's own reason (for example "Unauthorized", "CreditsDepleted", "client-not-enrolled"), never the token.
+        let why = ''; try { const b = await res.json(); why = [...new Set([b.title, b.detail, b.reason].filter(Boolean))].join(': ').slice(0, 200); } catch {}
+        const e = new Error(`X rejected the request (${res.status}${why ? `: ${why}` : ''})`); e.status = res.status; throw e;
+      }
       if (res.status === 429) {
         const reset = +res.headers.get('x-rate-limit-reset');
         const wait = reset ? Math.max(1, reset - Math.floor(Date.now() / 1000) + 1) : 30;
@@ -298,9 +302,14 @@ async function main() {
   const state = existsSync(statePath) ? JSON.parse(readFileSync(statePath, 'utf8')) : null;
   try {
     const out = await run({ token, prev, state });
+    delete out.state.last_error;
     writeFileSync(dataPath, JSON.stringify(out.data, null, 1) + '\n');
     writeFileSync(statePath, JSON.stringify(out.state, null, 1) + '\n');
-  } catch (e) { console.warn(`X monitoring failed, keeping last data: ${e.message}`); }
+  } catch (e) {
+    // Keep the last data, and record why, so the status page can say what's wrong (decision 90).
+    console.warn(`X monitoring failed, keeping last data: ${e.message}`);
+    writeFileSync(statePath, JSON.stringify({ ...(state || {}), last_error: { at: new Date().toISOString(), status: e.status || null, message: String(e.message).slice(0, 240) } }, null, 1) + '\n');
+  }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main();

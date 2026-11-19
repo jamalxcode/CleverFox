@@ -129,3 +129,13 @@ console.log('All X monitoring tests passed.');
   assert.equal(await none.lookup(['1', '2']), null, 'never over budget');
   console.log('X re-check tests passed.');
 }
+
+// X refusing the token: the run stops with X's own reason and the status code (main() saves it as last_error).
+{
+  const { run } = await import('./x.mjs');
+  const fetchImpl = async () => new Response(JSON.stringify({ title: 'Unauthorized', detail: 'Unauthorized', status: 401 }), { status: 401, headers: { 'content-type': 'application/json' } });
+  let err = null;
+  try { await run({ token: 't', fetchImpl, now: new Date('2026-11-19T04:03:00Z'), listings: [], prev: null, state: { month: '2026-11', reads: 0 }, log: () => {} }); } catch (e) { err = e; }
+  if (!err || err.status !== 401 || err.message !== 'X rejected the request (401: Unauthorized)') throw new Error(`X 401 not reported: ${err?.message}`);
+  console.log('X refusal test passed');
+}

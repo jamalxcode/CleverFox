@@ -647,7 +647,7 @@ function replicateRecords(existing, seed) {
   const out = [];
   for (const m of list) {
     if (seed.has(`replicate:${m.id.toLowerCase()}`) || replicateMatch(m, [...existing, ...out])) continue;
-    const r = replicateRecord(m); r.capabilities = capabilitiesOf(r, []); r.highlights = highlightsOf(r);
+    const r = replicateRecord(m); r.capabilities = capabilitiesOf(r, []); r.highlights = highlightsOf(r); applyPublisher(r);
     if (!existing.some((x) => x.id === r.id) && !out.some((x) => x.id === r.id)) out.push(r);
   }
   return out;
@@ -704,12 +704,20 @@ function snapshotRecords(name) {
 
 // Publisher names and countries from data/publishers.json (Wikidata, reviewed).
 const PUBLISHERS = existsSync(join(root, 'data', 'publishers.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publishers.json'), 'utf8')).publishers || {} : {};
-function applyPublisher(r) {
-  const account = r.official_urls?.[0]?.match(/huggingface\.co\/(?:datasets\/)?([^/]+)\//)?.[1] || (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.split('/')[0] || r.publisher;
-  const p = account && PUBLISHERS[account];
-  if (!p) return;
-  r.publisher_name = p.name;
-  r.publisher_region = claim(p.country, p.source, 'third_party');
+// Replicate accounts are keyed "replicate:<owner>" in data/publisher-map.json. A mapped name that Wikidata already
+// resolved for another account (Alibaba Group for both Alibaba-NLP and replicate:alibaba) reuses that entry; a name
+// not looked up yet still shows, with the country left unknown until the Publishers workflow runs.
+const PUB_MAP = existsSync(join(root, 'data', 'publisher-map.json')) ? JSON.parse(readFileSync(join(root, 'data', 'publisher-map.json'), 'utf8')).publishers || {} : {};
+const PUB_BY_NAME = new Map(Object.entries(PUBLISHERS).filter(([a]) => PUB_MAP[a]?.name).map(([a, p]) => [PUB_MAP[a].name, p]));
+export function publisherAccount(r) {
+  if (r.import_source === 'replicate') return `replicate:${String((r.distributions || []).find((d) => d.source === 'replicate')?.native_id || '').split('/')[0] || r.publisher}`;
+  return r.official_urls?.[0]?.match(/huggingface\.co\/(?:datasets\/)?([^/]+)\//)?.[1] || (r.distributions || []).find((d) => d.source === 'huggingface')?.native_id?.split('/')[0] || r.publisher;
+}
+export function applyPublisher(r) {
+  const account = publisherAccount(r);
+  const p = account && (PUBLISHERS[account] || PUB_BY_NAME.get(PUB_MAP[account]?.name));
+  if (p) { r.publisher_name = p.name; r.publisher_region = claim(p.country, p.source, 'third_party'); return; }
+  if (PUB_MAP[account]?.name) r.publisher_name = PUB_MAP[account].name;
 }
 
 async function main() {
@@ -763,6 +771,7 @@ async function main() {
     // Replicate listings: earlier ones are kept (records are never silently lost) unless the model is now listed from Hugging Face.
     const prevRep = (existsSync(join(outDir, 'models.json')) ? JSON.parse(readFileSync(join(outDir, 'models.json'), 'utf8')) : []).filter((r) => ['replicate', 'openrouter'].includes(r.import_source) && !inSeed(r));
     const keptRep = prevRep.filter((r) => !replicateMatch({ id: r.distributions[0].native_id, owner: r.publisher, name: r.name }, [...all, ...seedRecords().filter((x) => x.type === 'model')]));
+    for (const r of keptRep) applyPublisher(r);
     const newRep = replicateRecords([...all, ...keptRep], seed);
     const newOr = openrouterRecords([...all, ...keptRep, ...newRep], seed);
     { const dj = existsSync(join(outDir, 'discover.json')) ? JSON.parse(readFileSync(join(outDir, 'discover.json'), 'utf8')) : {}; const g = refreshOpenrouter(keptRep, dj.openrouter?.all); if (g) console.log(`OpenRouter: ${g} listings no longer on OpenRouter, marked withdrawn`); }
@@ -836,6 +845,10 @@ async function xOnly() {
   } catch (e) { console.warn(`Ollama newest failed: ${e.message}`); }
   const ids = new Set([...models, ...datasets].map((r) => r.id));
   const addM = newM.filter((r) => !ids.has(r.id)); const addD = newD.filter((r) => !ids.has(r.id));
+  // Publisher names and countries for listings already saved (a mapping added since they were imported).
+  let renamed = 0;
+  for (const r of models) { const before = `${r.publisher_name}|${r.publisher_region?.value}`; applyPublisher(r); if (`${r.publisher_name}|${r.publisher_region?.value}` !== before) renamed++; }
+  if (renamed) { ollamaChanged = true; console.log(`Publishers: ${renamed} saved listings got a publisher name or country`); }
   if (addM.length || ollamaChanged) writeFileSync(join(outDir, 'models.json'), JSON.stringify([...models, ...addM], null, 1) + '\n');
   if (addD.length) writeFileSync(join(outDir, 'datasets.json'), JSON.stringify([...datasets, ...addD], null, 1) + '\n');
   console.log(`X-only import (with Replicate): ${addM.length} new models (${addM.map((r) => r.name).join(', ') || 'none'}), ${addD.length} new datasets (${addD.map((r) => r.name).join(', ') || 'none'})`);

@@ -13,6 +13,8 @@ export const RULES = { keepDays: 30, dropBelow: 0.5, minMedian: 5, failRuns: 3, 
 const read = (f) => { try { return JSON.parse(readFileSync(join(imp, f), 'utf8')); } catch { return null; } };
 const len = (x) => (Array.isArray(x) ? x.length : 0);
 
+// X's last error, when it's newer than its last good scan.
+export const xErr = (s = {}) => s.last_error && (!s.last_scan || new Date(s.last_error.at) > new Date(s.last_scan)) ? s.last_error : null;
 // One row per source: what it brought and when it last answered.
 export function measure({ disc = {}, importState = {}, xState = {}, models = [], datasets = [], research = {}, quarantine = {}, meta = {} } = {}) {
   const at = (s) => s || null;
@@ -21,7 +23,7 @@ export function measure({ disc = {}, importState = {}, xState = {}, models = [],
     'Hugging Face models (import)': { count: models.length, at: at(importState.huggingface_models), every: 'daily' },
     'Hugging Face datasets (import)': { count: datasets.length, at: at(importState.huggingface_datasets), every: 'daily' },
     'Ollama (import)': { count: models.filter((r) => (r.distributions || []).some((x) => x.source === 'ollama')).length, at: at(importState.ollama), every: 'daily' },
-    'X': { count: len(read('x.json')?.announcements), at: at(xState.last_scan), every: 'scan', note: xState.day_reads != null ? `${xState.day_reads} reads today, ${xState.reads} this month` : '' },
+    'X': { count: len(read('x.json')?.announcements), at: at(xState.last_scan), every: 'scan', note: [xErr(xState) ? `last error: ${xState.last_error.message}` : '', xState.day_reads != null ? `${xState.day_reads} reads today, ${xState.reads} this month` : ''].filter(Boolean).join(' · ') },
     'Hugging Face new releases': { count: len(d('huggingface').models) + len(d('huggingface').datasets), at: at(d('huggingface').checked_at), every: 'scan' },
     'llm-releases.com': { count: len(d('llm_releases').hf_models), at: at(d('llm_releases').checked_at), every: 'scan' },
     'GitHub': { count: len(d('github').new_repos) + len(d('github').releases), at: at(d('github').checked_at), every: 'scan' },
@@ -63,8 +65,12 @@ const REPO = 'https://github.com/jamalxcode/CleverFox';
 const SECRETS = `${REPO}/settings/secrets/actions`;
 export const KNOWN_BRANCHES = ['main', 'data', 'pages-cache'];
 const names = (list, n = 6) => list.slice(0, n).join(', ') + (list.length > n ? ` and ${list.length - n} more` : '');
-export function needsYou({ disc = {}, quarantine = {}, records = [], research = {}, env = {}, branches = null, site = '', hand = [], rep = null } = {}) {
+export function needsYou({ disc = {}, quarantine = {}, records = [], research = {}, env = {}, branches = null, site = '', hand = [], rep = null, xState = {} } = {}) {
   const out = [];
+  const xe = xErr(xState);
+  if (xe && [401, 402, 403].includes(xe.status)) out.push({ title: 'Fix X access', why: `X refused CleverFox's requests (${xe.message.replace(/^X rejected the request /, '')}), so no announcements or reactions are read. The last good results stay up meanwhile.`,
+    todo: xe.status === 402 || /credit|payment|usage|cap/i.test(xe.message) ? "In the X developer console, check the app's plan and credits (the monthly allowance may be used up), then start a scan." : "In the X developer console, check that the app and its project are active, regenerate the app's Bearer Token, and update the repository secret X_BEARER_TOKEN with it. Then start a scan.",
+    link: 'https://developer.x.com/en/portal/dashboard' });
   // A secret counts as set when the workflow says so (HAS_<NAME>=true/false); without that, the source's own "skipped" note decides.
   const has = (k, skipped) => (env[`HAS_${k}`] === 'true' ? true : env[`HAS_${k}`] === 'false' ? false : !skipped);
   const key = (k, title, why, todo, link) => { if (!has(k, k === 'X_BEARER_TOKEN' ? false : /token|key/i.test(String(disc[{ REPLICATE_API_TOKEN: 'replicate', YOUTUBE_API_KEY: 'youtube', PRODUCT_HUNT_TOKEN: 'product_hunt' }[k]]?.skipped || '')))) out.push({ title, why, todo: `${todo} Then add it as the repository secret ${k}.`, link, kind: 'key' }); };
@@ -160,7 +166,7 @@ async function main() {
   let branches = null;
   try { branches = execFileSync('git', ['ls-remote', '--heads', 'origin'], { cwd: root, encoding: 'utf8', timeout: 15000, stdio: ['ignore', 'pipe', 'ignore'] }).split('\n').map((l) => l.split('refs/heads/')[1]).filter(Boolean); } catch {}
   const site = process.env.SITE_URL || 'https://jamalxcode.github.io/CleverFox/';
-  const needs = needsYou({ disc: read('discover.json') || {}, quarantine: read('quarantine.json') || {}, records, research: read('autoresearch-state.json') || {}, env: process.env, branches, site, hand, rep });
+  const needs = needsYou({ xState: read('x-state.json') || {}, disc: read('discover.json') || {}, quarantine: read('quarantine.json') || {}, records, research: read('autoresearch-state.json') || {}, env: process.env, branches, site, hand, rep });
   if (existsSync(imp)) writeFileSync(join(imp, 'health.json'), JSON.stringify({ ...rep, needs, history }, null, 1) + '\n');
   mkdirSync(join(root, 'status'), { recursive: true });
   writeFileSync(join(root, 'status', 'index.html'), statusPage(rep, history, now, needs));

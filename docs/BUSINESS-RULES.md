@@ -305,6 +305,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
     Output: `data/imported/health.json`, `status/index.html` (linked in the top bar and footer) and the run's GitHub summary.
   - **Needs you (decision 90):** items for the owner, worked out each run:
     - a missing key: X, Replicate, YouTube, Product Hunt (from the workflow's true/false flags, or else the source's "skipped" note);
+    - "Fix X access" when X refused the token (401, 402 or 403) after its last good scan: `tools/x.mjs` saves X's reason as `last_error` in `x-state.json` (never the token) and keeps the last results;
     - the custom domain, while the site address is on github.io;
     - apps and hosts not verified; listings with a checked fact "not found" or "partly" found, or a broken page;
     - quarantined records; flagged sources (other than quarantine); branches other than main, data and pages-cache;
@@ -396,6 +397,7 @@ The interface rules behind these (one primary action, defaults, continuation, pr
   - **Memory bar:** needs ÷ your memory, green up to 80%, amber up to 100%, red above.
   - **Price scale:** online price per million output tokens: up to $0.50 is $, up to $3 is $$, more is $$$.
   - **Ways to pay for other countries** fold behind "+N for other countries".
+- **Publisher names (decision 76 and 90):** Hugging Face accounts and Replicate owners (keyed `replicate:<owner>`) map to an organisation in `data/publisher-map.json`. Wikidata (`data/publishers.json`, from the Publishers workflow) gives the name and country. A mapped name already resolved for another account reuses that country; a name not looked up yet shows with the country unknown. Quick scans re-apply the mapping to saved listings.
 - **Language filter (models, datasets):** one entry per language name, with how many listings have it. Codes that name the same language (for example `ay`, `aym`, `ayr` for Aymara) count as one, and choosing a language matches all of them. Codes the browser can't name (bare codes such as `atj`) are left out of the list; the listing keeps them.
 - **What people show on YouTube (decision 78):** a panel under "What people say on X" on every listing page except datasets.
   - **Reviews:** YouTube searches for "<name> review" (with the publisher for names of 4 characters or less), 15 listings per scan, least recently checked first. Each listing is re-checked after 7 days.
