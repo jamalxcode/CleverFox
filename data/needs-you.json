@@ -1,0 +1,16 @@
+{
+ "_about": "Hand-kept items for the status page's \"Needs you\" section (tools/health.mjs adds the ones it works out from the data). Set \"done\": true or remove an item once it's handled.",
+ "items": [
+  {
+   "title": "Ask native speakers to review the translations",
+   "why": "The Arabic, Hindi, Portuguese, Indonesian and Swahili interface text is a draft. More text and languages wait for this review.",
+   "todo": "Share i18n.js (or the main page in each language) with a native speaker, and send their corrections to a Claude session.",
+   "link": "https://github.com/jamalxcode/CleverFox/blob/main/i18n.js"
+  },
+  {
+   "title": "Decide two publisher countries",
+   "why": "Wikidata gives Hugging Face France (it describes it as an American company) and SYSTRAN South Korea (a French company owned by a Korean group).",
+   "todo": "Tell a Claude session which country each should show, and it will add a correction."
+  }
+ ]
+}

@@ -587,3 +587,11 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 @media (max-width: 1350px) { .topbar .look-btns .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .topbar .look-btns button { padding: 6px 9px; } }
 @media (min-width: 561px) and (max-width: 1350px) { .topbar .top-picks select { max-width: 8.5rem; } }
 :root[data-theme="dim"] .topbar .brand { color: var(--accent-text); }
+/* status page: Needs you */
+.status-sum { font-size: 1.05rem; }
+.needs { margin: 18px 0 26px; }
+.need-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.need { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--warn); border-radius: var(--radius); padding: 10px 14px; }
+.need h3 { font-size: 1rem; margin: 0 0 4px; }
+.need p { margin: 4px 0; overflow-wrap: anywhere; }
+.need-sub { font-size: 1rem; margin: 18px 0 8px; }

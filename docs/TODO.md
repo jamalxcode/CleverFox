@@ -20,7 +20,8 @@ What's still to do, as of 15 November 2026. Decisions behind each item are in [D
 - [ ] **Weekly X post (optional):** add `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN` and `X_ACCESS_SECRET` (read and write), and set the variable `X_POST_ENABLED` to `true`.
 - [ ] **Custom domain:**
   - add the DNS record for `cleverfox.sala.company`;
-  - then add the `CNAME` file back and change `SITE` in `tools/build.mjs`, and the `og:image` and canonical links in `index.html` and `glossary/index.html`.
+  - then add the `CNAME` file back and change `SITE` in `tools/build.mjs`, and the `og:image` and canonical links in `index.html` and `glossary/index.html`;
+  - then make status an admin page (decision 90): take the Status link out of the public top bar and page headers, and move the status page and its "Needs you" list off the public site.
 - [ ] **Translations:** ask native speakers to review the Arabic, Hindi, Portuguese, Indonesian and Swahili interface text in `i18n.js`.
 - [ ] **Network for research sessions (optional):** allow `support.apple.com`, `itunes.apple.com`, `apps.apple.com` and `play.google.com` in the environment's network settings, so sessions can read official store pages directly.
 

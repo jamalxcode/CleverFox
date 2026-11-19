@@ -14,6 +14,7 @@ A catalog of AI you can actually use where you live. Every model, app and host c
 - **Trust signals** (60, 64, 66, 67): verified versus not yet verified, a daily re-check of access pages, an App Store check, Google Play payments per country, and a freshness line.
 - **Discovery** (55, 65, 68, 70, 71, 75, 83): X 3 times a day, Hugging Face new releases, llm-releases.com, GitHub new projects and releases, YouTube, Replicate (waiting on its token). With no sign-up: OpenRouter's new models, AI makers' news feeds, Hugging Face Daily Papers, Hacker News launches, Bluesky, App Store searches in 20 countries (a research queue), and Ollama's newest in quick scans.
 - **Pipeline safety and health** (86): listings never dropped, bad imported records quarantined, a status page, the X re-check, makers' news on listings, community versions grouped.
+- **"Needs you" on the status page** (90): what's waiting on the owner, with what to do. To become an admin-only page with the custom domain.
 - **Two panes and a top bar** (89): Find on the left, Browse on the right on wide screens, and a bar to every section.
 - **Layout pass** (88): compact picks, clear card actions, sticky bar and sort, presets, Surprise me, the fox's tips.
 - **Two titled sections** (87): "Find what to use" and "Browse the catalog".

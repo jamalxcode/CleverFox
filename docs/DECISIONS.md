@@ -490,6 +490,17 @@ Countries come later from the daily App Store check, which now includes these li
 
 **Why:** the owner asked for the two sections side by side, with a bar that sends people to the other sections. On a desktop, the question and picks stay in view while browsing, and the rest of the site (New this week, guides, glossary, status) is one tap away instead of hidden in the footer.
 
+### 90. "Needs you" on the status page; status becomes an admin page later
+**Decision:** the status page opens with a summary line (all fine or how many sources need attention, the last pull, how many things need the owner) and a **"🙋 Needs you"** section: what the pipeline can't fix by itself, each with why it matters, what to do and a link. Then the sources table and the last 12 pulls (linked to their runs).
+- **Worked out each run** (`needsYou()` in `tools/health.mjs`): missing keys (X, Replicate, YouTube, Product Hunt; the workflow passes only true/false for each secret, never a value), the custom domain while the site is on github.io, apps and hosts not yet verified, listings whose official page no longer shows a listed fact, quarantined records, sources flagged, and branches other than main, data and pages-cache.
+- **Optional ("when you have time"):** queued apps auto-research couldn't fill, an Artificial Analysis key, and the weekly X post.
+- **Hand-kept items** in `data/needs-you.json` (now: the translation review and two publisher countries); mark one `done` or remove it once handled.
+- The same list goes into the run's GitHub summary.
+
+**Later:** once CleverFox has its own domain, status becomes an admin job, shown separately and not to visitors. Then the Status link leaves the public top bar and page headers, and the page moves off the public site (for example, the run summary plus a private page).
+
+**Why:** the owner asked for a list like the Dubai map's data status, so anything waiting on them is in one place instead of scattered across TODO and run logs.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

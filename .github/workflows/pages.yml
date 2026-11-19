@@ -48,6 +48,15 @@ jobs:
         env: { HF_TOKEN: "${{ secrets.HF_TOKEN }}", AA_API_KEY: "${{ secrets.AA_API_KEY }}" }
         run: node tools/import.mjs && node tools/benchmarks.mjs && node tools/providers.mjs && node tools/autoresearch.mjs && node tools/appstore.mjs && node tools/recheck.mjs
       - name: Validate and build the catalog
+        # health.mjs gets only whether each secret is set (true/false), for the status page's "Needs you".
+        env:
+          HAS_X_BEARER_TOKEN: "${{ secrets.X_BEARER_TOKEN != '' }}"
+          HAS_REPLICATE_API_TOKEN: "${{ secrets.REPLICATE_API_TOKEN != '' }}"
+          HAS_YOUTUBE_API_KEY: "${{ secrets.YOUTUBE_API_KEY != '' }}"
+          HAS_PRODUCT_HUNT_TOKEN: "${{ secrets.PRODUCT_HUNT_TOKEN != '' }}"
+          HAS_AA_API_KEY: "${{ secrets.AA_API_KEY != '' }}"
+          HAS_X_POST_KEYS: "${{ secrets.X_API_KEY != '' && secrets.X_API_SECRET != '' && secrets.X_ACCESS_TOKEN != '' && secrets.X_ACCESS_SECRET != '' }}"
+          X_POST_ENABLED: "${{ vars.X_POST_ENABLED }}"
         run: npm test && npm run build && node tools/health.mjs
       - name: Page check - phone widths and colour contrast (stops the deploy on a problem)
         run: |

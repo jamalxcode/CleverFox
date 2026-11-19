@@ -302,7 +302,16 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
     - no answer for 12 hours (sources read every scan) or 30 hours (daily sources);
     - any quarantined records.
 
-    Output: `data/imported/health.json`, `status/index.html` (linked in the footer) and the run's GitHub summary.
+    Output: `data/imported/health.json`, `status/index.html` (linked in the top bar and footer) and the run's GitHub summary.
+  - **Needs you (decision 90):** items for the owner, worked out each run:
+    - a missing key: X, Replicate, YouTube, Product Hunt (from the workflow's true/false flags, or else the source's "skipped" note);
+    - the custom domain, while the site address is on github.io;
+    - apps and hosts not verified; listings with a checked fact "not found" or "partly" found, or a broken page;
+    - quarantined records; flagged sources (other than quarantine); branches other than main, data and pages-cache;
+    - optional: queued App Store apps auto-research skipped (not "already listed"), no Artificial Analysis key, the weekly X post off;
+    - plus hand-kept items in `data/needs-you.json` that aren't marked `done`.
+
+    Lists of names show at most 6, then "and N more". The status page will become admin-only once the custom domain is set.
   - **Freshness line:** also shows Hugging Face new, GitHub, YouTube, OpenRouter, makers' news, papers and Product Hunt (12 hours each).
 - **Yield (decision 86):**
   - **X re-check:** announcements 20 hours to 7 days old, under 25 likes and not yet re-checked, are looked up again (up to 100 posts, a quarter of the run's reads at most). Their new likes decide whether they count.

@@ -9,6 +9,7 @@ node_modules/
 !/data/github-watch.json
 !/data/youtube-channels.json
 !/data/announce-feeds.json
+!/data/needs-you.json
 /data/imported/
 /l/
 /sitemap.xml

@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: "Needs you" on the status page
+**Where:** Claude Code session.
+**Asked:** add to the status page anything that needs the owner, like the Dubai map's data status ("Needs you" with what to do). Then: in future, status will be an admin job shown separately, not for visitors, once CleverFox has its own domain.
+
+**Outcome (decision 90):** a summary line, a "Needs you" section worked out each run (missing keys, custom domain, unverified apps and hosts, facts no longer found, quarantined records, flagged sources, old branches; optional: research gaps, Artificial Analysis key, weekly X post), hand-kept items in `data/needs-you.json`, and the last 12 pulls. The same list goes to the run summary. Making status admin-only is added to the custom-domain step in TODO.
+
 ## 2026-11-19: two panes and a top bar
 **Where:** Claude Code session.
 **Asked:** "Find what to use" as the left pane and "Browse the catalog" as the right pane, with a top bar sending you to other sections. Earlier in the session: whether a Tap Payments checkout could resell model access (answered only: a separate business with terms, country and merchant-of-record risks; CleverFox stays a directory).
