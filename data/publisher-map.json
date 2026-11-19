@@ -221,13 +221,15 @@
    "name": "ByteDance"
   },
   "replicate:xai": {
-   "name": "xAI"
+   "name": "xAI",
+   "qid": "Q120599684"
   },
   "replicate:recraft-ai": {
    "name": "Recraft"
   },
   "replicate:kwaivgi": {
-   "name": "Kuaishou"
+   "name": "Kuaishou",
+   "qid": "Q47015540"
   },
   "replicate:prunaai": {
    "name": "Pruna AI"
@@ -239,7 +241,8 @@
    "name": "Ideogram"
   },
   "replicate:ultralytics": {
-   "name": "Ultralytics"
+   "name": "Ultralytics",
+   "qid": "Q133503574"
   },
   "replicate:black-forest-labs": {
    "name": "Black Forest Labs"
