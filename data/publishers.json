@@ -400,6 +400,20 @@
    "country": "CN",
    "source": "https://www.wikidata.org/wiki/Q55606242"
   },
+  "replicate:xai": {
+   "name": "SpaceX Super Intelligence",
+   "qid": "Q120599684",
+   "description": "American artificial intelligence and social media division of SpaceX",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q120599684"
+  },
+  "replicate:kwaivgi": {
+   "name": "Kuaishou",
+   "qid": "Q47015540",
+   "description": "short-video platform",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q47015540"
+  },
   "replicate:black-forest-labs": {
    "name": "Black Forest Labs",
    "qid": "Q128801641",
