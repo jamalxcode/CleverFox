@@ -481,6 +481,15 @@ Countries come later from the daily App Store check, which now includes these li
 
 **Why:** the critique measured the first listing 4 phone screens down, picks in an older style than the cards, an API lane that confuses non-developers, raw names first, half-empty desktop rows, and no way back up a 17,900 px page. After the pass, the phone's first listing is at 1,929 px (was 2,639) and the picks end at 1,392 px (was 2,189). The fun comes from discovery and personality, never points or streaks (decision 77).
 
+### 89. Two panes and a top bar
+**Decision:** the main page becomes two panes on wide screens, with a top bar that leads everywhere:
+- **Top bar, always visible:** the brand, then 🦊 Find · 📚 Browse · ⭐ Saved (only when "Your CleverFox" has something) · 🔍 Search · 🆕 New this week · 🧭 Guides · 📖 Glossary · 🩺 Status, then the look buttons and the interface language. It replaces the mini-bar from decision 88. Its labels are in the 6 interface languages. Listing, New this week, guide, glossary and status pages get the same links in their header.
+- **From 1,100 px wide:** the page widens to 1,440 px. "Find what to use" is the left pane (about 430 px), sticky under the bar and scrolling on its own, with pick lanes in one column and "+N more" folded. "Browse the catalog" fills the right pane, with one column of cards (two from 1,500 px).
+- **Below 1,100 px:** the panes stack as before. Under 1,180 px the bar takes two rows, and its links scroll sideways on phones. Phones show icons only for the looks and hide the brand name under 360 px, so the bar stays 89 px.
+- **The digital-rain intro** stays under the bar and scrolls away.
+
+**Why:** the owner asked for the two sections side by side, with a bar that sends people to the other sections. On a desktop, the question and picks stay in view while browsing, and the rest of the site (New this week, guides, glossary, status) is one tap away instead of hidden in the footer.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

@@ -69,7 +69,7 @@ export function statusPage(rep, history, now = new Date()) {
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=${build}"><link rel="stylesheet" href="../style.css?v=${build}">
 <script>try { var l = localStorage.getItem('look'); if (l === 'light' || l === 'dim') document.documentElement.dataset.theme = l; } catch (e) {}</script>
 </head><body>
-<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="../">← All listings</a></p></div></header>
+<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a><nav class="page-nav" aria-label="Sections"><a href="../#start-h">🦊 Find</a><a href="../#browse">📚 Browse</a><a href="../new/">🆕 New this week</a><a href="../guides/">🧭 Guides</a><a href="../glossary/">📖 Glossary</a><a href="../status/">🩺 Status</a></nav></div><div class="wrap"><p><a href="../">← All listings</a></p></div></header>
 <main class="wrap listing">
 <h1>🩺 Data sources status</h1>
 <p class="muted">Checked ${esc(ago(now, rep.at))}. ${rep.problems ? `⚠️ ${rep.problems} source(s) need attention.` : '✅ Every source answered as expected.'} A source is flagged when its count falls below half its usual level, when it hasn't refreshed for too long, or when records are left out by validation. Counts are what each source holds now; the trend shows recent runs.</p>

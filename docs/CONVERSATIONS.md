@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: two panes and a top bar
+**Where:** Claude Code session.
+**Asked:** "Find what to use" as the left pane and "Browse the catalog" as the right pane, with a top bar sending you to other sections. Earlier in the session: whether a Tap Payments checkout could resell model access (answered only: a separate business with terms, country and merchant-of-record risks; CleverFox stays a directory).
+
+**Outcome (decision 89):** a sticky top bar (Find, Browse, Saved, Search, New this week, Guides, Glossary, Status, looks, language) replaces the mini-bar, and the same links go in every page's header. From 1,100 px the page is two panes with a sticky, self-scrolling Find pane; below, they stack. The bar is one row from 1,180 px and 89 px on phones. The page check passes in all three looks at 320 and 375 px.
+
 ## 2026-11-17: layout critique and pass
 **Where:** Claude Code session.
 **Asked:** review the layout: how can it be more useful, easier to understand and fun to use? Then "do it all".

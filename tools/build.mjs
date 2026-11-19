@@ -717,7 +717,7 @@ async function writeListingPages(records, countryList) {
 </head>
 <body>
 <header class="top">
-  <div class="wrap top-row"><a class="brand" href="${base}"><img src="${base}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div>
+  <div class="wrap top-row"><a class="brand" href="${base}"><img src="${base}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a><nav class="page-nav" aria-label="Sections"><a href="${base}#start-h">🦊 Find</a><a href="${base}#browse">📚 Browse</a><a href="${base}new/">🆕 New this week</a><a href="${base}guides/">🧭 Guides</a><a href="${base}glossary/">📖 Glossary</a><a href="${base}status/">🩺 Status</a></nav></div>
   <div class="wrap"><p class="tagline"><a href="${base}#${r.type}">← All ${R.esc({ model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' }[r.type])}</a></p></div>
 </header>
 <main class="wrap listing">
@@ -812,7 +812,7 @@ async function writeNewPages(records) {
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=${build}"><link rel="stylesheet" href="../style.css?v=${build}">
 <script>try { var l = localStorage.getItem('look'); if (l === 'light' || l === 'dim') document.documentElement.dataset.theme = l; } catch (e) {}</script>
 </head><body>
-<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="../">← All listings</a> · <a href="../feed.xml">RSS feed</a></p></div></header>
+<header class="top"><div class="wrap top-row"><a class="brand" href="../"><img src="../img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a><nav class="page-nav" aria-label="Sections"><a href="../#start-h">🦊 Find</a><a href="../#browse">📚 Browse</a><a href="../new/">🆕 New this week</a><a href="../guides/">🧭 Guides</a><a href="../glossary/">📖 Glossary</a><a href="../status/">🩺 Status</a></nav></div><div class="wrap"><p><a href="../">← All listings</a> · <a href="../feed.xml">RSS feed</a></p></div></header>
 <main class="wrap listing"><h1>🆕 New this week</h1>
 <p class="muted">${week.length} listings added in the last 7 days.</p>
 ${groups.map(([t, l]) => `<h2>${WORD[t]} (${l.length})</h2><ul class="new-list">${l.slice(0, 100).map(li).join('')}</ul>${l.length > 100 ? `<p class="muted">+${l.length - 100} more</p>` : ''}`).join('') || '<p>Nothing new in the last 7 days.</p>'}
@@ -886,7 +886,7 @@ async function writeGuides(records) {
 <link rel="icon" type="image/png" sizes="32x32" href="${'../'.repeat(depth)}img/favicon-32.png?v=${build}"><link rel="stylesheet" href="${'../'.repeat(depth)}style.css?v=${build}">
 <script>try { var l = localStorage.getItem('look'); if (l === 'light' || l === 'dim') document.documentElement.dataset.theme = l; } catch (e) {}</script>
 </head><body>
-<header class="top"><div class="wrap top-row"><a class="brand" href="${'../'.repeat(depth)}"><img src="${'../'.repeat(depth)}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a></div><div class="wrap"><p><a href="${'../'.repeat(depth)}">← All listings</a> · <a href="${'../'.repeat(depth)}guides/">📚 All guides</a> · <a href="${'../'.repeat(depth)}glossary/">📖 Glossary</a></p></div></header>
+<header class="top"><div class="wrap top-row"><a class="brand" href="${'../'.repeat(depth)}"><img src="${'../'.repeat(depth)}img/fox-logo.webp?v=${build}" alt="" width="40" height="40">CleverFox</a><nav class="page-nav" aria-label="Sections"><a href="${'../'.repeat(depth)}#start-h">🦊 Find</a><a href="${'../'.repeat(depth)}#browse">📚 Browse</a><a href="${'../'.repeat(depth)}new/">🆕 New this week</a><a href="${'../'.repeat(depth)}guides/">🧭 Guides</a><a href="${'../'.repeat(depth)}glossary/">📖 Glossary</a><a href="${'../'.repeat(depth)}status/">🩺 Status</a></nav></div><div class="wrap"><p><a href="${'../'.repeat(depth)}">← All listings</a> · <a href="${'../'.repeat(depth)}guides/">📚 All guides</a> · <a href="${'../'.repeat(depth)}glossary/">📖 Glossary</a></p></div></header>
 <main class="wrap listing">${body}</main>
 <footer class="wrap foot"><p>Built from the CleverFox catalog on ${esc(R.fmtDate(new Date().toISOString()))}. Every fact links to its source on the listing's page. Payment and country facts change often, so check the official page before paying.</p></footer>
 ${GOATCOUNTER}

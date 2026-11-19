@@ -539,5 +539,51 @@ h1, .card-page h1 { color: var(--text); text-shadow: none; }
 .pay-more summary { cursor: pointer; color: var(--muted); font-size: .9rem; }
 /* phones: presets in one swipeable row; each lane shows its featured pick, the rest behind "+2 more" */
 .pick-rest > summary { cursor: pointer; color: var(--cyan); font-size: .9rem; margin: 2px 0 6px; }
-@media (min-width: 701px) { .pick-rest > summary { display: none; } }
+@media (min-width: 701px) and (max-width: 1099px) { .pick-rest > summary { display: none; } }
 @media (max-width: 700px) { .presets { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; } .presets > * { flex: 0 0 auto; white-space: nowrap; } }
+/* top bar and two panes (decision 89) */
+.topbar { position: sticky; top: 0; z-index: 30; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 4px 14px rgba(0, 0, 0, .25); }
+:root[data-theme="light"] .topbar, :root[data-theme="dim"] .topbar { box-shadow: 0 2px 8px rgba(0, 0, 0, .08); }
+.topbar-row { display: flex; align-items: center; gap: 6px 16px; padding-top: 6px; padding-bottom: 6px; }
+.topbar .brand { font-size: 1.15rem; flex: 0 0 auto; }
+.topbar .brand img { width: 30px; height: 30px; }
+.topnav { display: flex; align-items: center; gap: 2px 14px; flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; white-space: nowrap; font-family: var(--mono); font-size: .88rem; }
+.topnav::-webkit-scrollbar { display: none; }
+.topnav a, .topnav button { text-decoration: none; min-height: 36px; display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+.topnav a:hover, .topnav button:hover { text-decoration: underline; }
+.topnav-sep { color: var(--muted); }
+.topbar .top-picks { flex: 0 0 auto; }
+.top .intro { padding-top: 14px; }
+#start-h, #browse, #you { scroll-margin-top: calc(var(--bar-h, 52px) + 10px); }
+@media (max-width: 1180px) {
+  .topbar-row { flex-wrap: wrap; justify-content: space-between; }
+  .topnav { order: 3; flex: 1 1 100%; }
+  .topnav-sep { display: none; }
+}
+@media (min-width: 1100px) {
+  .wrap.wide { max-width: 1440px; }
+  .panes { display: grid; grid-template-columns: minmax(360px, 430px) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .pane-find { position: sticky; top: var(--bar-h, 52px); max-height: calc(100vh - var(--bar-h, 52px)); overflow-y: auto; overscroll-behavior: contain; padding: 0 6px 16px 0; scrollbar-width: thin; }
+  .pane-find .pick-cols { grid-template-columns: 1fr; }
+  .pane-find .start-here { margin-top: 16px; }
+  .pane-browse .section-head { margin-top: 16px; padding-top: 0; border-top: 0; }
+  .pane-browse .list { grid-template-columns: 1fr; }
+}
+@media (min-width: 1500px) { .pane-browse .list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.page-nav { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: .88rem; }
+.page-nav a { text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+@media (max-width: 560px) {
+  .topbar .top-picks { flex-wrap: nowrap; gap: 6px; }
+  .topbar .brand { font-size: 1rem; gap: 6px; }
+  .topbar .brand::after { display: none; }
+  .topbar .lang-pick { flex: 0 0 auto; }
+  .topbar .lang-pick > span { display: none; }
+  .topbar .lang-pick select, .topbar .top-picks select { width: auto; max-width: 6.5rem; min-height: 34px; }
+  .topbar .look-btns button { padding: 4px 7px; min-height: 34px; }
+  .topnav { gap: 2px 12px; font-size: .85rem; }
+}
+@media (max-width: 560px) { .topbar-row { gap: 4px 8px; } .topbar .lang-pick select, .topbar .top-picks select { max-width: 5.6rem; padding: 4px 6px; } }
+@media (max-width: 360px) { .topbar .brand { font-size: 0; gap: 0; } }
+@media (max-width: 1350px) { .topbar .look-btns .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .topbar .look-btns button { padding: 6px 9px; } }
+@media (min-width: 561px) and (max-width: 1350px) { .topbar .top-picks select { max-width: 8.5rem; } }
+:root[data-theme="dim"] .topbar .brand { color: var(--accent-text); }

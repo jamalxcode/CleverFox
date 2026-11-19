@@ -257,16 +257,16 @@ $('#more-btn').addEventListener('click', () => { state.limit += PAGE; render(); 
 $('#sort').addEventListener('change', (e) => { state.sort = e.target.value; state.limit = PAGE; render(); });
 // ---- getting around a long page: a slim sticky bar once the top has scrolled away, and back to top ----
 {
-  const bar = $('#minibar'); const top = $('#to-top'); const head = document.querySelector('header.top');
-  const onScroll = () => {
-    const past = head.getBoundingClientRect().bottom < 0;
-    if (bar.hidden === past) bar.hidden = !past;
-    const far = scrollY > innerHeight * 1.5;
-    if (top.hidden === far) top.hidden = !far;
-    const saved = $('#mb-saved'); if (saved) saved.hidden = $('#you').hidden;
-  };
+  const top = $('#to-top'); const bar = $('#topbar');
+  const onScroll = () => { const far = scrollY > innerHeight * 1.5; if (top.hidden === far) top.hidden = !far; };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  top.addEventListener('click', () => scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+  top.addEventListener('click', () => { const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'; scrollTo({ top: 0, behavior: smooth }); document.querySelector('.pane-find')?.scrollTo({ top: 0, behavior: smooth }); });
+  // The bar's height, so the sticky Find pane and jumps to a section sit just below it.
+  const fitBar = () => document.documentElement.style.setProperty('--bar-h', `${bar.offsetHeight}px`);
+  fitBar(); new ResizeObserver(fitBar).observe(bar);
+  // ⭐ Saved shows in the bar only while "Your CleverFox" has something in it.
+  const syncSaved = () => { $('#mb-saved').hidden = $('#you').hidden; };
+  syncSaved(); new MutationObserver(syncSaved).observe($('#you'), { attributes: true, attributeFilter: ['hidden'] });
   $('#mb-search').addEventListener('click', () => { $('#browse').scrollIntoView(); $('#q').focus({ preventScroll: true }); });
 }
 $('#caps').addEventListener('click', (e) => {
@@ -434,7 +434,7 @@ async function showPicks(share = true) {
   // An empty column offers the nearest alternative instead of a dead end.
   const alt = (h) => h === t('runself') ? `<button type="button" class="share-btn" data-alt-device="online">${esc(t('web'))}</button>${state.mem && state.mem < 128 ? ' <span class="muted">or choose more memory above</span>' : ''}` : h === t('offline') ? `<button type="button" class="share-btn" data-alt-device="computer">${esc(t('computer'))}</button>` : `<button type="button" class="share-btn" data-alt-task="chat">${esc(t('t_chat'))}</button>`;
   for (const [h, list] of cols) if (!list.length) try { window.goatcounter?.count?.({ path: `picks-empty/${h.replace(/^\S+\s/, '')}/${s.task}/${s.device}/${s.country || 'any'}/${s.ulang || 'any'}`, title: 'No picks', event: true }); } catch {}
-  $('#picks').innerHTML = `<p class="muted swipe-hint">Swipe for more lanes →</p><div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${item(list[0], 0)}</ol>${list.length > 1 ? `<details class="pick-rest"${matchMedia('(min-width: 701px)').matches ? ' open' : ''}><summary>+${list.length - 1} more</summary><ol class="pick-list">${list.slice(1).map((p) => item(p, 1)).join('')}</ol></details>` : ''}` : `<p class="muted">${esc(t('nothing'))}</p><p>Try: ${alt(h)}</p>`}</div>`).join('')}</div>
+  $('#picks').innerHTML = `<p class="muted swipe-hint">Swipe for more lanes →</p><div class="pick-cols">${cols.map(([h, list, note]) => `<div class="pick-col"><h3>${h}</h3><p class="muted pick-note">${esc(note)}</p>${list.length ? `<ol class="pick-list">${item(list[0], 0)}</ol>${list.length > 1 ? `<details class="pick-rest"${matchMedia('(min-width: 701px) and (max-width: 1099px)').matches ? ' open' : ''}><summary>+${list.length - 1} more</summary><ol class="pick-list">${list.slice(1).map((p) => item(p, 1)).join('')}</ol></details>` : ''}` : `<p class="muted">${esc(t('nothing'))}</p><p>Try: ${alt(h)}</p>`}</div>`).join('')}</div>
     ${foxTip(s, cols)}
     ${nextSteps(cols)}
     <details class="pick-how"><summary>How picks are ordered</summary><ul>${[ORDERING.local, ORDERING.offline, ORDERING.apps, ORDERING.online, ORDERING.not].map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>

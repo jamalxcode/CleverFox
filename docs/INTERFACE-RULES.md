@@ -20,11 +20,17 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 
 - The main page has two big section titles at the same size (1.75rem, 1.4rem on phones): **"🦊 Find what to use"** (the question bar and picks) and **"📚 Browse the catalog"** (the directory: tabs, chips, search, filters and the list). The second has a divider above it and a line with the catalog's total. Both are in the 6 interface languages.
 
+## 1b2. Two panes and the top bar (decision 89)
+
+- **The top bar is always visible** (sticky) on the main page: brand, Find · Browse · Saved (only when there's something saved) · Search · New this week · Guides · Glossary · Status, then the looks and the interface language. Other pages show the same links in their header.
+- **From 1,100 px wide,** "Find what to use" is a left pane that stays in view and scrolls on its own, and "Browse the catalog" is the right pane. Below that the panes stack, Find first.
+- **The bar stays short:** one row from 1,180 px, two rows below, links scrolling sideways on phones, at most 89 px on a phone. Jumps to a section land below the bar.
+
 ## 1c. Picks, cards and getting around (decision 88)
 
 - **Picks:** a featured pick per lane (description, up to 3 verdicts, Start and Save), and the rest behind "+N more" on phones. Lanes follow the device; the API lane is "For developers" and comes last. Phone lanes swipe sideways.
 - **Cards:** one outlined action ("Get it →" and the like) to the listing's "How to start", and "Details ▾" to open the card. Two columns at 1,000 px and wider, and an opened card spans both.
-- **Getting around:** a sticky mini-bar after the header scrolls away, back to top after 1.5 screens, and a visible sort menu.
+- **Getting around:** the top bar (decision 89), back to top after 1.5 screens, and a visible sort menu.
 - **Fun:** presets, Surprise me, the fox's tips and toasts, the memory bar and the save pop. Never points, streaks or anything that rewards time spent.
 
 ## 2. One primary action per screen
@@ -88,7 +94,7 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **Contrast:** WCAG AA in all three looks, checked by axe-core in `tools/ui-check.cjs` on 8 pages, including a returning visitor's "Your CleverFox" panel.
 - **`[hidden]` always hides** (`display: none !important`), so a component's own display rule can't reveal it.
 - **No sideways scrolling at 320 and 375 px** (`tools/ui-check.cjs`; four phone sizes in `tools/phone-check.cjs`). Long names wrap (`overflow-wrap: anywhere`).
-- **Phones:** the side panels (X, YouTube) drop below the listing under 900 px. Pick columns stack.
+- **Phones:** the side panels (X, YouTube) drop below the listing under 900 px. Pick columns stack, and the two panes stack under 1,100 px.
 - **Keyboard and screen readers:** tabs use `role="tab"` with arrow keys. Toggle buttons use `aria-pressed` (capabilities, ☆ Save). Live regions announce picks and result counts. Every control has a label or `aria-label`. Touch targets are at least about 28–40 px.
 - **Colour blindness:** meaning never rests on colour alone. Every verdict has a symbol (✓ ✗ ! ?) and words, and warnings have ⚠️. In between uses a colour-blind-safe palette (Okabe–Ito: blue, orange, yellow) for anyone who wants extra help (decision 82).
 - **Motion:** respect `prefers-reduced-motion` (no rain, no blinking cursor, no card transitions).
