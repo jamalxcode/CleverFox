@@ -68,8 +68,9 @@ const names = (list, n = 6) => list.slice(0, n).join(', ') + (list.length > n ? 
 export function needsYou({ disc = {}, quarantine = {}, records = [], research = {}, env = {}, branches = null, site = '', hand = [], rep = null, xState = {} } = {}) {
   const out = [];
   const xe = xErr(xState);
-  if (xe && [401, 402, 403].includes(xe.status)) out.push({ title: 'Fix X access', why: `X refused CleverFox's requests (${xe.message.replace(/^X rejected the request /, '')}), so no announcements or reactions are read. The last good results stay up meanwhile.`,
-    todo: xe.status === 402 || /credit|payment|usage|cap/i.test(xe.message) ? "In the X developer console, check the app's plan and credits (the monthly allowance may be used up), then start a scan." : "In the X developer console, check that the app and its project are active, regenerate the app's Bearer Token, and update the repository secret X_BEARER_TOKEN with it. Then start a scan.",
+  if (xe && [401, 402, 403].includes(xe.status)) out.push({ title: 'Fix X access', why: `X refused CleverFox's requests (${xe.message.replace(/^X rejected the request \(|\)$/g, '')}), so no announcements or reactions are read. The last good results stay up meanwhile.`,
+    todo: /spend cap/i.test(xe.message) ? "In the X developer console, raise the monthly spend cap under billing, or wait for it to reset next month. CleverFox's own limit is X_MONTHLY_READS (10,000 reads by default)." :
+      xe.status === 402 || /credit|payment|usage/i.test(xe.message) ? "In the X developer console, check the app's plan and credits (the monthly allowance may be used up), then start a scan." : "In the X developer console, check that the app and its project are active, regenerate the app's Bearer Token, and update the repository secret X_BEARER_TOKEN with it. Then start a scan.",
     link: 'https://developer.x.com/en/portal/dashboard' });
   // A secret counts as set when the workflow says so (HAS_<NAME>=true/false); without that, the source's own "skipped" note decides.
   const has = (k, skipped) => (env[`HAS_${k}`] === 'true' ? true : env[`HAS_${k}`] === 'false' ? false : !skipped);

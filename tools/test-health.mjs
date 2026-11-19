@@ -32,6 +32,8 @@ l = needsYou({ xState: { last_scan: '2026-11-18T13:44:00Z', last_error: { at: '2
 assert.deepEqual(titles(l), ['Fix X access']); assert.match(l[0].todo, /X_BEARER_TOKEN/);
 assert.match(needsYou({ xState: { last_error: { at: '2026-11-19T04:03:00Z', status: 402, message: 'X rejected the request (402: CreditsDepleted)' } } })[0].todo, /credits/);
 assert.deepEqual(needsYou({ xState: { last_scan: '2026-11-19T05:00:00Z', last_error: { at: '2026-11-19T04:03:00Z', status: 401, message: 'x' } } }), []);
+l = needsYou({ xState: { last_error: { at: '2026-11-19T04:16:00Z', status: 403, message: 'X rejected the request (403: Forbidden: Your monthly spend cap has been reached.)' } } });
+assert.match(l[0].todo, /spend cap/); assert.match(l[0].why, /\(403: Forbidden: Your monthly spend cap has been reached\.\), so/);
 // Nothing set up wrong: an empty list and a calm page.
 assert.deepEqual(needsYou({ site: 'https://cleverfox.sala.company/' }), []);
 const html = statusPage({ at: new Date().toISOString(), rows: {}, flagged: {}, problems: 0 }, [], new Date(), l);
