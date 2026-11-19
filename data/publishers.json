@@ -343,6 +343,139 @@
    "description": "American conversational search engine company",
    "country": "US",
    "source": "https://www.wikidata.org/wiki/Q124333951"
+  },
+  "replicate:google": {
+   "name": "Google",
+   "qid": "Q95",
+   "description": "American multinational technology company, a subsidiary of Alphabet Inc.",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q95"
+  },
+  "replicate:openai": {
+   "name": "OpenAI",
+   "qid": "Q21708200",
+   "description": "American artificial intelligence research organization",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q21708200"
+  },
+  "replicate:anthropic": {
+   "name": "Anthropic",
+   "qid": "Q116758847",
+   "description": "American artificial intelligence corporation",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q116758847"
+  },
+  "replicate:minimax": {
+   "name": "MiniMax Group",
+   "qid": "Q130263208",
+   "description": "Chinese multinational artificial intelligence company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q130263208"
+  },
+  "replicate:alibaba": {
+   "name": "Alibaba Group",
+   "qid": "Q1359568",
+   "description": "Chinese multinational technology company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q1359568"
+  },
+  "replicate:wan-video": {
+   "name": "Alibaba Group",
+   "qid": "Q1359568",
+   "description": "Chinese multinational technology company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q1359568"
+  },
+  "replicate:qwen": {
+   "name": "Alibaba Cloud",
+   "qid": "Q17062154",
+   "description": "Chinese cloud computing company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q17062154"
+  },
+  "replicate:bytedance": {
+   "name": "ByteDance",
+   "qid": "Q55606242",
+   "description": "Chinese Internet and technology company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q55606242"
+  },
+  "replicate:black-forest-labs": {
+   "name": "Black Forest Labs",
+   "qid": "Q128801641",
+   "description": "AI company",
+   "country": "DE",
+   "source": "https://www.wikidata.org/wiki/Q128801641"
+  },
+  "replicate:stability-ai": {
+   "name": "Stability AI",
+   "qid": "Q123592234",
+   "description": "British multinational artificial intelligence company",
+   "country": "GB",
+   "source": "https://www.wikidata.org/wiki/Q123592234"
+  },
+  "replicate:meta": {
+   "name": "Meta Platforms",
+   "qid": "Q380",
+   "description": "American technology company",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q380"
+  },
+  "replicate:deepseek-ai": {
+   "name": "DeepSeek",
+   "qid": "Q131577453",
+   "description": "Chinese artificial intelligence company",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q131577453"
+  },
+  "replicate:mistralai": {
+   "name": "Mistral AI",
+   "qid": "Q119718658",
+   "description": "French AI company",
+   "country": "FR",
+   "source": "https://www.wikidata.org/wiki/Q119718658"
+  },
+  "replicate:nvidia": {
+   "name": "Nvidia",
+   "qid": "Q182477",
+   "description": "American multinational technology company",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q182477"
+  },
+  "replicate:microsoft": {
+   "name": "Microsoft",
+   "qid": "Q2283",
+   "description": "American multinational technology corporation",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q2283"
+  },
+  "replicate:luma": {
+   "name": "Luma AI",
+   "qid": "Q141817105",
+   "description": "technology company based in Redwood City, California, United States",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q141817105"
+  },
+  "replicate:runwayml": {
+   "name": "Runway",
+   "qid": "Q123367593",
+   "description": "American research company",
+   "country": "US",
+   "source": "https://www.wikidata.org/wiki/Q123367593"
+  },
+  "replicate:lightricks": {
+   "name": "Lightricks",
+   "qid": "Q85776623",
+   "description": "software development company",
+   "country": "IL",
+   "source": "https://www.wikidata.org/wiki/Q85776623"
+  },
+  "replicate:tencent": {
+   "name": "Tencent",
+   "qid": "Q860580",
+   "description": "Chinese multinational investment holding conglomerate",
+   "country": "CN",
+   "source": "https://www.wikidata.org/wiki/Q860580"
   }
  }
 }
