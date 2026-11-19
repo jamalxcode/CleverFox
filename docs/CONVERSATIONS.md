@@ -12,6 +12,14 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: interface critique: denser, more useful, more fun
+**Where:** Claude Code session.
+**Asked:** critique CleverFox and improve the interface, pack maximum relevant information, make it fun; then "do it all".
+
+**Critique:** 2 cards per desktop screen; a "runs on your own device, 768 GB" verdict; an X panel saying scanning was off; big empty X and YouTube boxes; "Status" cut off in the top bar; a tall Find pane; new, trending and talked-about signals hidden in details; plain text everywhere; fun features tucked away.
+
+**Outcome (decision 92):** the bugs fixed; short verdict chips, maker monograms and signals on cards, two columns from 1,300 px; a List view; returning visitors skip the intro, setup folds into one line, presets in one row; Today's pick and the newest arrivals; a live memory slider; keyboard shortcuts; the fox reacts. A desktop screen now shows 4 cards or about 12 list rows. The phone's first listing stays about where it was (2,022 px; the new Today line and view row use the space saved). The page check passes in all three looks.
+
 ## 2026-11-19: xAI's publisher name
 **Asked:** why xAI's models show "SpaceX Super Intelligence" (Wikidata's current label for the entry), then chose to show "xAI".
 **Outcome:** a `keep_name` setting in `data/publisher-map.json`: the country still comes from Wikidata, the name shown is ours. Set for xAI.

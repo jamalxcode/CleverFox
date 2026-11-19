@@ -2,7 +2,7 @@
 import { LANGS, t, pickLang, applyLang } from './i18n.js?v=__BUILD__';
 import { pickModelsLocal, pickModelsOnline, pickApps, pickOffline, TASKS, encodeStart, decodeStart, ORDERING } from './picks.js?v=__BUILD__';
 import * as you from './you.js?v=__BUILD__';
-import { verdictStrip, plainWhat } from './render.js?v=__BUILD__';
+import { verdictStrip, verdictChips, plainWhat, listRow, verdicts, shortVerdict } from './render.js?v=__BUILD__';
 import { view, setCountries, esc, METHOD_LABELS, KIND_LABELS, AVAIL_LABELS, langName, countryName, flag, fmtDate, known, CAPS, popularity, availableIn, methodsOf, recordAccesses, anyNoCard, payNoCard, anyFree, card, detail, wireShare, suits, listingPath, FREE_TEXT, FREE_LABELS } from './render.js?v=__BUILD__';
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -18,7 +18,7 @@ const TYPES = ['model', 'dataset', 'app', 'host'];
 const MEMORY_CHOICES = [4, 8, 16, 24, 32, 48, 64, 128];
 const TYPE_WORDS = { model: 'models', dataset: 'datasets', app: 'apps', host: 'hosting providers' };
 const PAGE = 50;
-const state = { type: 'model', q: '', cap: '', sort: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', ulang: store.get('ulang') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
+const state = { type: 'model', q: '', cap: '', sort: '', layout: '', mem: +(store.get('mem') || 0), country: store.get('country') || '', ulang: store.get('ulang') || '', limit: PAGE, f: { model: {}, dataset: {}, app: {}, host: {} } };
 const loaded = {}; // type -> records
 const syncView = () => { view.country = state.country; view.mem = state.mem; view.ulang = state.ulang; };
 syncView();
@@ -184,8 +184,13 @@ function render() {
   const SORTS = { popular: (a, b) => popularity(b) - popularity(a), new: (a, b) => String(b.first_seen_at || '').localeCompare(String(a.first_seen_at || '')), free: (a, b) => isFree(a) - isFree(b) };
   const best = (a, b) => suits(a) - suits(b) || plain(a) - plain(b) || weight(a) - weight(b) || popularity(b) - popularity(a) || a.name.localeCompare(b.name);
   recs.sort((a, b) => (SORTS[state.sort]?.(a, b) || 0) || best(a, b));
-  $('#list').innerHTML = recs.slice(0, state.limit).map(card).join('');
+  $('#list').classList.toggle('as-list', state.layout === 'list');
+  $('#list').innerHTML = recs.slice(0, state.limit).map(state.layout === 'list' ? listRow : card).join('');
   $('#empty').hidden = recs.length > 0;
+  if (!recs.length) foxReact('sad');
+  renderToday(all);
+  for (const b of $('#layout').querySelectorAll('[data-layout]')) b.setAttribute('aria-pressed', String(b.dataset.layout === state.layout));
+  $('#memslide').hidden = state.type !== 'model';
   // The tab and the filters in use, never the words typed.
   if (!recs.length && (state.q || Object.values(state.f[state.type]).some(Boolean))) trackEmpty(`search-empty/${state.type}/${Object.entries(state.f[state.type]).filter(([, v]) => v).map(([k]) => k).sort().join('+') || 'text'}${state.cap ? '/' + state.cap : ''}`);
   $('#more-btn').hidden = recs.length <= state.limit;
@@ -235,7 +240,7 @@ document.addEventListener('click', (e) => {
 let viewTimer = null;
 function rememberView() {
   clearTimeout(viewTimer);
-  viewTimer = setTimeout(() => you.update((d) => { d.view = { type: state.type, q: state.q, cap: state.cap, sort: state.sort, f: state.f }; }), 600);
+  viewTimer = setTimeout(() => you.update((d) => { d.view = { type: state.type, q: state.q, cap: state.cap, sort: state.sort, layout: state.layout, f: state.f }; }), 600);
 }
 async function ensureLoaded(t) {
   if (loaded[t]) return;
@@ -427,7 +432,7 @@ async function showPicks(share = true) {
   const item = (p, i) => {
     pickRecs.set(p.r.id, p.r);
     const head = `<a href="${esc(listingPath(p.r))}"><strong>${esc(p.r.name)}</strong></a> <span class="muted">${esc(p.r.publisher_name || p.r.publisher || '')}</span>`;
-    if (i === 0) return `<li class="pick-feat"><div class="pf-head">${head}</div><p class="pf-desc">${esc(plainWhat(p.r))}</p>${verdictStrip(p.r, 3)}<p class="pf-act"><a class="share-btn" href="${esc(listingPath(p.r))}#start">Start →</a> ${save(p.r)}</p></li>`;
+    if (i === 0) return `<li class="pick-feat"><div class="pf-head">${head}</div><p class="pf-desc">${esc(plainWhat(p.r))}</p>${verdictChips(p.r, 3)}<p class="pf-act"><a class="share-btn" href="${esc(listingPath(p.r))}#start">Start →</a> ${save(p.r)}</p></li>`;
     const why = p.reasons.filter((x) => !NOISE.test(x)).slice(0, 2);
     return `<li>${head} ${save(p.r)}${why.length ? `<div class="why">${why.map((x) => `<span class="chip">${esc(x)}</span>`).join(' ')}</div>` : ''}</li>`;
   };
@@ -482,12 +487,13 @@ document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-save]'); if (!b) return;
   const id = b.dataset.save; const r = pickRecs.get(id) || recById(id) || you.load().saved.find((x) => x.id === id);
   if (!r) return;
-  if (you.toggleSave(r, r.path || listingPath(r))) toast('⭐ Saved! Find it in Your CleverFox.');
+  if (you.toggleSave(r, r.path || listingPath(r))) { toast('⭐ Saved! Find it in Your CleverFox.'); foxReact('happy'); }
   document.querySelectorAll(`[data-save="${CSS.escape(id)}"]`).forEach((x) => labelSaves(x.parentElement));
   renderYou();
 });
 
 // ---- effortless start: what's set, what's missing, one tap to fix (country suggested from the browser's language) ----
+let setupTouched = false;
 function renderSetup() {
   // The pickers are the setup: each shows ✓ once set. The country suggested by the browser's language is one tap, never set by itself.
   const guess = (navigator.language || '').split('-')[1]?.toUpperCase();
@@ -495,6 +501,10 @@ function renderSetup() {
   $('#pick-mem').classList.toggle('set', !!state.mem);
   $('#pick-country').classList.toggle('set', !!state.country);
   $('#pick-ulang').classList.toggle('set', !!state.ulang);
+  // "Your setup: 8 GB · 🇰🇪 Kenya · Swahili ✎", folded once everything is set; open while something is missing.
+  const bits = [state.mem ? `💻 ${state.mem === 128 ? '128 GB+' : `${state.mem} GB`}` : '○ memory', state.country ? `${flag(state.country)} ${esc(countryName(state.country))}` : '○ country', state.ulang ? `🗣️ ${esc(langName(state.ulang))}` : '○ any language'];
+  $('#setup-sum').innerHTML = `<span class="setup-lbl">Your setup:</span> ${bits.join(' · ')} <span class="setup-edit">✎ change</span>`;
+  syncMemSlider();
   $('#country-guess').innerHTML = !state.country && known2 ? `<button type="button" class="linkish" data-set-country="${known2}">${flag(known2)} ${esc(countryName(known2))}?</button>` : '';
 }
 $('#country-guess').addEventListener('click', (e) => {
@@ -562,8 +572,59 @@ $('#surprise').addEventListener('click', async () => {
   const pickOne = pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
   if (!pickOne) { toast('🦊 Nothing to surprise you with here yet. Try another tab.'); return; }
   try { window.goatcounter?.count?.({ path: `surprise/${state.type}`, event: true }); } catch {}
+  foxReact('spin'); await new Promise((res) => setTimeout(res, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 500));
   location.href = `${listingPath(pickOne)}`;
 });
+// ---- Today: the fox's pick of the day and the newest arrivals (decision 92) ----
+// The same pick all day for everyone with the same setup (no randomness on reload), from listings with no warnings
+// that suit the visitor's setup (or are verified, with none). New arrivals: the 5 newest in this tab.
+function dayHash(s) { let h = 2166136261; for (const ch of s) h = Math.imul(h ^ ch.codePointAt(0), 16777619) >>> 0; return h; }
+function renderToday(all) {
+  const el = $('#today'); if (!all?.length) { el.innerHTML = ''; return; }
+  const ok = (r) => r.warning === 'none' && !r.copy_of && !r.answers?.uncensored && !/uncensor|abliterat/i.test(r.name) && r.listing_status?.value !== 'removed_at_source';
+  // Everyday, ready-to-use listings only (an embedding model is no "pick of the day"), from the 60 most popular that qualify.
+  const EVERYDAY = ['chat', 'writing', 'coding', 'images', 'speech', 'video', 'translation', 'vision'];
+  const good = (r) => r.type === 'model' ? r.local_ready && (r.answers?.good_for || []).some((c) => EVERYDAY.includes(c)) : r.type === 'dataset' ? r.answers?.license_kind === 'open' : r.verification_status === 'verified';
+  const pool = all.filter((r) => ok(r) && good(r) && (!(view.mem || view.country) || suits(r) === 0)).sort((a, b) => popularity(b) - popularity(a)).slice(0, 60).sort((a, b) => a.id.localeCompare(b.id));
+  const day = new Date().toISOString().slice(0, 10);
+  const pick = pool.length ? pool[dayHash(`${day}|${state.type}|${view.mem}|${view.country}`) % pool.length] : null;
+  const why = pick ? verdicts(pick).filter((v) => v.state === 'yes').slice(0, 2).map((v) => shortVerdict(v.text)) : [];
+  const what = pick ? String(plainWhat(pick) || '').replace(/^(.{90}).+$/s, (m, a) => `${a.replace(/\s+\S*$/, '')}…`) : '';
+  const fresh = all.filter((r) => ok(r) && r.signals?.new_at).sort((a, b) => String(b.signals.new_at).localeCompare(String(a.signals.new_at))).slice(0, 5);
+  el.innerHTML = `${pick ? `<p class="today-pick">🦊 <strong>Today's pick:</strong> <a href="${esc(listingPath(pick))}">${esc(pick.name)}</a> <span class="muted">${esc(what)}${why.length ? ` · ${esc(why.join(' · '))}` : ''}</span></p>` : ''}
+    ${fresh.length ? `<p class="today-new"><strong>🆕 New:</strong> ${fresh.map((r) => `<a class="chip-link" href="${esc(listingPath(r))}">${esc(r.name)}</a>`).join(' ')} <a href="new/" class="muted">all new →</a></p>` : ''}`;
+}
+// ---- Cards / List ----
+$('#layout').addEventListener('click', (e) => { const b = e.target.closest('[data-layout]'); if (!b) return; state.layout = b.dataset.layout; render(); });
+// ---- the live memory slider: drag it and every card's memory bar and fit updates (same setting as "Your device") ----
+const memSteps = [0, ...MEMORY_CHOICES];
+function syncMemSlider() { const r = $('#mem-range'); r.max = String(memSteps.length - 1); r.value = String(Math.max(0, memSteps.indexOf(state.mem))); $('#mem-out').textContent = state.mem ? (state.mem === 128 ? '128 GB+' : `${state.mem} GB`) : 'not set'; }
+let memTimer = null;
+$('#mem-range').addEventListener('input', (e) => {
+  const g = memSteps[+e.target.value] || 0; $('#mem-out').textContent = g ? (g === 128 ? '128 GB+' : `${g} GB`) : 'not set';
+  state.mem = g; syncView(); render(); // cards follow at once; the picks and stored setting follow when the drag pauses
+  clearTimeout(memTimer); memTimer = setTimeout(() => { $('#mem').value = String(g); $('#mem').dispatchEvent(new Event('change')); }, 250);
+});
+// ---- keyboard shortcuts: / search, j/k move, o open, s save, r surprise, v view, ? help ----
+let cur = -1;
+function items() { return [...$('#list').children]; }
+function focusItem(i) { const l = items(); if (!l.length) return; cur = Math.max(0, Math.min(l.length - 1, i)); l.forEach((x, k) => x.classList.toggle('kb-cur', k === cur)); const f = l[cur].querySelector('summary, a.lname'); f?.focus({ preventScroll: true }); l[cur].scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
+addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.metaKey || e.altKey || e.target.closest?.('input, select, textarea, [contenteditable]') || $('#keys').open) return;
+  const k = e.key;
+  if (k === '/') { e.preventDefault(); $('#browse').scrollIntoView(); $('#q').focus({ preventScroll: true }); }
+  else if (k === 'j' || k === 'k') { e.preventDefault(); focusItem(cur + (k === 'j' ? 1 : -1)); }
+  else if (k === 'o' && cur >= 0) { const d = items()[cur]?.querySelector('details'); if (d) d.open = !d.open; else items()[cur]?.querySelector('a.lname')?.click(); }
+  else if (k === 's' && cur >= 0) { const it = items()[cur]; const d = it?.querySelector('details'); if (d && !d.open) d.open = true; setTimeout(() => it?.querySelector('[data-save]')?.click(), 400); }
+  else if (k === 'r') $('#surprise').click();
+  else if (k === 'v') { state.layout = state.layout === 'list' ? '' : 'list'; render(); }
+  else if (k === '?') { e.preventDefault(); $('#keys').showModal(); }
+});
+$('#keys-btn').addEventListener('click', () => $('#keys').showModal());
+// ---- the fox reacts: a hop when you save, a spin for Surprise me, a droop when nothing matches (off for reduced motion) ----
+function foxReact(kind) {
+  for (const el of document.querySelectorAll('.topbar .brand img, .top .mascot')) { el.classList.remove('fox-happy', 'fox-spin', 'fox-sad'); void el.offsetWidth; el.classList.add(`fox-${kind}`); setTimeout(() => el.classList.remove(`fox-${kind}`), 1200); }
+}
 // The fox's short notes: saved, or nothing to show.
 let toastTimer = null;
 function toast(text) { const el = $('#toast'); el.textContent = text; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2600); }
@@ -576,10 +637,13 @@ const youData = you.load();
 if (!location.hash && youData.view) {
   const v = youData.view;
   if (TYPES.includes(v.type)) state.type = v.type;
-  state.q = String(v.q || ''); $('#q').value = state.q; state.cap = String(v.cap || ''); state.sort = ['popular', 'new', 'free'].includes(v.sort) ? v.sort : ''; $('#sort').value = state.sort;
+  state.q = String(v.q || ''); $('#q').value = state.q; state.cap = String(v.cap || ''); state.sort = ['popular', 'new', 'free'].includes(v.sort) ? v.sort : ''; $('#sort').value = state.sort; state.layout = v.layout === 'list' ? 'list' : '';
   for (const t of TYPES) if (v.f?.[t] && typeof v.f[t] === 'object') state.f[t] = v.f[t];
 }
 renderSetup();
+$('#setup').addEventListener('toggle', () => { setupTouched = true; });
+// Returning visitors skip the long intro (they know what CleverFox is).
+if (prevVisit) document.documentElement.classList.add('returning');
 if (!started && !cmpHash) {
   // Picks come first: returning visitors get their own question again, first visits a sensible default (chat on my computer).
   if (youData.picks && TASKS.includes(youData.picks.task)) { $('#s-task').value = youData.picks.task; $('#s-device').value = youData.picks.device || 'computer'; }

@@ -33,6 +33,7 @@ export function slim(r) {
     distributions: (r.distributions || []).filter((d) => d.access || d.availability === 'downloadable').slice(0, 3).map((d) => ({ source: d.source, availability: d.availability, access: slimAccess(d.access) })),
     paper_urls: r.paper_urls?.length ? [r.paper_urls[0]] : undefined,
     variants: r.variants?.length ? r.variants.length : undefined,
+    signals: r.signals,
     online_from: r.online?.length ? (r.online.find((p) => p.free) ? 0 : Math.min(...r.online.map((p) => p.output ?? Infinity).filter(Number.isFinite))) : undefined,
   };
   return JSON.parse(JSON.stringify(o));

@@ -85,6 +85,8 @@ export function goodForLine(r) {
 // ---- the verdict strip: what this listing means for *you*, in plain words (✓ yes · ✗ no · ! maybe · ? unknown) ----
 // Built only from stated facts (memory needed, country lists, ways to pay, free status, gates, licenses).
 const V = (state, text, title = '') => ({ state, text, title });
+// Above this, a model needs server hardware: no home computer or laptop has that much memory (the biggest desktops have 128 GB+).
+export const HOME_MAX_GB = 128;
 // A payment method whose note names other countries, but not the chosen one, doesn't count for that country
 // ("Pix · Brazil" isn't a way to pay in Kenya). Without a chosen country, or with no country in the note, it counts.
 const EEA = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO'];
@@ -105,6 +107,7 @@ export function verdicts(r) {
     if (h) {
       const need = h.min_memory_gb; const est = isEstimate(h);
       if (view.mem) out.push(need > view.mem ? V('no', `Needs ~${need} GB, more than your ${view.mem} GB`) : est ? V('maybe', `May fit your ${view.mem} GB (rough estimate)`) : need <= view.mem * 0.8 ? V('yes', `Fits your ${view.mem} GB`) : V('maybe', `Tight on your ${view.mem} GB`));
+      else if (need > HOME_MAX_GB) out.push(V('no', `Too big to run at home: needs ~${need} GB (server hardware)${est ? ', estimate' : ''}`));
       else out.push(V('info', `Runs on your own device, ${h.recommended_gb || need} GB memory or more${est ? ' (estimate)' : ''}`));
     } else if (r.local_ready) out.push(V('yes', 'Runs on your own device'));
     else if (a.online) out.push(V('info', 'Online only: no download'));
@@ -153,6 +156,40 @@ export function memBar(r) {
 }
 // $ / $$ / $$$ for online prices (per million output tokens): up to $0.50, up to $3, more.
 export const priceScale = (f) => !Number.isFinite(f) || f <= 0 ? '' : f <= 0.5 ? '$' : f <= 3 ? '$$' : '$$$';
+const SHORT = [
+  [/^Fits your (\d+) GB$/, 'Fits $1 GB'], [/^Needs ~([\d.]+) GB, more than your .*/, 'Needs $1 GB'], [/^May fit your .*/, 'May fit'], [/^Tight on your .*/, 'Tight fit'],
+  [/^Too big to run at home: needs ~([\d.]+) GB.*/, 'Server only ($1 GB)'], [/^Runs on your own device, ([\d.]+) GB memory or more.*/, 'Runs at home, $1 GB+'], [/^Runs on your own device$/, 'Runs at home'],
+  [/^Online only: no download$/, 'Online only'], [/^Runs on a computer with Python.*/, 'Python setup'], [/^Downloadable, but needs.*/, 'Needs setup'], [/^No version to run yourself found$/, 'No download'],
+  [/^(?:Also )?[Ff]ree online$/, 'Free online'], [/^(?:Also online|Online) from \$[\d.]+ per million tokens \((\$+)\)$/, 'Online $1'], [/^(?:Also online|Online)$/, 'Online'],
+  [/^Free to download$/, 'Free'], [/^API works in (.+)$/, 'API in $1'], [/^API not available in (.+)$/, 'No API in $1'], [/^(.+): not stated$/, '$1 ?'],
+  [/^No sign-up, open license$/, 'Open license'], [/^Download without signing in$/, 'No sign-in'], [/^Commercial use allowed$/, 'Commercial OK'], [/^No commercial use$/, 'Non-commercial'],
+  [/^License terms unclear$/, 'License ?'], [/^Not available in (.+)$/, 'Not in $1'], [/^Choose your country.*/, 'Your country?'], [/^Free trial only$/, 'Trial only'],
+  [/^Free to download \(App Store\).*/, 'Free app'], [/^Price not stated$/, 'Price ?'], [/^Pay without a card.*/, 'No card needed'], [/^Card-free ways to pay are for other countries.*/, 'Cards only here'],
+  [/^Paid plans take cards only$/, 'Cards only'], [/^Custom license.*/, 'Custom license'], [/^Gated: .*|^Sign-in needed.*/, 'Sign-in needed'], [/^Works offline on your phone$/, 'Offline'], [/^No (.+) listed$/, 'No $1'],
+];
+export const shortVerdict = (t) => { for (const [re, s] of SHORT) if (re.test(t)) return t.replace(re, s); return t.length > 26 ? `${t.slice(0, 24).trim()}…` : t; };
+export function verdictChips(r, max = 5) {
+  const v = verdicts(r).slice(0, max);
+  return v.length ? `<ul class="vchips">${v.map((x) => `<li class="vc v-${x.state}" title="${esc(x.text)}"><span aria-hidden="true"><span class="v-ic">${V_ICON[x.state]}</span> ${esc(shortVerdict(x.text))}</span><span class="vh">${esc(x.text)}</span></li>`).join('')}</ul>` : '';
+}
+// A small coloured circle with the maker's initials, built here (no outside images), so long lists are easier to scan.
+export function monogram(r) {
+  const who = String(r.publisher_name || r.publisher || '?');
+  const words = who.replace(/[^\p{L}\p{N} ]+/gu, ' ').trim().split(/\s+/).filter(Boolean);
+  const ini = (words.length > 1 ? words[0][0] + words[1][0] : (words[0] || '?').slice(0, 2)).toUpperCase();
+  let h = 0; for (const ch of who.toLowerCase()) h = (h * 31 + ch.codePointAt(0)) >>> 0;
+  return `<span class="mono mono-${h % 8}" aria-hidden="true">${esc(ini)}</span>`;
+}
+// What makes a listing interesting right now: new this week, trending, talked about on X, reviewed on YouTube, verified.
+export function signals(r, now = Date.now()) {
+  const s = r.signals || {}; const out = [];
+  if (s.new_at) { const d = Math.max(0, Math.floor((now - new Date(s.new_at)) / 86400000)); if (d <= 7) out.push(`<span class="sig sig-new" title="Added to CleverFox ${d ? `${d} day${d > 1 ? 's' : ''} ago` : 'today'}">🆕 ${d ? `${d}d` : 'today'}</span>`); }
+  if (s.trending) out.push('<span class="sig" title="Trending on Hugging Face when we found it">🔥 trending</span>');
+  if (s.x) out.push(`<span class="sig" title="${s.x} recent post${s.x > 1 ? 's' : ''} on X${s.xl ? `, ${s.xl} likes` : ''}">💬 ${fmtK(s.x)}</span>`);
+  if (s.yt) out.push(`<span class="sig" title="${s.yt} YouTube video${s.yt > 1 ? 's' : ''} about it">▶️ ${s.yt}</span>`);
+  if ((r.type === 'app' || r.type === 'host') && r.verification_status === 'verified') out.push('<span class="sig sig-ok" title="Facts checked at the official pages, with quotes">✓ verified</span>');
+  return out.length ? `<span class="sigs">${out.join('')}</span>` : '';
+}
 export function verdictStrip(r, max = 6) {
   const v = verdicts(r).slice(0, max);
   return v.length ? `<ul class="verdicts">${v.map((x) => `<li class="v v-${x.state}"${x.title ? ` title="${esc(x.title)}"` : ''}><span class="v-ic" aria-hidden="true">${V_ICON[x.state]}</span> ${esc(x.text)}</li>`).join('')}</ul>` : '';
@@ -397,6 +434,7 @@ export function listingInner(r) {
 export function detail(r) {
   let h = '<div class="detail">';
   h += shareRow(r);
+  if (!view.base) h += `<div class="detail-verdicts">${verdictStrip(r)}</div>`; // the card shows short chips; here, the full sentences
   h += view.base ? `<div id="start">${startBlock(r)}</div>` : startBlock(r); // an anchor on listing pages ("How to start →" links here)
   if (r.type === 'app' || r.type === 'host') h += usingBox(r);
   if (r.type === 'model') for (const d of (r.distributions || []).filter((x) => x.access)) h += usingBox(r, d.access, `the ${SOURCE_LABELS[d.source] || d.source}`);
@@ -448,9 +486,9 @@ const goLabel = (r) => r.type === 'app' ? 'Open app' : r.type === 'host' ? 'See 
 export function card(r) {
   const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
   return `<li class="card${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}${(r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified' ? ' candidate' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}"><details><summary>
-    <div class="card-head"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>
+    <div class="card-head">${monogram(r)}<div class="card-title"><h2>${esc(r.name)}</h2><span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></div>${signals(r)}</div>
     <p class="desc">${esc(plainWhat(r))}</p>
-    ${verdictStrip(r)}
+    ${verdictChips(r)}
     ${memBar(r)}
     <div class="badges">${cardBadges(r)}</div>
     ${metaLine(r)}
@@ -458,6 +496,16 @@ export function card(r) {
   </summary><div class="detail-slot" data-id="${esc(r.id)}"></div></details></li>`;
 }
 
+
+// The List view (listRow): one line per listing, linking to its page.
+export function listRow(r) {
+  const region = known(r.publisher_region) ? ` ${flag(r.publisher_region.value)}` : '';
+  const dl = (r.popularity || []).reduce((n, p) => n + (p.downloads_30d || 0) + pullsNum(p.pulls), 0);
+  const size = r.type === 'model' && known(r.parameters) ? r.parameters.value : r.type === 'dataset' && r.size_category ? r.size_category : '';
+  return `<li class="lrow${suits(r) === 0 && (view.mem || view.country) ? ' best' : ''}${(r.type === 'app' || r.type === 'host') && r.verification_status !== 'verified' ? ' candidate' : ''}" id="${esc(r.id.replace(/[:/]/g, '-'))}">${monogram(r)}
+    <span class="lmain"><a class="lname" href="${esc(view.base + listingPath(r))}">${esc(r.name)}</a> <span class="pub">${esc(r.publisher_name || r.publisher)}${region}</span></span>
+    ${verdictChips(r, 3)}<span class="lmeta">${[size, dl ? `⬇ ${fmtNum(dl)}` : ''].filter(Boolean).map(esc).join(' · ')}</span>${signals(r)}</li>`;
+}
 
 // ---- links: its own page, X reactions, sharing ----
 // Each listing has a static page at l/<type>/<publisher>/<name>/ (written by tools/build.mjs).
@@ -532,7 +580,7 @@ export function xLine(r) {
 export function xPanel(r) {
   const b = r.x_buzz;
   const live = `<a href="${esc(xSearchUrl(r))}" rel="noopener" target="_blank">👀 Latest posts on X ↗</a>`;
-  if (!b || !b.posts) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">No posts collected yet. X scanning collects the most-liked posts about each listing once it's switched on.</p><p>${live}</p></aside>`;
+  if (!b || !b.posts) return `<aside class="xside xside-quiet" id="x"><p>💬 <span class="muted">No X posts saved for this one yet.</span> ${live}</p></aside>`;
   // Little signal (no likes, no clear praise or criticism): say so plainly instead of a row of zeros.
   if (!(b.total_likes ?? b.likes) && !b.positive && !b.critical) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">Not much talk on X yet: ${b.posts} recent post${b.posts > 1 ? 's' : ''}, none with likes (checked ${esc(fmtDate(b.observed_at))}).</p><p>${live}</p></aside>`;
   const embed = (p) => `<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="${esc(p.url)}">${xHandle(p.author) ? `Post by ${esc(xHandle(p.author))}` : 'Post on X'} · ❤️ ${fmtK(p.likes)} · ${esc(fmtDate(p.created_at))}</a></blockquote>`;
@@ -561,7 +609,7 @@ export function ytPanel(r) {
   const shown = new Set(reviews.map(ytId));
   const more = (r.yt_videos || []).filter((v) => !shown.has(ytId(v)));
   const links = `<a href="${esc(ytReviewUrl(r))}" rel="noopener" target="_blank">▶️ Reviews on YouTube ↗</a> · <a href="${esc(ytSearchUrl(r))}" rel="noopener" target="_blank">Latest videos ↗</a>`;
-  if (!reviews.length && !more.length) return `<aside class="xside ytside" id="yt"><h2>What people show on YouTube</h2><p class="muted">${r.yt_reviews ? `No review videos found when we last looked (${esc(fmtDate(r.yt_reviews.checked_at))}).` : 'No videos collected yet. CleverFox looks for reviews of a few listings on YouTube each scan.'}</p><p>${links}</p></aside>`;
+  if (!reviews.length && !more.length) return `<aside class="xside ytside xside-quiet" id="yt"><p>▶️ <span class="muted">${r.yt_reviews ? `No review videos found (checked ${esc(fmtDate(r.yt_reviews.checked_at))}).` : 'No videos saved for this one yet.'}</span> ${links}</p></aside>`;
   const vid = (v) => { const id = ytId(v); return `<li class="yt-item"><a href="${esc(v.url)}" rel="noopener" target="_blank">${esc(v.title)}</a> <span class="muted">${esc(v.channel || '')}${v.official ? ' · official' : ''} · ${esc(fmtDate(v.published_at))}</span>${id ? `<br><button type="button" class="share-btn yt-play" data-act="yt-play" data-yt="${esc(id)}" data-title="${esc(v.title)}">▶ Play here</button>` : ''}</li>`; };
   return `<aside class="xside ytside" id="yt"><h2>What people show on YouTube</h2>
     ${reviews.length ? `<h3>🔎 Reviews and walkthroughs</h3><ul class="yt-list">${reviews.map(vid).join('')}</ul>` : ''}

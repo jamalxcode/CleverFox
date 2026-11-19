@@ -627,6 +627,14 @@ if (!checkOnly) {
   writeFileSync(join(root, 'data', 'meta.json'), JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', counts, countries, languages, freshness, store_payments: storePayments ? { google_play: storePayments.google_play } : null, runtimes: runtimeDocs, benchmark_sources: BENCH.sources || {} }));
   // List files carry only what the list needs (cards, filters, search, sorting). Opening a card
   // fetches the listing's full record from its page folder (l/.../record.json).
+  // Card signals (decision 92): new this week (not the catalog's first day), trending when found, X posts, YouTube videos.
+  { const start = published.map((r) => (r.first_seen_at || '').slice(0, 10)).filter(Boolean).sort()[0];
+    for (const r of published) {
+      const yt = (r.yt_reviews?.videos?.length || 0) + (r.yt_videos?.length || 0);
+      const s = { new_at: r.first_seen_at && r.first_seen_at.slice(0, 10) !== start ? r.first_seen_at : undefined, trending: r.discovered_via?.why === 'trending' || undefined,
+        x: r.x_buzz?.posts || undefined, xl: (r.x_buzz?.total_likes ?? r.x_buzz?.likes) || undefined, yt: yt || undefined };
+      const clean = JSON.parse(JSON.stringify(s)); if (Object.keys(clean).length) r.signals = clean; else delete r.signals;
+    } }
   for (const t of VOCAB.type) writeFileSync(join(root, 'data', `${t}s.json`), JSON.stringify(published.filter((r) => r.type === t).map(slim)));
   writeFileSync(outFile, JSON.stringify({ schema_version: 1, generated_at, license: 'CC-BY-4.0', countries, records: published, grouped: CURATED.folded, hidden: CURATED.hidden }));
   console.log(`Wrote data/meta.json, data/{models,datasets,apps,hosts}.json and ${outFile.replace(root + '/', '')}`);

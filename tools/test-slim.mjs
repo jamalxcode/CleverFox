@@ -45,3 +45,21 @@ assert.equal(R.methodFor({ method: 'mobile_money', note: 'M-Pesa' }, 'KE'), true
 console.log('Payment-country test passed.');
 assert.equal(R.methodFor({ method: 'bank_transfer', note: 'Bank debit via Link, UK and EEA where supported' }, 'KE'), false, 'UK and EEA name countries too');
 assert.equal(R.methodFor({ method: 'bank_transfer', note: 'Bank debit via Link, UK and EEA where supported' }, 'DE'), true);
+
+// Decision 92: short chips, the "too big for home" verdict, monograms, signals and the list row.
+{
+  assert.equal(R.shortVerdict('Fits your 8 GB'), 'Fits 8 GB');
+  assert.equal(R.shortVerdict('Pay without a card: M-Pesa, Airtel Money'), 'No card needed');
+  assert.equal(R.shortVerdict('Custom license with conditions'), 'Custom license');
+  assert.ok(R.shortVerdict('Something rather long that nobody mapped to a short label').length <= 26);
+  const big = { type: 'model', id: 'cf:model:x/huge', name: 'Huge', publisher: 'x', hardware: { min_memory_gb: 768 }, answers: {} };
+  const v = R.verdicts(big)[0];
+  assert.equal(v.state, 'no'); assert.match(v.text, /^Too big to run at home/); assert.equal(R.shortVerdict(v.text), 'Server only (768 GB)');
+  assert.match(R.verdictChips(big), /class="vh">Too big to run at home/, 'the full sentence stays for screen readers');
+  assert.match(R.monogram({ publisher_name: 'Meta Platforms' }), />MP</); assert.match(R.monogram({ publisher: 'openai' }), />OP</);
+  const s = R.signals({ type: 'model', signals: { new_at: '2026-11-17T00:00:00Z', trending: true, x: 12, yt: 3 } }, new Date('2026-11-19T12:00:00Z').getTime());
+  assert.match(s, /🆕 2d/); assert.match(s, /🔥 trending/); assert.match(s, /💬 12/); assert.match(s, /▶️ 3/);
+  assert.equal(R.signals({ type: 'model', signals: { new_at: '2026-11-01T00:00:00Z' } }, new Date('2026-11-19T12:00:00Z').getTime()), '', 'older than a week is not new');
+  assert.match(R.listRow({ ...big, popularity: [{ downloads_30d: 1500 }] }), /class="lrow[^"]*".*Huge.*⬇ 1.5K/s);
+  console.log('Card and list tests passed.');
+}

@@ -26,10 +26,22 @@ How CleverFox's pages look and behave. Follow these when changing `index.html`, 
 - **From 1,100 px wide,** "Find what to use" is a left pane that stays in view and scrolls on its own, and "Browse the catalog" is the right pane. Below that the panes stack, Find first.
 - **The bar stays short:** one row from 1,180 px, two rows below, links scrolling sideways on phones, at most 89 px on a phone. Jumps to a section land below the bar.
 
+## 1b3. Denser cards, List view and daily extras (decision 92)
+
+- **Cards lead with short verdict chips** (two or three words, same icon and colour roles as the full verdicts). Each chip keeps its full sentence for screen readers (`.vh`) and as a hover title; the full verdict strip is in Details and on listing pages.
+- **Each card and row has a maker monogram** (initials in one of 8 colours that pass AA with white text) and **signals**: 🆕 new this week, 🔥 trending, 💬 X posts, ▶️ YouTube videos, ✓ verified. Signals only show what was collected.
+- **Cards / List switch:** List is one line per listing linking to its page; on phones a row wraps to three lines. The choice is remembered with the view.
+- **Setup is one folded line** with ✓/○ per choice and "✎ change"; the pickers open on tap. Returning visitors don't see the intro.
+- **Today:** under the catalog title, "🦊 Today's pick" (the same all day for a given setup, never random on reload) and "🆕 New" (five newest, linking to New this week).
+- **Memory slider** (Models tab): the same setting as "Your device"; cards update while dragging, picks once the drag pauses.
+- **Keyboard:** / search, j/k next/previous, o open, s save, r Surprise me, v Cards/List, ? help (a dialog). Ignored while typing in a field.
+- **The fox reacts** to save, Surprise me and empty results (CSS only, off for reduced motion). No sounds, no counters.
+- **Empty X or YouTube panels are one line** with their links, never a big empty box.
+
 ## 1c. Picks, cards and getting around (decision 88)
 
 - **Picks:** a featured pick per lane (description, up to 3 verdicts, Start and Save), and the rest behind "+N more" on phones. Lanes follow the device; the API lane is "For developers" and comes last. Phone lanes swipe sideways.
-- **Cards:** one outlined action ("Get it →" and the like) to the listing's "How to start", and "Details ▾" to open the card. Two columns at 1,000 px and wider, and an opened card spans both.
+- **Cards:** one outlined action ("Get it →" and the like) to the listing's "How to start", and "Details ▾" to open the card. Two columns at 1,000 px and wider (in the two-pane layout, from 1,300 px), and an opened card spans both.
 - **Getting around:** the top bar (decision 89), back to top after 1.5 screens, and a visible sort menu.
 - **Fun:** presets, Surprise me, the fox's tips and toasts, the memory bar and the save pop. Never points, streaks or anything that rewards time spent.
 

@@ -506,6 +506,16 @@ Countries come later from the daily App Store check, which now includes these li
 
 **Why:** from 22 November 2026 X bills every object returned through expansions at the same rate as a direct lookup. Most posts have different authors, so expansions roughly doubled the cost of each search, for a handle shown in two small places. Links and embeds still show the author once opened.
 
+### 92. Denser cards, a List view, and a little daily fun
+**Decision:** after the owner's critique request ("pack maximum relevant info, make it fun"):
+- **Bugs fixed:** models needing more than 128 GB say "Too big to run at home (server hardware)" instead of "Runs on your own device"; the X panel no longer says scanning is off; empty X and YouTube panels shrink to one line with their links; the top bar's "New this week" is "New", and the look buttons show icons only below 1,500 px, so nothing is cut off.
+- **Cards:** the verdicts become short chips ("✓ Fits 8 GB", "✓ No card needed", "! Custom license"), each with the full sentence for screen readers and on hover; the full sentences move into Details. A coloured maker monogram (built on the page, no outside images) and signals: 🆕 new this week (not the catalog's first day), 🔥 trending when found, 💬 X posts, ▶️ YouTube videos, ✓ verified. Two card columns from 1,300 px.
+- **List view:** a Cards / List switch; List shows one line per listing (monogram, name and maker, 3 chips, size and downloads, signals), linking to its page. Remembered with the view.
+- **Shorter top:** returning visitors skip the intro; first visits see a smaller one. The setup pickers fold into one line ("Your setup: 💻 8 GB · 🇰🇪 Kenya · ○ any language ✎ change"); presets are one sideways row; picks use the short chips.
+- **Fun that stays useful:** 🦊 Today's pick (one everyday listing a day that suits your setup, the same for everyone with that setup), 🆕 the five newest arrivals, a live memory slider that updates every card as you drag, keyboard shortcuts (/ j k o s r v ?) with a help dialog, and the fox reacting (a hop on save, a spin on Surprise me, a droop on empty results; off for reduced motion).
+
+**Why:** the critique counted 2 cards per desktop screen, a hidden "what's new" signal, an absurd "runs on your own device, 768 GB" verdict, stale and empty panels, and fun features tucked away. Now a desktop screen shows 4 cards or about 12 list rows, signals are on every card, and there's a reason to look once a day. Nothing rewards time spent (decision 77).
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

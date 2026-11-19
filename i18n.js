@@ -5,7 +5,7 @@ const RTL = new Set(['ar']);
 
 const S = {
   en: {
-    ulang: 'Your language', aispeaks: 'AI that speaks', look_dark: 'Dark', browse: '📚 Browse the catalog', taglineShort: 'AI you can actually use, wherever you live.', mbFind: 'Find', mbBrowse: 'Browse', mbSaved: 'Saved', mbSearch: 'Search', mbNew: 'New this week', mbGuides: 'Guides', mbGlossary: 'Glossary', mbStatus: 'Status', look_dim: 'In between', look_light: 'Light', anylang: 'Any language',
+    ulang: 'Your language', aispeaks: 'AI that speaks', look_dark: 'Dark', browse: '📚 Browse the catalog', taglineShort: 'AI you can actually use, wherever you live.', mbFind: 'Find', mbBrowse: 'Browse', mbSaved: 'Saved', mbSearch: 'Search', mbNew: 'New', mbGuides: 'Guides', mbGlossary: 'Glossary', mbStatus: 'Status', look_dim: 'In between', look_light: 'Light', anylang: 'Any language',
     device: 'Your device', country: 'Your country', memory: 'Memory…', choose: 'Choose…', language: 'Language',
     hint: "💡 Tell us your device's memory and your country: CleverFox then puts first, and highlights, the models that fit your machine and the apps and services that work in your country and accept a way you can pay.",
     tagline: 'AI models, datasets, apps and hosting from every source, and whether you can use them where you live: free options, paying without a card, local models and nearby data centers.',
