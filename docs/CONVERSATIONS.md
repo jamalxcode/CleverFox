@@ -12,6 +12,10 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: xAI's publisher name
+**Asked:** why xAI's models show "SpaceX Super Intelligence" (Wikidata's current label for the entry), then chose to show "xAI".
+**Outcome:** a `keep_name` setting in `data/publisher-map.json`: the country still comes from Wikidata, the name shown is ours. Set for xAI.
+
 ## 2026-11-19: X billing notice and expansions
 **Where:** Claude Code session.
 **Asked:** whether X's 22 November notice (objects returned through `expansions` billed like direct lookups) helps; then "remove the expansion".

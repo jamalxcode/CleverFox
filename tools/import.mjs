@@ -716,7 +716,8 @@ export function publisherAccount(r) {
 export function applyPublisher(r) {
   const account = publisherAccount(r);
   const p = account && (PUBLISHERS[account] || PUB_BY_NAME.get(PUB_MAP[account]?.name));
-  if (p) { r.publisher_name = p.name; r.publisher_region = claim(p.country, p.source, 'third_party'); return; }
+  // "keep_name": Wikidata gives the country, but the name people know is shown (xAI, not Wikidata's newer label).
+  if (p) { r.publisher_name = PUB_MAP[account]?.keep_name ? PUB_MAP[account].name : p.name; r.publisher_region = claim(p.country, p.source, 'third_party'); return; }
   if (PUB_MAP[account]?.name) r.publisher_name = PUB_MAP[account].name;
 }
 

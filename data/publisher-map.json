@@ -1,5 +1,5 @@
 {
- "_about": "Hugging Face account -> organisation name to look up on Wikidata (tools/publishers.mjs). Only organisations go here, never individuals. Fix a wrong match by setting \"qid\" explicitly, or remove the entry. Replicate accounts are keyed \"replicate:<owner>\".",
+ "_about": "Hugging Face account -> organisation name to look up on Wikidata (tools/publishers.mjs). Only organisations go here, never individuals. Fix a wrong match by setting \"qid\" explicitly, or remove the entry. Replicate accounts are keyed \"replicate:<owner>\". Set \"keep_name\": true to show this name instead of Wikidata's label (the country still comes from Wikidata).",
  "publishers": {
   "ai4bharat": {
    "name": "AI4Bharat"
@@ -222,7 +222,8 @@
   },
   "replicate:xai": {
    "name": "xAI",
-   "qid": "Q120599684"
+   "qid": "Q120599684",
+   "keep_name": true
   },
   "replicate:recraft-ai": {
    "name": "Recraft"
