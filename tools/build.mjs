@@ -817,7 +817,7 @@ async function writeNewPages(records) {
 <p class="muted">${week.length} listings added in the last 7 days.</p>
 ${groups.map(([t, l]) => `<h2>${WORD[t]} (${l.length})</h2><ul class="new-list">${l.slice(0, 100).map(li).join('')}</ul>${l.length > 100 ? `<p class="muted">+${l.length - 100} more</p>` : ''}`).join('') || '<p>Nothing new in the last 7 days.</p>'}
 ${ghSections(R)}
-${spotted.length ? `<h2>📣 Spotted on X: app and hosting launches (${spotted.length})</h2><p class="muted">Launch posts with real engagement, not yet researched. They're listed once their access facts (free plan, payment, countries) are checked at the official site.</p><ul class="new-list">${spotted.map((a) => `<li><strong>${esc(a.links.sites[0])}</strong> <span class="muted">· @${esc(a.author)} · ❤️ ${a.likes} · ${esc(R.fmtDate(a.created_at))}</span> · <a href="${esc(a.url)}" rel="noopener">the post ↗</a></li>`).join('')}</ul>` : ''}
+${spotted.length ? `<h2>📣 Spotted on X: app and hosting launches (${spotted.length})</h2><p class="muted">Launch posts with real engagement, not yet researched. They're listed once their access facts (free plan, payment, countries) are checked at the official site.</p><ul class="new-list">${spotted.map((a) => `<li><strong>${esc(a.links.sites[0])}</strong> <span class="muted">${R.xHandle(a.author) ? `· ${esc(R.xHandle(a.author))} ` : ''}· ❤️ ${a.likes} · ${esc(R.fmtDate(a.created_at))}</span> · <a href="${esc(a.url)}" rel="noopener">the post ↗</a></li>`).join('')}</ul>` : ''}
 </main>
 ${GOATCOUNTER}
 </body></html>

@@ -535,7 +535,7 @@ export function xPanel(r) {
   if (!b || !b.posts) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">No posts collected yet. X scanning collects the most-liked posts about each listing once it's switched on.</p><p>${live}</p></aside>`;
   // Little signal (no likes, no clear praise or criticism): say so plainly instead of a row of zeros.
   if (!(b.total_likes ?? b.likes) && !b.positive && !b.critical) return `<aside class="xside" id="x"><h2>What people say on X</h2><p class="muted">Not much talk on X yet: ${b.posts} recent post${b.posts > 1 ? 's' : ''}, none with likes (checked ${esc(fmtDate(b.observed_at))}).</p><p>${live}</p></aside>`;
-  const embed = (p) => `<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="${esc(p.url)}">Post by @${esc(p.author)} · ❤️ ${fmtK(p.likes)} · ${esc(fmtDate(p.created_at))}</a></blockquote>`;
+  const embed = (p) => `<blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="${esc(p.url)}">${xHandle(p.author) ? `Post by ${esc(xHandle(p.author))}` : 'Post on X'} · ❤️ ${fmtK(p.likes)} · ${esc(fmtDate(p.created_at))}</a></blockquote>`;
   const group = (title, list) => list?.length ? `<h3>${title}</h3>${list.map(embed).join('')}` : '';
   const total = Math.max(1, b.posts);
   const bar = `<div class="tonebar" title="${b.positive} positive, ${b.critical} critical, ${b.general} general"><span class="t-pos" style="width:${(100 * (b.positive || 0) / total).toFixed(0)}%"></span><span class="t-crit" style="width:${(100 * (b.critical || 0) / total).toFixed(0)}%"></span></div>`;
@@ -551,6 +551,8 @@ export function xPanel(r) {
 
 // "What people show on YouTube": reviews found by searching "<name> review", and videos from makers' channels
 // and release searches that name the listing. Links first; a video plays in the page only when pressed.
+// An X author as @handle, or nothing for a numeric id (searches no longer ask X for usernames).
+export const xHandle = (a) => (!a || /^\d+$/.test(String(a)) ? '' : `@${a}`);
 export const ytReviewUrl = (r) => { const name = r.name.replace(/\s*\(.*?\)\s*/g, ' ').trim(); return `https://www.youtube.com/results?search_query=${encodeURIComponent(`${/\s/.test(name) ? `"${name}"` : name}${name.length <= 4 ? ` ${r.publisher_name || r.publisher}` : ''} review`)}`; };
 const ytId = (v) => v.id || String(v.url || '').match(/[?&]v=([\w-]{11})/)?.[1];
 export function ytPanel(r) {

@@ -305,6 +305,7 @@ From each runtime's documented platform support (`RUNTIMES` in `tools/build.mjs`
     Output: `data/imported/health.json`, `status/index.html` (linked in the top bar and footer) and the run's GitHub summary.
   - **Needs you (decision 90):** items for the owner, worked out each run:
     - a missing key: X, Replicate, YouTube, Product Hunt (from the workflow's true/false flags, or else the source's "skipped" note);
+    - (X searches ask for no expansions, decision 91: links are `x.com/i/status/<id>`, authors are numeric ids.)
     - "Fix X access" when X refused the token (401, 402 or 403) after its last good scan: `tools/x.mjs` saves X's reason as `last_error` in `x-state.json` (never the token) and keeps the last results;
     - the custom domain, while the site address is on github.io;
     - apps and hosts not verified; listings with a checked fact "not found" or "partly" found, or a broken page;

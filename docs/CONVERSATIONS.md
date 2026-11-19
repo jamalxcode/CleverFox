@@ -12,6 +12,12 @@ Entry format:
 **Open:** ...
 ```
 
+## 2026-11-19: X billing notice and expansions
+**Where:** Claude Code session.
+**Asked:** whether X's 22 November notice (objects returned through `expansions` billed like direct lookups) helps; then "remove the expansion".
+
+**Outcome (decision 91):** the notice doesn't explain the outage (X's monthly spend cap was reached; the cap is per developer account and may be shared with the owner's other app), but CleverFox's searches used `expansions=author_id`, which would roughly double each search's cost. Removed: numeric author ids, `x.com/i/status/<id>` links, "@username" only on older saved posts.
+
 ## 2026-11-19: Replicate token, publisher names, X access
 **Where:** Claude Code session.
 **Asked:** what to do on Replicate's token page (create a token, add it as `REPLICATE_API_TOKEN`), a 1Password note for it (signed in with GitHub, no separate password), then check Replicate works, and fix the two problems found.

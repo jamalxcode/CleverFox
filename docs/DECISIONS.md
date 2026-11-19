@@ -501,6 +501,11 @@ Countries come later from the daily App Store check, which now includes these li
 
 **Why:** the owner asked for a list like the Dubai map's data status, so anything waiting on them is in one place instead of scattered across TODO and run logs.
 
+### 91. X searches without expansions
+**Decision:** X searches no longer ask for `expansions=author_id` (author usernames). Posts keep the numeric author id that comes free, post links use `x.com/i/status/<id>`, and "@username" shows only for posts saved before this change. Distinct authors are still counted by id.
+
+**Why:** from 22 November 2026 X bills every object returned through expansions at the same rate as a direct lookup. Most posts have different authors, so expansions roughly doubled the cost of each search, for a handle shown in two small places. Links and embeds still show the author once opened.
+
 ## Open decisions
 
 See [spec section 19](SPECIFICATION.md#19-open-decisions) for open design questions, and [TODO.md](TODO.md) for outstanding work.

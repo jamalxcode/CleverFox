@@ -98,7 +98,9 @@ export class XClient {
   constructor(token, { budget, fetchImpl = fetch, log = console.log } = {}) { this.token = token; this.budget = budget; this.reads = 0; this.fetch = fetchImpl; this.log = log; }
   async search(query, max) {
     if (this.reads + Math.max(10, Math.min(100, max)) > this.budget) return null; // X returns at least 10 posts per search
-    const params = new URLSearchParams({ query, max_results: String(Math.max(10, Math.min(100, max))), sort_order: 'relevancy', 'tweet.fields': 'created_at,public_metrics,author_id,lang,entities,referenced_tweets', expansions: 'author_id', 'user.fields': 'username' });
+    const params = new URLSearchParams({ query, max_results: String(Math.max(10, Math.min(100, max))), sort_order: 'relevancy', 'tweet.fields': 'created_at,public_metrics,author_id,lang,entities,referenced_tweets' });
+    // No expansions: X bills every expanded object (author profiles) like a separate lookup, so posts keep only the
+    // numeric author_id that comes free, and links use x.com/i/status/<id>.
     for (let attempt = 0; attempt < 4; attempt++) {
       let res;
       try { res = await this.fetch(`${API}/tweets/search/recent?${params}`, { headers: { Authorization: `Bearer ${this.token}`, 'User-Agent': 'CleverFox catalog' } }); }
@@ -106,9 +108,8 @@ export class XClient {
       if (res.ok) {
         const body = await res.json();
         this.reads += body.data?.length || 0;
-        const users = new Map((body.includes?.users || []).map((u) => [u.id, u.username]));
         return (body.data || []).filter((p) => !(p.referenced_tweets || []).some((r) => r.type === 'retweeted')).map((p) => ({
-          id: p.id, author: users.get(p.author_id) || p.author_id, created_at: p.created_at, lang: p.lang, text: p.text || '',
+          id: p.id, author: p.author_id, created_at: p.created_at, lang: p.lang, text: p.text || '',
           likes: p.public_metrics?.like_count || 0, reposts: p.public_metrics?.retweet_count || 0, quotes: p.public_metrics?.quote_count || 0,
           urls: (p.entities?.urls || []).map((u) => u.unwound_url || u.expanded_url || u.url).filter(Boolean),
         }));
@@ -141,7 +142,7 @@ export class XClient {
   }
 }
 
-const postUrl = (p) => `https://x.com/${p.author}/status/${p.id}`;
+const postUrl = (p) => `https://x.com/i/status/${p.id}`;
 // Search words for a listing: its name in quotes (and its Hugging Face URL for models and datasets).
 // Very short or generic names need the URL, or are skipped, to avoid unrelated posts.
 const GENERIC = new Set(['chat', 'phi', 'aya', 'base', 'mini', 'llama', 'gemma', 'qwen', 'mistral', 'claude', 'gemini', 'copilot', 'kimi', 'vibe', 'alice']);

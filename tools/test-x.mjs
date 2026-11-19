@@ -64,7 +64,7 @@ const out = await run({ token: 't', fetchImpl, now: new Date('2026-11-15T12:00:0
 RULES.monthlyReads = saved;
 assert.equal(out.data.announcements.length, 1);
 assert.deepEqual(out.data.announcements[0].links.models, ['acme/Acme-7B']);
-assert.equal(out.data.announcements[0].url, 'https://x.com/acme/status/1');
+assert.equal(out.data.announcements[0].url, 'https://x.com/i/status/1');
 const checked = Object.keys(out.data.buzz).length;
 assert.ok(checked >= 1 && checked < 5, `budget limits listings checked (got ${checked})`);
 assert.equal(out.data.buzz['cf:model:x/model-1'].praised, true);
@@ -138,4 +138,17 @@ console.log('All X monitoring tests passed.');
   try { await run({ token: 't', fetchImpl, now: new Date('2026-11-19T04:03:00Z'), listings: [], prev: null, state: { month: '2026-11', reads: 0 }, log: () => {} }); } catch (e) { err = e; }
   if (!err || err.status !== 401 || err.message !== 'X rejected the request (401: Unauthorized)') throw new Error(`X 401 not reported: ${err?.message}`);
   console.log('X refusal test passed');
+}
+
+// No expansions (X bills expanded author profiles separately): searches ask only for post fields, links use /i/status/.
+{
+  const { XClient } = await import('./x.mjs');
+  let asked = '';
+  const fetchImpl = async (u) => { asked = u; return new Response(JSON.stringify({ data: [{ id: '42', author_id: '777', text: 'hi', created_at: '2026-11-19T00:00:00Z', public_metrics: { like_count: 1 } }] }), { status: 200, headers: { 'content-type': 'application/json' } }); };
+  const got = await new XClient('t', { budget: 100, fetchImpl, log: () => {} }).search('q', 10);
+  if (/expansions|user\.fields/.test(asked)) throw new Error(`search still asks for expansions: ${asked}`);
+  if (got[0].author !== '777') throw new Error('author should be the numeric id');
+  const R = await import('../render.js');
+  if (R.xHandle('777') !== '' || R.xHandle('alice') !== '@alice') throw new Error('xHandle');
+  console.log('No-expansions test passed');
 }
