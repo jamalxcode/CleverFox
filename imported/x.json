@@ -1,0 +1,5363 @@
+{
+ "announcements": [
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2124108773627511263",
+   "author": "1961859714620534784",
+   "created_at": "2026-11-21T11:52:50.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "nomic-embed-text"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2124076840977629694",
+   "author": "203720156",
+   "created_at": "2026-11-21T09:45:56.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "qme",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-mini"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121664728477094065",
+   "author": "176063803",
+   "created_at": "2026-11-14T18:01:04.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z",
+   "rechecked_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2123781595907956996",
+   "author": "1688116792462307328",
+   "created_at": "2026-11-20T14:12:45.000Z",
+   "likes": 43,
+   "reposts": 2,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "qwen3.5"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2123949067386658921",
+   "author": "1892347341040209921",
+   "created_at": "2026-11-21T01:18:13.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-mini"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2123871178917871736",
+   "author": "1926654406885269505",
+   "created_at": "2026-11-20T20:08:43.000Z",
+   "likes": 7,
+   "reposts": 3,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [
+     "zambodotdev/agent-execution-receipts",
+     "zambodotdev/aer1-conformance-kit"
+    ],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121688288763211778",
+   "author": "575338529",
+   "created_at": "2026-11-14T19:34:41.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ru",
+   "links": {
+    "models": [
+     "fishaudio/s2-pro",
+     "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+     "ACE-Step/Ace-Step1.5",
+     "Comfy-Org/YuE2"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z",
+   "rechecked_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2122338792346443840",
+   "author": "1858176282032496640",
+   "created_at": "2026-11-16T14:39:33.000Z",
+   "likes": 21,
+   "reposts": 2,
+   "lang": "tr",
+   "links": {
+    "models": [
+     "saidutta69/MiniCPM-V-4.7-1B-heretic",
+     "atakhadivi/Qwen3.8-2B-Uncensored-GGUF"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-21T13:18:54.797Z",
+   "rechecked_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121670492469751881",
+   "author": "1674877341145743360",
+   "created_at": "2026-11-14T18:23:58.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "Qwen/Qwen3.8-27B",
+     "google/gemma-4-31B"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": [
+     "hermes-agent.nousresearch.com"
+    ]
+   },
+   "found_at": "2026-11-21T13:18:54.797Z",
+   "rechecked_at": "2026-11-21T13:18:54.797Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2123123291150033034",
+   "author": "1009991455178280960",
+   "created_at": "2026-11-18T18:36:52.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "inworld/sava",
+     "inworld/voice-isolator"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-21T02:03:00.819Z",
+   "rechecked_at": "2026-11-21T02:03:00.819Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121263239866822905",
+   "author": "1807833271310372864",
+   "created_at": "2026-11-13T15:25:42.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "lfm3"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-20T13:55:04.397Z",
+   "rechecked_at": "2026-11-20T13:55:04.397Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121243745437831304",
+   "author": "1450588240512233472",
+   "created_at": "2026-11-13T14:08:14.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-20T13:55:04.397Z",
+   "rechecked_at": "2026-11-20T13:55:04.397Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121315538945118712",
+   "author": "2096639015030054912",
+   "created_at": "2026-11-13T18:53:31.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "fa",
+   "links": {
+    "models": [
+     "xtools-at/Deep",
+     "mradermacher/D"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-20T13:55:04.397Z",
+   "rechecked_at": "2026-11-20T13:55:04.397Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2121139824866308556",
+   "author": "1564277785077710851",
+   "created_at": "2026-11-13T07:15:17.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-20T02:10:20.045Z",
+   "rechecked_at": "2026-11-20T02:10:20.045Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2120878704360636460",
+   "author": "376207822",
+   "created_at": "2026-11-12T13:57:41.000Z",
+   "likes": 0,
+   "reposts": 1,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "gpt-oss"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-19T07:07:57.409Z",
+   "rechecked_at": "2026-11-19T07:07:57.409Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/i/status/2120878160833335446",
+   "author": "376207822",
+   "created_at": "2026-11-12T13:55:32.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "de",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "gpt-oss"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-19T07:07:57.409Z",
+   "rechecked_at": "2026-11-19T07:07:57.409Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/crypt0Jerk/status/2121263239866822905",
+   "author": "crypt0Jerk",
+   "created_at": "2026-11-13T15:25:42.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "lfm3"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/EricGail/status/2120878704360636460",
+   "author": "EricGail",
+   "created_at": "2026-11-12T13:57:41.000Z",
+   "likes": 0,
+   "reposts": 1,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "gpt-oss"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/RicursiveAI/status/2120566916767236463",
+   "author": "RicursiveAI",
+   "created_at": "2026-11-11T17:18:45.000Z",
+   "likes": 32,
+   "reposts": 5,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "ripple-preview"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/EricGail/status/2120878160833335446",
+   "author": "EricGail",
+   "created_at": "2026-11-12T13:55:32.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "de",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "gpt-oss"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/usaturn/status/2121664728477094065",
+   "author": "usaturn",
+   "created_at": "2026-11-14T18:01:04.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/TaylorChristof2/status/2121243745437831304",
+   "author": "TaylorChristof2",
+   "created_at": "2026-11-13T14:08:14.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/nurhayatdev/status/2121139824866308556",
+   "author": "nurhayatdev",
+   "created_at": "2026-11-13T07:15:17.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "inkling-2-small"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/evgurova/status/2121688288763211778",
+   "author": "evgurova",
+   "created_at": "2026-11-14T19:34:41.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ru",
+   "links": {
+    "models": [
+     "fishaudio/s2-pro",
+     "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+     "ACE-Step/Ace-Step1.5",
+     "Comfy-Org/YuE2"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-18T13:44:09.708Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/DeepTechTR/status/2122338792346443840",
+   "author": "DeepTechTR",
+   "created_at": "2026-11-16T14:39:33.000Z",
+   "likes": 21,
+   "reposts": 2,
+   "lang": "tr",
+   "links": {
+    "models": [
+     "saidutta69/MiniCPM-V-4.7-1B-heretic",
+     "atakhadivi/Qwen3.8-2B-Uncensored-GGUF"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-18T02:48:10.149Z",
+   "rechecked_at": "2026-11-18T02:48:10.149Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/Justin_Lurking/status/2121670492469751881",
+   "author": "Justin_Lurking",
+   "created_at": "2026-11-14T18:23:58.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "Qwen/Qwen3.8-27B",
+     "google/gemma-4-31B"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": [
+     "hermes-agent.nousresearch.com"
+    ]
+   },
+   "found_at": "2026-11-17T14:13:14.268Z",
+   "rechecked_at": "2026-11-18T02:48:10.149Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/MeinInvestPlan/status/2119810286685159497",
+   "author": "MeinInvestPlan",
+   "created_at": "2026-11-09T15:12:11.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [],
+    "datasets": [],
+    "ollama": [
+     "beam"
+    ],
+    "sites": []
+   },
+   "found_at": "2026-11-16T13:28:37.719Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/orihimexweb3/status/2122029613270663643",
+   "author": "orihimexweb3",
+   "created_at": "2026-11-15T18:10:59.000Z",
+   "likes": 68,
+   "reposts": 8,
+   "lang": "en",
+   "links": {
+    "models": [
+     "saidutta69/MiniCPM-V-4.7-1B-heretic",
+     "atakhadivi/Qwen3.8-2B-Uncensored-GGUF"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-16T13:28:37.719Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/iamformlesslol/status/2121443957737439590",
+   "author": "iamformlesslol",
+   "created_at": "2026-11-14T03:23:48.000Z",
+   "likes": 2,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+     "unsloth/flint-GGUF"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-16T00:53:25.019Z",
+   "rechecked_at": "2026-11-18T02:48:10.149Z"
+  },
+  {
+   "kind": "hub",
+   "url": "https://x.com/WojakTheDev/status/2121899704208462002",
+   "author": "WojakTheDev",
+   "created_at": "2026-11-15T09:34:47.000Z",
+   "likes": 129,
+   "reposts": 11,
+   "lang": "en",
+   "links": {
+    "models": [
+     "Abiray/MiniCPM-V-4.7-1B-abliterated-heretic-GGUF",
+     "atakhadivi/Qwen3.8-2B-Uncensored-GGUF"
+    ],
+    "datasets": [],
+    "ollama": [],
+    "sites": []
+   },
+   "found_at": "2026-11-15T11:43:24.045Z",
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "url": "https://x.com/kg_b0mbe/status/2121759335412044279",
+   "author": "kg_b0mbe",
+   "created_at": "2026-11-15T00:17:00.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "nex-agi/Nex-N2.6"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "url": "https://x.com/anoymous_elangm/status/2121853980481613975",
+   "author": "anoymous_elangm",
+   "created_at": "2026-11-15T06:33:05.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [
+     "perplexity-ai/pplx-decider-v1.3"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-18T13:44:09.708Z"
+  },
+  {
+   "url": "https://x.com/byjianli/status/2121785262820757547",
+   "author": "byjianli",
+   "created_at": "2026-11-15T02:00:02.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "salesforce-sovereign-intelligence/SOV-Transcribe-1"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T07:07:57.409Z"
+  },
+  {
+   "url": "https://x.com/malariadx/status/2121606398987706853",
+   "author": "malariadx",
+   "created_at": "2026-11-14T14:09:17.000Z",
+   "likes": 66,
+   "reposts": 3,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "Comfy-Org/RelayVSR",
+     "Comfy-Org/SeedVR2"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/Shohank9n1/status/2119410386122215483",
+   "author": "Shohank9n1",
+   "created_at": "2026-11-08T12:43:07.000Z",
+   "likes": 2,
+   "reposts": 1,
+   "lang": "en",
+   "links": {
+    "models": [
+     "lodestones/Chr",
+     "Tongyi-MAI/Z-I"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/ZAQERIS_Ai/status/2119414046088646898",
+   "author": "ZAQERIS_Ai",
+   "created_at": "2026-11-08T12:57:40.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "ZAQERIS/ZAQERIS_AXIOM"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/zhidekan/status/2121861256566997164",
+   "author": "zhidekan",
+   "created_at": "2026-11-15T07:02:00.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [
+     "moonshotai/Kimi-K3.1-Pro"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T07:07:57.409Z"
+  },
+  {
+   "url": "https://x.com/doplxyz/status/2121810477579977058",
+   "author": "doplxyz",
+   "created_at": "2026-11-15T03:40:13.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "higa2515/Qwen3.8-27B-QSA-GGUF"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T07:07:57.409Z"
+  },
+  {
+   "url": "https://x.com/The_MissAI/status/2121315538945118712",
+   "author": "The_MissAI",
+   "created_at": "2026-11-13T18:53:31.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "fa",
+   "links": {
+    "models": [
+     "xtools-at/Deep",
+     "mradermacher/D"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T14:14:21.211Z"
+  },
+  {
+   "url": "https://x.com/HeLi8866/status/2121430822884606414",
+   "author": "HeLi8866",
+   "created_at": "2026-11-14T02:31:37.000Z",
+   "likes": 410,
+   "reposts": 48,
+   "lang": "zh",
+   "links": {
+    "models": [
+     "HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive",
+     "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/xiaoshan0413/status/2119971373846348024",
+   "author": "xiaoshan0413",
+   "created_at": "2026-11-10T01:52:17.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [
+     "moonshotai/Kimi-K3.1-Pro",
+     "Qwen/Qwen3.8-27B",
+     "Lightricks/LTX-2.5"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/Jason_Yeeah/status/2120759691483771275",
+   "author": "Jason_Yeeah",
+   "created_at": "2026-11-12T06:04:46.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "VoxDance-Lab/VoxMel-0.6B",
+     "VoxDance-Lab/VoxMel-0.3B"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/TR3x3r/status/2120284785771745480",
+   "author": "TR3x3r",
+   "created_at": "2026-11-10T22:37:40.000Z",
+   "likes": 3,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "Hearthscale/MiniMax-H3-Image-GGUF"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/lxd87257936/status/2119358433120178412",
+   "author": "lxd87257936",
+   "created_at": "2026-11-08T09:16:40.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "zh",
+   "links": {
+    "models": [
+     "PrunaAI/P-H3-Image",
+     "PrunaAI/P-H3-Image-Comfy"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/SpaceTi43159717/status/2121304383250190844",
+   "author": "SpaceTi43159717",
+   "created_at": "2026-11-13T18:09:11.000Z",
+   "likes": 1,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "SpaceTimee/Suri-Qwen-3.8-27B-Companion",
+     "SpaceTimee/Suri-Qwen-3.8-27B-Companion-GGUF"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T14:14:21.211Z"
+  },
+  {
+   "url": "https://x.com/Zundanen/status/2120800622182322528",
+   "author": "Zundanen",
+   "created_at": "2026-11-12T08:47:25.000Z",
+   "likes": 2,
+   "reposts": 1,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "Zundanen/finnish-emotion-vits"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/shogoorgjp/status/2121209279420199207",
+   "author": "shogoorgjp",
+   "created_at": "2026-11-13T11:51:17.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "litert-community/gemma-4-E2B-it-litert-lm",
+     "litert-community/embeddinggemma-2-740m-litert-lm"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-19T14:14:21.211Z"
+  },
+  {
+   "url": "https://x.com/burevii21871/status/2121864322196349087",
+   "author": "burevii21871",
+   "created_at": "2026-11-15T07:14:11.000Z",
+   "likes": 2,
+   "reposts": 0,
+   "lang": "uk",
+   "links": {
+    "models": [
+     "end433/EndiumLLM-100M-128"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-20T02:10:20.045Z"
+  },
+  {
+   "url": "https://x.com/yotto69866655/status/2120650364093653430",
+   "author": "yotto69866655",
+   "created_at": "2026-11-11T22:50:21.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "ja",
+   "links": {
+    "models": [
+     "OzzyGT/P_H3_Image_sdnq_dynamic_4bit",
+     "OzzyGT/minimax_h3_image_sdnq_dynamic_4bit"
+    ],
+    "datasets": [],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/rexsooo/status/2121803448710816047",
+   "author": "rexsooo",
+   "created_at": "2026-11-15T03:12:18.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "AtomicChat/LFM3-1.7B-Uncensored-GGUF"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-20T02:10:20.045Z"
+  },
+  {
+   "url": "https://x.com/LeeLeepenkman/status/2121430812684161062",
+   "author": "LeeLeepenkman",
+   "created_at": "2026-11-14T02:31:34.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "en",
+   "links": {
+    "models": [
+     "Edge0/Edge0-145B-NVFP4"
+    ],
+    "datasets": [],
+    "ollama": []
+   },
+   "rechecked_at": "2026-11-20T13:55:04.397Z"
+  },
+  {
+   "url": "https://x.com/emp0r1um/status/2119763137595396103",
+   "author": "emp0r1um",
+   "created_at": "2026-11-09T12:04:49.000Z",
+   "likes": 0,
+   "reposts": 0,
+   "lang": "in",
+   "links": {
+    "models": [],
+    "datasets": [
+     "ida-labs/ida-knowledge"
+    ],
+    "ollama": []
+   }
+  },
+  {
+   "url": "https://x.com/AdinaYakup/status/2120101057439420868",
+   "author": "AdinaYakup",
+   "created_at": "2026-11-10T10:27:36.000Z",
+   "likes": 16,
+   "reposts": 2,
+   "lang": "en",
+   "links": {
+    "models": [],
+    "datasets": [
+     "tencent/TailorRig"
+    ],
+    "ollama": []
+   }
+  }
+ ],
+ "buzz": {
+  "cf:model:qwen/qwen3-8-27b": {
+   "posts": 10,
+   "positive": 3,
+   "critical": 0,
+   "general": 7,
+   "praise_posts": 3,
+   "praise_authors": 3,
+   "likes": 2,
+   "reposts": 0,
+   "total_likes": 3,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Justin_Lurking/status/2121670492469751881",
+      "author": "Justin_Lurking",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:23:58.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/xiaoshan0413/status/2119971373846348024",
+      "author": "xiaoshan0413",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T01:52:17.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/brownbeagle/status/2120158168429044131",
+      "author": "brownbeagle",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T14:14:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/Justin_Lurking/status/2121670492469751881",
+      "author": "Justin_Lurking",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:23:58.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/xiaoshan0413/status/2119971373846348024",
+      "author": "xiaoshan0413",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T01:52:17.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/onlyfeelk/status/2121233583348359285",
+      "author": "onlyfeelk",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-13T13:27:51.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/brownbeagle/status/2120158168429044131",
+      "author": "brownbeagle",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T14:14:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/evgurova/status/2121688291120459782",
+      "author": "evgurova",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T19:34:42.000Z",
+      "lang": "und",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/grok/status/2121693706541482164",
+      "author": "grok",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T19:56:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:deepseek/deepseek-v4-1-flash": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 1,
+   "general": 9,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 36,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Haleeeemahh/status/2121285465613758818",
+      "author": "Haleeeemahh",
+      "likes": 29,
+      "reposts": 0,
+      "created_at": "2026-11-13T16:54:01.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/wasselovski/status/2120652362335604825",
+      "author": "wasselovski",
+      "likes": 3,
+      "reposts": 1,
+      "created_at": "2026-11-11T22:58:17.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/PolyDataCN/status/2119390717592134076",
+      "author": "PolyDataCN",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T11:24:58.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [
+     {
+      "url": "https://x.com/emiluzelac/status/2121322503507247468",
+      "author": "emiluzelac",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T19:21:11.000Z",
+      "lang": "en",
+      "tone": "critical"
+     }
+    ],
+    "general": [
+     {
+      "url": "https://x.com/Haleeeemahh/status/2121285465613758818",
+      "author": "Haleeeemahh",
+      "likes": 29,
+      "reposts": 0,
+      "created_at": "2026-11-13T16:54:01.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/wasselovski/status/2120652362335604825",
+      "author": "wasselovski",
+      "likes": 3,
+      "reposts": 1,
+      "created_at": "2026-11-11T22:58:17.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/PolyDataCN/status/2119390717592134076",
+      "author": "PolyDataCN",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T11:24:58.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:z-ai/glm-5-3-flash": {
+   "posts": 10,
+   "positive": 2,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 2,
+   "praise_authors": 2,
+   "likes": 1,
+   "reposts": 0,
+   "total_likes": 7,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/O80925253/status/2119381542179156334",
+      "author": "O80925253",
+      "likes": 5,
+      "reposts": 0,
+      "created_at": "2026-11-08T10:48:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/1humbletech/status/2121666503351378018",
+      "author": "1humbletech",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:08:07.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/Multi_Serio_Ai/status/2120154101552214166",
+      "author": "Multi_Serio_Ai",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T13:58:23.000Z",
+      "lang": "et",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/1humbletech/status/2121666503351378018",
+      "author": "1humbletech",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:08:07.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/OneLoveAllEqual/status/2121402389290684824",
+      "author": "OneLoveAllEqual",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T00:38:38.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/O80925253/status/2119381542179156334",
+      "author": "O80925253",
+      "likes": 5,
+      "reposts": 0,
+      "created_at": "2026-11-08T10:48:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Multi_Serio_Ai/status/2120154101552214166",
+      "author": "Multi_Serio_Ai",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T13:58:23.000Z",
+      "lang": "et",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/tryfreepi/status/2121796006979232132",
+      "author": "tryfreepi",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T02:42:43.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:moonshot-ai/kimi-k3": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 43,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/APInex_ai/status/2120199700368474246",
+      "author": "APInex_ai",
+      "likes": 33,
+      "reposts": 1,
+      "created_at": "2026-11-10T16:59:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Sn0wbrave/status/2120598860040945767",
+      "author": "Sn0wbrave",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-11T19:25:41.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Jarxergvk/status/2121172650697359408",
+      "author": "Jarxergvk",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T09:25:44.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/APInex_ai/status/2120199700368474246",
+      "author": "APInex_ai",
+      "likes": 33,
+      "reposts": 1,
+      "created_at": "2026-11-10T16:59:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Sn0wbrave/status/2120598860040945767",
+      "author": "Sn0wbrave",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-11T19:25:41.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Jarxergvk/status/2121172650697359408",
+      "author": "Jarxergvk",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T09:25:44.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:mistral-ai/mistral-small-4-119b-2603": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 26,
+   "reposts": 5,
+   "total_likes": 30,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/27_bishal/status/2121629230018727949",
+      "author": "27_bishal",
+      "likes": 26,
+      "reposts": 4,
+      "created_at": "2026-11-14T15:40:01.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/EdenAIco/status/2120760198595817917",
+      "author": "EdenAIco",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-12T06:06:47.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Planemo_X/status/2121470505274466581",
+      "author": "Planemo_X",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T05:09:18.000Z",
+      "lang": "ko",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/27_bishal/status/2121629230018727949",
+      "author": "27_bishal",
+      "likes": 26,
+      "reposts": 4,
+      "created_at": "2026-11-14T15:40:01.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/EdenAIco/status/2120760198595817917",
+      "author": "EdenAIco",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-12T06:06:47.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Planemo_X/status/2121470505274466581",
+      "author": "Planemo_X",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T05:09:18.000Z",
+      "lang": "ko",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/radoya/status/2119819090235928629",
+      "author": "radoya",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T15:47:10.000Z",
+      "lang": "sl",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:tii/falcon-h1-7b-instruct": {
+   "posts": 2,
+   "positive": 0,
+   "critical": 0,
+   "general": 2,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 3,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/miqyaslab/status/2120830923445055759",
+      "author": "miqyaslab",
+      "likes": 2,
+      "reposts": 1,
+      "created_at": "2026-11-12T10:47:49.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/miqyaslab/status/2120830933876220237",
+      "author": "miqyaslab",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T10:47:52.000Z",
+      "lang": "und",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/miqyaslab/status/2120830923445055759",
+      "author": "miqyaslab",
+      "likes": 2,
+      "reposts": 1,
+      "created_at": "2026-11-12T10:47:49.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/miqyaslab/status/2120830933876220237",
+      "author": "miqyaslab",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T10:47:52.000Z",
+      "lang": "und",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Falcon-H1-7B-Instruct\" OR \"Falcon H1\" OR url:\"huggingface.co/tiiuae/Falcon-H1-7B-Instruct\") -is:retweet"
+  },
+  "cf:model:inception42/jais-3-7b": {
+   "posts": 1,
+   "positive": 0,
+   "critical": 0,
+   "general": 1,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 1,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/miqyaslab/status/2120830933876220237",
+      "author": "miqyaslab",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T10:47:52.000Z",
+      "lang": "und",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/miqyaslab/status/2120830933876220237",
+      "author": "miqyaslab",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T10:47:52.000Z",
+      "lang": "und",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:sdaia/allam-7b-instruct-preview": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"ALLaM-7B-Instruct\" OR url:\"huggingface.co/humain-ai/ALLaM-7B-Instruct-preview\") -is:retweet"
+  },
+  "cf:model:ai-singapore/nemotron-sea-lion-v4-8-30b-a3b": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Nemotron-SEA-LION-v4.8-30B-A3B\" OR \"Nemotron SEA LION v4.8\" OR url:\"huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B\") -is:retweet"
+  },
+  "cf:model:sarvam-ai/sarvam-30b": {
+   "posts": 8,
+   "positive": 0,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 11,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/HuggingModels/status/2119461950669381855",
+      "author": "HuggingModels",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:08:01.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/grok/status/2121229600789270623",
+      "author": "grok",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T13:12:02.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/TechThought_org/status/2119656786869293133",
+      "author": "TechThought_org",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T05:02:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/HuggingModels/status/2119461950669381855",
+      "author": "HuggingModels",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:08:01.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/grok/status/2121229600789270623",
+      "author": "grok",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T13:12:02.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/TechThought_org/status/2119656786869293133",
+      "author": "TechThought_org",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T05:02:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:tokyotech-llm/qwen3-swallow-8b-rl-v0-2": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Qwen3-Swallow-8B-RL v0.2\" OR url:\"huggingface.co/tokyotech-llm/Qwen3-Swallow-8B-RL-v0.2\") -is:retweet"
+  },
+  "cf:model:lg-ai-research/exaone-4-5-33b": {
+   "posts": 1,
+   "positive": 0,
+   "critical": 0,
+   "general": 1,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/mrlatte_story/status/2119921452896207057",
+      "author": "mrlatte_story",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T22:33:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/mrlatte_story/status/2119921452896207057",
+      "author": "mrlatte_story",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T22:33:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"EXAONE 4.5 33B\" OR \"EXAONE 4.5\" OR url:\"huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B\") -is:retweet"
+  },
+  "cf:model:lelapa-ai/inkubalm-0-4b": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"InkubaLM-0.4B\" OR url:\"huggingface.co/lelapa/InkubaLM-0.4B\") -is:retweet"
+  },
+  "cf:model:cohere-labs/tiny-aya-global": {
+   "posts": 4,
+   "positive": 0,
+   "critical": 0,
+   "general": 4,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 37,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/beingamanFF/status/2121615227343270243",
+      "author": "beingamanFF",
+      "likes": 30,
+      "reposts": 0,
+      "created_at": "2026-11-14T14:44:22.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/linoxbt/status/2121496183893811408",
+      "author": "linoxbt",
+      "likes": 7,
+      "reposts": 3,
+      "created_at": "2026-11-14T06:51:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/cutetoxicguy/status/2121672010983997672",
+      "author": "cutetoxicguy",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:30:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/beingamanFF/status/2121615227343270243",
+      "author": "beingamanFF",
+      "likes": 30,
+      "reposts": 0,
+      "created_at": "2026-11-14T14:44:22.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/linoxbt/status/2121496183893811408",
+      "author": "linoxbt",
+      "likes": 7,
+      "reposts": 3,
+      "created_at": "2026-11-14T06:51:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/cutetoxicguy/status/2121672010983997672",
+      "author": "cutetoxicguy",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T18:30:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:meta/llama-4-scout-17b-16e-instruct": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 8,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/tokenscost/status/2120218112159273312",
+      "author": "tokenscost",
+      "likes": 4,
+      "reposts": 4,
+      "created_at": "2026-11-10T18:12:44.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/tokenscost/status/2120207395360236018",
+      "author": "tokenscost",
+      "likes": 2,
+      "reposts": 2,
+      "created_at": "2026-11-10T17:30:09.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/UnTalNixon_exe/status/2119531668738576837",
+      "author": "UnTalNixon_exe",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-08T20:45:03.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/tokenscost/status/2120218112159273312",
+      "author": "tokenscost",
+      "likes": 4,
+      "reposts": 4,
+      "created_at": "2026-11-10T18:12:44.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/tokenscost/status/2120207395360236018",
+      "author": "tokenscost",
+      "likes": 2,
+      "reposts": 2,
+      "created_at": "2026-11-10T17:30:09.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/UnTalNixon_exe/status/2119531668738576837",
+      "author": "UnTalNixon_exe",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-08T20:45:03.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Llama 4 Scout 17B-16E Instruct\" OR \"Llama 4 Scout\" OR url:\"huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct\") -is:retweet"
+  },
+  "cf:model:google/gemma-4-12b-it": {
+   "posts": 9,
+   "positive": 0,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 396,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/EngMoElgaraihy/status/2120796814420918487",
+      "author": "EngMoElgaraihy",
+      "likes": 333,
+      "reposts": 46,
+      "created_at": "2026-11-12T08:32:17.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DeepTechTR/status/2121112678009631177",
+      "author": "DeepTechTR",
+      "likes": 37,
+      "reposts": 4,
+      "created_at": "2026-11-13T05:27:25.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/sweexx9/status/2120936018941465027",
+      "author": "sweexx9",
+      "likes": 12,
+      "reposts": 3,
+      "created_at": "2026-11-12T17:45:26.000Z",
+      "lang": "es",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/EngMoElgaraihy/status/2120796814420918487",
+      "author": "EngMoElgaraihy",
+      "likes": 333,
+      "reposts": 46,
+      "created_at": "2026-11-12T08:32:17.000Z",
+      "lang": "ar",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DeepTechTR/status/2121112678009631177",
+      "author": "DeepTechTR",
+      "likes": 37,
+      "reposts": 4,
+      "created_at": "2026-11-13T05:27:25.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/sweexx9/status/2120936018941465027",
+      "author": "sweexx9",
+      "likes": 12,
+      "reposts": 3,
+      "created_at": "2026-11-12T17:45:26.000Z",
+      "lang": "es",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:microsoft/phi-4-mini-instruct": {
+   "posts": 1,
+   "positive": 0,
+   "critical": 0,
+   "general": 1,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 3,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/blue0orbit/status/2121624981431873769",
+      "author": "blue0orbit",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-14T15:23:08.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/blue0orbit/status/2121624981431873769",
+      "author": "blue0orbit",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-14T15:23:08.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:openai/gpt-oss-20b": {
+   "posts": 9,
+   "positive": 1,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 1,
+   "total_likes": 3,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/grok/status/2120952338730864767",
+      "author": "grok",
+      "likes": 0,
+      "reposts": 1,
+      "created_at": "2026-11-12T18:50:17.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/kwrobel_eth/status/2120204526066307439",
+      "author": "kwrobel_eth",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T17:18:45.000Z",
+      "lang": "pl",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/RunTime03666173/status/2120012316410515814",
+      "author": "RunTime03666173",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T04:34:58.000Z",
+      "lang": "in",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/grok/status/2120952338730864767",
+      "author": "grok",
+      "likes": 0,
+      "reposts": 1,
+      "created_at": "2026-11-12T18:50:17.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/kwrobel_eth/status/2120204526066307439",
+      "author": "kwrobel_eth",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T17:18:45.000Z",
+      "lang": "pl",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/RunTime03666173/status/2120012316410515814",
+      "author": "RunTime03666173",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T04:34:58.000Z",
+      "lang": "in",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/tanrakukairo/status/2120014220972679289",
+      "author": "tanrakukairo",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T04:42:32.000Z",
+      "lang": "ja",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T06:21:29Z"
+  },
+  "cf:model:anthropic/claude-sonnet-5-5": {
+   "posts": 10,
+   "positive": 2,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 2,
+   "praise_authors": 2,
+   "likes": 75,
+   "reposts": 3,
+   "total_likes": 78,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/RoundtableSpace/status/2121275647410483291",
+      "author": "RoundtableSpace",
+      "likes": 59,
+      "reposts": 2,
+      "created_at": "2026-11-13T16:15:00.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/xiax0603/status/2121499107210788905",
+      "author": "xiax0603",
+      "likes": 16,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:02:57.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/AI_Insta07/status/2121138709009432756",
+      "author": "AI_Insta07",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T07:10:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/RoundtableSpace/status/2121275647410483291",
+      "author": "RoundtableSpace",
+      "likes": 59,
+      "reposts": 2,
+      "created_at": "2026-11-13T16:15:00.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/xiax0603/status/2121499107210788905",
+      "author": "xiax0603",
+      "likes": 16,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:02:57.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/AI_Insta07/status/2121138709009432756",
+      "author": "AI_Insta07",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T07:10:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/AudreyLianzp/status/2119574485695123559",
+      "author": "AudreyLianzp",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T23:35:11.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/xizhengw0hc/status/2121819015370981671",
+      "author": "xizhengw0hc",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-15T04:14:09.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Claude Sonnet 5.5\") -is:retweet"
+  },
+  "cf:model:openai/gpt-6-1-sol": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 92,
+   "reposts": 7,
+   "total_likes": 142,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/AlicanKiraz0/status/2120258900544860495",
+      "author": "AlicanKiraz0",
+      "likes": 92,
+      "reposts": 3,
+      "created_at": "2026-11-10T20:54:49.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/AI_Screening/status/2119651656837324994",
+      "author": "AI_Screening",
+      "likes": 22,
+      "reposts": 0,
+      "created_at": "2026-11-09T04:41:50.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/AI_Screening/status/2119423712487420203",
+      "author": "AI_Screening",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-08T13:36:04.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/AlicanKiraz0/status/2120258900544860495",
+      "author": "AlicanKiraz0",
+      "likes": 92,
+      "reposts": 3,
+      "created_at": "2026-11-10T20:54:49.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/AI_Screening/status/2119651656837324994",
+      "author": "AI_Screening",
+      "likes": 22,
+      "reposts": 0,
+      "created_at": "2026-11-09T04:41:50.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/AI_Screening/status/2119423712487420203",
+      "author": "AI_Screening",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-08T13:36:04.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/0xKenny1st/status/2120248435202732249",
+      "author": "0xKenny1st",
+      "likes": 10,
+      "reposts": 0,
+      "created_at": "2026-11-10T20:13:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"GPT-6.1 Sol\") -is:retweet"
+  },
+  "cf:model:google/gemini-4-argon": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 95,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/alohaproxy/status/2121808407409905710",
+      "author": "alohaproxy",
+      "likes": 61,
+      "reposts": 1,
+      "created_at": "2026-11-15T03:32:00.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DrstaOne/status/2119852165229609260",
+      "author": "DrstaOne",
+      "likes": 15,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:58:35.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/AI_Screening/status/2119709342727618696",
+      "author": "AI_Screening",
+      "likes": 11,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:31:04.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/aitokengod/status/2119437211867463792",
+      "author": "aitokengod",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T14:29:43.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/alohaproxy/status/2121808407409905710",
+      "author": "alohaproxy",
+      "likes": 61,
+      "reposts": 1,
+      "created_at": "2026-11-15T03:32:00.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DrstaOne/status/2119852165229609260",
+      "author": "DrstaOne",
+      "likes": 15,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:58:35.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/AI_Screening/status/2119709342727618696",
+      "author": "AI_Screening",
+      "likes": 11,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:31:04.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Gemini 4 Argon\") -is:retweet"
+  },
+  "cf:app:anthropic/claude": {
+   "posts": 10,
+   "positive": 3,
+   "critical": 0,
+   "general": 7,
+   "praise_posts": 3,
+   "praise_authors": 3,
+   "likes": 366,
+   "reposts": 49,
+   "total_likes": 384,
+   "praised": true,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/godsystemsmd/status/2119402143417258359",
+      "author": "godsystemsmd",
+      "likes": 342,
+      "reposts": 41,
+      "created_at": "2026-11-08T12:10:22.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/reMugi3/status/2119514937093702104",
+      "author": "reMugi3",
+      "likes": 22,
+      "reposts": 3,
+      "created_at": "2026-11-08T19:38:34.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/brandnewnox/status/2121424880558112947",
+      "author": "brandnewnox",
+      "likes": 10,
+      "reposts": 9,
+      "created_at": "2026-11-14T02:08:00.000Z",
+      "lang": "th",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/godsystemsmd/status/2119402143417258359",
+      "author": "godsystemsmd",
+      "likes": 342,
+      "reposts": 41,
+      "created_at": "2026-11-08T12:10:22.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/reMugi3/status/2119514937093702104",
+      "author": "reMugi3",
+      "likes": 22,
+      "reposts": 3,
+      "created_at": "2026-11-08T19:38:34.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/rishit30g/status/2121237209512878180",
+      "author": "rishit30g",
+      "likes": 2,
+      "reposts": 1,
+      "created_at": "2026-11-13T13:42:16.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/brandnewnox/status/2121424880558112947",
+      "author": "brandnewnox",
+      "likes": 10,
+      "reposts": 9,
+      "created_at": "2026-11-14T02:08:00.000Z",
+      "lang": "th",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/KaundaMarvin/status/2121345318071808248",
+      "author": "KaundaMarvin",
+      "likes": 5,
+      "reposts": 0,
+      "created_at": "2026-11-13T20:51:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/hunnykumar1908/status/2119875137281695897",
+      "author": "hunnykumar1908",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-09T19:29:52.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Claude\" (AI OR app)) -is:retweet"
+  },
+  "cf:app:openai/chatgpt": {
+   "posts": 7,
+   "positive": 0,
+   "critical": 0,
+   "general": 7,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/asaraaline/status/2119383689725665714",
+      "author": "asaraaline",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T10:57:02.000Z",
+      "lang": "cy",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/getviewgum/status/2119468725636088260",
+      "author": "getviewgum",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:34:56.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/asaraaline/status/2119449337260642426",
+      "author": "asaraaline",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T15:17:54.000Z",
+      "lang": "cy",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/asaraaline/status/2119383689725665714",
+      "author": "asaraaline",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T10:57:02.000Z",
+      "lang": "cy",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/getviewgum/status/2119468725636088260",
+      "author": "getviewgum",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:34:56.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/asaraaline/status/2119449337260642426",
+      "author": "asaraaline",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T15:17:54.000Z",
+      "lang": "cy",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"ChatGPT\") -is:retweet"
+  },
+  "cf:app:google/gemini": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 4,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/futurepedia_io/status/2121824223337521265",
+      "author": "futurepedia_io",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-15T04:34:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/redketchup69/status/2119575823002882505",
+      "author": "redketchup69",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T23:40:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/capraveensh/status/2121800402240991609",
+      "author": "capraveensh",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-15T03:00:11.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/Kish_AIML/status/2121043875582386465",
+      "author": "Kish_AIML",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-13T00:54:01.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/futurepedia_io/status/2121824223337521265",
+      "author": "futurepedia_io",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-15T04:34:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/redketchup69/status/2119575823002882505",
+      "author": "redketchup69",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T23:40:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/capraveensh/status/2121800402240991609",
+      "author": "capraveensh",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-15T03:00:11.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:04:19Z",
+   "q": "(\"Gemini\" (AI OR app)) -is:retweet"
+  },
+  "cf:app:microsoft/copilot": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 1,
+   "general": 9,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 137,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/kateinthebay/status/2119504332047724742",
+      "author": "kateinthebay",
+      "likes": 133,
+      "reposts": 13,
+      "created_at": "2026-11-08T18:56:25.000Z",
+      "lang": "cs",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/EricGail/status/2119826699193909587",
+      "author": "EricGail",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-09T16:17:24.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/babykswanson/status/2119472300328092005",
+      "author": "babykswanson",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:49:08.000Z",
+      "lang": "en",
+      "tone": "critical"
+     }
+    ],
+    "positive": [],
+    "critical": [
+     {
+      "url": "https://x.com/babykswanson/status/2119472300328092005",
+      "author": "babykswanson",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T16:49:08.000Z",
+      "lang": "en",
+      "tone": "critical"
+     }
+    ],
+    "general": [
+     {
+      "url": "https://x.com/kateinthebay/status/2119504332047724742",
+      "author": "kateinthebay",
+      "likes": 133,
+      "reposts": 13,
+      "created_at": "2026-11-08T18:56:25.000Z",
+      "lang": "cs",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/EricGail/status/2119826699193909587",
+      "author": "EricGail",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-09T16:17:24.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/schneika/status/2120416946768298179",
+      "author": "schneika",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T07:22:50.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"Microsoft Copilot\") -is:retweet"
+  },
+  "cf:app:mistral-ai/vibe": {
+   "posts": 10,
+   "positive": 5,
+   "critical": 0,
+   "general": 5,
+   "praise_posts": 5,
+   "praise_authors": 3,
+   "likes": 1,
+   "reposts": 0,
+   "total_likes": 33,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/dev_maims/status/2121293386602676230",
+      "author": "dev_maims",
+      "likes": 22,
+      "reposts": 4,
+      "created_at": "2026-11-13T17:25:29.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/paskal_navi/status/2120901174714847340",
+      "author": "paskal_navi",
+      "likes": 9,
+      "reposts": 0,
+      "created_at": "2026-11-12T15:26:59.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/techwithdarda/status/2119915358295621908",
+      "author": "techwithdarda",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T22:09:42.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/SoftRenderAi/status/2119363860238848478",
+      "author": "SoftRenderAi",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T09:38:14.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/HeyAnjula/status/2121519340260605953",
+      "author": "HeyAnjula",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T08:23:21.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/hhday_com/status/2121363036237619672",
+      "author": "hhday_com",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-13T22:02:15.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/dev_maims/status/2121293386602676230",
+      "author": "dev_maims",
+      "likes": 22,
+      "reposts": 4,
+      "created_at": "2026-11-13T17:25:29.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/paskal_navi/status/2120901174714847340",
+      "author": "paskal_navi",
+      "likes": 9,
+      "reposts": 0,
+      "created_at": "2026-11-12T15:26:59.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/techwithdarda/status/2119915358295621908",
+      "author": "techwithdarda",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T22:09:42.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"Vibe\" (AI OR app)) -is:retweet"
+  },
+  "cf:app:perplexity/perplexity": {
+   "posts": 10,
+   "positive": 2,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 2,
+   "praise_authors": 2,
+   "likes": 278,
+   "reposts": 16,
+   "total_likes": 801,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/s_chiriac/status/2120526787885011086",
+      "author": "s_chiriac",
+      "likes": 321,
+      "reposts": 13,
+      "created_at": "2026-11-11T14:39:18.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/testingcatalog/status/2121297682333606345",
+      "author": "testingcatalog",
+      "likes": 278,
+      "reposts": 13,
+      "created_at": "2026-11-13T17:42:33.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/Similarweb/status/2120080624279019641",
+      "author": "Similarweb",
+      "likes": 164,
+      "reposts": 21,
+      "created_at": "2026-11-10T09:06:24.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/testingcatalog/status/2121297682333606345",
+      "author": "testingcatalog",
+      "likes": 278,
+      "reposts": 13,
+      "created_at": "2026-11-13T17:42:33.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/AllTesterhag/status/2121419469188932024",
+      "author": "AllTesterhag",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T01:46:30.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/s_chiriac/status/2120526787885011086",
+      "author": "s_chiriac",
+      "likes": 321,
+      "reposts": 13,
+      "created_at": "2026-11-11T14:39:18.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Similarweb/status/2120080624279019641",
+      "author": "Similarweb",
+      "likes": 164,
+      "reposts": 21,
+      "created_at": "2026-11-10T09:06:24.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aitrackerbot/status/2121063777692975582",
+      "author": "aitrackerbot",
+      "likes": 37,
+      "reposts": 3,
+      "created_at": "2026-11-13T02:13:06.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"Perplexity\") -is:retweet"
+  },
+  "cf:app:elevenlabs/elevenlabs": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 18,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/fastnewsfromcat/status/2119415123592822895",
+      "author": "fastnewsfromcat",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-08T13:01:56.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/NarendraAi/status/2121767387691421896",
+      "author": "NarendraAi",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-15T00:49:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Arkatech/status/2119504356613697627",
+      "author": "Arkatech",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-08T18:56:31.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/HarrisDecodes/status/2119492578441584733",
+      "author": "HarrisDecodes",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T18:09:43.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/fastnewsfromcat/status/2119415123592822895",
+      "author": "fastnewsfromcat",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-08T13:01:56.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/NarendraAi/status/2121767387691421896",
+      "author": "NarendraAi",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-15T00:49:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Arkatech/status/2119504356613697627",
+      "author": "Arkatech",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-08T18:56:31.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"ElevenLabs\") -is:retweet"
+  },
+  "cf:app:suno/suno": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 7,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/xiaoanlab/status/2120357094192742459",
+      "author": "xiaoanlab",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T03:25:00.000Z",
+      "lang": "zh",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/innoworkspro/status/2119748965612601709",
+      "author": "innoworkspro",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-09T11:08:31.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/cryptonewb_e/status/2119483043324875018",
+      "author": "cryptonewb_e",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T17:31:50.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/xiaoanlab/status/2120357094192742459",
+      "author": "xiaoanlab",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T03:25:00.000Z",
+      "lang": "zh",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/innoworkspro/status/2119748965612601709",
+      "author": "innoworkspro",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-09T11:08:31.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/cryptonewb_e/status/2119483043324875018",
+      "author": "cryptonewb_e",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T17:31:50.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"Suno\" (AI OR app)) -is:retweet"
+  },
+  "cf:app:deepseek/deepseek-chat": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 7,
+   "reposts": 0,
+   "total_likes": 91,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/superalesha/status/2120095873527169120",
+      "author": "superalesha",
+      "likes": 78,
+      "reposts": 1,
+      "created_at": "2026-11-10T10:07:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/vincent_ddup/status/2120180933789667834",
+      "author": "vincent_ddup",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-10T15:45:00.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/zx1234abcd/status/2120461673178051066",
+      "author": "zx1234abcd",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-11T10:20:33.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/vincent_ddup/status/2120180933789667834",
+      "author": "vincent_ddup",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-10T15:45:00.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/superalesha/status/2120095873527169120",
+      "author": "superalesha",
+      "likes": 78,
+      "reposts": 1,
+      "created_at": "2026-11-10T10:07:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/zx1234abcd/status/2120461673178051066",
+      "author": "zx1234abcd",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-11T10:20:33.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/asssssx9km/status/2120122138946327012",
+      "author": "asssssx9km",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-10T11:51:22.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"DeepSeek\") -is:retweet"
+  },
+  "cf:app:qwen/qwen-chat": {
+   "posts": 9,
+   "positive": 1,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 91,
+   "reposts": 3,
+   "total_likes": 458,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/ItsmeAjayKV/status/2120249520835723623",
+      "author": "ItsmeAjayKV",
+      "likes": 303,
+      "reposts": 18,
+      "created_at": "2026-11-10T20:17:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aitrackerbot/status/2120338462205264003",
+      "author": "aitrackerbot",
+      "likes": 91,
+      "reposts": 2,
+      "created_at": "2026-11-11T02:10:58.000Z",
+      "lang": "tl",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/WojakTheDev/status/2120772104580915661",
+      "author": "WojakTheDev",
+      "likes": 27,
+      "reposts": 0,
+      "created_at": "2026-11-12T06:54:06.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/aitrackerbot/status/2120338462205264003",
+      "author": "aitrackerbot",
+      "likes": 91,
+      "reposts": 2,
+      "created_at": "2026-11-11T02:10:58.000Z",
+      "lang": "tl",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/ItsmeAjayKV/status/2120249520835723623",
+      "author": "ItsmeAjayKV",
+      "likes": 303,
+      "reposts": 18,
+      "created_at": "2026-11-10T20:17:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/WojakTheDev/status/2120772104580915661",
+      "author": "WojakTheDev",
+      "likes": 27,
+      "reposts": 0,
+      "created_at": "2026-11-12T06:54:06.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/WojakTheDev/status/2120771586525671817",
+      "author": "WojakTheDev",
+      "likes": 19,
+      "reposts": 0,
+      "created_at": "2026-11-12T06:52:02.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T07:19:16Z",
+   "q": "(\"Qwen Chat\") -is:retweet"
+  },
+  "cf:app:moonshot-ai/kimi": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 49,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/tphuang/status/2120951957309260261",
+      "author": "tphuang",
+      "likes": 44,
+      "reposts": 6,
+      "created_at": "2026-11-12T18:48:46.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/poezhao0605/status/2120589878140510710",
+      "author": "poezhao0605",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T18:50:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/qinwen94/status/2120452199625159013",
+      "author": "qinwen94",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T09:42:55.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/tphuang/status/2120951957309260261",
+      "author": "tphuang",
+      "likes": 44,
+      "reposts": 6,
+      "created_at": "2026-11-12T18:48:46.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/poezhao0605/status/2120589878140510710",
+      "author": "poezhao0605",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T18:50:00.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/qinwen94/status/2120452199625159013",
+      "author": "qinwen94",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T09:42:55.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Kimi\" (AI OR app)) -is:retweet"
+  },
+  "cf:app:bytedance/doubao": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 4,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/huyangdezhuwo/status/2121109429299134846",
+      "author": "huyangdezhuwo",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T05:14:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ranrx2/status/2119483024828256667",
+      "author": "ranrx2",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T17:31:45.000Z",
+      "lang": "th",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/george_loo73202/status/2121560766772117798",
+      "author": "george_loo73202",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T11:07:58.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/huyangdezhuwo/status/2121109429299134846",
+      "author": "huyangdezhuwo",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T05:14:30.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ranrx2/status/2119483024828256667",
+      "author": "ranrx2",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-08T17:31:45.000Z",
+      "lang": "th",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/george_loo73202/status/2121560766772117798",
+      "author": "george_loo73202",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T11:07:58.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Doubao\") -is:retweet"
+  },
+  "cf:app:sber/gigachat": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 3,
+   "reposts": 0,
+   "total_likes": 8,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Elena38373578/status/2120456068870652243",
+      "author": "Elena38373578",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T09:58:17.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/lerawalera1/status/2119846992449052916",
+      "author": "lerawalera1",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:38:02.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/_several/status/2120672022518694182",
+      "author": "_several",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-12T00:16:25.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/lerawalera1/status/2119846992449052916",
+      "author": "lerawalera1",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:38:02.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/Elena38373578/status/2120456068870652243",
+      "author": "Elena38373578",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-11T09:58:17.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/_several/status/2120672022518694182",
+      "author": "_several",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-12T00:16:25.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/jerzydejm/status/2121712809394290937",
+      "author": "jerzydejm",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T21:12:07.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"GigaChat\") -is:retweet"
+  },
+  "cf:app:yandex/alice-ai": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 41,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/yvezgll/status/2121421055990353965",
+      "author": "yvezgll",
+      "likes": 38,
+      "reposts": 0,
+      "created_at": "2026-11-14T01:52:48.000Z",
+      "lang": "pt",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ivangoidavich/status/2121507197100142803",
+      "author": "ivangoidavich",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:35:06.000Z",
+      "lang": "it",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ysonderniki/status/2120696198910648505",
+      "author": "ysonderniki",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T01:52:29.000Z",
+      "lang": "it",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/yvezgll/status/2121421055990353965",
+      "author": "yvezgll",
+      "likes": 38,
+      "reposts": 0,
+      "created_at": "2026-11-14T01:52:48.000Z",
+      "lang": "pt",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ivangoidavich/status/2121507197100142803",
+      "author": "ivangoidavich",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:35:06.000Z",
+      "lang": "it",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ysonderniki/status/2120696198910648505",
+      "author": "ysonderniki",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-12T01:52:29.000Z",
+      "lang": "it",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Alice AI\") -is:retweet"
+  },
+  "cf:app:sarvam-ai/indus": {
+   "posts": 5,
+   "positive": 0,
+   "critical": 0,
+   "general": 5,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 42,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/sahil_kr_/status/2119985473531822464",
+      "author": "sahil_kr_",
+      "likes": 38,
+      "reposts": 6,
+      "created_at": "2026-11-10T02:48:18.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/notsowokeshow/status/2119613393841918131",
+      "author": "notsowokeshow",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-09T02:09:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/jigs4logic/status/2121573649811488825",
+      "author": "jigs4logic",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-14T11:59:09.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/sahil_kr_/status/2119985473531822464",
+      "author": "sahil_kr_",
+      "likes": 38,
+      "reposts": 6,
+      "created_at": "2026-11-10T02:48:18.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/notsowokeshow/status/2119613393841918131",
+      "author": "notsowokeshow",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-09T02:09:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/jigs4logic/status/2121573649811488825",
+      "author": "jigs4logic",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-14T11:59:09.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Indus by Sarvam\") -is:retweet"
+  },
+  "cf:app:humain/humain-chat": {
+   "posts": 1,
+   "positive": 0,
+   "critical": 0,
+   "general": 1,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 17,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/MimineCo4/status/2120068012212470014",
+      "author": "MimineCo4",
+      "likes": 17,
+      "reposts": 7,
+      "created_at": "2026-11-10T08:16:17.000Z",
+      "lang": "fr",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/MimineCo4/status/2120068012212470014",
+      "author": "MimineCo4",
+      "likes": 17,
+      "reposts": 7,
+      "created_at": "2026-11-10T08:16:17.000Z",
+      "lang": "fr",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"HUMAIN Chat\") -is:retweet"
+  },
+  "cf:app:sahabat-ai/sahabat-ai-chat": {
+   "posts": 3,
+   "positive": 0,
+   "critical": 0,
+   "general": 3,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/epsilonndelta/status/2119778337291919599",
+      "author": "epsilonndelta",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T13:05:13.000Z",
+      "lang": "in",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Indotechbites/status/2120890753551646869",
+      "author": "Indotechbites",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T14:45:34.000Z",
+      "lang": "in",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Indotechbites/status/2120890747104960904",
+      "author": "Indotechbites",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T14:45:33.000Z",
+      "lang": "in",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/epsilonndelta/status/2119778337291919599",
+      "author": "epsilonndelta",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T13:05:13.000Z",
+      "lang": "in",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Indotechbites/status/2120890753551646869",
+      "author": "Indotechbites",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T14:45:34.000Z",
+      "lang": "in",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Indotechbites/status/2120890747104960904",
+      "author": "Indotechbites",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T14:45:33.000Z",
+      "lang": "in",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Sahabat-AI\") -is:retweet"
+  },
+  "cf:app:inception/jais-chat": {
+   "posts": 1,
+   "positive": 0,
+   "critical": 0,
+   "general": 1,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/VisiveAI/status/2119563334681030906",
+      "author": "VisiveAI",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T22:50:53.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/VisiveAI/status/2119563334681030906",
+      "author": "VisiveAI",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-08T22:50:53.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Jais Chat\") -is:retweet"
+  },
+  "cf:host:hetzner": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 6,
+   "reposts": 0,
+   "total_likes": 7,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/raduUrsu/status/2120634686900969500",
+      "author": "raduUrsu",
+      "likes": 6,
+      "reposts": 0,
+      "created_at": "2026-11-11T21:48:03.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/pavelhegler/status/2120557245750522262",
+      "author": "pavelhegler",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T16:40:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2120720884109385765",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T03:30:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/raduUrsu/status/2120634686900969500",
+      "author": "raduUrsu",
+      "likes": 6,
+      "reposts": 0,
+      "created_at": "2026-11-11T21:48:03.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/pavelhegler/status/2120557245750522262",
+      "author": "pavelhegler",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T16:40:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2120720884109385765",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T03:30:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2120869652658262037",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T13:21:43.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-15T09:39:36Z",
+   "q": "(\"Hetzner\") -is:retweet"
+  },
+  "cf:host:ovhcloud": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 1,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/statusisdown/status/2119727054438449333",
+      "author": "statusisdown",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T09:41:27.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ovhcloud_status/status/2119702111684583703",
+      "author": "ovhcloud_status",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:02:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119702424952655911",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:03:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/statusisdown/status/2119727054438449333",
+      "author": "statusisdown",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-09T09:41:27.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/ovhcloud_status/status/2119702111684583703",
+      "author": "ovhcloud_status",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:02:20.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119702424952655911",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:03:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-16T00:53:25Z",
+   "q": "(\"OVHcloud\") -is:retweet"
+  },
+  "cf:host:scaleway": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 2,
+   "general": 8,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 1,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/CloudronIO/status/2120113047331307522",
+      "author": "CloudronIO",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T11:15:14.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119719025072550006",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T09:09:32.000Z",
+      "lang": "en",
+      "tone": "critical"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119707722148962607",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:24:37.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [
+     {
+      "url": "https://x.com/outageslive/status/2119719025072550006",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T09:09:32.000Z",
+      "lang": "en",
+      "tone": "critical"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119792256089514169",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T14:00:32.000Z",
+      "lang": "en",
+      "tone": "critical"
+     }
+    ],
+    "general": [
+     {
+      "url": "https://x.com/CloudronIO/status/2120113047331307522",
+      "author": "CloudronIO",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-10T11:15:14.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2119707722148962607",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-09T08:24:37.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/outageslive/status/2120972290808578529",
+      "author": "outageslive",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T20:09:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-16T00:53:25Z",
+   "q": "(\"Scaleway\") -is:retweet"
+  },
+  "cf:host:nebius": {
+   "posts": 9,
+   "positive": 0,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 459,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/nebiusai/status/2120490966335549728",
+      "author": "nebiusai",
+      "likes": 361,
+      "reposts": 22,
+      "created_at": "2026-11-11T12:16:57.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/nebiusai/status/2121226302531293530",
+      "author": "nebiusai",
+      "likes": 78,
+      "reposts": 3,
+      "created_at": "2026-11-13T12:58:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/CryptoBankz_65/status/2120017117978243412",
+      "author": "CryptoBankz_65",
+      "likes": 9,
+      "reposts": 1,
+      "created_at": "2026-11-10T04:54:03.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/nebiusai/status/2120490966335549728",
+      "author": "nebiusai",
+      "likes": 361,
+      "reposts": 22,
+      "created_at": "2026-11-11T12:16:57.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/nebiusai/status/2121226302531293530",
+      "author": "nebiusai",
+      "likes": 78,
+      "reposts": 3,
+      "created_at": "2026-11-13T12:58:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/CryptoBankz_65/status/2120017117978243412",
+      "author": "CryptoBankz_65",
+      "likes": 9,
+      "reposts": 1,
+      "created_at": "2026-11-10T04:54:03.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-16T06:03:39Z",
+   "q": "(\"Nebius AI Cloud\") -is:retweet"
+  },
+  "cf:host:e2e-networks": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 15,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/GingerInvest44/status/2119838390321635506",
+      "author": "GingerInvest44",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:03:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/blinkcharts_/status/2119690598395629983",
+      "author": "blinkcharts_",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-09T07:16:35.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/whirlingwoods/status/2120938536308461576",
+      "author": "whirlingwoods",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-12T17:55:26.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/GingerInvest44/status/2119838390321635506",
+      "author": "GingerInvest44",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-09T17:03:51.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/blinkcharts_/status/2119690598395629983",
+      "author": "blinkcharts_",
+      "likes": 1,
+      "reposts": 1,
+      "created_at": "2026-11-09T07:16:35.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/whirlingwoods/status/2120938536308461576",
+      "author": "whirlingwoods",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-12T17:55:26.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-16T06:03:39Z",
+   "q": "(\"E2E Networks\") -is:retweet"
+  },
+  "cf:host:yotta": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-17T03:35:07Z",
+   "q": "(\"Yotta Shakti Cloud\") -is:retweet"
+  },
+  "cf:host:core42": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-17T03:35:07Z",
+   "q": "(\"Core42 AI Cloud\") -is:retweet"
+  },
+  "cf:host:alibaba-cloud": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 59,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Theta_Ron/status/2120261740302672068",
+      "author": "Theta_Ron",
+      "likes": 57,
+      "reposts": 4,
+      "created_at": "2026-11-10T21:06:06.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Brucekmain/status/2121108914875814345",
+      "author": "Brucekmain",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T05:12:28.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/willya_rnd/status/2121506217105486024",
+      "author": "willya_rnd",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:31:12.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/Theta_Ron/status/2120261740302672068",
+      "author": "Theta_Ron",
+      "likes": 57,
+      "reposts": 4,
+      "created_at": "2026-11-10T21:06:06.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Brucekmain/status/2121108914875814345",
+      "author": "Brucekmain",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-13T05:12:28.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/willya_rnd/status/2121506217105486024",
+      "author": "willya_rnd",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T07:31:12.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-17T03:35:07Z",
+   "q": "(\"Alibaba Cloud\") -is:retweet"
+  },
+  "cf:host:cloudafrica": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-17T03:35:07Z",
+   "q": "(\"CloudAfrica\") -is:retweet"
+  },
+  "cf:host:runpod": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 18,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/runpod/status/2120894392915341676",
+      "author": "runpod",
+      "likes": 9,
+      "reposts": 0,
+      "created_at": "2026-11-12T15:00:02.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aladagberk/status/2121136508358803510",
+      "author": "aladagberk",
+      "likes": 5,
+      "reposts": 1,
+      "created_at": "2026-11-13T07:02:07.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aladagberk/status/2121136948832260557",
+      "author": "aladagberk",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T07:03:52.000Z",
+      "lang": "fi",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/runpod/status/2120894392915341676",
+      "author": "runpod",
+      "likes": 9,
+      "reposts": 0,
+      "created_at": "2026-11-12T15:00:02.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aladagberk/status/2121136508358803510",
+      "author": "aladagberk",
+      "likes": 5,
+      "reposts": 1,
+      "created_at": "2026-11-13T07:02:07.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/aladagberk/status/2121136948832260557",
+      "author": "aladagberk",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-13T07:03:52.000Z",
+      "lang": "fi",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-17T03:35:07Z",
+   "q": "(\"Runpod\") -is:retweet"
+  },
+  "cf:host:vast-ai": {
+   "posts": 6,
+   "positive": 0,
+   "critical": 0,
+   "general": 6,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 180,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/jonah_b/status/2122399516536004977",
+      "author": "jonah_b",
+      "likes": 116,
+      "reposts": 2,
+      "created_at": "2026-11-16T18:40:51.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/USDai_Official/status/2120938631745683606",
+      "author": "USDai_Official",
+      "likes": 48,
+      "reposts": 2,
+      "created_at": "2026-11-12T17:55:49.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/FaresLLMs/status/2121286832293810638",
+      "author": "FaresLLMs",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-13T16:59:27.000Z",
+      "lang": "ar",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/jonah_b/status/2122399516536004977",
+      "author": "jonah_b",
+      "likes": 116,
+      "reposts": 2,
+      "created_at": "2026-11-16T18:40:51.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/USDai_Official/status/2120938631745683606",
+      "author": "USDai_Official",
+      "likes": 48,
+      "reposts": 2,
+      "created_at": "2026-11-12T17:55:49.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/FaresLLMs/status/2121286832293810638",
+      "author": "FaresLLMs",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-13T16:59:27.000Z",
+      "lang": "ar",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-17T14:13:14Z",
+   "q": "(\"Vast.ai\") -is:retweet"
+  },
+  "cf:model:argmaxinc/whisperkit-coreml": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-17T14:13:14Z",
+   "q": "(\"whisperkit-coreml\" OR url:\"huggingface.co/argmaxinc/whisperkit-coreml\") -is:retweet"
+  },
+  "cf:model:baai/bge-small-en-v1.5": {
+   "posts": 3,
+   "positive": 0,
+   "critical": 0,
+   "general": 3,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 45,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Suvitruf/status/2120601769671831603",
+      "author": "Suvitruf",
+      "likes": 45,
+      "reposts": 1,
+      "created_at": "2026-11-11T19:37:15.000Z",
+      "lang": "ru",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/genaiengineer/status/2121844316129944011",
+      "author": "genaiengineer",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T05:54:41.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/realkellyspear/status/2122252452535607448",
+      "author": "realkellyspear",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-16T08:56:28.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/Suvitruf/status/2120601769671831603",
+      "author": "Suvitruf",
+      "likes": 45,
+      "reposts": 1,
+      "created_at": "2026-11-11T19:37:15.000Z",
+      "lang": "ru",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/genaiengineer/status/2121844316129944011",
+      "author": "genaiengineer",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T05:54:41.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/realkellyspear/status/2122252452535607448",
+      "author": "realkellyspear",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-16T08:56:28.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-17T14:13:14Z",
+   "q": "(\"bge-small-en-v1.5\" OR url:\"huggingface.co/BAAI/bge-small-en-v1.5\") -is:retweet"
+  },
+  "cf:model:openai-community/gpt2": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-17T14:13:14Z",
+   "q": "(url:\"huggingface.co/openai-community/gpt2\") -is:retweet"
+  },
+  "cf:model:baai/bge-m3": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 2,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/TinyRouterHQ/status/2120342807135359388",
+      "author": "TinyRouterHQ",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T02:28:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/bluemoon_dom/status/2121697939362070790",
+      "author": "bluemoon_dom",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T20:13:02.000Z",
+      "lang": "cs",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DBKim537929/status/2120664120773288226",
+      "author": "DBKim537929",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-11T23:45:01.000Z",
+      "lang": "ko",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/botmonster/status/2121405002547630267",
+      "author": "botmonster",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-14T00:49:01.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/TinyRouterHQ/status/2120342807135359388",
+      "author": "TinyRouterHQ",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T02:28:13.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/bluemoon_dom/status/2121697939362070790",
+      "author": "bluemoon_dom",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-14T20:13:02.000Z",
+      "lang": "cs",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/DBKim537929/status/2120664120773288226",
+      "author": "DBKim537929",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-11T23:45:01.000Z",
+      "lang": "ko",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-17T14:13:14Z",
+   "q": "(\"bge-m3\" OR url:\"huggingface.co/BAAI/bge-m3\") -is:retweet"
+  },
+  "cf:model:sentence-transformers/paraphrase-multilingual-minilm-l12-v2": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-18T02:48:10Z",
+   "q": "(\"paraphrase-multilingual-MiniLM-L12-v2\" OR url:\"huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2\") -is:retweet"
+  },
+  "cf:model:sentence-transformers/all-mpnet-base-v2": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-18T02:48:10Z",
+   "q": "(\"all-mpnet-base-v2\" OR \"all mpnet\" OR url:\"huggingface.co/sentence-transformers/all-mpnet-base-v2\") -is:retweet"
+  },
+  "cf:model:google-t5/t5-small": {
+   "posts": 5,
+   "positive": 0,
+   "critical": 0,
+   "general": 5,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 5,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/KagawaTomo/status/2122830324489142716",
+      "author": "KagawaTomo",
+      "likes": 4,
+      "reposts": 0,
+      "created_at": "2026-11-17T23:12:44.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/vibealarmapp/status/2120348992785825957",
+      "author": "vibealarmapp",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T02:52:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Z_acke/status/2120748429416464835",
+      "author": "Z_acke",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T05:20:01.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/KagawaTomo/status/2122830324489142716",
+      "author": "KagawaTomo",
+      "likes": 4,
+      "reposts": 0,
+      "created_at": "2026-11-17T23:12:44.000Z",
+      "lang": "zxx",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/vibealarmapp/status/2120348992785825957",
+      "author": "vibealarmapp",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-11T02:52:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Z_acke/status/2120748429416464835",
+      "author": "Z_acke",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-12T05:20:01.000Z",
+      "lang": "zh",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-18T02:48:10Z",
+   "q": "(\"t5-small\" OR url:\"huggingface.co/google-t5/t5-small\") -is:retweet"
+  },
+  "cf:model:microsoft/florence-2-base": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 50,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/Statsdufoot/status/2120997244514291935",
+      "author": "Statsdufoot",
+      "likes": 22,
+      "reposts": 8,
+      "created_at": "2026-11-12T21:48:43.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Guillaumemp/status/2121153278599676187",
+      "author": "Guillaumemp",
+      "likes": 14,
+      "reposts": 1,
+      "created_at": "2026-11-13T08:08:45.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/billKoudounas/status/2122802133149905274",
+      "author": "billKoudounas",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-17T21:20:42.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/Statsdufoot/status/2120997244514291935",
+      "author": "Statsdufoot",
+      "likes": 22,
+      "reposts": 8,
+      "created_at": "2026-11-12T21:48:43.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/Guillaumemp/status/2121153278599676187",
+      "author": "Guillaumemp",
+      "likes": 14,
+      "reposts": 1,
+      "created_at": "2026-11-13T08:08:45.000Z",
+      "lang": "fr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/billKoudounas/status/2122802133149905274",
+      "author": "billKoudounas",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-17T21:20:42.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-18T13:44:09Z",
+   "q": "(\"Florence-2-base\" OR \"Florence 2\" OR url:\"huggingface.co/microsoft/Florence-2-base\") -is:retweet"
+  },
+  "cf:model:qwen/qwen3-0.6b": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 84,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2122872442636915140",
+      "author": "882578436849418240",
+      "likes": 78,
+      "reposts": 8,
+      "created_at": "2026-11-18T02:00:06.000Z",
+      "lang": "da",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122388616387469528",
+      "author": "2060432377634336768",
+      "likes": 6,
+      "reposts": 0,
+      "created_at": "2026-11-16T17:57:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2121790990147051749",
+      "author": "915765587682369537",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T02:22:47.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2122872442636915140",
+      "author": "882578436849418240",
+      "likes": 78,
+      "reposts": 8,
+      "created_at": "2026-11-18T02:00:06.000Z",
+      "lang": "da",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122388616387469528",
+      "author": "2060432377634336768",
+      "likes": 6,
+      "reposts": 0,
+      "created_at": "2026-11-16T17:57:32.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2121790990147051749",
+      "author": "915765587682369537",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T02:22:47.000Z",
+      "lang": "tl",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-19T07:07:57Z",
+   "q": "(\"Qwen3-0.6B\" OR url:\"huggingface.co/Qwen/Qwen3-0.6B\") -is:retweet"
+  },
+  "cf:model:jonatasgrosman/wav2vec2-large-xlsr-53-japanese": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-19T14:14:21Z",
+   "q": "(\"wav2vec2-large-xlsr-53-japanese\" OR url:\"huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-japanese\") -is:retweet"
+  },
+  "cf:model:baai/bge-reranker-v2-m3": {
+   "posts": 4,
+   "positive": 0,
+   "critical": 1,
+   "general": 3,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 4,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2121041421000176022",
+      "author": "1750618697859776512",
+      "likes": 4,
+      "reposts": 0,
+      "created_at": "2026-11-13T00:44:16.000Z",
+      "lang": "cy",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122967885220082064",
+      "author": "1813592748324167680",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-18T08:19:21.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2121081967529914619",
+      "author": "1932700307873783808",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-13T03:25:23.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [
+     {
+      "url": "https://x.com/i/status/2121981196276277383",
+      "author": "2100207630547333120",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-15T14:58:36.000Z",
+      "lang": "en",
+      "tone": "critical"
+     }
+    ],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2121041421000176022",
+      "author": "1750618697859776512",
+      "likes": 4,
+      "reposts": 0,
+      "created_at": "2026-11-13T00:44:16.000Z",
+      "lang": "cy",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122967885220082064",
+      "author": "1813592748324167680",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-18T08:19:21.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2121081967529914619",
+      "author": "1932700307873783808",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-13T03:25:23.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-19T14:14:21Z",
+   "q": "(\"bge-reranker-v2-m3\" OR url:\"huggingface.co/BAAI/bge-reranker-v2-m3\") -is:retweet"
+  },
+  "cf:model:hexgrad/kokoro-82m": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 45,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2123039837376880858",
+      "author": "16829893",
+      "likes": 34,
+      "reposts": 5,
+      "created_at": "2026-11-18T13:05:16.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122610455055118759",
+      "author": "1858176282032496640",
+      "likes": 10,
+      "reposts": 1,
+      "created_at": "2026-11-17T08:39:03.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122566833425510888",
+      "author": "1800131879745785857",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-17T05:45:43.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2123039837376880858",
+      "author": "16829893",
+      "likes": 34,
+      "reposts": 5,
+      "created_at": "2026-11-18T13:05:16.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122610455055118759",
+      "author": "1858176282032496640",
+      "likes": 10,
+      "reposts": 1,
+      "created_at": "2026-11-17T08:39:03.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122566833425510888",
+      "author": "1800131879745785857",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-17T05:45:43.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-20T02:10:20Z",
+   "q": "(\"Kokoro-82M\" OR url:\"huggingface.co/hexgrad/Kokoro-82M\") -is:retweet"
+  },
+  "cf:model:qwen/qwen3-14b": {
+   "posts": 10,
+   "positive": 0,
+   "critical": 0,
+   "general": 10,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 22,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2121363033146720709",
+      "author": "1951957952367353856",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-13T22:02:14.000Z",
+      "lang": "ja",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122008706711957634",
+      "author": "3241144839",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-15T16:47:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122449872091849173",
+      "author": "1595839170",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-16T22:00:57.000Z",
+      "lang": "ja",
+      "tone": "general"
+     }
+    ],
+    "positive": [],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2121363033146720709",
+      "author": "1951957952367353856",
+      "likes": 8,
+      "reposts": 0,
+      "created_at": "2026-11-13T22:02:14.000Z",
+      "lang": "ja",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122008706711957634",
+      "author": "3241144839",
+      "likes": 7,
+      "reposts": 0,
+      "created_at": "2026-11-15T16:47:55.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122449872091849173",
+      "author": "1595839170",
+      "likes": 3,
+      "reposts": 0,
+      "created_at": "2026-11-16T22:00:57.000Z",
+      "lang": "ja",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-20T13:55:04Z",
+   "q": "(\"Qwen3-14B\" OR url:\"huggingface.co/Qwen/Qwen3-14B\") -is:retweet"
+  },
+  "cf:model:nomic-ai/nomic-embed-text-v1.5": {
+   "posts": 0,
+   "positive": 0,
+   "critical": 0,
+   "general": 0,
+   "praise_posts": 0,
+   "praise_authors": 0,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 0,
+   "praised": false,
+   "top": {
+    "all": [],
+    "positive": [],
+    "critical": [],
+    "general": []
+   },
+   "observed_at": "2026-11-21T02:03:00Z",
+   "q": "(\"nomic-embed-text-v1.5\" OR url:\"huggingface.co/nomic-ai/nomic-embed-text-v1.5\") -is:retweet"
+  },
+  "cf:model:deepseek-ai/deepseek-v3.2": {
+   "posts": 10,
+   "positive": 1,
+   "critical": 0,
+   "general": 9,
+   "praise_posts": 1,
+   "praise_authors": 1,
+   "likes": 0,
+   "reposts": 0,
+   "total_likes": 15,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2123115721731563709",
+      "author": "1625200127659937821",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-18T18:06:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2123111384246374763",
+      "author": "1927382064296288256",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-18T17:49:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2123678952342647276",
+      "author": "1881620102606639104",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-20T07:24:52.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/i/status/2123189530932961573",
+      "author": "1040405041662885889",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-18T23:00:05.000Z",
+      "lang": "en",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2123115721731563709",
+      "author": "1625200127659937821",
+      "likes": 13,
+      "reposts": 0,
+      "created_at": "2026-11-18T18:06:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2123111384246374763",
+      "author": "1927382064296288256",
+      "likes": 2,
+      "reposts": 0,
+      "created_at": "2026-11-18T17:49:34.000Z",
+      "lang": "en",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2123678952342647276",
+      "author": "1881620102606639104",
+      "likes": 0,
+      "reposts": 0,
+      "created_at": "2026-11-20T07:24:52.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-21T02:03:00Z",
+   "q": "(\"DeepSeek-V3.2\" OR url:\"huggingface.co/deepseek-ai/DeepSeek-V3.2\") -is:retweet"
+  },
+  "cf:model:comfy-org/qwen-image-2.1": {
+   "posts": 10,
+   "positive": 2,
+   "critical": 0,
+   "general": 8,
+   "praise_posts": 2,
+   "praise_authors": 2,
+   "likes": 28,
+   "reposts": 0,
+   "total_likes": 433,
+   "praised": false,
+   "top": {
+    "all": [
+     {
+      "url": "https://x.com/i/status/2123001200370962801",
+      "author": "1858176282032496640",
+      "likes": 172,
+      "reposts": 18,
+      "created_at": "2026-11-18T10:31:44.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122597543737458899",
+      "author": "1858176282032496640",
+      "likes": 145,
+      "reposts": 17,
+      "created_at": "2026-11-17T07:47:45.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122933269977338151",
+      "author": "1840313948152717312",
+      "likes": 72,
+      "reposts": 6,
+      "created_at": "2026-11-18T06:01:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ],
+    "positive": [
+     {
+      "url": "https://x.com/i/status/2123433015837958523",
+      "author": "1588902888725745667",
+      "likes": 27,
+      "reposts": 0,
+      "created_at": "2026-11-19T15:07:37.000Z",
+      "lang": "en",
+      "tone": "positive"
+     },
+     {
+      "url": "https://x.com/i/status/2123095541961609612",
+      "author": "1720665183188922368",
+      "likes": 1,
+      "reposts": 0,
+      "created_at": "2026-11-18T16:46:37.000Z",
+      "lang": "zh",
+      "tone": "positive"
+     }
+    ],
+    "critical": [],
+    "general": [
+     {
+      "url": "https://x.com/i/status/2123001200370962801",
+      "author": "1858176282032496640",
+      "likes": 172,
+      "reposts": 18,
+      "created_at": "2026-11-18T10:31:44.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122597543737458899",
+      "author": "1858176282032496640",
+      "likes": 145,
+      "reposts": 17,
+      "created_at": "2026-11-17T07:47:45.000Z",
+      "lang": "tr",
+      "tone": "general"
+     },
+     {
+      "url": "https://x.com/i/status/2122933269977338151",
+      "author": "1840313948152717312",
+      "likes": 72,
+      "reposts": 6,
+      "created_at": "2026-11-18T06:01:48.000Z",
+      "lang": "en",
+      "tone": "general"
+     }
+    ]
+   },
+   "observed_at": "2026-11-21T13:18:54Z",
+   "q": "(\"Qwen-Image-2.1\" OR url:\"huggingface.co/Comfy-Org/Qwen-Image-2.1\") -is:retweet"
+  }
+ }
+}
