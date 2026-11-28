@@ -1,0 +1,2582 @@
+{
+ "checked_at": "2026-11-27T14:59:01Z",
+ "urls": {
+  "https://help.openai.com/en/articles/10421635-which-payment-methods-are-supported-for-chatgpt": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "hash": "0a87cfe7d3a83732",
+   "length": 5145,
+   "terms": [
+    "mobile_money",
+    "upi",
+    "pix",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://help.openai.com/en/articles/9275245-what-is-chatgpt-free": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "hash": "1de95871f9cd7402",
+   "length": 4773,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.anthropic.com/legal/supported-regions": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "8326522c65fb4b05",
+   "length": 3588,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": []
+  },
+  "https://claude.com/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "aea24b112269dcf4",
+   "length": 23927,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://support.google.com/gemini/answer/16275805?hl=en": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f5da1dc3d8db81ca",
+   "length": 12216,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": []
+  },
+  "https://support.google.com/googleplay/answer/2651410?hl=en": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1e8f64243cd3cd61",
+   "length": 6423,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "paypal",
+    "bank_transfer",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://support.google.com/gemini/answer/13575153?hl=en": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b1dde1cd62b401ed",
+   "length": 6252,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": []
+  },
+  "https://support.google.com/gemini/answer/14579026?hl=en": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "dedfe62a1549df27",
+   "length": 9658,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "app_store_billing"
+   ]
+  },
+  "https://support.microsoft.com/en-us/topic/26de43a1-c176-4908-bef7-29c8c37ac7ce": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "33479596ef8847fb",
+   "length": 7148,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://mistral.ai/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1b90b9b8d0ad7d7a",
+   "length": 8597,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://intercom.help/perplexity-ai/en/articles/10353002-billing-for-perplexity-pro-on-stripe": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 404
+  },
+  "https://elevenlabs.io/pricing/api": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "cb89e7fcae80a505",
+   "length": 16574,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "upi",
+    "prepaid_or_gift_card",
+    "card_international",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "df039b3b5988dd1f",
+   "length": 27086,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://help.mistral.ai/en/articles/455205-how-can-i-upgrade-or-cancel-my-subscription": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1114e32e697c0e12",
+   "length": 4580,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "carrier_billing",
+    "free"
+   ]
+  },
+  "https://help.suno.com/en/articles/2421185": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "bd996ed50c201194",
+   "length": 1123,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "crypto",
+    "upi",
+    "app_store_billing",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://about.getcoai.com/news/google-launches-ai-edge-gallery-for-offline-android-ai": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c426db887037687e",
+   "length": 6163,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://github.com/off-grid-ai/OGAM": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0e2bc5c8e4b2d239",
+   "length": 12771,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://github.com/a-ghorbani/pocketpal-ai": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7f666e913674cbbd",
+   "length": 17926,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "bank_transfer",
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://privatellm.app/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "db0b1a36648d580d",
+   "length": 26604,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://apps.apple.com/us/app/id6456886656": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "9216f17b46488b7e",
+   "length": 52293,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://apps.apple.com/app/id6476614556": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "37b6eb721657f802",
+   "length": 21323,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://apps.apple.com/app/private-llm/id6448106860": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1f3dafdee91e091d",
+   "length": 40858,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://www.scriptbyai.com/offline-ai-chat-iphone-locally": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "5e6cc6ad9a59bfa7",
+   "length": 8951,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://apps.apple.com/app/locally-ai-private-ai-chat/id6741426692": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "598ac18ab1d2c870",
+   "length": 23726,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://github.com/niedev/RTranslator": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "df757fd1e4c006ab",
+   "length": 14574,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://apps.apple.com/us/app/khaya/id1549294522": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "ff13336694bff5f1",
+   "length": 10822,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.khaya.ai/terms-and-conditions": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "56839690a7537106",
+   "length": 43340,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "mobile_money",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-23T01:37:35Z"
+  },
+  "https://chat.pawa-ai.com/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "e5e4cfabe60fdd1d",
+   "length": 4845,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://dicta.org.il/?lang=en": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://ulesson.com/subscription": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "http://addisassistant.com/en/blogs/addis-ai-the-smart-voice-assistant-for-amharic-afan-oromo-how-it-works/": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 404
+  },
+  "https://apps.apple.com/us/app/k2-think/id6744862356": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "25471c3cb677b271",
+   "length": 6528,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://www.munsit.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b32de47012e1706d",
+   "length": 9251,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://www.tii.ae/insights/uae-built-arabic-ai-model-outperforms-systems-twice-its-size": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "cec0f8f856b9e9ca",
+   "length": 5282,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto"
+   ]
+  },
+  "https://apps.apple.com/ae/app/munsitai/id6749622996": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b0a45d5b3adf7846",
+   "length": 13152,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://ulesson.com/blog/ulesson-frequently-asked-questions/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "cb55fe8c65c7cddd",
+   "length": 9663,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "mobile_money",
+    "bank_transfer",
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://api.ivira.ai/partai/avanegar": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://english.ahram.org.eg/NewsContentP/1/574904/Egypt/Egypt-launches-free-%E2%80%98BelMasry%E2%80%99-AI-platform-support.aspx": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 403
+  },
+  "https://ivira.ai/chatbot/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f0642bb2b4149585",
+   "length": 10897,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": []
+  },
+  "https://ivira.ai/blog/vira-web-service-guide/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "cf8e1c18f4e07898",
+   "length": 24363,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": []
+  },
+  "https://app.klingai.com/global/membership/membership-plan": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://hailuoai.video/doc/payment-policy.html": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "06a3df4fdb2f4bb9",
+   "length": 9618,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "error": "timeout"
+  },
+  "https://app.klingai.com/global/docs/payment-policy": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "74f9725ea5720888",
+   "length": 69457,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "carrier_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://chat.z.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://home.baidu.com/home/index/news_detail/id/18020": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "93c02e39dd6d37a8",
+   "length": 1911,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://2025-update.wrtn.ai/": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://login.wrtn.ai/policy/service": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7f98c86cde05b6a7",
+   "length": 21144,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_local",
+    "free"
+   ]
+  },
+  "https://liner.com/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "69b9f13c30aa0bba",
+   "length": 11204,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://cloud.tencent.com/developer/news/2175374": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a9a1b142f66b4cad",
+   "length": 2377,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://felo.ai/blog/felo-search-pro-vs-free-plan-differences/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d95d63b20da3d225",
+   "length": 5574,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://felo.ai/en/faq/felo-search-pro": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "196c372d722d036e",
+   "length": 2268,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://felo.ai/blog/pricing/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "175cc503fddb815c",
+   "length": 4524,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://zapia.com/app": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "da75998f62b40f52",
+   "length": 680,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://mate.kanana.ai/welcome": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2f520144da3db26a",
+   "length": 1397,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": []
+  },
+  "https://www.luzia.com/en/new/terms": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "3a2bb246190bdc4f",
+   "length": 23796,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ]
+  },
+  "https://chat.luzia.com/en": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d8e530b667f77fa0",
+   "length": 563,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://www.ilmu.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2d1851c51d925bcc",
+   "length": 5694,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://policy.vbee.vn/chinh-sach-va-dieu-khoan/chinh-sach-thanh-toan": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "5bf3dc140c3dddde",
+   "length": 19948,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "mobile_money",
+    "bank_transfer",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://help.vbee.vn/huong-dan-su-dung/tai-khoan/giao-dien-may-tinh/dang-ky": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "09d6c13e2ea3b717",
+   "length": 1469,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://vbee.vn/blog/chuyen-van-ban-thanh-giong-noi/san-pham-vbee-aivoice/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "73fc5acf86cf42fc",
+   "length": 20674,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "mobile_money",
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://help.vbee.vn/docs/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "40fe180502f16ac4",
+   "length": 29820,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://voice.botnoi.ai/payment": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://voice.botnoi.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.deepseek.com/en/download/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f64ac6fa0e927f4a",
+   "length": 665,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://chat.deepseek.com/sign-in": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 403
+  },
+  "https://voice.botnoi.ai/payment/quote": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.aic.gov.eg/news/43/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://qwen.ai/qwenchat": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://qwen.ai/termsservice": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://belmasry.aic.gov.eg/login": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://www.kimi.com/user/agreement/en/paidServiceAgreement": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "48febdb967598c2b",
+   "length": 6031,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "alipay",
+    "wechat_pay",
+    "app_store_billing"
+   ]
+  },
+  "https://www.kimi.com/user/agreement/en/kimiClawPrivacy": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "102fc3c6f8e17079",
+   "length": 27087,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://www.kimi.com/resources/kimi-2-7-pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d00826ea156d1bd1",
+   "length": 11649,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-21T02:09:51Z"
+  },
+  "https://www.kimi.com/help/membership/membership-pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "e82a01737f104c0f",
+   "length": 4063,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-22T01:13:52Z"
+  },
+  "https://www.doubao.com/legal/privacy": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7234528463eccedb",
+   "length": 18971,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "app_store_billing"
+   ],
+   "changed_at": "2026-11-20T02:18:11Z"
+  },
+  "https://www.doubao.com/legal/ey01": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "ac0ecb8331a239d4",
+   "length": 16542,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "alipay",
+    "wechat_pay",
+    "app_store_billing",
+    "free"
+   ],
+   "error": "timeout"
+  },
+  "https://giga.chat/help/articles/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2f59e8059d0e4ae2",
+   "length": 5976,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": []
+  },
+  "https://giga.chat/help/articles/gigachat-for-content": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0f8b27679d48f8cf",
+   "length": 17271,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "free"
+   ]
+  },
+  "https://www.humain.com/en/news/humain-chat-launch.html": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 403
+  },
+  "https://chat.humain.com/login": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "ok_at": "2026-11-27T14:59:01Z"
+  },
+  "https://openrouter.ai/pricing": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "f80ae38e408d643b",
+   "length": 10738,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "alipay",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://openrouter.ai/terms": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a4c933bc9cef0335",
+   "length": 57046,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://openrouter.ai/docs/api/reference/limits": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f9ac6afc9f9df9ad",
+   "length": 234729,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://alice.yandex.ru/support/ru/assistant/chat/text": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7417b31698aec977",
+   "length": 16378,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://huggingface.co/docs/inference-providers/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b0462571d4b6f849",
+   "length": 10594,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://huggingface.co/docs/hub/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2fe7126ea79524bc",
+   "length": 14167,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://yandex.ru/legal/alice_chat/ru/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "23b5b1320cd91cad",
+   "length": 36096,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer"
+   ],
+   "changed_at": "2026-11-21T02:09:51Z"
+  },
+  "https://api-docs.deepseek.com/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "ebfffe8c4de98920",
+   "length": 521,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": []
+  },
+  "https://console.groq.com/settings/billing": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://console.groq.com/docs/billing-faqs": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2e88700245893948",
+   "length": 9891,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://www.alibabacloud.com/help/en/model-studio/new-free-quota": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "337f6926937210ea",
+   "length": 22594,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://inference-docs.cerebras.ai/console/account-billing": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "64acfb4d632500e8",
+   "length": 55850,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://www.hyperbolic.ai/blog/pay-for-gpu-and-ai-inference-models-with-crypto": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 500
+  },
+  "https://inference-docs.cerebras.ai/support/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "8e7b240c6a9d19e5",
+   "length": 2328,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [],
+   "changed_at": "2026-11-19T02:34:25Z"
+  },
+  "https://www.hyperbolic.ai/docs/general/billing-payments": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "c476b1c7c83ed9a1",
+   "length": 49239,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://api-docs.deepseek.com/quick_start/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "32d510431fb30447",
+   "length": 3950,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://www.alibabacloud.com/help/en/user-center/payment-via-bank-transfer": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "280e04440b9358d2",
+   "length": 21211,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "crypto",
+    "alipay",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://platform.kimi.ai/docs/pricing/limits": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "77eda196de6af2c2",
+   "length": 46260,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.z.ai/guides/overview/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "59ce2fda4aae8bb1",
+   "length": 38467,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.z.ai/help/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "186f1f8ac124148e",
+   "length": 20202,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.z.ai/guides/overview/quick-start": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "9738d11dd505f6e7",
+   "length": 94644,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.siliconflow.cn/docs/legals/recharge-policy": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2e86e6599f702834",
+   "length": 3467,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "alipay",
+    "wechat_pay"
+   ]
+  },
+  "https://platform.kimi.ai/docs/guide/account-and-payments": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b25b782f2db92e23",
+   "length": 45549,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "alipay",
+    "wechat_pay",
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.sarvam.ai/api/platform/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "5e2b6e8d1e48f278",
+   "length": 8603,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://docs.sarvam.ai/api/getting-started/pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "768f04eba9b29266",
+   "length": 17794,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://www.sarvam.ai/api-pricing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "ab7a7d8def803036",
+   "length": 8204,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://docs.cloud.olakrutrim.com/basics/ai-studio/billing-for-ai-studio": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0130cce50ef2e7f9",
+   "length": 4192,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.siliconflow.cn/en/faqs/misc_finance": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 16,
+   "status": 404
+  },
+  "https://docs.lelapa.ai/overview/plans": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "cc40bd98fbdd4ab8",
+   "length": 2739,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://ai.google.dev/gemini-api/docs/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.vultr.com/coupons/": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 403
+  },
+  "https://docs.cloud.olakrutrim.com/basics/usage-and-transactions/adding-credits": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "edfcf7f37819af6c",
+   "length": 1633,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "upi",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.vultr.com/platform/billing/make-account-payments": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a7f716a859148da7",
+   "length": 3254,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "crypto",
+    "alipay",
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://docs.vultr.com/platform/create-an-account": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0e8a22e817083388",
+   "length": 3279,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://ai-docs.fptcloud.com/account/billing/tutorials/top-up-credits": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "3daf9785d1e54149",
+   "length": 2528,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.tencentcloud.com/document/product/555/7425": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "182285c361b0f991",
+   "length": 7160,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://aifactory.fptcloud.com/100-credit/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "805a503c37209e61",
+   "length": 7846,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://speedcloud.nxtgen.com/terms-n-conditions.html": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "37fb1cdc8e719e64",
+   "length": 38926,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "carrier_billing",
+    "free"
+   ]
+  },
+  "https://jarvislabs.ai/in": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "3e9cf8c96008eea7",
+   "length": 18865,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "upi",
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://viettelidc.com.vn/tin-tuc/cac-hinh-thuc-thanh-toan-tai-viettel-idc": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.linode.com/docs/products/platform/billing/guides/payment-methods/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a72a31c9d0119dff",
+   "length": 17096,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "bank_transfer",
+    "app_store_billing",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://kb.biznetgio.com/id_ID/billing/metode-pembayaran-neo-cloud": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "3fe301d5ba7bb852",
+   "length": 6291,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://docs.cloudeka.id/billing/balance": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "47d36124cf85018e",
+   "length": 1298,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.ytlaicloud.com/gsc-pricing/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "6fb3b94559b40565",
+   "length": 1943,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://docs.latitude.sh/docs/payment-methods": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d800fb530120aa05",
+   "length": 33258,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "pix",
+    "alipay",
+    "wechat_pay",
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.cloud4u.com/blog/ai-ml-providers-ranking/": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "7205d031d7a2cd3c",
+   "length": 28613,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://docs.hetzner.com/general/billing-and-account-management/billing-at-hetzner/payment-overview": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "17cd780e5ace43d7",
+   "length": 10355,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "crypto",
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "error": "fetch failed",
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://docs.hetzner.com/general/security-and-identify/fraud-prevention-faq/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "8fa7d86c03a6ebfc",
+   "length": 4350,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://www.lintasarta.net/en/deka-gpu": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "099a4db96788b1a2",
+   "length": 9213,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z",
+   "terms": [
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://www.ovhcloud.com/en/public-cloud/gpu/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7b60f9b430a1773a",
+   "length": 49069,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "prepaid_or_gift_card",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z",
+   "error": "fetch failed"
+  },
+  "https://www.ovhcloud.com/en-gb/terms-and-conditions/payment/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c96b5f5a42de4d14",
+   "length": 36990,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "crypto",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z",
+   "error": "fetch failed"
+  },
+  "https://www.scaleway.com/en/docs/billing/quickstart/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "811effcd4908f972",
+   "length": 43928,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://www.scaleway.com/en/docs/billing/faq/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b3c94bf7f022047f",
+   "length": 58683,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://nebius.com/prices": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1cfc72001e29b7d8",
+   "length": 6832,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://www.e2enetworks.com/gpus/nvidia-h100.md": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f9b6e6d9002d2d6d",
+   "length": 4917,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://cloudafrica.net/gpu": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0337a00c31649f93",
+   "length": 7925,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://docs.runpod.io/accounts-billing/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "efd74bbabfc94376",
+   "length": 60087,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.biznetgio.com/en/product/neo-gpu": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1fe84bd2ccf65f4d",
+   "length": 4809,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "free"
+   ]
+  },
+  "https://docs.vast.ai/guides/reference/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "707aa5b57df2870c",
+   "length": 60812,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://vast.ai/terms": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "5f4a9dc8beafba0f",
+   "length": 50696,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "crypto",
+    "card_international",
+    "card_local",
+    "free"
+   ]
+  },
+  "https://help.openai.com/en/articles/8264644-how-can-i-set-up-prepaid-billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "hash": "b8b76344ce3a16be",
+   "length": 5377,
+   "terms": [
+    "prepaid_or_gift_card",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://shakticloud.ai/?p=2249": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "fails": 4,
+   "status": 404
+  },
+  "https://support.claude.com/en/articles/9402418-why-was-my-card-declined": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "60a098f76f7fddaa",
+   "length": 3641,
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "paypal",
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ],
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://docs.e2enetworks.com/docs/tir/Billing_and_Usage/payNow/": {
+   "checked_at": "2026-11-15T11:33:01Z",
+   "hash": "ca8544cbfacaed94",
+   "length": 5949,
+   "ok_at": "2026-11-15T11:33:01Z",
+   "fails": 0,
+   "status": 200,
+   "terms": [
+    "upi",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ]
+  },
+  "https://claude.ai": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://chatgpt.com": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "9f392c596279927a",
+   "length": 1727,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://gemini.google.com": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://copilot.microsoft.com": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d91e1f01b527004a",
+   "length": 13457,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.perplexity.ai": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://chat.mistral.ai": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://elevenlabs.io": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f386ea82b7a6772a",
+   "length": 11630,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://pocketpal.dev/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://suno.com": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "34013061adc48824",
+   "length": 6247,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://getoffgridai.co/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "5b870734a6f35478",
+   "length": 21191,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://ai.google.dev/edge": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d452e4255994cd96",
+   "length": 3618,
+   "terms": [
+    "app_store_billing"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-19T02:34:25Z"
+  },
+  "https://www.layla-network.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0f9e6028cc256754",
+   "length": 8963,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://privatellm.app/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "22275726d9d03daa",
+   "length": 6596,
+   "terms": [
+    "app_store_billing"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://enclaveai.app/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "9fdf98dfbe452961",
+   "length": 6127,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://locallyai.app/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7fb42ca6f1427558",
+   "length": 6042,
+   "terms": [
+    "app_store_billing"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-24T05:22:59Z"
+  },
+  "https://play.google.com/store/apps/details?id=io.shubham0204.smollmandroid": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "950c6c32bbe26ba9",
+   "length": 4426,
+   "terms": [
+    "app_store_billing",
+    "prepaid_or_gift_card"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.khaya.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b6863e942e9fc92f",
+   "length": 5954,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-23T01:37:35Z"
+  },
+  "https://chat.pawa-ai.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0af465ab55f137a2",
+   "length": 7005,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://addisassistant.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c07d58fd4b8e3b20",
+   "length": 8151,
+   "terms": [
+    "bank_transfer",
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://ulesson.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "http://www.mnn.zone": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://dicta.org.il/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.k2think.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "ok_at": "2026-11-27T14:59:01Z"
+  },
+  "https://chat.falconllm.tii.ae/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://abena.mobobi.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "52c96e19d7af3200",
+   "length": 5265,
+   "terms": [
+    "mobile_money",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-20T02:18:11Z"
+  },
+  "https://ivira.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d5c409195a6e4558",
+   "length": 8550,
+   "terms": [],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://karnak.aic.gov.eg/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://belmasry.aic.gov.eg/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 0,
+   "error": "fetch failed"
+  },
+  "https://app.klingai.com/global": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://hailuoai.video/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "8f18e33524b22518",
+   "length": 824,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://wrtn.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://yuanbao.tencent.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://liner.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "18837e5de7f98209",
+   "length": 6358,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://felo.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "bbcb4de34e3c7630",
+   "length": 407,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.luzia.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "95bf82b1a5a2ba2e",
+   "length": 1780,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://zapia.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7a85b583ad74ebef",
+   "length": 7197,
+   "terms": [
+    "app_store_billing",
+    "carrier_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-19T02:34:25Z"
+  },
+  "https://yiyan.baidu.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://vbee.vn/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "6a8b0ca180fc7d3b",
+   "length": 7762,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://chat.deepseek.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://bhashini.gov.in/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://chat.qwen.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "hash": "3031a4d51c0203a1",
+   "length": 415,
+   "terms": []
+  },
+  "https://www.kimi.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://giga.chat/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.doubao.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://indus.sarvam.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://chat.humain.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "fails": 14,
+   "status": 403
+  },
+  "https://alice.yandex.ru/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "914cc98f5e86453b",
+   "length": 212560,
+   "terms": [
+    "bank_transfer",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.jaischat.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://sahabat-ai.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "08c7436557e48d3c",
+   "length": 83934,
+   "terms": [
+    "paypal",
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://elevenlabs.io/docs/overview/administration/billing": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "71dd586e5e717394",
+   "length": 28909,
+   "terms": [
+    "upi",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://apps.apple.com/us/app/addis-ai/id6748835704": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0fccf0d2998a4b54",
+   "length": 5898,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://play.google.com/store/apps/details?id=com.mobobi.abena": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b1bae5341e15b9e2",
+   "length": 8621,
+   "terms": [
+    "mobile_money",
+    "app_store_billing",
+    "prepaid_or_gift_card",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://hailuoai.video/doc/terms-of-service.html": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7e96fddd687771cd",
+   "length": 33566,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://chat.z.ai/legal-agreement/terms-of-service": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "7fb43bb90c10caad",
+   "length": 52336,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://docs.z.ai/legal-agreement/privacy-policy": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d0278f3c485ec0f5",
+   "length": 72535,
+   "terms": [
+    "carrier_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://zapia.com/es/terms": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1e8ac76e75407908",
+   "length": 43112,
+   "terms": [
+    "bank_transfer",
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-17T18:28:27Z"
+  },
+  "https://www.ilmu.ai/ilmuchat/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d3faeb6886a6239d",
+   "length": 7487,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://dala.gebeya.com/business": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c9e47b92e2ed19c8",
+   "length": 2968,
+   "terms": [
+    "mobile_money",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://dala.gebeya.com/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "543f1a47d463332f",
+   "length": 840,
+   "terms": [
+    "mobile_money"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://api-docs.deepseek.com/news/news250115/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "9a33683c9fd7516c",
+   "length": 1969,
+   "terms": [
+    "app_store_billing",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.kimi.com/en/help/membership/membership-payment-issues": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "32be2156f201661e",
+   "length": 5571,
+   "terms": [
+    "alipay",
+    "app_store_billing",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://servercore.com/solutions/healthcare/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c963383d1c7f0910",
+   "length": 30917,
+   "terms": [
+    "mobile_money",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://servercore.com/services/cloud-based-gpu-servers/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "88954f2ec8eb9864",
+   "length": 35600,
+   "terms": [
+    "mobile_money",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://openrouter.ai/docs/faq": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "51b460762b67697e",
+   "length": 86871,
+   "terms": [
+    "paypal",
+    "crypto",
+    "alipay",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.hostafrica.com/how-to-pay/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "d7032512d855bb47",
+   "length": 9119,
+   "terms": [
+    "paypal",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.hostafrica.ng/servers/gpu-servers/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "547f6b2605beaa79",
+   "length": 13625,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-21T02:09:51Z"
+  },
+  "https://www.hyperbolic.ai/docs/general/account-management": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "2c9735fd7d653ffd",
+   "length": 71314,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://ai.google.dev/gemini-api/docs/available-regions": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.tencentcloud.com/document/product/555/11319": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "1cda988a04e44a8b",
+   "length": 15087,
+   "terms": [
+    "wechat_pay",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://techdocs.akamai.com/cloud-computing/docs/gpu-compute-instances": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a9e9617d9aca4300",
+   "length": 24987,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://viettelidc.com.vn/tin-tuc/huong-dan-nap-tien-vao-so-du-tai-khoan-tai-website-viettel-idc": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "a1e8ba37cec1f1e9",
+   "length": 17653,
+   "terms": [
+    "bank_transfer",
+    "card_international",
+    "card_local"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-26T15:00:51Z"
+  },
+  "https://jarvislabs.ai/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "39bce28d4cd0b03d",
+   "length": 11501,
+   "terms": [
+    "paypal",
+    "upi",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://docs.jarvislabs.ai/faqs/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "21a3273164a107a2",
+   "length": 5924,
+   "terms": [
+    "paypal",
+    "crypto",
+    "upi",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-27T14:59:01Z"
+  },
+  "https://www.linode.com/docs/products/platform/billing/faqs/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "5c6e5ce7e39f6439",
+   "length": 19343,
+   "terms": [
+    "paypal",
+    "card_international",
+    "card_local"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  },
+  "https://www.cloud4u.com/cloud-hosting/gpu/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "b1e43b689e74eb7a",
+   "length": 26547,
+   "terms": [
+    "crypto",
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://www.cloud4u.com/news/cloud4u-launches-data-center-in-turkey/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "c92da702b50a5b61",
+   "length": 16308,
+   "terms": [
+    "card_international",
+    "card_local",
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200
+  },
+  "https://docs.e2enetworks.com/docs/myaccount/billing/payment_method/": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "f582a8da65cb78a7",
+   "length": 3976,
+   "terms": [
+    "upi",
+    "bank_transfer",
+    "prepaid_or_gift_card",
+    "card_international",
+    "card_local"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-20T02:18:11Z"
+  },
+  "https://shakticloud.ai/shakti-bare-metal": {
+   "checked_at": "2026-11-27T14:59:01Z",
+   "hash": "0364e28ab3e5b68a",
+   "length": 12812,
+   "terms": [
+    "free"
+   ],
+   "ok_at": "2026-11-27T14:59:01Z",
+   "fails": 0,
+   "status": 200,
+   "changed_at": "2026-11-25T15:33:45Z"
+  }
+ }
+}

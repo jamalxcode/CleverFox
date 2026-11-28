@@ -1,0 +1,60 @@
+{
+ "checked_at": "2026-11-28T03:15:53.557Z",
+ "records": [
+  {
+   "id": "cf:app:torqued-studios-llc/ai-chat-6.0",
+   "problems": [
+    "needs at least one official URL"
+   ]
+  },
+  {
+   "id": "cf:app:niyaz-vakhpiev/chat-ai",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:torqued-studios-llc/ai-chat-6.0"
+   ]
+  },
+  {
+   "id": "cf:app:marsby-teknoloji-anonim-sirketi/chatnow",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:niyaz-vakhpiev/chat-ai"
+   ]
+  },
+  {
+   "id": "cf:app:mobiways-ltd/genora-ai",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:marsby-teknoloji-anonim-sirketi/chatnow"
+   ]
+  },
+  {
+   "id": "cf:app:quora-inc/poe",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:mobiways-ltd/genora-ai"
+   ]
+  },
+  {
+   "id": "cf:app:butterfly-effect-pte--ltd/monica-ai",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:quora-inc/poe"
+   ]
+  },
+  {
+   "id": "cf:app:stream-cast-tv-llc/chatpod",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:butterfly-effect-pte--ltd/monica-ai"
+   ]
+  },
+  {
+   "id": "cf:app:appsolut-limited/chatbot-ai",
+   "problems": [
+    "needs at least one official URL",
+    "same site domain as cf:app:stream-cast-tv-llc/chatpod"
+   ]
+  }
+ ]
+}

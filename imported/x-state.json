@@ -1,0 +1,17 @@
+{
+ "month": "2026-11",
+ "reads": 915,
+ "cursor": 66,
+ "day": "2026-11-28",
+ "day_reads": 0,
+ "day_share": 361,
+ "ann_day": "2026-11-15",
+ "scan_day": "2026-11-28",
+ "scans": 0,
+ "last_scan": "2026-11-21T13:18:54.797Z",
+ "last_error": {
+  "at": "2026-11-28T03:11:30.756Z",
+  "status": 402,
+  "message": "X rejected the request (402: Payment Required: credits depleted)"
+ }
+}

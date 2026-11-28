@@ -1,0 +1,1686 @@
+{
+ "at": "2026-11-28T03:15:57.660Z",
+ "rows": {
+  "Hugging Face models (import)": {
+   "count": 1425,
+   "at": "2026-11-27T14:54:14Z",
+   "every": "daily"
+  },
+  "Hugging Face datasets (import)": {
+   "count": 483,
+   "at": "2026-11-27T14:54:14Z",
+   "every": "daily"
+  },
+  "Ollama (import)": {
+   "count": 285,
+   "at": "2026-11-27T14:54:14Z",
+   "every": "daily"
+  },
+  "X": {
+   "count": 53,
+   "at": "2026-11-21T13:18:54.797Z",
+   "every": "scan",
+   "note": "last error: X rejected the request (402: Payment Required: credits depleted) · 0 reads today, 915 this month"
+  },
+  "Hugging Face new releases": {
+   "count": 154,
+   "at": "2026-11-28T03:11:30.843Z",
+   "every": "scan"
+  },
+  "llm-releases.com": {
+   "count": 96,
+   "at": "2026-11-28T03:11:30.995Z",
+   "every": "scan"
+  },
+  "GitHub": {
+   "count": 292,
+   "at": "2026-11-28T03:11:41.984Z",
+   "every": "scan"
+  },
+  "YouTube": {
+   "count": 126,
+   "at": "2026-11-28T03:11:49.379Z",
+   "every": "scan",
+   "note": "reviews for 108 listings"
+  },
+  "OpenRouter": {
+   "count": 476,
+   "at": "2026-11-28T03:12:06.916Z",
+   "every": "scan",
+   "note": "28 new"
+  },
+  "Makers' news feeds": {
+   "count": 88,
+   "at": "2026-11-28T03:12:06.985Z",
+   "every": "scan",
+   "note": "Anthropic: no feed on its page; Meta AI: no feed on its page"
+  },
+  "Hugging Face Daily Papers": {
+   "count": 15,
+   "at": "2026-11-28T03:12:12.951Z",
+   "every": "scan"
+  },
+  "Hacker News": {
+   "count": 1,
+   "at": "2026-11-28T03:12:14.259Z",
+   "every": "scan",
+   "quiet": true
+  },
+  "App Store searches": {
+   "count": 41,
+   "at": "2026-11-28T03:12:15.309Z",
+   "every": "daily"
+  },
+  "Product Hunt": {
+   "count": 20,
+   "at": "2026-11-28T03:14:41.311Z",
+   "every": "scan"
+  },
+  "Replicate": {
+   "count": 153,
+   "at": "2026-11-28T03:11:55.718Z",
+   "every": "scan"
+  },
+  "Auto-research": {
+   "count": 44,
+   "at": "2026-11-28T03:15:40.161Z",
+   "every": "scan"
+  },
+  "Quarantined records": {
+   "count": 8,
+   "at": "2026-11-28T03:15:53.557Z",
+   "every": "scan",
+   "bad": true,
+   "note": "cf:app:torqued-studios-llc/ai-chat-6.0, cf:app:niyaz-vakhpiev/chat-ai, cf:app:marsby-teknoloji-anonim-sirketi/chatnow, cf:app:mobiways-ltd/genora-ai, cf:app:quora-inc/poe"
+  },
+  "Catalog": {
+   "count": 1957,
+   "at": "2026-11-28T03:15:53Z",
+   "every": "scan"
+  }
+ },
+ "flagged": {
+  "Hugging Face models (import)": [],
+  "Hugging Face datasets (import)": [],
+  "Ollama (import)": [],
+  "X": [
+   "not refreshed for 158 h"
+  ],
+  "Hugging Face new releases": [],
+  "llm-releases.com": [],
+  "GitHub": [],
+  "YouTube": [],
+  "OpenRouter": [],
+  "Makers' news feeds": [],
+  "Hugging Face Daily Papers": [],
+  "Hacker News": [],
+  "App Store searches": [],
+  "Product Hunt": [],
+  "Replicate": [],
+  "Auto-research": [],
+  "Quarantined records": [
+   "8 record(s) left out by validation"
+  ],
+  "Catalog": []
+ },
+ "problems": 2,
+ "needs": [
+  {
+   "title": "Fix X access",
+   "why": "X refused CleverFox's requests (402: Payment Required: credits depleted), so no announcements or reactions are read. The last good results stay up meanwhile.",
+   "todo": "In the X developer console, check the app's plan and credits (the monthly allowance may be used up), then start a scan.",
+   "link": "https://developer.x.com/en/portal/dashboard"
+  },
+  {
+   "title": "Point cleverfox.sala.company at the site",
+   "why": "It is the planned address. Until then, links, feeds and previews use the github.io address.",
+   "todo": "Where sala.company's DNS is managed, add a CNAME record \"cleverfox\" pointing to jamalxcode.github.io, then ask a Claude session to switch CleverFox over (CNAME file, site address, preview image)."
+  },
+  {
+   "title": "Check 50 apps and hosts at their official pages",
+   "why": "Until then they show \"not yet verified\" and stay out of picks and guides.",
+   "todo": "Run the \"Fetch pages for verification\" workflow, then ask a Claude session to review the saved pages and apply the verification.",
+   "link": "https://github.com/jamalxcode/CleverFox/actions/workflows/fetch-pages.yml",
+   "items": "ChatGPT, K2 Think, Karnak Chat, BelMasry, Z.ai Chat, Tencent Yuanbao and 44 more"
+  },
+  {
+   "title": "Re-check 18 listings whose pages no longer show a listed fact",
+   "why": "The daily re-check found a free plan or a way to pay missing from its official page, or the page gone. Those listings show a warning meanwhile.",
+   "todo": "Ask a Claude session to re-verify these listings against their official pages and update the facts.",
+   "items": "ChatGPT, Gemini, uLesson, Falcon Chat, Vira, Wrtn and 12 more"
+  },
+  {
+   "title": "Look at 8 records left out by validation",
+   "why": "Imported records that break a rule are kept out of the catalog until fixed.",
+   "todo": "Ask a Claude session to read data/imported/quarantine.json on the data branch and fix the importer or add a correction.",
+   "items": "cf:app:torqued-studios-llc/ai-chat-6.0, cf:app:niyaz-vakhpiev/chat-ai, cf:app:marsby-teknoloji-anonim-sirketi/chatnow, cf:app:mobiways-ltd/genora-ai, cf:app:quora-inc/poe, cf:app:butterfly-effect-pte--ltd/monica-ai and 2 more"
+  },
+  {
+   "title": "Research 95 queued apps by hand",
+   "why": "Popular in app stores, but auto-research couldn't find enough on their own pages (for example, no website), so they aren't listed yet.",
+   "todo": "Ask a Claude session to research them, or leave them.",
+   "items": "Dola: Smart AI Assistant (no website), Chatbot -Ask AI Chat Assistant (no website), Qwen - Alibaba AI Assistant (no website), ph:https://www.producthunt.com/products/s-space (website not readable), ph:https://www.producthunt.com/products/zoom (website not readable), ph:https://www.producthunt.com/products/appxiom (website not readable) and 89 more",
+   "optional": true
+  },
+  {
+   "title": "1 source(s) need a look",
+   "why": "X: not refreshed for 158 h",
+   "todo": "Often this fixes itself on the next pull. If it stays for a day, ask a Claude session to look at the run log.",
+   "link": "https://github.com/jamalxcode/CleverFox/actions/workflows/pages.yml"
+  },
+  {
+   "title": "Add an Artificial Analysis key",
+   "why": "Adds Artificial Analysis scores beside Epoch AI's benchmarks.",
+   "todo": "Get a free API key at artificialanalysis.ai, then add it as the repository secret AA_API_KEY.",
+   "link": "https://artificialanalysis.ai/",
+   "optional": true
+  },
+  {
+   "title": "Turn on the weekly X post",
+   "why": "Every Monday, one post on X with what's new.",
+   "todo": "Add the X posting keys (X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET, with write access) as secrets, then set the repository variable X_POST_ENABLED to true.",
+   "link": "https://github.com/jamalxcode/CleverFox/settings/variables/actions",
+   "optional": true
+  },
+  {
+   "title": "Ask native speakers to review the translations",
+   "why": "The Arabic, Hindi, Portuguese, Indonesian and Swahili interface text is a draft. More text and languages wait for this review.",
+   "todo": "Share i18n.js (or the main page in each language) with a native speaker, and send their corrections to a Claude session.",
+   "link": "https://github.com/jamalxcode/CleverFox/blob/main/i18n.js",
+   "optional": false
+  },
+  {
+   "title": "Decide two publisher countries",
+   "why": "Wikidata gives Hugging Face France (it describes it as an American company) and SYSTRAN South Korea (a French company owned by a Korean group).",
+   "todo": "Tell a Claude session which country each should show, and it will add a correction.",
+   "link": "",
+   "optional": false
+  }
+ ],
+ "history": [
+  {
+   "at": "2026-11-17T18:35:51.795Z",
+   "run": "2026-11-17T18:19:48.752Z",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 992
+    },
+    "Hugging Face datasets (import)": {
+     "count": 343
+    },
+    "Ollama (import)": {
+     "count": 289
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 102
+    },
+    "llm-releases.com": {
+     "count": 81
+    },
+    "GitHub": {
+     "count": 144
+    },
+    "YouTube": {
+     "count": 54
+    },
+    "OpenRouter": {
+     "count": 474
+    },
+    "Makers' news feeds": {
+     "count": 103
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 0
+    },
+    "Auto-research": {
+     "count": 13
+    },
+    "Quarantined records": {
+     "count": 7
+    },
+    "Catalog": {
+     "count": 1380
+    }
+   }
+  },
+  {
+   "at": "2026-11-18T02:49:39.267Z",
+   "run": "2026-11-18T02:48:10.092Z",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 998
+    },
+    "Hugging Face datasets (import)": {
+     "count": 343
+    },
+    "Ollama (import)": {
+     "count": 289
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 100
+    },
+    "llm-releases.com": {
+     "count": 81
+    },
+    "GitHub": {
+     "count": 152
+    },
+    "YouTube": {
+     "count": 65
+    },
+    "OpenRouter": {
+     "count": 478
+    },
+    "Makers' news feeds": {
+     "count": 102
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 3
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 0
+    },
+    "Auto-research": {
+     "count": 21
+    },
+    "Quarantined records": {
+     "count": 11
+    },
+    "Catalog": {
+     "count": 1390
+    }
+   }
+  },
+  {
+   "at": "2026-11-18T13:48:01.682Z",
+   "run": "2026-11-18T13:44:09.656Z",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1007
+    },
+    "Hugging Face datasets (import)": {
+     "count": 348
+    },
+    "Ollama (import)": {
+     "count": 289
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 98
+    },
+    "llm-releases.com": {
+     "count": 82
+    },
+    "GitHub": {
+     "count": 160
+    },
+    "YouTube": {
+     "count": 103
+    },
+    "OpenRouter": {
+     "count": 478
+    },
+    "Makers' news feeds": {
+     "count": 101
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 3
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 0
+    },
+    "Auto-research": {
+     "count": 27
+    },
+    "Quarantined records": {
+     "count": 12
+    },
+    "Catalog": {
+     "count": 1409
+    }
+   }
+  },
+  {
+   "at": "2026-11-19T02:41:52.649Z",
+   "run": "2026-11-19T02:26:06.673Z",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1035
+    },
+    "Hugging Face datasets (import)": {
+     "count": 359
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 102
+    },
+    "llm-releases.com": {
+     "count": 82
+    },
+    "GitHub": {
+     "count": 169
+    },
+    "YouTube": {
+     "count": 108
+    },
+    "OpenRouter": {
+     "count": 480
+    },
+    "Makers' news feeds": {
+     "count": 111
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 0
+    },
+    "Auto-research": {
+     "count": 35
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1460
+    }
+   }
+  },
+  {
+   "at": "2026-11-19T04:05:01.979Z",
+   "run": "2026-11-19T04:03:29.076Z",
+   "run_id": "44455630570",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1175
+    },
+    "Hugging Face datasets (import)": {
+     "count": 359
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 102
+    },
+    "llm-releases.com": {
+     "count": 82
+    },
+    "GitHub": {
+     "count": 171
+    },
+    "YouTube": {
+     "count": 108
+    },
+    "OpenRouter": {
+     "count": 480
+    },
+    "Makers' news feeds": {
+     "count": 111
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 144
+    },
+    "Auto-research": {
+     "count": 36
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1601
+    }
+   }
+  },
+  {
+   "at": "2026-11-19T04:18:08.412Z",
+   "run": "2026-11-19T04:16:42.635Z",
+   "run_id": "44457190158",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1175
+    },
+    "Hugging Face datasets (import)": {
+     "count": 359
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 37
+    },
+    "Hugging Face new releases": {
+     "count": 102
+    },
+    "llm-releases.com": {
+     "count": 82
+    },
+    "GitHub": {
+     "count": 171
+    },
+    "YouTube": {
+     "count": 108
+    },
+    "OpenRouter": {
+     "count": 480
+    },
+    "Makers' news feeds": {
+     "count": 111
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 144
+    },
+    "Auto-research": {
+     "count": 36
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1601
+    }
+   }
+  },
+  {
+   "at": "2026-11-19T07:09:39.184Z",
+   "run": "2026-11-19T07:07:57.339Z",
+   "run_id": "44477226215",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1175
+    },
+    "Hugging Face datasets (import)": {
+     "count": 362
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 45
+    },
+    "Hugging Face new releases": {
+     "count": 100
+    },
+    "llm-releases.com": {
+     "count": 82
+    },
+    "GitHub": {
+     "count": 171
+    },
+    "YouTube": {
+     "count": 106
+    },
+    "OpenRouter": {
+     "count": 480
+    },
+    "Makers' news feeds": {
+     "count": 111
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 144
+    },
+    "Auto-research": {
+     "count": 36
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1602
+    }
+   }
+  },
+  {
+   "at": "2026-11-19T14:18:45.946Z",
+   "run": "2026-11-19T14:14:21.151Z",
+   "run_id": "44541541922",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1180
+    },
+    "Hugging Face datasets (import)": {
+     "count": 363
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 47
+    },
+    "Hugging Face new releases": {
+     "count": 99
+    },
+    "llm-releases.com": {
+     "count": 83
+    },
+    "GitHub": {
+     "count": 173
+    },
+    "YouTube": {
+     "count": 112
+    },
+    "OpenRouter": {
+     "count": 479
+    },
+    "Makers' news feeds": {
+     "count": 109
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 144
+    },
+    "Auto-research": {
+     "count": 38
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1610
+    }
+   }
+  },
+  {
+   "at": "2026-11-20T02:25:39.774Z",
+   "run": "2026-11-20T02:10:19.982Z",
+   "run_id": "44658843456",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1205
+    },
+    "Hugging Face datasets (import)": {
+     "count": 382
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 47
+    },
+    "Hugging Face new releases": {
+     "count": 110
+    },
+    "llm-releases.com": {
+     "count": 84
+    },
+    "GitHub": {
+     "count": 183
+    },
+    "YouTube": {
+     "count": 116
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 112
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 146
+    },
+    "Auto-research": {
+     "count": 38
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1650
+    }
+   }
+  },
+  {
+   "at": "2026-11-20T13:58:43.166Z",
+   "run": "2026-11-20T13:55:04.355Z",
+   "run_id": "44748512035",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1217
+    },
+    "Hugging Face datasets (import)": {
+     "count": 391
+    },
+    "Ollama (import)": {
+     "count": 282
+    },
+    "X": {
+     "count": 48
+    },
+    "Hugging Face new releases": {
+     "count": 110
+    },
+    "llm-releases.com": {
+     "count": 85
+    },
+    "GitHub": {
+     "count": 189
+    },
+    "YouTube": {
+     "count": 116
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 112
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 2
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 146
+    },
+    "Auto-research": {
+     "count": 39
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1672
+    }
+   }
+  },
+  {
+   "at": "2026-11-21T02:17:26.318Z",
+   "run": "2026-11-21T02:03:00.712Z",
+   "run_id": "44853652876",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1236
+    },
+    "Hugging Face datasets (import)": {
+     "count": 393
+    },
+    "Ollama (import)": {
+     "count": 283
+    },
+    "X": {
+     "count": 51
+    },
+    "Hugging Face new releases": {
+     "count": 111
+    },
+    "llm-releases.com": {
+     "count": 85
+    },
+    "GitHub": {
+     "count": 196
+    },
+    "YouTube": {
+     "count": 115
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 116
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 147
+    },
+    "Auto-research": {
+     "count": 39
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1692
+    }
+   }
+  },
+  {
+   "at": "2026-11-21T13:22:42.328Z",
+   "run": "2026-11-21T13:18:54.734Z",
+   "run_id": "44908220220",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1238
+    },
+    "Hugging Face datasets (import)": {
+     "count": 394
+    },
+    "Ollama (import)": {
+     "count": 283
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 109
+    },
+    "llm-releases.com": {
+     "count": 84
+    },
+    "GitHub": {
+     "count": 199
+    },
+    "YouTube": {
+     "count": 120
+    },
+    "OpenRouter": {
+     "count": 476
+    },
+    "Makers' news feeds": {
+     "count": 116
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 147
+    },
+    "Auto-research": {
+     "count": 40
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1696
+    }
+   }
+  },
+  {
+   "at": "2026-11-22T01:21:29.131Z",
+   "run": "2026-11-22T01:05:28.183Z",
+   "run_id": "44969771126",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1256
+    },
+    "Hugging Face datasets (import)": {
+     "count": 408
+    },
+    "Ollama (import)": {
+     "count": 284
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 115
+    },
+    "llm-releases.com": {
+     "count": 85
+    },
+    "GitHub": {
+     "count": 209
+    },
+    "YouTube": {
+     "count": 119
+    },
+    "OpenRouter": {
+     "count": 476
+    },
+    "Makers' news feeds": {
+     "count": 116
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 147
+    },
+    "Auto-research": {
+     "count": 40
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1725
+    }
+   }
+  },
+  {
+   "at": "2026-11-22T13:14:45.016Z",
+   "run": "2026-11-22T13:10:41.100Z",
+   "run_id": "45026083538",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1260
+    },
+    "Hugging Face datasets (import)": {
+     "count": 411
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 119
+    },
+    "llm-releases.com": {
+     "count": 85
+    },
+    "GitHub": {
+     "count": 216
+    },
+    "YouTube": {
+     "count": 119
+    },
+    "OpenRouter": {
+     "count": 476
+    },
+    "Makers' news feeds": {
+     "count": 116
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 147
+    },
+    "Auto-research": {
+     "count": 41
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1731
+    }
+   }
+  },
+  {
+   "at": "2026-11-23T01:45:06.319Z",
+   "run": "2026-11-23T01:28:58.395Z",
+   "run_id": "45094794070",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1282
+    },
+    "Hugging Face datasets (import)": {
+     "count": 417
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 122
+    },
+    "llm-releases.com": {
+     "count": 100
+    },
+    "GitHub": {
+     "count": 221
+    },
+    "YouTube": {
+     "count": 124
+    },
+    "OpenRouter": {
+     "count": 476
+    },
+    "Makers' news feeds": {
+     "count": 116
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 42
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 147
+    },
+    "Auto-research": {
+     "count": 41
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1759
+    }
+   }
+  },
+  {
+   "at": "2026-11-23T15:51:59.487Z",
+   "run": "2026-11-23T15:47:45.222Z",
+   "run_id": "45209181519",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1289
+    },
+    "Hugging Face datasets (import)": {
+     "count": 421
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 126
+    },
+    "llm-releases.com": {
+     "count": 87
+    },
+    "GitHub": {
+     "count": 229
+    },
+    "YouTube": {
+     "count": 124
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 108
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 40
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 148
+    },
+    "Auto-research": {
+     "count": 41
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1770
+    }
+   }
+  },
+  {
+   "at": "2026-11-24T05:30:26.581Z",
+   "run": "2026-11-24T05:12:22.683Z",
+   "run_id": "45331624654",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1316
+    },
+    "Hugging Face datasets (import)": {
+     "count": 431
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 132
+    },
+    "llm-releases.com": {
+     "count": 87
+    },
+    "GitHub": {
+     "count": 236
+    },
+    "YouTube": {
+     "count": 130
+    },
+    "OpenRouter": {
+     "count": 474
+    },
+    "Makers' news feeds": {
+     "count": 110
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 40
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 148
+    },
+    "Auto-research": {
+     "count": 41
+    },
+    "Quarantined records": {
+     "count": 6
+    },
+    "Catalog": {
+     "count": 1805
+    }
+   }
+  },
+  {
+   "at": "2026-11-24T23:01:42.404Z",
+   "run": "2026-11-24T22:57:30.831Z",
+   "run_id": "45505658583",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1339
+    },
+    "Hugging Face datasets (import)": {
+     "count": 441
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 129
+    },
+    "llm-releases.com": {
+     "count": 89
+    },
+    "GitHub": {
+     "count": 249
+    },
+    "YouTube": {
+     "count": 141
+    },
+    "OpenRouter": {
+     "count": 470
+    },
+    "Makers' news feeds": {
+     "count": 104
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 40
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 152
+    },
+    "Auto-research": {
+     "count": 42
+    },
+    "Quarantined records": {
+     "count": 7
+    },
+    "Catalog": {
+     "count": 1835
+    }
+   }
+  },
+  {
+   "at": "2026-11-25T15:41:14.062Z",
+   "run": "2026-11-25T15:23:44.812Z",
+   "run_id": "45644632735",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1371
+    },
+    "Hugging Face datasets (import)": {
+     "count": 456
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 138
+    },
+    "llm-releases.com": {
+     "count": 92
+    },
+    "GitHub": {
+     "count": 263
+    },
+    "YouTube": {
+     "count": 134
+    },
+    "OpenRouter": {
+     "count": 472
+    },
+    "Makers' news feeds": {
+     "count": 99
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 40
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 152
+    },
+    "Auto-research": {
+     "count": 42
+    },
+    "Quarantined records": {
+     "count": 7
+    },
+    "Catalog": {
+     "count": 1879
+    }
+   }
+  },
+  {
+   "at": "2026-11-26T03:31:34.955Z",
+   "run": "2026-11-26T03:27:06.336Z",
+   "run_id": "45748971932",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1376
+    },
+    "Hugging Face datasets (import)": {
+     "count": 464
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 146
+    },
+    "llm-releases.com": {
+     "count": 92
+    },
+    "GitHub": {
+     "count": 267
+    },
+    "YouTube": {
+     "count": 132
+    },
+    "OpenRouter": {
+     "count": 474
+    },
+    "Makers' news feeds": {
+     "count": 96
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 39
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 152
+    },
+    "Auto-research": {
+     "count": 42
+    },
+    "Quarantined records": {
+     "count": 7
+    },
+    "Catalog": {
+     "count": 1892
+    }
+   }
+  },
+  {
+   "at": "2026-11-26T15:08:19.750Z",
+   "run": "2026-11-26T14:53:04.332Z",
+   "run_id": "45843438724",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1395
+    },
+    "Hugging Face datasets (import)": {
+     "count": 467
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 150
+    },
+    "llm-releases.com": {
+     "count": 95
+    },
+    "GitHub": {
+     "count": 274
+    },
+    "YouTube": {
+     "count": 127
+    },
+    "OpenRouter": {
+     "count": 475
+    },
+    "Makers' news feeds": {
+     "count": 97
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 39
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 152
+    },
+    "Auto-research": {
+     "count": 42
+    },
+    "Quarantined records": {
+     "count": 7
+    },
+    "Catalog": {
+     "count": 1914
+    }
+   }
+  },
+  {
+   "at": "2026-11-27T03:38:00.430Z",
+   "run": "2026-11-27T03:33:43.615Z",
+   "run_id": "45934866701",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1398
+    },
+    "Hugging Face datasets (import)": {
+     "count": 468
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 145
+    },
+    "llm-releases.com": {
+     "count": 95
+    },
+    "GitHub": {
+     "count": 278
+    },
+    "YouTube": {
+     "count": 127
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 93
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 0
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 153
+    },
+    "Auto-research": {
+     "count": 44
+    },
+    "Quarantined records": {
+     "count": 8
+    },
+    "Catalog": {
+     "count": 1919
+    }
+   }
+  },
+  {
+   "at": "2026-11-27T15:06:31.088Z",
+   "run": "2026-11-27T14:50:38.456Z",
+   "run_id": "46019518516",
+   "mode": "full",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1421
+    },
+    "Hugging Face datasets (import)": {
+     "count": 479
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 147
+    },
+    "llm-releases.com": {
+     "count": 96
+    },
+    "GitHub": {
+     "count": 283
+    },
+    "YouTube": {
+     "count": 130
+    },
+    "OpenRouter": {
+     "count": 477
+    },
+    "Makers' news feeds": {
+     "count": 91
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 43
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 153
+    },
+    "Auto-research": {
+     "count": 44
+    },
+    "Quarantined records": {
+     "count": 8
+    },
+    "Catalog": {
+     "count": 1950
+    }
+   }
+  },
+  {
+   "at": "2026-11-28T03:15:57.660Z",
+   "run": "2026-11-28T03:11:30.549Z",
+   "run_id": "46101637226",
+   "mode": "x",
+   "sources": {
+    "Hugging Face models (import)": {
+     "count": 1425
+    },
+    "Hugging Face datasets (import)": {
+     "count": 483
+    },
+    "Ollama (import)": {
+     "count": 285
+    },
+    "X": {
+     "count": 53
+    },
+    "Hugging Face new releases": {
+     "count": 154
+    },
+    "llm-releases.com": {
+     "count": 96
+    },
+    "GitHub": {
+     "count": 292
+    },
+    "YouTube": {
+     "count": 126
+    },
+    "OpenRouter": {
+     "count": 476
+    },
+    "Makers' news feeds": {
+     "count": 88
+    },
+    "Hugging Face Daily Papers": {
+     "count": 15
+    },
+    "Hacker News": {
+     "count": 1
+    },
+    "App Store searches": {
+     "count": 41
+    },
+    "Product Hunt": {
+     "count": 20
+    },
+    "Replicate": {
+     "count": 153
+    },
+    "Auto-research": {
+     "count": 44
+    },
+    "Quarantined records": {
+     "count": 8
+    },
+    "Catalog": {
+     "count": 1957
+    }
+   }
+  }
+ ]
+}
